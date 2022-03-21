@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./layout.css">
+  <title>Document</title>
+  <style>
+    .side-bar {
+      background-color: #ddd;
+      display: none;
+    }
+    .side-bar a {
+      display: block;
+      padding: 10px;
+      border: 1px dashed;
+    }
+    .closeMenu {
+      padding: 10px;
+      left: auto;
+      right: 0;
+    }
+    .fixed-top-nav {
+      background-color: #ddd;
+    }
+    .openMenu {
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      font-size: 30px;
+    }
+    .main {
+      margin-top: 75px;
+    }
+    @media (min-width: 701px) {
+      .side-bar {
+        display: block;
+      }
+      .layer {
+        display: none!important;
+      }
+      .main {
+        margin-left: 280px;
+      }
+    }
+  </style>
+</head>
+<body class="border" style="min-height: 1000px;">
+
+  <header class="fixed-top-nav hide-pc">
+    <h2 class="center relative">
+      <a href="" id="open-menu" class="openMenu absolute">=</a>
+      Company
+    </h2>
+  </header>
+
+  <div id="layer" class="layer"></div>
+  
+  <nav class="side-bar" id="side-bar">
+    <a href="" class="center relative" style="padding: 48px 0">
+      <span id="close-menu" class="closeMenu absolute hide-pc">&times;</span>
+      Company
+    </a>
+    <a href="">Home</a>
+    <a href="">About</a>
+    <a href="">Posts</a>
+    <a href="">Contact</a>
+  </nav>
+
+  <div class="main">
+    <h1>Welcome</h1>
+  </div>
+
+  <script>
+    var sideBar, openMenu, closeMenu, layer;
+    sideBar = document.getElementById('side-bar')
+    openMenu = document.getElementById('open-menu');
+    closeMenu = document.getElementById('close-menu');
+    layer = document.getElementById('layer');
+
+    openMenu.addEventListener('click', e => {
+      e.preventDefault();
+      showSidebar()
+    })
+    closeMenu.addEventListener('click', e => {
+      e.preventDefault()
+      hideSidebar()
+    })
+    layer.addEventListener('click', e => {
+      hideSidebar()
+    })
+
+    function hideSidebar() {
+      sideBar.classList.remove('active');
+      layer.classList.remove('active')
+    }
+
+    function showSidebar() {
+      sideBar.classList.add('active');
+      layer.classList.add('active');
+    }
+  </script>
+  
+</body>
+</html>
