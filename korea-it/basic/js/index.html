@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="./script.js"></script>
+
+  <!-- 3/28 Monday -->
+
+
+  <!-- <style>
+    p {
+      border: 1px dashed;
+      height: 0;
+    }
+  </style>
+
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum debitis mollitia maxime nisi dolorum soluta repellendus laudantium dolores veritatis ea aliquam dolor eius modi vitae consequatur, odit sunt nesciunt magnam!
+  </p>
+
+  <script>
+
+    var p = document.querySelector('p');
+
+    console.log(p.style.height)
+    console.log(p.clientHeight)
+    // including border and padding
+    console.log(p.offsetHeight)
+    // Get height of contents in element
+    console.log(p.scrollHeight)
+  </script> -->
+
+
+  <!-- <style>
+    .panel {
+      border: 1px dashed;
+      height: 0;
+      overflow: hidden;
+      transition: 0.5s;
+    }
+  </style>
+  
+  <button class="accordion">Section 1</button>
+  <div class="panel">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum necessitatibus minus nemo cum! Placeat id quos explicabo dolor nesciunt amet nostrum, similique modi quis. Temporibus veniam quae delectus eius dolore.</p>
+  </div>
+  <button class="accordion">Section 2</button>
+  <div class="panel">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum necessitatibus minus nemo cum! Placeat id quos explicabo dolor nesciunt amet nostrum, similique modi quis. Temporibus veniam quae delectus eius dolore.</p>
+  </div>
+  <button class="accordion">Section 3</button>
+  <div class="panel">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum necessitatibus minus nemo cum! Placeat id quos explicabo dolor nesciunt amet nostrum, similique modi quis. Temporibus veniam quae delectus eius dolore.</p>
+  </div>
+
+  <script>
+
+    var acc = document.getElementsByClassName('accordion');
+
+    var i;
+
+    for (i=0; i<acc.length; i++) {
+      acc[i].addEventListener('click', function (e) {
+        e.target.classList.toggle('active');
+        
+        var panel = e.target.nextElementSibling;
+
+        console.log('...')
+
+        console.log(panel.style.height)
+
+        if (panel.style.height === '') {
+          panel.style.height = panel.scrollHeight + 'px'
+        } else {
+          panel.style.height = '';
+        }
+
+        console.log(panel.style.height)
+
+      })
+    }
+
+  </script> -->
+
+
+  <!-- <style>
+    .tab-content {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+  </style>
+
+  
+  <div class="tab">
+    <button class="btn" data-city="london">London</button>
+    <button class="btn" data-city="seoul">Seoul</button>
+    <button class="btn" data-city="tokyo">Tokyo</button>
+  </div>
+
+  <div id="london" class="tab-content active">
+    <h3>London</h3>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit asperiores optio excepturi ex consequuntur reprehenderit ducimus illum ullam itaque nostrum odio, veritatis iusto fugiat a minus blanditiis earum? Nisi, sequi.</p>
+  </div>
+  <div id="seoul" class="tab-content">
+    <h3>Seoul</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem debitis nesciunt quos qui officia cumque. Quam est quis nulla. Placeat repudiandae ducimus expedita perspiciatis minus deserunt alias, iusto et. Odio.</p>
+  </div>
+  <div id="tokyo" class="tab-content">
+    <h3>Tokyo</h3>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur qui labore quod maiores, voluptatibus quos fugit magni optio nulla amet! Quaerat fuga cupiditate debitis eos soluta, omnis vel itaque. Dolorum!</p>
+  </div>
+
+  <script>
+
+    var btns = document.querySelectorAll('.btn');
+
+    console.log(btns)
+
+    btns.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        var id = e.target.getAttribute('data-city')
+
+        // hide all
+        document.querySelectorAll('.tab-content').forEach(function (tabContent) {
+          tabContent.classList.remove('active')
+        })
+
+        // show one with selected id
+        document.getElementById(id).classList.add('active')
+      })
+    })
+  </script> -->
+
+
+  <!-- <style>
+    nav {
+      border: 1px dashed;
+      width: 280px;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: -280px;
+      transition: 0.5s;
+      background-color: #ddd;
+    }
+    nav a {
+      display: block;
+    }
+    .layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      display: none;
+    }
+  </style>
+
+  <div id="layer" class="layer"></div>
+  
+  <nav>
+    <a href="">Home</a>
+    <a href="">About</a>
+    <a href="">Blog</a>
+    <span id="closeMenu">Close</span>
+  </nav>
+
+  <span id="openMenu">MENU</span>
+
+  <script>
+    var openMenu = document.getElementById('openMenu');
+    var closeMenu = document.getElementById('closeMenu')
+    var layer = document.getElementById('layer')
+    var nav = document.querySelector('nav');
+
+    openMenu.addEventListener('click', function (e) {
+      nav.style.left = '0px';
+      layer.style.display = 'block'
+    })
+    closeMenu.addEventListener('click', function (e) {
+      nav.style.left = '-280px';
+      layer.style.display = 'none'
+    })
+    layer.addEventListener('click', function (e) {
+      nav.style.left = '-280px';
+      e.target.style.display = 'none';
+    })
+  </script> -->
+
+
+  <!-- <style>
+    nav {
+      border: 1px dashed;
+      position: relative;
+    }
+    nav a {
+      display: block;
+      padding: 10px;
+      text-align: center;
+    }
+    #menuBtn {
+      position: absolute;
+      top: 10px; right: 10px;
+    }
+    .item {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+  </style>
+
+  <nav>
+    <span id="menuBtn">#</span>
+    <a class="header active" href="">HOME</a>
+    <a class="item" href="">About</a>
+    <a class="item" href="">Blog</a>
+    <a class="item" href="">Contact</a>
+  </nav>
+
+  <script>
+    var menuBtn = document.getElementById('menuBtn');
+    var items = document.querySelectorAll('.item');
+
+    menuBtn.addEventListener('click', function (e) {
+      items.forEach(function (item) {
+        item.classList.toggle('active')
+      })
+    })
+  </script> -->
+
+
+  <!-- <style>
+    img {
+      width: 100%;
+    }
+    #img01 {
+      width: 200px;
+    }
+    .layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      display: none;
+    }
+    .container {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+    }
+  </style>
+
+  <img id="img01" src="../../img/bunny.jpeg" alt="">
+
+  <div id="layer" class="layer"></div>
+
+  <div id="container" class="container">
+    <img id="modal-img" src="" alt="">
+  </div>
+
+
+  <script>
+    document.getElementById('img01').addEventListener('click', function (e) {
+      
+      document.getElementById('modal-img').src = img01.src
+      document.getElementById('container').style.display = 'block';
+      document.getElementById('layer').style.display = 'block';
+      
+    })
+
+    // close image with x button and layer click
+
+  </script> -->
+
+  <input type="text">
+  <p id="message"></p>
+
+  <script>
+    
+    var input = document.querySelector('input');
+    var message = document.getElementById('message')
+
+    input.addEventListener('keyup', function (e) {
+      console.log(e.target.value);
+
+      if (e.target.value.length < 1) {
+        message.innerHTML = 'no empty space allowed';
+      } else if (e.target.value.length < 5) {
+        message.innerHTML = 'more than 5'
+      } else if (e.target.value.match(/[^a-zA-Z]/)) {
+        message.innerHTML = 'only alphabetical allowed'
+      } 
+      else {
+        message.innerHTML = 'good'
+      }
+    })
+  </script>
+
+
+  
+</body>
+</html>
