@@ -4034,6 +4034,69 @@ span {
   <span>hello</span>
 </div> -->
 
+<!-- <style>
+  header {
+    text-align: center;
+    border: 1px dashed;
+    background-color: #ddd;
+    color: red;
+  }
+  small {
+    color: initial;
+    /* border: inherit; */
+    border: 1px dashed;
+  }
+  .absolute {
+    position: absolute;
+    padding: 10px;
+    /* background-color: blue; */
+  }
+</style>
+
+<header>
+  <h1>
+    <span>hello</span>
+    <small>world</small>
+    <div class="absolute">abolute</div>
+  </h1>
+</header> -->
+
+<style>
+  .dropdown {
+    border: 1px dashed;
+    float: right;
+    position: relative;
+  }
+  .dropdown-content {
+    border: 1px solid red;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    display: none;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+    width: 200px;
+    height: 200px;
+    overflow: auto;
+    background-color: #fff;
+  }
+</style>
+
+
+<div class="dropdown">
+  <button class="drop-btn">dropdown</button>
+  <div class="dropdown-content">
+    <h3>dropdown</h3>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus omnis laborum, quibusdam neque distinctio sit veniam nemo harum accusamus velit fuga fugit est explicabo ipsa repellendus culpa, asperiores vero! Aliquam!</p>
+  </div>
+  <div class="" style="clear: both;"></div>
+</div>
+
+<div class="" style="margin-top: 100px;"></div>
+
+<h1>Google</h1>
+<p>Search for something!</p>
 
 </body>
 </html>

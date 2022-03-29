@@ -7,8 +7,8 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="root"></div>
-  <script src="./script.js"></script>
+  <!-- <div id="root"></div>
+  <script src="./script.js"></script> -->
 
   <!-- 3/28 Monday -->
 
@@ -239,6 +239,8 @@
   </script> -->
 
 
+  <!-- 3/29 Tuesday -->
+
   <!-- <style>
     img {
       width: 100%;
@@ -287,31 +289,314 @@
 
   </script> -->
 
-  <input type="text">
-  <p id="message"></p>
+
+  <!-- <style>
+    img {
+      width: 100%;
+    }
+    .thumbnail {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+    .thumbnail:hover {
+      opacity: 1;
+    }
+    .layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      display: none;
+    }
+    .container {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+    }
+  </style>
+
+  <img class="thumbnail" src="../../img/bunny.jpeg" alt="">
+  <img class="thumbnail" src="../../img/cat.jpeg" alt="">
+  <img class="thumbnail" src="../../img/bird.jpeg" alt="">
+
+  <div id="layer" class="layer"></div>
+
+  <div id="container" class="container">
+    <img id="modal-img" src="" alt="">
+  </div>
+
 
   <script>
-    
-    var input = document.querySelector('input');
-    var message = document.getElementById('message')
 
-    input.addEventListener('keyup', function (e) {
-      console.log(e.target.value);
+    var thumbnails = document.querySelectorAll('.thumbnail');
+    var modalImg = document.getElementById('modal-img');
+    var container = document.getElementById('container');
+    var layer = document.getElementById('layer');
 
-      if (e.target.value.length < 1) {
-        message.innerHTML = 'no empty space allowed';
-      } else if (e.target.value.length < 5) {
-        message.innerHTML = 'more than 5'
-      } else if (e.target.value.match(/[^a-zA-Z]/)) {
-        message.innerHTML = 'only alphabetical allowed'
-      } 
-      else {
-        message.innerHTML = 'good'
-      }
+    thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', () => {
+        modalImg.src = thumbnail.src
+        container.style.display = 'block';
+        layer.style.display = 'block';
+      })
     })
-  </script>
+
+    layer.addEventListener('click', () => {
+      layer.style.display = 'none';
+      container.style.display = 'none';
+    })
+  </script> -->
 
 
+  <!-- <style>
+
+    img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+    }
+
+  </style>
+
+
+  <div class="container">
+    <img src="../../img/bunny.jpeg" alt="">
+    <img src="../../img/cat.jpeg" alt="">
+    <img src="../../img/bird.jpeg" alt="">
+  </div>
+
+  <div class="nav">
+    <button id="prev" class="prev" onclick="showImage(-1)">prev</button>
+    <button id="next" class="next" onclick="showImage(1)">next</button>
+  </div>
+
+
+  <script>
+    var imgs = document.querySelectorAll('img');
+    var prev = document.getElementById('prev')
+    var next = document.getElementById('next')
+
+    var index = 0;
+
+    function showImage(data) {
+
+      index += data
+      console.log(index)
+
+      imgs.forEach(img => {
+        img.style.display = 'none';
+      })
+
+      imgs[index].style.display = 'block';
+
+      prev.style.display = 'inline-block'
+      next.style.display = 'inline-block'
+
+      if (index===0) {
+        prev.style.display = 'none';
+      }
+      if (index===imgs.length-1) {
+        next.style.display = 'none';
+      }
+    }
+
+    showImage(0)
+  </script> -->
+
+
+  <!-- <style>
+    .container {
+      border: 1px dashed;
+      position: relative;
+    }
+    .col {
+      height: 100%;
+    }
+    .col:first-child {
+      border: 1px solid;
+      position: absolute;
+      width: 200px;
+    }
+    .col:nth-child(2) {
+      border: 1px solid red;
+      margin-left: 200px;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 5px;
+    }
+    .tab-content {
+      display: none;
+      min-height: 300px;
+    }
+    .active {
+      display: block;
+    }
+  </style>
+  
+  <div class="container">
+    <div class="col">
+      <button class="btn" onclick="toggleTab('london')">London</button>
+      <button class="btn" onclick="toggleTab('seoul')">Seoul</button>
+      <button class="btn" onclick="toggleTab('tokyo')">Tokyo</button>
+    </div>
+    <div class="col">
+      <div id="london" class="tab-content">
+        <h3>London</h3>  
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id hic magnam officia veritatis itaque? Officia atque explicabo voluptatibus quas, qui reprehenderit voluptas tempore incidunt minima repellendus quis laudantium omnis architecto?</p>
+      </div>
+      <div id="seoul" class="tab-content">
+        <h3>Seoul</h3>  
+        <p>Seoul is...</p>
+      </div>
+      <div id="tokyo" class="tab-content">
+        <h3>Tokyo</h3>  
+        <p>Tokyo is...</p>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    var tabContents = document.getElementsByClassName('tab-content');
+
+    function toggleTab(city) {
+      for (i=0; i<tabContents.length; i++) {
+        tabContents[i].classList.remove('active')
+      }
+      document.getElementById(city).classList.add('active');
+    }
+
+    toggleTab('london')
+
+  </script> -->
+
+
+  <!-- <style>
+    
+    .thumbnail {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+    .thumbnail:hover {
+      opacity: 1
+    }
+    .container img {
+      width: 400px;
+      height: 300px;
+      object-fit: cover;
+    }
+  </style>
+
+  
+  <div class="container">
+    <img id="display-image" src="" alt="">
+  </div>
+
+
+  <div class="">
+    <img class="thumbnail" src="../../img/bunny.jpeg" alt="">
+    <img class="thumbnail" src="../../img/cat.jpeg" alt="">
+    <img class="thumbnail" src="../../img/bird.jpeg" alt="">
+    <img class="thumbnail" src="../../img/duck.jpeg" alt="">
+  </div>
+
+
+  <script>
+
+    var thumbnails = document.querySelectorAll('.thumbnail');
+    var displayImage = document.getElementById('display-image')
+    
+    function getImage(src) {
+      displayImage.src = src
+    }
+      
+    thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', (e) => {
+        getImage(e.target.src)
+      })
+    })
+
+    getImage(thumbnails[0].src)
+
+  </script> -->
+
+  
+  <!-- <div id="apple" class="mango banana"></div>
+
+  <script>
+    console.log(document.querySelector('div').id) // ok
+    console.log(document.querySelector('div').class) // undefined
+    console.log(document.querySelector('div').className) // ok
+  </script> -->
+
+
+  <!-- <style>
+    .container {
+      border: 1px dashed;
+      overflow: auto;
+    }
+    .col {
+      float: left;
+      width: 33.33333%;
+      box-sizing: border-box;
+      border: 1px dashed;
+    }
+    img {
+      width: 100%;
+    }
+  </style>
+
+
+  <button onclick="arrangeColumn(100)">1</button>
+  <button onclick="arrangeColumn(33.33333)">3</button>
+
+
+  <div class="container">
+    <div class="col">
+      <img src="../../img/bunny.jpeg" alt="">
+      <img src="../../img/cat.jpeg" alt="">
+      <img src="../../img/bird.jpeg" alt="">
+    </div>
+    <div class="col">
+      <img src="../../img/cat.jpeg" alt="">
+      <img src="../../img/bird.jpeg" alt="">
+      <img src="../../img/bunny.jpeg" alt="">
+    </div>
+    <div class="col">
+      <img src="../../img/bunny.jpeg" alt="">
+      <img src="../../img/bird.jpeg" alt="">
+      <img src="../../img/cat.jpeg" alt="">
+    </div>
+  </div>
+
+  <script>
+
+    var cols = document.querySelectorAll('.col');
+
+    console.log(cols)
+    
+    function arrangeColumn(w) {
+      console.log(w)
+
+      cols.forEach(col => {
+        col.style.width = w + '%';
+      })
+    }
+
+  </script> -->
   
 </body>
 </html>
