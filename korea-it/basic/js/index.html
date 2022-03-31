@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/4fb6dd7406.js" crossorigin="anonymous"></script>
   <title>Document</title>
 </head>
 <body>
@@ -545,61 +546,6 @@
   
   <!-- 3/30 Wednesday -->
 
-  <!-- <style>
-    .container {
-      border: 1px dashed;
-      overflow: auto;
-    }
-    .col {
-      float: left;
-      width: 33.33333%;
-      box-sizing: border-box;
-      border: 1px dashed;
-    }
-    img {
-      width: 100%;
-    }
-  </style>
-
-
-  <button onclick="arrangeColumn(100)">1</button>
-  <button onclick="arrangeColumn(33.33333)">3</button>
-
-
-  <div class="container">
-    <div class="col">
-      <img src="../../img/bunny.jpeg" alt="">
-      <img src="../../img/cat.jpeg" alt="">
-      <img src="../../img/bird.jpeg" alt="">
-    </div>
-    <div class="col">
-      <img src="../../img/cat.jpeg" alt="">
-      <img src="../../img/bird.jpeg" alt="">
-      <img src="../../img/bunny.jpeg" alt="">
-    </div>
-    <div class="col">
-      <img src="../../img/bunny.jpeg" alt="">
-      <img src="../../img/bird.jpeg" alt="">
-      <img src="../../img/cat.jpeg" alt="">
-    </div>
-  </div>
-
-  <script>
-
-    var cols = document.querySelectorAll('.col');
-
-    console.log(cols)
-    
-    function arrangeColumn(w) {
-      console.log(w)
-
-      cols.forEach(col => {
-        col.style.width = w + '%';
-      })
-    }
-
-  </script> -->
-
 
   <!-- <style>
     * { box-sizing: border-box; }
@@ -976,6 +922,290 @@
   </script> -->
 
 
+  <!-- 3/31 Thursday -->
+
+  <!-- <style>
+    .container {
+      /* display: flex; */
+      border: 1px solid red;
+      width: 300px;
+      height: 300px;
+      white-space: nowrap;
+    }
+    .item {
+      width: 300px;
+      height: 300px;
+      border: 1px dashed;
+      display: inline-block;
+      /* object-fit: cover; */
+    }
+  </style>
   
+  <div class="container">
+    not works
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    it works -->
+    <!-- <img src="../../img/bunny.jpeg" alt="" class="item">
+    <img src="../../img/bunny.jpeg" alt="" class="item">
+    <img src="../../img/bunny.jpeg" alt="" class="item"> -->
+  <!-- </div> -->
+
+  <!-- <style>
+    .container {
+      border: 3px dashed;
+      width: 300px;
+      height: 300px;
+      display: flex;
+      /* overflow: hidden; */
+      /* white-space: nowrap; */
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* border: 1px solid red; */
+      /* display: inline-block; */
+      transition: 0.5s;
+    }
+  </style>
+
+
+  <div class="container">
+    <img src="../../img/bunny.jpeg" alt="">
+    <img src="../../img/cat.jpeg" alt="">
+    <img src="../../img/bird.jpeg" alt="">
+  </div>
+
+  <div class="nav">
+    <button class="prev" onclick="navigateTo(-1)">prev</button>
+    <button class="next" onclick="navigateTo(1)">next</button>
+  </div>
+
+  <script>
+    var imgs = document.querySelectorAll('img');
+
+    var index = 0;
+
+    function navigateTo(data) {
+
+      index += data;
+      console.log(index)
+
+      imgs.forEach(img => {
+        img.style.transform = `translateX(-${index * 100}%)`;
+      })
+    }    
+  </script> -->
+
+
+  <!-- <style>
+    .container {
+      border: 1px dashed;
+      overflow: auto;
+    }
+    .col {
+      float: left;
+      width: 33.33333%;
+      box-sizing: border-box;
+      border: 1px dashed;
+    }
+    img {
+      width: 100%;
+    }
+  </style>
+
+
+  <button onclick="arrangeColumn(1)">1</button>
+  <button onclick="arrangeColumn(3)">3</button>
+
+
+  <div class="container">
+    <div class="col">
+      <img src="../../img/bunny.jpeg" alt="">
+      <img src="../../img/cat.jpeg" alt="">
+      <img src="../../img/bird.jpeg" alt="">
+    </div>
+    <div class="col">
+      <img src="../../img/cat.jpeg" alt="">
+      <img src="../../img/bird.jpeg" alt="">
+      <img src="../../img/bunny.jpeg" alt="">
+    </div>
+    <div class="col">
+      <img src="../../img/bunny.jpeg" alt="">
+      <img src="../../img/bird.jpeg" alt="">
+      <img src="../../img/cat.jpeg" alt="">
+    </div>
+  </div>
+
+  <script>
+
+    var cols = document.querySelectorAll('.col');
+
+    console.log(cols)
+    
+    function arrangeColumn(w) {
+      console.log(w)
+
+      console.log(100/w)
+
+      cols.forEach(col => {
+        col.style.width = (100 / w) + '%';
+      })
+    }
+
+  </script> -->
+
+
+<!-- <style>
+    img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+    }
+
+  </style>
+
+  <div class="container">
+    <img src="../../img/bunny.jpeg" alt="">
+    <img src="../../img/cat.jpeg" alt="">
+    <img src="../../img/bird.jpeg" alt="">
+  </div>
+
+  <div class="nav">
+    <button id="prev" class="prev" onclick="navigateTo(-1)">prev</button>
+    <button id="next" class="next" onclick="navigateTo(1)">next</button>
+  </div>
+
+  <script>
+    var imgs = document.querySelectorAll('img');
+    var prev = document.getElementById('prev');
+    var next = document.getElementById('next');
+
+    var index = 0;
+
+    function navigateTo(data) {
+
+      index += data
+      
+      if (index===-1) {
+        index = imgs.length-1
+      }
+      
+      if (index===imgs.length) {
+        index = 0
+      }
+      
+      console.log(index)
+
+      imgs.forEach(img => {
+        img.style.display = 'none';
+      })
+
+      imgs[index].style.display = 'block';
+    }
+
+    navigateTo(0);
+  </script> -->
+
+  
+    <!-- <style>
+      .fa-thumbs-up {
+        font-size: 40px;
+        cursor: pointer
+      }
+      .active {
+        color: red;
+      }
+    </style>
+
+
+  <i class="fa-solid fa-thumbs-up"></i>
+
+  <script>
+    var thumbsUp = document.querySelector('.fa-thumbs-up');
+
+    thumbsUp.addEventListener('click', (e) => {
+      e.target.classList.toggle('active')
+    })
+
+  </script> -->
+
+
+  <!-- <style>
+    .loader {
+      border: 16px solid #3498db;
+      border-radius: 50%;
+      border-top: 16px solid #fff;
+      width: 120px;
+      height: 120px;
+      animation: spin 2s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+
+  <h1 id="message"></h1>
+  
+  <div id="loader" class="loader"></div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('loader').style.display = 'none'
+      document.getElementById('message').innerHTML = 'Hello World'
+    }, 2000)
+  </script> -->
+
+
+  <!-- <style>
+    .fa-star {
+      font-size: 30px;
+      cursor: pointer
+    }
+    .active {
+      color: gold;
+    }
+  </style>
+
+  <h1>Rating</h1>
+  <i class="fa-solid fa-star" onclick="toggleStar(0)"></i>
+  <i class="fa-solid fa-star" onclick="toggleStar(1)"></i>
+  <i class="fa-solid fa-star" onclick="toggleStar(2)"></i>
+  <i class="fa-solid fa-star" onclick="toggleStar(3)"></i>
+  <i class="fa-solid fa-star" onclick="toggleStar(4)"></i>
+
+
+  <script>
+    var stars = document.querySelectorAll('.fa-star');
+
+    // stars.forEach((star, index) => {
+    //   star.addEventListener('click', () => {
+    //     console.log(index+1)
+
+    //     for (star of stars) {
+    //       star.classList.remove('active');
+    //     }        
+
+    //     for (i=0; i<index+1; i++) {
+    //       stars[i].classList.add('active')
+    //     }
+
+    //   })
+    // })
+
+    function toggleStar(data) {
+      for (star of stars) {
+        star.classList.remove('active')
+      }
+      for (i=0; i<data+1; i++) {
+        stars[i].classList.add('active')
+      }
+    }
+  </script> -->
+
 </body>
 </html>
