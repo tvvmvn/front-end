@@ -1207,5 +1207,257 @@
     }
   </script> -->
 
+
+<!-- 4/1 Friday -->
+
+<!-- Explaining createElement and appendChild, innerHTML ... -->
+
+<!-- Let's make some list! -->
+
+<!-- <div id="root"></div>
+
+<script>
+  var fruits = ['a', 'b', 'c']
+
+  var ul = document.createElement('ul');
+
+  fruits.forEach(fruit => {
+    var li = document.createElement('li');
+    li.innerHTML = fruit
+    ul.appendChild(li)
+  })
+
+  document.getElementById('root').appendChild(ul)
+
+</script> -->
+
+
+<!-- <div id="root"></div>
+
+<script>
+  var fruits = [
+    { name: 'apple', cost: 10 },
+    { name: 'banana', cost: 5 },
+    { name: 'kiwi', cost: 3 },
+  ]
+
+  var ul = document.createElement('ul');
+
+  fruits.forEach(fruit => {
+    var li = document.createElement('li');
+    li.innerHTML = `${fruit.name}, ${fruit.cost} dollors`;
+    ul.appendChild(li)
+  })
+
+  document.getElementById('root').appendChild(ul)
+
+</script> -->
+
+<!-- <table>
+  <tr>
+    <th>name</th>
+    <th>design</th>
+    <th>cost</th>
+  </tr>
+</table>
+
+
+<script>
+var table = document.querySelector('table')
+
+ var cars = [
+   { name: 'g', design: 100, cost: 10 },
+   { name: 's', design: 90, cost: 9 },
+   { name: 'c', design: 80, cost: 8 },
+ ];
+
+ cars.forEach(car => {
+   var tr = document.createElement('tr')
+   tr.innerHTML = `
+   <td>${car.name}</td>
+   <td>${car.design}</td>
+   <td>${car.cost}</td>
+    `
+    table.appendChild(tr)
+ })
+</script> -->
+
+  
+<!-- <h1>Todo list</h1>
+
+<input type="text"><button>add</button>
+
+<ul>
+  <li>Eat <span onclick="deleteItem(this)">&times;</span></li>
+  <li>Sleep <span onclick="deleteItem(this)">&times;</span></li>
+  <li>Repeat <span onclick="deleteItem(this)">&times;</span></li>
+</ul>
+
+<script>
+
+var ul = document.querySelector('ul')
+var input = document.querySelector('input')
+var button = document.querySelector('button');
+
+button.addEventListener('click', App)
+
+
+function App() {
+  // confirm value
+  console.log(input.value)
+
+  if (input.value === '') {
+    alert('required');
+    return;
+  }
+
+  var li = document.createElement('li')
+  li.innerHTML = `${input.value} <span onclick=deleteItem(this)>&times;</span>`
+  ul.appendChild(li)
+
+  // initialize input
+  input.value = ''
+}
+
+function deleteItem(el) {
+  el.parentElement.style.display = 'none'
+}
+</script> -->
+
+
+<!-- <h1 id="count"></h1>
+<button id="btn">add</button>
+
+<script>
+
+  var count = document.getElementById('count');
+  var btn = document.getElementById('btn');
+
+  var num = 0;
+
+  count.innerHTML = num;
+
+  btn.addEventListener('click', () => {
+    num++
+    count.innerHTML = num;
+  })
+</script> -->
+
+
+<!-- <h1 id="count">0</h1>
+<button id="btn">add</button> -->
+
+<!-- <script>
+  var count = document.getElementById('count');
+  var btn = document.getElementById('btn');
+
+  var num;
+
+  if (localStorage.getItem('count') === null) {
+    num = 0;
+  } else {
+    num = localStorage.getItem('count');
+  }
+
+  count.innerHTML = num;
+
+  btn.addEventListener('click', () => {
+    num++
+    localStorage.setItem('count', num);
+    
+    count.innerHTML = num;
+  })
+</script> -->
+
+
+<!-- <h1 id="count">0</h1>
+<button id="down">-</button> 
+<button id="up">+</button> 
+
+<script>
+  var count = document.getElementById('count');
+  var down = document.getElementById('down');
+  var up = document.getElementById('up')
+
+  var num;
+
+  if (localStorage.getItem('count') === null) {
+    num = 0;
+  } else {
+    num = localStorage.getItem('count');
+  }
+
+  count.innerHTML = num;
+
+  down.addEventListener('click', () => {
+
+    if (num===0) {
+      alert()
+      return;
+    }
+
+    num--
+    localStorage.setItem('count', num);
+    
+    count.innerHTML = num;
+  })
+
+  up.addEventListener('click', () => {
+    num++
+    localStorage.setItem('count', num);
+    
+    count.innerHTML = num;
+  })
+</script> -->
+
+<!-- <h1>Voting</h1>
+
+<button onclick="voting(1)">1</button>
+<button onclick="voting(2)">2</button>
+<button onclick="voting(3)">3</button>
+<button onclick="voting(4)">4</button>
+
+<p id="result"></p>
+<button onclick="getResult()">result</button>
+
+<script>
+
+var arr;
+
+if (localStorage.getItem('vote') === null) {
+  arr = [
+    { id: 1, count: 0 },
+    { id: 2, count: 0 },
+    { id: 3, count: 0 },
+    { id: 4, count: 0 }
+  ]
+  arr = JSON.stringify(arr);
+  localStorage.setItem('vote', arr);
+} else {
+  arr = localStorage.getItem('vote')
+}
+
+
+function voting(id) {
+
+  arr = JSON.parse(localStorage.getItem('vote'))
+
+  arr.map(v => {
+    if (v.id === id) {
+      v.count++
+    }
+  })
+
+  arr = JSON.stringify(arr)
+  localStorage.setItem('vote', arr);
+}
+
+function getResult() {
+  document.getElementById('result').innerHTML = 
+  JSON.stringify(localStorage.getItem('vote'));
+}
+</script> -->
+
+
 </body>
 </html>
