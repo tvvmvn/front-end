@@ -8,8 +8,8 @@
   <title>Document</title>
 </head>
 <body>
-  <!-- <div id="root"></div>
-  <script src="./script.js"></script> -->
+  <div id="root"></div>
+  <script src="./script.js"></script> 
 
   <!-- 3/28 Monday -->
 
@@ -1410,6 +1410,10 @@ function deleteItem(el) {
   })
 </script> -->
 
+
+<!-- 4/4 Monday -->
+
+
 <!-- <h1>Voting</h1>
 
 <button onclick="voting(1)">1</button>
@@ -1417,46 +1421,48 @@ function deleteItem(el) {
 <button onclick="voting(3)">3</button>
 <button onclick="voting(4)">4</button>
 
-<p id="result"></p>
+<div id="result">Show result</div>
 <button onclick="getResult()">result</button>
 
 <script>
-
-var arr;
-
 if (localStorage.getItem('vote') === null) {
-  arr = [
-    { id: 1, count: 0 },
-    { id: 2, count: 0 },
-    { id: 3, count: 0 },
-    { id: 4, count: 0 }
+  var DATA = [
+    { id: 1, name: 'g', count: 0 },
+    { id: 2, name: 's', count: 0 },
+    { id: 3, name: 'i', count: 0 },
+    { id: 4, name: 'c', count: 0 }
   ]
-  arr = JSON.stringify(arr);
-  localStorage.setItem('vote', arr);
-} else {
-  arr = localStorage.getItem('vote')
-}
 
+  localStorage.setItem('vote', JSON.stringify(DATA));
+} 
 
 function voting(id) {
+  var arr = JSON.parse(localStorage.getItem('vote'))
 
-  arr = JSON.parse(localStorage.getItem('vote'))
-
-  arr.map(v => {
-    if (v.id === id) {
-      v.count++
+  arr.map(item => {
+    if (item.id === id) {
+      item.count++
     }
   })
 
-  arr = JSON.stringify(arr)
-  localStorage.setItem('vote', arr);
+  localStorage.setItem('vote', JSON.stringify(arr));
 }
 
 function getResult() {
-  document.getElementById('result').innerHTML = 
-  JSON.stringify(localStorage.getItem('vote'));
+  var ul = document.createElement('ul');
+
+  JSON.parse(localStorage.getItem('vote')).map(item => {
+    var li = document.createElement('li');
+    li.innerHTML = `${item.id} ${item.name}, ${item.count}`
+    ul.appendChild(li)
+  })
+
+  document.getElementById('result').replaceChildren(ul);
 }
 </script> -->
+
+
+<!-- Shopping Cart -->
 
 
 </body>

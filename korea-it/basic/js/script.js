@@ -1,38 +1,38 @@
 // Helper 
-function createElement(node) {
-  try {
-    if (node === false) {
-      node = '';
-    }
+// function createElement(node) {
+//   try {
+//     if (node === false) {
+//       node = '';
+//     }
 
-    if (typeof node === 'string') {
-      return document.createTextNode(node);
-    }
+//     if (typeof node === 'string') {
+//       return document.createTextNode(node);
+//     }
 
-    const $el = document.createElement(node.type);
+//     const $el = document.createElement(node.type);
 
-    Object.keys(node.props).map(prop => {
-      if (prop.match(/^on/)) {
-        $el.addEventListener(prop.slice(2).toLocaleLowerCase(), node.props[prop]) 
-      } else if (typeof node.props[prop] === 'boolean') {
-        if (node.props[prop]) {
-          $el.setAttribute(prop, '')
-        } 
-      } else {
-        $el.setAttribute(prop, node.props[prop]);
-      }
-    })
+//     Object.keys(node.props).map(prop => {
+//       if (prop.match(/^on/)) {
+//         $el.addEventListener(prop.slice(2).toLocaleLowerCase(), node.props[prop]) 
+//       } else if (typeof node.props[prop] === 'boolean') {
+//         if (node.props[prop]) {
+//           $el.setAttribute(prop, '')
+//         } 
+//       } else {
+//         $el.setAttribute(prop, node.props[prop]);
+//       }
+//     })
     
-    node.children.map(c => {
-      $el.appendChild(createElement(c))
-    })
+//     node.children.map(c => {
+//       $el.appendChild(createElement(c))
+//     })
 
-    return $el;
+//     return $el;
     
-  } catch (err) {
-    console.error(err);
-  }
-}
+//   } catch (err) {
+//     console.error(err);
+//   }
+// }
 
 // type(prototype)
 // operator
@@ -576,10 +576,316 @@ function createElement(node) {
 // console.log(document.querySelector('h1').childElementCount)
 
 
+// 4/4 Monday
 
 
+// class/prototype
+// var, let, const
+// arraw function
+
+// try and catch
+// getter/setter
+// promise async/await
+// regex
+
+// ajax/fetch
+// cookie
 
 
+// Global Scope
+// declared outside any function have global scope
+//  - var, let, const
 
+// Function(Local) Scope 
+// - var, let, const
+
+// Block Scope 
+// - let, const
+
+
+// var fruit = 'apple'
+// console.log(fruit)
+
+// var fruit;
+// fruit = 'apple'
+// console.log(fruit)
+
+// var fruit = 'apple'
+// var fruit = 'mango'
+
+// console.log(fruit)
+
+// not recommended
+// var fruit = 'apple'
+// fruit = 'banana'
+// console.log(fruit)
+
+
+// var person;
+// var age = 20
+
+// if (age > 0) {
+//   person = 'adult'
+// } else {
+//   person = 'kids'
+// }
+
+// console.log(person)
+
+
+// "use strict"
+
+// for (i=0; i<5; i++) {
+//   console.log(i)
+// }
+
+// let fruit;
+// fruit = 'apple'
+// console.log(fruit)
+
+// let fruit = 'apple'
+// let fruit = 'mango'
+
+// console.log(fruit) // error(Identifier 'fruit' has already been declared)
+
+// let fruit = 'apple'
+// fruit = 'mango'
+
+// console.log(fruit)
+
+
+// let person;
+// let age = 20
+
+// if (age > 18) {
+//   person = 'adult'
+// } else {
+//   person = 'kids'
+// }
+
+// console.log(person)
+
+// const fruit = 'apple'
+// fruit = 'orange' // assignment to constant variable
+
+// const fruit = 'apple' 
+// const fruit = 'mango' // Identifier 'fruit' has already been delclared
+
+// console.log(fruit)
+
+// const fruit; // Missing initializer in const declaration.
+
+
+// ** Global Scope
+
+// var fruit = 'apple' // Global Scope
+
+// f()
+
+// function f() {
+//   console.log(fruit)
+// }
+
+// let fruit = 'apple' // Global Scope
+
+// f()
+
+// function f() {
+//   console.log(fruit)
+// }
+
+// const fruit = 'apple' // Global Scope
+
+// f()
+
+// function f() {
+//   console.log(fruit)
+// }
+
+
+// ** Function Scope (Local Scope)
+
+// f()
+
+// function f() {
+//   var fruit = 'apple' // function scope
+//   let fruit = 'apple' // function scope
+//   const fruit = 'apple' // function scopre
+// }
+
+// console.log(fruit) // Not accesible
+
+
+// var fruit = 'apple'
+// let fruit = 'apple';
+// const fruit = 'apple';
+
+// f()
+
+// function f() {
+//   // var fruit = 'banana'
+//   // let fruit = 'banana'
+//   const fruit = 'banana'
+//   console.log(fruit) // var, let, const - banana
+// }
+
+// console.log(fruit) // apple
+
+
+// {
+//   var v = 'v'
+//   let l = 'let'
+//   const c = 'const'
+// }
+
+// for, if, ...
+// differ from Function Scope!
+
+// console.log(v)
+// console.log(l) // l is not defined
+// console.log(c) // c is not defined
+
+
+// let person;
+// let age = 20;
+
+// if (age > 18) {
+//   person = 'adult'
+// } else {
+//   person = 'kids'
+// }
+
+// console.log(person) // works
+
+
+// let age = 20;
+
+// if (age > 18) {
+//   let person = 'adult'
+// } else {
+//   let person = 'kids'
+// }
+
+// console.log(person) // not works
+
+
+// const person;
+// let age = 20;
+
+// if (age > 18) {
+//   person = 'adult'
+// } else {
+//   person = 'kids'
+// }
+
+// console.log(person) // not works (Missing initialzier in const declaration)
+
+// let result = 0;
+
+// for (i=0; i<5; i++) {
+//   result += i
+// }
+
+// console.log(result)
+
+
+// for (i=0; i<5; i++) {
+//   let result = i;
+// }
+
+// console.log(result);
+
+// f()
+
+
+// ** Function Declaration and Function Expression
+// Arrow function to shorten F.E
+
+
+// function declaration
+// function f() {
+//   console.log('hello')
+// }
+
+// function expression (not hoisted)
+// var f = function () {
+//   console.log('hello')
+// }
+
+// f() // f is not a function
+// console.log(f) // undefined
+
+
+// // arrow function (not hoisted)
+// var f = () => { 
+//   console.log('hello')
+// }
+
+// var f = (d) => {
+//   console.log(d)
+// }
+
+// var f = d => {
+//   console.log(d)
+// }
+
+// var f = d => console.log(d) // has only one statement, brace is removable
+
+// f('hello')
+
+// var f = d => d + 1
+
+// console.log(f(0))
+
+
+// Prototype and Class
+// Inheritance
+
+// var fruit = 'apple'
+// fruit.toUpperCase();
+
+// var person = {
+//   firstName: 'John',
+//   lastName: 'Doe',
+//   fullName: function () {
+//     return this.firstName + ' ' + this.lastName
+//   }
+// }
+// console.log(person.fullName());
+
+// console.log(fruit.__proto__)
+
+// var num = 0;
+
+// console.log(num.toString())
+
+// console.log(num.__proto__)
+
+// var date = new Date()
+// console.log(date.toDateString());
+// console.log(date.__proto__)
+
+// var fruit = 'apple'
+// console.log(fruit.__proto__) // String (prototype object)
+// console.log(fruit.__proto__.__proto__) // Object (prototype object)
+
+
+// console.log(new String('apple').toUpperCase())
+
+
+// function User(username) {
+//   this.username = username
+//   this.bigName = function () {
+//     return this.username.toUpperCase()
+//   }
+// }
+// // function UserBusiness(location) {}
+
+// var user = new User('bunny')
+
+// console.log(user)
+// console.log(user.bigName())
+
+// Getter and Setter
 
 
