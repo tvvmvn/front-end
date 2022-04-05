@@ -8,7 +8,7 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="root"></div>
+  <!-- <div id="root"></div> -->
   <script src="./script.js"></script> 
 
   <!-- 3/28 Monday -->
@@ -1462,8 +1462,156 @@ function getResult() {
 </script> -->
 
 
-<!-- Shopping Cart -->
+<!-- 4/5 Tuesday -->
 
+
+<!-- <h1>Shop items</h1>
+<ul>
+  <li>
+    <b>Denim jackets</b>
+    <span>$10</span>
+    <button onclick="addToCart(1)">Add to cart</button>
+  </li>
+  <li>
+    <b>Hoodie</b>
+    <span>$5</span>
+    <button onclick="addToCart(2)">Add to cart</button>
+  </li>
+  <li>
+    <b>Cotton pants</b>
+    <span>$3</span>
+    <button onclick="addToCart(3)">Add to cart</button>
+  </li>
+</ul>
+
+<button onclick="showCart()">Show cart</button>
+<div id="shopping-cart"></div>
+
+<script>
+
+if (localStorage.getItem('cart') === null) {
+  var DATA = [
+    { id: 1, name: 'jacket', cost: 10, q: 0 },
+    { id: 2, name: 'hoodie', cost: 5, q: 0 },
+    { id: 3, name: 'pants', cost: 3, q: 0 },
+  ]
+  localStorage.setItem('cart', JSON.stringify(DATA))
+}
+
+function addToCart(id) {
+  var cart = JSON.parse(localStorage.getItem('cart'))
+
+  var updatedCart = cart.filter(item => {
+    if (item.id === id) {
+      item.q++
+    }
+    return item;
+  })
+
+  localStorage.setItem('cart', JSON.stringify(updatedCart))
+}
+
+function showCart() {
+  var cart = JSON.parse(localStorage.getItem('cart'))
+
+  var div = document.createElement('div');
+  var ul = document.createElement('ul');
+  var p = document.createElement('p');
+
+  var total = 0;
+
+  cart.map(item => {
+    let li = document.createElement('li');
+    li.innerHTML = `id: ${item.id}, name: ${item.name}, cost: $${item.cost * item.q}`
+    ul.appendChild(li);
+    total += (item.cost * item.q);
+  })
+
+  p.textContent = `TOTAL: $${total}`;
+
+  div.appendChild(ul)
+  div.appendChild(p)
+
+  document.getElementById('shopping-cart').replaceChildren(div);
+}
+</script> -->
+
+<h1>Shop</h1>
+<div id="root"></div>
+<button onclick="showCart()">Cart</button>
+<div id="result"></div>
+
+<script>
+  var DATA = [
+    { id: 1, name: 'Jacket', cost: 10 },
+    { id: 2, name: 'Pants', cost: 5 },
+    { id: 3, name: 'hat', cost: 3 },
+  ]
+
+  var ul = document.createElement('ul')
+
+  DATA.map(item => {
+    var li = document.createElement('li')
+    li.innerHTML = `${item.name}, $${item.cost} <button onclick="f(${item.id})">add</button>`
+    ul.appendChild(li);
+  })
+
+  document.getElementById('root').appendChild(ul);
+
+  function f(id) {
+    console.log(id);
+
+    if (localStorage.getItem('cart') === null) {
+      localStorage.setItem('cart', '[]');
+    }
+
+    var cart = JSON.parse(localStorage.getItem('cart'));
+
+    var isCart = false;
+
+    cart.map(item => {
+      if (item.id === id) {
+        item.q++
+        isCart = true;
+      }
+    })
+
+    if (isCart === false) {
+      DATA.map(data => {
+        if (data.id === id) {
+          cart.push({ id: data.id, q: 1 })
+        }
+      })
+    }
+    
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }
+
+  function showCart() {
+    var cart = JSON.parse(localStorage.getItem('cart'));
+
+    if (cart === null) {
+      return;
+    }
+
+    let ul = document.createElement('ul')
+
+    DATA.map(data => {
+      cart.map(item => {
+        if (data.id === item.id) {
+          var li = document.createElement('li');
+          console.log(item.q)
+          console.log(item.cost)
+          li.innerHTML = `${data.name}, q: ${item.q}, $${data.cost * item.q}`
+          ul.appendChild(li)
+        }
+      })
+    })
+
+    document.getElementById('result').replaceChildren(ul)
+  }
+
+</script>
 
 </body>
 </html>

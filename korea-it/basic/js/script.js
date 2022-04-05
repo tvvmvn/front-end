@@ -576,7 +576,7 @@
 // console.log(document.querySelector('h1').childElementCount)
 
 
-// 4/4 Monday
+// 4/4 Tuesday
 
 
 // class/prototype
@@ -887,5 +887,6 @@
 // console.log(user.bigName())
 
 // Getter and Setter
+
 
 
