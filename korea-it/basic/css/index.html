@@ -4770,7 +4770,7 @@ span {
   <div class="">2</div>
 </div> -->
 
-<style>
+<!-- <style>
 body {
   min-height: 1000px;
 }
@@ -4807,12 +4807,71 @@ nav a {
   var nav = document.querySelector('nav');
   var items = document.querySelectorAll('.item')
   
-  console.log(nav.scrollHeight)
+  console.log(nav.scrollHeight);
 
   btn.addEventListener('click', () => {
-    nav.style.height = nav.scrollHeight + 'px'
-    console.log(nav.style.height)
+    nav.style.height = nav.scrollHeight + 'px';
+    console.log(nav.style.height);
   })
+</script> -->
+
+<style>
+  .container {
+    border: 3px dashed;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: auto;
+    font-size: 0;
+  }
+  .container::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    transition: 0.5s;
+    display: inline-block
+  }
+  @media(min-width: 501px) {
+    .container {
+      width: 400px;
+    }
+  }
+  @media(min-width: 851px) {
+    .container {
+      width: 800px;
+    }
+  }
+</style>
+
+<div class="container">
+  <img src="../../img/bunny.jpeg" alt="">
+  <img src="../../img/cat.jpeg" alt="">
+  <img src="../../img/bird.jpeg" alt="">
+  <img src="../../img/duck.jpeg" alt="">
+  <img src="../../img/apple.jpeg" alt="">
+  <img src="../../img/pineapple.jpeg" alt="">
+  <img src="../../img/strawberry.jpeg" alt="">
+</div>
+
+<button onclick="navigateTo(-1)">PREV</button>
+<button onclick="navigateTo(1)">NEXT</button>
+
+<script>
+  var imgs = document.querySelectorAll('img')
+  
+  var index = 0;
+
+  function navigateTo(data) {
+    index += data
+    console.log(index)
+    imgs[0].style.marginLeft = `-${index * 200}px`
+  }
+
 </script>
 
 </body>
