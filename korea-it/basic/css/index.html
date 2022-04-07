@@ -5,14 +5,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <style>
-    html {
-      border: 3px solid pink
-    }
-    body {
-      border: 1px dashed;
-    }
-  </style>
 </head>
 <body>
   
@@ -4102,7 +4094,7 @@ span {
 <h1>Header</h1>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam eius accusantium aliquid deleniti cum amet facere necessitatibus hic, aliquam nobis sed perspiciatis debitis non voluptatem, in ea illo ab atque.</p> -->
 
-<style>
+<!-- <style>
   button {
     /* width: 50%; */
   }
@@ -4111,10 +4103,717 @@ span {
 <div class="container">
   <button>1</button>
   <button>2</button>
-</div>
+</div> -->
+
+<!-- Let all the flexible items be the same length, regardless of its content. -->
+<!-- <style>
+  .container {
+    border: 1px dashed;
+    display: flex;
+    width: 300px;
+    height: 200px;
+  }
+  .container div {
+    border: 1px dashed;
+    flex: 1
+  }
+</style>
+
+<div class="container">
+  <div class="">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+  <div class="">Ipsa, explicabo laudantium. Autem veniam sapiente iure nesciunt quae natus ipsa provident, quod maxime cumque impedit recusandae quibusdam dignissimos, perferendis, totam harum.</div>
+  <div class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, explicabo laudantium. Autem veniam sapiente iure nesciunt quae natus ipsa provident, quod maxime cumque impedit recusandae quibusdam dignissimos, perferendis, totam harum.</div>
+</div> -->
+
+<!-- <style>
+  .flex {
+    display: flex;
+    flex-wrap: wrap
+  }
+  .item {
+    border: 1px dashed;
+    flex: 50%;
+  }
+  
+  @media (max-width: 600px) {
+    .item {
+      flex: 100%;
+    }
+  }
+</style>
 
 
+<div class="flex">
+  <div class="item">1</div>
+  <div class="item">2</div>
+</div> -->
+
+<!-- <style>
+  .flex {
+    background-color: #ddd;
+    display: flex;
+    width: 300px;
+    height: 100px;
+  }
+  .flex div {
+    border: 1px dashed;
+    flex-grow: 0;
+    flex-shrink: 0;
+    /* Set the initial length of the flex items to 50 pixels */
+    flex-basis: 50px;
+  }
+</style>
+
+<div class="flex">
+  <div class=""></div>
+  <div class="" style="flex-basis: 200px;"></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+</div> -->
+
+
+<!-- <style>
+  .flex {
+    width: 400px;
+    height: 200px;
+    background-color: #ddd;
+    display: flex;
+    /* Set the direction of the flexible items in reverse order */
+    flex-direction: row-reverse;
+  }
+  .flex div {
+    border: 1px dashed;
+    width: 50px;
+    height: 50px;
+  }
+</style>
+
+<div class="flex">
+  <div class="">1</div>
+  <div class="">2</div>
+  <div class="">3</div>
+  <div class="">4</div>
+  <div class="">5</div>
+  <div class="">6</div>
+</div> -->
+
+<!-- <style>
+  .flex {
+    background-color: #ddd;
+    display: flex;
+    /* default */
+    flex-direction: row;
+  }
+  .item {
+    border: 1px dashed;
+    padding: 10px;
+    flex: 50%;
+  }
+
+  @media (max-width: 800px) {
+    .flex {
+      flex-direction: column;
+    }
+  }
+</style>
+
+
+<div class="flex">
+  <div class="item">1</div>
+  <div class="item">2</div>
+</div> -->
+
+
+<!-- <style>
+  .flex {
+    width: 200px;
+    height: 200px;
+    background-color: #ddd;
+    display: flex;
+    /* flex-flow: flex-direction flex-wrap */
+    flex-flow: wrap;
+    /* flex-flow: row-reverse wrap */
+  }
+  .flex div {
+    border: 1px dashed;
+    width: 50px;
+    height: 50px;
+  }
+
+</style>
+
+<div class="flex">
+  <div class="">1</div>
+  <div class="">2</div>
+  <div class="">3</div>
+  <div class="">4</div>
+  <div class="">5</div>
+  <div class="">6</div>
+</div> -->
+
+<!-- <style>
+  .flex {
+    background-color: #ddd;
+    display: flex;
+    width: 400px;
+    height: 100px;
+  }
+  .flex div {
+    border: 1px dashed;
+    flex-grow: 1
+  }
+  /* Let the second flex-item grow three times wider than the rest */
+  .flex div:nth-child(2) {
+    flex-grow: 3;
+  }
+
+</style>
+
+<div class="flex">
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+</div> -->
+
+<!-- <style>
+  .flex {
+    background-color: #ddd;
+    display: flex;
+    width: 450px;
+    height: 100px;
+  }
+  .flex div {
+    border: 1px dashed;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 100px;
+  }
+  /* Let the second flex-item shrink three times more than the rest. */
+  .flex div:nth-child(2) {
+    flex-shrink: 3;
+  }
+</style>
+
+
+<div class="flex">
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+</div> -->
+
+<!-- <style>
+  .flex {
+    width: 250px;
+    height: 200px;
+    display: flex;
+    background-color: #ddd;
+    /* Make the flexible items wrap if necessary */
+    flex-wrap: wrap;
+  }
+  .flex div {
+    border: 1px dashed;
+    width: 50px;
+    height: 50px;
+  }
+</style>
+
+<div class="flex">
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+</div> -->
+
+<!-- <style>
+  .flex {
+    display: flex;
+    background-color: #ddd;
+    /* flex-wrap: wrap */
+    flex-wrap: nowrap
+  }
+  .flex div {
+    border: 1px dashed;
+    width: 100px;
+    margin: 10px;
+  }
+</style>
+
+
+<div class="flex">
+  <div class="">1</div>
+  <div class="">2</div>
+  <div class="">3</div>
+  <div class="">4</div>
+  <div class="">5</div>
+  <div class="">6</div>
+</div> -->
+
+<!-- <style>
+  .flex {
+    display: flex;
+    background-color: #ddd;
+    /* stacks the flex items horizontally (left to right) */
+    /* flex-direction: row; */
+    /* stacks the flex items horizontally (right to left) */
+    /* flex-direction: row-reverse */
+    /* stacks flex items vertically (top to bottom)  */
+    /* flex-direction: column;  */
+    /* stacks flex items vertically (bottom to top)  */
+    /* flex-direction: column-reverse; */
+  }
+  /* Direct child elements of the flexible container automatically becomes flexible items. */
+  .flex div {
+    border: 1px dashed;
+    width: 50px;
+    padding: 20px;
+    margin: 5px;
+  }
+</style>
+
+<div class="flex">
+  <div class="">1</div>
+  <div class="">2</div>
+  <div class="">3</div>
+</div> -->
+
+<!-- <style>
+  .flex {
+    display: flex;
+    background-color: #ddd;
+    /* default */
+    /* flex-wrap: nowrap; */
+    /* flex items will wrap if necessary */
+    /* flex-wrap: wrap; */
+    /* flex items will wrap if necessary in reverse order */
+    flex-wrap: wrap-reverse
+  }
+  .flex div {
+    border: 1px dashed;
+    width: 100px;
+    height: 100px;
+  }
+</style>
+
+<div class="flex">
+  <div class="">1</div>
+  <div class="">2</div>
+  <div class="">3</div>
+  <div class="">4</div>
+  <div class="">5</div>
+  <div class="">6</div>
+  <div class="">7</div>
+</div> -->
+
+<!-- <style>
+  .flex {
+    background-color: #ddd;
+    display: flex;
+    /* shorthand for flex-direction and flex-wrap */
+    /* flex-flow: row wrap; */
+  }
+  .flex div {
+    border: 1px dashed;
+    width: 100px;
+    margin: 5px;
+  }
+</style>
+
+<div class="flex">
+  <div class="">1</div>
+  <div class="">2</div>
+  <div class="">3</div>
+  <div class="">4</div>
+  <div class="">5</div>
+</div> -->
+
+<!-- <style>
+  .flex {
+    background-color: #ddd;
+    display: flex;
+    /* default */
+    /* justify-content: flex-start */
+    /* aligns the flex items at the center */
+    /* justify-content: center; */
+    /* aligns at the end of container */
+    /* justify-content: flex-end; */
+    /* display flex items with space at before/between/after */
+    /* justify-content: space-around; */
+    /* display flex items with space at between */
+    /* justify-content: space-between; */
+  }
+  .flex div {
+    border: 1px dashed;
+    width: 100px;
+    margin: 5px;
+  }
+</style>
+
+<div class="flex">
+  <div class="">1</div>
+  <div class="">2</div>
+  <div class="">3</div>
+</div> -->
+
+<!-- <style>
+  .flex {
+    background-color: #ddd;
+    display: flex;
+    height: 200px;
+    /* default, stretch flex items to fill container */
+    /* align-items: stretch; */
+    /* aligns the flex items at the top of the container */
+    /* align-items: flex-start; */
+    /* aligns flex items in the middle of the container */
+    /* align-items: center; */
+    /* align flex items at the bottom */
+    /* align-items: flex-end; */
+    /* aligns flex items with their baseline */
+    align-items: baseline;
+  }
+  .flex div {
+    border: 1px dashed;
+    width: 100px;
+    /* height: 100px; */
+    margin: 5px;
+  }
+  .flex div:nth-child(2) {
+    font-size: 100px;
+  }
+  .flex div:nth-child(3) {
+    font-size: 50px;
+  }
+</style>
+
+<div class="flex">
+  <div class="">1</div>
+  <div class="">2</div>
+  <div class="">3</div>
+</div> -->
+
+
+<!-- align content -->
+
+<!-- <style>
+  .flex {
+    background-color: #ddd;
+    display: flex;
+    height: 500px;
+    flex-wrap: wrap;
+    /* overflow: scroll; */
+    /* default, stretches the flex lines to take up the remaining space */
+    /* align-content: stretch; */
+    /* displays flex items with equal space between them */
+    /* align-content: space-between */
+    /* displays the flex lines with space before/between/after them */
+    /* align-content: space-around; */
+    /* display the flex items in the middle of the container */
+    /* align-content: center; */
+    /* display flex lines at the start of the container */
+    /* align-content: flex-start; */
+    /* displays the flex lines at the end of the container */
+    align-content: flex-end;
+  }
+  .flex div {
+    border: 1px dashed;
+    width: 100px;
+    /* height: 100px; */
+    margin: 5px;
+  }
+</style>
+
+
+<div class="flex">
+  <div class="">1</div>
+  <div class="">2</div>
+  <div class="">3</div>
+  <div class="">4</div>
+  <div class="">5</div>
+  <div class="">6</div>
+  <div class="">7</div>
+  <div class="">8</div>
+  <div class="">9</div>
+</div> -->
+
+<!-- <style>
+  /* Perfect Centering */
+  .flex {
+    display: flex;
+    background-color: #ddd;
+    height: 300px;
+    /* horizontally  */
+    justify-content: center;
+    /* vertically */
+    align-items: center;
+  }
+  .flex div {
+    border: 1px dashed;
+    width: 100px;
+    height: 100px;
+  }
+</style>
+
+<div class="flex">
+  <div class=""></div>
+</div> -->
+
+<!-- <style>
+  .flex {
+    background-color: #ddd;
+    display: flex;
+  }
+  .flex div {
+    border: 1px dashed;
+    width: 50px;
+    height: 50px;
+  }
+  /* Use the order property to sort the flex items as you like */
+</style>
+
+<div class="flex">
+  <div class="" style="order: 4">1</div>
+  <div class="" style="order: 1">2</div>
+  <div class="" style="order: 2">3</div>
+  <div class="" style="order: 3">4</div>
+</div> -->
+
+<!-- <style>
+  .flex {
+    background-color: #ddd;
+    display: flex;
+  }
+  .flex div {
+    border: 1px dashed;
+    width: 50px;
+    height: 50px;
+  }
+  /* flex grow: default is 0 */
+  /* Make the third flex item grow eight times faster than other flex items. */
+</style>
+
+<div class="flex">
+  <div class="" style="flex-grow: 1">1</div>
+  <div class="" style="flex-grow: 1">2</div>
+  <div class="" style="flex-grow: 8">3</div>
+</div> -->
+
+<!-- <style>
+  .flex {
+    background-color: #ddd;
+    display: flex;
+    /* align-items: stretch; */
+  }
+  .flex div {
+    border: 1px dashed;
+    width: 100px;
+    height: 100px;
+  }
+  /* Do not let the third items shrink as much as the other flex items. */
+  .flex div:nth-child(3) {
+    flex-shrink: 0;
+  }
+</style>
+
+
+<div class="flex">
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+</div> -->
+
+<!-- <style>
+  .flex {
+    background-color: #ddd;
+    display: flex;
+    /* align-items: stretch; */
+  }
+  .flex div {
+    border: 1px dashed;
+    width: 100px;
+    height: 100px;
+  }
+  /* Set the initial length of the third flex item to 200 pixels. */
+  .flex div:nth-child(3) {
+    flex-basis: 200px;
+  }
+</style>
+
+
+<div class="flex">
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+</div> -->
+
+<!-- <style>
+  .flex {
+    background-color: #ddd;
+    display: flex;
+    /* align-items: stretch; */
+  }
+  .flex div {
+    border: 1px dashed;
+    width: 100px;
+    height: 100px;
+  }
+  /* Set the initial length of the third flex item to 200 pixels. */
+  .flex div:nth-child(3) {
+    /* flex: flex-grow flex-shrink flex-basis */
+    /* not growable, not shrinkable and initial length is 200px. */
+    flex: 0 0 200px;
+  }
+</style>
+
+<div class="flex">
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+</div> -->
+
+<!-- <style>
+  .flex {
+    display: flex;
+    background-color: #ddd;
+    height: 200px;
+  }
+  .flex div {
+    width: 100px;
+    /* height: 100px; */
+    border: 1px dashed;
+  }
+  /* aligns the selected flex item in the middle of the container. */
+  .flex div:nth-child(3) {
+    /* align-self: stretch */
+    /* align-self: center; */
+    /* align-self: flex-start; */
+    align-self: flex-end;
+  }
+</style>
+
+<div class="flex">
+  <div class="">1</div>
+  <div class="">2</div>
+  <div class="">3</div>
+  <div class="">4</div>
+</div> -->
+
+<!-- <style>
+  .flex {
+    display: flex;
+    background-color: #ddd;
+    /* stacks the flex items horizontally */
+    flex-direction: row;
+  }
+  .flex div {
+    border: 1px dashed;
+    flex: 50%;
+  }
+  @media (max-width: 600px) {
+    .flex {
+      /* stacks the flex items vertically */
+      flex-direction: column;
+    }
+  }
+</style>
+
+<div class="flex">
+  <div class="">1</div>
+  <div class="">2</div>
+</div> -->
+
+<!-- <style>
+  * {
+    box-sizing: border-box;
+  }
+  .flex {
+    display: flex;
+    /* flex-wrap: wrap, to reponsive flexbox */
+    flex-wrap: wrap;
+    background-color: #ddd;
+    /* stacks the flex items horizontally */
+    flex-direction: row;
+  }
+  .flex div {
+    border: 1px dashed;
+    flex: 50%;
+  }
+  @media (max-width: 600px) {
+    .flex div {
+      /* stacks the flex items vertically */
+      flex: 100%;
+    }
+  }
+</style>
+
+<div class="flex">
+  <div class="">1</div>
+  <div class="">2</div>
+</div> -->
+
+<style>
+body {
+  min-height: 1000px;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ddd;
+}
+nav {
+  border: 1px dashed;
+  height: 0;
+  transition: 0.5s;
+  overflow: hidden;
+}
+nav a {
+  display: block;
+}
+</style>
+
+<header>
+  <button>=</button> Apple
+  <nav>
+    <a class="item" href="">1</a>
+    <a class="item"href="">2</a>
+    <a class="item"href="">3</a>
+    <a class="item" href="">4</a>
+  </nav>
+</header>
+
+<script>
+  var btn = document.querySelector('button');
+  var nav = document.querySelector('nav');
+  var items = document.querySelectorAll('.item')
+  
+  console.log(nav.scrollHeight)
+
+  btn.addEventListener('click', () => {
+    nav.style.height = nav.scrollHeight + 'px'
+    console.log(nav.style.height)
+  })
+</script>
 
 </body>
 </html>
-
