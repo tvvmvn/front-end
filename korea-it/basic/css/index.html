@@ -4815,7 +4815,7 @@ nav a {
   })
 </script> -->
 
-<style>
+<!-- <style>
   .container {
     border: 3px dashed;
     width: 200px;
@@ -4834,7 +4834,7 @@ nav a {
     height: 200px;
     object-fit: cover;
     transition: 0.5s;
-    display: inline-block
+    /* display: inline-block; */
   }
   @media(min-width: 501px) {
     .container {
@@ -4862,17 +4862,33 @@ nav a {
 <button onclick="navigateTo(1)">NEXT</button>
 
 <script>
-  var imgs = document.querySelectorAll('img')
+  var imgs = document.querySelectorAll('img');
   
   var index = 0;
 
   function navigateTo(data) {
     index += data
     console.log(index)
-    imgs[0].style.marginLeft = `-${index * 200}px`
+    imgs[0].style.marginLeft = `-${index * 200}px`;
   }
+</script> -->
 
-</script>
+<!-- <style>
+  .container {
+    background-color: #ddd;
+    /* text-align: center; */
+  }
+  .container div {
+    border: 1px dashed;
+    max-width: 800px;
+    /* display: inline-block; */
+    margin: auto;
+  }
+</style>
+
+<div class="container">
+  <div class="">hello</div>
+</div> -->
 
 </body>
 </html>
