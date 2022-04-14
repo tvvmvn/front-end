@@ -8,11 +8,142 @@
   <title>Document</title>
 </head>
 <body>
-  <!-- <div id="root"></div> -->
   <script src="./script.js"></script> 
+
+  <!-- <h1>JavaScript DOM Basic</h1> -->
+
+  <!-- <div id="root"></div>
+
+  <script>
+    var fruits = ['a', 'b', 'c']
+
+    var ul = document.createElement('ul');
+
+    fruits.forEach(fruit => {
+      var li = document.createElement('li');
+      li.innerHTML = fruit
+      ul.appendChild(li)
+    })
+
+    document.getElementById('root').appendChild(ul)
+
+  </script> -->
+
+
+  <!-- <div id="root"></div>
+
+  <script>
+    var fruits = [
+      { name: 'apple', cost: 10 },
+      { name: 'banana', cost: 5 },
+      { name: 'kiwi', cost: 3 },
+    ]
+
+    var ul = document.createElement('ul');
+
+    fruits.forEach(fruit => {
+      var li = document.createElement('li');
+      li.innerHTML = `${fruit.name}, ${fruit.cost} dollors`;
+      ul.appendChild(li)
+    })
+
+    document.getElementById('root').appendChild(ul)
+
+  </script> -->
+
+  <!-- <table>
+    <tr>
+      <th>name</th>
+      <th>design</th>
+      <th>cost</th>
+    </tr>
+  </table>
+
+  <script>
+  var table = document.querySelector('table')
+
+  var cars = [
+    { name: 'g', design: 100, cost: 10 },
+    { name: 's', design: 90, cost: 9 },
+    { name: 'c', design: 80, cost: 8 },
+  ];
+
+  cars.forEach(car => {
+    var tr = document.createElement('tr')
+    tr.innerHTML = `
+    <td>${car.name}</td>
+    <td>${car.design}</td>
+    <td>${car.cost}</td>
+      `
+      table.appendChild(tr)
+  })
+  </script> -->
+
+    
+  <!-- <h1>Todo list</h1>
+
+  <input type="text"><button>add</button>
+
+  <ul>
+    <li>Eat <span onclick="deleteItem(this)">&times;</span></li>
+    <li>Sleep <span onclick="deleteItem(this)">&times;</span></li>
+    <li>Repeat <span onclick="deleteItem(this)">&times;</span></li>
+  </ul>
+
+  <script>
+
+  var ul = document.querySelector('ul')
+  var input = document.querySelector('input')
+  var button = document.querySelector('button');
+
+  button.addEventListener('click', App)
+
+
+  function App() {
+    // confirm value
+    console.log(input.value)
+
+    if (input.value === '') {
+      alert('required');
+      return;
+    }
+
+    var li = document.createElement('li')
+    li.innerHTML = `${input.value} <span onclick=deleteItem(this)>&times;</span>`
+    ul.appendChild(li)
+
+    // initialize input
+    input.value = ''
+  }
+
+  function deleteItem(el) {
+    el.parentElement.style.display = 'none'
+  }
+  </script> -->
+
+
+  <!-- <h1 id="count"></h1>
+  <button id="btn">add</button>
+
+  <script>
+
+    var count = document.getElementById('count');
+    var btn = document.getElementById('btn');
+
+    var num = 0;
+
+    count.innerHTML = num;
+
+    btn.addEventListener('click', () => {
+      num++
+      count.innerHTML = num;
+    })
+  </script> -->
+
 
   <!-- 3/28 Monday -->
 
+  <!-- <h1>Accordion</h1> -->
 
   <!-- <style>
     p {
@@ -82,13 +213,14 @@
           panel.style.height = '';
         }
 
-        console.log(panel.style.height)
-
+        console.log(panel.style.height);
       })
     }
 
   </script> -->
 
+
+  <!-- <h1>Tab Content</h1> -->
 
   <!-- <style>
     .tab-content {
@@ -140,6 +272,79 @@
     })
   </script> -->
 
+
+  <!-- <style>
+    .container {
+      border: 1px dashed;
+      position: relative;
+    }
+    .col {
+      height: 100%;
+    }
+    .col:first-child {
+      border: 1px solid;
+      position: absolute;
+      width: 200px;
+    }
+    .col:nth-child(2) {
+      border: 1px solid red;
+      margin-left: 200px;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 5px;
+    }
+    .tab-content {
+      display: none;
+      min-height: 300px;
+    }
+    .active {
+      display: block;
+    }
+  </style>
+  
+  <div class="container">
+    <div class="col">
+      <button class="btn" onclick="toggleTab('london')">London</button>
+      <button class="btn" onclick="toggleTab('seoul')">Seoul</button>
+      <button class="btn" onclick="toggleTab('tokyo')">Tokyo</button>
+    </div>
+    <div class="col">
+      <div id="london" class="tab-content">
+        <h3>London</h3>  
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id hic magnam officia veritatis itaque? Officia atque explicabo voluptatibus quas, qui reprehenderit voluptas tempore incidunt minima repellendus quis laudantium omnis architecto?</p>
+      </div>
+      <div id="seoul" class="tab-content">
+        <h3>Seoul</h3>  
+        <p>Seoul is...</p>
+      </div>
+      <div id="tokyo" class="tab-content">
+        <h3>Tokyo</h3>  
+        <p>Tokyo is...</p>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    var tabContents = document.getElementsByClassName('tab-content');
+
+    function toggleTab(city) {
+      for (i=0; i<tabContents.length; i++) {
+        tabContents[i].classList.remove('active')
+      }
+      document.getElementById(city).classList.add('active');
+    }
+
+    toggleTab('london')
+
+  </script> -->
+
+
+  <!-- <h1>Naviagation</h1> -->
 
   <!-- <style>
     nav {
@@ -241,6 +446,8 @@
 
 
   <!-- 3/29 Tuesday -->
+
+  <!-- <h1>Image and Carousel</h1> -->
 
   <!-- <style>
     img {
@@ -410,78 +617,6 @@
 
     showImage(0)
   </script> -->
-
-
-  <!-- <style>
-    .container {
-      border: 1px dashed;
-      position: relative;
-    }
-    .col {
-      height: 100%;
-    }
-    .col:first-child {
-      border: 1px solid;
-      position: absolute;
-      width: 200px;
-    }
-    .col:nth-child(2) {
-      border: 1px solid red;
-      margin-left: 200px;
-      padding: 10px;
-      box-sizing: border-box;
-    }
-    .btn {
-      display: block;
-      width: 100%;
-      padding: 5px;
-    }
-    .tab-content {
-      display: none;
-      min-height: 300px;
-    }
-    .active {
-      display: block;
-    }
-  </style>
-  
-  <div class="container">
-    <div class="col">
-      <button class="btn" onclick="toggleTab('london')">London</button>
-      <button class="btn" onclick="toggleTab('seoul')">Seoul</button>
-      <button class="btn" onclick="toggleTab('tokyo')">Tokyo</button>
-    </div>
-    <div class="col">
-      <div id="london" class="tab-content">
-        <h3>London</h3>  
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id hic magnam officia veritatis itaque? Officia atque explicabo voluptatibus quas, qui reprehenderit voluptas tempore incidunt minima repellendus quis laudantium omnis architecto?</p>
-      </div>
-      <div id="seoul" class="tab-content">
-        <h3>Seoul</h3>  
-        <p>Seoul is...</p>
-      </div>
-      <div id="tokyo" class="tab-content">
-        <h3>Tokyo</h3>  
-        <p>Tokyo is...</p>
-      </div>
-    </div>
-  </div>
-
-
-  <script>
-    var tabContents = document.getElementsByClassName('tab-content');
-
-    function toggleTab(city) {
-      for (i=0; i<tabContents.length; i++) {
-        tabContents[i].classList.remove('active')
-      }
-      document.getElementById(city).classList.add('active');
-    }
-
-    toggleTab('london')
-
-  </script> -->
-
 
   <!-- <style>
     
@@ -1109,6 +1244,7 @@
     navigateTo(0);
   </script> -->
 
+    <!-- <h1>Others</h1> -->
   
     <!-- <style>
       .fa-thumbs-up {
@@ -1210,139 +1346,7 @@
 
 <!-- 4/1 Friday -->
 
-<!-- Explaining createElement and appendChild, innerHTML ... -->
-
-<!-- Let's make some list! -->
-
-<!-- <div id="root"></div>
-
-<script>
-  var fruits = ['a', 'b', 'c']
-
-  var ul = document.createElement('ul');
-
-  fruits.forEach(fruit => {
-    var li = document.createElement('li');
-    li.innerHTML = fruit
-    ul.appendChild(li)
-  })
-
-  document.getElementById('root').appendChild(ul)
-
-</script> -->
-
-
-<!-- <div id="root"></div>
-
-<script>
-  var fruits = [
-    { name: 'apple', cost: 10 },
-    { name: 'banana', cost: 5 },
-    { name: 'kiwi', cost: 3 },
-  ]
-
-  var ul = document.createElement('ul');
-
-  fruits.forEach(fruit => {
-    var li = document.createElement('li');
-    li.innerHTML = `${fruit.name}, ${fruit.cost} dollors`;
-    ul.appendChild(li)
-  })
-
-  document.getElementById('root').appendChild(ul)
-
-</script> -->
-
-<!-- <table>
-  <tr>
-    <th>name</th>
-    <th>design</th>
-    <th>cost</th>
-  </tr>
-</table>
-
-
-<script>
-var table = document.querySelector('table')
-
- var cars = [
-   { name: 'g', design: 100, cost: 10 },
-   { name: 's', design: 90, cost: 9 },
-   { name: 'c', design: 80, cost: 8 },
- ];
-
- cars.forEach(car => {
-   var tr = document.createElement('tr')
-   tr.innerHTML = `
-   <td>${car.name}</td>
-   <td>${car.design}</td>
-   <td>${car.cost}</td>
-    `
-    table.appendChild(tr)
- })
-</script> -->
-
-  
-<!-- <h1>Todo list</h1>
-
-<input type="text"><button>add</button>
-
-<ul>
-  <li>Eat <span onclick="deleteItem(this)">&times;</span></li>
-  <li>Sleep <span onclick="deleteItem(this)">&times;</span></li>
-  <li>Repeat <span onclick="deleteItem(this)">&times;</span></li>
-</ul>
-
-<script>
-
-var ul = document.querySelector('ul')
-var input = document.querySelector('input')
-var button = document.querySelector('button');
-
-button.addEventListener('click', App)
-
-
-function App() {
-  // confirm value
-  console.log(input.value)
-
-  if (input.value === '') {
-    alert('required');
-    return;
-  }
-
-  var li = document.createElement('li')
-  li.innerHTML = `${input.value} <span onclick=deleteItem(this)>&times;</span>`
-  ul.appendChild(li)
-
-  // initialize input
-  input.value = ''
-}
-
-function deleteItem(el) {
-  el.parentElement.style.display = 'none'
-}
-</script> -->
-
-
-<!-- <h1 id="count"></h1>
-<button id="btn">add</button>
-
-<script>
-
-  var count = document.getElementById('count');
-  var btn = document.getElementById('btn');
-
-  var num = 0;
-
-  count.innerHTML = num;
-
-  btn.addEventListener('click', () => {
-    num++
-    count.innerHTML = num;
-  })
-</script> -->
-
+<!-- <h1>LocalStorage</h1> -->
 
 <!-- <h1 id="count">0</h1>
 <button id="btn">add</button> -->
@@ -1413,7 +1417,6 @@ function deleteItem(el) {
 
 <!-- 4/4 Monday -->
 
-
 <!-- <h1>Voting</h1>
 
 <button onclick="voting(1)">1</button>
@@ -1463,7 +1466,6 @@ function getResult() {
 
 
 <!-- 4/5 Tuesday -->
-
 
 <!-- <h1>Shop items</h1>
 <ul>
@@ -1610,7 +1612,6 @@ function showCart() {
 
     document.getElementById('result').replaceChildren(ul)
   }
-
 </script> -->
 
 </body>
