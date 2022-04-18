@@ -8,14 +8,12 @@
   <title>Document</title>
 </head>
 <body>
-  <script src="./script.js"></script> 
+  <!-- <script src="./script.js"></script> -->
 
-  <!-- <h1>JavaScript DOM Basic</h1> -->
 
   <!-- <div id="root"></div>
-
   <script>
-    var fruits = ['a', 'b', 'c']
+    var fruits = ['apple', 'banana', 'mango']
 
     var ul = document.createElement('ul');
 
@@ -26,12 +24,30 @@
     })
 
     document.getElementById('root').appendChild(ul)
-
   </script> -->
 
 
   <!-- <div id="root"></div>
+  <script>
+    var fruits = [
+      { name: 'apple', cost: 10 },
+      { name: 'banana', cost: 5 },
+      { name: 'kiwi', cost: 3 },
+    ]
 
+    var ul = document.createElement('ul');
+
+    for (i=0; i<fruits.length; i++) {
+      var li = document.createElement('li');
+      li.innerHTML = `${fruits[i].name}, ${fruits[i].cost} dollors`;
+      ul.appendChild(li)
+    }
+
+    document.getElementById('root').appendChild(ul)
+  </script> -->
+
+
+  <!-- <div id="root"></div>
   <script>
     var fruits = [
       { name: 'apple', cost: 10 },
@@ -48,96 +64,120 @@
     })
 
     document.getElementById('root').appendChild(ul)
-
   </script> -->
+
 
   <!-- <table>
     <tr>
       <th>name</th>
-      <th>design</th>
       <th>cost</th>
+      <th>sale</th>
     </tr>
   </table>
 
   <script>
   var table = document.querySelector('table')
 
-  var cars = [
-    { name: 'g', design: 100, cost: 10 },
-    { name: 's', design: 90, cost: 9 },
-    { name: 'c', design: 80, cost: 8 },
+  var fruits = [
+    { name: 'apple', cost: 10, onSale: true },
+    { name: 'banana', cost: 8, onSale: true },
+    { name: 'mango', cost: 5, onSale: false },
   ];
 
-  cars.forEach(car => {
-    var tr = document.createElement('tr')
+  for (i=0; i<fruits.length; i++) {
+    var tr = document.createElement('tr');
+
     tr.innerHTML = `
-    <td>${car.name}</td>
-    <td>${car.design}</td>
-    <td>${car.cost}</td>
-      `
-      table.appendChild(tr)
-  })
-  </script> -->
+    <td>${fruits[i].name}</td>
+    <td>${fruits[i].cost}</td>
+    <td>${fruits[i].onSale}</td>
+    `
 
-    
-  <!-- <h1>Todo list</h1>
-
-  <input type="text"><button>add</button>
-
-  <ul>
-    <li>Eat <span onclick="deleteItem(this)">&times;</span></li>
-    <li>Sleep <span onclick="deleteItem(this)">&times;</span></li>
-    <li>Repeat <span onclick="deleteItem(this)">&times;</span></li>
-  </ul>
-
-  <script>
-
-  var ul = document.querySelector('ul')
-  var input = document.querySelector('input')
-  var button = document.querySelector('button');
-
-  button.addEventListener('click', App)
-
-
-  function App() {
-    // confirm value
-    console.log(input.value)
-
-    if (input.value === '') {
-      alert('required');
-      return;
-    }
-
-    var li = document.createElement('li')
-    li.innerHTML = `${input.value} <span onclick=deleteItem(this)>&times;</span>`
-    ul.appendChild(li)
-
-    // initialize input
-    input.value = ''
-  }
-
-  function deleteItem(el) {
-    el.parentElement.style.display = 'none'
+    table.appendChild(tr)
   }
   </script> -->
 
+  <!-- <h1>Others</h1> -->
+  
+    <!-- <style>
+      .fa-thumbs-up {
+        font-size: 40px;
+        cursor: pointer
+      }
+      .active {
+        color: red;
+      }
+    </style>
 
-  <!-- <h1 id="count"></h1>
-  <button id="btn">add</button>
+  <i class="fa-solid fa-thumbs-up"></i>
 
   <script>
+    var thumbsUp = document.querySelector('.fa-thumbs-up');
 
-    var count = document.getElementById('count');
-    var btn = document.getElementById('btn');
-
-    var num = 0;
-
-    count.innerHTML = num;
-
-    btn.addEventListener('click', () => {
-      num++
-      count.innerHTML = num;
+    thumbsUp.addEventListener('click', (e) => {
+      e.target.classList.toggle('active')
     })
+  </script> -->
+
+
+  <!-- <style>
+    .loader {
+      border: 16px solid #3498db;
+      border-radius: 50%;
+      border-top: 16px solid #fff;
+      width: 120px;
+      height: 120px;
+      animation: spin 2s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+
+  <h1 id="message"></h1>
+  
+  <div id="loader" class="loader"></div>
+
+  <script>
+    // fetching data
+    setTimeout(() => {
+      document.getElementById('loader').style.display = 'none'
+      document.getElementById('message').innerHTML = 'Hello World'
+    }, 2000)
+  </script> -->
+
+
+  <!-- <style>
+    .fa-star {
+      font-size: 30px;
+      cursor: pointer
+    }
+    .active {
+      color: gold;
+    }
+  </style>
+
+  <h1>Rating</h1>
+  <i class="fa-solid fa-star" onclick="toggleStar(1)"></i>
+  <i class="fa-solid fa-star" onclick="toggleStar(2)"></i>
+  <i class="fa-solid fa-star" onclick="toggleStar(3)"></i>
+  <i class="fa-solid fa-star" onclick="toggleStar(4)"></i>
+  <i class="fa-solid fa-star" onclick="toggleStar(5)"></i>
+
+
+  <script>
+    var stars = document.querySelectorAll('.fa-star');
+
+    function toggleStar(data) {
+      for (star of stars) {
+        star.classList.remove('active')
+      }
+      for (i=0; i<data; i++) {
+        stars[i].classList.add('active')
+      }
+    }
   </script> -->
 
 
@@ -146,35 +186,16 @@
   <!-- <h1>Accordion</h1> -->
 
   <!-- <style>
-    p {
-      border: 1px dashed;
-      height: 0;
+    .accordion {
+      width: 100%;
+      padding: 10px;
+      text-align: left;
+      cursor: pointer;
     }
-  </style>
-
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum debitis mollitia maxime nisi dolorum soluta repellendus laudantium dolores veritatis ea aliquam dolor eius modi vitae consequatur, odit sunt nesciunt magnam!
-  </p>
-
-  <script>
-
-    var p = document.querySelector('p');
-
-    console.log(p.style.height)
-    console.log(p.clientHeight)
-    // including border and padding
-    console.log(p.offsetHeight)
-    // Get height of contents in element
-    console.log(p.scrollHeight)
-  </script> -->
-
-
-  <!-- <style>
     .panel {
       border: 1px dashed;
-      height: 0;
-      overflow: hidden;
-      transition: 0.5s;
+      padding: 10px;
+      display: none;
     }
   </style>
   
@@ -192,31 +213,106 @@
   </div>
 
   <script>
-
-    var acc = document.getElementsByClassName('accordion');
+    var accordionBtn = document.getElementsByClassName('accordion');
 
     var i;
 
-    for (i=0; i<acc.length; i++) {
-      acc[i].addEventListener('click', function (e) {
+    for (btn of accordionBtn) {
+      btn.addEventListener('click', e => {
+
+        var panel = e.target.nextElementSibling;
+
+        if (panel.style.display === 'block') {
+          panel.style.display = ''
+        } else {
+          panel.style.display = 'block'
+        }
+      })
+    }
+  </script>   -->
+
+  <!-- <style>
+    p {
+      border: 1px dashed;
+      /* padding: 5px; */
+      height: 0;
+      color: #555;
+    }
+  </style>
+
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum debitis mollitia maxime nisi dolorum soluta repellendus laudantium dolores veritatis ea aliquam dolor eius modi vitae consequatur, odit sunt nesciunt magnam!
+  </p>
+
+  <script>
+    var p = document.querySelector('p');
+    // It does not contain any style properties set in the <head> section or in any external style sheets.
+    // p.style.height = '100px'
+    // console.log(p.style.color)
+
+    // p.style
+    // console.log(p.style)
+    // just height
+    // console.log(p.style.height)
+    // including padding
+    console.log(p.clientHeight)
+    // including border and padding
+    // console.log(p.offsetHeight)
+    // Get height of contents in element
+    // including padding
+    console.log(p.scrollHeight)
+  </script> -->
+
+
+  <!-- <style>
+    .accordion {
+      width: 100%;
+      padding: 10px;
+      text-align: left;
+      cursor: pointer;
+    }
+    .panel {
+      /* border: 1px dashed; */
+      height: 0;
+      overflow: hidden;
+      transition: 0.5s;
+    }
+    .accordion:hover, .active {
+      background-color: #888;
+    }
+  </style>
+  
+  <button class="accordion">Section 1</button>
+  <div class="panel">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum necessitatibus minus nemo cum! Placeat id quos explicabo dolor nesciunt amet nostrum, similique modi quis. Temporibus veniam quae delectus eius dolore.</p>
+  </div>
+  <button class="accordion">Section 2</button>
+  <div class="panel">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum necessitatibus minus nemo cum! Placeat id quos explicabo dolor nesciunt amet nostrum, similique modi quis. Temporibus veniam quae delectus eius dolore.</p>
+  </div>
+  <button class="accordion">Section 3</button>
+  <div class="panel">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum necessitatibus minus nemo cum! Placeat id quos explicabo dolor nesciunt amet nostrum, similique modi quis. Temporibus veniam quae delectus eius dolore.</p>
+  </div>
+
+  <script>
+    var accBtns = document.getElementsByClassName('accordion');
+
+    var i;
+
+    for (accBtn of accBtns) {
+      accBtn.addEventListener('click', function (e) {
         e.target.classList.toggle('active');
         
         var panel = e.target.nextElementSibling;
-
-        console.log('...')
-
-        console.log(panel.style.height)
 
         if (panel.style.height === '') {
           panel.style.height = panel.scrollHeight + 'px'
         } else {
           panel.style.height = '';
         }
-
-        console.log(panel.style.height);
       })
     }
-
   </script> -->
 
 
@@ -230,7 +326,6 @@
       display: block;
     }
   </style>
-
   
   <div class="tab">
     <button class="btn" data-city="london">London</button>
@@ -252,7 +347,6 @@
   </div>
 
   <script>
-
     var btns = document.querySelectorAll('.btn');
 
     console.log(btns)
@@ -1242,105 +1336,6 @@
     }
 
     navigateTo(0);
-  </script> -->
-
-    <!-- <h1>Others</h1> -->
-  
-    <!-- <style>
-      .fa-thumbs-up {
-        font-size: 40px;
-        cursor: pointer
-      }
-      .active {
-        color: red;
-      }
-    </style>
-
-
-  <i class="fa-solid fa-thumbs-up"></i>
-
-  <script>
-    var thumbsUp = document.querySelector('.fa-thumbs-up');
-
-    thumbsUp.addEventListener('click', (e) => {
-      e.target.classList.toggle('active')
-    })
-
-  </script> -->
-
-
-  <!-- <style>
-    .loader {
-      border: 16px solid #3498db;
-      border-radius: 50%;
-      border-top: 16px solid #fff;
-      width: 120px;
-      height: 120px;
-      animation: spin 2s linear infinite;
-    }
-    
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-  </style>
-
-  <h1 id="message"></h1>
-  
-  <div id="loader" class="loader"></div>
-
-  <script>
-    setTimeout(() => {
-      document.getElementById('loader').style.display = 'none'
-      document.getElementById('message').innerHTML = 'Hello World'
-    }, 2000)
-  </script> -->
-
-
-  <!-- <style>
-    .fa-star {
-      font-size: 30px;
-      cursor: pointer
-    }
-    .active {
-      color: gold;
-    }
-  </style>
-
-  <h1>Rating</h1>
-  <i class="fa-solid fa-star" onclick="toggleStar(0)"></i>
-  <i class="fa-solid fa-star" onclick="toggleStar(1)"></i>
-  <i class="fa-solid fa-star" onclick="toggleStar(2)"></i>
-  <i class="fa-solid fa-star" onclick="toggleStar(3)"></i>
-  <i class="fa-solid fa-star" onclick="toggleStar(4)"></i>
-
-
-  <script>
-    var stars = document.querySelectorAll('.fa-star');
-
-    // stars.forEach((star, index) => {
-    //   star.addEventListener('click', () => {
-    //     console.log(index+1)
-
-    //     for (star of stars) {
-    //       star.classList.remove('active');
-    //     }        
-
-    //     for (i=0; i<index+1; i++) {
-    //       stars[i].classList.add('active')
-    //     }
-
-    //   })
-    // })
-
-    function toggleStar(data) {
-      for (star of stars) {
-        star.classList.remove('active')
-      }
-      for (i=0; i<data+1; i++) {
-        stars[i].classList.add('active')
-      }
-    }
   </script> -->
 
 

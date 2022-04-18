@@ -69,6 +69,52 @@
 
 
 
+// function myFunction(cb) {
+//   console.log(1)
+//   cb(2)
+// }
+
+// function myCallback(data) {
+//   console.log(data)
+// }
+
+// myFunction(myCallback)
+
+// function myFunction(cb) {
+//   console.log(1)
+//   cb(2)
+// }
+
+// function myCallback(data) {
+//   console.log(data)
+// }
+
+// myFunction((d) => {
+//   myCallback(d)
+// })
+
+// function myFunction(cb) {
+//   console.log(1)
+//   cb()
+// }
+
+// function myCallback(data) {
+//   console.log(data)
+// }
+
+// myFunction(() => {
+//   myCallback(2)
+// })
+
+// function myFunction(e, data) {
+//   console.log(e)
+//   console.log(data)
+// }
+
+// addEventListener('load', e => {
+//   myFunction(e, 'hello')
+// })
+
 
 
 
