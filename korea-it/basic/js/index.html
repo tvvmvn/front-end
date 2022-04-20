@@ -121,6 +121,43 @@
 
 
   <!-- <style>
+    .dropdown {
+        border: 3px dashed;
+        display: inline-block;
+        position: relative;
+    }
+    .dropdown-content {
+        border: 1px solid red;
+        width: 200px;
+        position: absolute;
+        top: 35px;
+        display: none;
+    }
+    .dropdown-content a {
+        display: block;
+    }
+    .active {
+        display: block;
+    }
+  </style>
+  <div class="dropdown">
+      <button class="drop-btn">메뉴</button>
+      <div class="dropdown-content">
+          <a href="">제네시스</a>
+          <a href="">스타리아</a>
+          <a href="">캐스퍼</a>
+      </div>
+  </div>
+  <script>
+      var dropBtn = document.querySelector('.drop-btn');
+      var dropdownContent = document.querySelector('.dropdown-content');
+      dropBtn.addEventListener('click', function () {
+          dropdownContent.classList.toggle('active');
+      })
+  </script> -->
+
+
+  <!-- <style>
     .loader {
       border: 16px solid #3498db;
       border-radius: 50%;
@@ -441,6 +478,126 @@
   <!-- <h1>Naviagation</h1> -->
 
   <!-- <style>
+    * {
+      padding: 0; 
+      margin: 0;
+      box-sizing: border-box;
+    }
+    header {
+      border: 3px dashed;
+    }
+    .header-inner {
+      background-color: #ddd;
+      padding: 5px;
+    }
+    nav {
+      border: 1px solid red;
+    }
+    nav {
+      display: none;
+    }
+    nav a {
+      display: block;
+      padding: 5px;
+      text-align: center;
+      border: 1px dashed;
+    }
+    .menu-btn {
+      padding: 0 10px;
+      cursor: pointer;
+    }
+    .active {
+      display: block;
+    }
+  </style>
+  
+  <header>
+    <div class="header-inner">
+      <h2><span class="menu-btn">#</span> Company</h2>
+    </div>
+    <nav>
+      <a href="">Home</a>
+      <a href="">About</a>
+      <a href="">Blog</a>
+    </nav>
+  </header>
+
+  <script>
+    var nav = document.querySelector('nav');
+    var menuBtn = document.querySelector('.menu-btn');
+
+    menuBtn.addEventListener('click', () => {
+      nav.classList.toggle('active')
+    })
+  </script> -->
+
+
+  <!-- <style>
+    * {
+      padding: 0; 
+      margin: 0;
+      box-sizing: border-box;
+    }
+    header {
+      border: 3px dashed;
+    }
+    .header-inner {
+      background-color: #ddd;
+      padding: 5px;
+    }
+    nav {
+      border: 1px solid red;
+    }
+    nav {
+      height: 0;
+      overflow: hidden;
+      transition: .5s;
+    }
+    nav a {
+      display: block;
+      padding: 5px;
+      text-align: center;
+      border: 1px dashed;
+    }
+    .menu-btn {
+      padding: 0 10px;
+      cursor: pointer;
+    }
+  </style>
+  
+  <header>
+    <div class="header-inner">
+      <h2><span class="menu-btn">#</span> Company</h2>
+    </div>
+    <nav>
+      <a href="">Home</a>
+      <a href="">About</a>
+      <a href="">Blog</a>
+    </nav>
+  </header>
+
+  <script>
+    var nav = document.querySelector('nav');
+    var menuBtn = document.querySelector('.menu-btn');
+
+    menuBtn.addEventListener('click', () => {
+      if (nav.style.height === '') {
+         nav.style.height = nav.scrollHeight + 'px'
+      } else {
+        nav.style.height = '';
+      }
+    })
+  </script> -->
+
+<!-- The z-index property specifies the stack order of an element.
+An element with greater stack order is always in front of an element with a lower stack order.
+Note: z-index only works on positioned elements 
+(position: absolute, position: relative, position: fixed, or position: sticky) 
+and flex items (elements that are direct children of display:flex elements).
+Note: If two positioned elements overlap without a z-index specified, 
+the element positioned last in the HTML code will be shown on top.  -->
+
+  <!-- <style>
     nav {
       border: 1px dashed;
       width: 280px;
@@ -497,48 +654,6 @@
   </script> -->
 
 
-  <!-- <style>
-    nav {
-      border: 1px dashed;
-      position: relative;
-    }
-    nav a {
-      display: block;
-      padding: 10px;
-      text-align: center;
-    }
-    #menuBtn {
-      position: absolute;
-      top: 10px; right: 10px;
-    }
-    .item {
-      display: none;
-    }
-    .active {
-      display: block;
-    }
-  </style>
-
-  <nav>
-    <span id="menuBtn">#</span>
-    <a class="header active" href="">HOME</a>
-    <a class="item" href="">About</a>
-    <a class="item" href="">Blog</a>
-    <a class="item" href="">Contact</a>
-  </nav>
-
-  <script>
-    var menuBtn = document.getElementById('menuBtn');
-    var items = document.querySelectorAll('.item');
-
-    menuBtn.addEventListener('click', function (e) {
-      items.forEach(function (item) {
-        item.classList.toggle('active')
-      })
-    })
-  </script> -->
-
-
   <!-- 3/29 Tuesday -->
 
   <!-- <h1>Image and Carousel</h1> -->
@@ -558,14 +673,18 @@
       height: 100%;
       background-color: rgba(0,0,0,0.5);
       display: none;
+
     }
     .container {
       display: none;
       position: fixed;
-      top: 50%;
+      top: 100px;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translateX(-50%);
       width: 400px;
+      /* auto: Set the stack order equal to its parents. default. */
+      /* number: Set the stack order of the element. Negative numbers are allowed */
+      z-index: auto;
     }
   </style>
 
@@ -577,18 +696,13 @@
     <img id="modal-img" src="" alt="">
   </div>
 
-
   <script>
     document.getElementById('img01').addEventListener('click', function (e) {
-      
       document.getElementById('modal-img').src = img01.src
       document.getElementById('container').style.display = 'block';
       document.getElementById('layer').style.display = 'block';
-      
     })
-
     // close image with x button and layer click
-
   </script> -->
 
 
@@ -617,9 +731,9 @@
     .container {
       display: none;
       position: fixed;
-      top: 50%;
+      top: 100px;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translateX(-50%);
       width: 400px;
     }
   </style>
@@ -636,7 +750,6 @@
 
 
   <script>
-
     var thumbnails = document.querySelectorAll('.thumbnail');
     var modalImg = document.getElementById('modal-img');
     var container = document.getElementById('container');
@@ -656,17 +769,13 @@
     })
   </script> -->
 
-
   <!-- <style>
-
     img {
       width: 300px;
       height: 300px;
       object-fit: cover;
     }
-
   </style>
-
 
   <div class="container">
     <img src="../../img/bunny.jpeg" alt="">
@@ -678,7 +787,6 @@
     <button id="prev" class="prev" onclick="showImage(-1)">prev</button>
     <button id="next" class="next" onclick="showImage(1)">next</button>
   </div>
-
 
   <script>
     var imgs = document.querySelectorAll('img');
@@ -712,13 +820,14 @@
     showImage(0)
   </script> -->
 
+
   <!-- <style>
-    
     .thumbnail {
       width: 100px;
       height: 100px;
       object-fit: cover;
       opacity: 0.8;
+      cursor: pointer;
     }
     .thumbnail:hover {
       opacity: 1
@@ -728,24 +837,23 @@
       height: 300px;
       object-fit: cover;
     }
+    .thumbnail-container {
+      font-size: 0;
+    }
   </style>
-
   
   <div class="container">
     <img id="display-image" src="" alt="">
   </div>
 
-
-  <div class="">
+  <div class="thumbnail-container">
     <img class="thumbnail" src="../../img/bunny.jpeg" alt="">
     <img class="thumbnail" src="../../img/cat.jpeg" alt="">
     <img class="thumbnail" src="../../img/bird.jpeg" alt="">
     <img class="thumbnail" src="../../img/duck.jpeg" alt="">
   </div>
 
-
   <script>
-
     var thumbnails = document.querySelectorAll('.thumbnail');
     var displayImage = document.getElementById('display-image')
     
@@ -760,20 +868,7 @@
     })
 
     getImage(thumbnails[0].src)
-
   </script> -->
-
-  
-  <!-- <div id="apple" class="mango banana"></div>
-
-  <script>
-    console.log(document.querySelector('div').id) // ok
-    console.log(document.querySelector('div').class) // undefined
-    console.log(document.querySelector('div').className) // ok
-  </script> -->
-
-  
-  <!-- 3/30 Wednesday -->
 
 
   <!-- <style>
@@ -801,7 +896,6 @@
       object-fit: cover;
     }
   </style>
-
   
   <div class="container">
     <img id="display-image" src="" alt="">
