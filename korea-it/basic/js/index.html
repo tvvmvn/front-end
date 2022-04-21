@@ -770,58 +770,6 @@ the element positioned last in the HTML code will be shown on top.  -->
   </script> -->
 
   <!-- <style>
-    img {
-      width: 300px;
-      height: 300px;
-      object-fit: cover;
-    }
-  </style>
-
-  <div class="container">
-    <img src="../../img/bunny.jpeg" alt="">
-    <img src="../../img/cat.jpeg" alt="">
-    <img src="../../img/bird.jpeg" alt="">
-  </div>
-
-  <div class="nav">
-    <button id="prev" class="prev" onclick="showImage(-1)">prev</button>
-    <button id="next" class="next" onclick="showImage(1)">next</button>
-  </div>
-
-  <script>
-    var imgs = document.querySelectorAll('img');
-    var prev = document.getElementById('prev')
-    var next = document.getElementById('next')
-
-    var index = 0;
-
-    function showImage(data) {
-
-      index += data
-      console.log(index)
-
-      imgs.forEach(img => {
-        img.style.display = 'none';
-      })
-
-      imgs[index].style.display = 'block';
-
-      prev.style.display = 'inline-block'
-      next.style.display = 'inline-block'
-
-      if (index===0) {
-        prev.style.display = 'none';
-      }
-      if (index===imgs.length-1) {
-        next.style.display = 'none';
-      }
-    }
-
-    showImage(0)
-  </script> -->
-
-
-  <!-- <style>
     .thumbnail {
       width: 100px;
       height: 100px;
@@ -870,227 +818,55 @@ the element positioned last in the HTML code will be shown on top.  -->
     getImage(thumbnails[0].src)
   </script> -->
 
-
   <!-- <style>
-    * { box-sizing: border-box; }
-    .thumbnail {
-      float: left;
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      opacity: 0.8;
-    }
-    .thumbnail:hover {
-      opacity: 1
-    }
-    .container {
-      /* border: 3px dashed; */
-      width: 400px;
-      height: 300px;
-    }
-    .container img {
-      /* width: 400px; */
-      /* height: 300px; */
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  </style>
-  
-  <div class="container">
-    <img id="display-image" src="" alt="">
-  </div>
-
-  <div class="nav">
-    <button class="prev" onclick="navigate(-1)">prev</button>
-    <button class="next" onclick="navigate(1)">next</button>
-  </div>
-
-  <div id="thumbnails" class="">
-    <img class="thumbnail" src="../../img/bunny.jpeg" onclick="jump(0)" alt="">
-    <img class="thumbnail" src="../../img/cat.jpeg" onclick="jump(1)" alt="">
-    <img class="thumbnail" src="../../img/bird.jpeg" onclick="jump(2)" alt="">
-    <img class="thumbnail" src="../../img/duck.jpeg" onclick="jump(3)" alt="">
-  </div>
-
-
-  <script>
-    var thumbnails = document.querySelectorAll('.thumbnail');
-    var displayImage = document.getElementById('display-image');
-    var prev = document.querySelector('.prev');
-    var next = document.querySelector('.next');
-    
-    var index = 0;
-
-    function navigate(data) {
-      index += data;
-      console.log(index)
-
-      getSrc(thumbnails[index].src)
-      hideButton(index)
-    }
-
-    function jump(data) {
-      index = data;
-      console.log(index)
-
-      getSrc(thumbnails[index].src)
-      hideButton(index)
-    }
-
-    function getSrc(src) {
-      displayImage.src = src
-    }
-
-    navigate(0)
-
-    function hideButton(index) {
-      prev.style.display = 'inline-block';
-      next.style.display = 'inline-block'
-      if (index===0) {
-        prev.style.display = 'none'
-      }
-      if (index===thumbnails.length-1) {
-        next.style.display = 'none'
-      }
-    }
-  </script> -->
-
-  <!-- <style>
-    * { box-sizing: border-box; }
-    .thumbnail {
-      float: left;
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      opacity: 0.8;
-    }
-    .thumbnail:hover {
-      opacity: 1
-    }
-    .container {
-      /* border: 3px dashed; */
-      position: fixed;
-      top: 50px;
-      right: 50%;
-      transform: translateX(50%);
-      width: 400px;
-      height: 300px;
-      display: none;
-    }
-    .container img {
-      /* width: 400px; */
-      /* height: 300px; */
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .layer {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.8);
-      display: none;
-    }
-  </style>
-
-  <div id="thumbnails" class="">
-    <img class="thumbnail" src="../../img/bunny.jpeg" onclick="jump(0)" alt="">
-    <img class="thumbnail" src="../../img/cat.jpeg" onclick="jump(1)" alt="">
-    <img class="thumbnail" src="../../img/bird.jpeg" onclick="jump(2)" alt="">
-    <img class="thumbnail" src="../../img/duck.jpeg" onclick="jump(3)" alt="">
-  </div>
-
-  <div class="layer"></div>
-
-  <div class="container">
-    span.closeBtn 
-    <img id="display-image" src="" alt="">
-    <div class="nav">
-      <button class="prev" onclick="navigate(-1)">prev</button>
-      <button class="next" onclick="navigate(1)">next</button>
-    </div>
-  </div>
-
-  <script>
-    var container = document.querySelector('.container');
-    var thumbnails = document.querySelectorAll('.thumbnail');
-    var displayImage = document.getElementById('display-image');
-    var layer = document.querySelector('.layer');
-    var prev = document.querySelector('.prev');
-    var next = document.querySelector('.next');
-    
-    var index = 0;
-
-    function navigate(data) {
-      index += data;
-      console.log(index)
-
-      getSrc(thumbnails[index].src)
-      hideButton(index)
-    }
-
-    function jump(data) {
-      index = data;
-      console.log(index)
-
-      getSrc(thumbnails[index].src)
-      hideButton(index)
-
-      container.style.display = 'block';
-      layer.style.display = 'block';
-    }
-
-    function getSrc(src) {
-      displayImage.src = src
-    }
-
-    function hideButton(index) {
-      prev.style.display = 'inline-block';
-      next.style.display = 'inline-block'
-      if (index===0) {
-        prev.style.display = 'none'
-      }
-      if (index===thumbnails.length-1) {
-        next.style.display = 'none'
-      }
-    }
-
-    // Stop display
-    layer.addEventListener('click', stopDisplay);
-
-    function stopDisplay() {
-      container.style.display = 'none';
-      layer.style.display = 'none';
-    }
-
-  </script> -->
-
-
-  <!-- <style>
-    .container {
-      width: 200px;
-      height: 200px;
-      border: 3px dashed;
-      position: relative;
-    }
     img {
-      width: 100%;
-      height: 100%;
+      width: 300px;
+      height: 300px;
       object-fit: cover;
-      position: absolute;
-      opacity: 0.5;
     }
+
   </style>
 
   <div class="container">
     <img src="../../img/bunny.jpeg" alt="">
     <img src="../../img/cat.jpeg" alt="">
     <img src="../../img/bird.jpeg" alt="">
-  </div> -->
+  </div>
 
+  <div class="nav">
+    <button id="prev" class="prev" onclick="navigateTo(-1)">prev</button>
+    <button id="next" class="next" onclick="navigateTo(1)">next</button>
+  </div>
+
+  <script>
+    var imgs = document.querySelectorAll('img');
+    var prev = document.getElementById('prev');
+    var next = document.getElementById('next');
+
+    var index = 0;
+
+    function navigateTo(data) {
+      index += data
+      
+      if (index===-1) {
+        index = imgs.length-1
+      }
+      
+      if (index===imgs.length) {
+        index = 0
+      }
+      
+      console.log(index)
+
+      imgs.forEach(img => {
+        img.style.display = 'none';
+      })
+
+      imgs[index].style.display = 'block';
+    }
+
+    navigateTo(0);
+  </script> -->
 
   <!-- <style>
     .container {
@@ -1133,32 +909,68 @@ the element positioned last in the HTML code will be shown on top.  -->
       index += data;
       console.log(index)
 
+      if (index === -1) {
+        index = imgs.length -1
+      }
+      if (index === imgs.length) {
+        index = 0;
+      }
+
       imgs.forEach(img => {
         img.style.opacity = 0;
       })
 
       imgs[index].style.opacity = 1;
-
-      hideButton(index);
-    }
-
-    function hideButton(index) {
-      prev.style.display = 'inline-block'
-      next.style.display = 'inline-block'
-
-      if (index===0) {
-        prev.style.display = 'none'
-      }
-      if (index===imgs.length-1) {
-        next.style.display = 'none'
-      }
     }
 
     navigateTo(0);
-
   </script> -->
-  
 
+  <!-- <style>
+    .container {
+      border: 3px dashed;
+      width: 300px;
+      height: 300px;
+      /* overflow: hidden; */
+      white-space: nowrap;
+      font-size: 0;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* border: 1px solid red; */
+      display: inline-block;
+      transition: 0.5s;
+    }
+  </style>
+
+  <div class="container">
+    <img src="../../img/bunny.jpeg" alt="">
+    <img src="../../img/cat.jpeg" alt="">
+    <img src="../../img/bird.jpeg" alt="">
+  </div>
+
+  <div class="nav">
+    <button class="prev" onclick="navigateTo(-1)">prev</button>
+    <button class="next" onclick="navigateTo(1)">next</button>
+  </div>
+
+  <script>
+    var imgs = document.querySelectorAll('img');
+
+    var index = 0;
+
+    function navigateTo(data) {
+
+      index += data;
+      console.log(index)
+
+      imgs[0].style.marginLeft = `-${index * 300}px`;
+    }    
+  </script> -->
+
+  
   <!-- <style>
     .container {
       border: 3px dashed;
@@ -1244,61 +1056,34 @@ the element positioned last in the HTML code will be shown on top.  -->
     }, 3000)
   </script> -->
 
-
-  <!-- 3/31 Thursday -->
-
   <!-- <style>
-    .container {
-      /* display: flex; */
-      border: 1px solid red;
-      width: 300px;
-      height: 300px;
-      white-space: nowrap;
+    * { box-sizing: border-box; }
+    .thumbnail {
+      float: left;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      opacity: 0.8;
     }
-    .item {
-      width: 300px;
+    .thumbnail:hover {
+      opacity: 1
+    }
+    .container {
+      /* border: 3px dashed; */
+      width: 400px;
       height: 300px;
-      border: 1px dashed;
-      display: inline-block;
-      /* object-fit: cover; */
+    }
+    .container img {
+      /* width: 400px; */
+      /* height: 300px; */
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   </style>
   
   <div class="container">
-    not works
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
-    it works -->
-    <!-- <img src="../../img/bunny.jpeg" alt="" class="item">
-    <img src="../../img/bunny.jpeg" alt="" class="item">
-    <img src="../../img/bunny.jpeg" alt="" class="item"> -->
-  <!-- </div> -->
-
-  <!-- <style>
-    .container {
-      border: 3px dashed;
-      width: 300px;
-      height: 300px;
-      display: flex;
-      /* overflow: hidden; */
-      /* white-space: nowrap; */
-    }
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      /* border: 1px solid red; */
-      /* display: inline-block; */
-      transition: 0.5s;
-    }
-  </style>
-
-
-  <div class="container">
-    <img src="../../img/bunny.jpeg" alt="">
-    <img src="../../img/cat.jpeg" alt="">
-    <img src="../../img/bird.jpeg" alt="">
+    <img id="display-image" src="" alt="">
   </div>
 
   <div class="nav">
@@ -1306,134 +1091,153 @@ the element positioned last in the HTML code will be shown on top.  -->
     <button class="next" onclick="navigateTo(1)">next</button>
   </div>
 
-  <script>
-    var imgs = document.querySelectorAll('img');
+  <div id="thumbnails" class="">
+    <img class="thumbnail" src="../../img/bunny.jpeg" onclick="jumpTo(0)" alt="">
+    <img class="thumbnail" src="../../img/cat.jpeg" onclick="jumpTo(1)" alt="">
+    <img class="thumbnail" src="../../img/bird.jpeg" onclick="jumpTo(2)" alt="">
+    <img class="thumbnail" src="../../img/duck.jpeg" onclick="jumpTo(3)" alt="">
+  </div>
 
+  <script>
+    var thumbnails = document.querySelectorAll('.thumbnail');
+    var displayImage = document.getElementById('display-image');
+    var prev = document.querySelector('.prev');
+    var next = document.querySelector('.next');
+    
     var index = 0;
 
     function navigateTo(data) {
-
       index += data;
       console.log(index)
 
-      imgs.forEach(img => {
-        img.style.transform = `translateX(-${index * 100}%)`;
-      })
-    }    
-  </script> -->
+      if (index === -1) {
+        index = thumbnails.length-1
+      }
+      if (index===thumbnails.length) {
+        index = 0
+      }
 
+      getSrc(thumbnails[index].src)
+    }
+
+    function jumpTo(data) {
+      index = data;
+      console.log(index)
+
+      getSrc(thumbnails[index].src)
+    }
+
+    function getSrc(src) {
+      displayImage.src = src
+    }
+
+    navigateTo(0)
+  </script> -->
 
   <!-- <style>
-    .container {
-      border: 1px dashed;
-      overflow: auto;
-    }
-    .col {
+    * { box-sizing: border-box; }
+    .thumbnail {
       float: left;
-      width: 33.33333%;
-      box-sizing: border-box;
-      border: 1px dashed;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      opacity: 0.8;
     }
-    img {
-      width: 100%;
+    .thumbnail:hover {
+      opacity: 1
     }
-  </style>
-
-
-  <button onclick="arrangeColumn(1)">1</button>
-  <button onclick="arrangeColumn(3)">3</button>
-
-
-  <div class="container">
-    <div class="col">
-      <img src="../../img/bunny.jpeg" alt="">
-      <img src="../../img/cat.jpeg" alt="">
-      <img src="../../img/bird.jpeg" alt="">
-    </div>
-    <div class="col">
-      <img src="../../img/cat.jpeg" alt="">
-      <img src="../../img/bird.jpeg" alt="">
-      <img src="../../img/bunny.jpeg" alt="">
-    </div>
-    <div class="col">
-      <img src="../../img/bunny.jpeg" alt="">
-      <img src="../../img/bird.jpeg" alt="">
-      <img src="../../img/cat.jpeg" alt="">
-    </div>
-  </div>
-
-  <script>
-
-    var cols = document.querySelectorAll('.col');
-
-    console.log(cols)
-    
-    function arrangeColumn(w) {
-      console.log(w)
-
-      console.log(100/w)
-
-      cols.forEach(col => {
-        col.style.width = (100 / w) + '%';
-      })
-    }
-
-  </script> -->
-
-
-<!-- <style>
-    img {
-      width: 300px;
+    .container {
+      /* border: 3px dashed; */
+      position: fixed;
+      top: 50px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 400px;
       height: 300px;
+      display: none;
+    }
+    .container img {
+      /* width: 400px; */
+      /* height: 300px; */
+      width: 100%;
+      height: 100%;
       object-fit: cover;
     }
-
+    .layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      display: none;
+    }
   </style>
 
-  <div class="container">
-    <img src="../../img/bunny.jpeg" alt="">
-    <img src="../../img/cat.jpeg" alt="">
-    <img src="../../img/bird.jpeg" alt="">
+  <div id="thumbnails" class="">
+    <img class="thumbnail" src="../../img/bunny.jpeg" onclick="jumpTo(0)" alt="">
+    <img class="thumbnail" src="../../img/cat.jpeg" onclick="jumpTo(1)" alt="">
+    <img class="thumbnail" src="../../img/bird.jpeg" onclick="jumpTo(2)" alt="">
+    <img class="thumbnail" src="../../img/duck.jpeg" onclick="jumpTo(3)" alt="">
   </div>
 
-  <div class="nav">
-    <button id="prev" class="prev" onclick="navigateTo(-1)">prev</button>
-    <button id="next" class="next" onclick="navigateTo(1)">next</button>
+  <div class="layer"></div>
+
+  <div class="container">
+    span.closeBtn 
+    <img id="display-image" src="" alt="">
+    <div class="nav">
+      <button class="prev" onclick="navigateTo(-1)">prev</button>
+      <button class="next" onclick="navigateTo(1)">next</button>
+    </div>
   </div>
 
   <script>
-    var imgs = document.querySelectorAll('img');
-    var prev = document.getElementById('prev');
-    var next = document.getElementById('next');
-
+    var container = document.querySelector('.container');
+    var thumbnails = document.querySelectorAll('.thumbnail');
+    var displayImage = document.getElementById('display-image');
+    var layer = document.querySelector('.layer');
+    var prev = document.querySelector('.prev');
+    var next = document.querySelector('.next');
+    
     var index = 0;
 
     function navigateTo(data) {
-
-      index += data
-      
-      if (index===-1) {
-        index = imgs.length-1
-      }
-      
-      if (index===imgs.length) {
-        index = 0
-      }
-      
+      index += data;
       console.log(index)
 
-      imgs.forEach(img => {
-        img.style.display = 'none';
-      })
+      if (index === -1) {
+        index = thumbnails.length-1
+      }
+      if (index === thumbnails.length) {
+        index = 0;
+      }
 
-      imgs[index].style.display = 'block';
+      getSrc(thumbnails[index].src);
     }
 
-    navigateTo(0);
+    function jumpTo(data) {
+      index = data;
+      console.log(index)
+
+      getSrc(thumbnails[index].src)
+      container.style.display = 'block';
+      layer.style.display = 'block';
+    }
+
+    function getSrc(src) {
+      displayImage.src = src
+    }
+
+    // Stop display
+    layer.addEventListener('click', stopDisplay);
+
+    function stopDisplay() {
+      container.style.display = 'none';
+      layer.style.display = 'none';
+    }
   </script> -->
 
-
-<!-- 4/1 Friday -->
 
 <!-- <h1>LocalStorage</h1> -->
 
