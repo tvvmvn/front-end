@@ -50,7 +50,7 @@
   <!-- <h1>Color</h1>
   <p>Name, RGB, RGBA, HEX</p> -->
 
-  <style>
+  <!-- <style>
     /* Name */
     .red { color: red; }
     /* RGB */
@@ -66,7 +66,7 @@
     <li class="green">Green</li>
     <li class="opacity">Blue</li>
     <li class="blue">Orange</li>
-  </ul>
+  </ul> -->
 
   <!-- <h1>Background</h1>
   <p>background-color, background-image</p> -->
@@ -149,6 +149,12 @@
       width: 200px;
       height: 200px;
     }
+    .width {
+      width: 600px;
+    }
+    .height {
+      height: 100px;
+    }
     .max-width {
       max-width: 600px;
     }
@@ -158,6 +164,8 @@
   </style>
 
   <p class="fixed">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ipsa dignissimos, reprehenderit inventore odit ex, molestias dolorem, beatae quidem ipsum deleniti esse rem consequatur suscipit temporibus?</p>
+  <p class="width">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ipsa dignissimos, reprehenderit inventore odit ex, molestias dolorem, beatae quidem ipsum deleniti esse rem consequatur suscipit temporibus?</p>
+  <p class="height">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ipsa dignissimos, reprehenderit inventore odit ex, molestias dolorem, beatae quidem ipsum deleniti esse rem consequatur suscipit temporibus?</p>
   <p class="max-width">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ipsa dignissimos, reprehenderit inventore odit ex, molestias dolorem, beatae quidem ipsum deleniti esse rem consequatur suscipit temporibus?</p>
   <p class="min-height">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ipsa dignissimos, reprehenderit inventore odit ex, molestias dolorem, beatae quidem ipsum deleniti esse rem consequatur suscipit temporibus?
@@ -265,6 +273,79 @@
 <div class="scale"></div>
 <div class="skew"></div> -->
 
+<!-- <h1>Display: flex</h1> -->
+<!-- <p>Reponsive</p> -->
+
+<!-- <style>
+  .flex {
+    display: flex;
+    background-color: #ddd;
+  }
+  .item {
+    border: 1px dashed;
+    flex: 33.33333%;
+  }
+</style>
+
+<div class="flex">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+</div> -->
+
+<!-- <style>
+  .flex {
+    display: flex;
+    background-color: #ddd;
+  }
+  .min-width, .item {
+    border: 1px dashed;
+  }
+  .min-width {
+    min-width: 100px;
+  }
+  .item {
+    width: 100%;
+  }
+</style>
+
+<div class="flex">
+  <div class="min-width">min-width</div>
+  <div class="item">item</div>
+</div> -->
+
+<h1>Media</h1>
+
+<style>
+  p {
+    border: 1px dashed;
+  }
+
+  @media (min-width: 600px) {
+    .min-width {
+      color: green
+    }
+  }
+  @media (min-width: 800px) {
+    .min-width {
+      color: blue;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .max-width {
+      color: red
+    }
+  }
+  @media (max-width: 600px) {
+    .max-width {
+      color: pink
+    }
+  }
+</style>
+
+<p class="min-width">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero consequatur mollitia a sequi veritatis. Adipisci odit corporis minus. Sed dolores maxime inventore accusantium ea consectetur natus quidem provident corrupti.</p>
+<p class="max-width">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero consequatur mollitia a sequi veritatis. Adipisci odit corporis minus. Sed dolores maxime inventore accusantium ea consectetur natus quidem provident corrupti.</p>
   
 </body>
 </html>
