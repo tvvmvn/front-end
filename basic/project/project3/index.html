@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../layout.css">
+</head>
+<body>
+
+  <!-- header and navigation-->
+  <div class="fixed-top">
+    <div class="header">
+      <h2 class="">Company</h2>
+    </div>
+    <ul class="nav border flex flex-col">
+      <li class="border"><a href="">Home</a></li>
+      <li class="border"><a href="">About</a></li>
+      <li class="border"><a href="">Posts</a></li>
+      <li class="border"><a href="">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero image -->
+  <div class="row">
+    <div class="slide-container relative">
+      <img class="slide-item" src="../../../w3img/la.jpeg" alt="">
+      <img class="slide-item" src="../../../w3img/ny.jpeg" alt="">
+      <img class="slide-item" src="../../../w3img/chicago.jpeg" alt="">
+      <div class="indicator">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <div class="row padding-48">
+    <div class="max-width-800">
+      <h1 class="text-center">THE BAND</h1>
+      <p class="text-center">We love music</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, veritatis consequuntur assumenda a ratione odio, omnis exercitationem nostrum, asperiores quia quasi quas nihil iure facere obcaecati deserunt numquam provident molestias.</p>
+
+      <div class="flex flex-col">
+        <div class="border flex-33" style="padding: 5%">
+          <h3>Name</h3>
+          <img src="../../../w3img/bandmember.jpeg" alt="">
+        </div>
+        <div class="border flex-33" style="padding: 5%">
+          <h3>Name</h3>
+          <img src="../../../w3img/bandmember.jpeg" alt="">
+        </div>
+        <div class="border flex-33" style="padding: 5%">
+          <h3>Name</h3>
+          <img src="../../../w3img/bandmember.jpeg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tour dates -->
+  <div class="row border bg-black padding-48">
+    <div class="max-width-800">
+      <h1 class="text-center text-white">TOUR DATES</h1>
+      <p class="text-white text-center">Remember to book your tickets!</p>
+
+      <div class="bg-white">
+        <ul>
+          <li>Septempber</li>
+          <li>October</li>
+          <li>November</li>
+        </ul>
+      </div>
+
+      <div class="">
+        <div class="flex flex-col">
+          <div class="border flex-33 bg-white" style="margin: 0 5px">
+            <img src="../../../w3img/newyork.jpeg" alt="">
+            <h3>Name</h3>
+            <p>Fri 27 Nov 2016</p>
+            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            <button class="btn" onclick="showModal()">But Tickets</button>
+          </div>
+          <div class="border flex-33 bg-white" style="margin: 0 5px">
+            <img src="../../../w3img/paris.jpeg" alt="">
+            <h3>Name</h3>
+            <p>Sat 28 Nov 2016</p>
+            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            <button class="btn" onclick="showModal()">But Tickets</button>
+          </div>
+          <div class="border flex-33 bg-white" style="margin: 0 5px">
+            <img src="../../../w3img/sanfran.jpeg" alt="">
+            <h3>Name</h3>
+            <p>Sun 29 Nav 2016</p>
+            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            <button class="btn" onclick="showModal()">But Tickets</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal form -->
+  <div class="modal bg-white">
+    <form action="">
+      <h1>Tickets</h1>
+      <div class="form-group">
+        <label for="">Tickets, $15 per person</label>
+        <input class="width-100" type="text" placeholder="How many?">  
+      </div>
+      <div class="form-group">
+        <label for="">Send to</label>
+        <input class="width-100" type="text" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <button class="btn width-100">PAY</button>
+      </div>
+      <div class="form-group">
+        <span>Need <a href="">help?</a></span>
+      </div>
+    </form>
+  </div>
+
+  <!-- Contact -->
+  <div class="row padding-48">
+    <div class="max-width-800">
+      <!-- Contact -->
+      <div class="">
+        <h1 class="text-center">Contact</h1>
+        <p class="text-center">Fan? Drop a note!</p>
+        <div class="flex flex-col">
+          <div class="flex-50">
+            <ul>
+              <li>Chicago, US</li>
+              <li>Phone: +00 151515</li>
+              <li>Email: mail@mail.com</li>
+            </ul>
+          </div>
+          <div class="flex-50">
+            <form action="">
+              <div class="flex">
+                <div class="flex-50">
+                  <input class="width-100" type="text" placeholder="Name"><br>
+                </div>
+                <div class="flex-50">
+                  <input class="width-100" type="text" placeholder="Email"><br>
+                </div>
+              </div>
+              <input class="width-100" type="text" placeholder="Message"><br>
+              <button class="btn">SEND</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- map -->
+      <div class="padding-48">
+        <img src="../../../w3img/map.jpeg" alt="">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <div class="footer bg-offwhite padding-48">
+    <div class="text-center">
+      <p>Some icons</p>
+      <small>Powered by w3.css</small>
+    </div>
+  </div>
+
+  <div class="layer"></div>
+
+
+  <script>
+    var imgs = document.querySelectorAll('.slide-item');
+    var dots = document.querySelectorAll('.dot');
+    var layer = document.querySelector('.layer');
+    var modal = document.querySelector('.modal');
+    
+    var index = -1
+
+    setInterval(slide, 3000)
+    slide()
+
+    function slide() {
+      index++
+      console.log(index)
+
+      if (index === imgs.length) {
+        index = 0;
+      }
+
+      for (img of imgs) {
+        img.style.display = 'none'
+      }
+      imgs[index].style.display = 'block';
+
+      // Indicator
+      dots.forEach(dot => {
+        dot.style.backgroundColor = '#ddd'
+      })
+      dots[index].style.backgroundColor = '#555';
+    }
+
+    function showModal() {
+      modal.style.display = 'block';
+      layer.style.display = 'block';
+    }
+
+    layer.addEventListener('click', () => {
+      modal.style.display = 'none';
+      layer.style.display = 'none';
+    })
+
+  </script>
+
+</body>
+</html>

@@ -10,7 +10,6 @@
 <body>
   <!-- <script src="./script.js"></script> -->
 
-
   <!-- <div id="root"></div>
   <script>
     var fruits = ['apple', 'banana', 'mango']
@@ -97,6 +96,7 @@
   }
   </script> -->
 
+
   <!-- <h1>Others</h1> -->
   
     <!-- <style>
@@ -118,7 +118,6 @@
       e.target.classList.toggle('active')
     })
   </script> -->
-
 
   <!-- <style>
     .dropdown {
@@ -868,72 +867,16 @@ the element positioned last in the HTML code will be shown on top.  -->
     navigateTo(0);
   </script> -->
 
-  <!-- <style>
-    .container {
-      border: 3px dashed;
-      width: 300px;
-      height: 300px;
-      position: relative;
-    }
-
-    .container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      transition: 1s;
-      /* top: 0; 
-      left: 0; */
-    }
-    
-  </style>
-
-  <div class="container">
-    <img src="../../img/bunny.jpeg" alt="">
-    <img src="../../img/cat.jpeg" alt="">
-    <img src="../../img/bird.jpeg" alt="">
-  </div>
-
-  <div class="nav">
-    <button class="prev" onclick="navigateTo(-1)">prev</button>
-    <button class="next" onclick="navigateTo(1)">next</button>
-  </div>
-
-  <script>
-    var imgs = document.querySelectorAll('img');
-    var prev = document.querySelector('.prev');
-    var next = document.querySelector('.next');
-    var index = 0;
-
-    function navigateTo(data) {
-      index += data;
-      console.log(index)
-
-      if (index === -1) {
-        index = imgs.length -1
-      }
-      if (index === imgs.length) {
-        index = 0;
-      }
-
-      imgs.forEach(img => {
-        img.style.opacity = 0;
-      })
-
-      imgs[index].style.opacity = 1;
-    }
-
-    navigateTo(0);
-  </script> -->
 
   <!-- <style>
     .container {
       border: 3px dashed;
       width: 300px;
       height: 300px;
-      /* overflow: hidden; */
+      overflow: hidden;
       white-space: nowrap;
       font-size: 0;
+      position: relative;
     }
     img {
       width: 100%;
@@ -943,67 +886,30 @@ the element positioned last in the HTML code will be shown on top.  -->
       display: inline-block;
       transition: 0.5s;
     }
-  </style>
-
-  <div class="container">
-    <img src="../../img/bunny.jpeg" alt="">
-    <img src="../../img/cat.jpeg" alt="">
-    <img src="../../img/bird.jpeg" alt="">
-  </div>
-
-  <div class="nav">
-    <button class="prev" onclick="navigateTo(-1)">prev</button>
-    <button class="next" onclick="navigateTo(1)">next</button>
-  </div>
-
-  <script>
-    var imgs = document.querySelectorAll('img');
-
-    var index = 0;
-
-    function navigateTo(data) {
-
-      index += data;
-      console.log(index)
-
-      imgs[0].style.marginLeft = `-${index * 300}px`;
-    }    
-  </script> -->
-
-  
-  <!-- <style>
-    .container {
-      border: 3px dashed;
-      width: 300px;
-      height: 300px;
-      position: relative;
-    }
-
-    .container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .indicator {
       position: absolute;
-      transition: 1s;
-      /* top: 0; 
-      left: 0; */
-    }
-    .dots {
-      position: absolute;
-      bottom: 10px; left: 50%;
+      bottom: 10px;
+      left: 50%;
       transform: translateX(-50%);
-
     }
-    .dot {
+    .indicator .dot {
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      margin: 0 2px;
-      display: inline-block;
       background-color: #ddd;
+      display: inline-block;
+      margin: 0 2px
     }
-    .active {
-      background-color: #888;
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .prev {
+      left: 0;
+    }
+    .next {
+      right: 0;
     }
   </style>
 
@@ -1011,13 +917,18 @@ the element positioned last in the HTML code will be shown on top.  -->
     <img src="../../img/bunny.jpeg" alt="">
     <img src="../../img/cat.jpeg" alt="">
     <img src="../../img/bird.jpeg" alt="">
-    
-    <div class="dots">
+    <div class="indicator">
       <span class="dot"></span>
       <span class="dot"></span>
       <span class="dot"></span>
     </div>
+    <div class="nav">
+      <button class="prev" onclick="navigateTo(-1)">&#10094;</button>
+      <button class="next" onclick="navigateTo(1)">&#10095;</button>
+    </div>
   </div>
+
+
 
   <script>
     var imgs = document.querySelectorAll('img');
@@ -1025,36 +936,37 @@ the element positioned last in the HTML code will be shown on top.  -->
     var next = document.querySelector('.next');
     var dots = document.querySelectorAll('.dot');
 
-    var index = -1;
+    var index = 0;
 
-    function navigateTo() {
-      index++
-
-      if (index===3) {
-        index = 0
-      }
-
+    function navigateTo(data) {
+      // index
+      index += data;
       console.log(index)
 
-      imgs.forEach(img => {
-        img.style.opacity = 0;
-      })
+      // Navigate button
+      prev.style.display = 'inline-block'
+      next.style.display = 'inline-block'
 
-      imgs[index].style.opacity = 1;
+      if (index === 0) {
+        prev.style.display = 'none'
+      }
+      if (index === imgs.length-1) {
+        next.style.display = 'none'
+      }
 
+      // Indicator
       dots.forEach(dot => {
-        dot.classList.remove('active')
+        dot.style.backgroundColor = '#ddd'
       })
+      dots[index].style.backgroundColor = '#555';
 
-      dots[index].classList.add('active');
-    }
+      // Move images
+      imgs[0].style.marginLeft = `-${index * 300}px`;
+    }    
 
-    navigateTo(0);
-
-    setInterval(function () {
-      navigateTo()
-    }, 3000)
+    navigateTo(0)
   </script> -->
+
 
   <!-- <style>
     * { box-sizing: border-box; }
@@ -1072,6 +984,7 @@ the element positioned last in the HTML code will be shown on top.  -->
       /* border: 3px dashed; */
       width: 400px;
       height: 300px;
+      position: relative;
     }
     .container img {
       /* width: 400px; */
@@ -1080,16 +993,27 @@ the element positioned last in the HTML code will be shown on top.  -->
       height: 100%;
       object-fit: cover;
     }
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .prev {
+      left: 0;
+    }
+    .next {
+      right: 0;
+    }
   </style>
   
   <div class="container">
     <img id="display-image" src="" alt="">
+    <div class="nav">
+      <button class="prev" onclick="navigateTo(-1)">&#10094;</button>
+      <button class="next" onclick="navigateTo(1)">&#10095;</button>
+    </div>
   </div>
 
-  <div class="nav">
-    <button class="prev" onclick="navigateTo(-1)">prev</button>
-    <button class="next" onclick="navigateTo(1)">next</button>
-  </div>
 
   <div id="thumbnails" class="">
     <img class="thumbnail" src="../../img/bunny.jpeg" onclick="jumpTo(0)" alt="">
@@ -1172,6 +1096,17 @@ the element positioned last in the HTML code will be shown on top.  -->
       background-color: rgba(0,0,0,0.8);
       display: none;
     }
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .prev {
+      left: 0;
+    }
+    .next {
+      right: 0;
+    }
   </style>
 
   <div id="thumbnails" class="">
@@ -1184,11 +1119,10 @@ the element positioned last in the HTML code will be shown on top.  -->
   <div class="layer"></div>
 
   <div class="container">
-    span.closeBtn 
     <img id="display-image" src="" alt="">
     <div class="nav">
-      <button class="prev" onclick="navigateTo(-1)">prev</button>
-      <button class="next" onclick="navigateTo(1)">next</button>
+      <button class="prev" onclick="navigateTo(-1)">&#10094;</button>
+      <button class="next" onclick="navigateTo(1)">&#10095;</button>
     </div>
   </div>
 
@@ -1241,10 +1175,27 @@ the element positioned last in the HTML code will be shown on top.  -->
 
 <!-- <h1>LocalStorage</h1> -->
 
-<!-- <h1 id="count">0</h1>
-<button id="btn">add</button> -->
+<!-- <h1 id="count"></h1>
+<button id="btn">add</button>
 
-<!-- <script>
+<script>
+  var count = document.getElementById('count');
+  var btn = document.getElementById('btn');
+
+  var num = 0;
+  count.innerHTML = num
+
+  btn.addEventListener('click', () => {
+    num++
+    count.innerHTML = num;
+  })
+</script> -->
+
+
+<!-- <h1 id="count"></h1>
+<button id="btn">add</button>
+
+<script>
   var count = document.getElementById('count');
   var btn = document.getElementById('btn');
 
@@ -1267,49 +1218,6 @@ the element positioned last in the HTML code will be shown on top.  -->
 </script> -->
 
 
-<!-- <h1 id="count">0</h1>
-<button id="down">-</button> 
-<button id="up">+</button> 
-
-<script>
-  var count = document.getElementById('count');
-  var down = document.getElementById('down');
-  var up = document.getElementById('up')
-
-  var num;
-
-  if (localStorage.getItem('count') === null) {
-    num = 0;
-  } else {
-    num = localStorage.getItem('count');
-  }
-
-  count.innerHTML = num;
-
-  down.addEventListener('click', () => {
-
-    if (num===0) {
-      alert()
-      return;
-    }
-
-    num--
-    localStorage.setItem('count', num);
-    
-    count.innerHTML = num;
-  })
-
-  up.addEventListener('click', () => {
-    num++
-    localStorage.setItem('count', num);
-    
-    count.innerHTML = num;
-  })
-</script> -->
-
-
-<!-- 4/4 Monday -->
-
 <!-- <h1>Voting</h1>
 
 <button onclick="voting(1)">1</button>
@@ -1321,7 +1229,6 @@ the element positioned last in the HTML code will be shown on top.  -->
 <button onclick="getResult()">result</button>
 
 <script>
-if (localStorage.getItem('vote') === null) {
   var DATA = [
     { id: 1, name: 'g', count: 0 },
     { id: 2, name: 's', count: 0 },
@@ -1329,107 +1236,27 @@ if (localStorage.getItem('vote') === null) {
     { id: 4, name: 'c', count: 0 }
   ]
 
-  localStorage.setItem('vote', JSON.stringify(DATA));
-} 
+  if (localStorage.getItem('vote') === null) {
+    localStorage.setItem('vote', JSON.stringify(DATA));
+  } 
 
-function voting(id) {
-  var arr = JSON.parse(localStorage.getItem('vote'))
+  function voting(id) {
+    var arr = JSON.parse(localStorage.getItem('vote'))
 
-  arr.map(item => {
-    if (item.id === id) {
-      item.count++
-    }
-  })
+    arr.map(item => {
+      if (item.id === id) {
+        item.count++
+      }
+    })
 
-  localStorage.setItem('vote', JSON.stringify(arr));
-}
+    localStorage.setItem('vote', JSON.stringify(arr));
+  }
 
-function getResult() {
-  var ul = document.createElement('ul');
-
-  JSON.parse(localStorage.getItem('vote')).map(item => {
-    var li = document.createElement('li');
-    li.innerHTML = `${item.id} ${item.name}, ${item.count}`
-    ul.appendChild(li)
-  })
-
-  document.getElementById('result').replaceChildren(ul);
-}
+  function getResult() {
+    document.getElementById('result').innerHTML = localStorage.getItem('vote')
+  }
 </script> -->
 
-
-<!-- 4/5 Tuesday -->
-
-<!-- <h1>Shop items</h1>
-<ul>
-  <li>
-    <b>Denim jackets</b>
-    <span>$10</span>
-    <button onclick="addToCart(1)">Add to cart</button>
-  </li>
-  <li>
-    <b>Hoodie</b>
-    <span>$5</span>
-    <button onclick="addToCart(2)">Add to cart</button>
-  </li>
-  <li>
-    <b>Cotton pants</b>
-    <span>$3</span>
-    <button onclick="addToCart(3)">Add to cart</button>
-  </li>
-</ul>
-
-<button onclick="showCart()">Show cart</button>
-<div id="shopping-cart"></div>
-
-<script>
-
-if (localStorage.getItem('cart') === null) {
-  var DATA = [
-    { id: 1, name: 'jacket', cost: 10, q: 0 },
-    { id: 2, name: 'hoodie', cost: 5, q: 0 },
-    { id: 3, name: 'pants', cost: 3, q: 0 },
-  ]
-  localStorage.setItem('cart', JSON.stringify(DATA))
-}
-
-function addToCart(id) {
-  var cart = JSON.parse(localStorage.getItem('cart'))
-
-  var updatedCart = cart.filter(item => {
-    if (item.id === id) {
-      item.q++
-    }
-    return item;
-  })
-
-  localStorage.setItem('cart', JSON.stringify(updatedCart))
-}
-
-function showCart() {
-  var cart = JSON.parse(localStorage.getItem('cart'))
-
-  var div = document.createElement('div');
-  var ul = document.createElement('ul');
-  var p = document.createElement('p');
-
-  var total = 0;
-
-  cart.map(item => {
-    let li = document.createElement('li');
-    li.innerHTML = `id: ${item.id}, name: ${item.name}, cost: $${item.cost * item.q}`
-    ul.appendChild(li);
-    total += (item.cost * item.q);
-  })
-
-  p.textContent = `TOTAL: $${total}`;
-
-  div.appendChild(ul)
-  div.appendChild(p)
-
-  document.getElementById('shopping-cart').replaceChildren(div);
-}
-</script> -->
 
 <!-- <h1>Shop</h1>
 <div id="root"></div>
@@ -1483,29 +1310,9 @@ function showCart() {
   }
 
   function showCart() {
-    var cart = JSON.parse(localStorage.getItem('cart'));
-
-    if (cart === null) {
-      return;
-    }
-
-    let ul = document.createElement('ul')
-
-    DATA.map(data => {
-      cart.map(item => {
-        if (data.id === item.id) {
-          var li = document.createElement('li');
-          console.log(item.q)
-          console.log(item.cost)
-          li.innerHTML = `${data.name}, q: ${item.q}, $${data.cost * item.q}`
-          ul.appendChild(li)
-        }
-      })
-    })
-
-    document.getElementById('result').replaceChildren(ul)
-  }
-</script> -->
+    document.getElementById('result').innerHTML = localStorage.getItem('cart')
+  } -->
+</script>
 
 </body>
 </html>

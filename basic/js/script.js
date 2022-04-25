@@ -43,9 +43,6 @@
 // make function returning adult or children with age parameter typed string or number.
 // get the cars array only on sale.
 
-
-// 4/14 Thursday
-
 // # JavaScript DOM Basic
 
 // # Selector
@@ -66,9 +63,7 @@
 // addEventListener and onclick, this, e.target
 // load, click, scroll, resize, ...
 
-
-
-
+// # Callback
 // function myFunction(cb) {
 //   console.log(1)
 //   cb(2)
@@ -115,6 +110,10 @@
 //   myFunction(e, 'hello')
 // })
 
-
+// # LocalStorage and JSON
+// JSON - JavaScript Object Notation (string)
+// Store and send data
+// JSON.stringify() and JSON.parse()
+// LocalStorage - Better than cookie (safer and more capacity to 5MB)
 
 

@@ -5,6 +5,7 @@ PPT
 HTML Semantic layout, DOM Tree
 HTML only page 
 
+
 # CSS
 web responsive
 external internal inline CSS
@@ -26,12 +27,55 @@ Transform: none, translate, scale, rotate, skew
 Display: flex, box-sizing
 @media with min-width and max-width
 
-# JavaScript
+# CSS Example
+button: button, anchor btn
+form: login, sign up, search(Google)
+navigation: mobile, side-nav, responsive
+table
+dropdown
+animation: loader
+card: meet the team, pricing table
+image: thumbnail, text over image
+flex: layout, responsive layout, image grid
+
+
+# JavaScript 1
 window object
+Data type: primary and object and basic method
+Operator: Arithmetic, 
 inheritance
-Selector
+function and method, event, callback
+Variable
+condition
+loop: for
+Selector and Render
+Local storage and JSON
+
+# JavaScript 1 Example
+render in HTML: innerHTML, createElement, appendChild, ...
+Others: dropdown, likes, rating, loader
+Accordion
+Tab content
+Navigation: mobile, side-nav
+Images: modal, slide, carousel,
+LocalStorage/JSON
+
+# JavaScript 2
+try/catch, getter/setter
+ES6: let, const, Arrow function, destructing, Promise, ...
+AJAX and fetch using node server
+React Analyze: recursive function, module, CSR
+
+
+# HTML/CSS/JavaScript Project
+
 
 # React
+Basic
+
+# React Example
+Todo list
+
 
 # Final Project
 
