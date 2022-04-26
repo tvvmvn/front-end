@@ -1,17 +1,18 @@
+/* Initialze */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-
 h1, h2, h3, h4, h5, p {
   margin: 10px 0
 }
-
+a {
+  text-decoration: none;
+}
 ul {
   list-style-type: none;
 }
-
 img {
   width: 100%;
 }
@@ -19,14 +20,28 @@ input[type=text] {
   padding: 10px;
   margin: 5px 0
 }
+.border {
+  /* border: 1px dashed red; */
+}
 .btn {
   padding: 10px;
   cursor: pointer;
+  border: none;
 }
-.border {
-  border: 1px dashed;
+.pointer {
+  cursor: pointer;
+}
+.border-bottom {
+  border-bottom: 1px solid #ddd;
 }
 
+/* position */
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
 .fixed-top {
   position: fixed;
   width: 100%;
@@ -34,22 +49,27 @@ input[type=text] {
   left: 0;
   z-index: 1;
 }
-
-.hero-img {
-  background-color: #ddd;
-  background-position: center;
-  background-size: cover;
-  height: 400px;
-}
-.text-center {
-  text-align: center;
+.top-right {
+  top: 0;
+  right: 0;
 }
 
+/* width and height */
+.width-100 {
+  width: 100%;
+}
+.max-width-800 {
+  max-width: 800px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+/* flex */
 .flex {
   display: flex;
 }
-.inline-block {
-  display: inline-block;
+.flex-col {
+  flex-direction: column;
 }
 .flex-33 {
   flex: 33%;
@@ -60,19 +80,35 @@ input[type=text] {
 .flex-100 {
   flex: 100%;
 }
-.flex-col {
-  flex-direction: column;
+.min-width-50 {
+  min-width: 50px
 }
-.width-100 {
-  width: 100%;
-}
-.max-width-800 {
-  max-width: 800px;
-  margin: auto;
-}
+
+/* padding and margin */
 .padding-48 {
   padding: 48px 0;
 }
+.padding-10 {
+  padding: 10px;
+}
+.pd-side-10 {
+  padding: 0 10px;
+}
+.mg-tb-10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.mg-side-10 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* text */
+.text-center {
+  text-align: center;
+}
+
+/* color and background color */
 .bg-black {
   background-color: #000;
 }
@@ -85,6 +121,8 @@ input[type=text] {
 .text-white {
   color: #fff;
 }
+
+/* layer and modal */
 .layer {
   position: fixed;
   top: 0;
@@ -93,6 +131,7 @@ input[type=text] {
   height: 100%;
   background-color: rgba(0,0,0,0.8);
   display: none;
+  z-index: 1;
 }
 .modal {
   position: fixed; 
@@ -101,14 +140,20 @@ input[type=text] {
   max-width: 500px;
   width: 100%;
   transform: translateX(-50%);
-  border: 3px solid red;
+  padding: 15px;
+  z-index: 1;
   display: none;
-  z-index: 1
-}
-.relative {
-  position: relative;
 }
 
+/* background image and text*/
+.bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* carousel */
 .indicator {
   position: absolute;
   bottom: 25px;
@@ -124,9 +169,21 @@ input[type=text] {
   margin: 0 2px
 }
 
+/* Responsive */
+.hide-mobile {
+  display: none;
+}
+.active {
+  display: block!important
+}
+
+/* media */
 @media (min-width: 501px) {
   .flex-col {
     flex-direction: row;
+  }
+  .hide-mobile {
+    display: block;
   }
   .only-mobile {
     display: none;

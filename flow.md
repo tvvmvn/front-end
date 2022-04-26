@@ -58,16 +58,16 @@ Accordion
 Tab content
 Navigation: mobile, side-nav
 Images: modal, slide, carousel,
-LocalStorage/JSON
 
 # JavaScript 2
-try/catch, getter/setter
-ES6: let, const, Arrow function, destructing, Promise, ...
-AJAX and fetch using node server
-React Analyze: recursive function, module, CSR
+ES6: let, const, Arrow function, destructing/spread operator, Promise, ternary ...
+LocalStorage/JSON
 
+> AJAX and fetch using node server ?
+> React Analyze: recursive function, module, CSR ?
 
-# HTML/CSS/JavaScript Project
+# JavaScript 2 Example
+LocalStorage: voting app, shopping cart
 
 
 # React
