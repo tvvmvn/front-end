@@ -12,7 +12,7 @@
 // Arithmetic, Assignment, Comparison, Logical
 
 // # Variable
-// var, let, const
+// var how to use
 
 // # Condition
 // if if/else, if/elseif/else
@@ -73,12 +73,18 @@
 
 // myFunction(myCallback)
 
-// # JavaScript 2
-// # ES6
 
-// # LocalStorage and JSON
+// # JavaScript 2
+
+// # ES6
+// variables and scope: var/let/const and scope(global/local/function)
+// arrow function: function declaration and expression, arrow function, hoisting
+// other syntax: destructing/spread operator, ternary
+// Asynchronous: Promise and Callback
+
+// # Data store and transport: Cookie/LocalStorage/JSON
 // JSON - JavaScript Object Notation (string)
+// LocalStorage - Better than cookie (safer and more capacity to 5MB)
 // Store and send data
 // JSON.stringify() and JSON.parse()
-// LocalStorage - Better than cookie (safer and more capacity to 5MB)
 

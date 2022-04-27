@@ -49,7 +49,6 @@ Variable
 condition
 loop: for
 Selector and Render
-Local storage and JSON
 
 # JavaScript 1 Example
 render in HTML: innerHTML, createElement, appendChild, ...
@@ -57,7 +56,7 @@ Others: dropdown, likes, rating, loader
 Accordion
 Tab content
 Navigation: mobile, side-nav
-Images: modal, slide, carousel,
+Images: modal, slide, carousel
 
 # JavaScript 2
 ES6: let, const, Arrow function, destructing/spread operator, Promise, ternary ...
