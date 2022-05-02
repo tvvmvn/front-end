@@ -88,3 +88,231 @@
 // Store and send data
 // JSON.stringify() and JSON.parse()
 
+
+
+
+// # Callback and Promise
+
+// What is Async and Sync 
+
+// setTimeout(() => {
+//   console.log(1)
+// }, 0)
+
+// console.log(2)
+
+// setTimeout(() => {
+//   console.log(1)
+//   console.log(2)
+// })
+
+// function fetchData() {
+//   setTimeout(() => {
+//     const users = ['bunny', 'cat', 'bird'];
+//     return users;
+//   })
+// }
+
+// const data = fetchData()
+
+// console.log(data)
+
+// function fetchData(cb) {
+//   setTimeout(() => {
+//     const users = ['bunny', 'cat', 'bird'];
+//     cb(users)
+//   })
+// }
+
+// fetchData((data) => console.log(data))
+
+// Promise object 
+// callback as parameter
+// const fetchData = new Promise(res => {
+//   // Async 
+//   setTimeout(() => {
+//     const users = ['bunny', 'cat', 'bird'];
+//     res(users)
+//   })
+// })
+
+// Prototype - Class
+
+// [ state => result ]
+// pending => undefine
+// fullfilled => a result value
+// rejected => an error object
+
+// fetchData.then(data => console.log(data))
+
+// # Error handling
+// function fetchData(cb) {
+//   setTimeout(() => {
+//     const users = { username: 'bunny' };
+//     const error = { message: 'user not found' };
+//     cb(error, users)
+//   })
+// }
+
+// fetchData((err, data) => {
+//   if (err) {
+//     return console.error(err)
+//   }
+//   console.log(data)
+// })
+
+// const fetchData = new Promise((res, rej) => {
+//   setTimeout(() => {
+//     const user = { username: 'bunny' }
+//     const error = { message: 'user not found' }
+//     rej(error)
+//   })
+// })
+
+// fetchData.then(res => console.log(res), err => console.error(err))
+// fetchData.then(res => console.log(res)).catch(err => console.error(err))
+
+// Async and Await
+
+// const fetchData = new Promise(res =>  {
+//   setTimeout(() => {
+//     const user = { username: 'bunny' }
+//     res(user)
+//   })
+// })
+
+// f()
+// async function f() {
+//   const user = await fetchData
+
+//   console.log(user)
+// }
+
+// Callback and Promise Chain
+
+// function first() {
+//   setTimeout(() => {
+//     console.log(1)
+//   }, 400)
+// }
+// function second() {
+//   setTimeout(() => {
+//     console.log(2)
+//   }, 200)
+// }
+// function third() {
+//   setTimeout(() => {
+//     console.log(3)
+//   }, 400)
+// }
+// function fourth() {
+//   setTimeout(() => {
+//     console.log(4)
+//   }, 300)
+// }
+
+// first()
+// second()
+// third()
+// fourth()
+
+
+// function first(cb) {
+//   setTimeout(() => {
+//     console.log(1)
+//     cb()
+//   }, 400)
+// }
+// function second(cb) {
+//   setTimeout(() => {
+//     console.log(2)
+//     cb()
+//   }, 200)
+// }
+// function third(cb) {
+//   setTimeout(() => {
+//     console.log(3)
+//     cb()
+//   }, 400)
+// }
+// function fourth() {
+//   setTimeout(() => {
+//     console.log(4)
+//   }, 300)
+// }
+
+// first(() => second(() => third(fourth)))
+
+// function first() {
+//   return new Promise(res => {
+//     setTimeout(() => {
+//       console.log(1)
+//       res()
+//     }, 400)
+//   })
+// }
+// function second() {
+//   return new Promise(res => {
+//     setTimeout(() => {
+//       console.log(2)
+//       res()
+//     }, 200)
+//   })
+// }
+// function third() {
+//   return new Promise(res => {
+//     setTimeout(() => {
+//       console.log(3)
+//       res()
+//     }, 400)
+//   })
+// }
+// function fourth() {
+//   setTimeout(() => {
+//     console.log(4)
+//   }, 300)
+// }
+
+// first()
+// .then(second)
+// .then(third)
+// .then(fourth)
+
+// function first() {
+//   return new Promise(res => {
+//     setTimeout(() => {
+//       console.log(1)
+//       res()
+//     }, 400)
+//   })
+// }
+// function second() {
+//   return new Promise(res => {
+//     setTimeout(() => {
+//       console.log(2)
+//       res()
+//     }, 200)
+//   })
+// }
+// function third() {
+//   return new Promise(res => {
+//     setTimeout(() => {
+//       console.log(3)
+//       res()
+//     }, 400)
+//   })
+// }
+// function fourth() {
+//   setTimeout(() => {
+//     console.log(4)
+//   }, 300)
+// }
+
+// f()
+// async function f() {
+//   await first()
+//   await second()
+//   await third()
+//   fourth()
+// }
+

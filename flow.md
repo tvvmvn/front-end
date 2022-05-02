@@ -29,14 +29,13 @@ Display: flex, box-sizing
 
 # CSS Example
 button: button, anchor btn
-form: login, sign up, search(Google)
-navigation: mobile, side-nav, responsive
-table
-dropdown
-animation: loader
+form: login, sign up, contact, Google search 
+table: table, table with icon
+navigation: top-nav, side-nav, responsive, dashboard, dropdown-nav
+image: thumbnail, text over image, responsive
 card: meet the team, pricing table
-image: thumbnail, text over image
 flex: layout, responsive layout, image grid
+animation: loader
 
 
 # JavaScript 1
@@ -59,8 +58,9 @@ Navigation: mobile, side-nav
 Images: modal, slide, carousel
 
 # JavaScript 2
+prototype, class and inheritance, regex, try and catch, getter/setter
 ES6: let, const, Arrow function, destructing/spread operator, Promise, ternary ...
-LocalStorage/JSON
+Storing and Sending DATA: LocalStorage/JSON
 
 > AJAX and fetch using node server ?
 > React Analyze: recursive function, module, CSR ?

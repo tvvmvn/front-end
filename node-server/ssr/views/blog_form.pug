@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+
+  form(action="/new" method="POST") 
+    .form-group
+      input(type="text" name="title" placeholder="title")
+    .form-group 
+      textarea(name="content", cols="30", rows="10") 
+    .form-group 
+      button Submit
+
+

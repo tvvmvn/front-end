@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+
+  p= post.title.split('.')[0]
+  p= post.content
+
+  p 
+    a(href="") delete 
