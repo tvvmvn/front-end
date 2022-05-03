@@ -6,5 +6,21 @@ block content
   p= post.title.split('.')[0]
   p= post.content
 
-  p 
-    a(href="") delete 
+  a(href=`/p/${post.title}/update`) update 
+  a(href=`/p/${post.title}/delete` onclick="deletePost(event)") delete 
+
+  script.
+    function deletePost(e) {
+      e.preventDefault();
+
+      fetch(e.target.href, {
+        method: 'POST'
+      })
+      .then(res => res.json())
+      .then(result => location.replace('/'))
+      .catch(err => console.error(err))
+    }
+
+
+
+

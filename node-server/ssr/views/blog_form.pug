@@ -3,12 +3,24 @@ extends layout
 block content
   h1= title
 
-  form(action="/new" method="POST") 
-    .form-group
-      input(type="text" name="title" placeholder="title")
-    .form-group 
-      textarea(name="content", cols="30", rows="10") 
-    .form-group 
-      button Submit
+  if post
+    form(action=`/p/${post.title}/update` method="POST") 
+      .form-group
+        input(type="text" name="ex_title" value=post.title hidden)
+      .form-group
+        input(type="text" name="title" placeholder="title" value=post.title.split('.')[0] required)
+      .form-group 
+        textarea(name="content", cols="30", rows="10")=post.content
+      .form-group 
+        button Submit
 
+  else
+    form(action="/create" method="POST") 
+      if post
+      .form-group
+        input(type="text" name="title" placeholder="title" required)
+      .form-group 
+        textarea(name="content", cols="30", rows="10")
+      .form-group 
+        button Submit
 

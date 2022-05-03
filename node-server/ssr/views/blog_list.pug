@@ -6,6 +6,6 @@ block content
   ul 
     each post in posts 
       li
-        a(href=`/post/${post}`) #{post.split('.')[0]}
+        a(href=`/p/${post}`)= post.split('.')[0]
 
-  a(href="/new") New Post
+  a(href="/create") New Post
