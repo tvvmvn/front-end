@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/4fb6dd7406.js" crossorigin="anonymous"></script>
   <title>Document</title>
 </head>
 <body>
@@ -251,7 +252,326 @@
       </div>
     </div>
   </div> -->
+
+
+  <!-- <h1>Layout</h1> -->
+
+  <!-- <style>
+    /* flex container properties: */
+    /* - */
+    /* flex-direction(row): direction of the flexible items */
+    /* flex-wrap(nowrap): the flexible items should wrap or not */
+    /* flex-flow: flex-direction / flex-wrap */
+    /* justify-content(flex-start): align the flex items */
+    /* align-items(stretch): alignment for items inside the flexible container */
+    /* align-content(stretch): align the flex lines */
+    /* - */
+
+    /* flex item properties: */
+    /* - */
+    /* order(0): order of the flex items */
+    /* flex-grow(0): how much the item will grow relative to the rest of the flexible items inside the same container */
+    /* flex-shrink(1): how the item will shrink relative to the rest of the flexible items inside the same container */
+    /* flex-basis(auto): initial length of a flexible item */
+    /* flex: flex-grow / flow-shrink / flex-basis */
+    /* align-self(auto): alignment for the selected item inside the flexible container. */
+    /* - */
+  </style> -->
+
+
   
+
+
+  <!-- <style>
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 800px;
+      margin: auto;
+    }
+    .header {
+      background-color: #ddd;
+    }
+    .nav {
+      width: 100%;
+    }
+    .main {
+      width: 100%;
+    }
+    .aside {
+      width: 100%;
+    }
+    .footer {
+      background-color: #333;
+      color: #fff;
+    }
+    @media (min-width: 501px) {
+      .nav {
+        width: 25%
+      }
+      .main {
+        width: 75%
+      }
+    }
+    @media (min-width: 701px) {
+      .nav {
+        width: 25%
+      }
+      .main {
+        width: 50%
+      }
+      .aside {
+        width: 25%;
+      }
+    }
+  </style>
+
+  <div class="header">
+    <h1>header</h1>
+  </div>
+
+  <div class="row">
+    <div class="nav">
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Blog</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </div>
+    <div class="main">
+      <h3>Main</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis voluptatum nihil ea fugiat! 
+        Quia facere ipsa qui praesentium asperiores fugiat, quo ex corrupti distinctio ducimus provident pariatur eos laboriosam sed?
+      </p>
+    </div>
+    <div class="aside">
+      <div class="">
+        <b>aside</b>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+      </div>
+      <div class="">
+        <b>aside</b>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+      </div>
+      <div class="">
+        <b>aside</b>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <small>footer</small>
+  </div> -->
+
+
+  <!-- <style>
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .item {
+      /* width: 100%; */
+      flex: 0 1 100%;
+      box-sizing: border-box;
+      /* margin: 0 5px; */
+      padding: 10px;
+      border: 1px dashed;
+    }
+    img {
+      width: 100%;
+      display: block;
+    }
+    @media (min-width: 501px) {
+      .item {
+        /* width: 50%; */
+        flex: 0 1 50%;
+      }
+    }
+    @media (min-width: 701px) {
+      .item {
+        /* width: 25%; */
+        flex: 0 1 25%;
+      }
+    }
+  </style>
+
+  <div class="container">
+    <div class="item">
+      <img src="../../img/bunny.jpeg" alt="">
+    </div>
+    <div class="item">
+      <img src="../../img/cat.jpeg" alt="">
+    </div>
+    <div class="item">
+      <img src="../../img/bunny.jpeg" alt="">
+    </div>
+    <div class="item">
+      <img src="../../img/bunny.jpeg" alt="">
+    </div>
+  </div> -->
+
+  
+  <!-- <style>
+    img {
+      width: 100%;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      max-width: 800px;
+      margin: auto;
+    }
+    .card {
+      border: 1px dashed;
+      /* not affected */
+      /* width: 33.33333% */
+      /* use flex properties because of flex-direction */
+      /* flex-basis: 33.33333% */
+      /* flex: 0 1 auto; */
+      flex: 1
+    }
+
+    @media (min-width: 501px) {
+      .container {
+        flex-direction: row;
+      }
+    }
+  </style>
+
+  <div class="container">
+    <div class="card">
+      <img src="../../img/bunny.jpeg" alt="">
+      <h3>name</h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div class="card">
+      <img src="../../img/cat.jpeg" alt="">
+      <h3>name</h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div class="card">
+      <img src="../../img/duck.jpeg" alt="">
+      <h3>name</h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+  </div> -->
+
+
+  <!-- <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      background-color: #ddd;
+      height: 50px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px;
+    }
+    .flex {
+      display: flex;
+    }
+    #start, #center, #end {
+      border: 1px dashed;
+    }
+    #start {
+      min-width: 250px;
+      display: flex;
+      align-items: center;
+    }
+    #center {
+      /* width: 800px; */
+      /* min-width: 0px; */
+      width: 728px;
+      min-width: 0
+    }
+    .microphone {
+      display: flex;
+      min-width: 50px;
+      align-items: center;
+      justify-content: center;
+    }
+    .fa-magnifying-glass {
+      min-width: 50px;
+    }
+    form {
+      display: flex;
+      width: 100%;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+    }
+    #end {
+      min-width: 225px;
+      justify-content: end;
+    }
+    .bars {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 50px;
+      height: 50px;
+    }
+    .youtube {
+      display: flex;
+      align-items: center;
+    }
+    .fa-brands {
+      font-size: 24px;
+    }
+    .fa-solid {
+      font-size: 20px;
+    }
+    .solid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+
+  <div class="container flex">
+    <div id="start">
+      <div class="bars">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <div class="youtube">
+        <i class="fa-brands fa-youtube"></i>
+        <b>YouTube</b>
+      </div>
+    </div>
+    <div id="center" class="flex">
+      <form action="">
+        <input type="text">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+      <div class="microphone">
+        <i class="fa-solid fa-microphone"></i>
+      </div>
+    </div>
+    <div id="end" class="flex">
+      <div class="solid video">
+        <i class="fa-solid fa-video"></i>
+      </div>
+      <div class="solid list-ul">
+        <i class="fa-solid fa-list-ul"></i>
+      </div>
+      <div class="solid bell">
+        <i class="fa-solid fa-bell"></i>
+      </div>
+      <div class="solid circle">
+        <i class="fa-solid fa-circle"></i>
+      </div>
+    </div>
+  </div> -->
+
+
 
 </body>
 </html>

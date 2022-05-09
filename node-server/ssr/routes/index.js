@@ -5,8 +5,26 @@ const { v4: uuidv4 } = require('uuid');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  // fs.readdir('data/', (err, posts) => {
+  //   try {
+  //     if (err) {
+  //       // throw err;
+  //       return next(err)
+  //     };
+  //     es.render('blog_list', { title: 'Blogs', posts });
+  //   } catch (error) {
+  //     res.status(500).json(error)
+  //     console.error(error)
+  //   }
+  // })
+  
+  // Asynchronous
   fs.readdir('data/', (err, posts) => {
-    res.render('blog_list', { title: 'Blogs', posts });
+      if (err) {
+        // throw err;
+        return next(err)
+      };
+      es.render('blog_list', { title: 'Blogs', posts });
   })
 });
 

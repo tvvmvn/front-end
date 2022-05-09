@@ -33,7 +33,6 @@ form: login, sign up, contact, Google search
 table: table, table with icon
 navigation: top-nav, side-nav, responsive, dashboard, dropdown-nav
 image: thumbnail, text over image, responsive
-card: meet the team, pricing table
 flex: layout, responsive layout, image grid
 animation: loader
 
