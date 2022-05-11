@@ -41,6 +41,11 @@
 // make function returning adult or children with age parameter typed string or number.
 // get the cars array only on sale.
 
+// # Error handling
+// try...catch, error type, 
+
+// Class and Prototype
+
 // # JavaScript DOM Basic
 
 // # Selector
@@ -73,7 +78,6 @@
 
 // myFunction(myCallback)
 
-
 // # JavaScript 2
 
 // # ES6
@@ -87,8 +91,6 @@
 // LocalStorage - Better than cookie (safer and more capacity to 5MB)
 // Store and send data
 // JSON.stringify() and JSON.parse()
-
-
 
 
 // # Callback and Promise
@@ -136,7 +138,7 @@
 //   })
 // })
 
-// Prototype - Class
+// Prototype - Class;
 
 // [ state => result ]
 // pending => undefine

@@ -67,7 +67,6 @@ Storing and Sending DATA: LocalStorage/JSON
 # JavaScript 2 Example
 LocalStorage: voting app, shopping cart
 
-
 # React
 Basic
 
