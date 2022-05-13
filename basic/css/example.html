@@ -257,29 +257,247 @@
   <!-- <h1>Layout</h1> -->
 
   <!-- <style>
-    /* flex container properties: */
+    /* # flex container properties: */
     /* - */
-    /* flex-direction(row): direction of the flexible items */
-    /* flex-wrap(nowrap): the flexible items should wrap or not */
-    /* flex-flow: flex-direction / flex-wrap */
-    /* justify-content(flex-start): align the flex items */
-    /* align-items(stretch): alignment for items inside the flexible container */
-    /* align-content(stretch): align the flex lines */
-    /* - */
+    /* # flex-direction(row): direction of the flexible items */
+    /* row|row-reverse|column|column-reverse|initial|inherit */
+    /* # flex-wrap(nowrap): the flexible items should wrap or not */
+    /* nowrap|wrap|wrap-reverse|initial|inherit; */
+    /* # flex-flow(row nowrap): flex-direction / flex-wrap */
+    /* # justify-content(flex-start): align the flex items */
+    /* flex-start|flex-end|center|space-between|space-around|space-evenly|initial|inherit; */
+    /* # align-items(stretch): alignment for items inside the flexible container */
+    /* stretch|center|flex-start|flex-end|baseline|initial|inherit; */
+    /* # align-content(stretch): align the flex lines */
+    /* stretch|center|flex-start|flex-end|space-between|space-around|initial|inherit; */
 
-    /* flex item properties: */
+    /* # flex item properties: */
     /* - */
-    /* order(0): order of the flex items */
-    /* flex-grow(0): how much the item will grow relative to the rest of the flexible items inside the same container */
-    /* flex-shrink(1): how the item will shrink relative to the rest of the flexible items inside the same container */
-    /* flex-basis(auto): initial length of a flexible item */
-    /* flex: flex-grow / flow-shrink / flex-basis */
-    /* align-self(auto): alignment for the selected item inside the flexible container. */
-    /* - */
+    /* # order(0): order of the flex items */
+    /* number|initial|inherit */
+    /* # flex-grow(0): how much the item will grow relative to the rest of the flexible items inside the same container */
+    /* number|initial|inherit */
+    /* # flex-shrink(1): how the item will shrink relative to the rest of the flexible items inside the same container */
+    /* number|initial|inherit; */
+    /* # flex-basis(auto): initial length of a flexible item */
+    /* number|auto|initial|inherit */
+    /* # flex: flex-grow / flow-shrink / flex-basis */
+    /* # align-self(auto): alignment for the selected item inside the flexible container. */
+    /* auto|stretch|center|flex-start|flex-end|baseline|initial|inherit; */
   </style> -->
 
 
+  <!-- # flex container properties -->
+
+  <!-- # flex direction -->
+
+  <!-- <style>
+    .flex {
+      display: flex;
+      background-color: #ddd;
+    }
+    .flex-row {
+      flex-direction: row;
+    }
+    .flex-col {
+      flex-direction: column;
+    }
+    .item {
+      border: 1px dashed;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+
+  <div class="flex flex-row">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <hr>
+
+  <div class="flex flex-col">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div> -->
+
+
+  <!-- # flex wrap -->
+
+  <!-- <style>
+    .flex {
+      display: flex;
+      background-color: #ddd;
+    }
+    .flex-wrap {
+      flex-wrap: wrap
+    }
+    .flex-nowrap {
+      flex-wrap: nowrap
+    }
+    .item {
+      border: 1px dashed;
+      width: 200px;
+      height: 100px;
+    }
+  </style>
+
+  <div class="flex flex-wrap">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <hr>
+
+  <div class="flex flex-nowrap">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div> -->
+
+  <!-- # justify-content, align-items -->
+
+  <!-- <style>
+    .flex {
+      display: flex;
+      background-color: #ddd;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      height: 300px;
+    }
+    .item {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed;
+    }
+  </style>
+
+  <div class="flex">
+    <div class="item">1</div>
+  </div> -->
+
+  <!-- <style>
+    .flex {
+      display: flex;
+      background-color: #ddd;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 300px;
+      height: 300px;
+    }
+    .item {
+      width: 50px;
+      height: 50px;
+      border: 1px dashed;
+    }
+  </style>
+
+  <div class="flex">
+    <div class="item">1</div>
+    <div class="item">3</div>
+    <div class="item">3</div>
+  </div> -->
+
+
+  <!-- # flex-basis, flex-grow -->
+
+  <!-- <style>
+    .flex {
+      display: flex; 
+      background-color: #ddd;
+    }
+    .item {
+      border: 1px dashed;
+      flex-basis: 200px;
+      flex-grow: 1;
+    }
+    .flex-grow {
+      flex-grow: 2;
+      background-color: orange;
+    }
+  </style>
+
+
+  <div class="flex">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <hr>
+
+  <div class="flex">
+    <div class="item">1</div>
+    <div class="item flex-grow">2</div>
+    <div class="item">3</div>
+  </div> -->
   
+
+  <!-- # flex-basis, flex-shrink -->
+
+  <!-- <style>
+    .flex {
+      display: flex; 
+      background-color: #ddd;
+    }
+    .item {
+      border: 1px dashed;
+      flex-shrink: 1;
+      flex-basis: 200px;
+    }
+    .flex-shrink {
+      flex-shrink: 2;
+      background-color: orange;
+    }
+  </style>
+
+
+  <div class="flex">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <hr>
+
+  <div class="flex">
+    <div class="item">1</div>
+    <div class="item flex-shrink">2</div>
+    <div class="item">3</div>
+  </div> -->
+
+
+  <!-- # flex  -->
+
+  <!-- <style>
+    .flex {
+      display: flex;
+      background-color: #ddd;
+    }
+  
+    .item {
+      border: 1px dashed;
+      width: 100px;
+      height: 100px;
+
+      /* default */
+      flex: 0 1 auto
+      /* flex-grow */
+      /* flex: 1; */
+      /* flex-basis */
+      flex: 33.33333%
+    }
+  </style>
+
+  <div class="flex">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div> -->
 
 
   <!-- <style>
@@ -305,6 +523,7 @@
       background-color: #333;
       color: #fff;
     }
+    /* Tablet */
     @media (min-width: 501px) {
       .nav {
         width: 25%
@@ -313,6 +532,7 @@
         width: 75%
       }
     }
+    /* Desktop */
     @media (min-width: 701px) {
       .nav {
         width: 25%
@@ -373,8 +593,7 @@
       flex-wrap: wrap;
     }
     .item {
-      /* width: 100%; */
-      flex: 0 1 100%;
+      flex-basis: 100%;
       box-sizing: border-box;
       /* margin: 0 5px; */
       padding: 10px;
@@ -384,16 +603,16 @@
       width: 100%;
       display: block;
     }
+    /* Tablet */
     @media (min-width: 501px) {
       .item {
-        /* width: 50%; */
-        flex: 0 1 50%;
+        flex-basis: 50%;
       }
     }
+    /* Desktop */
     @media (min-width: 701px) {
       .item {
-        /* width: 25%; */
-        flex: 0 1 25%;
+        flex-basis: 25%;
       }
     }
   </style>
@@ -426,12 +645,11 @@
     }
     .card {
       border: 1px dashed;
-      /* not affected */
-      /* width: 33.33333% */
-      /* use flex properties because of flex-direction */
-      /* flex-basis: 33.33333% */
-      /* flex: 0 1 auto; */
       flex: 1
+      /* works*/
+      /* flex-basis: 33.33333%; */
+      /* not works when column */
+      /* width: 33.33333% */
     }
 
     @media (min-width: 501px) {
@@ -460,11 +678,13 @@
   </div> -->
 
 
-  <!-- <style>
+  <style>
     * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
+
     .container {
       background-color: #ddd;
       height: 50px;
@@ -478,37 +698,12 @@
     #start, #center, #end {
       border: 1px dashed;
     }
+
     #start {
       min-width: 250px;
+      height: 50px;
       display: flex;
       align-items: center;
-    }
-    #center {
-      /* width: 800px; */
-      /* min-width: 0px; */
-      width: 728px;
-      min-width: 0
-    }
-    .microphone {
-      display: flex;
-      min-width: 50px;
-      align-items: center;
-      justify-content: center;
-    }
-    .fa-magnifying-glass {
-      min-width: 50px;
-    }
-    form {
-      display: flex;
-      width: 100%;
-    }
-    input {
-      width: 100%;
-      padding: 10px;
-    }
-    #end {
-      min-width: 225px;
-      justify-content: end;
     }
     .bars {
       display: flex;
@@ -516,16 +711,44 @@
       align-items: center;
       min-width: 50px;
       height: 50px;
+      border: 1px dashed;
     }
-    .youtube {
+    .logo {
       display: flex;
       align-items: center;
+      height: 30px;
     }
-    .fa-brands {
-      font-size: 24px;
+    .kr {
+      align-self: flex-start;
     }
-    .fa-solid {
-      font-size: 20px;
+
+    #center {
+      /* width: 800px; */
+      /* min-width: 0px; */
+      width: 728px;
+      min-width: 0
+    }
+    form {
+      display: flex;
+      width: 100%;
+    }
+    input {
+      width: 100%;
+      /* padding: 10px; */
+    }
+    button {
+      min-width: 50px;
+    }
+    .microphone {
+      display: flex;
+      min-width: 50px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #end {
+      min-width: 225px;
+      justify-content: end;
     }
     .solid {
       display: flex;
@@ -534,18 +757,35 @@
       width: 50px;
       height: 50px;
     }
+
+    /* .fa-brands {
+      font-size: 24px;
+    } */
+    .fa-solid, .fa-brands {
+      font-size: 20px;
+    }
+
+    i {
+      font-style: normal
+    }
+    i::after {
+      content: 'ㅁ'
+    }
   </style>
 
   <div class="container flex">
+
     <div id="start">
       <div class="bars">
         <i class="fa-solid fa-bars"></i>
       </div>
-      <div class="youtube">
+      <div class="logo">
         <i class="fa-brands fa-youtube"></i>
-        <b>YouTube</b>
+        <span>YouTube</span>
+        <small class="kr">KR</small>
       </div>
     </div>
+
     <div id="center" class="flex">
       <form action="">
         <input type="text">
@@ -555,6 +795,7 @@
         <i class="fa-solid fa-microphone"></i>
       </div>
     </div>
+
     <div id="end" class="flex">
       <div class="solid video">
         <i class="fa-solid fa-video"></i>
@@ -569,7 +810,8 @@
         <i class="fa-solid fa-circle"></i>
       </div>
     </div>
-  </div> -->
+    
+  </div>
 
 
 
