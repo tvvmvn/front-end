@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/4fb6dd7406.js" crossorigin="anonymous"></script>
+  <!-- <script src="https://kit.fontawesome.com/4fb6dd7406.js" crossorigin="anonymous"></script> -->
+  <!-- <script src="../../../fontawesome6/js/all.js"></script> -->
+  <link rel="stylesheet" href="../../../fontawesome6/css/all.css">
   <title>Document</title>
 </head>
 <body>
@@ -606,6 +608,7 @@
     /* Tablet */
     @media (min-width: 501px) {
       .item {
+        /* with flex-wrap: wrap, box-sizing: border box property is needed. */
         flex-basis: 50%;
       }
     }
@@ -645,7 +648,9 @@
     }
     .card {
       border: 1px dashed;
-      flex: 1
+      /* flex: 1; */
+      flex-grow: 1;
+      flex-basis: 100px;
       /* works*/
       /* flex-basis: 33.33333%; */
       /* not works when column */
@@ -678,31 +683,177 @@
   </div> -->
 
 
-  <style>
+  <!-- <style>
+    .container {
+      display: flex;
+      background-color: #ddd;
+      height: 200px;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+    }
+    .item {
+      display: flex;
+      border: 1px dashed;
+      width: 100px;
+      height: 100px;
+    }
+    .item:nth-child(2) {
+      justify-content: flex-end;
+      align-items: center;
+      align-self: flex-end;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: red;
+    }
+  </style>
+
+  <div class="container">
+    <div class="item"></div>
+    <div class="item">
+      <div class="dot"></div>
+    </div>
+  </div> -->
+
+
+  <!-- <style>
+    .container {
+      display: flex;
+      justify-content: space-between;
+      background-color: #ddd;
+      height: 100px;
+      align-items: flex-start;
+    }
+    .item {
+      display: flex;
+      border: 1px dashed;
+      width: 50px;
+      height: 50px;
+    }
+    .item:nth-child(even) {
+      align-items: center;
+    }
+    .item:first-child {
+      align-self: center;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .item:nth-child(3) {
+      align-self: flex-end;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: red;
+    }
+  </style>
+
+  <div class="container">
+    <div class="item">
+      <div class="dot"></div>
+    </div>
+    <div class="item">
+      <div class="dot"></div>
+    </div>
+    <div class="item">
+      <div class="dot"></div>
+    </div>
+    <div class="item">
+      <div class="dot"></div>
+    </div>
+  </div> -->
+
+
+  <!-- <style>
+    body {
+      min-height: 1000px;
+    }
+    .sidebar {
+      position: fixed;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #ddd;
+      width: 72px;
+    }
+    .menu-item {
+      border: 1px dashed;
+      padding: 15px 0;
+    }
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+    }
+    .description {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+
+  <div class="sidebar">
+    <div class="menu-item">
+      <div class="icon">
+        <i class="fa-solid fa-circle"></i>
+      </div>
+      <div class="description">
+        <small>menu</small>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="icon">
+        <i class="fa-solid fa-circle"></i>
+      </div>
+      <div class="description">
+        <small>menu</small>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="icon">
+        <i class="fa-solid fa-circle"></i>
+      </div>
+      <div class="description">
+        <small>menu</small>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
+    body {
+      min-height: 1000px;
+    }
+    .wrap {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
     .container {
+      display: flex;
       background-color: #ddd;
-      height: 50px;
       justify-content: space-between;
       align-items: center;
+      height: 50px;
       padding: 0 15px;
-    }
-    .flex {
-      display: flex;
     }
     #start, #center, #end {
       border: 1px dashed;
+      display: flex;
     }
 
     #start {
-      min-width: 250px;
-      height: 50px;
-      display: flex;
+      min-width: 150px;
       align-items: center;
     }
     .bars {
@@ -718,26 +869,35 @@
       align-items: center;
       height: 30px;
     }
-    .kr {
+    .country-code {
+      font-size: 10px;
       align-self: flex-start;
     }
 
     #center {
-      /* width: 800px; */
-      /* min-width: 0px; */
-      width: 728px;
-      min-width: 0
+      height: 35px;
+      width: 600px;
+      min-width: 0;
+      justify-content: flex-end;
     }
-    form {
+    .search-form {
+      display: none;
+      width: 100%;
+    }
+    .mobile-search {
       display: flex;
-      width: 100%;
-    }
-    input {
-      width: 100%;
-      /* padding: 10px; */
-    }
-    button {
       min-width: 50px;
+      border: 1px dashed;
+      justify-content: center;
+      align-items: center;
+    }
+    .search-form input {
+      width: 100%;
+      padding: 10px;
+    }
+    .search-form button {
+      min-width: 50px;
+      /* padding: 8px; */
     }
     .microphone {
       display: flex;
@@ -747,73 +907,186 @@
     }
 
     #end {
-      min-width: 225px;
+      min-width: 200px;
       justify-content: end;
     }
-    .solid {
+    .button {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 50px;
       height: 50px;
+      /* padding: 15px; */
+      border: 1px dashed;
     }
-
-    /* .fa-brands {
-      font-size: 24px;
-    } */
     .fa-solid, .fa-brands {
       font-size: 20px;
     }
 
-    i {
-      font-style: normal
-    }
-    i::after {
-      content: 'ㅁ'
+    @media (min-width: 650px) {
+      .search-form {
+        display: flex
+      }
+      .mobile-search {
+        display: none;
+      }
     }
   </style>
 
-  <div class="container flex">
+  <div class="wrap">
+    <div class="container">
 
-    <div id="start">
+      <div id="start">
+        <div class="bars">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="logo">
+          <i class="fa-brands fa-youtube"></i>
+          <span>YouTube</span>
+          <small class="country-code">KR</small>
+        </div>
+      </div>
+
+      <div id="center">
+        <form action="" class="search-form">
+          <input type="text">
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+        <div class="mobile-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="microphone">
+          <i class="fa-solid fa-microphone"></i>
+        </div>
+      </div>
+
+      <div id="end">
+        <div class="button">
+          <i class="fa-solid fa-video"></i>
+        </div>
+        <div class="button">
+          <i class="fa-solid fa-list-ul"></i>
+        </div>
+        <div class="button">
+          <i class="fa-solid fa-bell"></i>
+        </div>
+        <div class="button">
+          <i class="fa-solid fa-circle"></i>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- <style>
+    body {
+      min-height: 1000px;
+    }
+    .wrap {
+      /* border: 3px solid red; */
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 200px;
+      overflow: hidden;
+      background-color: #333;
+      color: #fff;
+    }    
+
+    .header {
+      display: flex;
+      align-items: center;
+    }
+    .bars {
+      display: flex;
+      width: 50px;
+      height: 50px;
+      justify-content: center;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      height: 30px;
+    }
+    .country-code {
+      font-size: 10px;
+      align-self: flex-start;
+    }
+
+    .side-bar {
+      height: 100%;
+      /* border: 5px solid green; */
+      overflow: auto;
+    }
+    .menu-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      /* border: 1px dashed; */
+      padding: 10px;
+    }
+    .icon {
+      display: flex;
+      width: 30px;
+      height: 30px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .fake-content {
+      background-color: #333;
+      height: 1000px;
+    }
+    .fa-brands {
+      font-size: 24px;
+    }
+    .fa-bars {
+      font-size: 20px;
+    }
+  </style>
+
+  <div class="wrap">
+    <div class="header">
       <div class="bars">
         <i class="fa-solid fa-bars"></i>
       </div>
       <div class="logo">
         <i class="fa-brands fa-youtube"></i>
-        <span>YouTube</span>
-        <small class="kr">KR</small>
+        <span>&nbsp;YouTube</span>
+        <small class="country-code">KR</small>
       </div>
     </div>
 
-    <div id="center" class="flex">
-      <form action="">
-        <input type="text">
-        <button><i class="fa-solid fa-magnifying-glass"></i></button>
-      </form>
-      <div class="microphone">
-        <i class="fa-solid fa-microphone"></i>
+    <div class="side-bar">
+      <div class="menu-item">
+        <div class="icon">
+          <i class="fa-solid fa-circle"></i>
+        </div>
+        <div class="description">
+          Description
+        </div>
       </div>
+      <div class="menu-item">
+        <div class="icon">
+          <i class="fa-solid fa-circle"></i>
+        </div>
+        <div class="description">
+          Description
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="icon">
+          <i class="fa-solid fa-circle"></i>
+        </div>
+        <div class="description">
+          Description
+        </div>
+      </div>
+      <div class="fake-content"></div>
     </div>
-
-    <div id="end" class="flex">
-      <div class="solid video">
-        <i class="fa-solid fa-video"></i>
-      </div>
-      <div class="solid list-ul">
-        <i class="fa-solid fa-list-ul"></i>
-      </div>
-      <div class="solid bell">
-        <i class="fa-solid fa-bell"></i>
-      </div>
-      <div class="solid circle">
-        <i class="fa-solid fa-circle"></i>
-      </div>
-    </div>
-    
-  </div>
-
-
+  </div> -->
 
 </body>
 </html>
