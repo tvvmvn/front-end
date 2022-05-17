@@ -61,3 +61,34 @@ function createGroup(isReal) {
     document.getElementById('root').replaceChildren(createElement(element))
   }
 }
+
+function createElement(node) {
+  try {
+    if (typeof node === 'string') {
+      return document.createTextNode(node)
+    }
+
+    const $el = document.createElement(node.type);
+
+    Object.keys(node.props).map(prop => {
+      if (prop.match(/^on/)) {
+        $el.addEventListener(prop.slice(2).toLocaleLowerCase(), node.props[prop]) 
+      } else if (typeof node.props[prop] === 'boolean') {
+        if (node.props[prop]) {
+          $el.setAttribute(prop, '')
+        } 
+      } else {
+        $el.setAttribute(prop, node.props[prop])
+      }
+    })
+    
+    node.children.map(c => {
+      $el.appendChild(createElement(c))
+    })
+
+    return $el;
+    
+  } catch (err) {
+    console.error(err);
+  }
+}
