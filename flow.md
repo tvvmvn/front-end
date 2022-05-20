@@ -32,8 +32,8 @@ button: button, anchor btn
 form: login, sign up, contact, Google search 
 table: table, table with icon
 navigation: top-nav, side-nav, responsive, dashboard, dropdown-nav
-image: thumbnail, text over image, responsive
 flex: layout, responsive layout, image grid
+image: thumbnail, text over image, responsive
 animation: loader
 
 

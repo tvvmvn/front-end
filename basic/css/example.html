@@ -1088,5 +1088,430 @@
     </div>
   </div> -->
 
+
+  <!-- <h1>Image</h1> -->
+
+  <!-- <h2>Image into HTML using background and img tag</h2> -->
+
+  <!-- <style>
+    .container {
+      width: 200px;
+      height: 200px;
+    }
+
+    .bg-image {
+      background-image: url('../../img/duck.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .container img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  
+  <div class="container bg-image"></div>
+
+  <div class="container">
+    <img src="../../img/duck.jpeg" alt="">
+  </div> -->
+
+
+  <!-- <h2>Image thumbnail</h2> -->
+
+  <!-- <style>
+    .container {
+      display: flex;
+      background-color: #ddd;
+    }
+    img {
+      /* width: 100%; */
+      /* height: 100%; */
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+    }
+
+    .thumbnail {
+      width: 100px;
+      height: 100px;
+      opacity: 0.8;
+    }
+    .thumbnail:hover {
+      opacity: 1;
+    }
+  </style>
+
+  <div class="container">
+    <div class="thumbnail">
+      <img src="../../img/bunny.jpeg" alt="">
+    </div>
+    <div class="thumbnail">
+      <img src="../../img/cat.jpeg" alt="">
+    </div>
+    <div class="thumbnail">
+      <img src="../../img/duck.jpeg" alt="">
+    </div>
+    <div class="thumbnail">
+      <img src="../../img/bird.jpeg" alt="">
+    </div>
+  </div> -->
+
+  <!-- <h2>Text on image</h2> -->
+
+  <!-- <style>
+    .container {
+      width: 400px;
+      height: 400px;
+      position: relative;
+    }
+    .bg-image {
+      background-image: url('../../img/duck.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+    .bg-text {
+      background-color: #000;
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px;
+    }
+  </style>
+
+  <div class="container bg-image">
+    <div class="bg-text">
+      <h1>TEXT</h1>
+    </div>
+  </div> -->
+
+  <!-- <h2>overlay in image</h2> -->
+
+  <!-- <style>
+    .thumbnail {
+      width: 400px;
+      height: 400px;
+      position: relative;
+    }
+    img {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+    }
+    .overlay {
+      position: absolute;
+      background-color: rgba(0,0,0,0.5);
+      width: inherit;
+      height: inherit;
+    }
+  </style>
+
+  <div class="thumbnail">
+    <div class="overlay"></div>
+    <img src="../../img/duck.jpeg" alt="">
+  </div> -->
+
+
+  <!-- <h2>Overlay and text in image</h2>
+
+  <style>
+    .thumbnail {
+      width: 400px;
+      height: 400px;
+      position: relative;
+    }
+    img {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+    }
+    .overlay {
+      position: absolute;
+      background-color: rgba(0,0,0,0.5);
+      width: inherit;
+      height: inherit;
+    }
+    .text {
+      position: absolute;
+      background-color: #000;
+      color: #fff;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+
+  <div class="thumbnail">
+    <div class="overlay"></div>
+    <div class="text">
+      <h1>TEXT</h1>
+    </div>
+    <img src="../../img/duck.jpeg" alt="">
+  </div> -->
+
+  <!-- <h2>Hovereffect on Image</h2> -->
+
+  <!-- <style>
+    .container {
+      display: flex;
+    }
+    .thumbnail {
+      width: 200px;
+      height: 200px;
+      border: 1px dashed;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* scalable image */
+    .scalable {
+      overflow: hidden
+    }
+    .scalable:hover img {
+      /* 1.2 larger than original width */
+      transform: scale(1.2, 1.2)
+    }
+    .scalable img {
+      transition: 0.5s;
+    }
+    /* overlay on image */
+    .image-layer {
+      position: relative;
+    }
+    .image-layer:hover .overlay {
+      opacity: 1
+    }
+    .overlay {
+      position: absolute;
+      background-color: #ddd;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: .5s;
+    }
+  </style>
+
+  <div class="container">
+    <div class="thumbnail scalable">
+      <img src="../../img/bunny.jpeg" alt="">
+    </div>
+  
+    <div class="thumbnail image-layer">
+      <div class="overlay"></div>
+      <img src="../../img/bunny.jpeg" alt="">
+    </div>
+  </div> -->
+
+
+  <!-- <h2>Text on scalable image</h2> -->
+
+  <!-- <style>
+    .thumbnail {
+      width: 200px;
+      height: 200px;
+      border: 1px dashed;
+      position: relative;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* scalable image */
+    .scalable {
+      overflow: hidden
+    }
+    .scalable:hover img {
+      /* 1.2 larger than original width */
+      transform: scale(1.2, 1.2)
+    }
+    .scalable img {
+      transition: 0.5s;
+    }
+    .scalable:hover .text {
+      display: block;
+    }
+
+    /* text on scalable image */
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+  </style>
+
+  <div class="thumbnail scalable">
+    <img src="../../img/bunny.jpeg" alt="">
+    <div class="text">
+      <b>TEXT</b>
+    </div>
+  </div> -->
+
+  <!-- <h2>Text on overlay image</h2> -->
+
+  <!-- <style>
+    .container {
+      display: flex;
+    }
+    .thumbnail {
+      width: 200px;
+      height: 200px;
+      border: 1px dashed;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* overlay on image */
+    .image-layer {
+      position: relative;
+    }
+    .image-layer:hover .overlay {
+      opacity: 1
+    }
+    .overlay {
+      position: absolute;
+      background-color: #ddd;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: .5s;
+    }
+
+    /* text on overlay */
+    .overlay .text {
+      position: inherit;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+    }
+  </style>
+  
+  <div class="thumbnail image-layer">
+    <div class="overlay">
+      <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <img src="../../img/bunny.jpeg" alt="">
+  </div> -->
+
+
+  <!-- <h1>image that is equal width and height</h1> -->
+
+  <!-- <h2>Basic: using padding-top</h2> -->
+
+  <!-- <style>
+    .container {
+      width: 200px;
+      height: 200px;
+      background-color: #ddd;
+    }
+    .item {
+      border: 1px dashed;
+      width: 100%;
+      /* relative to its parent width */
+      padding-top: 100%;
+      position: relative;
+    }
+    .item span {
+      position: absolute;
+      top: 0; 
+      left: 0;
+    }
+  </style>
+  
+  <div class="container">
+    <div class="item">
+      <span>hello</span>
+    </div>
+  </div> -->
+
+
+  <!-- <h2>Basic: an image on padding-top element</h2>
+
+  <style>
+    /* body {
+      border: 3px solid red;
+    } */
+    .container {
+      /* relative to width of body */
+      width: 100%;
+      background-color: #ddd;
+    }
+    .item {
+      border: 1px dashed;
+      width: 100%;
+      /* relative to its parent width */
+      padding-top: 100%;
+      position: relative;
+    }
+    .item img {
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+  
+  <div class="container">
+    <div class="item">
+      <img src="../../img/duck.jpeg" alt="">
+    </div>
+  </div> -->
+
+  <!-- <h2>Image thumbnails with equal width and height</h2> -->
+
+  <!-- <style>
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .container {
+      box-sizing: border-box;
+      border: 1px dashed;
+      width: 50%;
+      padding: 10px;
+    }
+    .item {
+      width: 100%;
+      /* relative to container width */
+      padding-top: 100%;
+      background-color: #ddd;
+    }
+    </style>
+
+  <div class="row">
+    <div class="container">
+      <div class="item"></div>
+    </div>
+    <div class="container">
+      <div class="item"></div>
+    </div>
+    <div class="container">
+      <div class="item"></div>
+    </div>
+    <div class="container">
+      <div class="item"></div>
+    </div>
+  </div> -->
+  
+
+  <!-- <h1>Animation</h1> -->
+
+
 </body>
-</html>
+</html> 
