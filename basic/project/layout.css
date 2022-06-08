@@ -5,8 +5,8 @@
   box-sizing: border-box;
 }
 h1, h2, h3, h4, h5, p {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 html, body {
   scroll-behavior: smooth;
@@ -75,15 +75,14 @@ input[type=text], input[type=date] {
 
 /* border and box-shadow */
 .border {
-  border: 1px dashed;
+  border: 1px solid #f1f1f1;
 }
-.child-border > * {
-  border: 1px dashed;
+.border-children > * {
+  border: 1px solid #f1f1f1;
 } 
 .border-bottom {
   border-bottom: 1px solid #f1f1f1;
 }
-
 .box-shadow {
   box-shadow: 
   1px 3px 3px #888,
@@ -134,16 +133,7 @@ input[type=text], input[type=date] {
 .w-100 {
   width: 100%;
 }
-.max-width-700 {
-  max-width: 700px;
-  margin: auto;
-}
-.max-width-800 {
-  max-width: 800px;
-  margin: auto;
-}
-.max-width-1200 {
-  max-width: 1200px;
+.mx-auto {
   margin: auto;
 }
 
@@ -159,7 +149,7 @@ input[type=text], input[type=date] {
 .flex-wrap {
   flex-wrap: wrap;
 }
-.space-between {
+.justify-content-between {
   justify-content: space-between;
 }
 .flex-equal > * {
@@ -170,18 +160,6 @@ input[type=text], input[type=date] {
 }
 .flex-col {
   flex-direction: column;
-}
-.flex-33 {
-  flex: 33%;
-}
-.flex-50 {
-  flex: 50%
-}
-.flex-100 {
-  flex: 100%;
-}
-.min-width-50 {
-  min-width: 50px;
 }
 
 /* grid */
@@ -196,44 +174,44 @@ input[type=text], input[type=date] {
 }
 
 /* padding and margin */
-.pd-5 {
+.p-5 {
   padding: 5px;
 }
-.pd-10 {
+.p-10 {
   padding: 10px;
 }
-.pd-side-10 {
+.px-10 {
   padding-left: 10px;
   padding-right: 10px;
 }
-.pd-tb-48 {
+.py-48 {
   padding-top: 48px;
   padding-bottom: 48px;
 }
-.pd-tb-24 {
+.py-24 {
   padding-top: 24px;
   padding-bottom: 24px;
 }
 
-.mg-10 {
+.m-10 {
   margin: 10px;
 }
-.mg-top-24 {
+.mt-24 {
   margin-top: 24px;
 }
-.mg-side-10 {
+.mx-10 {
   margin-left: 10px;
   margin-right: 10px;
 }
-.mg-tb-10 {
+.my-10 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.mg-tb-24 {
+.my-24 {
   margin-top: 24px;
   margin-bottom: 24px;
 }
-.mg-tb-48 {
+.my-48 {
   margin-top: 48px;
   margin-bottom: 48px;
 }
@@ -243,12 +221,6 @@ input[type=text], input[type=date] {
   background-color: #f1f1f1;
   border-left: 5px solid #ddd;
   padding: 24px;
-}
-.blockquote-footer {
-  color: #555;
-}
-.blockquote-footer::before {
-  content: "- ";
 }
 
 /* image */
