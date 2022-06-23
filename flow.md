@@ -36,36 +36,45 @@ flex: layout, responsive layout, image grid
 image: thumbnail, text over image, responsive
 animation: loader
 
+- - -
 
-# JavaScript 1
-window object
-Data type: primary and object and basic method
-Operator: Arithmetic, 
-inheritance
-function and method, event, callback
-Variable
-condition
-loop: for
-Selector and Render
+# JavaScript
+> Basic
+- Data Type
+primary data type and method
+- Object and Array
+- Operator: Arithmetic, 
+- Variable
+var
+- Condition
+if else, switch
+- Loop 
+for, while
+- Function and Method, Callback, Asynchronous
+- Object Contstructor, Class
+- try/catch and Error Handling
+- Regex
+- ES6
+let, const, Arrow function, destructing/spread operator, Promise(async/await), ternary ...
 
-# JavaScript 1 Example
+> HTML DOM
+Selector and Render, event
+
+> Server-Side
+LocalStorage/JSON
+Cookie
+AJAX, fetch
+
+# JavaScript Example
+> HTML DOM
 render in HTML: innerHTML, createElement, appendChild, ...
-Others: dropdown, likes, rating, loader
+Others: dropdown, likes, rating,
 Accordion
 Tab content
 Navigation: mobile, side-nav
 Images: modal, slide, carousel
 
-# JavaScript 2
-prototype, class and inheritance, regex, try and catch, getter/setter
-ES6: let, const, Arrow function, destructing/spread operator, Promise, ternary ...
-Storing and Sending DATA: LocalStorage/JSON
-
-> AJAX and fetch using node server ?
-> React Analyze: recursive function, module, CSR ?
-
-# JavaScript 2 Example
-LocalStorage: voting app, shopping cart
+- - -
 
 # React
 Basic
