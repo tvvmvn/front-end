@@ -39,7 +39,6 @@ animation: loader
 - - -
 
 # JavaScript
-> Basic
 - Data Type
 primary data type and method
 - Object and Array
@@ -55,20 +54,13 @@ for, while
 - try/catch and Error Handling
 - Regex
 - ES6
-let, const, Arrow function, destructing/spread operator, Promise(async/await), ternary ...
-
-> HTML DOM
-Selector and Render, event
-
-> Server-Side
-LocalStorage/JSON
-Cookie
-AJAX, fetch
+let, const, Arrow function, destructing/spread operator, Promise(async/await), ternary, &&, ||,
+- Server-Side
+Cookie, LocalStorage/JSON, AJAX and fetch
 
 # JavaScript Example
-> HTML DOM
-render in HTML: innerHTML, createElement, appendChild, ...
-Others: dropdown, likes, rating,
+render in HTML: innerHTML, createElement, appendChild
+Others: dropdown, likes, rating
 Accordion
 Tab content
 Navigation: mobile, side-nav

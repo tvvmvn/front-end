@@ -24,19 +24,19 @@ Portfolio
 data type, object and array
 operator, variable, condition, loop
 2
-function, method, callback
-object constructor, class, error handling, es6 syntax
+function, method 
+callback
 3
-HTML DOM Example 
-HTML DOM Example 
-4
+object constructor, class, error handling, 
+es6 syntax
+4 7/2, 7/3
 HTML DOM Example 
 HTML DOM Example 
 5
 HTML DOM Example 
 HTML DOM Example 
 6
-HTML DOM Example 
+Project 3
 Project 3
 
 
@@ -79,6 +79,7 @@ View: follow, likes
 6
 Style for View
 Style for View
+
 
 # 24H class for Vacation
 

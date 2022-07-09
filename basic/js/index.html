@@ -9,7 +9,6 @@
 </head>
 <body>
   <script src="./script.js"></script>
-  <script src="./example.js"></script>
 
   <!-- <h1>HTML DOM</h1> -->
 
@@ -218,9 +217,6 @@
       }
     }
   </script> -->
-
-
-  <!-- 3/28 Monday -->
 
   <!-- <h1>Accordion</h1> -->
 
@@ -440,11 +436,13 @@
   </style>
   
   <div class="container">
+    
     <div class="col">
       <button class="btn" onclick="toggleTab('london')">London</button>
       <button class="btn" onclick="toggleTab('seoul')">Seoul</button>
       <button class="btn" onclick="toggleTab('tokyo')">Tokyo</button>
     </div>
+
     <div class="col">
       <div id="london" class="tab-content">
         <h3>London</h3>  
@@ -477,35 +475,28 @@
   </script> -->
 
 
-  <!-- <h1>Naviagation</h1> -->
+  <!-- <h1>Navigation</h1> -->
 
   <!-- <style>
-    * {
-      padding: 0; 
+    h2 {
       margin: 0;
-      box-sizing: border-box;
-    }
-    header {
-      border: 3px dashed;
     }
     .header-inner {
       background-color: #ddd;
-      padding: 5px;
+      padding: 0.5em;
     }
     nav {
-      border: 1px solid red;
+      border: 1px dashed;
     }
     nav {
       display: none;
     }
     nav a {
       display: block;
-      padding: 5px;
+      padding: 0.5em;
       text-align: center;
-      border: 1px dashed;
     }
     .menu-btn {
-      padding: 0 10px;
       cursor: pointer;
     }
     .active {
@@ -533,22 +524,18 @@
     })
   </script> -->
 
-
   <!-- <style>
     * {
       padding: 0; 
       margin: 0;
       box-sizing: border-box;
     }
-    header {
-      border: 3px dashed;
-    }
     .header-inner {
       background-color: #ddd;
-      padding: 5px;
+      padding: 0.5em;
     }
     nav {
-      border: 1px solid red;
+      border: 1px dashed;
     }
     nav {
       height: 0;
@@ -557,12 +544,9 @@
     }
     nav a {
       display: block;
-      padding: 5px;
-      text-align: center;
-      border: 1px dashed;
+      padding: 0.5em;
     }
     .menu-btn {
-      padding: 0 10px;
       cursor: pointer;
     }
   </style>
@@ -601,7 +585,6 @@ the element positioned last in the HTML code will be shown on top.  -->
 
   <!-- <style>
     nav {
-      border: 1px dashed;
       width: 280px;
       height: 100%;
       position: fixed;
@@ -627,17 +610,23 @@ the element positioned last in the HTML code will be shown on top.  -->
   <div id="layer" class="layer"></div>
   
   <nav>
-    <a href="">Home</a>
-    <a href="">About</a>
-    <a href="">Blog</a>
-    <span id="closeMenu">Close</span>
+    <ul>
+      <li>
+        <a href="">Home</a>
+      </li>
+      <li>
+        <a href="">About</a>
+      </li>
+      <li>
+        <a href="">Posts</a>
+      </li>
+    </ul>
   </nav>
 
   <span id="openMenu">MENU</span>
 
   <script>
     var openMenu = document.getElementById('openMenu');
-    var closeMenu = document.getElementById('closeMenu')
     var layer = document.getElementById('layer')
     var nav = document.querySelector('nav');
 
@@ -645,68 +634,65 @@ the element positioned last in the HTML code will be shown on top.  -->
       nav.style.left = '0px';
       layer.style.display = 'block'
     })
-    closeMenu.addEventListener('click', function (e) {
-      nav.style.left = '-280px';
-      layer.style.display = 'none'
-    })
     layer.addEventListener('click', function (e) {
       nav.style.left = '-280px';
       e.target.style.display = 'none';
     })
   </script> -->
 
-
-  <!-- 3/29 Tuesday -->
-
-  <!-- <h1>Image and Carousel</h1> -->
+  <!-- <h1>Modal Image</h1> -->
 
   <!-- <style>
-    img {
-      width: 100%;
-    }
     #img01 {
-      width: 200px;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
     }
-    .layer {
+    #layer {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       background-color: rgba(0,0,0,0.5);
-      display: none;
-
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
     }
-    .container {
-      display: none;
-      position: fixed;
-      top: 100px;
-      left: 50%;
-      transform: translateX(-50%);
+    #layer.active {
+      visibility: visible;
+    }
+    #modal {
       width: 400px;
-      /* auto: Set the stack order equal to its parents. default. */
-      /* number: Set the stack order of the element. Negative numbers are allowed */
-      z-index: auto;
     }
   </style>
 
   <img id="img01" src="../../img/bunny.jpeg" alt="">
 
-  <div id="layer" class="layer"></div>
-
-  <div id="container" class="container">
-    <img id="modal-img" src="" alt="">
+  <div id="layer">
+    <img id="modal" src="" alt="">
   </div>
 
   <script>
-    document.getElementById('img01').addEventListener('click', function (e) {
-      document.getElementById('modal-img').src = img01.src
-      document.getElementById('container').style.display = 'block';
-      document.getElementById('layer').style.display = 'block';
-    })
-    // close image with x button and layer click
-  </script> -->
+    let img01 = document.getElementById("img01");
+    let modal = document.getElementById('modal');
+    let layer = document.getElementById('layer');
 
+    img01.addEventListener('click', () => {
+      modal.src = img01.src
+      layer.classList.add("active")
+    })
+
+    layer.addEventListener("click", e => {
+      // console.log(e.target)
+      console.log(e.target)
+      console.log(e.currentTarget)
+      // if (e.target === layer) {
+      //   e.target.classList.remove("active");
+      // }
+    })
+  </script> -->
 
   <!-- <style>
     img {
@@ -721,22 +707,23 @@ the element positioned last in the HTML code will be shown on top.  -->
     .thumbnail:hover {
       opacity: 1;
     }
-    .layer {
+    #layer {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       background-color: rgba(0,0,0,0.5);
-      display: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
     }
-    .container {
-      display: none;
-      position: fixed;
-      top: 100px;
-      left: 50%;
-      transform: translateX(-50%);
+    #modal {
       width: 400px;
+    }
+    #layer.active {
+      visibility: visible;
     }
   </style>
 
@@ -744,32 +731,30 @@ the element positioned last in the HTML code will be shown on top.  -->
   <img class="thumbnail" src="../../img/cat.jpeg" alt="">
   <img class="thumbnail" src="../../img/bird.jpeg" alt="">
 
-  <div id="layer" class="layer"></div>
-
-  <div id="container" class="container">
-    <img id="modal-img" src="" alt="">
+  <div id="layer">
+    <img id="modal" src="" alt="">
   </div>
-
 
   <script>
     var thumbnails = document.querySelectorAll('.thumbnail');
-    var modalImg = document.getElementById('modal-img');
-    var container = document.getElementById('container');
+    var modal = document.getElementById('modal');
     var layer = document.getElementById('layer');
 
     thumbnails.forEach(thumbnail => {
       thumbnail.addEventListener('click', () => {
-        modalImg.src = thumbnail.src
-        container.style.display = 'block';
-        layer.style.display = 'block';
+        modal.src = thumbnail.src
+        layer.classList.add("active")
       })
     })
 
-    layer.addEventListener('click', () => {
-      layer.style.display = 'none';
-      container.style.display = 'none';
+    window.addEventListener('click', (e) => {
+      if (e.target === layer) {
+        e.target.classList.remove("active")
+      }
     })
   </script> -->
+
+  <!-- <h1>Image and Carousel</h1> -->
 
   <!-- <style>
     .thumbnail {
@@ -870,142 +855,37 @@ the element positioned last in the HTML code will be shown on top.  -->
     navigateTo(0);
   </script> -->
 
-
   <!-- <style>
-    .container {
-      border: 3px dashed;
-      width: 300px;
-      height: 300px;
-      overflow: hidden;
-      white-space: nowrap;
-      font-size: 0;
-      position: relative;
-    }
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      /* border: 1px solid red; */
-      display: inline-block;
-      transition: 0.5s;
     }
-    .indicator {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    .indicator .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: #ddd;
-      display: inline-block;
-      margin: 0 2px
-    }
-    .prev, .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    .prev {
-      left: 0;
-    }
-    .next {
-      right: 0;
-    }
-  </style>
-
-  <div class="container">
-    <img src="../../img/bunny.jpeg" alt="">
-    <img src="../../img/cat.jpeg" alt="">
-    <img src="../../img/bird.jpeg" alt="">
-    <div class="indicator">
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
-    <div class="nav">
-      <button class="prev" onclick="navigateTo(-1)">&#10094;</button>
-      <button class="next" onclick="navigateTo(1)">&#10095;</button>
-    </div>
-  </div>
-
-
-
-  <script>
-    var imgs = document.querySelectorAll('img');
-    var prev = document.querySelector('.prev');
-    var next = document.querySelector('.next');
-    var dots = document.querySelectorAll('.dot');
-
-    var index = 0;
-
-    function navigateTo(data) {
-      // index
-      index += data;
-      console.log(index)
-
-      // Navigate button
-      prev.style.display = 'inline-block'
-      next.style.display = 'inline-block'
-
-      if (index === 0) {
-        prev.style.display = 'none'
-      }
-      if (index === imgs.length-1) {
-        next.style.display = 'none'
-      }
-
-      // Indicator
-      dots.forEach(dot => {
-        dot.style.backgroundColor = '#ddd'
-      })
-      dots[index].style.backgroundColor = '#555';
-
-      // Move images
-      imgs[0].style.marginLeft = `-${index * 300}px`;
-    }    
-
-    navigateTo(0)
-  </script> -->
-
-
-  <!-- <style>
-    * { box-sizing: border-box; }
     .thumbnail {
       float: left;
       width: 100px;
       height: 100px;
       object-fit: cover;
       opacity: 0.8;
+      cursor: pointer;
     }
     .thumbnail:hover {
       opacity: 1
     }
     .container {
-      /* border: 3px dashed; */
       width: 400px;
       height: 300px;
       position: relative;
     }
-    .container img {
-      /* width: 400px; */
-      /* height: 300px; */
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-    }
-    .prev, .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    .prev {
-      left: 0;
-    }
-    .next {
-      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   </style>
   
@@ -1062,7 +942,217 @@ the element positioned last in the HTML code will be shown on top.  -->
   </script> -->
 
   <!-- <style>
-    * { box-sizing: border-box; }
+    .carousel {
+      width: 300px;
+      height: 300px;
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 0;
+      position: relative;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: inline-block;
+      transition: 0.5s;
+    }
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .indicator {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .indicator .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #ddd;
+      margin: 0 2px
+    }
+    .indicator .dot.active {
+      background-color: #555;
+    }
+    #prev, #next {
+      visibility: hidden;
+    }
+    #prev.active, #next.active {
+      visibility: visible;
+    }
+  </style>
+
+
+  <div class="carousel">
+    <img src="../../img/bunny.jpeg" alt="">
+    <img src="../../img/cat.jpeg" alt="">
+    <img src="../../img/bird.jpeg" alt="">
+
+    <div class="nav">
+      <button id="prev" onclick="navigateTo(-1)">&#10094;</button>
+      <button id="next" onclick="navigateTo(1)">&#10095;</button>
+    </div>
+
+    <div class="indicator">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <script>
+    var imgs = document.querySelectorAll('img');
+    var prev = document.getElementById("prev")
+    var next = document.getElementById("next")
+    var dots = document.querySelectorAll('.dot');
+
+    var index = 0;
+
+    function navigateTo(data) {
+      // index
+      index += data;
+      console.log(index)
+
+      // Navigate button
+      prev.classList.add("active")
+      next.classList.add("active")
+
+      if (index === 0) {
+        prev.classList.remove("active")
+      }
+      if (index === imgs.length-1) {
+        next.classList.remove("active")
+      }
+
+      // Indicator
+      dots.forEach(dot => {
+        dot.classList.remove("active")
+      })
+      dots[index].classList.add("active");
+
+      // Move images
+      imgs[0].style.marginLeft = `-${index * 300}px`;
+    }    
+
+    navigateTo(0)
+  </script> -->
+
+  <!-- <style>
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .carousel {
+      width: 300px;
+      height: 300px;
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 0;
+      position: relative;
+    }
+    .item {      
+      width: 300px;
+      height: 300px;
+      transition: 0.5s;
+      display: none;
+    }
+    .item.active {
+      display: inline-block;
+    }
+    .indicator {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .indicator .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #ddd;
+      margin: 0 2px
+    }
+    .indicator .dot.active {
+      background-color: #555;
+    }
+  </style>
+
+  <div class="carousel">
+    <div class="item">
+      <img src="../../img/bunny.jpeg" alt="">
+    </div>
+    <div class="item">
+      <img src="../../img/cat.jpeg" alt="">
+    </div>
+    <div class="item">
+      <img src="../../img/bird.jpeg" alt="">
+    </div>
+
+    <div class="indicator">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <script>
+    var items = document.querySelectorAll('.item');
+    var dots = document.querySelectorAll('.dot');
+
+    var index = 0;
+
+    function navigateTo(data) {
+      // Indicator
+      dots.forEach(dot => {
+        dot.classList.remove("active")
+      })
+      dots[index].classList.add("active");
+
+      items.forEach(img => {
+        img.classList.remove("active")
+      })
+
+      // Move images
+      items[index].classList.add("active")
+    }   
+
+    window.addEventListener("load", () => {
+      navigateTo(index)
+
+      setInterval(() => {
+        // index
+        index++
+        console.log(index)
+
+        if (index === -1) {
+          index = items.length - 1
+        }
+        if (index === items.length) {
+          index = 0
+        }
+
+        navigateTo(index)
+      }, 3000)
+    })
+
+  </script> -->
+
+  <!-- <style>
+    img {
+      width: 100%;
+    }
     .thumbnail {
       float: left;
       width: 100px;
@@ -1073,42 +1163,34 @@ the element positioned last in the HTML code will be shown on top.  -->
     .thumbnail:hover {
       opacity: 1
     }
-    .container {
-      /* border: 3px dashed; */
-      position: fixed;
-      top: 50px;
-      right: 50%;
-      transform: translateX(50%);
-      width: 400px;
-      height: 300px;
-      display: none;
-    }
-    .container img {
-      /* width: 400px; */
-      /* height: 300px; */
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .layer {
+    #layer {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       background-color: rgba(0,0,0,0.8);
-      display: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
     }
-    .prev, .next {
+    #modal {
+      position: relative;
+      max-width: 400px;
+    }
+    .nav {
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    .prev {
+      top: 0;
       left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    .next {
-      right: 0;
+    #layer.active {
+      visibility: visible;
     }
   </style>
 
@@ -1119,23 +1201,22 @@ the element positioned last in the HTML code will be shown on top.  -->
     <img class="thumbnail" src="../../img/duck.jpeg" onclick="jumpTo(3)" alt="">
   </div>
 
-  <div class="layer"></div>
-
-  <div class="container">
-    <img id="display-image" src="" alt="">
-    <div class="nav">
-      <button class="prev" onclick="navigateTo(-1)">&#10094;</button>
-      <button class="next" onclick="navigateTo(1)">&#10095;</button>
+  <div id="layer">
+    <div id="modal">
+      <img id="modal-image" src="" alt="">
+      <div class="nav">
+        <button id="prev" onclick="navigateTo(-1)">&#10094;</button>
+        <button id="next" onclick="navigateTo(1)">&#10095;</button>
+      </div>
     </div>
   </div>
 
   <script>
-    var container = document.querySelector('.container');
     var thumbnails = document.querySelectorAll('.thumbnail');
-    var displayImage = document.getElementById('display-image');
-    var layer = document.querySelector('.layer');
-    var prev = document.querySelector('.prev');
-    var next = document.querySelector('.next');
+    var layer = document.getElementById('layer');
+    var prev = document.getElementById("prev");
+    var next = document.getElementById("next");
+    var modalImage = document.getElementById("modal-image")
     
     var index = 0;
 
@@ -1158,25 +1239,24 @@ the element positioned last in the HTML code will be shown on top.  -->
       console.log(index)
 
       getSrc(thumbnails[index].src)
-      container.style.display = 'block';
-      layer.style.display = 'block';
+      layer.classList.add("active");
     }
 
     function getSrc(src) {
-      displayImage.src = src
+      modalImage.src = src
     }
 
     // Stop display
-    layer.addEventListener('click', stopDisplay);
+    window.addEventListener('click', stopDisplay);
 
-    function stopDisplay() {
-      container.style.display = 'none';
-      layer.style.display = 'none';
+    function stopDisplay(e) {
+      if (e.target.id === "layer") {
+        e.target.classList.remove("active")
+      }
     }
   </script> -->
 
-
-<!-- <h1>LocalStorage</h1> -->
+<!-- <h1>JSON and LocalStorage</h1> -->
 
 <!-- <h1 id="count"></h1>
 <button id="btn">add</button>
@@ -1259,7 +1339,6 @@ the element positioned last in the HTML code will be shown on top.  -->
     document.getElementById('result').innerHTML = localStorage.getItem('vote')
   }
 </script> -->
-
 
 <!-- <h1>Shop</h1>
 <div id="root"></div>
