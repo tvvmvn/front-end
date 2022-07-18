@@ -10,15 +10,17 @@
   <!-- Header -->
   <header>
     <h1>현대자동차 공식홈페이지</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
   </header>
 
   <!-- Menu -->
   <nav>
+    <h2>메뉴</h2>
     <ul>
       <li>현대자동차 쇼케이스</li>
       <li>모델 소개</li>
       <li>모델 비교표</li>
-      <li>오시는 길</li>
+      <li>Contact</li>
     </ul>
   </nav>
 
@@ -26,30 +28,31 @@
 
   <!-- Content -->
   <main>
-    <div>
+    <!-- 쇼케이스 -->
+    <section>
       <h2>현대자동차 쇼케이스</h2>
       <iframe src="" frameborder="0"></iframe>
-    </div>
+    </section>
 
-    <div>
+    <!-- 모델 소개 -->
+    <section>
       <h2>모델 소개</h2>
-      <ul>
-        <li>
+        <article>
           <h3>제네시스</h3>
           <div>
             <img src="../../img/bunny.jpeg" alt="제네시스" width="200">
             <p>
-              <b>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</b> 
+              <span style="font-weight: bold">Lorem ipsum dolor sit amet consectetur,</span> adipisicing elit.
               Nesciunt quaerat alias itaque, ratione, iste quidem officia obcaecati.
               <br>
-              <span style="color: red">dignissimos</span> sapiente asperiores dolorem distinctio nostrum fuga dolorum
+              dignissimos sapiente asperiores dolorem distinctio nostrum fuga dolorum
               maxime voluptatem deleniti recusandae minus.</p>
           </div>
-        </li>
-      </ul>
-    </div>
+        </article>
+    </section>
 
-    <div>
+    <!-- 모델 비교표 -->
+    <section>
       <h2>모델 비교표</h2>
       <table border="1">
         <tr>
@@ -65,36 +68,47 @@
           <td>1000원</td>
         </tr>
       </table>
-    </div>
+    </section>
 
-    <div>
-      <h2>오시는 길</h2>
-      <iframe src="" frameborder="0"></iframe>
-    </div>
+    <!-- 컨택 -->
+    <section>
+      <div>
+        <h2>오시는 길</h2>
+        <iframe src="" frameborder="0"></iframe>
+      </div>
 
-    <div>
-      <form action="">
-        <h2>연락하기</h2>
-        <div>
-          <label for="">성함</label>
-          <input type="text">
-        </div>
-        <div>
-          <label for="">이메일</label>
-          <input type="text">
-        </div>
-        <div>
-          <textarea name="" id="" cols="30" rows="10" placeholder="내용을 입력하세요"></textarea>
-        </div>
-        <div>
-          <input type="checkbox" name="" id="">
-          <label for=""><a href="">개인정보 처리방침</a>에 동의합니다</label>
-        </div>
-        <div>
-          <button>전송하기</button>
-        </div>
-      </form>
-    </div>
+      <div>
+        <form action="">
+          <h2>연락하기</h2>
+          <div>
+            <label for="">성함</label>
+            <input type="text">
+          </div>
+          <div>
+            <label for="">이메일</label>
+            <input type="text">
+          </div>
+          <div>
+            <label for="">성별</label>
+            <select name="" id="">
+              <option value="">남</option>
+              <option value="">여</option>
+            </select>
+          </div>
+          <div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="내용을 입력하세요"></textarea>
+          </div>
+          <div>
+            <input type="checkbox" name="" id="">
+            <label for=""><a href="#">개인정보 처리방침</a>에 동의합니다</label>
+          </div>
+          <div>
+            <button>전송하기</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    
   </main>
   
   <hr>

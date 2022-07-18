@@ -1,33 +1,18 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
-const { v4: uuidv4 } = require('uuid');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  // fs.readdir('data/', (err, posts) => {
-  //   try {
-  //     if (err) {
-  //       // throw err;
-  //       return next(err)
-  //     };
-  //     es.render('blog_list', { title: 'Blogs', posts });
-  //   } catch (error) {
-  //     res.status(500).json(error)
-  //     console.error(error)
-  //   }
-  // })
-  
-  // Asynchronous
   fs.readdir('data/', (err, posts) => {
-      if (err) {
-        // throw err;
-        return next(err)
-      };
-      es.render('blog_list', { title: 'Blogs', posts });
+    if (err) {
+      return next(err)
+    };
+    res.render('blog_list', { title: 'Blogs', posts });
   })
 });
 
+// About
 router.get('/about', function(req, res, next) {
   res.render('about', { title: 'About' });
 });
@@ -38,30 +23,43 @@ router.get('/create', function(req, res, next) {
 });
 
 router.post('/create', function(req, res, next) {
-  fs.appendFile(`data/${req.body.title}.txt`, req.body.content, (err) => {
+
+  fs.readdir('data/', (err, posts) => {
     if (err) {
-      return console.error(err)
+      return next(err)
+    };
+    
+    const post = posts.find(post => post.split(".")[0] === req.body.title);
+
+    if (post) {
+      return next(new Error("Title must be unique"))
     }
-    res.redirect('/');
+
+    fs.writeFile(`data/${req.body.title}.txt`, req.body.content, (err) => {
+      if (err) {
+        return next(err)
+      }
+      res.redirect('/');
+    })
   })
 });
 
 // Read
 router.get('/p/:postId', (req, res, next) => {
-    fs.readFile(`data/${req.params.postId}`, (err, content) => {
-      if (err) {
-        return console.error(err)
-      }
-      const post = { title: req.params.postId, content }
-      res.render('blog_detail', { title: 'Blog', post })
-    })
+  fs.readFile(`data/${req.params.postId}`, (err, content) => {
+    if (err) {
+      return next(err)
+    }
+    const post = { title: req.params.postId, content }
+    res.render('blog_detail', { title: 'Blog', post })
+  })
 })
 
 // Update
 router.get('/p/:postId/update', (req, res, next) => {
   fs.readFile(`data/${req.params.postId}`, (err, content) => {
     if (err) {
-      return console.error(err)
+      return next(err)
     }
     const post = { title: req.params.postId, content }
     res.render('blog_form', { title: 'Blog', post })
@@ -69,24 +67,26 @@ router.get('/p/:postId/update', (req, res, next) => {
 })
 
 router.post('/p/:postId/update', (req, res, next) => {
-  fs.rename(`data/${req.body.ex_title}`, `data/${req.body.title}.txt`, (err, content) => {
-    if (err) { return console.error(err) }
-
-    fs.writeFile(`data/${req.body.title}.txt`, req.body.content, (err) => {
-      if (err) { return console.error(err) }
-      res.redirect(`/p/${req.body.title}.txt`);
-    })
+  fs.writeFile(`data/${req.body.title}.txt`, req.body.content, (err) => {
+    if (err) { 
+      return next(err) 
+    }
+    res.redirect(`/p/${req.body.title}.txt`);
   })
 })
 
 // Delete
 router.post('/p/:postId/delete', (req, res, next) => {
-    fs.unlink(`data/${req.params.postId}`, (err) => {
-      if (err) {
-        return console.error(err)
-      }
-      res.json({ message: 'success' })
-    })
+  fs.unlink(`data/${req.params.postId}`, (err) => {
+    if (err) {
+      return next(err)
+    }
+    res.end()
+  })
+})
+
+router.post('/attack', (req, res, next) => {
+  console.log(req.body)
 })
 
 module.exports = router;

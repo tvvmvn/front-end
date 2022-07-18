@@ -9,46 +9,45 @@
   <script src="https://kit.fontawesome.com/4fb6dd7406.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-  <!-- Header and Navigation-->
-  <div class="navbar fixed-top bg-black">
-    <span class="absolute text-white top-right border padding-10 pointer only-mobile" onclick="showNav()"><i class="fa-solid fa-bars"></i></span>
-    <ul class="navbar-item border flex flex-col">
-      <li class="border padding-10"><a href="" class="text-white">Home</a></li>
-      <li class="border padding-10 hide-mobile"><a href="" class="text-white">About</a></li>
-      <li class="border padding-10 hide-mobile"><a href="" class="text-white">Posts</a></li>
-      <li class="border padding-10 hide-mobile"><a href="" class="text-white">Contact</a></li>
-    </ul>
+  
+  <!-- Header and Navigation -->
+  <div class="header fixed-top bg-black">
+    <div class="d-none p-2 text-white"><span id="menu-btn" class="">MENU</span></div>
+    <div id="nav">
+      <ul class="flex flex-col">
+        <li class="p-2"><a href="#" class="text-white">Home</a></li>
+        <li class="p-2"><a href="#about" class="text-white">About</a></li>
+        <li class="p-2"><a href="#tour" class="text-white">Tour</a></li>
+        <li class="p-2"><a href="#contact" class="text-white">Contact</a></li>
+      </ul>
+    </div>
   </div>
-
-  <!-- Layer -->
-  <div class="layer"></div>
 
   <!-- Main image -->
   <div class="row">
     <div class="slide-container relative">
-      <div class="slide-item relative">
+      <div class="slide relative">
         <img src="../../../w3img/la.jpeg" alt="">
         <div class="bg-text text-white">
-          <h2>Los Angeles</h2>
+          <h1>Los Angeles</h1>
           <p>We had the best time playing at Venice Beach!</p>
         </div>
       </div>
-      <div class="slide-item relative">
+      <div class="slide relative">
         <img src="../../../w3img/ny.jpeg" alt="">
         <div class="bg-text text-white">
-          <h2>New York</h2>
+          <h1>New York</h1>
           <p>The atmosphere in New York is lorem ipsum.</p>
         </div>
       </div>
-      <div class="slide-item relative">
+      <div class="slide relative">
         <img src="../../../w3img/chicago.jpeg" alt="">
         <div class="bg-text text-white">
-          <h2>Chicago</h2>
+          <h1>Chicago</h1>
           <p>Thank you, Chicago - A night we won't forget.</p>
         </div>
       </div>
-      <div class="indicator center" style="bottom: 25px">
+      <div class="indicator center">
         <span class="dot"></span>
         <span class="dot"></span>
         <span class="dot"></span>
@@ -57,131 +56,155 @@
   </div>
 
   <!-- About -->
-  <div class="row padding-48">
-    <div class="max-width-800">
-      <h1 class="text-center">THE BAND</h1>
-      <p class="text-center">We love music</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, veritatis consequuntur assumenda a ratione odio, omnis exercitationem nostrum, asperiores quia quasi quas nihil iure facere obcaecati deserunt numquam provident molestias.</p>
+  <div id="about" class="row py-5">
+    <div class="mx-auto px-3" style="max-width: 800px;">
+      <div class="text-center">
+        <h1>THE BAND</h1>
+        <p>We love music</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, veritatis consequuntur assumenda a ratione odio, omnis exercitationem nostrum, asperiores quia quasi quas nihil iure facere obcaecati deserunt numquam provident molestias.</p>
+      </div>
 
-      <div class="flex flex-col">
-        <div class="border flex-33 mg-side-10">
-          <h3>Name</h3>
-          <img src="../../../w3img/bandmember.jpeg" alt="">
-        </div>
-        <div class="border flex-33 mg-side-10">
-          <h3>Name</h3>
-          <img src="../../../w3img/bandmember.jpeg" alt="">
-        </div>
-        <div class="border flex-33 mg-side-10">
-          <h3>Name</h3>
-          <img src="../../../w3img/bandmember.jpeg" alt="">
+      <div class="py-3">
+        <div class="flex flex-col justify-content-center">
+          <div class="item px-3">
+            <h3 class="text-center">Name</h3>
+            <img src="../../../w3img/bandmember.jpeg" alt="">
+          </div>
+          <div class="item px-3">
+            <h3 class="text-center">Name</h3>
+            <img src="../../../w3img/bandmember.jpeg" alt="">
+          </div>
+          <div class="item px-3">
+            <h3 class="text-center">Name</h3>
+            <img src="../../../w3img/bandmember.jpeg" alt="">
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 
   <!-- Tour dates -->
-  <div class="row border bg-black padding-48">
-    <div class="max-width-800">
-      <h1 class="text-center text-white">TOUR DATES</h1>
-      <p class="text-white text-center">Remember to book your tickets!</p>
+  <div id="tour" class="row bg-black py-5">
+    <div class="mx-auto px-3" style="max-width: 800px">
+      
+      <div class="text-center">
+        <h1 class="text-white">TOUR DATES</h1>
+        <p class="text-white">Remember to book your tickets!</p>
+      </div>
 
-      <div class="bg-white mg-tb-10 mg-side-10">
+      <div class="bg-white">
         <ul>
-          <li class="padding-10 border-bottom">Septempber</li>
-          <li class="padding-10 border-bottom">October</li>
-          <li class="padding-10 border-bottom">November</li>
+          <li class="p-2 border-bottom">Septempber</li>
+          <li class="p-2 border-bottom">October</li>
+          <li class="p-2 border-bottom">November</li>
         </ul>
       </div>
 
-      <div class="flex flex-col">
-        <div class="border flex-33 bg-white mg-side-10 padding-10">
+      <div class="flex flex-col flex-equal">
+        <div class="item bg-white mx-1 mt-3">
           <img src="../../../w3img/newyork.jpeg" alt="">
-          <h3>Name</h3>
-          <p>Fri 27 Nov 2016</p>
-          <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-          <button class="btn" onclick="showModal()">Buy Tickets</button>
+          <div class="p-2">
+            <h3>Name</h3>
+            <p>Fri 27 Nov 2016</p>
+            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            <button class="btn" onclick="showModal()">Buy Tickets</button>
+          </div>
         </div>
-        <div class="border flex-33 bg-white mg-side-10 padding-10">
+        <div class="item bg-white mx-1 mt-3">
           <img src="../../../w3img/paris.jpeg" alt="">
-          <h3>Name</h3>
-          <p>Sat 28 Nov 2016</p>
-          <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-          <button class="btn" onclick="showModal()">Buy Tickets</button>
+          <div class="p-2">
+            <h3>Name</h3>
+            <p>Sat 28 Nov 2016</p>
+            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            <button class="btn" onclick="showModal()">Buy Tickets</button>
+          </div>
         </div>
-        <div class="border flex-33 bg-white mg-side-10 padding-10">
+        <div class="item bg-white mx-1 mt-3">
           <img src="../../../w3img/sanfran.jpeg" alt="">
-          <h3>Name</h3>
-          <p>Sun 29 Nav 2016</p>
-          <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-          <button class="btn" onclick="showModal()">Buy Tickets</button>
+          <div class="p-2">
+            <h3>Name</h3>
+            <p>Sun 29 Nav 2016</p>
+            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            <button class="btn" onclick="showModal()">Buy Tickets</button>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 
   <!-- Modal form -->
-  <div class="modal bg-white">
-    <span class="absolute top-right pointer padding-10" onclick="closeModal()">&times;</span>
-    <form action="">
-      <h1>Tickets</h1>
-      <div class="form-group">
-        <label for="">Tickets, $15 per person</label>
-        <input class="width-100" type="text" placeholder="How many?">  
-      </div>
-      <div class="form-group">
-        <label for="">Send to</label>
-        <input class="width-100" type="text" placeholder="Enter email">
-      </div>
-      <div class="form-group">
-        <button class="btn width-100">PAY</button>
-      </div>
-      <div class="form-group">
-        <span>Need <a href="">help?</a></span>
-      </div>
-    </form>
+  <div id="modal" class="modal">    
+    <div id="modal-content" class="modal-content bg-white">
+      <form action="">
+        <h1>Tickets</h1>
+        <div class="form-group">
+          <h3>Tickets, $15 per person</h3>
+          <input class="w-100" type="text" placeholder="How many?">  
+        </div>
+        <div class="form-group">
+          <h3>Send to</h3>
+          <input class="w-100" type="text" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <button type="button" class="btn w-100">PAY</button>
+        </div>
+        <div class="form-group">
+          <p>Need <a href="javascript:void(0)">help?</a></p>
+        </div>
+      </form>
+    </div>
   </div>
 
   <!-- Contact -->
-  <div class="row padding-48">
-    <div class="max-width-800">
-      <!-- Contact -->
-      <div class="">
-        <h1 class="text-center">Contact</h1>
-        <p class="text-center">Fan? Drop a note!</p>
-        <div class="flex flex-col">
-          <div class="flex-50">
-            <ul>
-              <li>Chicago, US</li>
-              <li>Phone: +00 151515</li>
-              <li>Email: mail@mail.com</li>
-            </ul>
-          </div>
-          <div class="flex-50">
-            <form action="">
-              <div class="flex">
-                <div class="flex-50">
-                  <input class="width-100" type="text" placeholder="Name"><br>
-                </div>
-                <div class="flex-50" style="margin-left: 10px;">
-                  <input class="width-100" type="text" placeholder="Email"><br>
-                </div>
-              </div>
-              <input class="width-100" type="text" placeholder="Message"><br>
-              <button class="btn">SEND</button>
-            </form>
-          </div>
-        </div>
+  <div id="contact" class="row py-5">
+    <div class="mx-auto px-3" style="max-width: 800px">
+      <div class="text-center">
+        <h1 class="">Contact</h1>
+        <p class="">Fan? Drop a note!</p>
       </div>
-      <!-- map -->
-      <div class="padding-48">
-        <img src="../../../w3img/map.jpeg" alt="">
+      
+      <div class="flex flex-col flex-equal">
+        <div class="item py-3">
+          <ul>
+            <li>Chicago, US</li>
+            <li>Phone: +00 151515</li>
+            <li>Email: mail@mail.com</li>
+          </ul>
+        </div>
+
+        <div class="item py-3">
+          <form action="">
+            <div class="flex flex-equal">
+              <div class="item">
+                <input class="w-100" type="text" placeholder="Name"><br>
+              </div>
+              <div class="item ms-1">
+                <input class="w-100" type="text" placeholder="Email"><br>
+              </div>
+            </div>
+            <div class="mt-1">
+              <input class="w-100" type="text" placeholder="Message"><br>
+            </div>
+            <div class="mt-3">
+              <button class="btn">SEND</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
   
+  <!-- map -->
+  <div class="row py-5">
+    <div class="mx-auto px-3" style="max-width: 800px">
+      <img src="../../../w3img/map.jpeg" alt="">
+    </div>
+  </div>
+  
   <!-- Footer -->
-  <div class="footer bg-offwhite padding-48">
+  <div class="footer bg-light-grey py-5">
     <div class="text-center">
       <p>Some icons</p>
       <small>Powered by w3.css</small>
@@ -189,59 +212,54 @@
   </div>
 
   <script>
-    var imgs = document.querySelectorAll('.slide-item');
+    var menuBtn = document.getElementById("menu-btn");
+    var nav = document.getElementById("nav");
+
+    var slides = document.querySelectorAll('.slide');
     var dots = document.querySelectorAll('.dot');
-    var layer = document.querySelector('.layer');
-    var modal = document.querySelector('.modal');
-    var navbarItem = document.querySelector('.navbar-item').children
 
-    // # Navigation
-    function showNav() {
-      for (item of navbarItem) {
-        item.classList.toggle('active')
-      }
-    }
+    var modal = document.getElementById("modal");
 
-    // # Carousel
+    // Navigation
+    menuBtn.addEventListener("click", () => {
+      nav.classList.toggle("active")
+    })
+    
+    // Carousel
     var index = -1
 
-    setInterval(slide, 3000)
-    slide()
-
-    function slide() {
+    navigateTo();
+    setInterval(navigateTo, 3000);
+    
+    function navigateTo() {
       index++
-      console.log(index)
+      // console.log(index)
 
-      if (index === imgs.length) {
+      if (index === slides.length) {
         index = 0;
       }
 
-      for (img of imgs) {
-        img.style.display = 'none'
+      for (slide of slides) {
+        slide.style.display = 'none'
       }
-      imgs[index].style.display = 'block';
+      slides[index].style.display = 'block';
 
-      // Indicator
       dots.forEach(dot => {
-        dot.style.backgroundColor = '#ddd'
+        dot.classList.remove("active")
       })
-      dots[index].style.backgroundColor = '#555';
+      dots[index].classList.add("active");
     }
 
-    // # Modal
-    layer.addEventListener('click', () => {
-      closeModal()
-    })
-
+    // Modal
     function showModal() {
-      modal.style.display = 'block';
-      layer.style.display = 'block';
+      modal.classList.add("active")
     }
 
-    function closeModal() {
-      modal.style.display = 'none';
-      layer.style.display = 'none';
-    }
+    window.addEventListener('click', (e) => {
+      if (e.target.id === "modal") {
+        e.target.classList.remove("active")
+      }
+    })
   </script>
 
 </body>

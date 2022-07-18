@@ -7,18 +7,30 @@ block content
   p= post.content
 
   a(href=`/p/${post.title}/update`) update 
-  a(href=`/p/${post.title}/delete` onclick="deletePost(event)") delete 
+  button(type="button" onclick=`deletePost("${post.title}")`) Delete
 
   script.
-    function deletePost(e) {
-      e.preventDefault();
 
-      fetch(e.target.href, {
+    function deletePost(postId) {
+      let res = confirm("Y/N");
+
+      if (!res) {
+        return console.log(postId)
+      }
+
+      fetch(`/p/${postId}/delete`, {
         method: 'POST'
       })
-      .then(res => res.json())
-      .then(result => location.replace('/'))
-      .catch(err => console.error(err))
+      .then(res => {
+        if (!res.ok) {
+          throw res;
+        }
+        return res.json();
+      })
+      .then(data => location.replace('/'))
+      .catch(error => {
+        alert("Error!")
+      })
     }
 
 

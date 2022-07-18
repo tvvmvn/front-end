@@ -5,26 +5,35 @@ PPT
 HTML Semantic layout, DOM Tree
 HTML only page 
 
-
 # CSS
 web responsive
 external internal inline CSS
 CSS order and !important
 comments
 
-Selector: element, .class, #id, children
+Selector: element, .class, #id, children, direct children,
+Pseudo class and element,
+unit: [absolute: px | relative: rem, em, %, vh, vw]
+font: style, weight, size
+text: align, color
+border: width, style, color, direction, shorthand
+outline: basic and input width focus
+padding, margin, 
+box-sizing
 Color: Name, RGB, RGBA, HEX
 Background: color, image 
 
-border, padding, margin, box-sizing
 Display: inline, inline-block, block,
-width, height, min-width, min-height, max-width, max-height
+visibility: visible, hidden,
+width, height: width/height, min-width, min-height, max-width, max-height
 Overflow: visible, auto, scroll, hidden
 
 Position: static, relative, absolute, fixed and z-index
 Transform: none, translate, scale, rotate, skew
 
-Display: flex, box-sizing
+float: ..
+flex:  ..
+grid: ..
 @media with min-width and max-width
 
 # CSS Example
@@ -84,3 +93,15 @@ NodeJS
 
 
 
+# 
+
+주말 백업!
+
+월수금 월수 - 12월
+주말 - 10월23일
+
+화목화목금 10월 11 12 1 2 3
+
+10월 부터는 매일 저녁
+
+9월 쯤에 오후 수업을 열 수도 있음

