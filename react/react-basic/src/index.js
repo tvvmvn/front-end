@@ -12,7 +12,7 @@ import {
 } from "react-router-dom";
 
 
-// React
+// ### React
 
 // # props and state
 // props (“properties”의 줄임말) 와 state 는 일반 JavaScript 객체입니다. 

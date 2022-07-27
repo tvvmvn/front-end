@@ -10,7 +10,8 @@
   <title>Document</title>
 </head>
 <body style="padding: 50px">
-  <!-- <h1>Button</h1> -->
+
+  <!-- ### Form -->
 
   <!-- <style>
     body {
@@ -32,8 +33,6 @@
 
   <a class="btn" href="">Button</a>
   <button class="btn">Button</button> -->
-
-  <!-- <h1>Form</h1> -->
 
   <!-- <style>
     .logo {
@@ -61,7 +60,7 @@
   </div> -->
 
   
-  <!-- <h1>Navigation</h1> -->
+  <!-- ### Navigation -->
 
   <!-- <style>
     body {
@@ -91,7 +90,6 @@
     }
   </style>
 
-  
 <div class="fixed-top">
   <div class="nav-bar">
     <a href="">Home</a>
@@ -205,7 +203,6 @@
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit deleniti soluta recusandae at facere amet fugiat quibusdam pariatur neque ipsum aliquid quod facilis aspernatur, in reiciendis accusantium obcaecati perferendis eius?</p>
   </div> -->
 
-
   <!-- <style>
     .nav-bar {
       border: 1px dashed;
@@ -255,252 +252,97 @@
     </div>
   </div> -->
 
-
-  <!-- <h1>Layout</h1> -->
-
   <!-- <style>
-    /* # flex container properties: */
-    /* - */
-    /* # flex-direction(row): direction of the flexible items */
-    /* row|row-reverse|column|column-reverse|initial|inherit */
-    /* # flex-wrap(nowrap): the flexible items should wrap or not */
-    /* nowrap|wrap|wrap-reverse|initial|inherit; */
-    /* # flex-flow(row nowrap): flex-direction / flex-wrap */
-    /* # justify-content(flex-start): align the flex items */
-    /* flex-start|flex-end|center|space-between|space-around|space-evenly|initial|inherit; */
-    /* # align-items(stretch): alignment for items inside the flexible container */
-    /* stretch|center|flex-start|flex-end|baseline|initial|inherit; */
-    /* # align-content(stretch): align the flex lines */
-    /* stretch|center|flex-start|flex-end|space-between|space-around|initial|inherit; */
-
-    /* # flex item properties: */
-    /* - */
-    /* # order(0): order of the flex items */
-    /* number|initial|inherit */
-    /* # flex-grow(0): how much the item will grow relative to the rest of the flexible items inside the same container */
-    /* number|initial|inherit */
-    /* # flex-shrink(1): how the item will shrink relative to the rest of the flexible items inside the same container */
-    /* number|initial|inherit; */
-    /* # flex-basis(auto): initial length of a flexible item */
-    /* number|auto|initial|inherit */
-    /* # flex: flex-grow / flow-shrink / flex-basis */
-    /* # align-self(auto): alignment for the selected item inside the flexible container. */
-    /* auto|stretch|center|flex-start|flex-end|baseline|initial|inherit; */
-  </style> -->
-
-
-  <!-- # flex container properties -->
-
-  <!-- # flex direction -->
-
-  <!-- <style>
-    .flex {
+    img {
+      width: 100%;
+    }
+    .container {
       display: flex;
-      background-color: #ddd;
-    }
-    .flex-row {
-      flex-direction: row;
-    }
-    .flex-col {
       flex-direction: column;
+      max-width: 800px;
+      margin: auto;
     }
-    .item {
+    .card {
       border: 1px dashed;
-      width: 100px;
-      height: 100px;
-    }
-  </style>
-
-  <div class="flex flex-row">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
-  </div>
-
-  <hr>
-
-  <div class="flex flex-col">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
-  </div> -->
-
-
-  <!-- # flex wrap -->
-
-  <!-- <style>
-    .flex {
-      display: flex;
-      background-color: #ddd;
-    }
-    .flex-wrap {
-      flex-wrap: wrap
-    }
-    .flex-nowrap {
-      flex-wrap: nowrap
-    }
-    .item {
-      border: 1px dashed;
-      width: 200px;
-      height: 100px;
-    }
-  </style>
-
-  <div class="flex flex-wrap">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
-  </div>
-
-  <hr>
-
-  <div class="flex flex-nowrap">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
-  </div> -->
-
-  <!-- # justify-content, align-items -->
-
-  <!-- <style>
-    .flex {
-      display: flex;
-      background-color: #ddd;
-      justify-content: center;
-      align-items: center;
-      width: 300px;
-      height: 300px;
-    }
-    .item {
-      width: 100px;
-      height: 100px;
-      border: 1px dashed;
-    }
-  </style>
-
-  <div class="flex">
-    <div class="item">1</div>
-  </div> -->
-
-  <!-- <style>
-    .flex {
-      display: flex;
-      background-color: #ddd;
-      justify-content: space-between;
-      align-items: flex-end;
-      width: 300px;
-      height: 300px;
-    }
-    .item {
-      width: 50px;
-      height: 50px;
-      border: 1px dashed;
-    }
-  </style>
-
-  <div class="flex">
-    <div class="item">1</div>
-    <div class="item">3</div>
-    <div class="item">3</div>
-  </div> -->
-
-
-  <!-- # flex-basis, flex-grow -->
-
-  <!-- <style>
-    .flex {
-      display: flex; 
-      background-color: #ddd;
-    }
-    .item {
-      border: 1px dashed;
-      flex-basis: 200px;
-      flex-grow: 1;
-    }
-    .flex-grow {
-      flex-grow: 2;
-      background-color: orange;
-    }
-  </style>
-
-
-  <div class="flex">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
-  </div>
-
-  <hr>
-
-  <div class="flex">
-    <div class="item">1</div>
-    <div class="item flex-grow">2</div>
-    <div class="item">3</div>
-  </div> -->
-  
-
-  <!-- # flex-basis, flex-shrink -->
-
-  <!-- <style>
-    .flex {
-      display: flex; 
-      background-color: #ddd;
-    }
-    .item {
-      border: 1px dashed;
-      flex-shrink: 1;
-      flex-basis: 200px;
-    }
-    .flex-shrink {
-      flex-shrink: 2;
-      background-color: orange;
-    }
-  </style>
-
-
-  <div class="flex">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
-  </div>
-
-  <hr>
-
-  <div class="flex">
-    <div class="item">1</div>
-    <div class="item flex-shrink">2</div>
-    <div class="item">3</div>
-  </div> -->
-
-
-  <!-- # flex  -->
-
-  <!-- <style>
-    .flex {
-      display: flex;
-      background-color: #ddd;
-    }
-  
-    .item {
-      border: 1px dashed;
-      width: 100px;
-      height: 100px;
-
-      /* default */
-      flex: 0 1 auto
-      /* flex-grow */
       /* flex: 1; */
-      /* flex-basis */
-      flex: 33.33333%
+      flex-grow: 1;
+      flex-basis: 100px;
+      /* works*/
+      /* flex-basis: 33.33333%; */
+      /* not works when column */
+      /* width: 33.33333% */
+    }
+
+    @media (min-width: 501px) {
+      .container {
+        flex-direction: row;
+      }
     }
   </style>
 
-  <div class="flex">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
+  <div class="container">
+    <div class="card">
+      <img src="../../img/bunny.jpeg" alt="">
+      <h3>name</h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div class="card">
+      <img src="../../img/cat.jpeg" alt="">
+      <h3>name</h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div class="card">
+      <img src="../../img/duck.jpeg" alt="">
+      <h3>name</h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    </div>
   </div> -->
 
+  <!-- <style>
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .item {
+      flex-basis: 100%;
+      box-sizing: border-box;
+      /* margin: 0 5px; */
+      padding: 10px;
+      border: 1px dashed;
+    }
+    img {
+      width: 100%;
+      display: block;
+    }
+    /* Tablet */
+    @media (min-width: 501px) {
+      .item {
+        /* with flex-wrap: wrap, box-sizing: border box property is needed. */
+        flex-basis: 50%;
+      }
+    }
+    /* Desktop */
+    @media (min-width: 701px) {
+      .item {
+        flex-basis: 25%;
+      }
+    }
+  </style>
+
+  <div class="container">
+    <div class="item">
+      <img src="../../img/bunny.jpeg" alt="">
+    </div>
+    <div class="item">
+      <img src="../../img/cat.jpeg" alt="">
+    </div>
+    <div class="item">
+      <img src="../../img/bunny.jpeg" alt="">
+    </div>
+    <div class="item">
+      <img src="../../img/bunny.jpeg" alt="">
+    </div>
+  </div> -->
 
   <!-- <style>
     .row {
@@ -587,186 +429,6 @@
   <div class="footer">
     <small>footer</small>
   </div> -->
-
-
-  <!-- <style>
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .item {
-      flex-basis: 100%;
-      box-sizing: border-box;
-      /* margin: 0 5px; */
-      padding: 10px;
-      border: 1px dashed;
-    }
-    img {
-      width: 100%;
-      display: block;
-    }
-    /* Tablet */
-    @media (min-width: 501px) {
-      .item {
-        /* with flex-wrap: wrap, box-sizing: border box property is needed. */
-        flex-basis: 50%;
-      }
-    }
-    /* Desktop */
-    @media (min-width: 701px) {
-      .item {
-        flex-basis: 25%;
-      }
-    }
-  </style>
-
-  <div class="container">
-    <div class="item">
-      <img src="../../img/bunny.jpeg" alt="">
-    </div>
-    <div class="item">
-      <img src="../../img/cat.jpeg" alt="">
-    </div>
-    <div class="item">
-      <img src="../../img/bunny.jpeg" alt="">
-    </div>
-    <div class="item">
-      <img src="../../img/bunny.jpeg" alt="">
-    </div>
-  </div> -->
-
-  
-  <!-- <style>
-    img {
-      width: 100%;
-    }
-    .container {
-      display: flex;
-      flex-direction: column;
-      max-width: 800px;
-      margin: auto;
-    }
-    .card {
-      border: 1px dashed;
-      /* flex: 1; */
-      flex-grow: 1;
-      flex-basis: 100px;
-      /* works*/
-      /* flex-basis: 33.33333%; */
-      /* not works when column */
-      /* width: 33.33333% */
-    }
-
-    @media (min-width: 501px) {
-      .container {
-        flex-direction: row;
-      }
-    }
-  </style>
-
-  <div class="container">
-    <div class="card">
-      <img src="../../img/bunny.jpeg" alt="">
-      <h3>name</h3>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-    </div>
-    <div class="card">
-      <img src="../../img/cat.jpeg" alt="">
-      <h3>name</h3>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-    </div>
-    <div class="card">
-      <img src="../../img/duck.jpeg" alt="">
-      <h3>name</h3>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-    </div>
-  </div> -->
-
-
-  <!-- <style>
-    .container {
-      display: flex;
-      background-color: #ddd;
-      height: 200px;
-      display: flex;
-      justify-content: space-around;
-      align-items: flex-start;
-    }
-    .item {
-      display: flex;
-      border: 1px dashed;
-      width: 100px;
-      height: 100px;
-    }
-    .item:nth-child(2) {
-      justify-content: flex-end;
-      align-items: center;
-      align-self: flex-end;
-    }
-    .dot {
-      width: 10px;
-      height: 10px;
-      background-color: red;
-    }
-  </style>
-
-  <div class="container">
-    <div class="item"></div>
-    <div class="item">
-      <div class="dot"></div>
-    </div>
-  </div> -->
-
-
-  <!-- <style>
-    .container {
-      display: flex;
-      justify-content: space-between;
-      background-color: #ddd;
-      height: 100px;
-      align-items: flex-start;
-    }
-    .item {
-      display: flex;
-      border: 1px dashed;
-      width: 50px;
-      height: 50px;
-    }
-    .item:nth-child(even) {
-      align-items: center;
-    }
-    .item:first-child {
-      align-self: center;
-      align-items: center;
-      justify-content: flex-end;
-    }
-    .item:nth-child(3) {
-      align-self: flex-end;
-      align-items: flex-end;
-      justify-content: center;
-    }
-    .dot {
-      width: 10px;
-      height: 10px;
-      background-color: red;
-    }
-  </style>
-
-  <div class="container">
-    <div class="item">
-      <div class="dot"></div>
-    </div>
-    <div class="item">
-      <div class="dot"></div>
-    </div>
-    <div class="item">
-      <div class="dot"></div>
-    </div>
-    <div class="item">
-      <div class="dot"></div>
-    </div>
-  </div> -->
-
 
   <!-- <style>
     body {
@@ -1088,10 +750,9 @@
     </div>
   </div> -->
 
+  <!-- ### Image -->
 
-  <!-- <h1>Image</h1> -->
-
-  <!-- <h2>Image into HTML using background and img tag</h2> -->
+  <!-- img tag and background image -->
 
   <!-- <style>
     .container {
@@ -1118,8 +779,7 @@
     <img src="../../img/duck.jpeg" alt="">
   </div> -->
 
-
-  <!-- <h2>Image thumbnail</h2> -->
+  <!-- image thumbnail -->
 
   <!-- <style>
     .container {
@@ -1159,7 +819,7 @@
     </div>
   </div> -->
 
-  <!-- <h2>Text on image</h2> -->
+  <!-- Text on image -->
 
   <!-- <style>
     .container {
@@ -1189,7 +849,7 @@
     </div>
   </div> -->
 
-  <!-- <h2>overlay in image</h2> -->
+  <!-- Image with overlay -->
 
   <!-- <style>
     .thumbnail {
@@ -1216,9 +876,9 @@
   </div> -->
 
 
-  <!-- <h2>Overlay and text in image</h2>
+  <!-- Overlay and text in image -->
 
-  <style>
+  <!-- <style>
     .thumbnail {
       width: 400px;
       height: 400px;
@@ -1253,7 +913,7 @@
     <img src="../../img/duck.jpeg" alt="">
   </div> -->
 
-  <!-- <h2>Hovereffect on Image</h2> -->
+  <!-- Image with hover effect -->
 
   <!-- <style>
     .container {
@@ -1310,7 +970,7 @@
   </div> -->
 
 
-  <!-- <h2>Text on scalable image</h2> -->
+  <!-- Image with scale effect -->
 
   <!-- <style>
     .thumbnail {
@@ -1357,7 +1017,7 @@
     </div>
   </div> -->
 
-  <!-- <h2>Text on overlay image</h2> -->
+  <!-- Image with overlay and text -->
 
   <!-- <style>
     .container {
@@ -1410,8 +1070,7 @@
 
   <!-- <h1>image that is equal width and height</h1> -->
 
-  <!-- <h2>Basic: using padding-top</h2> -->
-
+  <!-- Basic: using padding-top -->
   <!-- <style>
     .container {
       width: 200px;
@@ -1439,7 +1098,7 @@
   </div> -->
 
 
-  <!-- <h2>Basic: an image on padding-top element</h2> -->
+  <!-- Basic: an image on padding-top element -->
 
   <!-- <style>
     /* body {
@@ -1473,7 +1132,7 @@
     </div>
   </div> -->
 
-  <!-- <h2>Container with equal width and height responsively</h2> -->
+  <!-- Container with equal width and height responsively -->
 
   <!-- <style>
     .row {
@@ -1509,7 +1168,7 @@
     </div>
   </div> -->
 
-  <!-- <h2>Responsive images with equal width and height</h2> -->
+  <!-- Responsive images with equal width and height -->
 
   <!-- <style>
     .row {
@@ -1557,11 +1216,11 @@
   </div> -->
 
 
-  <!-- <h1>Animation</h1> -->
+  <!-- ### Animation -->
 
-  <!-- <h2>Spinner</h2>
+  <!-- Spinner -->
 
-  <style>
+  <!-- <style>
     .spinner {
       width: 50px;
       height: 50px;
@@ -1586,12 +1245,12 @@
     }
   </style>
 
-  <div class="spinner"></div> -->
+  <div class="spinner"></div>  -->
 
 
-  <!-- <h2>Loading Bar</h2>
+  <!-- Loading Bar -->
 
-  <style>
+  <!-- <style>
     :root {
       --blue: #1e90ff;
     }
@@ -1624,11 +1283,11 @@
 
   <div class="container">
     <div class="item"></div>
-  </div> -->
+  </div>  -->
 
-  <!-- <h2>Hamburger button</h2>
+  <!-- Hamburger button -->
 
-  <style>
+  <!-- <style>
     .bars {
       width: 50px;
       height: 50px;
@@ -1648,11 +1307,11 @@
     <span class="bar"></span>
     <span class="bar"></span>
     <span class="bar"></span>
-  </div> -->
+  </div>  -->
 
-  <!-- <h2>Animated Hamburger button</h2>
+  <!-- Animated Hamburger button -->
 
-  <style>
+  <!-- <style>
     .bars {
       width: 50px;
       height: 50px;
@@ -1683,10 +1342,11 @@
     <span class="bar"></span>
     <span class="bar"></span>
     <span class="bar"></span>
-  </div> -->
+  </div>  -->
 
-
-  <style>
+  <!-- Universe -->
+  
+  <!-- <style>
     body {
       background-color: #000;
     }
@@ -1822,7 +1482,7 @@
     <div class="orbit neptune">
       <div class="planet"></div>
     </div>
-  </div>
+  </div> -->
 
 
 </body>

@@ -12,29 +12,31 @@ CSS order and !important
 comments
 
 Selector: element, .class, #id, children, direct children,
-Pseudo class and element,
-unit: [absolute: px | relative: rem, em, %, vh, vw]
-font: style, weight, size
-text: align, color
+Pseudo :class and ::element,
+unit: [absolute: px, cm | relative: rem, em, %, vh, vw]
+
+font: color, style, weight, size
+text: align, letter(word) spacing, line-height, ...
 border: width, style, color, direction, shorthand
 outline: basic and input width focus
-padding, margin, 
+color: Name, RGB, RGBA, HEX
+
+padding: direction
+margin: direction, positive and negative, margin-collapse
 box-sizing
-Color: Name, RGB, RGBA, HEX
-Background: color, image 
+Display: inline, inline-block, block, none;
 
-Display: inline, inline-block, block,
+white-space: wrap, nowrap, pre-line, ... (inline, inline-block)
 visibility: visible, hidden,
-width, height: width/height, min-width, min-height, max-width, max-height
-Overflow: visible, auto, scroll, hidden
+Overflow: visible, auto, scroll, hidden,
+width, height: width/height, min-width, *min-height, *max-width, max-height
 
-Position: static, relative, absolute, fixed and z-index
+Position: static, relative, absolute, fixed and z-index(except for static)
 Transform: none, translate, scale, rotate, skew
 
-float: ..
-flex:  ..
-grid: ..
+CSS Layout: float, flex, grid
 @media with min-width and max-width
+image: img, background-image
 
 # CSS Example
 button: button, anchor btn
@@ -78,23 +80,19 @@ Images: modal, slide, carousel
 - - -
 
 # React
-Basic
+Basic: W3S, React Home, Error(Compile, Component, EventHandler)
 
 # React Example
 Todo list
+Routes with auth
 
 # Final Project
-MERN Stack
+Back-End
+Front-End
 
-MongoDB
-Express
-React
-NodeJS
-
-
+- - -
 
 # 
-
 주말 백업!
 
 월수금 월수 - 12월

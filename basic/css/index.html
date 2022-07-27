@@ -1,352 +1,830 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>
-  <h1>CSS flow</h1>
-  <p>well organized</p>
 
-  <!-- <h1>Selector</h1>
-  <p>element, .class, #id, children</p> -->
+<body>
+  <!-- ### children and direct children selector -->
 
   <!-- <style>
-    /* class */
-    .whitesmoke {
-      background-color: whitesmoke;
-    }
-    /* class */
-    .border {
+    .level1 {
+      font-size: 13px;
       border: 1px dashed;
     }
-    /* id */
-    #title {
-      font-weight: normal;
+    .level2 {
+      font-size: 26px;
     }
-    /* element */
-    p {
-      font-style: italic
+    .level3 {
+      /* font-size: initial; */
+      font-size: inherit;
     }
-    /* children */
-    p .bold {
-      font-weight: bold;
+  </style>
+
+  <div class="level1"> Level 1
+    <div class="level2"> Level 2
+      <div class="level3"> Level 3
+      </div>
+    </div>
+  </div> -->
+
+  <!-- ### Display: block, inline-block, inline -->
+
+  <!-- <style>
+  /* 다른 element와의 관계를 보여준다 */
+  hr {
+    margin: 0;
+  }
+  span, button, div {
+    padding: 10px;
+    margin: 10px;
+    border: 1px dashed;
+  }
+  </style>
+
+  <hr>
+  <button>Button</button>
+  <button>Button</button>
+  <hr>
+  <div>Div</div>
+  <div>Div</div>
+  <hr>
+  <span>Span</span>
+  <span>Span</span>
+  <hr> -->
+
+  <!-- ### box-sizing -->
+
+  <!-- <style>
+    .container {
+    background-color: #ddd;
+    }
+    .item {
+      width: 200px;
+      height: 200px;
+      border: 1px dashed;
+      padding: 10px;
+    }
+    .border-box {
+      box-sizing: border-box;
     }
   </style>
 
   <div class="container">
-    <h2 id="title">Fruits</h2>
-    <p>There are some <span class="bold">fruits.</span></p>
-    <ul class="border whitesmoke">
-      <li>Apple</li>
-      <li>Banana</li>
-      <li>Mango</li>
-    </ul>
+    <div class="item">222 x 222</div>
+    <div class="item border-box">200 x 200</div>
   </div> -->
 
-
-  <!-- <h1>Color</h1>
-  <p>Name, RGB, RGBA, HEX</p> -->
+  <!-- ### display: block, inline-block, inline, none -->
 
   <!-- <style>
-    /* Name */
-    .red { color: red; }
-    /* RGB */
-    .green { color: rgb(60, 179, 113)  }
-    /* RGBA */
-    .opacity { color: rgb(60, 179, 113, 0.5) }  
-    /* HEX */
-    .blue { color: #0000ff }
-  </style>
-
-  <ul>
-    <li class="red">Red</li>
-    <li class="green">Green</li>
-    <li class="opacity">Blue</li>
-    <li class="blue">Orange</li>
-  </ul> -->
-
-  <!-- <h1>Background</h1>
-  <p>background-color, background-image</p> -->
-  
-  <!-- <style>
-    .bg-black {
-      background-color: #000;
-      color: #fff;
-    }
-  </style>
-
-  <div class="bg-black">Dark Mode</div> -->
-  
-  <!-- <style>
-    .bg-image {
-      background-image: url('../../img/duck.jpeg');
-      width: 200px;
-      height: 200px;
-      background-size: cover;
-      background-position: center;
-    }
-  </style>
-
-  <div class="bg-image"></div> -->
-
-
-  <!-- <h1>border, padding, margin and box-sizing</h1> -->
-
-  <!-- <style>
-    .btn {
-      padding: 10px 15px;
-      margin: 5px;
-      border: none;
-      cursor: pointer;
-    }
-  </style>
-
-  <h1>Save or not</h1>
-  <div class="btn-group">
-    <button class="btn">Save</button>
-    <button class="btn">Cancel</button>
-  </div> -->
-
-  <!-- <h1>Display: inline, block, inline-block</h1> -->
-  <!-- <p>block: div, p, header, nav, section, form, footer</p>
-  <p>inline: a, span, img</p>
-  <p>inline-block: button, input</p> -->
-
-  <!-- <style>
+    /* 다른 element와의 관계를 보여준다 */
     hr {
-      margin: 0
+      margin: 0;
     }
-    p, span, button {
-      border: 1px dashed;
+    span, button, div {
       padding: 10px;
       margin: 10px;
+      border: 1px dashed;
     }
-    span {
-      /* display: inline-block; */
+  </style>
+  
+  <hr>
+  <button>Button</button>
+  <button>Button</button>
+  <hr>
+  <div>Div</div>
+  <div>Div</div>
+  <hr>
+  <span>Span</span>
+  <span>Span</span>
+  <hr> -->
+
+  <!-- display none -->
+
+  <!-- <style>
+    .container div {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed;
+    }
+    .default {}
+    .block {
+      /* default */
+      display: block;
+    }
+    .none {
+      display: none;
     }
   </style>
 
-  <p>block</p>
-  <p>block</p>
-  <hr>
-  <span>inline</span>
-  <span>inline</span>
-  <hr>
-  <button>inline-block</button>
-  <button>inline-block</button> -->
+  <div class="container">
+    <div class="default">default</div>
+    <div class="none">display: none</div>
+    <div class="block">display: block</div>
+  </div> -->
 
-
-  <!-- <h1>width height min-width min-height max-width max-width</h1> -->
+  <!-- vertical align -->
 
   <!-- <style>
-    p {
+    .container {
+      background-color: #ddd;
+    }
+    .item {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed;
+      display: inline-block;
+      /* Default. The element is aligned with the baseline of the parent */
+      /* vertical-align: baseline; */
+      vertical-align: middle;
+      /* vertical-align: top; */
+      /* vertical-align: bottom; */
+    }
+    .item:nth-child(2) {
+      height: 150px;
+    }
+    .item:last-child {
+      height: 50px;
+    }
+  </style>
+
+  <div class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div> -->
+
+  <!-- ### white-space -->
+  <!-- how white-space(공백) inside an element is handled -->
+
+  <!-- <style>
+    div {
+      border: 1px dashed;
+      width: auto;
+      height: auto;
+    }
+    .normal {
+      /* default  */
+      white-space: normal
+    }
+    .pre-line {
+      /* Text will wrap when necessary, and on line breaks.(\n) */
+      white-space: pre-line;
+    }
+    .nowrap {
+      white-space: nowrap;
+    }
+  </style>
+
+  <div class="normal">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Aspernatur accusamus voluptatibus nihil laudantium laborum tempore quae. 
+  </div>
+
+  <hr>
+
+  <div class="pre-line">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Aspernatur accusamus voluptatibus nihil laudantium laborum tempore quae. 
+  </div>
+
+  <hr>
+
+  <div class="nowrap">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Aspernatur accusamus voluptatibus nihil laudantium laborum tempore quae. 
+  </div> -->
+
+  <!-- <style>
+    div {
+      overflow: auto;
+    }
+    /* default */
+    /* Sequences of whitespace will collapse into a single whitespace. */
+    /* Text will wrap when necessary */
+    .normal {
+      white-space: normal;
+    }
+    /* Sequences of whitespace will collapse into a single whitespace. */
+    /* Text will never wrap to the next line */
+    /* The text continues on the same line until a <br> tag is encountered */
+    .nowrap {
+      white-space: nowrap;
+    }
+    /* Sequences of whitespace will be preserved */
+    /* Text will only wrap on line breaks. */
+    .pre {
+      white-space: pre;
+    }
+    /* Sequences of whitespace will collapse into a single whitespace. */
+    /* Text will wrap when necessary, and on line breaks. */
+    .pre-line {
+      white-space: pre-line;
+    }
+    /* Sequences of white space will be preserved */
+    /* Text will wrap when necessary, and on line breaks. */
+    .pre-wrap {
+      white-space: pre-wrap;
+    }
+  </style>
+
+  <h3>white-space: normal</h3>
+  <div class="normal">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Quos ducimus labore praesentium qui impedit voluptas dolor quibusdam amet soluta pariatur architecto, 
+    quidem quo unde nam nisi accusamus, minus repudiandae perspiciatis!
+  </div>
+
+  <h3>white-space: nowrap</h3>
+  <div class="nowrap">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Quos ducimus labore praesentium qui impedit voluptas dolor quibusdam amet soluta pariatur architecto, 
+    quidem quo unde nam nisi accusamus, minus repudiandae perspiciatis!
+  </div>
+
+  <h3>white-space: pre</h3>
+  <div class="pre">
+    Lorem, ipsum dolor sit amet consectetur adipisicing      elit. 
+    Asperiores quidem maiores, rerum consequatur magni odio. 
+    Quasi eveniet inventore aperiam repellat ad, beatae pariatur accusantium quae consequatur incidunt! Vel, ad aperiam!
+  </div>
+
+  <h3>white-space: pre-line</h3>
+  <div class="pre-line">
+    Lorem, ipsum dolor sit amet consectetur adipisicing      elit. 
+    Asperiores quidem maiores, rerum consequatur magni odio. 
+    Quasi eveniet inventore aperiam repellat ad, beatae pariatur accusantium quae consequatur incidunt! Vel, ad aperiam!
+  </div>
+
+  <h3>white-space: pre-wrap</h3>
+  <div class="pre-wrap">
+    Lorem, ipsum dolor sit amet consectetur adipisicing      elit. 
+    Asperiores quidem maiores, rerum consequatur magni odio. 
+    Quasi eveniet inventore aperiam repellat ad, beatae pariatur accusantium quae consequatur incidunt! Vel, ad aperiam!
+  </div> -->
+
+  <!-- ### visiblility -->
+
+  <!-- <style>
+    .container div {
+      width: 100px;
+      height: 100px;
       border: 1px dashed;
     }
-    .fixed {
-      width: 200px;
-      height: 200px;
+    .default {}
+    .hidden {
+      visibility: hidden;
     }
-    .width {
-      width: 600px;
+    .visible {
+      /* default */
+      visibility: visible;
     }
-    .height {
+  </style>
+
+  <div class="container">
+    <div class="default">default</div>
+    <div class="hidden">hidden</div>
+    <div class="visible">visible</div>
+  </div> -->
+
+  <!-- ### overflow -->
+
+  <!-- <style>
+    div {
+      width: 100px;
       height: 100px;
+      border: 1px dashed;
+      display: inline-block;
+      vertical-align: middle;
+      /* word-break: break-all; */
+    }
+    .hidden {
+      overflow: hidden
+    }
+    .scroll {
+      overflow: scroll;
+    }
+    .auto {
+      overflow: auto;
+    }
+    .visible {
+      /* default */
+      overflow: visible;
+    }
+  </style>
+
+  <div class="hidden">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
+    et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
+  </div>
+  <div class="scroll">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
+    et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
+  </div>
+  <div class="auto">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
+    et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
+  </div>
+  <div class="visible">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
+    et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
+  </div> -->
+
+  <!-- ### width and height -->
+
+  <!-- width -->
+  <!-- <style>
+    div {
+      border: 1px dashed;
+      overflow: auto
+    }
+    .default {
+      width: auto;
     }
     .max-width {
       max-width: 600px;
     }
-    .min-height {
-      min-height: 100px;
+    .min-width {
+      min-width: 600px;
     }
   </style>
 
-  <p class="fixed">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ipsa dignissimos, reprehenderit inventore odit ex, molestias dolorem, beatae quidem ipsum deleniti esse rem consequatur suscipit temporibus?</p>
-  <p class="width">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ipsa dignissimos, reprehenderit inventore odit ex, molestias dolorem, beatae quidem ipsum deleniti esse rem consequatur suscipit temporibus?</p>
-  <p class="height">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ipsa dignissimos, reprehenderit inventore odit ex, molestias dolorem, beatae quidem ipsum deleniti esse rem consequatur suscipit temporibus?</p>
-  <p class="max-width">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ipsa dignissimos, reprehenderit inventore odit ex, molestias dolorem, beatae quidem ipsum deleniti esse rem consequatur suscipit temporibus?</p>
-  <p class="min-height">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ipsa dignissimos, reprehenderit inventore odit ex, molestias dolorem, beatae quidem ipsum deleniti esse rem consequatur suscipit temporibus?
-  </p> -->
+  <div class="default">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id amet hic architecto deserunt. 
+  </div>
 
-  <!-- <h1>Overflow</h1> -->
-  <!-- <p>Handling overflow</p> -->
+  <hr>
+
+  <div class="max-width">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id amet hic architecto deserunt. 
+  </div>
+  
+  <hr>
+
+  <div class="min-width">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id amet hic architecto deserunt. 
+  </div> -->
+
+  <!-- height -->
 
   <!-- <style>
-    p {
+    div {
+      border: 1px dashed;
+    }
+    .default {
+      height: auto;
+    }
+    .min-height {
+      min-height: 50px;
+    }
+    .max-height {
+      max-height: 50px;
+    }
+  </style>
+
+  <div class="default">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id amet hic architecto deserunt. 
+  </div>
+
+  <hr>
+
+  <div class="min-height">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id amet hic architecto deserunt. 
+  </div>
+  
+  <hr>
+
+  <div class="max-height">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id amet hic architecto deserunt. 
+  </div> -->
+  
+
+  <!-- ### position -->
+  <!-- static, absolute with relative, fixed -->
+
+  <!-- <style>
+    .relative {
+      width: 200px;
+      height: 200px;
+      border: 1px dashed;
+      position: relative;
+    }
+    .absolute {
+      background-color: red;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+    }
+    .top-0 {
+      top: 0
+    }
+    .right-0 {
+      right: 0
+    }
+    .left-0 {
+      left: 0;
+    }
+    .bottom-0 {
+      bottom: 0;
+    }
+  </style>
+
+  <div class="relative">
+    <div class="absolute top-0 left-0"></div>
+    <div class="absolute top-0 right-0"></div>
+    <div class="absolute bottom-0 left-0"></div>
+    <div class="absolute bottom-0 right-0"></div>
+  </div> -->
+
+  <!-- fixed -->
+
+  <!-- <style>
+    body {
+      min-height: 1000px;
+    }
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: #ddd;
+    }
+    .fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  </style>
+
+  <div class="fixed"></div> -->
+  
+  <!-- ### transform -->
+  <!-- translate, scale, rotate, skew -->
+
+  <style>
+    .container {
+      background-color: #ddd;
+      width: 200px;
+      height: 200px;
+    }
+    .item {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed;
+    }
+    .translate {
+      transform: translate(25px, 25px);
+      /* transform: translateX(x); */
+      /* transform: translateY(y); */
+    }
+  </style>
+
+  <div class="container">
+    <div class="item translate"></div>
+  </div>
+
+  <!-- Perfect centering... -->
+
+  <!-- ### float -->
+
+  <!-- ### Flex -->
+
+  <!-- <style>
+    /* # flex container properties: */
+    /* - */
+    /* # flex-direction(row): direction of the flexible items */
+    /* row|row-reverse|column|column-reverse|initial|inherit */
+    /* # flex-wrap(nowrap): the flexible items should wrap or not */
+    /* nowrap|wrap|wrap-reverse|initial|inherit; */
+    /* # flex-flow(row nowrap): flex-direction / flex-wrap */
+    /* # justify-content(flex-start): align the flex items */
+    /* flex-start|flex-end|center|space-between|space-around|space-evenly|initial|inherit; */
+    /* # align-items(stretch): alignment for items inside the flexible container */
+    /* stretch|center|flex-start|flex-end|baseline|initial|inherit; */
+    /* # align-content(stretch): align the flex lines */
+    /* stretch|center|flex-start|flex-end|space-between|space-around|initial|inherit; */
+
+    /* # flex item properties: */
+    /* - */
+    /* # order(0): order of the flex items */
+    /* number|initial|inherit */
+    /* # flex-grow(0): how much the item will grow relative to the rest of the flexible items inside the same container */
+    /* number|initial|inherit */
+    /* # flex-shrink(1): how the item will shrink relative to the rest of the flexible items inside the same container */
+    /* number|initial|inherit; */
+    /* # flex-basis(auto): initial length of a flexible item */
+    /* number|auto|initial|inherit */
+    /* # flex: flex-grow / flow-shrink / flex-basis */
+    /* # align-self(auto): alignment for the selected item inside the flexible container. */
+    /* auto|stretch|center|flex-start|flex-end|baseline|initial|inherit; */
+  </style> -->
+
+  <!-- flex container properties -->
+
+  <!-- flex direction -->
+  <!-- <style>
+    .flex {
+      display: flex;
+      background-color: #ddd;
+    }
+    .flex-row {
+      flex-direction: row;
+    }
+    .flex-col {
+      flex-direction: column;
+    }
+    .item {
+      border: 1px dashed;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+
+  <div class="flex flex-row">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <hr>
+
+  <div class="flex flex-col">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div> -->
+
+
+  <!-- flex wrap -->
+
+  <!-- <style>
+    .flex {
+      display: flex;
+      background-color: #ddd;
+    }
+    .flex-wrap {
+      flex-wrap: wrap
+    }
+    .flex-nowrap {
+      flex-wrap: nowrap
+    }
+    .item {
       border: 1px dashed;
       width: 200px;
       height: 100px;
-      display: inline-block;
-      vertical-align: top;
-    }
-    .visible {
-      overflow: visible;
-    }
-    .auto {
-      overflow: auto
-    }
-    .scroll {
-      overflow: scroll
-    }
-    .hidden {
-      overflow: hidden;
     }
   </style>
 
-<p class="auto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia reiciendis, illo esse dolorem nihil rem consequuntur asperiores inventore dolores. Eaque nam sunt quo, quas qui veniam doloremque quis delectus suscipit!</p>
-<p class="scroll">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia reiciendis, illo esse dolorem nihil rem consequuntur asperiores inventore dolores. Eaque nam sunt quo, quas qui veniam doloremque quis delectus suscipit!</p>
-<p class="hidden">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia reiciendis, illo esse dolorem nihil rem consequuntur asperiores inventore dolores. Eaque nam sunt quo, quas qui veniam doloremque quis delectus suscipit!</p>
-<p class="visible">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia reiciendis, illo esse dolorem nihil rem consequuntur asperiores inventore dolores. Eaque nam sunt quo, quas qui veniam doloremque quis delectus suscipit!</p> -->
-
-<!-- <h1>Position</h1> -->
-<!-- <p>static relative absolute fixed</p> -->
-
-<!-- <style>
-  body {
-    border: 1px solid pink;
-    min-height: 1000px;
-  }
-  div {
-    border: 1px dashed;
-    width: 100px;
-    height: 100px;
-  }
-  /* natural flow */
-  .static {
-    position: static;
-  }
-  /* relative to its original position */
-  .relative {
-    position: relative;
-  }
-  /* absolute to its relative parent */
-  .absolute {
-    position: absolute;
-    background-color: red;
-    right: 10px;
-    bottom: 10px;
-  }
-  /* relative to viewport */
-  .fixed {
-    position: fixed;
-    top: 0; right: 0;
-  }
-</style>
-
-<div class="container">
-  <div class="static">static</div>
-  <div class="fixed">fixed</div>
-  <div class="relative">
-    <span class="absolute">absolute</span>
+  <div class="flex flex-wrap">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
   </div>
-</div> -->
 
-<!-- <h1>Transform</h1> -->
-<!-- <p>none translate scale rotate skew</p> -->
+  <hr>
 
-<!-- <style>
-  div {
-    border: 1px dashed;
-    width: 100px;
-    height: 100px;
-  }
-  /* moves an element from its current position */
-  .translate {
-    transform: translate(25px, 50px)
-  }
-  .rotate {
-    transform: rotate(20deg)
-  }
-  .scale {
-    transform: scale(0.5, 0.5)
-  }
-  .skew {
-    transform: skew(10deg, 5deg)
-  }
-</style>
+  <div class="flex flex-nowrap">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div> -->
 
-<div class="translate"></div>
-<div class="rotate"></div>
-<div class="scale"></div>
-<div class="skew"></div> -->
+  <!-- justify-content, align-items -->
 
-<!-- <h1>Display: flex</h1> -->
-<!-- <p>Reponsive</p> -->
-
-<!-- <style>
-  .flex {
-    display: flex;
-    background-color: #ddd;
-  }
-  .item {
-    border: 1px dashed;
-    flex: 33.33333%;
-  }
-</style>
-
-<div class="flex">
-  <div class="item">item</div>
-  <div class="item">item</div>
-  <div class="item">item</div>
-</div> -->
-
-<!-- <style>
-  .flex {
-    display: flex;
-    background-color: #ddd;
-  }
-  .min-width, .item {
-    border: 1px dashed;
-  }
-  .min-width {
-    min-width: 100px;
-  }
-  .item {
-    width: 100%;
-  }
-</style>
-
-<div class="flex">
-  <div class="min-width">min-width</div>
-  <div class="item">item</div>
-</div> -->
-
-<!-- <h1>Media</h1>
-
-<style>
-  p {
-    border: 1px dashed;
-  }
-
-  @media (min-width: 600px) {
-    .min-width {
-      color: green
+  <!-- <style>
+    .flex {
+      display: flex;
+      background-color: #ddd;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      height: 300px;
     }
-  }
-  @media (min-width: 800px) {
-    .min-width {
-      color: blue;
+    .item {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed;
     }
-  }
+  </style>
 
-  @media (max-width: 800px) {
-    .max-width {
-      color: red
+  <div class="flex">
+    <div class="item">1</div>
+  </div> -->
+
+  <!-- <style>
+    .flex {
+      display: flex;
+      background-color: #ddd;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 300px;
+      height: 300px;
     }
-  }
-  @media (max-width: 600px) {
-    .max-width {
-      color: pink
+    .item {
+      width: 50px;
+      height: 50px;
+      border: 1px dashed;
     }
-  }
-</style>
+  </style>
 
-<p class="min-width">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero consequatur mollitia a sequi veritatis. Adipisci odit corporis minus. Sed dolores maxime inventore accusantium ea consectetur natus quidem provident corrupti.</p>
-<p class="max-width">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero consequatur mollitia a sequi veritatis. Adipisci odit corporis minus. Sed dolores maxime inventore accusantium ea consectetur natus quidem provident corrupti.</p> -->
+  <div class="flex">
+    <div class="item">1</div>
+    <div class="item">3</div>
+    <div class="item">3</div>
+  </div> -->
 
+  <!-- flex item properties -->
+
+  <!-- flex-basis, flex-grow -->
+  <!-- <style>
+    .flex {
+      display: flex; 
+      background-color: #ddd;
+    }
+    .item {
+      border: 1px dashed;
+      flex-basis: 200px;
+      flex-grow: 1;
+    }
+    .flex-grow {
+      flex-grow: 2;
+      background-color: orange;
+    }
+  </style>
+
+  <div class="flex">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <hr>
+
+  <div class="flex">
+    <div class="item">1</div>
+    <div class="item flex-grow">2</div>
+    <div class="item">3</div>
+  </div> -->
+
+
+  <!-- flex-basis, flex-shrink -->
+
+  <!-- <style>
+    .flex {
+      display: flex; 
+      background-color: #ddd;
+    }
+    .item {
+      border: 1px dashed;
+      flex-shrink: 1;
+      flex-basis: 200px;
+    }
+    .flex-shrink {
+      flex-shrink: 2;
+      background-color: orange;
+    }
+  </style>
+
+
+  <div class="flex">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <hr>
+
+  <div class="flex">
+    <div class="item">1</div>
+    <div class="item flex-shrink">2</div>
+    <div class="item">3</div>
+  </div> -->
+
+
+  <!-- # flex shorthand  -->
+
+  <!-- <style>
+    .flex {
+      display: flex;
+      background-color: #ddd;
+    }
   
+    .item {
+      border: 1px dashed;
+      width: 100px;
+      height: 100px;
+
+      /* default */
+      flex: 0 1 auto
+      /* flex-grow */
+      /* flex: 1; */
+      /* flex-basis */
+      /* flex: 33.33333% */
+    }
+  </style>
+
+  <div class="flex">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div> -->
+
+  <!-- <style>
+    .container {
+      display: flex;
+      background-color: #ddd;
+      height: 200px;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+    }
+    .item {
+      display: flex;
+      border: 1px dashed;
+      width: 100px;
+      height: 100px;
+    }
+    .item:nth-child(2) {
+      justify-content: flex-end;
+      align-items: center;
+      align-self: flex-end;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: red;
+    }
+  </style>
+
+  <div class="container">
+    <div class="item"></div>
+    <div class="item">
+      <div class="dot"></div>
+    </div>
+  </div> -->
+
+
+  <!-- <style>
+    .container {
+      display: flex;
+      justify-content: space-between;
+      background-color: #ddd;
+      height: 100px;
+      align-items: flex-start;
+    }
+    .item {
+      display: flex;
+      border: 1px dashed;
+      width: 50px;
+      height: 50px;
+    }
+    .item:nth-child(even) {
+      align-items: center;
+    }
+    .item:first-child {
+      align-self: center;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .item:nth-child(3) {
+      align-self: flex-end;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: red;
+    }
+  </style>
+
+  <div class="container">
+    <div class="item">
+      <div class="dot"></div>
+    </div>
+    <div class="item">
+      <div class="dot"></div>
+    </div>
+    <div class="item">
+      <div class="dot"></div>
+    </div>
+    <div class="item">
+      <div class="dot"></div>
+    </div>
+  </div> -->
+
+  <!-- ### grid -->
+  <!-- ### image: img tag and background-image -->
+  <!-- ### Responsive with @media keyword -->
+
 </body>
+
 </html>
