@@ -39,7 +39,6 @@ CSS Layout: float, flex, grid
 image: img, background-image
 
 # CSS Example
-button: button, anchor btn
 form: login, sign up, contact, Google search 
 table: table, table with icon
 navigation: top-nav, side-nav, responsive, dashboard, dropdown-nav
@@ -70,8 +69,9 @@ let, const, Arrow function, destructing/spread operator, Promise(async/await), t
 Cookie, LocalStorage/JSON, AJAX and fetch
 
 # JavaScript Example
-render in HTML: innerHTML, createElement, appendChild
 Others: dropdown, likes, rating
+render in HTML: innerHTML, createElement, appendChild
+form: input validate, button
 Accordion
 Tab content
 Navigation: mobile, side-nav
