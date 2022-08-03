@@ -74,7 +74,7 @@
     </form> -->
 
 
-    <style>
+    <!-- <style>
       * {
         margin: 0;
         padding: 0;
@@ -89,7 +89,7 @@
       }
       .container {
         /* border: 1px dashed; */
-        width: 400px;
+        width: 450px;
         flex-shrink: 1;
         height: auto;
       }
@@ -102,7 +102,7 @@
       }
       form {
         position: relative;
-        height: 2.75rem;
+        height: 3rem;
       }
       input {
         width: 100%;
@@ -115,7 +115,7 @@
       }
       .top-left, .top-right {
         position: absolute;
-        width: 50px;
+        width: 3rem;
         height: 100%;
         display: flex;
         justify-content: center;
@@ -150,7 +150,7 @@
         </div>
 
         <form action="">
-          <input type="text">
+          <input type="text" placeholder="Google 검색 또는 URL 입력">
           <div class="top-left">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#5F6368">
               <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
@@ -166,9 +166,391 @@
           </div>
         </form>
       </div>
-    </div>
+    </div> -->
 
   <!-- ### Table -->
+
+  <!-- <style>
+    table {
+      border-collapse: seperate;
+      /* border-collapse: collapse; */
+    }
+    td[scope=row] {
+      font-weight: bold;
+    }
+    th, td {
+      border: 1px solid #eee;
+      padding: 0.5rem;
+    }
+  </style>
+
+  <h1>Table: Basic</h1>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row">1</td>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <td scope="row">2</td>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <td scope="row">3</td>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table> -->
+
+  <!-- <style>
+    table {
+      border-collapse: collapse;
+    }
+    thead tr {
+      border-bottom: 1px solid;
+    }
+    td[scope=row] {
+      font-weight: bold;
+    }
+    th, td {
+      padding: 0.5rem;
+    }
+    tbody tr:nth-child(odd) {
+      background-color: #f1f1f1;
+    }
+  </style>
+
+  <h1>Table: Striped rows</h1>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row">1</td>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <td scope="row">2</td>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <td scope="row">3</td>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table> -->
+
+  <!-- <style>
+    table {
+      border-collapse: collapse;
+      caption-side: bottom;
+    }
+    thead tr {
+      border-bottom: 1px solid;
+    }
+    td[scope=row] {
+      font-weight: bold;
+    }
+    th, td {
+      padding: 0.5rem;
+    }
+    tbody tr {
+      border-bottom: 1px solid #eee;
+    }
+    tbody tr:last-child {
+      border: none;
+    }
+    tfoot {
+      border-top: 1px solid;
+      border-bottom: 1px solid #eee;
+    }
+    caption {
+      text-align: left;
+    }
+  </style>
+
+  <h1>Table: Table footer and caption</h1>
+  <table>
+    <caption>List of users</caption>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row">1</td>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <td scope="row">2</td>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <td scope="row">3</td>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Footer</td>
+        <td>Footer</td>
+        <td>Footer</td>
+        <td>Footer</td>
+      </tr>
+    </tfoot>
+  </table> -->
+
+  <!-- <style>
+    .table-responsive {
+      max-width: 400px;
+      overflow-x: scroll;
+    }
+    .table-responsive::-webkit-scrollbar {
+      /* display: none; */
+    }
+    table {
+      /* width: 100%; */
+      display: table;
+      border-collapse: collapse;
+    }
+    thead {
+      border-bottom: 1px solid;
+    }
+    tbody tr {
+      border-bottom: 1px solid #eee;
+    }
+    td[scope=row] {
+      font-weight: bold;
+    }
+    th, td {
+      padding: 0.5rem;
+    }
+  </style>
+
+  <h1>Table: Responsive</h1>
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Heading</th>
+          <th scope="col">Heading</th>
+          <th scope="col">Heading</th>
+          <th scope="col">Heading</th>
+          <th scope="col">Heading</th>
+          <th scope="col">Heading</th>
+          <th scope="col">Heading</th>
+        </tr>
+      </thead>  
+      <tbody>
+        <tr>
+          <td scope="row">1</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr>
+          <td scope="row">2</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr>
+          <td scope="row">3</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+      </tbody>
+    </table> 
+  </div> -->
+
+  <!-- ### Dropdown -->
+
+  <!-- <style>
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .container {
+      display: inline-block;
+    }
+    .container:hover .content {
+      display: block;
+    }
+    button {
+      padding: 0.5rem;
+      cursor: pointer;
+      background-color: #555;
+      color: #fff;
+      border: none;
+    }
+    .content {
+      position: absolute;
+      width: 200px;
+      /* h (bottom, top) / v (right, left) / blur / spread / color  */
+      /* required: h, v  */
+      box-shadow: 1px 1px 3px #eee, -1px -1px 3px #eee;
+      display: none;
+    }
+    ul li {
+      padding: 0.5rem;
+    }
+    li:hover {
+      background-color: #eee;
+    }
+  </style>
+
+  <h1>Dropdown</h1>
+  <div class="container">
+    <button type="button">Dropdown</button>
+    <div class="content">
+      <ul>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+      </ul>
+    </div>
+  </div> -->
+
+  <!-- ### Modal -->
+
+  <!-- <style>
+    body {
+      min-height: 1000px;
+    }
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(0 0 0 / 0.2);
+    }
+    .modal-content {
+      padding: 1rem;
+      background-color: #fff;
+      max-width: 400px;
+      margin: 100px auto;
+      position: relative;
+    }
+    .close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0.5rem;
+    }
+  </style>
+
+  <h1>Heading</h1>
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+    Consequuntur unde, tempore minus magnam ipsum aliquam ab repellat accusantium labore, 
+    dolor soluta expedita, asperiores quibusdam natus voluptatem debitis ut. Ipsa, deleniti.
+  </p>
+
+  <div class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h1>Modal Content</h1>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+        Consequuntur unde, tempore minus magnam ipsum aliquam ab repellat accusantium labore, 
+        dolor soluta expedita, asperiores quibusdam natus voluptatem debitis ut. Ipsa, deleniti.
+      </p>
+    </div>
+  </div> -->
+
+  <style>
+    body {
+      min-height: 1000px;
+    }
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(0 0 0 / 0.2);
+    }
+    .modal-content {
+      /* white-space: nowrap; */
+      box-sizing: border-box;
+      position: absolute;
+      max-width: 400px;
+      /* width: 100%; */
+      /* width: 400px; */
+      padding: 1rem;
+      background-color: #fff;
+      top: 50%;
+      left: 50%;
+      /* transform: translate(-50%, -50%); */
+    }
+  </style>
+
+  <h1>Heading</h1>
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+    Consequuntur unde, tempore minus magnam ipsum aliquam ab repellat accusantium labore, 
+    dolor soluta expedita, asperiores quibusdam natus voluptatem debitis ut. Ipsa, deleniti.
+  </p>
+
+  <div class="modal">
+    <div class="modal-content">
+      <h1>Modal Content</h1>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+        Consequuntur unde, tempore minus magnam ipsum aliquam ab repellat accusantium labore, 
+        dolor soluta expedita, asperiores quibusdam natus voluptatem debitis ut. Ipsa, deleniti.
+      </p>
+    </div>
+  </div>
 
   <!-- ### Navigation -->
 

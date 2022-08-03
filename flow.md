@@ -41,10 +41,11 @@ image: img, background-image
 # CSS Example
 form: login, sign up, contact, Google search 
 table: table, table with icon
-navigation: top-nav, side-nav, responsive, dashboard, dropdown-nav
-flex: layout, responsive layout, image grid
-image: thumbnail, text over image, responsive
-animation: loader
+dropdown
+Modal
+navigation: top-nav, side-nav, responsive, dashboard, 
+image: thumbnail, text over image
+animation: spinner, menu button, 
 
 - - -
 
