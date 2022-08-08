@@ -125,6 +125,7 @@ function Todo(props) {
           />  
         </div>
       </div>
+
       <div className="flex flex-equal">
         <button 
           className="btn btn-light" 
@@ -189,8 +190,8 @@ function App(props) {
   }
 
   function deleteTask(id) {
-    const remainingTasks = tasks.filter(task => id !== task.id)
-    setTasks(remainingTasks)
+    const remainingTasks = tasks.filter(task => id !== task.id);
+    setTasks(remainingTasks);
   }
 
   function toggleTaskCompleted(id) {

@@ -419,6 +419,7 @@
       list-style: none;
     }
     .container {
+      position: relative;
       display: inline-block;
     }
     .container:hover .content {
@@ -433,6 +434,9 @@
     }
     .content {
       position: absolute;
+      /* top: 0; */
+      left: 0;
+      /* right: 0; */
       width: 200px;
       /* h (bottom, top) / v (right, left) / blur / spread / color  */
       /* required: h, v  */
@@ -465,7 +469,7 @@
     body {
       min-height: 1000px;
     }
-    .modal {
+    .container {
       position: fixed;
       top: 0;
       left: 0;
@@ -473,14 +477,14 @@
       right: 0;
       background-color: rgba(0 0 0 / 0.2);
     }
-    .modal-content {
+    .item {
       padding: 1rem;
       background-color: #fff;
       max-width: 400px;
-      margin: 100px auto;
+      margin: 100px auto 0;
       position: relative;
     }
-    .close {
+    .btn {
       position: absolute;
       top: 0;
       right: 0;
@@ -495,9 +499,9 @@
     dolor soluta expedita, asperiores quibusdam natus voluptatem debitis ut. Ipsa, deleniti.
   </p>
 
-  <div class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
+  <div class="container">
+    <div class="item">
+      <span class="btn">&times;</span>
       <h1>Modal Content</h1>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
@@ -511,26 +515,29 @@
     body {
       min-height: 1000px;
     }
-    .modal {
+    .container {
       position: fixed;
       top: 0;
       left: 0;
       bottom: 0;
       right: 0;
       background-color: rgba(0 0 0 / 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    .modal-content {
-      /* white-space: nowrap; */
+    .item {
       box-sizing: border-box;
-      position: absolute;
-      max-width: 400px;
-      /* width: 100%; */
-      /* width: 400px; */
+      width: 400px;
       padding: 1rem;
       background-color: #fff;
-      top: 50%;
-      left: 50%;
-      /* transform: translate(-50%, -50%); */
+      position: relative;
+    }
+    .btn {
+      position: absolute;
+      font-size: 2rem;
+      top: -2rem;
+      right: 0;
     }
   </style>
 
@@ -541,8 +548,9 @@
     dolor soluta expedita, asperiores quibusdam natus voluptatem debitis ut. Ipsa, deleniti.
   </p>
 
-  <div class="modal">
-    <div class="modal-content">
+  <div class="container">
+    <div class="item">
+      <span class="btn">&times;</span>
       <h1>Modal Content</h1>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
@@ -555,312 +563,223 @@
   <!-- ### Navigation -->
 
   <!-- <style>
-    body {
-      min-height: 1000px;
-    }
-    .fixed-top {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-
-    }
-    .nav-bar {
-      border: 1px solid red;
-
-      display: flex;
-      flex-direction: column;
-    }
-    .nav-bar a {
-      border: 1px dashed;
-      padding: 10px;
-    }
-    @media (min-width: 501px) {
-      .nav-bar {
-        flex-direction: row;
-      }
-    }
-  </style>
-
-<div class="fixed-top">
-  <div class="nav-bar">
-    <a href="">Home</a>
-    <a href="">About</a>
-    <a href="">Blog</a>
-    <a href="">Contact</a>
-  </div>
-</div> -->
-
-<!-- <style>
-    body {
-      min-height: 1000px;
-    }
-    .sticky {
-      position: sticky;
-      top: 0;
-      left: 0;
-    }
-    .nav-bar {
-      background-color: #ddd;
-      display: flex;
-    }
-    .nav-bar a {
-      padding: 10px;
-    }
-  </style>
-
-  <div class="header"><h1>Header</h1></div>
-  <div class="sticky">
-    <div class="nav-bar">
-      <a href="">Home</a>
-      <a href="">About</a>
-      <a href="">Blog</a>
-      <a href="">Contact</a>
-    </div>
-  </div> -->
-
-  <!-- <style>
-    .side-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 280px;
-      height: 100%;
-      border: 1px dashed;
-      background-color: #222;
-    }
-  </style>
-
-
-  <div class="side-bar">
-    <ul>
-      <li><a href="">Home</a></li>
-      <li><a href="">About</a></li>
-      <li><a href="">Blog</a></li>
-      <li><a href="">Contact</a></li>
-    </ul>
-  </div> -->
-
-
-  <!-- <style>
-    body {
-      min-height: 1000px;
-      border: 1px solid red;
-    }
-    .fixed-top {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1;
-    }
-    .header {
-      border: 1px dashed;
-      /* background-color: #fff; */
-      padding-left: 40px;
-    }
-    .side-bar {
-      border: 1px dashed;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 0;
-      width: 280px;
-      height: 100%;
-    }
-    ul {
-      margin-top: 100px;
-    }
-    .main {
-      padding: 0 15px;
-      margin-top: 100px;
-      margin-left: 280px;
-    }
-  </style>
-
-  <div class="fixed-top">
-    <div class="header"><h1>Heading</h1></div>
-  </div>
-  <div class="side-bar">
-    <ul>
-      <li>Home</li>
-      <li>About</li>
-      <li>Blog</li>
-      <li>Contact</li>
-    </ul>
-  </div>
-
-  <div class="main">
-    <h1>Content</h1>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit deleniti soluta recusandae at facere amet fugiat quibusdam pariatur neque ipsum aliquid quod facilis aspernatur, in reiciendis accusantium obcaecati perferendis eius?</p>
-  </div> -->
-
-  <!-- <style>
-    .nav-bar {
-      border: 1px dashed;
-      background-color: #222;
-      display: flex;
-    }
-    .nav-item {
-      padding: 10px;
-      color: #fff;
-    }
-    .nav-item:hover {
+    .container {
       background-color: #333;
     }
-    .dropdown {
-      /* border: 1px dashed */
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
     }
-    .dropdown-btn {
-      background-color: #222;
-      border: none;
-      cursor: pointer;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f1f1f1;
-    }
-    .dropdown:hover .dropdown-content {
+    a {
       display: block;
+      padding: 0.5rem;
+      color: #fff;
     }
-    .dropdown-content a {
-      display: block;
-      padding: 10px;
-      width: 100px;
+    a:hover {
+      background-color: #444;
     }
   </style>
 
-  <div class="nav-bar">
-    <a class="nav-item" href="">Home</a>
-    <a class="nav-item" href="">About</a>
-    <div class="dropdown">
-      <button class="dropdown-btn nav-item">Dropdown</button>
-      <div class="dropdown-content">
-        <a href="">Item 1</a>
-        <a href="">Item 2</a>
-        <a href="">Item 3</a>
-      </div>
-    </div>
+  <div class="container">
+    <ul>
+      <li>
+        <a href="#">Menu</a>
+      </li>
+      <li>
+        <a href="#">Menu</a>
+      </li>
+      <li>
+        <a href="#">Menu</a>
+      </li>
+      <li>
+        <a href="#">Menu</a>
+      </li>
+    </ul>
   </div> -->
 
   <!-- <style>
-    img {
-      width: 100%;
-    }
     .container {
+      background-color: #333;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
       display: flex;
       flex-direction: column;
-      max-width: 800px;
-      margin: auto;
     }
-    .card {
-      border: 1px dashed;
-      /* flex: 1; */
-      flex-grow: 1;
-      flex-basis: 100px;
-      /* works*/
-      /* flex-basis: 33.33333%; */
-      /* not works when column */
-      /* width: 33.33333% */
+    a {
+      display: block;
+      padding: 0.5rem;
+      color: #fff;
     }
-
-    @media (min-width: 501px) {
-      .container {
+    a:hover {
+      background-color: #444;
+    }
+    @media(min-width: 640px) {
+      ul {
         flex-direction: row;
       }
     }
   </style>
 
   <div class="container">
-    <div class="card">
-      <img src="../../img/bunny.jpeg" alt="">
-      <h3>name</h3>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-    </div>
-    <div class="card">
-      <img src="../../img/cat.jpeg" alt="">
-      <h3>name</h3>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-    </div>
-    <div class="card">
-      <img src="../../img/duck.jpeg" alt="">
-      <h3>name</h3>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-    </div>
+    <ul>
+      <li>
+        <a href="#">Menu</a>
+      </li>
+      <li>
+        <a href="#">Menu</a>
+      </li>
+      <li>
+        <a href="#">Menu</a>
+      </li>
+      <li>
+        <a href="#">Menu</a>
+      </li>
+    </ul>
   </div> -->
 
   <!-- <style>
-    .container {
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      background-color: #333;
       display: flex;
-      flex-wrap: wrap;
     }
-    .item {
-      flex-basis: 100%;
-      box-sizing: border-box;
-      /* margin: 0 5px; */
-      padding: 10px;
-      border: 1px dashed;
+    a {
+      text-decoration: none;
     }
-    img {
-      width: 100%;
+    li > a {
+      color: #fff;
+      display: inline-block;
+      padding: 0.5rem;
+    }
+    li > a:hover {
+      background-color: #444;
+    }
+    .container:hover .content {
       display: block;
     }
-    /* Tablet */
-    @media (min-width: 501px) {
-      .item {
-        /* with flex-wrap: wrap, box-sizing: border box property is needed. */
-        flex-basis: 50%;
-      }
+    .btn {
+      height: 100%;
+      cursor: pointer;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      font-size: 1rem;
     }
-    /* Desktop */
-    @media (min-width: 701px) {
-      .item {
-        flex-basis: 25%;
-      }
+    .btn span {
+      font-size: 0.5rem;
+      vertical-align: middle;
+    }
+    .btn:hover {
+      background-color: #444;
+    }
+    .content {
+      display: none;
+      position: absolute;
+      width: 200px;
+      border: 1px solid #ddd;
+    }
+    .content a {
+      color: #000;
+      padding: 0.5rem;
+      display: block;
+    }
+    .content a:hover {
+      background-color: #eee;
+    }
+  </style>
+
+  <div class="wrap">
+    <ul>
+      <li>
+        <a href="#">Menu</a>
+      </li>
+      <li>
+        <a href="#">Menu</a>
+      </li>
+      <li class="container">
+        <button class="btn">Dropdown <span>&#9660;</span></button>
+        <div class="content">
+          <a href="#">Menu</a>
+          <a href="#">Menu</a>
+          <a href="#">Menu</a>
+        </div>
+      </li>
+    </ul>
+  </div> -->
+
+  <!-- <style>
+    body {
+      height: 1000px;
+    }
+    .container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 200px;
+      background-color: #333;
+    }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      display: block;
+      padding: 0.75rem;
+      color: #fff;
+    }
+    a:hover {
+      background-color: #444;
+    }
+    .wrap {
+      margin-left: 200px;
     }
   </style>
 
   <div class="container">
-    <div class="item">
-      <img src="../../img/bunny.jpeg" alt="">
-    </div>
-    <div class="item">
-      <img src="../../img/cat.jpeg" alt="">
-    </div>
-    <div class="item">
-      <img src="../../img/bunny.jpeg" alt="">
-    </div>
-    <div class="item">
-      <img src="../../img/bunny.jpeg" alt="">
-    </div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="wrap">
+    <h2>Heading</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt id soluta repudiandae. Omnis similique ducimus
+      voluptas consequatur dicta sunt, voluptatem necessitatibus commodi odit repudiandae fugiat officia nihil laboriosam?
+      Omnis, libero?</p>
   </div> -->
 
-  <!-- <style>
-    .row {
+  <style>
+    .container {
       display: flex;
       flex-wrap: wrap;
       max-width: 800px;
       margin: auto;
+      /* flex-direction: column; */
     }
     .header {
       background-color: #ddd;
-    }
-    .nav {
-      width: 100%;
-    }
-    .main {
-      width: 100%;
-    }
-    .aside {
-      width: 100%;
     }
     .footer {
       background-color: #333;
       color: #fff;
     }
+    .nav, .main, .aside {
+      width: 100%;
+    }
     /* Tablet */
-    @media (min-width: 501px) {
+    @media (min-width: 640px) {
       .nav {
         width: 25%
       }
@@ -869,7 +788,7 @@
       }
     }
     /* Desktop */
-    @media (min-width: 701px) {
+    @media (min-width: 768px) {
       .nav {
         width: 25%
       }
@@ -886,7 +805,7 @@
     <h1>header</h1>
   </div>
 
-  <div class="row">
+  <div class="container">
     <div class="nav">
       <ul>
         <li><a href="">Home</a></li>
@@ -896,7 +815,7 @@
       </ul>
     </div>
     <div class="main">
-      <h3>Main</h3>
+      <h2>Main</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis voluptatum nihil ea fugiat! 
         Quia facere ipsa qui praesentium asperiores fugiat, quo ex corrupti distinctio ducimus provident pariatur eos laboriosam sed?
@@ -920,7 +839,7 @@
 
   <div class="footer">
     <small>footer</small>
-  </div> -->
+  </div>
 
   <!-- <style>
     body {

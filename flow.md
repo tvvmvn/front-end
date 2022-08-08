@@ -41,9 +41,9 @@ image: img, background-image
 # CSS Example
 form: login, sign up, contact, Google search 
 table: table, table with icon
-dropdown
-Modal
-navigation: top-nav, side-nav, responsive, dashboard, 
+dropdown & Modal
+navigation: top-nav, side-nav, responsive nav
+layout: responsive
 image: thumbnail, text over image
 animation: spinner, menu button, 
 
