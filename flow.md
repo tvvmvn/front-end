@@ -39,9 +39,10 @@ CSS Layout: float, flex, grid
 image: img, background-image
 
 # CSS Example
-form: login, sign up, contact, Google search 
-table: table, table with icon
-dropdown & Modal
+form: login, Google search 
+table: table, responsive table
+dropdown
+Modal
 navigation: top-nav, side-nav, responsive nav
 layout: responsive
 image: thumbnail, text over image

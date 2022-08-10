@@ -714,7 +714,7 @@
     </ul>
   </div> -->
 
-  <!-- <style>
+  <style>
     body {
       height: 1000px;
     }
@@ -724,7 +724,7 @@
       left: 0;
       bottom: 0;
       width: 200px;
-      background-color: #333;
+      background-color: #222;
     }
     ul {
       list-style-type: none;
@@ -737,7 +737,7 @@
       color: #fff;
     }
     a:hover {
-      background-color: #444;
+      background-color: #333;
     }
     .wrap {
       margin-left: 200px;
@@ -746,10 +746,109 @@
 
   <div class="container">
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#">Menu</a></li>
+      <li><a href="#">Menu</a></li>
+      <li><a href="#">Menu</a></li>
+      <li><a href="#">Menu</a></li>
+    </ul>
+  </div>
+
+  <div class="wrap">
+    <h2>Heading</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt id soluta repudiandae. Omnis similique ducimus
+      voluptas consequatur dicta sunt, voluptatem necessitatibus commodi odit repudiandae fugiat officia nihil laboriosam?
+      Omnis, libero?</p>
+  </div>
+
+  <!-- <style>
+    body {
+      height: 1000px;
+    }
+    .container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 4rem;
+      background-color: #222;
+    }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      display: block;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
+    a:hover {
+      background-color: #333;
+    }
+    .wrap {
+      margin-left: 4rem;
+    }
+  </style>
+
+  <div class="container">
+    <ul>
+      <li><a href="#">#</a></li>
+      <li><a href="#">#</a></li>
+      <li><a href="#">#</a></li>
+      <li><a href="#">#</a></li>
+    </ul>
+  </div>
+
+  <div class="wrap">
+    <h2>Heading</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Deserunt id soluta repudiandae. Omnis similique ducimus voluptas consequatur dicta sunt, 
+      voluptatem necessitatibus commodi odit repudiandae fugiat officia nihil laboriosam? Omnis, libero?
+    </p>
+  </div>  -->
+
+  <!-- <style>
+    body {
+      height: 1000px;
+    }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 200px;
+      background-color: #222;
+      overflow-y: scroll;
+    }
+    ul {
+      height: 1000px;
+    }
+    a {
+      display: block;
+      padding: 0.75rem;
+      color: #fff;
+    }
+    a:hover {
+      background-color: #333;
+    }
+    .wrap {
+      margin-left: 200px;
+    }
+  </style>
+
+  <div class="container">
+    <ul>
+      <li><a href="#">Menu</a></li>
+      <li><a href="#">Menu</a></li>
+      <li><a href="#">Menu</a></li>
+      <li><a href="#">Menu</a></li>
     </ul>
   </div>
 
@@ -760,893 +859,348 @@
       Omnis, libero?</p>
   </div> -->
 
-  <style>
+  <!-- ### Responsive Layout -->
+
+  <!-- <style>
+    .wrap {
+      background-color: #222;
+    }
+    h1 {
+      text-align: center;
+    }
+    p {
+      color: #888;
+    }
+    .container {
+      /* border: 1px dashed; */
+      max-width: 540px;
+      box-sizing: border-box;
+      margin: auto;
+      padding: 3rem 1rem;
+      color: #fff;
+    }
+  </style>
+
+  <div class="wrap">
+    <div class="container">
+      <h1>Layout with row</h1>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores, pariatur? 
+        Reiciendis ab quae illum vero amet illo sed soluta atque error. 
+        Vero laboriosam temporibus a atque commodi quisquam mollitia odio?</p>
+    </div>
+  </div> -->
+
+  <!-- <style>
+    .container {
+      max-width: 740px;
+      margin: auto;
+      padding: 3rem 1rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid #ddd;
+    }
+    p {
+      color: #888;
+    }
+    .item:nth-child(2) {
+      width: 300px;
+      height: 300px;
+      background-color: #ddd;
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+
+    @media(min-width: 568px) {
+      .container {
+        flex-direction: row;
+      }
+    }
+  </style>
+
+  <div class="wrap">
+    <div class="container">
+      <div class="item">
+        <h1>Heading</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+          Minus praesentium quasi aspernatur in voluptas enim, 
+          hic nemo accusamus dolor esse voluptates magnam quod tempore 
+          numquam unde eligendi nulla et voluptatum!</p>
+      </div>
+      <div class="item"></div>
+    </div>
+  </div> -->
+
+  <!-- <style>
     .container {
       display: flex;
       flex-wrap: wrap;
-      max-width: 800px;
+      max-width: 740px;
       margin: auto;
-      /* flex-direction: column; */
+      border-top: 1px solid #ddd;
     }
-    .header {
-      background-color: #ddd;
-    }
-    .footer {
-      background-color: #333;
-      color: #fff;
-    }
-    .nav, .main, .aside {
+    .item {
+      box-sizing: border-box;
+      padding: 0 1rem;
+      text-align: center;
       width: 100%;
     }
-    /* Tablet */
     @media (min-width: 640px) {
-      .nav {
-        width: 25%
-      }
-      .main {
-        width: 75%
+      .item {
+        width: 50%;
       }
     }
-    /* Desktop */
     @media (min-width: 768px) {
-      .nav {
-        width: 25%
-      }
-      .main {
-        width: 50%
-      }
-      .aside {
+      .item {
         width: 25%;
       }
     }
   </style>
 
-  <div class="header">
-    <h1>header</h1>
-  </div>
+  <h1>flex-wrap: wrap</h1>
 
   <div class="container">
-    <div class="nav">
-      <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">About</a></li>
-        <li><a href="">Blog</a></li>
-        <li><a href="">Contact</a></li>
-      </ul>
+    <div class="item">
+      <h2>Heading</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
     </div>
-    <div class="main">
-      <h2>Main</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis voluptatum nihil ea fugiat! 
-        Quia facere ipsa qui praesentium asperiores fugiat, quo ex corrupti distinctio ducimus provident pariatur eos laboriosam sed?
-      </p>
+    <div class="item">
+      <h2>Heading</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
     </div>
-    <div class="aside">
-      <div class="">
-        <b>aside</b>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-      </div>
-      <div class="">
-        <b>aside</b>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-      </div>
-      <div class="">
-        <b>aside</b>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-      </div>
+    <div class="item">
+      <h2>Heading</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
     </div>
-  </div>
-
-  <div class="footer">
-    <small>footer</small>
-  </div>
-
-  <!-- <style>
-    body {
-      min-height: 1000px;
-    }
-    .sidebar {
-      position: fixed;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background-color: #ddd;
-      width: 72px;
-    }
-    .menu-item {
-      border: 1px dashed;
-      padding: 15px 0;
-    }
-    .icon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 30px;
-    }
-    .description {
-      display: flex;
-      justify-content: center;
-    }
-  </style>
-
-  <div class="sidebar">
-    <div class="menu-item">
-      <div class="icon">
-        <i class="fa-solid fa-circle"></i>
-      </div>
-      <div class="description">
-        <small>menu</small>
-      </div>
+    <div class="item">
+      <h2>Heading</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
     </div>
-    <div class="menu-item">
-      <div class="icon">
-        <i class="fa-solid fa-circle"></i>
-      </div>
-      <div class="description">
-        <small>menu</small>
-      </div>
+    <div class="item">
+      <h2>Heading</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
     </div>
-    <div class="menu-item">
-      <div class="icon">
-        <i class="fa-solid fa-circle"></i>
-      </div>
-      <div class="description">
-        <small>menu</small>
-      </div>
+    <div class="item">
+      <h2>Heading</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+    </div>
+    <div class="item">
+      <h2>Heading</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+    </div>
+    <div class="item">
+      <h2>Heading</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
     </div>
   </div> -->
 
-
   <!-- <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      min-height: 1000px;
-    }
-    .wrap {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-    }
     .container {
       display: flex;
-      background-color: #ddd;
-      justify-content: space-between;
-      align-items: center;
-      height: 50px;
-      padding: 0 15px;
+      flex-wrap: wrap;
+      max-width: 740px;
+      margin: auto;
+      border-top: 1px solid #ddd;
     }
-    #start, #center, #end {
-      border: 1px dashed;
-      display: flex;
-    }
-
-    #start {
-      min-width: 150px;
-      align-items: center;
-    }
-    .bars {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-width: 50px;
-      height: 50px;
-      border: 1px dashed;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      height: 30px;
-    }
-    .country-code {
-      font-size: 10px;
-      align-self: flex-start;
-    }
-
-    #center {
-      height: 35px;
-      width: 600px;
-      min-width: 0;
-      justify-content: flex-end;
-    }
-    .search-form {
-      display: none;
+    .item {
+      box-sizing: border-box;
+      padding: 0 1rem;
       width: 100%;
-    }
-    .mobile-search {
-      display: flex;
-      min-width: 50px;
-      border: 1px dashed;
-      justify-content: center;
-      align-items: center;
-    }
-    .search-form input {
-      width: 100%;
-      padding: 10px;
-    }
-    .search-form button {
-      min-width: 50px;
-      /* padding: 8px; */
-    }
-    .microphone {
-      display: flex;
-      min-width: 50px;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #end {
-      min-width: 200px;
-      justify-content: end;
-    }
-    .button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 50px;
-      height: 50px;
-      /* padding: 15px; */
-      border: 1px dashed;
-    }
-    .fa-solid, .fa-brands {
-      font-size: 20px;
-    }
-
-    @media (min-width: 650px) {
-      .search-form {
-        display: flex
-      }
-      .mobile-search {
-        display: none;
-      }
-    }
-  </style>
-
-  <div class="wrap">
-    <div class="container">
-
-      <div id="start">
-        <div class="bars">
-          <i class="fa-solid fa-bars"></i>
-        </div>
-        <div class="logo">
-          <i class="fa-brands fa-youtube"></i>
-          <span>YouTube</span>
-          <small class="country-code">KR</small>
-        </div>
-      </div>
-
-      <div id="center">
-        <form action="" class="search-form">
-          <input type="text">
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
-        <div class="mobile-search">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-        <div class="microphone">
-          <i class="fa-solid fa-microphone"></i>
-        </div>
-      </div>
-
-      <div id="end">
-        <div class="button">
-          <i class="fa-solid fa-video"></i>
-        </div>
-        <div class="button">
-          <i class="fa-solid fa-list-ul"></i>
-        </div>
-        <div class="button">
-          <i class="fa-solid fa-bell"></i>
-        </div>
-        <div class="button">
-          <i class="fa-solid fa-circle"></i>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-
-  <!-- <style>
-    body {
-      min-height: 1000px;
-    }
-    .wrap {
-      /* border: 3px solid red; */
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 200px;
-      overflow: hidden;
-      background-color: #333;
-      color: #fff;
-    }    
-
-    .header {
-      display: flex;
-      align-items: center;
-    }
-    .bars {
-      display: flex;
-      width: 50px;
-      height: 50px;
-      justify-content: center;
-      align-items: center;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      height: 30px;
-    }
-    .country-code {
-      font-size: 10px;
-      align-self: flex-start;
-    }
-
-    .side-bar {
-      height: 100%;
-      /* border: 5px solid green; */
-      overflow: auto;
-    }
-    .menu-item {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
       /* border: 1px dashed; */
-      padding: 10px;
     }
-    .icon {
-      display: flex;
-      width: 30px;
-      height: 30px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .fake-content {
-      background-color: #333;
-      height: 1000px;
-    }
-    .fa-brands {
-      font-size: 24px;
-    }
-    .fa-bars {
-      font-size: 20px;
+    @media (min-width: 640px) {
+      .item {
+        width: 50%;
+      }
     }
   </style>
 
-  <div class="wrap">
-    <div class="header">
-      <div class="bars">
-        <i class="fa-solid fa-bars"></i>
-      </div>
-      <div class="logo">
-        <i class="fa-brands fa-youtube"></i>
-        <span>&nbsp;YouTube</span>
-        <small class="country-code">KR</small>
-      </div>
-    </div>
+  <h1>flex-wrap: wrap</h1>
 
-    <div class="side-bar">
-      <div class="menu-item">
-        <div class="icon">
-          <i class="fa-solid fa-circle"></i>
-        </div>
-        <div class="description">
-          Description
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="icon">
-          <i class="fa-solid fa-circle"></i>
-        </div>
-        <div class="description">
-          Description
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="icon">
-          <i class="fa-solid fa-circle"></i>
-        </div>
-        <div class="description">
-          Description
-        </div>
-      </div>
-      <div class="fake-content"></div>
+  <div class="container">
+    <div class="item">
+      <h2>Heading</h2>
+      <ul>
+        <li>List item</li>
+        <li>List item</li>
+        <li>List item</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h2>Heading</h2>
+      <ul>
+        <li>List item</li>
+        <li>List item</li>
+        <li>List item</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h2>Heading</h2>
+      <ul>
+        <li>List item</li>
+        <li>List item</li>
+        <li>List item</li>
+      </ul>
     </div>
   </div> -->
 
   <!-- ### Image -->
 
-  <!-- img tag and background image -->
-
   <!-- <style>
+    img {
+      /* width: inherit; */
+      /* height: inherit; */
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
     .container {
       width: 200px;
       height: 200px;
+      opacity: 0.9;
+      cursor: pointer;
+      transition: 0.5s;
     }
-
-    .bg-image {
-      background-image: url('../../img/duck.jpeg');
-      background-size: cover;
-      background-position: center;
-    }
-    
-    .container img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
-  
-  <div class="container bg-image"></div>
-
-  <div class="container">
-    <img src="../../img/duck.jpeg" alt="">
-  </div> -->
-
-  <!-- image thumbnail -->
-
-  <!-- <style>
-    .container {
-      display: flex;
-      background-color: #ddd;
-    }
-    img {
-      /* width: 100%; */
-      /* height: 100%; */
-      width: inherit;
-      height: inherit;
-      object-fit: cover;
-    }
-
-    .thumbnail {
-      width: 100px;
-      height: 100px;
-      opacity: 0.8;
-    }
-    .thumbnail:hover {
+    .container:hover {
       opacity: 1;
     }
   </style>
 
-  <div class="container">
-    <div class="thumbnail">
-      <img src="../../img/bunny.jpeg" alt="">
-    </div>
-    <div class="thumbnail">
-      <img src="../../img/cat.jpeg" alt="">
-    </div>
-    <div class="thumbnail">
-      <img src="../../img/duck.jpeg" alt="">
-    </div>
-    <div class="thumbnail">
-      <img src="../../img/bird.jpeg" alt="">
-    </div>
-  </div> -->
-
-  <!-- Text on image -->
-
-  <!-- <style>
-    .container {
-      width: 400px;
-      height: 400px;
-      position: relative;
-    }
-    .bg-image {
-      background-image: url('../../img/duck.jpeg');
-      background-size: cover;
-      background-position: center;
-    }
-    .bg-text {
-      background-color: #000;
-      color: #fff;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 10px;
-    }
-  </style>
-
-  <div class="container bg-image">
-    <div class="bg-text">
-      <h1>TEXT</h1>
-    </div>
-  </div> -->
-
-  <!-- Image with overlay -->
-
-  <!-- <style>
-    .thumbnail {
-      width: 400px;
-      height: 400px;
-      position: relative;
-    }
-    img {
-      width: inherit;
-      height: inherit;
-      object-fit: cover;
-    }
-    .overlay {
-      position: absolute;
-      background-color: rgba(0,0,0,0.5);
-      width: inherit;
-      height: inherit;
-    }
-  </style>
-
-  <div class="thumbnail">
-    <div class="overlay"></div>
-    <img src="../../img/duck.jpeg" alt="">
-  </div> -->
-
-
-  <!-- Overlay and text in image -->
-
-  <!-- <style>
-    .thumbnail {
-      width: 400px;
-      height: 400px;
-      position: relative;
-    }
-    img {
-      width: inherit;
-      height: inherit;
-      object-fit: cover;
-    }
-    .overlay {
-      position: absolute;
-      background-color: rgba(0,0,0,0.5);
-      width: inherit;
-      height: inherit;
-    }
-    .text {
-      position: absolute;
-      background-color: #000;
-      color: #fff;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-  </style>
-
-  <div class="thumbnail">
-    <div class="overlay"></div>
-    <div class="text">
-      <h1>TEXT</h1>
-    </div>
-    <img src="../../img/duck.jpeg" alt="">
-  </div> -->
-
-  <!-- Image with hover effect -->
-
-  <!-- <style>
-    .container {
-      display: flex;
-    }
-    .thumbnail {
-      width: 200px;
-      height: 200px;
-      border: 1px dashed;
-    }
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* scalable image */
-    .scalable {
-      overflow: hidden
-    }
-    .scalable:hover img {
-      /* 1.2 larger than original width */
-      transform: scale(1.2, 1.2)
-    }
-    .scalable img {
-      transition: 0.5s;
-    }
-    /* overlay on image */
-    .image-layer {
-      position: relative;
-    }
-    .image-layer:hover .overlay {
-      opacity: 1
-    }
-    .overlay {
-      position: absolute;
-      background-color: #ddd;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: .5s;
-    }
-  </style>
-
-  <div class="container">
-    <div class="thumbnail scalable">
-      <img src="../../img/bunny.jpeg" alt="">
-    </div>
+  <h1>Basic Thumbnails</h1>
   
-    <div class="thumbnail image-layer">
-      <div class="overlay"></div>
-      <img src="../../img/bunny.jpeg" alt="">
-    </div>
-  </div> -->
-
-
-  <!-- Image with scale effect -->
-
-  <!-- <style>
-    .thumbnail {
-      width: 200px;
-      height: 200px;
-      border: 1px dashed;
-      position: relative;
-    }
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* scalable image */
-    .scalable {
-      overflow: hidden
-    }
-    .scalable:hover img {
-      /* 1.2 larger than original width */
-      transform: scale(1.2, 1.2)
-    }
-    .scalable img {
-      transition: 0.5s;
-    }
-    .scalable:hover .text {
-      display: block;
-    }
-
-    /* text on scalable image */
-    .text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: none;
-    }
-  </style>
-
-  <div class="thumbnail scalable">
-    <img src="../../img/bunny.jpeg" alt="">
-    <div class="text">
-      <b>TEXT</b>
-    </div>
-  </div> -->
-
-  <!-- Image with overlay and text -->
-
-  <!-- <style>
-    .container {
-      display: flex;
-    }
-    .thumbnail {
-      width: 200px;
-      height: 200px;
-      border: 1px dashed;
-    }
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* overlay on image */
-    .image-layer {
-      position: relative;
-    }
-    .image-layer:hover .overlay {
-      opacity: 1
-    }
-    .overlay {
-      position: absolute;
-      background-color: #ddd;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: .5s;
-    }
-
-    /* text on overlay */
-    .overlay .text {
-      position: inherit;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      margin: 0;
-    }
-  </style>
-  
-  <div class="thumbnail image-layer">
-    <div class="overlay">
-      <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    </div>
+  <div class="container">
     <img src="../../img/bunny.jpeg" alt="">
   </div> -->
 
 
-  <!-- <h1>image that is equal width and height</h1> -->
-
-  <!-- Basic: using padding-top -->
   <!-- <style>
-    .container {
-      width: 200px;
-      height: 200px;
-      background-color: #ddd;
-    }
-    .item {
-      border: 1px dashed;
-      width: 100%;
-      /* relative to its parent width */
-      padding-top: 100%;
-      position: relative;
-    }
-    .item span {
-      position: absolute;
-      top: 0; 
-      left: 0;
-    }
-  </style>
-  
-  <div class="container">
-    <div class="item">
-      <span>hello</span>
-    </div>
-  </div> -->
-
-
-  <!-- Basic: an image on padding-top element -->
-
-  <!-- <style>
-    /* body {
-      border: 3px solid red;
-    } */
-    .container {
-      /* relative to width of body */
-      width: 100%;
-      background-color: #ddd;
-    }
-    .item {
-      border: 1px dashed;
-      width: 100%;
-      /* relative to its parent width */
-      padding-top: 100%;
-      position: relative;
-    }
-    .item img {
-      position: absolute;
-      top: 0; 
-      left: 0;
+    img {
+      /* width: inherit; */
+      /* height: inherit; */
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+    .container {
+      overflow: hidden;
+      width: 200px;
+      height: 200px;
+      cursor: pointer;
+    }
+    img {
+      transition: 0.5s;
+    }
+    .container:hover img {
+      transform: scale(1.1, 1.1);
+    }
   </style>
+
+  <h1>Scalable Thumbnails</h1>
   
   <div class="container">
-    <div class="item">
-      <img src="../../img/duck.jpeg" alt="">
-    </div>
+    <img src="../../img/bunny.jpeg" alt="">
   </div> -->
 
-  <!-- Container with equal width and height responsively -->
-
   <!-- <style>
-    .row {
-      display: flex;
-      flex-wrap: wrap;
+    img {
+      /* width: inherit; */
+      /* height: inherit; */
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     .container {
-      box-sizing: border-box;
-      border: 1px dashed;
-      width: 50%;
-      padding: 10px;
-    }
-    .item {
-      width: 100%;
-      /* relative to container width */
-      padding-top: 100%;
-      background-color: #ddd;
-    }
-    </style>
-
-  <div class="row">
-    <div class="container">
-      <div class="item"></div>
-    </div>
-    <div class="container">
-      <div class="item"></div>
-    </div>
-    <div class="container">
-      <div class="item"></div>
-    </div>
-    <div class="container">
-      <div class="item"></div>
-    </div>
-  </div> -->
-
-  <!-- Responsive images with equal width and height -->
-
-  <!-- <style>
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .container {
-      box-sizing: border-box;
-      border: 1px dashed;
-      width: 50%;
-      padding: 10px;
-    }
-    .item {
-      width: 100%;
-      /* relative to container width */
-      padding-top: 100%;
-      background-color: #ddd;
+      width: 200px;
+      height: 200px;
+      cursor: pointer;
       position: relative;
     }
-    .item img {
+    .layer {
       position: absolute;
       top: 0;
+      right: 0;
+      bottom: 0;
       left: 0;
+      background-color: rgba(0 0 0 / 0.5);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+
+      opacity: 0;
+      transition: 0.5s;
+    }
+    .container:hover .layer {
+      opacity: 1;
+    }
+  </style>
+
+  <h1>Overlay Thumbnails</h1>
+  
+  <div class="container">
+    <div class="layer">Description</div>
+    <img src="../../img/bunny.jpeg" alt="">
+  </div> -->
+
+  <!-- <style>
+    img {
+      /* width: inherit; */
+      /* height: inherit; */
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    </style>
+    .container {
+      width: 200px;
+      height: 200px;
+      cursor: pointer;
+      position: relative;
+    }
+    .layer {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 25%;
+      background-color: rgba(0 0 0 / 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      opacity: 0;
+      transition: 0.5s;
+    }
+    .container:hover .layer {
+      opacity: 1;
+    }
+  </style>
 
-  <div class="row">
-    <div class="container">
-      <div class="item">
-        <img src="../../img/duck.jpeg" alt="">
-      </div>
-    </div>
-    <div class="container">
-      <div class="item"></div>
-    </div>
-    <div class="container">
-      <div class="item"></div>
-    </div>
-    <div class="container">
-      <div class="item"></div>
-    </div>
+  <h1>Test</h1>
+  
+  <div class="container">
+    <div class="layer">Description</div>
+    <img src="../../img/bunny.jpeg" alt="">
   </div> -->
-
-
+  
   <!-- ### Animation -->
-
-  <!-- Spinner -->
 
   <!-- <style>
     .spinner {
       width: 50px;
       height: 50px;
       border: 5px solid;
-      border-top: 5px solid #fff;
+      border-top: 5px solid transparent;
       border-radius: 50%;
-      /* animation-name: spin;
-      animation-duration: 2s;
-      animation-iteration-count: infinite; */
-      /* same speed from beginning to end */
-      /* animation-timing-function: linear; */
-      /* shorthand */
-      /* animation: spin 2s infinite linear; */
       
+      /* animation-name: spin; */
+      /* animation-duration: 2s; */
+      /* animation-iteration-count: infinite; */
+      /* animation-timing-function: linear; */
+
+      animation: spin 2s infinite linear;
     }
+
     @keyframes spin {
       from {
         transform: ratate(0deg)
@@ -1656,6 +1210,7 @@
     }
   </style>
 
+  <h1>Spinner</h1>
   <div class="spinner"></div>  -->
 
 
