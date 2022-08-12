@@ -73,7 +73,7 @@ Cookie, LocalStorage/JSON, AJAX and fetch
 # JavaScript Example
 Others: dropdown, likes, rating
 render in HTML: innerHTML, createElement, appendChild
-form: input validate, button
+form: input validate, submit event
 Accordion
 Tab content
 Navigation: mobile, side-nav

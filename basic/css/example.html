@@ -714,7 +714,7 @@
     </ul>
   </div> -->
 
-  <style>
+  <!-- <style>
     body {
       height: 1000px;
     }
@@ -758,7 +758,7 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt id soluta repudiandae. Omnis similique ducimus
       voluptas consequatur dicta sunt, voluptatem necessitatibus commodi odit repudiandae fugiat officia nihil laboriosam?
       Omnis, libero?</p>
-  </div>
+  </div> -->
 
   <!-- <style>
     body {
@@ -1046,7 +1046,7 @@
 
   <!-- ### Image -->
 
-  <!-- <style>
+  <style>
     img {
       /* width: inherit; */
       /* height: inherit; */
@@ -1059,7 +1059,6 @@
       height: 200px;
       opacity: 0.9;
       cursor: pointer;
-      transition: 0.5s;
     }
     .container:hover {
       opacity: 1;
@@ -1070,7 +1069,7 @@
   
   <div class="container">
     <img src="../../img/bunny.jpeg" alt="">
-  </div> -->
+  </div>
 
 
   <!-- <style>
@@ -1115,7 +1114,7 @@
       cursor: pointer;
       position: relative;
     }
-    .layer {
+    .item {
       position: absolute;
       top: 0;
       right: 0;
@@ -1131,7 +1130,7 @@
       opacity: 0;
       transition: 0.5s;
     }
-    .container:hover .layer {
+    .container:hover .item {
       opacity: 1;
     }
   </style>
@@ -1139,7 +1138,7 @@
   <h1>Overlay Thumbnails</h1>
   
   <div class="container">
-    <div class="layer">Description</div>
+    <div class="item">Description</div>
     <img src="../../img/bunny.jpeg" alt="">
   </div> -->
 
@@ -1157,7 +1156,7 @@
       cursor: pointer;
       position: relative;
     }
-    .layer {
+    .item {
       position: absolute;
       right: 0;
       bottom: 0;
@@ -1171,7 +1170,7 @@
       opacity: 0;
       transition: 0.5s;
     }
-    .container:hover .layer {
+    .container:hover .item {
       opacity: 1;
     }
   </style>
@@ -1179,8 +1178,33 @@
   <h1>Test</h1>
   
   <div class="container">
-    <div class="layer">Description</div>
+    <div class="item">Description</div>
     <img src="../../img/bunny.jpeg" alt="">
+  </div> -->
+
+  <!-- <style>
+    .container {
+      height: 250px;
+      background-color: #ddd;
+      background-image: url("../../img/duck.jpeg");
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      filter: grayscale(50%);
+    }
+    .item {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+
+  <div class="container">
+    <div class="item">
+      <h1>Heading</h1>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
   </div> -->
   
   <!-- ### Animation -->
@@ -1203,7 +1227,7 @@
 
     @keyframes spin {
       from {
-        transform: ratate(0deg)
+        transform: ratate(0deg);
       } to {
         transform: rotate(360deg);
       }
@@ -1213,72 +1237,34 @@
   <h1>Spinner</h1>
   <div class="spinner"></div>  -->
 
-
-  <!-- Loading Bar -->
-
   <!-- <style>
-    :root {
-      --blue: #1e90ff;
-    }
     .container {
       width: 200px;
-      height: 8px;
-      background-color: #f1f1f1;
+      height: 10px;
+      background-color: #ddd;
     }
     .item {
-      width: 40px;
       height: 100%;
-      background-color: var(--blue);
-      animation-name: move;
-      animation-duration: 1.5s;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
-      animation-direction: alternate;
-      position: relative;
+      background-color: #222;
+      animation: fill 2s 
     }
-
-    @keyframes move {
+    @keyframes fill {
       from {
-        left: 0;
+        width: 0;
       } to {
-        left: 100%;
-        transform: translateX(-100%);
+        width: 100%;
       }
     }
   </style>
 
+  <h1>Progress Bar</h1>
   <div class="container">
     <div class="item"></div>
-  </div>  -->
-
-  <!-- Hamburger button -->
-
+  </div> -->
+ 
   <!-- <style>
     .bars {
-      width: 50px;
-      height: 50px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .bars .bar {
-      width: 50px;
-      height: 5px;
-      background-color: #000;
-    }
-
-  </style>
-  
-  <div class="bars">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </div>  -->
-
-  <!-- Animated Hamburger button -->
-
-  <!-- <style>
-    .bars {
+      /* transform: scale(0.5, 0.5); */
       width: 50px;
       height: 50px;
       display: flex;
@@ -1291,7 +1277,7 @@
       background-color: #000;
       transition: .5s;
     }
-
+    /* 4px + 19px = 23px */
     .bars:hover .bar:first-child {
       transform: translateY(23px) rotate(45deg);
     }
@@ -1310,146 +1296,93 @@
     <span class="bar"></span>
   </div>  -->
 
-  <!-- Universe -->
-  
+  <!-- <style>
+    .container {
+      height: 100px;
+      border: 1px dashed;
+      display: inline-flex;
+      width: 100px;
+      align-items: flex-end;
+      gap: 0.25rem;
+    }
+    .item {
+      width: 100%;
+      background-color: #333;
+      display: inline-block;
+      animation: ani 0.6s infinite linear;
+      animation-direction: alternate;
+    }
+    .item:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    .item:last-child {
+      animation-delay: 0.4s;
+    }
+    @keyframes ani {
+      from {
+        height: 0;
+      } to {
+        height: 50px;
+      }
+    }
+  </style>
+
+  <div class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div> -->
+
   <!-- <style>
     body {
+      margin: 0;
+      position: relative;
+      height: 100vh;
       background-color: #000;
     }
-    .container {
-      width: 400px;
-      height: 400px;
-      position: relative;
-    }
-    .sun {
+    body > .item {
+      width: 500px;
+      height: 500px;
       position: absolute;
       top: 50%;
-      left:50%;
+      left: 50%;
       transform: translate(-50%, -50%);
-      width: 25px;
-      height: 25px;
-      background-color: darkorange;
+      background-color: orangered;
       border-radius: 50%;
+      /* box-shadow: 0 0 60px #fff; */
+      /* box-shadow: 0 0 140px 90px #0ff; */
+      box-shadow: 0 0 50px 10px red;
     }
-    .orbit {
+    .container {
+      width: 500px;
+      height: 500px;
+      /* border: 1px dashed; */
       position: absolute;
       top: 50%;
-      left:50%;
-      /* transform: translate(-50%, -50%); */
-      border: 1px dashed;
+      left: 50%;
+      animation: orbit 10s infinite linear;
     }
-    .planet {
-      border-radius: 50%;
-    }
-    .mercury {
-      width: 100px;
-      height: 100px;
-      /* animation: mercury 0.25s infinite linear; */
-      animation: mercury .5s infinite linear;
-    }
-    .mercury .planet {
+    .container .item {
       width: 10px;
       height: 10px;
-      background-color: gold;
-    }
-    .mars {
-      width: 200px;
-      height: 200px;
-      animation: mars 2s infinite linear;
-    }
-    .mars .planet {
-      width: 15px;
-      height: 15px;
-      background-color: brown;
-    }
-    .earth {
-      width: 150px;
-      height: 150px;
-      animation: earth 1s infinite linear;
-    }
-    .earth .planet {
-      width: 20px;
-      height: 20px;
+      border-radius: 50%;
       background-color: dodgerblue;
-    }
-    .jupiter {
-      width: 250px;
-      height: 250px;
-      animation: jupiter 11.9s infinite linear;
-    }
-    .jupiter .planet {
-      width: 50px;
-      height: 50px;
-      background-color: darkgoldenrod;
-      border-radius: 50%;
-    }
-    .neptune {
-      width: 350px;
-      height: 350px;
-      animation: neptune 165s infinite linear;
-    }
-    .neptune .planet {
-      width: 10px;
-      height: 10px;
-      background-color: violet;
+      box-shadow: 0 0 50px 10px skyblue;
     }
 
-    @keyframes mercury {
+    @keyframes orbit {
       from {
-        transform: translate(-50%, -50%) rotate(0)
-      } to {
-        transform: translate(-50%, -50%) rotate(360deg);
-      }
-    }
-    @keyframes earth {
-      from {
-        transform: translate(-50%, -50%) rotate(0)
-      } to {
-        transform: translate(-50%, -50%) rotate(360deg);
-      }
-    }
-    @keyframes mars {
-      from {
-        transform: translate(-50%, -50%) rotate(0)
-      } to {
-        transform: translate(-50%, -50%) rotate(360deg);
-      }
-    }
-    @keyframes jupiter {
-      from {
-        transform: translate(-50%, -50%) rotate(0)
-      } to {
-        transform: translate(-50%, -50%) rotate(360deg);
-      }
-    }
-    @keyframes neptune {
-      from {
-        transform: translate(-50%, -50%) rotate(0)
+        transform: translate(-50%, -50%) rotate(0deg);
       } to {
         transform: translate(-50%, -50%) rotate(360deg);
       }
     }
   </style>
 
+  <div class="item"></div>
   <div class="container">
-    <div class="sun"></div>
-    <div class="orbit mercury">
-      <div class="planet"></div>
-    </div>
-    <div class="orbit earth">
-      <div class="planet"></div>
-    </div>
-    <div class="orbit mars">
-      <div class="planet"></div>
-    </div>
-    <div class="orbit jupiter">
-      <div class="planet"></div>
-    </div>
-    <div class="orbit neptune">
-      <div class="planet"></div>
-    </div>
+    <div class="item"></div>
   </div> -->
-
 
 </body>
 </html> 
