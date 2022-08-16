@@ -4,9 +4,9 @@ var { User } = require('../models/model')
 
 passport.use(new GoogleStrategy(
   {
-    clientID: '738752283482-olqdsce5bnmv42n97f65mf1i3knpg6hh.apps.googleusercontent.com',
-    clientSecret: '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',
-    callbackURL: "http://127.0.0.1:3000/auth/google/callback"
+    clientID: '',
+    clientSecret: '',
+    callbackURL: ""
   },
   async function(accessToken, refreshToken, profile, cb) {
     try {
