@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/index.css">
+  <!-- Load Babel Compiler -->
+  <!-- <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script> -->
+  <title>Document</title>
+  <!-- <style>
+    body {
+      padding: 50px
+    }
+    #root {
+      border: 1px solid black;
+      padding: 10px;
+      margin: 30px 0 0 0;
+    }
+
+    .item {
+      background: yellow;
+      margin: 10px 0;
+    }
+
+    .item2 {
+      background: green;
+    }
+    div {
+      margin: 10px 0
+    }
+  </style> -->
+</head>
+<body>
+  <div id="app"></div>
+  <!-- <button id="button">Increment</button> -->
+  <!-- <button id="reload">RELOAD</button> -->
+  <!-- <div id="root"></div> -->
+  
+  <!-- doSomething() is not defined is script type="module" -->
+  <!-- <button onclick="doSomething()"></button> -->
+
+  <!-- Don't forget to declare type 'module' to use import/export statement -->
+  <!-- <script type="text/babel" src="/static/js/v.js"></script> -->
+  <script type="module" src="/static/js/todo/index.js"></script>
+  <!-- <script type="module" src="/static/js/trying.js"></script> -->
+  <!-- <script type="module" src="/static/js/index2.js"></script> -->
+
+  <!-- avoid routing to app.get('/something'), declare /static to navigate directory or path-->
+  <!-- <script src="/something"></script> -->
+
+  <!-- <script type="module">
+    import User from '/static/js/views/User.js'
+    User()
+  </script> -->
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../tailwindcss.js"></script>
+</head>
+<body>
+  
+  <!-- HEADER -->
+    <div class="sticky top-0 left-0 right-0 z-10 h-12">
+      <div class="flex h-full justify-between items-center bg-gray-500 px-5">
+        <h1 class="text-xl text-white">Heading</h1>
+        <form action="" class="h-3/5">
+          <input type="text" class="w-52 h-full px-2 outline-none" placeholder="Search">
+        </form>
+      </div>
+    </div>
+
+  <!-- SIDE BAR -->
+  <div class="fixed top-0 left-0 bottom-0 w-60 border-r hidden lg:block bg-gray-100">
+    <ul class="mt-12 pt-5 pl-5 h-full">
+      <li>
+        <a href="#" class="block p-2 hover:bg-gray-100">Link</a>
+      </li>
+      <li>
+        <a href="#" class="block p-2 hover:bg-gray-100">Link</a>
+      </li>
+      <li>
+        <a href="#" class="block p-2 hover:bg-gray-100">Link</a>
+      </li>
+      <li>
+        <a href="#" class="block p-2 hover:bg-gray-100">Link</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- MAIN -->
+  <div class="max-w-5xl lg:ml-60 pt-5 px-5" style="min-height: 1000px">
+    
+    <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4 mb-5">
+      <p class="font-bold">Be Warned</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias similique labore in fuga placeat ratione magni sunt eaque facilis! Quasi praesentium quas nobis mollitia repellat possimus quos voluptatem eos distinctio!
+      </p>
+    </div>
+
+    <div class="mb-5">
+      <h1 class="text-3xl">Dashboard</h1>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 h-96">
+      <div class="row-span-2 col-span-2 shadow-md">1</div>
+      <div class="shadow-md">2</div>
+      <div class="shadow-md">3</div>
+    </div>
+
+    <div class="mt-5 mb-5">
+      <h1 class="text-xl">Table</h1>
+    </div>
+
+    <div class="overflow-x-auto mb-5">
+      <table class="table-fixed" style="width: 900px">
+        <thead class="border-b border-black">
+          <tr class="text-left">
+            <th scope="col">#</th>
+            <th scope="col">Heading</th>
+            <th scope="col">Heading</th>
+            <th scope="col">Heading</th>
+            <th scope="col">Heading</th>
+            <th scope="col">Heading</th>
+            <th scope="col">Heading</th>
+            <th scope="col">Heading</th>
+            <th scope="col">Heading</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b">
+            <td scope="row" class="font-bold">1</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          <tr class="border-b">
+            <td scope="row" class="font-bold">2</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          <tr class="border-b">
+            <td scope="row" class="font-bold">3</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          <tr class="border-b">
+            <td scope="row" class="font-bold">4</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+</body>
+</html>
