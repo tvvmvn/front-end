@@ -4,8 +4,8 @@ exports.sendEmail = (email, link) => {
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'tvvmvn@gmail.com',
-      pass: 'Temple5-me'
+      user: '',
+      pass: ''
     }
   });
 
