@@ -1294,20 +1294,28 @@
     <span class="bar"></span>
   </div>  -->
 
-  <!-- <style>
+  <style>
+    body {
+      display: flex;
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
     .container {
-      height: 100px;
-      border: 1px dashed;
       display: inline-flex;
-      width: 100px;
-      align-items: flex-end;
-      gap: 0.25rem;
+      /* border: 1px dashed; */
+      align-items: center;
+      gap: 0.5rem;
     }
     .item {
-      width: 100%;
-      background-color: #333;
+      width: 25px;
+      height: 50px;
+      background-color: #fff;
       display: inline-block;
-      animation: ani 0.6s infinite linear;
+      animation: wave 0.6s infinite linear;
       animation-direction: alternate;
     }
     .item:nth-child(2) {
@@ -1316,11 +1324,12 @@
     .item:last-child {
       animation-delay: 0.4s;
     }
-    @keyframes ani {
+    
+    @keyframes wave {
       from {
-        height: 0;
-      } to {
         height: 50px;
+      } to {
+        height: 150px;
       }
     }
   </style>
@@ -1329,7 +1338,7 @@
     <div class="item"></div>
     <div class="item"></div>
     <div class="item"></div>
-  </div> -->
+  </div>
 
   <!-- <style>
     body {

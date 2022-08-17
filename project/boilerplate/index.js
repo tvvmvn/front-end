@@ -391,8 +391,8 @@ app.post("/profiles/:username/follow", auth, async (req, res, next) => {
     await newFollow.save();
 
     setTimeout(() => {
+      res.end();
     }, 1000)
-    res.end();
 
   } catch (error) {
     next(error)
@@ -409,8 +409,8 @@ app.delete("/profiles/:username/follow", auth, async (req, res, next) => {
     await follow.delete();
 
     setTimeout(() => {
+      res.end();
     }, 1000)
-    res.end();
 
   } catch (error) {
     next(error)
@@ -642,8 +642,8 @@ app.post("/articles/:id/favorite", auth, async (req, res, next) => {
     await article.save();
 
     setTimeout(() => {
+      res.end();
     }, 1000)
-    res.end();
 
   } catch (error) {
     next(error)
@@ -669,8 +669,8 @@ app.delete("/articles/:id/favorite", auth, async (req, res, next) => {
     await article.save();
 
     setTimeout(() => {
+      res.end();
     }, 1000)
-    res.end();
 
   } catch (error) {
     next(error)
@@ -824,8 +824,8 @@ app.get("/search", auth, async (req, res, next) => {
     });
 
     setTimeout(() => {
-      res.json(users);
     }, 1000)
+    res.json(users);
 
   } catch (error) {
     next(error)
