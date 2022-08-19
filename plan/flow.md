@@ -14,23 +14,20 @@ comments
 Selector: element, .class, #id, children, direct children,
 Pseudo :class and ::element,
 unit: [absolute: px, cm | relative: rem, em, %, vh, vw]
-
 font: color, style, weight, size
 text: align, letter(word) spacing, line-height, ...
-border: width, style, color, direction, shorthand
-outline: basic and input width focus
 color: Name, RGB, RGBA, HEX
 
+border: width, style, color, direction, shorthand
+outline: basic and input width focus
 padding: direction
 margin: direction, positive and negative, margin-collapse
-box-sizing
 Display: inline, inline-block, block, none;
-
+box-sizing
 white-space: wrap, nowrap, pre-line, ... (inline, inline-block)
 visibility: visible, hidden,
 Overflow: visible, auto, scroll, hidden,
 width, height: width/height, min-width, *min-height, *max-width, max-height
-
 Position: static, relative, absolute, fixed and z-index(except for static)
 Transform: none, translate, scale, rotate, skew
 
@@ -86,7 +83,6 @@ Basic: W3S, React Home, Error(Compile, Component, EventHandler)
 
 # React Example
 Todo list
-Routes with auth
 
 # Final Project
 Back-End

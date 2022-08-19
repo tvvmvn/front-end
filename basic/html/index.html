@@ -7,13 +7,13 @@
   <title>현대자동차 공식홈페이지</title>
 </head>
 <body>
-  <!-- Header -->
+  <!-- HEADER -->
   <header>
     <h1>현대자동차 공식홈페이지</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
   </header>
 
-  <!-- Menu -->
+  <!-- NAVIGATION -->
   <nav>
     <h2>메뉴</h2>
     <ul>
@@ -26,7 +26,7 @@
 
   <hr>
 
-  <!-- Content -->
+  <!-- CONTENT -->
   <main>
     <!-- 쇼케이스 -->
     <section>
@@ -55,67 +55,72 @@
     <section>
       <h2>모델 비교표</h2>
       <table border="1">
-        <tr>
-          <th>이름</th>
-          <th>컬러</th>
-          <th>연비</th>
-          <th>가격</th>
-        </tr>
-        <tr>
-          <td>제네시스</td>
-          <td>블랙, 화이트</td>
-          <td>15/l</td>
-          <td>1000원</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>이름</th>
+            <th>컬러</th>
+            <th>연비</th>
+            <th>가격</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>제네시스</td>
+            <td>블랙, 화이트</td>
+            <td>15/l</td>
+            <td>1000원</td>
+          </tr>
+        </tbody>
       </table>
     </section>
 
-    <!-- 컨택 -->
+    <!-- CONTACT -->
     <section>
-      <div>
+      <div class="">
         <h2>오시는 길</h2>
         <iframe src="" frameborder="0"></iframe>
       </div>
 
-      <div>
-        <form action="">
-          <h2>연락하기</h2>
-          <div>
-            <label for="">성함</label>
-            <input type="text">
-          </div>
-          <div>
-            <label for="">이메일</label>
-            <input type="text">
-          </div>
-          <div>
-            <label for="">성별</label>
-            <select name="" id="">
-              <option value="">남</option>
-              <option value="">여</option>
-            </select>
-          </div>
-          <div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="내용을 입력하세요"></textarea>
-          </div>
-          <div>
-            <input type="checkbox" name="" id="">
-            <label for=""><a href="#">개인정보 처리방침</a>에 동의합니다</label>
-          </div>
-          <div>
-            <button>전송하기</button>
-          </div>
-        </form>
-      </div>
+      <form action="">
+        <h2>연락하기</h2>
+        <div>
+          <label for="name">성함</label>
+          <input type="text" id="name">
+        </div>
+        <div>
+          <label for="email">이메일</label>
+          <input type="text" id="email">
+        </div>
+        <div>
+          <label for="gender">성별</label>
+          <select name="" id="gender">
+            <option value="male">남</option>
+            <option value="female">여</option>
+            <option value="private">비공개</option>
+          </select>
+        </div>
+        <div>
+          <textarea name="" id="" cols="30" rows="10" placeholder="내용을 입력하세요"></textarea>
+        </div>
+        <div>
+          <input type="checkbox" name="" id="agree">
+          <label for="agree">
+            <a href="#">개인정보 처리방침</a>에 동의합니다
+          </label>
+        </div>
+        <div>
+          <button type="submit">전송하기</button>
+        </div>
+      </form>
     </section>
     
   </main>
   
   <hr>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
-    <small>2022 &copy; 현대자동차</small>
+    <p>2022 &copy; 현대자동차</p>
   </footer>
 </body>
 </html>

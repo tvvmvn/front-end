@@ -7,27 +7,316 @@
   <title>Document</title>
 </head>
 <body>
-  <!-- ### children and direct children selector -->
 
+  <!-- ### Selector -->
+  
   <!-- <style>
-    .level1 {
-      font-size: 13px;
+    /* id selector */
+    #title {
+      text-transform: uppercase;
+    }
+    /* element selector */
+    ul {
       border: 1px dashed;
     }
-    .level2 {
-      font-size: 26px;
+    .text-bold {
+      font-weight: bold;
     }
-    .level3 {
-      /* font-size: initial; */
-      font-size: inherit;
+    .underline {
+      text-decoration: underline;
     }
   </style>
 
-  <div class="level1"> Level 1
-    <div class="level2"> Level 2
-      <div class="level3"> Level 3
-      </div>
-    </div>
+  <h1 id="title">CSS Selector</h1>
+  <ul>
+    <li class="">list item</li>
+    <li class="text-bold">list item</li>
+    <li class="text-bold underline">list item</li>
+  </ul> -->
+
+  <!-- <style>
+    /* children */
+    ul a {
+      text-decoration: none;
+    }
+    /* direct children */
+    ul > a {
+      color: #000;
+    }
+  </style>
+
+  <h1>CSS Selector</h1>
+
+  <ul>
+    <li>
+      <a href="">Link</a>
+    </li>
+    <li>
+      <a href="">Link</a>
+    </li>
+    <li>
+      <a href="">Link</a>
+    </li>
+  </ul> -->
+
+  <!-- ### Pseudo class and Pseudo elements -->
+
+  <!-- <style>
+    li:first-child {
+      font-weight: bold;
+    }
+    li:nth-child(2) {
+      font-style: italic;
+    }
+    li:last-child {
+      color: #888;
+    }
+    li:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <h1>Pseuso class</h1>
+
+  <ul>
+    <li class="">list item</li>
+    <li class="">list item</li>
+    <li class="">list item</li>
+  </ul> -->
+
+  <!-- <style>
+    ul {
+      list-style-type: none;
+    }
+    li::before {
+      content: "{";
+      color: #888;
+    }
+    li::after {
+      content: "}";
+      color: #888;
+    }
+  </style>
+
+  <h1>Pseudo element</h1>
+
+  <ul>
+    <li class="">list item</li>
+    <li class="">list item</li>
+    <li class="">list item</li>
+  </ul> -->
+
+  <!-- ### CSS Unit -->
+
+  <!-- <style>
+    ul {
+      font-size: 1.5rem;
+    }
+    .unit-px {
+      font-size: 16px;
+    }
+    .unit-rem {
+      font-size: 1rem;
+    }
+    .unit-em {
+      font-size: 1em;
+    }
+    .unit-percent {
+      font-size: 100%;
+    }
+    .unit-vw {
+      font-size: 5vw;
+    }
+    .unit-vh {
+      font-size: 5vh;
+    }
+  </style>
+
+  <h1>CSS Unit</h1>
+  <ul>
+    <li class="unit-px">list item</li>
+    <li class="unit-rem">list item</li>
+    <li class="unit-em">list item</li>
+    <li class="unit-percent">list item</li>
+    <li class="unit-vw">list item</li>
+    <li class="unit-vh">list item</li>
+  </ul> -->
+
+  <!-- ### Typhography: Font -->
+
+  <!-- <style>
+    .text-bold {
+      font-weight: 700;
+    }
+    .text-italic {
+      font-style: italic;
+    }
+    .text-xl {
+      font-size: 1.25rem;
+    }
+  </style>
+
+  <h1>Font</h1>
+
+  <ul>
+    <li class="text-bold">list item</li>
+    <li class="text-italic">list item</li>
+    <li class="text-xl">list item</li>
+  </ul> -->
+
+  <!-- ### Typhography: Text -->
+
+  <!-- <style>
+    .text-center {
+      text-align: center;
+    }
+    .tracking-widest {
+      /* letter-spacing: normal; */
+      letter-spacing: 0.1em;
+    }
+    .leading-none {
+      line-height: normal;
+    }
+    .leading-8 {
+      line-height: 2rem;
+    }
+  </style>
+  
+  <h1>Text</h1>
+
+  <ul>
+    <li class="">list item</li>
+    <li class="text-center">list item</li>
+    <li class="tracking-widest">list item</li>
+    <li class="leading-none">list <br> item</li>
+    <li class="leading-8">list <br> item</li>
+  </ul> -->
+
+  <!-- ### Color -->
+
+  <!-- <style>
+    li:first-child {
+      color: red;
+    }
+    li:nth-child(2) {
+      color: rgb(255 0 0)
+    }
+    li:nth-child(3) {
+      color: rgba(255 0 0 / 0.5)
+    }
+    li:nth-child(4) {
+      color: #ff0000;
+    }
+    li:last-child {
+      color: #f00;
+    }
+  </style>
+
+  <h1>Color</h1>
+
+  <ul>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+  </ul> -->
+
+  <!-- ### Border -->
+
+  <!-- <style>
+    .container {
+      background-color: transparent;
+    }
+    .item {
+      width: 100px;
+      height: 100px;
+      display: inline-block;
+    }
+    .border {
+      border-width: 1px;
+      border-style: solid;
+      border-color: #ddd;
+    }
+    .border-t {
+      border-top-width: 1px;
+      border-top-style: solid;
+      border-top-color: #000;
+    }
+    .border-r {
+      /* shorthand */
+      border-right: 1px solid #ddd;
+    }
+    .border-red {
+      border-color: #f00;
+    }
+  </style>
+
+  <h1>Border</h1>
+
+  <div class="container">
+    <div class="item border"></div>
+    <div class="item border border-red"></div>
+    <div class="item border-t"></div>
+    <div class="item border-r border-red"></div>
+  </div> -->
+
+  <!-- ### Padding -->
+  
+  <!-- <style>
+    .container {
+      background-color: #ddd;
+    }
+    .item {
+      width: 100px;
+      height: 100px;
+      display: inline-block;
+      border: 1px dashed;
+    }
+    .p-2 {
+      padding: 0.5rem;
+    }
+    .pt-2 {
+      padding-top: 0.5rem;
+    }
+    .px-2 {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  </style>
+
+  <div class="container">
+    <div class="item"></div>
+    <div class="item p-2"></div>
+    <div class="item pt-2"></div>
+    <div class="item px-2"></div>
+  </div> -->
+
+  <!-- ### Margin -->
+
+  <!-- <style>
+    .item {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed;
+      display: inline-block;
+    }
+    .m-2 {
+      margin: 0.5rem;
+    }
+    .mt-2 {
+      margin-top: 0.5rem;
+    }
+    .mx-2 {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+  </style>
+
+  <div class="container">
+    <div class="item"></div>
+    <div class="item m-2"></div>
+    <div class="item mt-2"></div>
+    <div class="item mx-2"></div>
   </div> -->
 
   <!-- ### Display: block, inline-block, inline -->
@@ -37,35 +326,47 @@
   hr {
     margin: 0;
   }
-  span, button, div {
+  div {
     padding: 10px;
     margin: 10px;
     border: 1px dashed;
   }
+  .inline-block {
+    display: inline-block;
+  }
+  .block {
+    display: block;
+  }
+  .inline {
+    display: inline;
+  }
   </style>
 
   <hr>
-  <button>Button</button>
-  <button>Button</button>
+  <div class="inline-block">inline-block</div>
+  <div class="inline-block">inline-block</div>
   <hr>
-  <div>Div</div>
-  <div>Div</div>
+  <div class="block">Div</div>
+  <div class="block">Div</div>
   <hr>
-  <span>Span</span>
-  <span>Span</span>
+  <div class="inline">inline</div>
+  <div class="inline">inline</div>
   <hr> -->
 
   <!-- ### box-sizing -->
 
   <!-- <style>
     .container {
-    background-color: #ddd;
+      background-color: #ddd;
     }
     .item {
-      width: 200px;
-      height: 200px;
+      width: 100px;
+      height: 100px;
       border: 1px dashed;
       padding: 10px;
+    }
+    .content-box {
+      box-sizing: content-box;
     }
     .border-box {
       box-sizing: border-box;
@@ -73,44 +374,18 @@
   </style>
 
   <div class="container">
-    <div class="item">222 x 222</div>
-    <div class="item border-box">200 x 200</div>
+    <div class="item content-box">122 x 122</div>
+    <div class="item border-box">100 x 100</div>
   </div> -->
-
-  <!-- ### display: block, inline-block, inline, none -->
-
-  <!-- <style>
-    /* 다른 element와의 관계를 보여준다 */
-    hr {
-      margin: 0;
-    }
-    span, button, div {
-      padding: 10px;
-      margin: 10px;
-      border: 1px dashed;
-    }
-  </style>
-  
-  <hr>
-  <button>Button</button>
-  <button>Button</button>
-  <hr>
-  <div>Div</div>
-  <div>Div</div>
-  <hr>
-  <span>Span</span>
-  <span>Span</span>
-  <hr> -->
 
   <!-- display none -->
 
   <!-- <style>
-    .container div {
+    .item {
       width: 100px;
       height: 100px;
       border: 1px dashed;
     }
-    .default {}
     .block {
       /* default */
       display: block;
@@ -121,16 +396,17 @@
   </style>
 
   <div class="container">
-    <div class="default">default</div>
-    <div class="none">display: none</div>
-    <div class="block">display: block</div>
+    <div class="item default">default</div>
+    <div class="item none">display: none</div>
+    <div class="item block">display: block</div>
   </div> -->
 
-  <!-- vertical align -->
+  <!-- ### vertical align -->
 
   <!-- <style>
     .container {
       background-color: #ddd;
+      height: 200px;
     }
     .item {
       width: 100px;
@@ -139,8 +415,8 @@
       display: inline-block;
       /* Default. The element is aligned with the baseline of the parent */
       /* vertical-align: baseline; */
-      vertical-align: middle;
-      /* vertical-align: top; */
+      /* vertical-align: middle; */
+      vertical-align: top;
       /* vertical-align: bottom; */
     }
     .item:nth-child(2) {
@@ -159,49 +435,13 @@
   </div> -->
 
   <!-- ### white-space -->
+
   <!-- how white-space(공백) inside an element is handled -->
 
   <!-- <style>
     div {
-      border: 1px dashed;
-      width: auto;
-      height: auto;
-    }
-    .normal {
-      /* default  */
-      white-space: normal
-    }
-    .pre-line {
-      /* Text will wrap when necessary, and on line breaks.(\n) */
-      white-space: pre-line;
-    }
-    .nowrap {
-      white-space: nowrap;
-    }
-  </style>
-
-  <div class="normal">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-    Aspernatur accusamus voluptatibus nihil laudantium laborum tempore quae. 
-  </div>
-
-  <hr>
-
-  <div class="pre-line">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    Aspernatur accusamus voluptatibus nihil laudantium laborum tempore quae. 
-  </div>
-
-  <hr>
-
-  <div class="nowrap">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-    Aspernatur accusamus voluptatibus nihil laudantium laborum tempore quae. 
-  </div> -->
-
-  <!-- <style>
-    div {
       overflow: auto;
+      border: 1px dashed;
     }
     /* default */
     /* Sequences of whitespace will collapse into a single whitespace. */
@@ -300,7 +540,7 @@
       border: 1px dashed;
       display: inline-block;
       vertical-align: middle;
-      /* word-break: break-all; */
+      word-break: break-all;
     }
     .hidden {
       overflow: hidden
@@ -338,16 +578,18 @@
     et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
   </div> -->
 
-  <!-- ### width and height -->
+  <!-- ### Width -->
 
-  <!-- width -->
   <!-- <style>
     div {
       border: 1px dashed;
       overflow: auto
     }
-    .default {
+    .auto {
       width: auto;
+    }
+    .width {
+      width: 600px;
     }
     .max-width {
       max-width: 600px;
@@ -357,7 +599,13 @@
     }
   </style>
 
-  <div class="default">
+  <div class="auto">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id amet hic architecto deserunt. 
+  </div>
+
+  <hr>
+
+  <div class="width">
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id amet hic architecto deserunt. 
   </div>
 
@@ -373,14 +621,17 @@
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id amet hic architecto deserunt. 
   </div> -->
 
-  <!-- height -->
+  <!-- ### Height -->
 
   <!-- <style>
     div {
       border: 1px dashed;
     }
-    .default {
+    .auto {
       height: auto;
+    }
+    .height {
+      height: 50px;
     }
     .min-height {
       min-height: 50px;
@@ -390,79 +641,84 @@
     }
   </style>
 
-  <div class="default">
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id amet hic architecto deserunt. 
+  <div class="auto">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo incidunt iste natus consectetur sapiente cupiditate
+    suscipit tempore, mollitia repellat soluta repudiandae libero, officiis perferendis odit quas molestias quod nihil
+    aspernatur.
+  </div>
+
+  <hr>
+
+  <div class="height">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo incidunt iste natus consectetur sapiente cupiditate
+    suscipit tempore, mollitia repellat soluta repudiandae libero, officiis perferendis odit quas molestias quod nihil
+    aspernatur.
   </div>
 
   <hr>
 
   <div class="min-height">
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id amet hic architecto deserunt. 
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo incidunt iste natus consectetur sapiente cupiditate
+    suscipit tempore, mollitia repellat soluta repudiandae libero, officiis perferendis odit quas molestias quod nihil
+    aspernatur.
   </div>
   
   <hr>
 
   <div class="max-height">
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id amet hic architecto deserunt. 
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo incidunt iste natus consectetur sapiente cupiditate
+    suscipit tempore, mollitia repellat soluta repudiandae libero, officiis perferendis odit quas molestias quod nihil
+    aspernatur.
   </div> -->
   
 
   <!-- ### position -->
-  <!-- static, absolute with relative, fixed -->
 
   <!-- <style>
+    .item {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed;
+    }
+    .static {
+      position: static;
+    }
     .relative {
-      width: 200px;
-      height: 200px;
+      position: relative;
+      left: 50px;
+    }
+    .fixed {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  </style>
+
+  <div class="item static">static</div>
+  <div class="item static">static</div>
+  <div class="item relative">relative</div>
+  <div class="item fixed">fixed</div> -->
+
+  <!-- <style>
+    .container {
+      width: 100px;
+      height: 100px;
       border: 1px dashed;
       position: relative;
     }
-    .absolute {
+    .item {
       background-color: red;
-      width: 20px;
-      height: 20px;
+      width: 10px;
+      height: 10px;
       position: absolute;
-    }
-    .top-0 {
-      top: 0
-    }
-    .right-0 {
-      right: 0
-    }
-    .left-0 {
-      left: 0;
-    }
-    .bottom-0 {
       bottom: 0;
+      right: 0;
     }
   </style>
 
-  <div class="relative">
-    <div class="absolute top-0 left-0"></div>
-    <div class="absolute top-0 right-0"></div>
-    <div class="absolute bottom-0 left-0"></div>
-    <div class="absolute bottom-0 right-0"></div>
+  <div class="container">
+    <div class="item"></div>
   </div> -->
-
-  <!-- fixed -->
-
-  <!-- <style>
-    body {
-      min-height: 1000px;
-    }
-    div {
-      width: 100px;
-      height: 100px;
-      background-color: #ddd;
-    }
-    .fixed {
-      position: fixed;
-      top: 0;
-      left: 0;
-    }
-  </style>
-
-  <div class="fixed"></div> -->
   
   <!-- ### transform -->
   <!-- translate, scale, rotate, skew -->
@@ -477,19 +733,39 @@
       width: 100px;
       height: 100px;
       border: 1px dashed;
-    }
-    .translate {
       transform: translate(25px, 25px);
-      /* transform: translateX(x); */
-      /* transform: translateY(y); */
     }
   </style>
 
   <div class="container">
-    <div class="item translate"></div>
+    <div class="item"></div>
   </div> -->
 
-  <!-- Perfect centering... -->
+  <!-- <style>
+    .item {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed;
+      transform: scale(1.1, 1.1);
+    }
+  </style>
+
+  <div class="container">
+    <div class="item"></div>
+  </div> -->
+
+  <!-- <style>
+    .item {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed;
+      transform: rotate(45deg);
+    }
+  </style>
+
+  <div class="container">
+    <div class="item"></div>
+  </div> -->
 
   <!-- ### float -->
 
@@ -734,6 +1010,9 @@
     .justify-between {
       justify-content: space-between;
     }
+    .justify-end {
+      justify-content: flex-end;
+    }
   </style>
 
   <div class="flex justify-start">
@@ -753,6 +1032,70 @@
   <hr>
 
   <div class="flex justify-between">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <hr>
+
+  <div class="flex justify-end">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div> -->
+
+  <!-- <style>
+    .flex {
+      display: flex;
+      flex-direction: column;
+      background-color: #ddd;
+      height: 200px;
+    }
+    .item {
+      width: 50px;
+      height: 50px;
+      border: 1px dashed;
+    }
+    .justify-start {
+      justify-content: flex-start;
+    }
+    .justify-center {
+      justify-content: center;
+    }
+    .justify-between {
+      justify-content: space-between;
+    }
+    .justify-end {
+      justify-content: flex-end;
+    }
+  </style>
+
+  <div class="flex justify-start">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <hr>
+
+  <div class="flex justify-center">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <hr>
+
+  <div class="flex justify-between">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <hr>
+
+  <div class="flex justify-end">
     <div class="item"></div>
     <div class="item"></div>
     <div class="item"></div>
@@ -780,6 +1123,9 @@
     .align-baseline {
       align-items: baseline;
     }
+    .align-end {
+      align-items: flex-end;
+    }
   </style>
 
   <div class="flex align-stretch">
@@ -801,6 +1147,69 @@
   <div class="flex align-center">
     <div class="item">1</div>
     <div class="item">3</div>
+    <div class="item">3</div>
+  </div>
+
+  <hr>
+
+  <div class="flex align-end">
+    <div class="item">1</div>
+    <div class="item">3</div>
+    <div class="item">3</div>
+  </div> -->
+
+  <!-- <style>
+    .flex {
+      display: flex;
+      flex-direction: column;
+      background-color: #ddd;
+      height: 200px;
+    }
+    .item {
+      height: 50px;
+      border: 1px dashed;
+    }
+    .align-stretch {
+      align-items: stretch;
+    }
+    .align-start {
+      align-items: flex-start;
+    }
+    .align-center {
+      align-items: center;
+    }
+    .align-end {
+      align-items: flex-end;
+    }
+  </style>
+
+  <div class="flex align-stretch">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <hr>
+
+  <div class="flex align-start">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <hr>
+
+  <div class="flex align-center">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <hr>
+
+  <div class="flex align-end">
+    <div class="item">1</div>
+    <div class="item">2</div>
     <div class="item">3</div>
   </div> -->
 
@@ -1040,57 +1449,6 @@
     <div class="item">12</div>
   </div> -->
 
-    <!-- <style>
-    .grid {
-      background-color: #ddd;
-      display: grid;
-      /* minmax(min, max) */
-      /* minmax(>=min, <=max) */
-      /* minmax() CSS function defines a size range greater than or equal to min 
-      and less than or equal to max. It is used with CSS Grids */
-      /* fr: fraction (분수) */
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-    }
-    .item {
-      border: 1px dashed;
-    }
-    .pt {
-      content: "";
-      padding: 100% 0 0;
-    }
-  </style>
-
-  <div class="grid">
-    <div class="item">
-      <div class="pt"></div>
-    </div>
-    <div class="item">
-      <div class="pt"></div>
-    </div>
-    <div class="item">
-      <div class="pt"></div>
-    </div>
-    <div class="item">
-      <div class="pt"></div>
-    </div>
-    <div class="item">
-      <div class="pt"></div>
-    </div>
-    <div class="item">
-      <div class="pt"></div>
-    </div>
-    <div class="item">
-      <div class="pt"></div>
-    </div>
-    <div class="item">
-      <div class="pt"></div>
-    </div>
-    <div class="item">
-      <div class="pt"></div>
-    </div>
-  </div> -->
-
   <!-- ### Responsive with @media keyword -->
 
   <!-- <style>
@@ -1128,9 +1486,11 @@
 
   <div class="container">
     <h1 class="title"></h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
       Asperiores at fugit quia, explicabo facere pariatur iste rerum sapiente incidunt 
-      repudiandae est doloribus nesciunt architecto expedita neque dolor quisquam, in eaque?</p>
+      repudiandae est doloribus nesciunt architecto expedita neque dolor quisquam, in eaque?
+    </p>
   </div> -->
 
   <!-- ### image: img tag and background-image -->

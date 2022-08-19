@@ -5,7 +5,7 @@ const port = 3000;
 const passport = require("passport");
 const auth = passport.authenticate("jwt", { session: false });
 require("./auth/passportJwt");
-const passportGoogle = require("./auth/google");
+// const passportGoogle = require("./auth/google");
 const jwt = require("jsonwebtoken");
 
 const cookieParser = require("cookie-parser");
@@ -217,8 +217,8 @@ app.get("/validate/username", async (req, res, next) => {
     const user = await User.findOne({ username: req.query.value, active: true })
     
     setTimeout(() => {
+      res.json(user)
     }, 1000)
-    res.json(user)
 
   } catch (error) {
     next(error)
@@ -391,8 +391,8 @@ app.post("/profiles/:username/follow", auth, async (req, res, next) => {
     await newFollow.save();
 
     setTimeout(() => {
-      res.end();
     }, 1000)
+    res.end();
 
   } catch (error) {
     next(error)
@@ -409,8 +409,8 @@ app.delete("/profiles/:username/follow", auth, async (req, res, next) => {
     await follow.delete();
 
     setTimeout(() => {
-      res.end();
     }, 1000)
+    res.end();
 
   } catch (error) {
     next(error)
@@ -542,6 +542,7 @@ app.post("/articles", auth, async (req, res, next) => {
         return next(err);
       }
 
+      // return res.json({files, fields})
       // image validation check needed
       // ...
 
@@ -642,8 +643,8 @@ app.post("/articles/:id/favorite", auth, async (req, res, next) => {
     await article.save();
 
     setTimeout(() => {
-      res.end();
     }, 1000)
+    res.end();
 
   } catch (error) {
     next(error)
@@ -669,8 +670,8 @@ app.delete("/articles/:id/favorite", auth, async (req, res, next) => {
     await article.save();
 
     setTimeout(() => {
-      res.end();
     }, 1000)
+    res.end();
 
   } catch (error) {
     next(error)
