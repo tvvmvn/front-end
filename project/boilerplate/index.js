@@ -332,12 +332,12 @@ app.post("/accounts/edit/image", auth, async (req, res, next) => {
       const user = await User.findById(loginUser._id);
       const image = files.image;
 
-      const oldpath = image.filepath;
+      const oldPath = image.filepath;
       const ext = image.originalFilename.split(".")[1]
       const newName = image.newFilename + "." + ext;
-      const newpath = __dirname + "/data/users/" + newName;
+      const newPath = __dirname + "/data/users/" + newName;
 
-      fs.renameSync(oldpath, newpath);
+      fs.renameSync(oldPath, newPath);
 
       user.image = newName;
       await user.save();
@@ -391,8 +391,8 @@ app.post("/profiles/:username/follow", auth, async (req, res, next) => {
     await newFollow.save();
 
     setTimeout(() => {
+      res.end();
     }, 1000)
-    res.end();
 
   } catch (error) {
     next(error)
@@ -406,11 +406,17 @@ app.delete("/profiles/:username/follow", auth, async (req, res, next) => {
     const user = await User.findOne({ username });
     const follow = await Follow.findOne({ follower: loginUser._id, following: user._id });
     
+    if (!follow) {
+      const err = new Error("Follow not found");
+      err.status = 400;
+      return next(err)
+    }
+
     await follow.delete();
 
     setTimeout(() => {
+      res.end();
     }, 1000)
-    res.end();
 
   } catch (error) {
     next(error)
@@ -619,7 +625,7 @@ app.delete("/articles/:id", auth, async (req, res, next) => {
 
 // Favorite and unfavorite article
 app.post("/articles/:id/favorite", auth, async (req, res, next) => {
-  try {
+  try { 
     const loginUser = req.user;
     const id = req.params.id;
     const article = await Article.findById(id)
@@ -643,8 +649,8 @@ app.post("/articles/:id/favorite", auth, async (req, res, next) => {
     await article.save();
 
     setTimeout(() => {
+      res.end();
     }, 1000)
-    res.end();
 
   } catch (error) {
     next(error)
@@ -661,7 +667,7 @@ app.delete("/articles/:id/favorite", auth, async (req, res, next) => {
     if (!favorite) {
       const err = new Error("No article to unfavorite");
       err.status = 400;
-      return next(err)
+      return next(err);
     }
 
     await favorite.delete();
@@ -670,8 +676,8 @@ app.delete("/articles/:id/favorite", auth, async (req, res, next) => {
     await article.save();
 
     setTimeout(() => {
+      res.end();
     }, 1000)
-    res.end();
 
   } catch (error) {
     next(error)

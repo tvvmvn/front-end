@@ -79,7 +79,9 @@ Images: modal, slide, carousel
 - - -
 
 # React
-Basic: W3S, React Home, Error(Compile, Component, EventHandler)
+Basic: W3Schoool
+Error: Compile, Component, EventHandler
+Suspense and ErrorBoundary
 
 # React Example
 Todo list
