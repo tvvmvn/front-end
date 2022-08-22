@@ -477,6 +477,7 @@ app.get("/feed", auth, async (req, res, next) => {
     }
 
     setTimeout(() => {
+      // throw new Error()
       res.json(articles)
     }, 1000)
 
@@ -615,8 +616,8 @@ app.delete("/articles/:id", auth, async (req, res, next) => {
     await article.delete();
     
     setTimeout(() => {
+      res.end();
     }, 1000)
-    res.end();
 
   } catch (error) {
     next(error)
