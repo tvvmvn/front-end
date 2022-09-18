@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/4fb6dd7406.js" crossorigin="anonymous"></script>
+  <title>Document</title>
+  <script src="/Users/jintaemin/my_server/lib/tailwindcss/tailwindcss.js"></script>
+</head>
+<body style="padding: 50px">
+
+  <!-- # DOM  -->
+
+  <!-- <h1>Create DOM tree</h1>
+  <div id="root"></div>
+    
+  <script>
+    var fruits = ['apple', 'banana', 'mango']
+
+    var ul = document.createElement('ul');
+
+    fruits.forEach(fruit => {
+      var li = document.createElement('li');
+      li.innerHTML = fruit
+      ul.appendChild(li)
+    })
+
+    document.getElementById('root').appendChild(ul)
+  </script> -->
+
+  <!-- <h1>Create DOM tree</h1>
+  <div id="root"></div>
+
+  <script>
+    var fruits = [
+      { name: 'apple', cost: 10 },
+      { name: 'banana', cost: 5 },
+      { name: 'kiwi', cost: 3 },
+    ]
+
+    var ul = document.createElement('ul');
+
+    for (i=0; i<fruits.length; i++) {
+      var li = document.createElement('li');
+      li.innerHTML = `${fruits[i].name}, ${fruits[i].cost} dollors`;
+      ul.appendChild(li)
+    }
+
+    document.getElementById('root').appendChild(ul)
+  </script> -->
+  
+  <!-- # Others -->
+
+  <!-- <style>
+    .fa-thumbs-up {
+      font-size: 40px;
+      cursor: pointer
+    }
+    .active {
+      color: red;
+    }
+  </style>
+
+  <h1 class="text-2xl">Favorite button</h1>
+  <br>
+  
+  <button>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25">
+      <path d="M128 447.1V223.1c0-17.67-14.33-31.1-32-31.1H32c-17.67 0-32 14.33-32 31.1v223.1c0 17.67 14.33 31.1 32 31.1h64C113.7 479.1 128 465.6 128 447.1zM512 224.1c0-26.5-21.48-47.98-48-47.98h-146.5c22.77-37.91 34.52-80.88 34.52-96.02C352 56.52 333.5 32 302.5 32c-63.13 0-26.36 76.15-108.2 141.6L178 186.6C166.2 196.1 160.2 210 160.1 224c-.0234 .0234 0 0 0 0L160 384c0 15.1 7.113 29.33 19.2 38.39l34.14 25.59C241 468.8 274.7 480 309.3 480H368c26.52 0 48-21.47 48-47.98c0-3.635-.4805-7.143-1.246-10.55C434 415.2 448 397.4 448 376c0-9.148-2.697-17.61-7.139-24.88C463.1 347 480 327.5 480 304.1c0-12.5-4.893-23.78-12.72-32.32C492.2 270.1 512 249.5 512 224.1z"/>
+    </svg>
+  </button>
+
+  <script>
+    var btn = document.querySelector("button");
+    var svg = document.querySelector("svg")
+
+    btn.addEventListener('click', (e) => {
+      svg.classList.toggle('fill-blue-500')
+    })
+  </script> -->
+
+  <!-- # Form -->
+  <!-- <h1 class="text-2xl">Form handling</h1>
+  <br>
+
+  <form action="">
+    <div class="mb-2">
+      <label for="username" class="block font-bold">Username</label>
+      <input type="text" id="username" class="p-1 border outline-none" autocomplete="off">
+    </div>
+    <button type="submit" class="border p-1 bg-slate-700 text-white">Submit</button>
+  </form>
+
+  <script>
+    var form = document.querySelector("form");
+    var input = document.querySelector("input");
+  </script> -->
+
+  <!-- <h1 class="text-2xl">Dropdown click</h1>
+  <br>
+
+  <div class="">
+      <button class="p-2 bg-slate-700 text-white">메뉴</button>
+      <div id="content" class="absolute w-48 shadow hidden">
+          <a class="block p-2 hover:bg-gray-100" href="">제네시스</a>
+          <a class="block p-2 hover:bg-gray-100" href="">스타리아</a>
+          <a class="block p-2 hover:bg-gray-100" href="">캐스퍼</a>
+      </div>
+  </div>
+
+  <script>
+      var button = document.querySelector('button');
+      var content = document.getElementById("content");
+
+      button.addEventListener('click', function () {
+        content.classList.toggle("hidden");
+      })
+  </script> -->
+
+  <!-- # Accordion -->
+  
+  <!-- <h1 class="text-2xl">Basic Accordion</h1>
+  <br>
+
+  <div class="">
+    <div class="mb-1">
+      <button class="p-2 bg-gray-100 w-full text-left hover:bg-gray-200">Section 1</button>
+      <p class="hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Nostrum necessitatibus minus nemo cum! Placeat id quos explicabo dolor nesciunt amet nostrum, similique modi quis. 
+        Temporibus veniam quae delectus eius dolore.</p>
+    </div>
+    <div class="mb-1">
+      <button class="p-2 bg-gray-100 w-full text-left hover:bg-gray-200">Section 2</button>
+      <p class="hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Nostrum necessitatibus minus nemo cum! Placeat id quos explicabo dolor nesciunt amet nostrum, similique modi quis. 
+        Temporibus veniam quae delectus eius dolore.</p>
+    </div>
+  
+    <div class="mb-1">
+      <button class="p-2 bg-gray-100 w-full text-left hover:bg-gray-200">Section 3</button>
+      <p class="hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Nostrum necessitatibus minus nemo cum! Placeat id quos explicabo dolor nesciunt amet nostrum, similique modi quis. 
+        Temporibus veniam quae delectus eius dolore.</p>
+    </div>
+  </div>
+
+  <script>
+    var buttons = document.querySelectorAll('button');
+
+    for (button of buttons) {
+      button.addEventListener('click', e => {
+
+        var panel = e.target.nextElementSibling;
+
+        panel.classList.toggle("hidden");
+      })
+    }
+  </script> -->
+
+  <!-- <h1 class="text-2xl">Animated accordion</h1>
+  <br>
+
+  <div class="">
+    <div class="mb-1">
+      <button class="p-2 bg-gray-100 w-full text-left">Section 1</button>
+      <p class="max-h-0 overflow-hidden transition-all">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Nostrum necessitatibus minus nemo cum! Placeat id quos explicabo dolor nesciunt amet nostrum, similique modi quis. 
+        Temporibus veniam quae delectus eius dolore.</p>
+    </div>
+    <div class="mb-1">
+      <button class="p-2 bg-gray-100 w-full text-left">Section 2</button>
+      <p class="max-h-0 overflow-hidden transition-all">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Nostrum necessitatibus minus nemo cum! Placeat id quos explicabo dolor nesciunt amet nostrum, similique modi quis. 
+        Temporibus veniam quae delectus eius dolore.</p>
+    </div>
+  
+    <div class="mb-1">
+      <button class="p-2 bg-gray-100 w-full text-left">Section 3</button>
+      <p class="max-h-0 overflow-hidden transition-all">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Nostrum necessitatibus minus nemo cum! Placeat id quos explicabo dolor nesciunt amet nostrum, similique modi quis. 
+        Temporibus veniam quae delectus eius dolore.</p>
+    </div>
+  </div>
+
+  <script>
+    var buttons = document.querySelectorAll('button');
+    
+    for (button of buttons) {
+      button.addEventListener('click', e => {
+
+        var panel = e.target.nextElementSibling;
+        panel.classList.toggle("max-h-24");
+      })
+    }
+  </script> -->
+
+  <!-- # Navigation -->
+  
+  <!-- <h1 class="text-2xl">Navigation</h1>
+  <br>
+
+  <div class="">
+    <div class="h-12 bg-slate-700 text-white flex">
+      <button type="button" class="ml-3">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="25">
+          <path
+            d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z" />
+        </svg>
+      </button>
+    </div>
+    <nav class="border">
+      <a class="block" href="#">Home</a>
+      <a class="block" href="#">About</a>
+      <a class="block" href="#">Blog</a>
+    </nav>
+  </div>
+
+  <script>
+    var nav = document.querySelector('nav');
+    var menuBtn = document.querySelector('.menu-btn');
+
+    menuBtn.addEventListener('click', () => {
+      nav.classList.toggle('active')
+    })
+  </script> -->
+
+  <!-- <style>
+    * {
+      padding: 0; 
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .header-inner {
+      background-color: #ddd;
+      padding: 0.5em;
+    }
+    nav {
+      border: 1px dashed;
+    }
+    nav {
+      height: 0;
+      overflow: hidden;
+      transition: .5s;
+    }
+    nav a {
+      display: block;
+      padding: 0.5em;
+    }
+    .menu-btn {
+      cursor: pointer;
+    }
+  </style>
+  
+  <header>
+    <div class="header-inner">
+      <h2><span class="menu-btn">#</span> Company</h2>
+    </div>
+    <nav>
+      <a href="">Home</a>
+      <a href="">About</a>
+      <a href="">Blog</a>
+    </nav>
+  </header>
+
+  <script>
+    var nav = document.querySelector('nav');
+    var menuBtn = document.querySelector('.menu-btn');
+
+    menuBtn.addEventListener('click', () => {
+      if (nav.style.height === '') {
+         nav.style.height = nav.scrollHeight + 'px'
+      } else {
+        nav.style.height = '';
+      }
+    })
+  </script> -->
+
+<!-- The z-index property specifies the stack order of an element.
+An element with greater stack order is always in front of an element with a lower stack order.
+Note: z-index only works on positioned elements 
+(position: absolute, position: relative, position: fixed, or position: sticky) 
+and flex items (elements that are direct children of display:flex elements).
+Note: If two positioned elements overlap without a z-index specified, 
+the element positioned last in the HTML code will be shown on top.  -->
+
+  <!-- <style>
+    nav {
+      width: 280px;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: -280px;
+      transition: 0.5s;
+      background-color: #ddd;
+    }
+    nav a {
+      display: block;
+    }
+    .layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      display: none;
+    }
+  </style>
+
+  <div id="layer" class="layer"></div>
+  
+  <nav>
+    <ul>
+      <li>
+        <a href="">Home</a>
+      </li>
+      <li>
+        <a href="">About</a>
+      </li>
+      <li>
+        <a href="">Posts</a>
+      </li>
+    </ul>
+  </nav>
+
+  <span id="openMenu">MENU</span>
+
+  <script>
+    var openMenu = document.getElementById('openMenu');
+    var layer = document.getElementById('layer')
+    var nav = document.querySelector('nav');
+
+    openMenu.addEventListener('click', function (e) {
+      nav.style.left = '0px';
+      layer.style.display = 'block'
+    })
+    layer.addEventListener('click', function (e) {
+      nav.style.left = '-280px';
+      e.target.style.display = 'none';
+    })
+  </script> -->
+
+  <!-- <h1>Modal Image</h1> -->
+
+  <!-- <style>
+    #img01 {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+    #layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+    }
+    #layer.active {
+      visibility: visible;
+    }
+    #modal {
+      width: 400px;
+    }
+  </style>
+
+  <img id="img01" src="../../img/bunny.jpeg" alt="">
+
+  <div id="layer">
+    <img id="modal" src="" alt="">
+  </div>
+
+  <script>
+    let img01 = document.getElementById("img01");
+    let modal = document.getElementById('modal');
+    let layer = document.getElementById('layer');
+
+    img01.addEventListener('click', () => {
+      modal.src = img01.src
+      layer.classList.add("active")
+    })
+
+    layer.addEventListener("click", e => {
+      // console.log(e.target)
+      console.log(e.target)
+      console.log(e.currentTarget)
+      // if (e.target === layer) {
+      //   e.target.classList.remove("active");
+      // }
+    })
+  </script> -->
+
+  <!-- <style>
+    img {
+      width: 100%;
+    }
+    .thumbnail {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+    .thumbnail:hover {
+      opacity: 1;
+    }
+    #layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+    }
+    #modal {
+      width: 400px;
+    }
+    #layer.active {
+      visibility: visible;
+    }
+  </style>
+
+  <img class="thumbnail" src="../../img/bunny.jpeg" alt="">
+  <img class="thumbnail" src="../../img/cat.jpeg" alt="">
+  <img class="thumbnail" src="../../img/bird.jpeg" alt="">
+
+  <div id="layer">
+    <img id="modal" src="" alt="">
+  </div>
+
+  <script>
+    var thumbnails = document.querySelectorAll('.thumbnail');
+    var modal = document.getElementById('modal');
+    var layer = document.getElementById('layer');
+
+    thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', () => {
+        modal.src = thumbnail.src
+        layer.classList.add("active")
+      })
+    })
+
+    window.addEventListener('click', (e) => {
+      if (e.target === layer) {
+        e.target.classList.remove("active")
+      }
+    })
+  </script> -->
+
+  <!-- <h1>Image and Carousel</h1> -->
+
+  <!-- <style>
+    .thumbnail {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      opacity: 0.8;
+      cursor: pointer;
+    }
+    .thumbnail:hover {
+      opacity: 1
+    }
+    .container img {
+      width: 400px;
+      height: 300px;
+      object-fit: cover;
+    }
+    .thumbnail-container {
+      font-size: 0;
+    }
+  </style>
+  
+  <div class="container">
+    <img id="display-image" src="" alt="">
+  </div>
+
+  <div class="thumbnail-container">
+    <img class="thumbnail" src="../../img/bunny.jpeg" alt="">
+    <img class="thumbnail" src="../../img/cat.jpeg" alt="">
+    <img class="thumbnail" src="../../img/bird.jpeg" alt="">
+    <img class="thumbnail" src="../../img/duck.jpeg" alt="">
+  </div>
+
+  <script>
+    var thumbnails = document.querySelectorAll('.thumbnail');
+    var displayImage = document.getElementById('display-image')
+    
+    function getImage(src) {
+      displayImage.src = src
+    }
+      
+    thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', (e) => {
+        getImage(e.target.src)
+      })
+    })
+
+    getImage(thumbnails[0].src)
+  </script> -->
+
+  <!-- <style>
+    img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+    }
+
+  </style>
+
+  <div class="container">
+    <img src="../../img/bunny.jpeg" alt="">
+    <img src="../../img/cat.jpeg" alt="">
+    <img src="../../img/bird.jpeg" alt="">
+  </div>
+
+  <div class="nav">
+    <button id="prev" class="prev" onclick="navigateTo(-1)">prev</button>
+    <button id="next" class="next" onclick="navigateTo(1)">next</button>
+  </div>
+
+  <script>
+    var imgs = document.querySelectorAll('img');
+    var prev = document.getElementById('prev');
+    var next = document.getElementById('next');
+
+    var index = 0;
+
+    function navigateTo(data) {
+      index += data
+      
+      if (index===-1) {
+        index = imgs.length-1
+      }
+      
+      if (index===imgs.length) {
+        index = 0
+      }
+      
+      console.log(index)
+
+      imgs.forEach(img => {
+        img.style.display = 'none';
+      })
+
+      imgs[index].style.display = 'block';
+    }
+
+    navigateTo(0);
+  </script> -->
+
+  <!-- <style>
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .thumbnail {
+      float: left;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      opacity: 0.8;
+      cursor: pointer;
+    }
+    .thumbnail:hover {
+      opacity: 1
+    }
+    .container {
+      width: 400px;
+      height: 300px;
+      position: relative;
+    }
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+  
+  <div class="container">
+    <img id="display-image" src="" alt="">
+    <div class="nav">
+      <button class="prev" onclick="navigateTo(-1)">&#10094;</button>
+      <button class="next" onclick="navigateTo(1)">&#10095;</button>
+    </div>
+  </div>
+
+
+  <div id="thumbnails" class="">
+    <img class="thumbnail" src="../../img/bunny.jpeg" onclick="jumpTo(0)" alt="">
+    <img class="thumbnail" src="../../img/cat.jpeg" onclick="jumpTo(1)" alt="">
+    <img class="thumbnail" src="../../img/bird.jpeg" onclick="jumpTo(2)" alt="">
+    <img class="thumbnail" src="../../img/duck.jpeg" onclick="jumpTo(3)" alt="">
+  </div>
+
+  <script>
+    var thumbnails = document.querySelectorAll('.thumbnail');
+    var displayImage = document.getElementById('display-image');
+    var prev = document.querySelector('.prev');
+    var next = document.querySelector('.next');
+    
+    var index = 0;
+
+    function navigateTo(data) {
+      index += data;
+      console.log(index)
+
+      if (index === -1) {
+        index = thumbnails.length-1
+      }
+      if (index===thumbnails.length) {
+        index = 0
+      }
+
+      getSrc(thumbnails[index].src)
+    }
+
+    function jumpTo(data) {
+      index = data;
+      console.log(index)
+
+      getSrc(thumbnails[index].src)
+    }
+
+    function getSrc(src) {
+      displayImage.src = src
+    }
+
+    navigateTo(0)
+  </script> -->
+
+  <!-- <style>
+    .carousel {
+      width: 300px;
+      height: 300px;
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 0;
+      position: relative;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: inline-block;
+      transition: 0.5s;
+    }
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .indicator {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .indicator .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #ddd;
+      margin: 0 2px
+    }
+    .indicator .dot.active {
+      background-color: #555;
+    }
+    #prev, #next {
+      visibility: hidden;
+    }
+    #prev.active, #next.active {
+      visibility: visible;
+    }
+  </style>
+
+
+  <div class="carousel">
+    <img src="../../img/bunny.jpeg" alt="">
+    <img src="../../img/cat.jpeg" alt="">
+    <img src="../../img/bird.jpeg" alt="">
+
+    <div class="nav">
+      <button id="prev" onclick="navigateTo(-1)">&#10094;</button>
+      <button id="next" onclick="navigateTo(1)">&#10095;</button>
+    </div>
+
+    <div class="indicator">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <script>
+    var imgs = document.querySelectorAll('img');
+    var prev = document.getElementById("prev")
+    var next = document.getElementById("next")
+    var dots = document.querySelectorAll('.dot');
+
+    var index = 0;
+
+    function navigateTo(data) {
+      // index
+      index += data;
+      console.log(index)
+
+      // Navigate button
+      prev.classList.add("active")
+      next.classList.add("active")
+
+      if (index === 0) {
+        prev.classList.remove("active")
+      }
+      if (index === imgs.length-1) {
+        next.classList.remove("active")
+      }
+
+      // Indicator
+      dots.forEach(dot => {
+        dot.classList.remove("active")
+      })
+      dots[index].classList.add("active");
+
+      // Move images
+      imgs[0].style.marginLeft = `-${index * 300}px`;
+    }    
+
+    navigateTo(0)
+  </script> -->
+
+  <!-- <style>
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .carousel {
+      width: 300px;
+      height: 300px;
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 0;
+      position: relative;
+    }
+    .item {      
+      width: 300px;
+      height: 300px;
+      transition: 0.5s;
+      display: none;
+    }
+    .item.active {
+      display: inline-block;
+    }
+    .indicator {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .indicator .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #ddd;
+      margin: 0 2px
+    }
+    .indicator .dot.active {
+      background-color: #555;
+    }
+  </style>
+
+  <div class="carousel">
+    <div class="item">
+      <img src="../../img/bunny.jpeg" alt="">
+    </div>
+    <div class="item">
+      <img src="../../img/cat.jpeg" alt="">
+    </div>
+    <div class="item">
+      <img src="../../img/bird.jpeg" alt="">
+    </div>
+
+    <div class="indicator">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <script>
+    var items = document.querySelectorAll('.item');
+    var dots = document.querySelectorAll('.dot');
+
+    var index = 0;
+
+    function navigateTo(data) {
+      // Indicator
+      dots.forEach(dot => {
+        dot.classList.remove("active")
+      })
+      dots[index].classList.add("active");
+
+      items.forEach(img => {
+        img.classList.remove("active")
+      })
+
+      // Move images
+      items[index].classList.add("active")
+    }   
+
+    window.addEventListener("load", () => {
+      navigateTo(index)
+
+      setInterval(() => {
+        // index
+        index++
+        console.log(index)
+
+        if (index === -1) {
+          index = items.length - 1
+        }
+        if (index === items.length) {
+          index = 0
+        }
+
+        navigateTo(index)
+      }, 3000)
+    })
+  </script> -->
+
+  <!-- <style>
+    img {
+      width: 100%;
+    }
+    .thumbnail {
+      float: left;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+    .thumbnail:hover {
+      opacity: 1
+    }
+    #layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+    }
+    #modal {
+      position: relative;
+      max-width: 400px;
+    }
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #layer.active {
+      visibility: visible;
+    }
+  </style>
+
+  <div id="thumbnails" class="">
+    <img class="thumbnail" src="../../img/bunny.jpeg" onclick="jumpTo(0)" alt="">
+    <img class="thumbnail" src="../../img/cat.jpeg" onclick="jumpTo(1)" alt="">
+    <img class="thumbnail" src="../../img/bird.jpeg" onclick="jumpTo(2)" alt="">
+    <img class="thumbnail" src="../../img/duck.jpeg" onclick="jumpTo(3)" alt="">
+  </div>
+
+  <div id="layer">
+    <div id="modal">
+      <img id="modal-image" src="" alt="">
+      <div class="nav">
+        <button id="prev" onclick="navigateTo(-1)">&#10094;</button>
+        <button id="next" onclick="navigateTo(1)">&#10095;</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var thumbnails = document.querySelectorAll('.thumbnail');
+    var layer = document.getElementById('layer');
+    var prev = document.getElementById("prev");
+    var next = document.getElementById("next");
+    var modalImage = document.getElementById("modal-image")
+    
+    var index = 0;
+
+    function navigateTo(data) {
+      index += data;
+      console.log(index)
+
+      if (index === -1) {
+        index = thumbnails.length-1
+      }
+      if (index === thumbnails.length) {
+        index = 0;
+      }
+
+      getSrc(thumbnails[index].src);
+    }
+
+    function jumpTo(data) {
+      index = data;
+      console.log(index)
+
+      getSrc(thumbnails[index].src)
+      layer.classList.add("active");
+    }
+
+    function getSrc(src) {
+      modalImage.src = src
+    }
+
+    // Stop display
+    window.addEventListener('click', stopDisplay);
+
+    function stopDisplay(e) {
+      if (e.target.id === "layer") {
+        e.target.classList.remove("active")
+      }
+    }
+  </script> -->
+
+</body>
+</html>

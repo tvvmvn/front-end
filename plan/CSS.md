@@ -1,10 +1,3 @@
-# HTML
-PPT
-개발환경설정
-개발자도구 explore
-HTML Semantic layout, DOM Tree
-HTML only page 
-
 # CSS
 web responsive
 external internal inline CSS
@@ -44,60 +37,3 @@ navigation: top-nav, side-nav, responsive nav
 layout: responsive
 image: thumbnail, text over image
 animation: spinner, menu button, 
-
-- - -
-
-# JavaScript
-- Data Type
-primary data type and method
-- Object and Array
-- Operator: Arithmetic, 
-- Variable
-var
-- Condition
-if else, switch
-- Loop 
-for, while
-- Function and Method, Callback, Asynchronous
-- Object Contstructor, Class
-- try/catch and Error Handling
-- Regex
-- ES6
-let, const, Arrow function, destructing/spread operator, Promise(async/await), ternary, &&, ||,
-- Server-Side
-Cookie, LocalStorage/JSON, AJAX and fetch
-
-# JavaScript Example
-Others: dropdown, likes, rating
-render in HTML: innerHTML, createElement, appendChild
-form: input validate, submit event
-Accordion
-Tab content
-Navigation: mobile, side-nav
-Images: modal, slide, carousel
-
-- - -
-
-# React
-Basic: W3Schoool
-Error: Compile, Component, EventHandler
-Suspense and ErrorBoundary
-
-# React Example
-Todo list
-
-# Final Project
-Back-End
-Front-End
-
-- - -
-
-# 
-월수금 월수 - 12월
-주말 - 10월23일
-
-화목화목금 10월 11 12 1 2 3
-
-10월 부터는 매일 저녁
-
-9월 쯤에 오후 수업을 열 수도 있음
