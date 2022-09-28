@@ -11,13 +11,29 @@
   <!-- ### Selector -->
   
   <!-- <style>
-    /* id selector */
     #title {
       text-transform: uppercase;
     }
-    /* element selector */
     ul {
-      border: 1px dashed;
+      border: 1px solid;
+    }
+    li {
+      text-decoration: underline;
+    }
+  </style>
+
+  <h1>CSS Selector</h1>
+  <p>Element</p>
+  <ul>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+  </ul> -->
+
+  <!-- <style>
+    /* id selector */
+    #list {
+      border: 1px solid;
     }
     /* class selector */
     .text-bold {
@@ -28,25 +44,25 @@
     }
   </style>
 
-  <h1 id="title">CSS Selector</h1>
-  <ul>
-    <li class="">list item</li>
-    <li class="text-bold">list item</li>
+  <h1>CSS Selector</h1>
+  <p>id, class</p>
+  <ul id="list">
+    <li id="identity" class="">list item</li>
+    <li class="underline">list item</li>
     <li class="text-bold underline">list item</li>
   </ul> -->
 
   <!-- <style>
-    /* children */
-    ul a {
-      text-decoration: none;
+    ul li {
+      text-decoration: underline;
     }
-    /* direct children */
-    ul > a {
+    ul a {
       color: #000;
     }
   </style>
 
   <h1>CSS Selector</h1>
+  <p>children</p>
 
   <ul>
     <li>
@@ -63,17 +79,14 @@
   <!-- ### Pseudo class and Pseudo elements -->
 
   <!-- <style>
-    li:first-child {
-      font-weight: bold;
+    li:hover {
+      text-decoration: underline;
     }
     li:nth-child(2) {
       font-style: italic;
     }
-    li:last-child {
-      color: #888;
-    }
-    li:hover {
-      text-decoration: underline;
+    input:focus {
+      outline: 2px solid #f00;
     }
   </style>
 
@@ -82,7 +95,9 @@
   <ul>
     <li class="">list item</li>
     <li class="">list item</li>
-    <li class="">list item</li>
+    <li class="">
+      <input type="text">
+    </li>
   </ul> -->
 
   <!-- <style>
@@ -172,8 +187,8 @@
       text-align: center;
     }
     .tracking-widest {
-      /* letter-spacing: normal; */
       letter-spacing: 0.1em;
+      /* letter-spacing: normal; */
     }
     .leading-none {
       line-height: normal;
@@ -225,9 +240,6 @@
   <!-- ### Border -->
 
   <!-- <style>
-    .container {
-      background-color: transparent;
-    }
     .item {
       width: 100px;
       height: 100px;
@@ -241,14 +253,22 @@
     .border-t {
       border-top-width: 1px;
       border-top-style: solid;
-      border-top-color: #000;
+      border-top-color: #ddd;
     }
     .border-r {
-      /* shorthand */
-      border-right: 1px solid #ddd;
+      border-right-width: 1px;
+      border-right-style: solid;
+      border-right-color: #ddd;
     }
-    .border-red {
-      border-color: #f00;
+    .border-b {
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: #ddd;
+    }
+    .border-l {
+      border-left-width: 1px;
+      border-left-style: solid;
+      border-left-color: #ddd;
     }
   </style>
 
@@ -256,17 +276,15 @@
 
   <div class="container">
     <div class="item border"></div>
-    <div class="item border border-red"></div>
     <div class="item border-t"></div>
-    <div class="item border-r border-red"></div>
+    <div class="item border-r"></div>
+    <div class="item border-b"></div>
+    <div class="item border-l"></div>
   </div> -->
 
   <!-- ### Padding -->
   
   <!-- <style>
-    .container {
-      background-color: #ddd;
-    }
     .item {
       width: 100px;
       height: 100px;
@@ -286,10 +304,10 @@
   </style>
 
   <div class="container">
-    <div class="item"></div>
-    <div class="item p-2"></div>
-    <div class="item pt-2"></div>
-    <div class="item px-2"></div>
+    <div class="item">item</div>
+    <div class="item p-2">item</div>
+    <div class="item pt-2">item</div>
+    <div class="item px-2">item</div>
   </div> -->
 
   <!-- ### Margin -->

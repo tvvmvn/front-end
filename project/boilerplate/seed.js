@@ -49,7 +49,7 @@ async function createArticle(username, postId) {
     })
   
     const article = new Article({
-      description: username + "'s photo!",
+      description: `${username}'s photo!`,
       photos,
       user: user._id,
       created: Date.now() + 32400000
@@ -146,4 +146,4 @@ async function plantSeeds() {
   }
 }
 
-// plantSeeds() 
+// plantSeeds();

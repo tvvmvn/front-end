@@ -20,35 +20,32 @@ try/catch, Error Object
 - destructing/spread operator 
 
 # Asynchronous
-- asynchronous function with callback
-- promise
-- error handling in callback and promise
+- asynchronous function 
+- promise object, async, async/await
+- error handling 
 
 # JSON
 - JSON
 
-# Web API
-- forms
-- storage √
-- worker
-- fetch √
-- geolocation
-
 # HTML BOM(Browser Object Model)
-- window
 - screen
-- location & history
-- navigator
-- cookies
-- others
+- location
+- history
+- storage 
+- fetch 
+- navigator.geolocation
 
 # HTML DOM(Document Object Model)
-- HTML element
-CRUD
-- event
-load, click, scroll, keydown, mouseenter, ...
+- Selector
+- Property
+innerHTML, classList, attribute, style
+- Method
+createElement, appendChild, classList(add, remove),
+getAttribute, setAttribute
+- Event
 
 # Example
+- DOM
 - Others
 dropdown, likes 
 - form

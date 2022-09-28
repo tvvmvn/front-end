@@ -8,8 +8,6 @@ const userSchema = new Schema({
   image: { type: String },
   password: { type: String },
   salt: { type: String },
-  oauth: { type: Boolean, default: false },
-  active: { type: Boolean, default: true }
 })
 
 const followSchema = new Schema({
@@ -45,16 +43,9 @@ const favoriteCommentSchema = new Schema({
   comment: { type: Schema.ObjectId }
 })
 
-const tokenSchema = new Schema({
-  user: { type: String },
-  token: { type: String },
-  created: { type: Date, default: Date.now, expires: 3600 },
-})
-
 exports.User = mongoose.model('User', userSchema)
 exports.Follow = mongoose.model('Follow', followSchema)
 exports.Article = mongoose.model('Article', articleSchema)
 exports.Favorite = mongoose.model('Favorite', favoriteSchema)
 exports.Comment = mongoose.model('Comment', commentSchema)
 exports.FavoriteComment = mongoose.model('FavoriteComment', favoriteCommentSchema)
-exports.Token = mongoose.model('Token', tokenSchema)
