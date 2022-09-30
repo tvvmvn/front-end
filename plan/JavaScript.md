@@ -45,14 +45,9 @@ getAttribute, setAttribute
 - Event
 
 # Example
-- DOM
-- Others
-dropdown, likes 
-- form
-input validate, submit event
+- Favorite
+- Form
 - Accordion
 - Navigation
-mobile, side-nav
-- Images
-modal, slide, carousel
-- SSR ?
+- Modal
+- Carousel

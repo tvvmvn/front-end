@@ -109,9 +109,11 @@
 <!-- <h1>Q. World beers</h1>
 <table>
   <thead>
-    <th>Brand</th>
-    <th>Origin</th>
-    <th>available</th>
+    <tr>
+      <th>Brand</th>
+      <th>Origin</th>
+      <th>available</th>
+    </tr>
   </thead>
   <tbody>
     <tr id="dutchBeer" class="beer">
@@ -197,7 +199,7 @@
 <p>attributes(property that extends element's functionality)</p>
 
 <ul>
-  <li><a id="foo" href="Foo">Link</a></li>
+  <li><a id="foo" href="Foo">Foo</a></li>
   <li><img id="bar" src="" alt="Bar"></li>
   <li><input id="baz" type="text" value="Baz"></li>
 </ul>
@@ -216,7 +218,7 @@
 <p>attribute of element</p>
 
 <ul>
-  <li><a id="foo" href="">Link</a></li>
+  <li><a id="foo" href="">Foo</a></li>
   <li><img id="bar" src="" alt=""></li>
   <li><input id="baz" type="text" value=""></li>
 </ul>
@@ -398,9 +400,52 @@
   baz.setAttribute("value", "Baz")
 </script> -->
 
-<!-- <h1>DOM Method</h1> -->
-<!-- <p>addEventListener</p> -->
+<!-- <h1>Event</h1>
+<p>User's action</p>
 
+<button>Button</button>
+
+<script>
+  const button = document.querySelector("button");
+
+  // element.addEventListener(event, callback)
+  button.addEventListener("click", (e) => {
+    console.log(e); // event(PointerEvent)
+    console.log(e.target); // button
+  })
+</script> -->
+
+  <!-- <h1>Q. Switch</h1>
+
+  <button type="button">&#128161</button>
+
+  <script>
+    const button = document.querySelector("button");
+
+    button.addEventListener("click", (e) => {
+      if (button.style.backgroundColor === "") {
+        button.style.backgroundColor = "yellow"
+      } else {
+        button.style.backgroundColor = ""
+      }
+    })
+  </script> -->
+
+<!-- <h1>Event</h1>
+<p>preventDefault</p>
+
+<a href="https://google.com" target="_blank">Link</a>
+
+<script>
+  const anchor = document.querySelector("a");
+
+  anchor.addEventListener("click", (e) => {
+    console.log(e) // event(PointerEvent)
+
+    // event.preventDefault()
+    e.preventDefault();
+  });
+</script> -->
 
 </body>
 </html>
