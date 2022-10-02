@@ -4,8 +4,6 @@ const fs = require("fs");
 
 async function createUser(username, email, password = "123") {
   try {
-    console.log('createUser')
-
     const salt = crypto.randomBytes(16).toString("hex");
     const hashedPassword = crypto.pbkdf2Sync(password, salt, 310000, 32, "sha256")
     .toString("hex")
@@ -34,8 +32,6 @@ async function createUser(username, email, password = "123") {
 
 async function createArticle(username, postId) {
   try {    
-    console.log('createArticle')
-
     const imgs = fs.readdirSync(`${__dirname}/seeds/${username}/`)
     const user = await User.findOne({ username })
     const userPhotos = imgs.filter(img => img.match(new RegExp("^" + username + postId)))
