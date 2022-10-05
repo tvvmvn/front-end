@@ -12,20 +12,9 @@ export default function Layout() {
         <ul>
           <li><Link to="/">Feed</Link></li>
           <li><Link to="/explore">Explore</Link></li>
-          <li><Link to={`/profiles/${auth.user}`}>Profile</Link></li>
+          <li><Link to={`/profiles/${auth.user.username}`}>Profile</Link></li>
         </ul>
       </nav>
-
-      <p>
-        {auth.user ? `Hello ${auth.user}` : "Not logged in"}
-        {" "}
-        <button 
-          type="button"
-          onClick={auth.signOut}
-        >
-          Logout
-        </button>
-      </p>
 
       <Outlet />
     </>

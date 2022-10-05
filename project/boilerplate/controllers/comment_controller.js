@@ -1,10 +1,10 @@
-const { Comment, FavoriteComment } = require("../models/model");
+const {Comment, FavoriteComment} = require("../models/model");
 
 exports.comment_list = async (req, res, next) => {
   try {
     const loginUser = req.user;
     const id = req.params.id;
-    const comments = await Comment.find({ article: id })
+    const comments = await Comment.find({article: id})
     .populate("user")
     .sort([["created", "descending"]])
     .limit(req.query.limit)
@@ -13,7 +13,7 @@ exports.comment_list = async (req, res, next) => {
 
     for (let comment of comments) {
       const favoriteComment = await FavoriteComment
-      .findOne({ user: loginUser._id, comment: comment._id });
+      .findOne({user: loginUser._id, comment: comment._id});
 
       comment.isFavorite = favoriteComment ? true : false;
     }
@@ -113,7 +113,7 @@ exports.unfavorite = async (req, res, next) => {
     const id = req.params.id;
     const comment = await Comment.findById(id)
     const favoriteComment = await FavoriteComment
-    .findOne({ user: loginUser._id, comment: comment._id });
+    .findOne({user: loginUser._id, comment: comment._id});
 
     if (!favoriteComment) {
       const err = new Error("Something's broken");

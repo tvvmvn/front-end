@@ -114,7 +114,7 @@ exports.upload_image = async (req, res, next) => {
       const image = files.image;
 
       const oldPath = image.filepath;
-      const ext = image.originalFilename.split(".")[1]
+      const ext = image.originalFilename.split(".")[1];
       const newName = image.newFilename + "." + ext;
       const newPath = __dirname + "/data/users/" + newName;
 

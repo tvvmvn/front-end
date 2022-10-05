@@ -69,8 +69,8 @@ exports.follower_list = async (req, res, next) => {
     .populate("follower")
     
     setTimeout(() => {
+      res.json(follows)
     }, 1000)
-    res.json(follows)
 
   } catch (error) {
     next(error)
@@ -85,8 +85,8 @@ exports.following_list = async (req, res, next) => {
     .populate("following")
     
     setTimeout(() => {
+      res.json(follows)
     }, 1000)
-    res.json(follows)
 
   } catch (error) {
     next(error)

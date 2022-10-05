@@ -8,7 +8,7 @@ const indexRouter = require("./routes/index");
 
 // # DATABASE
 const mongoose = require("mongoose");
-const seed = require("./seed.js");
+const seed = require("./seed");
 
 mongoose.connect("mongodb://localhost:27017/boilerplate", {
   useNewUrlParser: true,

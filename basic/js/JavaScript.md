@@ -45,9 +45,10 @@ getAttribute, setAttribute
 - Event
 
 # Example
-- Favorite
+- Favorite/Count
 - Form
 - Accordion
 - Navigation
 - Modal
+- 서랍?
 - Carousel

@@ -1,90 +1,72 @@
-const { User, Article, Follow } = require("./models/model");
+const {User, Article, Follow} = require("./models/model");
 const crypto = require("crypto")
 const fs = require("fs");
 
 async function createUser(username, email, password = "123") {
-  try {
-    const salt = crypto.randomBytes(16).toString("hex");
-    const hashedPassword = crypto.pbkdf2Sync(password, salt, 310000, 32, "sha256")
-    .toString("hex")
-    
-    const imgs = fs.readdirSync(`${__dirname}/seeds/profiles`)
-    const image = imgs.find(img => img.match(new RegExp("^" + username)));
-    
-    const newName = `${createId()}.${image.split(".")[1]}`;
-    
-    fs.copyFileSync(`${__dirname}/seeds/profiles/${image}`, `${__dirname}/data/users/${newName}`);
+  const salt = crypto.randomBytes(16).toString("hex");
+  const hashedPassword = crypto.pbkdf2Sync(password, salt, 310000, 32, "sha256")
+  .toString("hex")
+  
+  const files = fs.readdirSync(`${__dirname}/seeds/profiles`)
+  const file = files.find(file => file.startsWith(username));
+  const newFile = `${crypto.randomBytes(24).toString("hex")}.${file.split(".")[1]}`;
+  
+  const oldPath = `${__dirname}/seeds/profiles/${file}`;
+  const newPath = `${__dirname}/data/users/${newFile}`;
+  fs.copyFileSync(oldPath, newPath);
 
-    const user = new User({
-      username,
-      email,
-      password: hashedPassword,
-      salt,
-      bio: "Hi, I'm " + username,
-      image: newName
-    })
-    await user.save();
+  const user = new User({
+    username,
+    email,
+    password: hashedPassword,
+    salt,
+    bio: `I'm ${username}`,
+    photo: newFile
+  })
+  await user.save();
 
-  } catch (error) {
-    console.error(error)
-  }
+  return 0;
 }
 
 async function createArticle(username, postId) {
-  try {    
-    const imgs = fs.readdirSync(`${__dirname}/seeds/${username}/`)
-    const user = await User.findOne({ username })
-    const userPhotos = imgs.filter(img => img.match(new RegExp("^" + username + postId)))
-  
-    const photos = userPhotos.map(photo => {
-      const newName = `${createId()}.${photo.split(".")[1]}`;
-  
-      fs.copyFileSync(`${__dirname}/seeds/${username}/${photo}`, `${__dirname}/data/posts/${newName}`);
-  
-      return newName;
-    })
-  
-    const article = new Article({
-      description: `${username}'s photo!`,
-      photos,
-      user: user._id,
-      created: Date.now() + 32400000
-    })
-    await article.save();
+  const user = await User.findOne({username});
 
-  } catch (error) {
-    console.error(error)
-  }
+  const files = fs.readdirSync(`${__dirname}/seeds/${username}/`);
+  const fileList = files.filter(file => file.startsWith(username + postId));
+
+  const newFiles = fileList.map(file => {
+    const newFile = `${crypto.randomBytes(24).toString("hex")}.${file.split(".")[1]}`;
+    
+    const oldPath = `${__dirname}/seeds/${username}/${file}`;
+    const newPath = `${__dirname}/data/posts/${newFile}`;
+    fs.copyFileSync(oldPath, newPath);
+
+    return newFile;
+  })
+
+  const article = new Article({
+    description: `${username}'s photo!`,
+    photos: newFiles,
+    user: user._id,
+    created: Date.now()
+  })
+  await article.save();
+
+  return 0;
 }
 
-async function createFollowing(follower, following) {
-  try {
-    console.log('createFollowing')
-  
-    const _follower = await User.findOne({ username: follower });
-    const _following = await User.findOne({ username: following })
-  
-    const newFollowing = new Follow({
-      follower: _follower._id,
-      following: _following._id
-    })
-  
-    await newFollowing.save();
+async function createFollowing(username, following) {
+  const user = await User.findOne({username});
+  const followedUser = await User.findOne({username: following});
 
-  } catch (error) {
-    console.error(error)
-  }
-}
+  const follow = new Follow({
+    user: user._id,
+    following: followedUser._id
+  })
 
-function createId() {
-  let id = ""
+  await follow.save();
 
-  for (i=0; i<24; i++) {
-    let r = Math.floor(Math.random() * 16)
-    id += r.toString(16)
-  }
-  
-  return id;
+  return 0;
 }
 
 async function plantSeeds() {
@@ -136,7 +118,8 @@ async function plantSeeds() {
     await createArticle("monkey", "2")
     await createArticle("monkey", "3")
   
-    console.log("Seeds are successfully planted")
+    console.log(".");
+
   } catch (error) {
     console.error(error)
   }

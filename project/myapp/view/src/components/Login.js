@@ -1,7 +1,6 @@
 import {useState, useContext} from "react";
 import {useNavigate} from "react-router-dom";
 import {AuthContext} from "./AuthContext";
-import {fetchUsers} from "./fakeApi";
 
 export default function Login() {
   const auth = useContext(AuthContext);
@@ -11,12 +10,26 @@ export default function Login() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetchUsers(user)
-    .then(data => {
-      setUser(data)
+    fetch(`http://localhost:3000/accounts/login`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(user)
     })
-
-    auth.signIn(user, () => navigate("/", {replace: true}))
+    .then(res => {
+      if (!res.ok) {
+        throw res;
+      }
+      return res.json()
+    })
+    .then(data => {
+      auth.signIn(data, () => navigate("/", {replace: true}));
+    })
+    .catch(error => {
+      if (error.status === 401) {
+        return alert("User not found");
+      }
+      alert("Try later");
+    })
   }
 
   function handleChange(e) {
@@ -33,8 +46,8 @@ export default function Login() {
       <form onSubmit={handleSubmit}>
         <div className="">
           <label htmlFor="">
-            Username
-            <input type="text" name="username" onChange={handleChange} required />
+            Email
+            <input type="text" name="email" onChange={handleChange} required />
           </label>
         </div>
         <div className="">

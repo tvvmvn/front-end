@@ -1,12 +1,36 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {AuthContext} from "./AuthContext";
 
 export default function AuthProvider({children}) {
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [user, setUser] = useState(null);
 
+  useEffect(() => {
+    fetch(`http://localhost:3000/user`, {
+      headers: {"Authorization": `Bearer ${localStorage.getItem("token")}`}
+    })
+    .then(res => {
+      if (!res.ok) {
+        throw res;
+      }
+      return res.json()
+    })
+    .then(data => {
+      setUser(data)
+    })
+    .catch(error => {
+      if (error.status === 401) {
+        return;
+      }
+      setError(error);
+    })
+    .finally(() => setIsLoaded(true))
+  }, [])
 
-  function signIn(user, callback) {
-    setUser(user);
+  function signIn(data, callback) {
+    setUser(data.user);
+    localStorage.setItem("token", data.token);
     callback()
   }
 
@@ -16,6 +40,12 @@ export default function AuthProvider({children}) {
   
   const value = {user, signIn, signOut}
 
+  if (error) {
+    return <h1>Error</h1>
+  } 
+  if (!isLoaded) {
+    return <h1>Loading...</h1>
+  }
   return (
     <AuthContext.Provider value={value}>
       {children}

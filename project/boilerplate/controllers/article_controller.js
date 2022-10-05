@@ -1,5 +1,4 @@
 const { Follow, Article, Favorite } = require("../models/model");
-
 const formidable = require("formidable");
 require("../auth/passportJwt");
 
@@ -21,6 +20,11 @@ exports.feed = async (req, res, next) => {
       const favorite = await Favorite.findOne({ user: loginUser._id, article: article._id })      
       article.isFavorite = favorite ? true : false;
     }
+
+    // const updatedArticles = articles.map(async (article) => {
+    //   const favorite = await Favorite.findOne({ user: loginUser._id, article: article._id })
+    //   return {...article, isFavorite: favorite ? true : false}
+    // })
 
     setTimeout(() => {
       res.json(articles)
@@ -113,7 +117,6 @@ exports.article = async (req, res, next) => {
     }
 
     const favorite = await Favorite.findOne({ user: loginUser._id, article: article._id })      
-    
     article.isFavorite = favorite ? true : false;
 
     setTimeout(() => {

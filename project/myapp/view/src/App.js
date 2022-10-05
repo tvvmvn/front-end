@@ -13,26 +13,24 @@ import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   return (
-    <ErrorBoundary>
-      <Router>
-        <AuthProvider>
-          <Routes>
-            <Route path="/" element={
-              <AuthRequired>
-                <Layout />
-              </AuthRequired>
-            }>
-              <Route index element={<Feed />} />
-              <Route path="/explore" element={<Explore />} />
-              <Route path="/profiles/:username" element={<Profile />} />
-            </Route>
+    <Router>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={
+            <AuthRequired>
+              <Layout />
+            </AuthRequired>
+          }>
+            <Route index element={<Feed />} />
+            <Route path="/explore" element={<Explore />} />
+            <Route path="/profiles/:username" element={<Profile />} />
+          </Route>
 
-            <Route path="/login" element={<Login />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </AuthProvider>
-      </Router>
-    </ErrorBoundary>
+          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </AuthProvider>
+    </Router>
   )
 }
 
