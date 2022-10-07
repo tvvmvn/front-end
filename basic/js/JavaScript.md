@@ -50,5 +50,5 @@ getAttribute, setAttribute
 - Accordion
 - Navigation
 - Modal
-- 서랍?
+- Gallery
 - Carousel
