@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router();
 const passport = require("passport");
 const auth = passport.authenticate("jwt", { session: false });
+require("../auth/passportJwt");
 const auth_controller = require("../controllers/auth_controller");
 const account_controller = require("../controllers/account_controller");
 const article_controller = require("../controllers/article_controller");
@@ -19,7 +20,7 @@ router.get('/', (req, res) => {
 })
 
 // AUTH
-router.get('/user', auth, auth_controller.auth)
+router.get('/user', auth, auth_controller.user)
 
 // ACCOUNTS 
 router.post('/accounts/login', account_controller.login)

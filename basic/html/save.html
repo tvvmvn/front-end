@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+
+  <style>
+    /* You can enter any Unicode character in an HTML file */
+    /* U+20AC */
+    #euro::after {content: "\20AC"} 
+  </style>
+
+  <p id="euro"></p>
+  <!-- You can enter any Unicode character in an HTML file: &#8364; -->
+  <p>&#8364;</p>
+
+  <!-- How can I type unicode characters without using the mouse on Mac? -->
+  <!-- Ctrl + Command + Space -->
+  <p>€</p>
+
+  <style>
+    .normal {
+    white-space: normal;
+    }
+    .pre {
+    white-space: pre;
+    }
+    </style>
+    
+    <p class="normal">Lorem ipsum dolor sit,<br>amet consectetur adipisicing elit.</p>
+    
+    <hr>
+    
+    <p class="pre"> Lorem ipsum dolor sit, 
+    amet consectetur adipisicing  elit.</p>
+    
+    <hr>
+    
+    <p id="demo" class="pre"></p>
+    
+    <script>
+    document.getElementById("demo").textContent = `Lorem ipsum dolor sit,\namet consectetur adipisicing\telit.`
+    </script>
+
+
+  <!-- <pre>
+    Name      Origin      Available
+    Heineken  Netherlands Yes
+    Guinness  Ireland     No
+    Kloud     S.Korea     Yes
+  </pre> -->
+
+  <!-- <pre></pre>
+
+  <script>
+    document.querySelector("pre").textContent = 
+    `Name\t\tOrigin\t\tAvailable\nHeineken\tNetherlands\tYes\nGuinness\tIreland\t\tNo\nKloud\t\tS.Korea\t\tYes`
+  </script> -->
+
+  <pre>
+    Metacharacters is unseen in HTML, but It is typed.
+    
+    When you press the Enter key:
+    \n is saved so that line breaks is achieved.
+    
+    When you press the Tab key:
+    Tab1  Tab2  Tab3
+    \t is saved so that tab space is achieved. 
+  </pre>
+
+  <script>
+    document.write("")
+  </script>
+  
+</body>
+</html>

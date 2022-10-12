@@ -1,10 +1,11 @@
-import {useState, useEffect, Suspense} from "react"
+import {useState, useEffect, Suspense} from "react";
+import {Link} from "react-router-dom";
 
 export default function () {
 
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [initialArticles, setInitialArticles] = useState([]);
+  const [initialArticles, setInitialArticles] = useState(null);
 
   useEffect(() => {    
     fetch(`http://localhost:3000/articles`, {
@@ -42,13 +43,16 @@ function Explore({initialArticles}) {
   return (
     <>
       <h1 className="text-2xl">Explore</h1>
+      
       <ul>
         {articles.map(article => (
           <li key={article._id} className="">
-            <img 
-              src={`http://localhost:3000/posts/${article.photos[0]}`} 
-              width="100" 
-            />
+            <Link to={`/p/${article._id}`}>
+              <img 
+                src={`http://localhost:3000/posts/${article.photos[0]}`} 
+                width="100" 
+              />
+            </Link>
           </li>  
         ))}
       </ul>

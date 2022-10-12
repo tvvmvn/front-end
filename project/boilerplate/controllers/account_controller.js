@@ -1,7 +1,6 @@
 const { User } = require("../models/model");
 const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
-
 const formidable = require("formidable");
 
 exports.login = async (req, res, next) => {
@@ -16,8 +15,9 @@ exports.login = async (req, res, next) => {
       return next(err);
     }
 
-    const hashedPassword = crypto.pbkdf2Sync(password, user.salt, 310000, 32, "sha256")
-    .toString("hex")
+    const hashedPassword = crypto
+      .pbkdf2Sync(password, user.salt, 310000, 32, "sha256")
+      .toString("hex")
     
     if (user.password !== hashedPassword) {
       const err = new Error("Password not match");
@@ -39,7 +39,7 @@ exports.login = async (req, res, next) => {
 exports.register = [
   async (req, res, next) => {
     try {
-      const { username, password, email } = req.body;
+      const {username, password, email} = req.body;
   
       if (!username) {
         const err = new Error("username is required");
@@ -61,8 +61,9 @@ exports.register = [
       return;
 
       const salt = crypto.randomBytes(16).toString("hex");
-      const hashedPassword = crypto.pbkdf2Sync(password, salt, 310000, 32, "sha256")
-      .toString("hex")
+      const hashedPassword = crypto
+        .pbkdf2Sync(password, salt, 310000, 32, "sha256")
+        .toString("hex")
 
       const user = new User({
         username,

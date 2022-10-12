@@ -1,4 +1,4 @@
-exports.auth = async (req, res, next) => {
+exports.user = async (req, res, next) => {
   try {
     setTimeout(() => {
       res.json(req.user);

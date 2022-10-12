@@ -1,6 +1,5 @@
 const { Follow, Article, Favorite } = require("../models/model");
 const formidable = require("formidable");
-require("../auth/passportJwt");
 
 exports.feed = async (req, res, next) => {
   try {
@@ -8,23 +7,19 @@ exports.feed = async (req, res, next) => {
     const follows = await Follow.find({ follower: loginUser._id });
 
     const articles = await Article
-    .find({ user: [...follows.map(follow => follow.following), loginUser._id]
-    })
-    .sort([["created", "descending"]])
-    .populate("user")
-    .skip(req.query.skip)
-    .limit(req.query.limit)
-    .lean();
+      .find({ user: [...follows.map(follow => follow.following), loginUser._id]})
+      .sort([["created", "descending"]])
+      .populate("user")
+      .skip(req.query.skip)
+      .limit(req.query.limit)
+      .lean();
 
     for (let article of articles) {
-      const favorite = await Favorite.findOne({ user: loginUser._id, article: article._id })      
+      const favorite = await Favorite
+        .findOne({ user: loginUser._id, article: article._id });
+
       article.isFavorite = favorite ? true : false;
     }
-
-    // const updatedArticles = articles.map(async (article) => {
-    //   const favorite = await Favorite.findOne({ user: loginUser._id, article: article._id })
-    //   return {...article, isFavorite: favorite ? true : false}
-    // })
 
     setTimeout(() => {
       res.json(articles)
@@ -47,7 +42,10 @@ exports.create = async (req, res, next) => {
         return next(err);
       }
 
-      const images = files.images instanceof Array ? files.images : new Array(files.images);
+      const images = files.images instanceof Array ? 
+        files.images 
+        : 
+        new Array(files.images);
 
       if (!images[0].originalFilename) {
         const err = new Error("Image must be specified");
@@ -55,7 +53,6 @@ exports.create = async (req, res, next) => {
         return next(err);
       }
 
-      // return res.json({files, fields})
       // image validation check needed
       // ...
 
@@ -75,6 +72,7 @@ exports.create = async (req, res, next) => {
         photos,
         user: loginUser._id
       })
+
       await article.save();
 
       setTimeout(() => {
@@ -90,9 +88,10 @@ exports.create = async (req, res, next) => {
 exports.article_list = async (req, res, next) => {
   try {
     const articles = await Article.find()
-    .sort([["created", "descending"]]).populate("user")
-    .skip(req.query.skip)
-    .limit(req.query.limit);
+      .sort([["created", "descending"]])
+      .populate("user")
+      .skip(req.query.skip)
+      .limit(req.query.limit);
 
     setTimeout(() => {
       res.json(articles);
@@ -108,7 +107,10 @@ exports.article = async (req, res, next) => {
   try {    
     const loginUser = req.user;
     const id = req.params.id;
-    const article = await Article.findById(id).populate("user").lean();    
+    const article = await Article
+      .findById(id)
+      .populate("user")
+      .lean();
     
     if (!article) {
       const err = new Error("Article not found");
@@ -116,13 +118,17 @@ exports.article = async (req, res, next) => {
       return next(err);
     }
 
-    const favorite = await Favorite.findOne({ user: loginUser._id, article: article._id })      
+    const favorite = await Favorite
+      .findOne({ user: loginUser._id, article: article._id })      
+    
     article.isFavorite = favorite ? true : false;
+
+    console.log(article);
 
     setTimeout(() => {
       res.json(article);
     }, 1000)
-
+ 
   } catch (error) {
     next(error)
   }
@@ -131,7 +137,8 @@ exports.article = async (req, res, next) => {
 exports.delete = async (req, res, next) => {
   try {
     const id = req.params.id;
-    const article = await Article.findById(id);
+    const article = await Article
+      .findById(id);
 
     if (!article) {
       const err = new Error("Article not found")
@@ -156,7 +163,8 @@ exports.favorite = async (req, res, next) => {
     const loginUser = req.user;
     const id = req.params.id;
     const article = await Article.findById(id)
-    const favorite = await Favorite.findOne({ user: loginUser._id, article: article._id })
+    const favorite = await Favorite
+      .findOne({ user: loginUser._id, article: article._id })
 
     if (favorite) {
       const err = new Error("Already favorite article");
@@ -189,7 +197,8 @@ exports.unfavorite = async (req, res, next) => {
     const loginUser = req.user;
     const id = req.params.id
     const article = await Article.findById(id)
-    const favorite = await Favorite.findOne({ user: loginUser._id, article: article._id })
+    const favorite = await Favorite
+      .findOne({ user: loginUser._id, article: article._id })
 
     if (!favorite) {
       const err = new Error("No article to unfavorite");
