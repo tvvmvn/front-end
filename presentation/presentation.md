@@ -1,5 +1,6 @@
 # 프론트엔드
 
+
 # 목 차
 - 웹개발 개념
 - 프론트엔드와 백엔드
@@ -10,28 +11,36 @@
 # 웹개발 개념
 
 ## 웹
-인터넷을 통해 문서나 기타 자료에 접근할 수 있게 하는 정보 시스템
+commonly known as Web, is an information system enabling documents 
+and otherweb resources to be accessed over the Internet.
 ## 웹개발
-웹페이지 및 그와 관련된 분야 개발
+Web development is the work involved in developing a website 
+for the Internet (World Wide Web) or an intranet(a private network).
 ## 서버와 클라이언트
-클라이언트: 웹페이지를 요청하는 컴퓨터(브라우저)
-서버: 웹페이지를 전송하는 컴퓨터
+Client-server model is a distributed application structure 
+that partitions tasks or workloads 
+between the providers of a resource or service, called servers, 
+and service requesters, called clients.
 
 ![Image](./img/Client-server-model.svg.png)
 
 
 # 프론트엔드와 백엔드
-presentation layer and data access layer
+In software engineering, the terms frontend and backend 
+refer to the separation of concerns between the presentation layer (frontend), 
+and the data access layer (backend) of a piece of software, 
+or the physical infrastructure or hardware.
 
+![Image](./img/frontend-backend.png)
 
 # 프론트엔드 개발 환경
 
 ## 언어
-HTML: 데이터 표시
-CSS: 디자인
-JavaScript: HTML과 CSS를 조작하여 동적인 페이지 구성
+- HTML: 데이터 표시
+- CSS: 디자인
+- JavaScript: HTML과 CSS를 조작하여 동적인 페이지 구성
 ## 라이브러리
-React, Vue, Angular, jQuery
+- React, Vue, Angular
 
 
 # 백엔드 개발 환경
@@ -41,7 +50,6 @@ PHP, Java
 ## DATABASE
 MySQL, MongoDB
 
-![Image](./img/frontend-backend.png)
 
 # 커리큘럼
 
@@ -66,7 +74,7 @@ React
 - 수업방식
 프로젝트 기반
 - 수업자료
-https://github.com/nigrojin/koreaIT 저녁반2
+https://github.com/nigrojin/koreaIT 저녁반(화목화목금)
 - 추천사이트
 W3Schools, Google, stackoverflow
 
