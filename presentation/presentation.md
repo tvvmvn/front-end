@@ -29,7 +29,7 @@ Read (게시물 가져오기)
 Update (게시물 업데이트)
 Delete (게시물 삭제)
 
-[img]
+![Image](./img/frontend-backend.png)
 
 # 커리큘럼
 일 3시간, 월 30시간, 6개월, 총 180시간
