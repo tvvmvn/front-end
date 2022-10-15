@@ -269,6 +269,10 @@
 //   console.log("foo")
 // }
 
+// return
+// const f = () => "foo";
+// console.log(f());
+
 // ### hoisting
 // only on function declaration
 // f()

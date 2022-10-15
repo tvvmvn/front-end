@@ -216,12 +216,13 @@ export default App;
 // }
 
 // Q. Complete DOM with JS Object.
+// const beers = [
+//   {name: "Heineken", origin: "Netherlands"},
+//   {name: "Guinness", origin: "Ireland"},
+//   {name: "Asahi", origin: "Japan"}
+// ]
+
 // function App() {
-//   const beers = [
-//     {name: "Heineken", origin: "Netherlands"},
-//     {name: "Guinness", origin: "Ireland"},
-//     {name: "Asahi", origin: "Japan"}
-//   ]
 
 //   const list = beers.map((beer, index) => (
 //     <li key={index}>{beer.name}, {beer.origin}</li>
