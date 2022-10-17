@@ -585,3 +585,32 @@ export default App;
 //     </Beers>
 //   )
 // }
+
+const beers = [
+  {name: "Heineken", origin: "Netherlands"},
+  {name: "Guinness", origin: "Ireland"},
+  {name: "Asahi", origin: "Japan"},
+]
+
+function Beer(props) {
+
+  const beer = props.beer;
+
+  return <li>{beer.name}, {beer.origin}</li>
+}
+
+function App() {
+
+  const list = beers.map((beer, index) => (
+    <Beer key={index} beer={beer} />  
+  ));
+
+  return (
+    <>
+      <h1>Beers</h1>
+      <ul>
+        {list}
+      </ul>
+    </>  
+  )
+}
