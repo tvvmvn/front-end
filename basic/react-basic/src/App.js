@@ -335,25 +335,21 @@ export default App;
 // function C(props) {
 //   console.log(props);
 
-//   const foo = props.foo;
-//   const bar = props.bar;
-//   const baz = props.baz;
+//   const prop1 = props.prop1;
 
-//   return (
-//     <>
-//       <li>{foo}</li>  
-//       <li>{bar}</li>  
-//       <li>{baz}</li>
-//     </>
-//   )
+//   return <li>{prop1}</li>  
 // }
 
 // function App() {
-
 //   return (
-//     <ul>
-//       <C foo="Foo" bar="Bar" baz="Baz" />
-//     </ul>  
+//     <>
+//       <h1>App</h1>
+//       <ul>
+//         <C prop1="Foo" />
+//         <C prop1="Bar" />
+//         <C prop1="Baz" />
+//       </ul>  
+//     </>
 //   )
 // }
 
@@ -361,26 +357,19 @@ export default App;
 // function Beer(props) {
 //   const name = props.name;
 //   const origin = props.origin;
-//   const available = props.available;
 
-//   return (
-//     <ul>
-//       <li>Name: {name}</li>
-//       <li>Origin: {origin}</li>
-//       <li>Available: {available ? "Yes" : "No"}</li>
-//     </ul>
-//   )
+//   return <li>{name}, {origin}</li>
 // }
 
 // function App() {
 //   return (
 //     <>
 //       <h1>Beers</h1>
-//       <Beer
-//         name="Guinness"
-//         origin="Ireland"
-//         available={false}
-//       />
+//       <ul>
+//         <Beer name="Heineken" origin="Netherlands" />
+//         <Beer name="Guinness" origin="Ireland" />
+//         <Beer name="Asahi" origin="Japan" />
+//       </ul>
 //     </>
 //   )
 // }
@@ -393,9 +382,9 @@ export default App;
 
 //   return (
 //     <ul>
-//       <li>{o.prop1}</li>
-//       <li>{o.prop2}</li>
-//       <li>{o.prop3}</li>
+//       <li>Prop1: {o.prop1}</li>
+//       <li>Prop2: {o.prop2}</li>
+//       <li>Prop3: {o.prop3}</li>
 //     </ul>  
 //   )
 // }
@@ -403,12 +392,11 @@ export default App;
 // const o = {prop1: "Foo", prop2: "Bar", prop3: "Baz"}
 
 // function App() {
-
 //   return (
 //     <>
-//       <h1>App</h1>
-//       <C o={o} />  
-//     </>
+//       <h1>O</h1>
+//       <C o={o} />
+//     </>  
 //   )
 // }
 
@@ -421,74 +409,179 @@ export default App;
 //       <li>Name: {beer.name}</li>
 //       <li>Origin: {beer.origin}</li>
 //       <li>Available: {beer.available ? "Yes" : "No"}</li>
-//     </ul>  
+//     </ul>
 //   )
 // }
 
 // const irishBeer = {name: "Guinness", origin: "Ireland", available: false};
 
 // function App() {
-
 //   return (
 //     <>
-//       <h1>Beers</h1>
-//       <Beer beer={irishBeer} />  
-//     </>
-//   )
-// }
-
-// ### Component reusage
-// const arr = ["Foo", "Bar", "Baz"];
-
-// function C(props) {
-//   const item = props.item;
-
-//   return <li>{item}</li>
-// }
-
-// function App() {
-
-//   const list = arr.map((item, index) => (
-//     <C key={index} item={item} />  
-//   ))
-
-//   return (
-//     <ul>
-//       {list}
-//     </ul>  
-//   )
-// }
-
-// Q. Reuse components.
-// const beers = [
-//   {name: "Heineken", origin: "Netherlands"},
-//   {name: "Guinness", origin: "Ireland"},
-//   {name: "Kloud", origin: "S.Korea"},
-// ]
-
-// function Beer(props) {
-//   const beer = props.beer;
-
-//   return <li>{beer.name}, {beer.origin}</li>
-// }
-
-// function App() {
-
-//   const list = beers.map((beer, index) => (
-//     <Beer 
-//       key={index} 
-//       beer={beer} 
-//     />  
-//   ))
-
-//   return (
-//     <>
-//       <h1>Beers</h1>
-//       <ul>
-//         {list}
-//       </ul>
+//       <h1>Beer</h1>
+//       <Beer beer={irishBeer} />
 //     </>  
 //   )
 // }
 
 // ### children props
+// function C(props) {
+//   const children = props.children;
+//   return (
+//     <fieldset>
+//       <legend>C</legend>
+//       {children}
+//     </fieldset>
+//   )
+// }
+
+// function Foo() {
+//   return <div>Foo</div>
+// }
+
+// function Bar() {
+//   return <div>Bar</div>
+// }
+
+// function App() {
+//   return (
+//     <>
+//       <h1>App</h1>
+//       <C>
+//         <Foo />
+//       </C>
+//       <C>
+//         <Bar />
+//       </C>
+//     </>  
+//   )
+// }
+
+// Q. children props 
+// function Beer(props) {
+//   const children = props.children;
+//   return (
+//     <div style={{borderTop: "1px solid"}}>
+//       {children}
+//     </div>  
+//   )
+// }
+
+// function DutchBeer() {
+//   return (
+//     <>
+//       <h3>Heineken</h3>
+//       <p>Dutch beer</p>
+//     </>
+//   )
+// }
+
+// function IrishBeer() {
+//   return (
+//     <>
+//       <h3>Guinness</h3>
+//       <p>Irish beer</p>
+//     </>
+//   )
+// }
+
+// function App() {
+//   return (
+//     <>
+//       <h1>Beers</h1>
+//       <Beer>
+//         <DutchBeer />
+//       </Beer>
+//       <Beer>
+//         <IrishBeer />
+//       </Beer>
+//     </>
+//   )
+// }
+
+// ### Nested children props
+
+// function Foo(props) {
+//   const children = props.children;
+
+//   return (
+//     <fieldset>
+//       <legend>Foo</legend>
+//       {children}
+//     </fieldset>
+//   )
+// }
+// function Bar(props) {
+//   const children = props.children;
+
+//   return (
+//     <fieldset>
+//       <legend>Bar</legend>
+//       {children}
+//     </fieldset>
+//   )
+// }
+
+// function Baz() {
+//   return <div>Baz</div>
+// }
+
+// function App() {
+//   return (
+//     <Foo>
+//       <Bar>
+//         <Baz />
+//       </Bar>
+//     </Foo>  
+//   )
+// }
+
+// Q. Build component tree as children props
+// function Beers(props) {
+//   const children = props.children;
+//   return (
+//     <fieldset>
+//       <legend>Beers</legend>
+//       {children}
+//     </fieldset>
+//   )
+// }
+
+// function EuropeanBeers(props) {
+//   const children = props.children;
+//   return (
+//     <fieldset>
+//       <legend>European beers</legend>
+//       {children}
+//     </fieldset>
+//   )
+// }
+
+// function AsianBeers(props) {
+//   const children = props.children;
+//   return (
+//     <fieldset>
+//       <legend>Asian beers</legend>
+//       {children}
+//     </fieldset>
+//   )
+// } 
+
+// function App() {
+//   return (
+//     <Beers>
+//       <EuropeanBeers>
+//         <ul>
+//           <li>Heineken</li>
+//           <li>Guinness</li>
+//         </ul>
+//       </EuropeanBeers>
+//       <AsianBeers>
+//         <ul>
+//           <li>Asahi</li>
+//           <li>Kloud</li>
+//         </ul>
+//       </AsianBeers>
+//     </Beers>
+//   )
+// }
