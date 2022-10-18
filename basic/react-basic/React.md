@@ -12,10 +12,10 @@ power mobile apps using ReactNative
 - JSX
 - Component
 Composition, props
-- Hook
-useState, useEffect, useRef, useContext
 - Event
 Button, Form
+- Hook
+useState, useEffect, useRef, useContext
 - Router Basic
 - Router/Auth
 - Fetch data

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useRef, useContext} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -424,6 +424,36 @@ export default App;
 //   )
 // }
 
+// Q. Component loop
+// const beers = [
+//   {name: "Heineken", origin: "Netherlands"},
+//   {name: "Guinness", origin: "Ireland"},
+//   {name: "Asahi", origin: "Japan"},
+// ]
+
+// function Beer(props) {
+
+//   const beer = props.beer;
+
+//   return <li>{beer.name}, {beer.origin}</li>
+// }
+
+// function App() {
+
+//   const list = beers.map((beer, index) => (
+//     <Beer key={index} beer={beer} />  
+//   ));
+
+//   return (
+//     <>
+//       <h1>Beers</h1>
+//       <ul>
+//         {list}
+//       </ul>
+//     </>  
+//   )
+// }
+
 // ### children props
 // function C(props) {
 //   const children = props.children;
@@ -439,19 +469,12 @@ export default App;
 //   return <div>Foo</div>
 // }
 
-// function Bar() {
-//   return <div>Bar</div>
-// }
-
 // function App() {
 //   return (
 //     <>
 //       <h1>App</h1>
 //       <C>
 //         <Foo />
-//       </C>
-//       <C>
-//         <Bar />
 //       </C>
 //     </>  
 //   )
@@ -536,6 +559,34 @@ export default App;
 //   )
 // }
 
+// children
+// function Foo() {
+//   return <li>Foo</li>
+// }
+// function Bar() {
+//   return <li>Bar</li>
+// }
+// function Baz() {
+//   return <li>Baz</li>
+// }
+// function C(props) {
+//   const children = props.children;
+//   return <ul>{children}</ul>
+// }
+// function App() {
+  
+//   return (
+//     <>
+//       <h1>App</h1>
+//       <C>
+//         <Foo />
+//         <Bar />
+//         <Baz />
+//       </C>
+//     </>  
+//   )
+// }
+
 // Q. Build component tree as children props
 // function Beers(props) {
 //   const children = props.children;
@@ -552,7 +603,9 @@ export default App;
 //   return (
 //     <fieldset>
 //       <legend>European beers</legend>
-//       {children}
+//       <ul>
+//         {children}
+//       </ul>
 //     </fieldset>
 //   )
 // }
@@ -562,55 +615,73 @@ export default App;
 //   return (
 //     <fieldset>
 //       <legend>Asian beers</legend>
-//       {children}
+//       <ul>
+//         {children}
+//       </ul>
 //     </fieldset>
 //   )
 // } 
 
+// function DutchBeer() {
+//   return <li>Heineken</li>
+// }
+
+// function IrishBeer() {
+//   return <li>Guinness</li>
+// }
+
+// function JapaneseBeer() {
+//   return <li>Asahi</li>
+// }
+
+// function KoreanBeer() {
+//   return <li>Kloud</li>
+// }
+  
 // function App() {
 //   return (
 //     <Beers>
 //       <EuropeanBeers>
-//         <ul>
-//           <li>Heineken</li>
-//           <li>Guinness</li>
-//         </ul>
+//         <DutchBeer />
+//         <IrishBeer />
 //       </EuropeanBeers>
 //       <AsianBeers>
-//         <ul>
-//           <li>Asahi</li>
-//           <li>Kloud</li>
-//         </ul>
+//         <JapaneseBeer />
+//         <KoreanBeer />
 //       </AsianBeers>
 //     </Beers>
 //   )
 // }
 
-const beers = [
-  {name: "Heineken", origin: "Netherlands"},
-  {name: "Guinness", origin: "Ireland"},
-  {name: "Asahi", origin: "Japan"},
-]
+// # Event
+// function App() {
 
-function Beer(props) {
+//   function handleClick(e) {
+//     console.log(e.target);
+//   }
 
-  const beer = props.beer;
+//   return (
+//     <>
+//       <h1>App</h1>
+//       <button onClick={handleClick}>Button</button>
+//     </>  
+//   )
+// }
 
-  return <li>{beer.name}, {beer.origin}</li>
-}
+// # Hook
+
+// ### useState
 
 function App() {
-
-  const list = beers.map((beer, index) => (
-    <Beer key={index} beer={beer} />  
-  ));
-
+  const [state, setState] = useState("initial state");
+  
   return (
     <>
-      <h1>Beers</h1>
-      <ul>
-        {list}
-      </ul>
+      <h1>App</h1>
+      <p>state: {state}</p>
+      <button onClick={() => setState("Foo")}>
+        Button
+      </button>
     </>  
   )
 }

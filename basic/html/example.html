@@ -11,66 +11,65 @@
 <body>
   <!-- HEADER -->
   <header>
-    <h1>현대자동차 공식홈페이지</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <h1>WORLD-BEER</h1>
+    <p>Beers from all over the world</p>
   </header>
+
+  <!-- VIDEO -->
 
   <!-- NAVIGATION -->
   <nav>
-    <h2>메뉴</h2>
+    <h2>Menu</h2>
     <ul>
-      <li>현대자동차 쇼케이스</li>
-      <li>모델 소개</li>
-      <li>모델 비교표</li>
+      <li>About</li>
+      <li>Table</li>
       <li>Contact</li>
     </ul>
   </nav>
 
-  <hr>
-
-  <!-- CONTENT -->
-  <!-- 쇼케이스 -->
+  <!-- ABOUT -->
   <section>
-    <h2>현대자동차 쇼케이스</h2>
-    <iframe src="" frameborder="0"></iframe>
+    <h2>About</h2>
+    <img src="" alt="about" width="200">
+    <p>
+      <span style="font-weight: bold">Lorem</span> ipsum dolor sit, <br>
+      amet consectetur adipisicing elit. <br>
+      Quae quisquam, similique est ipsam <br>
+      sequi magni excepturi illo quod
+    </p>
   </section>
 
-  <!-- 모델 소개 -->
+  <!-- TABLE -->
   <section>
-    <h2>모델소개</h2>
-    <article>
-      <h3>제네시스</h3>
-      <div>
-        <img src="../../img/bunny.jpeg" alt="제네시스" width="200">
-        <p>
-          <span style="font-weight: bold">Lorem ipsum dolor sit amet consectetur,</span> adipisicing elit.
-          Nesciunt quaerat alias itaque, ratione, iste quidem officia obcaecati.
-          <br>
-          dignissimos sapiente asperiores dolorem distinctio nostrum fuga dolorum
-          maxime voluptatem deleniti recusandae minus.
-        </p>
-      </div>
-    </article>
-  </section>
-
-  <!-- 모델 비교표 -->
-  <section>
-    <h2>모델 비교표</h2>
+    <h2>Table</h2>
     <table border="1">
       <thead>
         <tr>
-          <th>이름</th>
-          <th>컬러</th>
-          <th>연비</th>
-          <th>가격</th>
+          <th>Name</th>
+          <th>Origin</th>
+          <th>Available</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>제네시스</td>
-          <td>블랙, 화이트</td>
-          <td>15/l</td>
-          <td>1000원</td>
+          <td>Heineken</td>
+          <td>Netherlands</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Guinness</td>
+          <td>Ireland</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Asahi</td>
+          <td>Japan</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Kloud</td>
+          <td>S.Korea</td>
+          <td>Yes</td>
         </tr>
       </tbody>
     </table>
@@ -78,51 +77,37 @@
 
   <!-- CONTACT -->
   <section>
-    <div class="">
-      <h2>오시는 길</h2>
-      <iframe src="" frameborder="0"></iframe>
-    </div>
-
     <form action="">
-      <h2>연락하기</h2>
+      <h2>Contact</h2>
       <div>
-        <label for="name">성함</label>
-        <input type="text" id="name">
+        <label for="name">Name</label><br>
+        <input type="text" id="name" placeholder="Enter name">
       </div>
       <div>
-        <label for="email">이메일</label>
-        <input type="text" id="email">
+        <label for="email">Email</label><br>
+        <input type="text" id="email" placeholder="Enter email">
       </div>
       <div>
-        <label for="gender">성별</label>
-        <select name="" id="gender">
-          <option value="male">남</option>
-          <option value="female">여</option>
-          <option value="private">비공개</option>
-        </select>
-      </div>
-      <div>
-        <textarea name="" id="" cols="30" rows="10" placeholder="내용을 입력하세요"></textarea>
+        <label for="message">Message</label><br>
+        <textarea name="" id="message" cols="30" rows="5" placeholder="Enter message"></textarea>
       </div>
       <div>
         <input type="checkbox" name="" id="agree">
         <label for="agree">
-          <a href="#">개인정보 처리방침</a>에 동의합니다
+          I agree with <a href="#" target="_blank">The privacy & Terms policy</a>
         </label>
       </div>
       <div>
-        <button type="submit">전송하기</button>
+        <button type="submit">Send</button>
       </div>
     </form>
   </section>
 
-
-  <hr>
+  <!-- MAP -->
 
   <!-- FOOTER -->
   <footer>
-    <p>2022 &copy; 현대자동차</p>
+    <small>2022 &copy; WORLD-BEER All rights reserved</small>
   </footer>
 </body>
-
 </html>
