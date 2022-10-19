@@ -11,11 +11,13 @@ power mobile apps using ReactNative
 # Basic
 - JSX
 - Component
-Composition, props
+Composition
+- props
+useContext
 - Event
-Button, Form
-- Hook
-useState, useEffect, useRef, useContext
+button, form
+- Manage DOM
+useState, useRef, useEffect
 - Router Basic
 - Router/Auth
 - Fetch data

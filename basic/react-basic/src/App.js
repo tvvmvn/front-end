@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef, useContext} from 'react';
+import React, {useState, useEffect, useRef, useContext, createContext} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -653,35 +653,336 @@ export default App;
 //   )
 // }
 
-// # Event
-// function App() {
+// ### pass props to children 
 
+// const FooContext = createContext();
+
+// function Foo(props) {
+//   const children = props.children;
+
+//   // local scope
+//   const foo = "FOO";
+
+//   return (
+//     <fieldset>
+//       <legend>Foo</legend>
+//       <FooContext.Provider value={foo}>
+//         {children}
+//       </FooContext.Provider>
+//     </fieldset>  
+//   )
+// }
+
+// function Bar(props) {
+//   const children = props.children;
+//   return (
+//     <fieldset>
+//       <legend>Bar</legend>
+//       {children}
+//     </fieldset>  
+//   )
+// }
+
+// function Baz() {
+//   const foo = useContext(FooContext);
+
+//   return <div>{foo}</div>
+// }
+
+// function App() {
+//   return (
+//     <Foo>
+//       <Bar>
+//         <Baz />
+//       </Bar>
+//     </Foo>  
+//   )
+// }
+
+// Q. Beers context
+// const BeersContext = createContext();
+
+// function Beers({children}) {
+
+//   const availability = {
+//     guinness: false,
+//     asahi: true,
+//     kloud: true
+//   }
+
+//   return (
+//     <>
+//       <h1>Beers &#127866;</h1>
+//       <BeersContext.Provider value={availability}>
+//         {children}
+//       </BeersContext.Provider>
+//     </> 
+//   )
+// }
+
+// function EuropeanBeers({children}) {
+//   return (
+//     <div>
+//       <h2>European beers</h2>
+//       {children}
+//     </div>
+//   )
+// }
+
+// function IrishBeer() {
+//   const availability = useContext(BeersContext);
+
+//   return (
+//     <div>
+//       <h3>GUINNESS</h3>
+//       <div>Available: {availability.guinness ? "Yes" : "No"}</div>
+//     </div>  
+//   )
+// }
+
+// function AsianBeers({children}) {
+//   return (
+//     <div>
+//       <h2>Asian beers</h2>
+//       {children}
+//     </div>  
+//   )
+// }
+
+// function JapaneseBeer() {
+//   const availability = useContext(BeersContext);
+
+//   return (
+//     <div>
+//       <h3>ASAHI</h3>
+//       <div>Available: {availability.asahi ? "Yes" : "No"}</div>
+//     </div>  
+//   )
+// }
+
+// function KoreanBeer() {
+//   const availability = useContext(BeersContext);
+
+//   return (
+//     <div>
+//       <h3>KLOUD</h3>
+//       <div>Available: {availability.kloud ? "Yes" : "No"}</div>
+//     </div>  
+//   )
+// }
+
+// function App() {
+//   return (
+//     <Beers>
+//       <EuropeanBeers>
+//         <IrishBeer />
+//       </EuropeanBeers>
+//       <AsianBeers>
+//         <JapaneseBeer />
+//         <KoreanBeer />
+//       </AsianBeers>
+//     </Beers>
+//   )
+// }
+
+// # Event
+// attribute: onEventName={callback}
+
+// ### click event
+// function App() {
 //   function handleClick(e) {
 //     console.log(e.target);
 //   }
 
 //   return (
 //     <>
-//       <h1>App</h1>
+//       <h1>click event</h1>
 //       <button onClick={handleClick}>Button</button>
 //     </>  
 //   )
 // }
 
-// # Hook
+// function App() {
+//   function handleClick(foo) {
+//     console.log(foo);
+//   }
 
-// ### useState
+//   return (
+//     <>
+//       <h1>click event</h1>
+//       <button onClick={() => handleClick("Foo")}>Button</button>
+//     </>  
+//   )
+// }
 
+// function App() {
+//   function handleClick(x) {
+//     console.log(x)
+//   }
+//   return (
+//     <>
+//       <h1>Accordion</h1>
+//       <button onClick={() => handleClick("Foo")}>Foo</button>
+//       <button onClick={() => handleClick("Bar")}>Bar</button>
+//       <button onClick={() => handleClick("Baz")}>Baz</button>
+//     </>  
+//   )
+// }
+
+// ### change event
+// function App() {
+//   function handleChange(e) {
+//     console.log(e.target.value);
+//   }
+
+//   return (
+//     <>
+//       <h1>change</h1>
+//       <input type="text" onChange={handleChange} />
+//     </>  
+//   )
+// }
+
+// Q. multiple change event
+// function App() {
+
+//   function handleChange(e) {
+//     const name = e.target.name;
+//     const value = e.target.value;
+
+//     console.log(name, value)
+//   }
+
+//   return (
+//     <form>
+//       <h1>Login</h1>
+//       <div>
+//         <label htmlFor="username">Username</label>
+//         <input 
+//           type="text" 
+//           id="username"
+//           name="username"       
+//           autoComplete="off"
+//           onChange={handleChange} 
+//         />
+//       </div>
+//       <div>
+//         <label htmlFor="password">Password</label>
+//         <input 
+//           type="password" 
+//           id="password"
+//           name="password" 
+//           autoComplete="off"
+//           onChange={handleChange} 
+//           />
+//       </div>
+//     </form>  
+//   )
+// }
+
+// ### submit event
+// function App() {
+//   function handleSubmit(e) {
+//     e.preventDefault();
+//     console.log("Form submitted");
+//   }
+
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <h1>Form</h1> 
+//       <p>...</p>
+//       <button type="submit">Submit</button>
+//     </form>
+//   )
+// }
+
+// # DOM UPDATE
+// function App() {
+//   // const [state, setState] = useState(initialValue);
+//   // state: a variable in Component
+//   // setState: a method that updates state.
+//   // initialValue: initial value of state.
+//   const [count, setCount] = useState(0);
+//   return (
+//     <>
+//       <h1>{count}</h1>
+//       <button onClick={() => setCount(1)}>
+//         Button
+//       </button>
+//     </>  
+//   )
+// }
+
+// DOM Update without state Hook.
+// function App() {
+//   let count = 0;
+
+//   function handleClick() {
+//     count = 1;
+//     console.log(count);
+//   }
+
+//   // DOM을 업데이트하기 위해서는 VirtualDOM을 다시 return해야 한다
+//   // VirtualDOM을 다시 return하기 위해서는 App컴포넌트를 다시 실행해야 한다
+//   // setState는 App컴포넌트를 다시 실행한다
+//   // DOM이 업데이트된다.
+
+//   return (
+//     <>
+//       <h1>{count}</h1>
+//       <button onClick={handleClick}>Button</button>
+//     </>  
+//   )
+// }
+
+// function App() {
+//   console.log("executed");
+//   const [count, setCount] = useState(0);
+//   return (
+//     <>
+//       <h1>{count}</h1>
+//       <button onClick={() => setCount(count + 1)}>
+//         Add
+//       </button>
+//     </>  
+//   )
+// }
+
+// Q. Subscribe Button
 function App() {
-  const [state, setState] = useState("initial state");
-  
+  const [subscribe, setSubscribe] = useState(false);
+
   return (
     <>
-      <h1>App</h1>
-      <p>state: {state}</p>
-      <button onClick={() => setState("Foo")}>
-        Button
+      <h1>Subscribe</h1>
+      <button onClick={() => setSubscribe(!subscribe)}>
+        {!subscribe ? "Subscribe" : "Subscribed"}
       </button>
     </>  
   )
 }
+
+// function App() {
+//   const [arr, setArr] = useState([]);
+
+//   function handleClick(e) {
+//     const newItem = Math.random();
+//     setArr([...arr, newItem]);
+//   }
+
+//   const list = arr.map((item, index) => (
+//     <li key={index}>{item}</li>  
+//   ))
+  
+//   return (
+//     <>
+//       <h1>List</h1>
+//       <button onClick={handleClick}>
+//         Add
+//       </button>
+//       <ul>
+//         {list}
+//       </ul>
+//     </>  
+//   )
+// }
