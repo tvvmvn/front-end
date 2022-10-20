@@ -949,18 +949,18 @@ export default App;
 // }
 
 // Q. Subscribe Button
-function App() {
-  const [subscribe, setSubscribe] = useState(false);
+// function App() {
+//   const [subscribe, setSubscribe] = useState(false);
 
-  return (
-    <>
-      <h1>Subscribe</h1>
-      <button onClick={() => setSubscribe(!subscribe)}>
-        {!subscribe ? "Subscribe" : "Subscribed"}
-      </button>
-    </>  
-  )
-}
+//   return (
+//     <>
+//       <h1>Subscribe</h1>
+//       <button onClick={() => setSubscribe(!subscribe)}>
+//         {!subscribe ? "Subscribe" : "Subscribed"}
+//       </button>
+//     </>  
+//   )
+// }
 
 // function App() {
 //   const [arr, setArr] = useState([]);

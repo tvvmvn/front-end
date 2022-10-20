@@ -8,183 +8,267 @@
 </head>
 <body>
 
-  <!-- ### Selector -->
-  
-  <!-- <style>
-    #title {
-      text-transform: uppercase;
-    }
+  <!-- # Selector -->
+
+  <!-- <h1>element selector</h1>
+
+  <style>
     ul {
       border: 1px solid;
     }
     li {
-      text-decoration: underline;
+      text-decoration: line-through;
     }
   </style>
 
-  <h1>CSS Selector</h1>
-  <p>Element</p>
   <ul>
     <li>list item</li>
     <li>list item</li>
     <li>list item</li>
   </ul> -->
 
-  <!-- <style>
-    /* id selector */
-    #list {
+  <!-- <h1>class selector</h1>
+
+  <style>
+    ul {
       border: 1px solid;
     }
-    /* class selector */
-    .text-bold {
-      font-weight: bold;
+    .line-through {
+      text-decoration: line-through;
     }
-    .underline {
-      text-decoration: underline;
+    .gray {
+      color: #888;
     }
   </style>
 
-  <h1>CSS Selector</h1>
-  <p>id, class</p>
-  <ul id="list">
-    <li id="identity" class="">list item</li>
-    <li class="underline">list item</li>
-    <li class="text-bold underline">list item</li>
+  <ul>
+    <li class="line-through">list item</li>
+    <li class="line-through gray">list item</li>
+    <li>list item</li>
   </ul> -->
 
-  <!-- <style>
-    ul li {
-      text-decoration: underline;
+  <!-- <h1>id selector</h1>
+
+  <style>
+    ul {
+      border: 1px solid;
     }
+    #first {
+      text-decoration: line-through
+    }
+  </style>
+
+  <ul>
+    <li id="first">list item</li>
+    <li>list item</li>
+    <li>list item</li>
+  </ul> -->
+
+  <!-- <h1>children selector</h1>
+
+  <style>
     ul a {
       color: #000;
     }
+    li a {
+      text-decoration: none;
+    }
   </style>
 
-  <h1>CSS Selector</h1>
-  <p>children</p>
+  <nav>
+    <ul>
+      <li>
+        <a href="">Link</a>
+      </li>
+      <li>
+        <a href="">Link</a>
+      </li>
+      <li>
+        <a href="">Link</a>
+      </li>
+    </ul>
+  </nav> -->
 
+  <!-- <h1>Q. CSS Selector</h1>
+  <p>class, children selector</p>
+
+  <style>
+    ul {
+      border: 1px solid;
+    }
+    ul li {
+      text-transform: uppercase;
+    }
+    .line-through {
+      text-decoration: line-through;
+    }
+    .gray {
+      color: #888;
+    }
+    .font-bold {
+      font-weight: bold;
+    }
+  </style>
+
+  <h3>Beers</h3>
   <ul>
-    <li>
-      <a href="">Link</a>
-    </li>
-    <li>
-      <a href="">Link</a>
-    </li>
-    <li>
-      <a href="">Link</a>
-    </li>
+    <li>Heineken</li>
+    <li class="line-through gray">Guinness</li>
+    <li>Asahi</li>
+    <li class="font-bold">Kloud</li>
   </ul> -->
 
-  <!-- ### Pseudo class and Pseudo elements -->
+  <!-- # Pseudo class -->
 
-  <!-- <style>
+  <!-- <h1>Pseudo class</h1>
+  <p>
+    pseudo class is a keyword added to a selector 
+    that specifies a special state of the selected element(s)
+    <br>
+    선택자 뒤에 붙는 키워드이다.
+    선택된 요소의 특별한 상태를 나타낸다.
+  </p>
+
+  <style>
+    li:nth-child(2) {
+      font-weight: bold;
+    }
     li:hover {
       text-decoration: underline;
     }
-    li:nth-child(2) {
-      font-style: italic;
-    }
-    input:focus {
-      outline: 2px solid #f00;
-    }
   </style>
 
-  <h1>Pseudo class</h1>
-
   <ul>
-    <li class="">list item</li>
-    <li class="">list item</li>
-    <li class="">
-      <input type="text">
-    </li>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
   </ul> -->
 
-  <!-- <style>
-    ul {
-      list-style-type: none;
-    }
+  <!-- # Pseudo element -->
+
+  <!-- <h1>Pseudo element</h1>
+  <p>
+    pseudo-element is a keyword added to a selector that
+    lets you style a specific part of the selected element(s).
+    <br>
+    선택자 뒤에 붙는 키워드이다.
+    선택된 요소의 특정 부분에 스타일을 줄 수 있게 한다.
+  </p>
+
+  <style>
     li::before {
-      content: "{";
-      color: #888;
+      content: "{"
     }
     li::after {
-      content: "}";
-      color: #888;
+      content: "}"
     }
   </style>
 
-  <h1>Pseudo element</h1>
-
   <ul>
-    <li class="">list item</li>
-    <li class="">list item</li>
-    <li class="">list item</li>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
   </ul> -->
 
-  <!-- ### CSS Unit -->
+  <!-- <h1>Q. Pseudo element</h1>
+
+  <style>
+    li::marker {
+      color: #888;
+    }
+    .after-content::after {
+      content: "(soldout)";
+      color: red;
+    }
+  </style>
+
+  <ul>
+    <li class="after-content">Heineken</li>
+    <li class="after-content">Guinness</li>
+    <li>Kloud</li>
+  </ul> -->
+
+  <!-- # CSS Unit -->
 
   <!-- <style>
     ul {
       font-size: 1.5rem;
     }
-    .unit-px {
+    .px {
       font-size: 16px;
     }
-    .unit-rem {
+    .rem {
       font-size: 1rem;
     }
-    .unit-em {
+    .em {
       font-size: 1em;
     }
-    .unit-percent {
+    .percent {
       font-size: 100%;
     }
-    .unit-vw {
-      font-size: 5vw;
+    .vw {
+      font-size: 10vw;
     }
-    .unit-vh {
-      font-size: 5vh;
+    .vh {
+      font-size: 10vh;
     }
   </style>
 
   <h1>CSS Unit</h1>
   <ul>
-    <li class="unit-px">list item</li>
-    <li class="unit-rem">list item</li>
-    <li class="unit-em">list item</li>
-    <li class="unit-percent">list item</li>
-    <li class="unit-vw">list item</li>
-    <li class="unit-vh">list item</li>
+    <li class="px">font-size: 16px</li>
+    <li class="rem">font-size: 1rem</li>
+    <li class="em">font-size: 1em;</li>
+    <li class="percent">font-size: 100%;</li>
+    <li class="vw">font-size: 10vw;</li>
+    <li class="vh">font-size: 10vh;</li>
   </ul> -->
 
-  <!-- ### Typhography: Font -->
+  <!-- # Typhography: Font -->
 
   <!-- <style>
+    .text-normal {
+      font-weight: 400;
+    }
     .text-bold {
       font-weight: 700;
     }
-    .text-italic {
+    .not-italic {
+      font-style: normal;
+    }
+    .italic {
       font-style: italic;
     }
+    .text-base {
+      font-size: 1rem;
+    }
     .text-xl {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
     }
   </style>
 
-  <h1>Font</h1>
+  <h1>Typography: Font</h1>
 
   <ul>
-    <li class="text-bold">list item</li>
-    <li class="text-italic">list item</li>
-    <li class="text-xl">list item</li>
+    <li class="text-normal">font weight: normal</li>
+    <li class="text-bold">font weight: bold</li>
+    <li class="not-italic">text style: normal</li>
+    <li class="italic">text style: italic</li>
+    <li class="text-base">font size: 1rem</li>
+    <li class="text-xl">font size: 1.5rem</li>
   </ul> -->
 
-  <!-- ### Typhography: Text -->
+  <!-- # Typhography: Text -->
 
   <!-- <style>
+    .text-left {
+      text-align: left;
+    }
     .text-center {
       text-align: center;
+    }
+    .tracking-normal {
+      letter-spacing: 0em;
     }
     .tracking-widest {
       letter-spacing: 0.1em;
@@ -198,32 +282,64 @@
     }
   </style>
   
-  <h1>Text</h1>
+  <h1>Typography: Text</h1>
 
   <ul>
-    <li class="">list item</li>
-    <li class="text-center">list item</li>
-    <li class="tracking-widest">list item</li>
-    <li class="leading-none">list <br> item</li>
-    <li class="leading-8">list <br> item</li>
+    <li class="text-left">text align: left</li>
+    <li class="text-center">text align: center</li>
+    <li class="tracking-normal">letter spacing: normal</li>
+    <li class="tracking-widest">letter spacing: 0.1em</li>
+    <li class="leading-none">line height: <br> normal</li>
+    <li class="leading-8">line-height: <br> 1rem</li>
   </ul> -->
 
-  <!-- ### Color -->
+  <!-- <h1>Q. Text</h1>
+
+  <style>
+    .tracking-widest {
+      letter-spacing: 0.1rem;
+    }
+    .leading-8 {
+      line-height: 2rem;
+    }
+    .text-center {
+      text-align: center;
+    }
+    .italic {
+      font-style: italic;
+    }
+  </style>
+
+  <h3 class="text-center tracking-widest">GUINNESS</h3>
+  <p class="text-center leading-8">
+    Lorem ipsum dolor sit amet consectetur <br> 
+    adipisicing elit. Fugit temporibus at voluptatum esse, <br>
+    expedita quis error. Quis, repellat aliquid consequuntur <br>
+    et mollitia, neque eos, iure in quia iusto nobis sequi.
+  </p>
+  <p class="text-center italic">- Dublin, Ireland</p> -->
+
+  <!-- # Color -->
 
   <!-- <style>
     li:first-child {
+      /* name */
       color: red;
     }
     li:nth-child(2) {
+      /* rgb(r g b) */
       color: rgb(255 0 0)
     }
     li:nth-child(3) {
+      /* rgba(r g b / opacity) */
       color: rgba(255 0 0 / 0.5)
     }
     li:nth-child(4) {
+      /* #rrggbb */
       color: #ff0000;
     }
     li:last-child {
+      /* #rgb */
       color: #f00;
     }
   </style>
@@ -235,9 +351,10 @@
     <li>list item</li>
     <li>list item</li>
     <li>list item</li>
+    <li>list item</li>
   </ul> -->
 
-  <!-- ### Border -->
+  <!-- # Border -->
 
   <!-- <style>
     .item {
@@ -248,43 +365,43 @@
     .border {
       border-width: 1px;
       border-style: solid;
-      border-color: #ddd;
+      border-color: #000;
+      /* border: 1px solid #000; */
     }
     .border-t {
       border-top-width: 1px;
       border-top-style: solid;
-      border-top-color: #ddd;
+      border-top-color: #000;
+      /* border-top: 1px solid #000; */
     }
-    .border-r {
-      border-right-width: 1px;
-      border-right-style: solid;
-      border-right-color: #ddd;
-    }
-    .border-b {
-      border-bottom-width: 1px;
-      border-bottom-style: solid;
-      border-bottom-color: #ddd;
-    }
-    .border-l {
+    .border-x {
       border-left-width: 1px;
       border-left-style: solid;
-      border-left-color: #ddd;
+      border-left-color: #000;
+      /* border-left: 1px solid #000; */
+
+      border-right-width: 1px;
+      border-right-style: solid;
+      border-right-color: #000;
+      /* border-right: 1px solid #000; */
     }
   </style>
 
   <h1>Border</h1>
+  <p>border of element</p>
 
   <div class="container">
-    <div class="item border"></div>
-    <div class="item border-t"></div>
-    <div class="item border-r"></div>
-    <div class="item border-b"></div>
-    <div class="item border-l"></div>
+    <div class="item border">border</div>
+    <div class="item border-t">border top</div>
+    <div class="item border-x">border x</div>
   </div> -->
 
-  <!-- ### Padding -->
+  <!-- # Padding -->
   
-  <!-- <style>
+  <!-- <h1>Padding</h1>
+  <p>space inside element</p>
+
+  <style>
     .item {
       width: 100px;
       height: 100px;
@@ -304,15 +421,18 @@
   </style>
 
   <div class="container">
-    <div class="item">item</div>
-    <div class="item p-2">item</div>
-    <div class="item pt-2">item</div>
-    <div class="item px-2">item</div>
+    <div class="item">padding 0</div>
+    <div class="item p-2">padding all</div>
+    <div class="item pt-2">padding top</div>
+    <div class="item px-2">padding left/right</div>
   </div> -->
 
-  <!-- ### Margin -->
+  <!-- # Margin -->
 
-  <!-- <style>
+  <!-- <h1>Margin</h1>
+  <p>space outside element</p>
+
+  <style>
     .item {
       width: 100px;
       height: 100px;
@@ -320,67 +440,147 @@
       display: inline-block;
     }
     .m-2 {
-      margin: 0.5rem;
+      margin: 1rem;
     }
     .mt-2 {
-      margin-top: 0.5rem;
+      margin-top: 1rem;
     }
     .mx-2 {
-      margin-left: 0.5rem;
-      margin-right: 0.5rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
     }
   </style>
 
   <div class="container">
-    <div class="item"></div>
-    <div class="item m-2"></div>
-    <div class="item mt-2"></div>
-    <div class="item mx-2"></div>
+    <div class="item">margin 0</div>
+    <div class="item m-2">margin all</div>
+    <div class="item mt-2">margin top</div>
+    <div class="item mx-2">margin left/right</div>
   </div> -->
 
-  <!-- ### Display: block, inline-block, inline -->
+  <!-- # Display -->
+  <!-- block, inline-block, inline, none -->
 
-  <!-- <style>
-  /* 다른 element와의 관계를 보여준다 */
-  hr {
-    margin: 0;
+  <!-- <h1>Display</h1>
+  <p>display: block</p>
+
+  <style>
+  .container {
+    background-color: #ddd;
   }
-  div {
-    padding: 10px;
-    margin: 10px;
+  .item {
+    border: 1px dashed;
+  }
+  .block {
+    /* div, p, form */
+    display: block;
+  }
+  </style>
+
+  <div class="container">
+    <div class="item block">block</div>
+    <div class="item block">block</div>
+    <div class="item block">block</div>
+  </div> -->
+
+  <!-- <h1>Display</h1>
+  <p>block, width</p>
+
+  <style>
+    .container {
+      background-color: #ddd;
+    }
+    .item {
+      width: 100px;
+      border: 1px dashed;
+    }
+  </style>
+
+  <div class="container">
+    <div class="item">block</div>
+    <div class="item">block</div>
+    <div class="item">block</div>
+  </div> -->
+
+  <!-- <h1>Display</h1>
+  <p>display: inline-block</p>
+
+  <style>
+  .container {
+    background-color: #ddd;
+  }
+  .item {
     border: 1px dashed;
   }
   .inline-block {
+    /* button, input, img */
     display: inline-block;
   }
-  .block {
-    display: block;
+  </style>
+
+  <div class="container">
+    <div class="item inline-block">inline-block</div>
+    <div class="item inline-block">inline-block</div>
+  </div> -->
+
+  <!-- <h1>Display</h1>
+  <p>display: inline-block, width</p>
+
+  <style>
+  .container {
+    background-color: #ddd;
+  }
+  .item {
+    width: 100px;
+    border: 1px dashed;
+  }
+  .inline-block {
+    /* button, input, img */
+    display: inline-block;
+  }
+  </style>
+
+  <div class="container">
+    <div class="item inline-block">inline-block</div>
+    <div class="item inline-block">inline-block</div>
+  </div> -->
+
+  <!-- <h1>Display</h1>
+  <p>display: inline</p>
+
+  <style>
+  .container {
+    background-color: #ddd;
+  }
+  .item {
+    border: 1px dashed;
+    width: 100px;
   }
   .inline {
+    /* span, a */
+    /* for typhography(font, text) */
+    /* not for layout:
+      width, height not work.
+      margin y-axis not work.
+      padding y-axis not work.
+    */
     display: inline;
   }
   </style>
 
-  <hr>
-  <div class="inline-block">inline-block</div>
-  <div class="inline-block">inline-block</div>
-  <hr>
-  <div class="block">Div</div>
-  <div class="block">Div</div>
-  <hr>
-  <div class="inline">inline</div>
-  <div class="inline">inline</div>
-  <hr> -->
+  <div class="container">
+    <div class="item inline">inline</div>
+    <div class="item inline">inline</div>
+  </div> -->
 
-  <!-- <style>
+  <!-- <h1>Display</h1>
+  <p>none</p>
+
+  <style>
     .item {
-      width: 100px;
-      height: 100px;
       border: 1px dashed;
-    }
-    .block {
-      /* default */
-      display: block;
+      display: inline-block;
+      width: 100px;
     }
     .none {
       display: none;
@@ -388,11 +588,37 @@
   </style>
 
   <div class="container">
-    <div class="item none">display: none</div>
-    <div class="item block">display: block</div>
+    <div class="item block">block</div>
+    <div class="item none">none</div>
+    <div class="item block">block</div>
   </div> -->
 
-  <!-- ### box-sizing -->
+  <!-- <h1>Q.</h1>
+
+  <style>
+    .container {
+      border: 1px solid;
+    }
+    .item {
+      width: 50px;
+      height: 100px;
+      display: inline-block;
+    }
+    .item:nth-child(1) {
+      background-color: green;      
+    }
+    .item:nth-child(3) {
+      background-color: red;
+    }
+  </style>
+
+  <div class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div> -->
+ 
+  <!-- # box-sizing -->
 
   <!-- <style>
     .container {
@@ -418,7 +644,7 @@
     <div class="item border-box">100 x 100</div>
   </div> -->
 
-  <!-- ### vertical align -->
+  <!-- # vertical align -->
 
   <!-- <style>
     .container {
@@ -451,7 +677,7 @@
     <div class="item"></div>
   </div> -->
 
-  <!-- ### white-space -->
+  <!-- # white-space -->
 
   <!-- how white-space(공백) inside an element is handled -->
 
@@ -524,7 +750,7 @@
     Quasi eveniet inventore aperiam repellat ad, beatae pariatur accusantium quae consequatur incidunt! Vel, ad aperiam!
   </div> -->
 
-  <!-- ### visiblility -->
+  <!-- # visiblility -->
 
   <!-- <style>
     .container div {
@@ -546,7 +772,7 @@
     <div class="visible">visible</div>
   </div> -->
 
-  <!-- ### overflow -->
+  <!-- # overflow -->
 
   <!-- <style>
     div {
@@ -593,7 +819,8 @@
     et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
   </div> -->
 
-  <!-- ### Width -->
+  <!-- # Width -->
+  <!-- with display block -->
 
   <!-- <style>
     div {
@@ -636,7 +863,7 @@
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id amet hic architecto deserunt. 
   </div> -->
 
-  <!-- ### Height -->
+  <!-- # Height -->
 
   <!-- <style>
     div {
@@ -687,7 +914,7 @@
   </div> -->
   
 
-  <!-- ### position -->
+  <!-- # position -->
 
   <!-- <style>
     .item {
@@ -735,7 +962,7 @@
     <div class="item"></div>
   </div> -->
   
-  <!-- ### transform -->
+  <!-- # transform -->
   <!-- translate, scale, rotate, skew -->
 
   <!-- <style>
@@ -782,7 +1009,7 @@
     <div class="item"></div>
   </div> -->
 
-  <!-- ### float -->
+  <!-- # float -->
 
   <!-- <style>
     .left, .right {
@@ -870,7 +1097,7 @@
       Aliquid maiores ut quia? Nisi nostrum et eum!</p>
   </div> -->
 
-  <!-- ### Flex -->
+  <!-- # Flex -->
 
   <!-- <style>
     .container {
@@ -1425,7 +1652,7 @@
     </div>
   </div> -->
 
-  <!-- ### grid -->
+  <!-- # grid -->
 
   <!-- <style>
     .grid {
@@ -1462,7 +1689,7 @@
     <div class="item">12</div>
   </div> -->
 
-  <!-- ### Responsive with @media keyword -->
+  <!-- # Responsive with @media keyword -->
 
   <!-- <style>
     /* Mobile first */
@@ -1506,7 +1733,7 @@
     </p>
   </div> -->
 
-  <!-- ### image: img tag and background-image -->
+  <!-- # image: img tag and background-image -->
 
   <!-- <style>
     .container {
