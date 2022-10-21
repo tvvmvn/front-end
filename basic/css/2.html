@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<!-- # float -->
+
+  <!-- <style>
+    .left, .right {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed;
+    }
+    .left  {
+      float: left;
+    }
+    .right {
+      float: right;
+    }
+  </style>
+
+  <div class="container">
+    <div class="left">Image</div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Itaque animi libero similique porro aperiam voluptate molestiae voluptatibus, atque amet ex, 
+      debitis distinctio recusandae illum inventore quae assumenda facilis, aspernatur obcaecati!
+    </p>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="right">Image</div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Itaque animi libero similique porro aperiam voluptate molestiae voluptatibus, atque amet ex, 
+      debitis distinctio recusandae illum inventore quae assumenda facilis, aspernatur obcaecati!
+    </p>
+  </div> -->
+
+  <!-- <style>
+    .container {
+      background-color: #ddd;
+    }
+    .container > div {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed;
+      width: 33.33333%;
+      box-sizing: border-box;
+    }
+    .left {
+      float: left;
+    }
+  </style>
+
+  <div class="container">
+    <div class="left"></div>
+    <div class="left"></div>
+    <div class="left"></div>
+  </div> -->
+
+  <!-- <style>
+    .float .left {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed;
+    }
+    .left {
+      float: left;
+    }
+    .clear {
+      clear: left;
+    }
+  </style>
+
+  <div class="container">
+    <h1>Heading 1</h1>
+    <div class="float">
+      <div class="left"></div>
+      <div class="left"></div>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Heading 1</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+      Iusto voluptate culpa cumque id omnis et maxime ab doloribus, fugiat velit, ipsam officia? 
+      Aliquid maiores ut quia? Nisi nostrum et eum!</p>
+  </div> -->
+
+<!-- # Flex -->
+
+  <!-- <style>
+    .container {
+      background-color: #ddd;
+      display: flex;
+    }
+    .item {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed;
+    }
+  </style>
+
+  <div class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div> -->
+
+  <!-- <style>
+    /* flex container properties: */
+    
+    /* - */
+    /* # flex-direction(row): direction of the flexible items */
+    /* row|row-reverse|column|column-reverse|initial|inherit */
+
+    /* # flex-wrap(nowrap): the flexible items should wrap or not */
+    /* nowrap|wrap|wrap-reverse|initial|inherit; */
+
+    /* # flex-flow(row nowrap): flex-direction / flex-wrap */
+
+    /* # justify-content(flex-start): align the flex items */
+    /* flex-start|flex-end|center|space-between|space-around|space-evenly|initial|inherit; */
+
+    /* # align-items(stretch): alignment for items inside the flexible container */
+    /* stretch|center|flex-start|flex-end|baseline|initial|inherit; */
+
+    /* # align-content(stretch): align the flex lines */
+    /* stretch|center|flex-start|flex-end|space-between|space-around|initial|inherit; */
+
+
+    /* flex item properties: */
+
+    /* - */
+    /* # order(0): order of the flex items */
+    /* number|initial|inherit */
+
+    /* # flex-grow(0): how much the item will grow relative to the rest of the flexible items inside the same container */
+    /* number|initial|inherit */
+
+    /* # flex-shrink(1): how the item will shrink relative to the rest of the flexible items inside the same container */
+    /* number|initial|inherit; */
+
+    /* # flex-basis(auto): initial length of a flexible item */
+    /* number|auto|initial|inherit */
+
+    /* # flex: flex-grow / flow-shrink / flex-basis */
+
+    /* # align-self(auto): alignment for the selected item inside the flexible container. */
+    /* auto|stretch|center|flex-start|flex-end|baseline|initial|inherit; */
+  </style> -->
+
+  <!-- flex container properties -->
+  <!-- flex direction -->
+  
+  <!-- <style>
+    .flex {
+      display: flex;
+      background-color: #ddd;
+    }
+    .flex-row {
+      flex-direction: row;
+    }
+    .flex-col {
+      flex-direction: column;
+    }
+    .item {
+      border: 1px dashed;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+
+  <div class="flex flex-row">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <hr>
+
+  <div class="flex flex-col">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div> -->
+
+  <!-- flex wrap -->
+
+  <!-- <style>
+    .flex {
+      display: flex;
+      background-color: #ddd;
+    }
+    .flex-wrap {
+      flex-wrap: wrap
+    }
+    .flex-nowrap {
+      flex-wrap: nowrap
+    }
+    .item {
+      border: 1px dashed;
+      width: 200px;
+      height: 100px;
+    }
+  </style>
+  
+  <div class="flex flex-nowrap">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div> 
+  
+  <hr>
+
+  <div class="flex flex-wrap">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div> -->
+
+  <!-- justify-content -->
+
+  <!-- <style>
+    .flex {
+      display: flex;
+      background-color: #ddd;
+    }
+    .item {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed;
+    }
+    .justify-start {
+      justify-content: flex-start;
+    }
+    .justify-center {
+      justify-content: center;
+    }
+    .justify-between {
+      justify-content: space-between;
+    }
+    .justify-end {
+      justify-content: flex-end;
+    }
+  </style>
+
+  <div class="flex justify-start">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <hr>
+
+  <div class="flex justify-center">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <hr>
+
+  <div class="flex justify-between">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <hr>
+
+  <div class="flex justify-end">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div> -->
+
+  <!-- <style>
+    .flex {
+      display: flex;
+      flex-direction: column;
+      background-color: #ddd;
+      height: 200px;
+    }
+    .item {
+      width: 50px;
+      height: 50px;
+      border: 1px dashed;
+    }
+    .justify-start {
+      justify-content: flex-start;
+    }
+    .justify-center {
+      justify-content: center;
+    }
+    .justify-between {
+      justify-content: space-between;
+    }
+    .justify-end {
+      justify-content: flex-end;
+    }
+  </style>
+
+  <div class="flex justify-start">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <hr>
+
+  <div class="flex justify-center">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <hr>
+
+  <div class="flex justify-between">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <hr>
+
+  <div class="flex justify-end">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div> -->
+
+  <!-- align-items -->
+
+  <!-- <style>
+    .flex {
+      display: flex;
+      background-color: #ddd;
+      height: 100px;
+    }
+    .item {
+      width: 50px;
+      border: 1px dashed;
+      height: auto;
+    }
+    .align-stretch {
+      align-items: stretch
+    }
+    .align-center {
+      align-items: center;
+    }
+    .align-baseline {
+      align-items: baseline;
+    }
+    .align-end {
+      align-items: flex-end;
+    }
+  </style>
+
+  <div class="flex align-stretch">
+    <div class="item">1</div>
+    <div class="item">3</div>
+    <div class="item">3</div>
+  </div>
+
+  <hr>
+
+  <div class="flex align-baseline">
+    <div class="item">1</div>
+    <div class="item">3</div>
+    <div class="item">3</div>
+  </div>
+
+  <hr>
+
+  <div class="flex align-center">
+    <div class="item">1</div>
+    <div class="item">3</div>
+    <div class="item">3</div>
+  </div>
+
+  <hr>
+
+  <div class="flex align-end">
+    <div class="item">1</div>
+    <div class="item">3</div>
+    <div class="item">3</div>
+  </div> -->
+
+  <!-- <style>
+    .flex {
+      display: flex;
+      flex-direction: column;
+      background-color: #ddd;
+      height: 200px;
+    }
+    .item {
+      height: 50px;
+      border: 1px dashed;
+    }
+    .align-stretch {
+      align-items: stretch;
+    }
+    .align-start {
+      align-items: flex-start;
+    }
+    .align-center {
+      align-items: center;
+    }
+    .align-end {
+      align-items: flex-end;
+    }
+  </style>
+
+  <div class="flex align-stretch">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <hr>
+
+  <div class="flex align-start">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <hr>
+
+  <div class="flex align-center">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <hr>
+
+  <div class="flex align-end">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div> -->
+
+  <!-- flex item properties -->
+  <!-- flex order -->
+
+  <!-- <style>
+    .flex {
+      background-color: #ddd;
+      display: flex;
+    }
+    .item {
+      width: 50px;
+      height: 50px;
+      border: 1px dashed;
+    }
+    .item:first-child {
+      order: 2;
+    }
+    .item:last-child {
+      order: 1;
+    }
+  </style>
+
+  <div class="flex">
+    <div class="item">1</div>
+    <div class="item">2</div>
+  </div> -->
+
+  <!-- flex-grow -->
+
+  <!-- <style>
+    .flex {
+      background-color: #ddd;
+      display: flex;
+    }
+    .item {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed;
+      flex-grow: 0;
+    }
+    .item:nth-child(2) {
+      flex-grow: 1;
+    }
+  </style>
+
+  <div class="flex">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div> -->
+
+  <!-- <style>
+    .flex {
+      background-color: #ddd;
+      display: flex;
+    }
+    .item {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed;
+      flex-grow: 1;
+    }
+  </style>
+
+  <div class="flex">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div> -->
+
+  <!-- flex-shrink -->
+
+  <!-- <style>
+    .flex {
+      background-color: #ddd;
+      display: flex;
+    }
+    .item {
+      width: 200px;
+      height: 100px;
+      border: 1px dashed;
+      flex-shrink: 1;
+    }
+    .item:nth-child(2) {
+      flex-shrink: 0;
+    }
+  </style>
+
+  <div class="flex">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div> -->
+
+  <!-- flex-basis -->
+
+  <!-- <style>
+    .flex {
+      background-color: #ddd;
+      display: flex;
+      /* flex-wrap: nowrap; */
+    }
+    .item {
+      height: 100px;
+      border: 1px dashed;
+      flex-basis: 33.33333%;
+    }
+  </style>
+
+  <div class="flex">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div> -->
+
+  <!-- align self -->
+
+  <!-- <style>
+    .flex {
+      background-color: #ddd;
+      display: flex;
+      align-items: center;
+      height: 100px;
+    }
+    .item {
+      width: 100px;
+      border: 1px dashed;
+    }
+    .item:last-child {
+      align-self: flex-start;
+    }
+  </style>
+  
+  <div class="flex">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+  </div> -->
+
+  <!-- <style>
+    .container {
+      display: flex;
+      background-color: #ddd;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .item {
+      background-color: #888;
+      width: 100px;
+      height: 100px;
+    }
+    .item:first-child {
+      align-self:auto;
+    }
+    .item:nth-child(2) {
+      align-self: center;
+    }
+    .item:last-child {
+      align-self: flex-end;
+    }
+  </style>
+
+  <div class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div> -->
+
+  <!-- <style>
+    .container {
+      display: flex;
+      background-color: #ddd;
+      height: 200px;
+      justify-content: center;
+      align-items: center;
+    }
+    .item {
+      display: flex;
+      border: 1px dashed;
+      width: 100px;
+      height: 100px;
+      align-items: flex-start;
+      justify-content: flex-end;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: red;
+    }
+  </style>
+
+  <div class="container">
+    <div class="item">
+      <div class="dot"></div>
+    </div>
+  </div> -->
+
+  <!-- # grid -->
+
+  <!-- <style>
+    .grid {
+      background-color: #ddd;
+      display: grid;
+      /* minmax(min, max) */
+      /* minmax(>=min, <=max) */
+      /* minmax() CSS function defines a size range greater than or equal to min 
+      and less than or equal to max. It is used with CSS Grids */
+      /* fr: fraction (분수) */
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .item {
+      border: 1px dashed;
+      overflow: auto;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+
+  <div class="grid">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+    <div class="item">10</div>
+    <div class="item">11</div>
+    <div class="item">12</div>
+  </div> -->
+
+  <!-- # transform -->
+  <!-- translate, scale, rotate, skew -->
+
+  <!-- <style>
+    .container {
+      background-color: #ddd;
+      width: 200px;
+      height: 200px;
+    }
+    .item {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed;
+      transform: translate(25px, 25px);
+    }
+  </style>
+
+  <div class="container">
+    <div class="item"></div>
+  </div> -->
+
+  <!-- <style>
+    .item {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed;
+      transform: scale(1.1, 1.1);
+    }
+  </style>
+
+  <div class="container">
+    <div class="item"></div>
+  </div> -->
+
+  <!-- <style>
+    .item {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed;
+      transform: rotate(45deg);
+    }
+  </style>
+
+  <div class="container">
+    <div class="item"></div>
+  </div> -->
+
+  <!-- # Responsive with @media keyword -->
+
+  <!-- <style>
+    /* Mobile first */
+  .title::after {
+    content: "Extra small devices";
+  }
+
+  @media (min-width: 640px) {
+    .title::after {
+      content: "Small devices";
+    }
+  }
+  @media (min-width: 768px) {
+    .title::after {
+      content: "Medium devices";
+    }
+  }
+  @media (min-width: 1024px) {
+    .title::after {
+      content: "Large devices";
+    }
+  }
+  @media (min-width: 1280px) {
+    .title::after {
+      content: "Extra Large devices";
+    }
+  }
+  @media (min-width: 1536px) {
+    .title::after {
+      content: "2 Extra large devices";
+    }
+  }
+  </style>
+
+  <div class="container">
+    <h1 class="title"></h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Asperiores at fugit quia, explicabo facere pariatur iste rerum sapiente incidunt 
+      repudiandae est doloribus nesciunt architecto expedita neque dolor quisquam, in eaque?
+    </p>
+  </div> -->
+
+  <!-- # image: img tag and background-image -->
+
+  <!-- <style>
+    .container {
+      width: 100px;
+      height: 100px;
+    }
+    .container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+  
+  <div class="container">
+    <img src="../../img/bunny.jpeg" alt="">
+  </div> -->
+
+  <!-- <style>
+    .container {
+      width: 100px;
+      height: 100px;
+      display: inline-block;
+    }
+    .bg-light-grey {
+      background-color: #ddd;
+    }
+    .bg-gradient-to-r {
+      background-image: linear-gradient(to right, #333, #888);
+    }
+    .bg-image {
+      background-image: url("../../img/bunny.jpeg");
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+
+  <div class="container bg-light-grey"></div>
+  <div class="container bg-gradient-to-r"></div>
+  <div class="container bg-image"></div> -->
+  
+</body>
+</html>
