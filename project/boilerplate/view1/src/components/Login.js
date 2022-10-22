@@ -64,9 +64,9 @@ export default function Login() {
   }
 
   return (
-    <div className="">
-      <form className="" onSubmit={handleSubmit}>
-        <h1 className="text-2xl mb-3">Login</h1>
+    <div className="flex justify-center h-96 items-end">
+      <form className="w-60" onSubmit={handleSubmit}>
+        <h1 className="text-2xl mb-3">My App</h1>
         <div className="mb-2">
           <label htmlFor="email" className="block font-bold">Email</label>
           <input 
@@ -116,7 +116,11 @@ export default function Login() {
         <div className="">
           <Link to="/accounts/signup">Create Account</Link>
         </div>
+        <div className="text-center">
+          <small>2022 &copy; myapp</small>
+        </div>
       </form>
+
 
       <Loading isLoaded={isLoaded} />
       <ErrorMessage error={error} />

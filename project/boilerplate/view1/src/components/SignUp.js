@@ -41,49 +41,49 @@ export default function SignUp() {
   }
 
   return (
-    <>
-      <h1 className="text-2xl mb-3">Sign up</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="">
-          <label htmlFor="">Username</label>
+    <div className="flex justify-center h-96 items-end">
+      <form onSubmit={handleSubmit} className="w-60">
+        <h1 className="text-2xl mb-3">Sign up</h1>
+        <div className="mb-2">
+          <label htmlFor="" className="block font-bold">Username</label>
           <input
             type="text"
             name="username"
-            className="border"
+            className="border w-full p-1 outline-none"
             onChange={handleChange}
           />
         </div>
-        <div className="">
-          <label htmlFor="">Email</label>
+        <div className="mb-2">
+          <label htmlFor="" className="block font-bold">Email</label>
           <input
             type="text"
             name="email"
-            className="border"
+            className="border w-full p-1 outline-none"
             onChange={handleChange}
           />
         </div>
-        <div className="">
-          <label htmlFor="">Password</label>
+        <div className="mb-2">
+          <label htmlFor="" className="block font-bold">Password</label>
           <input
             type="text"
             name="username"
-            className="border"
+            className="border w-full p-1 outline-none"
             onChange={handleChange}
           />
         </div>
-        <div className="">
-          <label htmlFor="">Password confirm</label>
+        <div className="mb-2">
+          <label htmlFor="" className="block font-bold">Password confirm</label>
           <input
             type="text"
             name="username"
-            className="border"
+            className="border w-full p-1 outline-none"
             onChange={handleChange}
           />
         </div>
         <div className="">
           <button 
             type="submit"
-            className="border disabled:text-gray-300"
+            className="border w-full p-1 disabled:text-gray-300"
             disabled={!newUser.username}
           >
             Submit
@@ -92,6 +92,6 @@ export default function SignUp() {
       </form>
 
       <ErrorMessage error={error} />
-    </>  
+    </div>  
   )
 }
