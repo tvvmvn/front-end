@@ -57,7 +57,7 @@ export default function Login() {
 
   function togglePassword() {
     if (passwordType === "password") {
-      setPasswordType("text")
+      setPasswordType("text");
     } else {
       setPasswordType("password");
     }

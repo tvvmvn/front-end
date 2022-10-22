@@ -2,7 +2,7 @@ import { useEffect, useState, Suspense, useContext, useRef } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import AuthContext from "./AuthContext";
 import ArticleList from "./ArticleList";
-import { ErrorMessage, Loading } from "./Progress";
+import { ErrorMessage, Loading, Fallback } from "./Progress";
 import wrapPromise from "./wrapPromise";
 
 function fetchData(username) {
@@ -38,7 +38,7 @@ export default function () {
   const resource = fetchData(username);
 
   return (
-    <Suspense fallback={<p>fetching profiles...</p>}>
+    <Suspense fallback={<Fallback />}>
       <ProfileDetail resource={resource} />
       <ProfileTimeline resource={resource} />
     </Suspense>

@@ -1,8 +1,8 @@
 export function Fallback() {
   return (
-    <div className="bg-slate-600">
-      <h1 className="text-2xl">Fallback</h1>
-    </div>  
+    <div className="h-24 flex justify-center items-center bg-gray-100">
+      <div className="w-12 h-12 border-4 border-t-transparent rounded-full animate-spin"></div>
+    </div>
   )
 }
 
@@ -37,5 +37,3 @@ export function SuccessMessage({message}) {
     )
   }
 }
-
-export function BlockSpinner() {}
