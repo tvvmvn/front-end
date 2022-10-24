@@ -7,6 +7,8 @@ Compose them to make complex UIs.
 - Learn Once, Write Anywhere
 power mobile apps using ReactNative
 
+# Reactive UI
+- Form
 
 # Basic
 - JSX
@@ -15,13 +17,15 @@ Composition
 - props
 useContext
 - Event
-button, form
+click, change, submit
 - Manage DOM
-useState, useRef, useEffect
+useState, useEffect / useRef
+- Form
 - Router Basic
 - Router/Auth
 - Fetch data
 useEffect
+
 
 # Example
 - Todo list

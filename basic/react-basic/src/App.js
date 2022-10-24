@@ -786,7 +786,8 @@ export default App;
 // }
 
 // # Event
-// attribute: onEventName={callback}
+// add attribute on element that trigger event:
+// onEventName={eventHandler}
 
 // ### click event
 // function App() {
@@ -896,7 +897,7 @@ export default App;
 //   )
 // }
 
-// # DOM UPDATE
+// # Manage DOM 
 // function App() {
 //   // const [state, setState] = useState(initialValue);
 //   // state: a variable in Component
@@ -905,11 +906,10 @@ export default App;
 //   const [count, setCount] = useState(0);
 //   return (
 //     <>
-//       <h1>{count}</h1>
-//       <button onClick={() => setCount(1)}>
-//         Button
-//       </button>
-//     </>  
+//       <h1>Count</h1>
+//       <p>{count}</p>
+//       <button onClick={() => setCount(count + 1)}>Add</button>
+//     </>
 //   )
 // }
 
@@ -917,38 +917,55 @@ export default App;
 // function App() {
 //   let count = 0;
 
-//   function handleClick() {
-//     count = 1;
-//     console.log(count);
-//   }
-
 //   // DOM을 업데이트하기 위해서는 VirtualDOM을 다시 return해야 한다
 //   // VirtualDOM을 다시 return하기 위해서는 App컴포넌트를 다시 실행해야 한다
 //   // setState는 App컴포넌트를 다시 실행한다
 //   // DOM이 업데이트된다.
+//   function handleClick(e) {
+//     count++;
+//   }
 
 //   return (
 //     <>
-//       <h1>{count}</h1>
-//       <button onClick={handleClick}>Button</button>
+//       <h1>Count</h1>
+//       <p>{count}</p>
+//       <button onClick={handleClick}>Add</button>
 //     </>  
 //   )
 // }
 
 // function App() {
-//   console.log("executed");
-//   const [count, setCount] = useState(0);
+//   const initialTime = new Date().toLocaleTimeString();
+//   const [time, setTime] = useState(initialTime);
+
+//   setTimeout(() => {
+//     const updatedTime = new Date().toLocaleTimeString();
+//     setTime(updatedTime);
+//   }, 1000)
+
 //   return (
 //     <>
-//       <h1>{count}</h1>
-//       <button onClick={() => setCount(count + 1)}>
-//         Add
-//       </button>
+//       <h1>Clock</h1>
+//       <p>{time}</p>
 //     </>  
 //   )
 // }
 
-// Q. Subscribe Button
+// Q. Count
+// function App() {
+//   const [count, setCount] = useState(0);
+
+//   return (
+//     <>
+//       <h1>Count</h1>
+//       <p>{count}</p>
+//       <button onClick={() => setCount(count - 1)}>-</button>
+//       <button onClick={() => setCount(count + 1)}>+</button>
+//     </>  
+//   )
+// }
+
+// Q. Subscribe
 // function App() {
 //   const [subscribe, setSubscribe] = useState(false);
 
@@ -962,26 +979,173 @@ export default App;
 //   )
 // }
 
+// Q. Subscribe with Subscribers
 // function App() {
-//   const [arr, setArr] = useState([]);
+//   const [subscribe, setSubscribe] = useState(false);
+//   const [subscribers, setSubscribers] = useState(0);
 
-//   function handleClick(e) {
-//     const newItem = Math.random();
-//     setArr([...arr, newItem]);
+//   function handleClick(subscribe) {
+//     if (subscribe) {
+//       setSubscribe(false);
+//       setSubscribers(subscribers - 1)
+//     } else {
+//       setSubscribe(true);
+//       setSubscribers(subscribers + 1)
+//     }
 //   }
 
-//   const list = arr.map((item, index) => (
-//     <li key={index}>{item}</li>  
-//   ))
-  
 //   return (
 //     <>
-//       <h1>List</h1>
-//       <button onClick={handleClick}>
-//         Add
+//       <h1>Subscribe</h1>
+//       <p>Subscriber: {subscribers}</p>
+//       <button onClick={() => handleClick(subscribe)}>
+//         {!subscribe ? "Subscribe" : "Subscribed"}
 //       </button>
+//     </>  
+//   )
+// }
+
+// # Form handling
+// function App() {
+//   const [username, setUsername] = useState("");
+
+//   function handleSubmit(e) {
+//     e.preventDefault();
+//     console.log("Hi,", username);
+//     setUsername("");
+//   }
+
+//   function handleChange(e) {
+//     const value = e.target.value;
+//     const username = value.trim();
+//     setUsername(username);
+//   }
+
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <h1>Login</h1>
+//       <input 
+//         type="text" 
+//         onChange={handleChange} 
+//         placeholder="Username"
+//         value={username}
+//       />
+//       <button 
+//         type="submit"
+//         disabled={!username}
+//       >
+//         Submit
+//       </button>
+//     </form>  
+//   )
+// }
+
+// Q. Password toggle
+// function App() {
+//   const [type, setType] = useState("password");
+
+//   function handleClick() {
+//     if (type==="password") {
+//       setType("text")
+//     } else {
+//       setType("password")
+//     }
+//   }
+
+//   return (
+//     <form>
+//       <h1>Login</h1>
+//       <input type={type} placeholder="Password" />
+//       <button type="button" onClick={handleClick}>
+//         {type==="password" ? "Show" : "Hide"}
+//       </button>
+//     </form>  
+//   )
+// }
+
+// function App() {
+//   const [beers, setBeers] = useState([]);
+
+//   function handleChange(e) {
+//     const data = ["Heineken", "Guinness", "Asahi", "Kloud"];
+
+//     const name = e.target.value;
+
+//     if (!name) {
+//       setBeers([]);
+//       return;
+//     }
+
+//     const updatedBeers = data.filter(beer => {
+//       if (beer.startsWith(name)) {
+//         return beer;
+//       }
+//     })
+
+//     setBeers(updatedBeers);
+//   }
+
+//   const beerList = beers.map((item, index) => (
+//     <li key={index}>{item}</li>  
+//   ))
+
+//   return (
+//     <>
+//       <h1>Live Search</h1>
+//       <input 
+//         type="text" 
+//         onChange={handleChange} 
+//         placeholder="Search"
+//       />
 //       <ul>
-//         {list}
+//         {beerList}
+//       </ul>
+//     </>  
+//   )
+// }
+
+// Q. Beer Form
+// function App() {
+//   const [beers, setBeers] = useState([]);
+//   const [name, setName] = useState("");
+
+//   function handleSubmit(e) {
+//     e.preventDefault();
+
+//     const updatedBeers = [...beers, name];
+//     setBeers(updatedBeers);
+//     setName("");
+//   }
+
+//   function handleChange(e) {
+//     const value = e.target.value;
+//     const name = value.replace(" ", "_");
+//     setName(name);
+//   }
+
+//   const beerList = beers.map((beer, index) => (
+//     <li key={index}>{beer}</li>
+//   ))
+
+//   return (
+//     <>
+//       <h1>Beers</h1>
+//       <form onSubmit={handleSubmit}>
+//         <input 
+//           type="text" 
+//           placeholder="Guinness, Ireland" 
+//           onChange={handleChange}
+//           value={name}
+//         />
+//         <button 
+//           type="submit"
+//           disabled={!name}
+//         >
+//           Add
+//         </button>
+//       </form>
+//       <ul>
+//         {beerList}
 //       </ul>
 //     </>  
 //   )

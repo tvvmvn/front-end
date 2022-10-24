@@ -120,6 +120,8 @@
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
+      if (!input.value) return;
+
       const input = document.querySelector("input");
       const ul = document.querySelector("ul");
       const li = document.createElement("li");

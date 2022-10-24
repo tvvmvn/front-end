@@ -118,6 +118,7 @@
 
 // console.log(!true) // with boolean type
 // console.log(!"")
+// console.log(!"foo")
 // console.log(!undefined)
 // console.log(!null)
 
