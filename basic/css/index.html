@@ -458,11 +458,14 @@
     .border-b {
       border-bottom: 1px solid gold;
     }
+    .text-gray {
+      color: #888;
+    }
   </style>
 
   <div class="container">
     <h1 class="border-b">GUINNESS</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    <p class="text-gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
       Ducimus, accusantium itaque nesciunt eos quos ullam esse sint libero voluptate, 
       ut accusamus et porro at laborum eius deleniti quaerat nulla ad.</p>
   </div> -->
@@ -543,6 +546,7 @@
   </div> -->
 
   <!-- # Display -->
+  <!-- how the element look like -->
   <!-- block, inline-block, inline, none -->
 
   <!-- <h1>Display</h1>
@@ -554,17 +558,14 @@
   }
   .item {
     border: 1px dashed;
-  }
-  .block {
     /* div, p, form */
     display: block;
   }
   </style>
 
   <div class="container">
-    <div class="item block">block</div>
-    <div class="item block">block</div>
-    <div class="item block">block</div>
+    <div class="item">block</div>
+    <div class="item">block</div>
   </div> -->
 
   <!-- <h1>Display</h1>
@@ -575,9 +576,9 @@
     background-color: #ddd;
   }
   .item {
+    border: 1px dashed;
     /* button, input, img */
     display: inline-block;
-    border: 1px dashed;
   }
   </style>
 
@@ -598,12 +599,12 @@
     width: 100px;
   }
   .inline {
-    /* span, a */
-    /* for typhography(font, text) */
     /* not for layout:
-      width, height not work.
-      margin/padding of y-axis not work.
+    width, height not work.
+    margin/padding of y-axis not work.
     */
+    /* for typhography(font, text) */
+    /* span, a */
     display: inline;
   }
   </style>
@@ -617,6 +618,9 @@
   <p>none</p>
 
   <style>
+    .container {
+      background-color: #ddd;
+    }
     .item {
       border: 1px dashed;
       display: inline-block;
@@ -632,16 +636,27 @@
     <div class="item block">block</div>
   </div> -->
 
+  <!-- <h1>Q. Display of basic element</h1>
+  <ul>
+    <li>html: </li>
+    <li>head: </li>
+    <li>body: </li>
+  </ul> -->
+
   <!-- # width -->
 
   <!-- <h1>width</h1>
 
   <style>
+    .container {
+      background-color: #ddd;
+    }
     .item {
       border: 1px dashed;
       display: inline-block;
     }
     .item:nth-child(1) {
+      /* default */
       width: auto;
     }
     .item:nth-child(2) {
@@ -657,6 +672,9 @@
   <!-- <h1>max-width</h1>
 
   <style>
+    .container {
+      background-color: #ddd;
+    }
     .item {
       border: 1px dashed;
       display: block;
@@ -666,11 +684,15 @@
 
   <div class="container">
     <div class="item">item</div>
+    <div class="item">item</div>
   </div> -->
 
   <!-- <h1>min-width</h1>
 
   <style>
+    .container {
+      background-color: #ddd;
+    }
     .item {
       border: 1px dashed;
       display: block;
@@ -680,6 +702,30 @@
 
   <div class="container">
     <div class="item">item</div>
+    <div class="item">item</div>
+  </div> -->
+
+  <!-- <h1>display and width</h1>
+
+  <style>
+    .item {
+      border: 1px dashed;
+      width: 100px;
+      display: block;
+    }
+    .inline-block {
+      display: inline-block;
+    }
+  </style>
+
+  <div class="container">
+    <h3>display: block</h3>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    
+    <h3>display: inline-block</h3>
+    <div class="item inline-block">item</div>
+    <div class="item inline-block">item</div>
   </div> -->
 
   <!-- # Height -->
@@ -687,20 +733,24 @@
   <!-- <h1>height</h1>
 
   <style>
-    .item {
-      border: 1px dashed;
-      display: inline-block;
+    .container {
+      background-color: #ddd;
     }
-    .item:nth-child(1) {
-      height: auto;
+    .item {
+      border: 1px dashed; 
     }
     .item:nth-child(2) {
+      height: auto;
+    }
+    .item:nth-child(4) {
       height: 100px;
     }
   </style>
 
   <div class="container">
+    <h3>height: auto</h3>
     <div class="item">item</div>
+    <h3>height: 100px</h3>
     <div class="item">item</div>
   </div> -->
 
@@ -709,11 +759,7 @@
   <style>
     .item {
       border: 1px dashed;
-      display: inline-block;
       max-height: 50px;
-    }
-    .item:nth-child(2) {
-      margin-top: 1rem;
     }
   </style>
 
@@ -721,6 +767,9 @@
     <div class="item">
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
     </div>
+
+    <br>
+    
     <div class="item">
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
       Illum ut consequuntur voluptates culpa labore corrupti porro reprehenderit accusantium, 
@@ -736,15 +785,14 @@
       display: inline-block;
       min-height: 50px;
     }
-    .item:nth-child(2) {
-      margin-top: 1rem;
-    }
   </style>
 
   <div class="container">
+    <h3>min-height: 50px;</h3>
     <div class="item">
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
     </div>
+    <h3>min-height: 50px;</h3>
     <div class="item">
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
       Illum ut consequuntur voluptates culpa labore corrupti porro reprehenderit accusantium, 
@@ -752,24 +800,7 @@
     </div>
   </div> -->
 
-  <!-- <h1>display and width</h1>
-
-  <style>
-    .item {
-      border: 1px dashed;
-      width: 100px;
-      /* display: block; */
-      /* display: inline-block; */
-    }
-  </style>
-
-  <div class="container">
-    <div class="item">item</div>
-    <div class="item">item</div>
-    <div class="item">item</div>
-  </div> -->
-
-  <!-- <h1>Q. Irish flag</h1>
+  <!-- <h1>Q. Ireland flag</h1>
 
   <style>
     .item {
@@ -781,7 +812,7 @@
       background-color: green
     }
     .item:nth-child(2) {
-      background-color: whitesmoke;
+      background-color: #fff;
     }
     .item:nth-child(3) {
       background-color: orange;
@@ -798,8 +829,8 @@
 
   <style>
     .item {
-      width: 200px;
-      height: 50px;
+      width: 150px;
+      height: 30px;
       display: block;
     }
     .item:nth-child(1) {
@@ -821,7 +852,9 @@
  
   <!-- # box-sizing -->
 
-  <!-- <style>
+  <!-- <h1>box sizing</h1>
+
+  <style>
     .container {
       background-color: #ddd;
     }
@@ -841,92 +874,20 @@
   </style>
 
   <div class="container">
+    <h3>box-sizing: content-box</h3>
     <div class="item content-box">122 x 122</div>
+    <h3>box-sizing: border-box</h3>
     <div class="item border-box">100 x 100</div>
-  </div> -->
-
-  <!-- # white-space -->
-  <!-- how white-space(공백) inside an element is handled -->
-
-  <!-- <style>
-    div {
-      overflow: auto;
-      border: 1px dashed;
-    }
-    /* default */
-    /* Sequences of whitespace will collapse into a single whitespace. */
-    /* Text will wrap when necessary */
-    .normal {
-      white-space: normal;
-    }
-    /* Sequences of whitespace will collapse into a single whitespace. */
-    /* Text will never wrap to the next line */
-    /* The text continues on the same line until a <br> tag is encountered */
-    .nowrap {
-      white-space: nowrap;
-    }
-    /* Sequences of whitespace will be preserved */
-    /* Text will only wrap on line breaks. */
-    .pre {
-      white-space: pre;
-    }
-    /* Sequences of whitespace will collapse into a single whitespace. */
-    /* Text will wrap when necessary, and on line breaks. */
-    .pre-line {
-      white-space: pre-line;
-    }
-    /* Sequences of white space will be preserved */
-    /* Text will wrap when necessary, and on line breaks. */
-    .pre-wrap {
-      white-space: pre-wrap;
-    }
-  </style>
-
-  <h3>white-space: normal</h3>
-  <div class="normal">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-    Quos ducimus labore praesentium qui impedit voluptas dolor quibusdam amet soluta pariatur architecto, 
-    quidem quo unde nam nisi accusamus, minus repudiandae perspiciatis!
-  </div>
-
-  <h3>white-space: nowrap</h3>
-  <div class="nowrap">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-    Quos ducimus labore praesentium qui impedit voluptas dolor quibusdam amet soluta pariatur architecto, 
-    quidem quo unde nam nisi accusamus, minus repudiandae perspiciatis!
-  </div>
-
-  <h3>white-space: pre</h3>
-  <div class="pre">
-    Lorem, ipsum dolor sit amet consectetur adipisicing      elit. 
-    Asperiores quidem maiores, rerum consequatur magni odio. 
-    Quasi eveniet inventore aperiam repellat ad, beatae pariatur accusantium quae consequatur incidunt! Vel, ad aperiam!
-  </div>
-
-  <h3>white-space: pre-line</h3>
-  <div class="pre-line">
-    Lorem, ipsum dolor sit amet consectetur adipisicing      elit. 
-    Asperiores quidem maiores, rerum consequatur magni odio. 
-    Quasi eveniet inventore aperiam repellat ad, beatae pariatur accusantium quae consequatur incidunt! Vel, ad aperiam!
-  </div>
-
-  <h3>white-space: pre-wrap</h3>
-  <div class="pre-wrap">
-    Lorem, ipsum dolor sit amet consectetur adipisicing      elit. 
-    Asperiores quidem maiores, rerum consequatur magni odio. 
-    Quasi eveniet inventore aperiam repellat ad, beatae pariatur accusantium quae consequatur incidunt! Vel, ad aperiam!
   </div> -->
 
   <!-- # overflow -->
 
-  <!-- <style>
+  <!-- <h1>overflow</h1>
+
+  <style>
     div {
-      width: 100px;
-      height: 100px;
+      height: 50px;
       border: 1px dashed;
-      display: inline-block;
-      vertical-align: middle;
-      word-break: break-all;
     }
     .hidden {
       overflow: hidden
@@ -938,31 +899,88 @@
       overflow: auto;
     }
     .visible {
-      /* default */
       overflow: visible;
     }
   </style>
 
+  <h3>overflow: hidden</h3>
   <div class="hidden">
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
     Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
     et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
   </div>
+  
+  <h3>overflow: scroll</h3>
   <div class="scroll">
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
     Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
     et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
   </div>
+
+  <h3>overflow: auto</h3>
   <div class="auto">
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
     Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
     et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
   </div>
+
+  <h3>overflow: visible(default)</h3>
   <div class="visible">
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
     Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
     et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
-  </div> -->  
+  </div>   -->
+
+  <!-- # white-space -->
+  <!-- how white-space(공백) inside an element is handled -->
+
+  <!-- <h1>white-space</h1>
+  
+  <style>
+    .container {
+      background-color: #ddd;
+    }
+    .item {
+      overflow: auto;
+      border: 1px dashed;
+      display: inline-block;
+      width: 200px;
+    }
+    .whitespace-normal {
+      white-space: normal;
+    }
+  </style>
+  
+  <h3>whitespace: normal</h3>
+  <div class="container whitespace-normal">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div>  -->
+
+  <!-- <h1>white-space</h1>
+  
+  <style>
+    .container {
+      background-color: #ddd;
+    }
+    .item {
+      overflow: auto;
+      border: 1px dashed;
+      display: inline-block;
+      width: 200px;
+    }
+    .whitespace-nowrap {
+      white-space: nowrap;
+    }
+  </style>
+
+  <h3>whitespace: nowrap</h3>
+  <div class="container whitespace-nowrap">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div> -->
 
   <!-- # position -->
 

@@ -1,12 +1,14 @@
 import {useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
+import ArticleItem from "./ArticleItem";
+import Modal from "./Modal";
 
 export default function ArticleView() {
 
   const params = useParams();
   const articleId = params.articleId;
 
-  const [article, setArticle] = useState(null);
+  const [initialArticle, setInitialArticle] = useState(null);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -21,7 +23,7 @@ export default function ArticleView() {
       return res.json();
     })
     .then(data => {
-      setArticle(data);
+      setInitialArticle(data);
     })
     .then(error => {
       setError(error)
@@ -30,14 +32,18 @@ export default function ArticleView() {
   }, [])
 
   if (error) {
-    return <h1>Error</h1>
+    return <p>Error</p>
   }
   if (!isLoaded) {
-    return <h1>Loading...</h1>
+    return <p>Loading...</p>
   }
   return (
     <>
-      <h1>Article View</h1>
-    </>  
+      <h1>Article</h1>
+      <ArticleItem initialArticle={initialArticle} />  
+    </>
   )
 }
+
+
+

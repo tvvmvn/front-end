@@ -1,6 +1,7 @@
 import {useState, useEffect, useContext} from "react";
-import {useParams} from "react-router-dom";
+import {useParams, Link} from "react-router-dom";
 import {AuthContext} from "./AuthContext";
+import ArticleList from "./ArticleList";
 
 export default function Profile() {
   const params = useParams();
@@ -71,7 +72,14 @@ function ProfileTimeline({initialArticles}) {
   return (
     <>
       <h3>Articles</h3>
-      <p>{articles.length}</p>
+      {articles.map(article => (
+        <Link key={article._id} to={`/p/${article._id}`}>
+          <img
+            src={`http://localhost:3000/posts/${article.photos[0]}`}
+          />
+        </Link>
+      ))}
     </>  
   )
 }
+

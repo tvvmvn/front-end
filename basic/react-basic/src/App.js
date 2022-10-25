@@ -1055,8 +1055,14 @@ export default App;
 //   return (
 //     <form>
 //       <h1>Login</h1>
-//       <input type={type} placeholder="Password" />
-//       <button type="button" onClick={handleClick}>
+//       <input 
+//         type={type} 
+//         placeholder="Password" 
+//       />
+//       <button 
+//         type="button" 
+//         onClick={handleClick}
+//       >
 //         {type==="password" ? "Show" : "Hide"}
 //       </button>
 //     </form>  
@@ -1118,8 +1124,7 @@ export default App;
 //   }
 
 //   function handleChange(e) {
-//     const value = e.target.value;
-//     const name = value.replace(" ", "_");
+//     const name = e.target.value;
 //     setName(name);
 //   }
 
@@ -1150,3 +1155,36 @@ export default App;
 //     </>  
 //   )
 // }
+
+function App() {
+  const [name, setName] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log("name", name.trim());
+    setName("");
+  }
+
+  function handleChange(e) {
+    const name = e.target.value;
+    setName(name);
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <h1>App</h1>
+      <input 
+        type="text" 
+        onChange={handleChange} 
+        placeholder="Name" 
+        value={name}
+      />
+      <button 
+        type="submit"
+        disabled={!name.trim()}
+      >
+        Submit
+      </button>
+    </form>
+  )
+}

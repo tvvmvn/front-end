@@ -1,5 +1,6 @@
 import {useState, useEffect, Suspense} from "react";
 import {Link} from "react-router-dom";
+import ArticleList from "./ArticleList";
 
 export default function () {
 
@@ -44,18 +45,13 @@ function Explore({initialArticles}) {
     <>
       <h1 className="text-2xl">Explore</h1>
       
-      <ul>
-        {articles.map(article => (
-          <li key={article._id} className="">
-            <Link to={`/p/${article._id}`}>
-              <img 
-                src={`http://localhost:3000/posts/${article.photos[0]}`} 
-                width="100" 
-              />
-            </Link>
-          </li>  
-        ))}
-      </ul>
+      {articles.map(article => (
+        <Link key={article._id} to={`/p/${article._id}`}>
+          <img
+            src={`http://localhost:3000/posts/${article.photos[0]}`}
+          />
+        </Link>
+      ))}
     </>  
   )
 }

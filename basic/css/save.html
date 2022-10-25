@@ -276,3 +276,37 @@
     <div class="hidden">hidden</div>
     <div class="visible">visible</div>
   </div> -->
+
+  <style>
+    div {
+      overflow: auto;
+      border: 1px dashed;
+    }
+    /* default */
+    /* Sequences of whitespace will collapse into a single whitespace. */
+    /* Text will wrap when necessary */
+    .normal {
+      white-space: normal;
+    }
+    /* Sequences of whitespace will collapse into a single whitespace. */
+    /* Text will never wrap to the next line */
+    /* The text continues on the same line until a <br> tag is encountered */
+    .nowrap {
+      white-space: nowrap;
+    }
+    /* Sequences of whitespace will be preserved */
+    /* Text will only wrap on line breaks. */
+    .pre {
+      white-space: pre;
+    }
+    /* Sequences of whitespace will collapse into a single whitespace. */
+    /* Text will wrap when necessary, and on line breaks. */
+    .pre-line {
+      white-space: pre-line;
+    }
+    /* Sequences of white space will be preserved */
+    /* Text will wrap when necessary, and on line breaks. */
+    .pre-wrap {
+      white-space: pre-wrap;
+    }
+  </style>

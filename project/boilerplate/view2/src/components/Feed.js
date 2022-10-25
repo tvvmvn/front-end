@@ -1,4 +1,5 @@
 import {useState, useEffect, Suspense} from "react"
+import ArticleItem from "./ArticleItem";
 
 export default function () {
 
@@ -42,16 +43,12 @@ function Feed({initialArticles}) {
   return (
     <>
       <h1 className="text-2xl">Feed</h1>
-      <ul>
-        {articles.map(article => (
-          <li key={article._id} className="">
-            <img 
-              src={`http://localhost:3000/posts/${article.photos[0]}`} 
-              width="100" 
-            />
-          </li>  
-        ))}
-      </ul>
+      {articles.map(article => (
+        <div key={article._id} className="">
+          <ArticleItem initialArticle={article} />
+          <hr />
+        </div>
+      ))}
     </>  
   )
 }

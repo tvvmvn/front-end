@@ -41,10 +41,10 @@ export default function AuthProvider({children}) {
   const value = {user, signIn, signOut}
 
   if (error) {
-    return <h1>Error</h1>
+    return <p>Error</p>
   } 
   if (!isLoaded) {
-    return <h1>Loading...</h1>
+    return <p>Loading...</p>
   }
   return (
     <AuthContext.Provider value={value}>
