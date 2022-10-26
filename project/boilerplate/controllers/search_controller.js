@@ -9,8 +9,8 @@ exports.username = async (req, res, next) => {
     });
 
     setTimeout(() => {
-      res.json(users);
     }, 1000)
+    res.json(users);
 
   } catch (error) {
     next(error)

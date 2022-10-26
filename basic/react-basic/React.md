@@ -21,12 +21,10 @@ click, change, submit
 - Manage DOM
 useState, useEffect / useRef
 - Form
+- Carousel, Modal
 - Router Basic
 - Router/Auth
 - Fetch data
 useEffect
 
-
-# Example
-- Todo list
 

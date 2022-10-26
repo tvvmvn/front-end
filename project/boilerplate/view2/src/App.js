@@ -5,6 +5,7 @@ import AuthProvider from './components/AuthProvider';
 import AuthRequired from "./components/AuthRequired";
 import Layout from "./components/Layout";
 import Explore from "./components/Explore";
+import Search from "./components/Search";
 import ArticleView from "./components/ArticleView";
 import Feed from "./components/Feed";
 import Profile from "./components/Profile";
@@ -24,6 +25,7 @@ function App() {
           }>
             <Route index element={<Feed />} />
             <Route path="/explore" element={<Explore />} />
+            <Route path="/search" element={<Search />} />
             <Route path="/p/:articleId" element={<ArticleView />} />
             <Route path="/profiles/:username" element={<Profile />} />
           </Route>

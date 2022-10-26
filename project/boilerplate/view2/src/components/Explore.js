@@ -44,7 +44,9 @@ function Explore({initialArticles}) {
   return (
     <>
       <h1 className="text-2xl">Explore</h1>
-      
+      <p>
+        <Link to={`/search`}>Search</Link>
+      </p>
       {articles.map(article => (
         <Link key={article._id} to={`/p/${article._id}`}>
           <img
