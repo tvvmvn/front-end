@@ -7,162 +7,113 @@
   <title>Document</title>
 </head>
 <body>
-<!-- # float -->
 
-  <!-- <style>
-    .left, .right {
-      width: 100px;
-      height: 100px;
+  <!-- # Float -->
+
+  <!-- <h1>float</h1>
+  <p>float element to left or right</p>
+
+  <style>
+    .container {
+      background-color: #ddd;
+    }
+    .item {
+      width: 50px;
+      height: 50px;
       border: 1px dashed;
     }
-    .left  {
+    .float-left {
       float: left;
     }
-    .right {
+    .float-right {
       float: right;
     }
   </style>
 
+  <h3>float: left</h3>
   <div class="container">
-    <div class="left">Image</div>
+    <div class="item float-left">item</div>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Itaque animi libero similique porro aperiam voluptate molestiae voluptatibus, atque amet ex, 
-      debitis distinctio recusandae illum inventore quae assumenda facilis, aspernatur obcaecati!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus esse, dicta asperiores, magnam voluptatem dolorum,
+      sint quisquam neque totam autem accusantium! Vitae quis deserunt laborum animi ut nostrum magnam voluptates?
     </p>
   </div>
 
-  <hr>
-
+  <h3>float: right</h3>
   <div class="container">
-    <div class="right">Image</div>
+    <div class="item float-right">item</div>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Itaque animi libero similique porro aperiam voluptate molestiae voluptatibus, atque amet ex, 
-      debitis distinctio recusandae illum inventore quae assumenda facilis, aspernatur obcaecati!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus esse, dicta asperiores, magnam voluptatem dolorum,
+      sint quisquam neque totam autem accusantium! Vitae quis deserunt laborum animi ut nostrum magnam voluptates?
     </p>
   </div> -->
 
-  <!-- <style>
-    .container {
-      background-color: #ddd;
-    }
-    .container > div {
-      width: 100px;
-      height: 100px;
-      border: 1px dashed;
-      width: 33.33333%;
-      box-sizing: border-box;
-    }
-    .left {
-      float: left;
-    }
-  </style>
+  <!-- # Flex -->
 
-  <div class="container">
-    <div class="left"></div>
-    <div class="left"></div>
-    <div class="left"></div>
-  </div> -->
+  <!-- <h1>flex</h1>
+  <p>display: flex</p>
 
-  <!-- <style>
-    .float .left {
-      width: 100px;
-      height: 100px;
-      border: 1px dashed;
-    }
-    .left {
-      float: left;
-    }
-    .clear {
-      clear: left;
-    }
-  </style>
-
-  <div class="container">
-    <h1>Heading 1</h1>
-    <div class="float">
-      <div class="left"></div>
-      <div class="left"></div>
-      <div class="clear"></div>
-    </div>
-  </div>
-
-  <div class="container">
-    <h1>Heading 1</h1>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-      Iusto voluptate culpa cumque id omnis et maxime ab doloribus, fugiat velit, ipsam officia? 
-      Aliquid maiores ut quia? Nisi nostrum et eum!</p>
-  </div> -->
-
-<!-- # Flex -->
-
-  <!-- <style>
+  <style>
+    /* flex container */
     .container {
       background-color: #ddd;
       display: flex;
     }
+
+    /* flex item */
     .item {
-      width: 100px;
-      height: 100px;
       border: 1px dashed;
+      padding: 0.5rem;
     }
+
+    /* # FLEX CONTAINER 속성 */
+
+    /* flex-direction(row): item의 배열 방향 */
+    /* row|row-reverse|column|column-reverse|initial|inherit */
+
+    /* flex-wrap(nowrap): item을 감쌀 것인지 결정 */
+    /* nowrap|wrap|wrap-reverse|initial|inherit; */
+
+    /* flex-flow(row nowrap): flex-direction flex-wrap */
+
+    /* justify-content(flex-start): item의 수평정렬(row), 수직정렬(column) */
+    /* flex-start|flex-end|center|space-between|space-around|space-evenly|initial|inherit; */
+
+    /* align-items(stretch): item의 수직정렬(row), 수평정렬(column) */
+    /* stretch|center|flex-start|flex-end|baseline|initial|inherit; */
+
+
+    /* # FLEX ITEM 속성 */
+    
+    /* flex-grow(0): item의 크기 증가 */
+    /* number|initial|inherit */
+    
+    /* flex-shrink(1): item의 크기 감소 */
+    /* number|initial|inherit; */
+    
+    /* flex-basis(auto): item의 넓이 */
+    /* number|auto|initial|inherit */
+    
+    /* flex(0 1 auto): flex-grow flow-shrink flex-basis */
+    
+    /* align-self(auto): 특정 item의 수평 정렬 */
+    /* auto|stretch|center|flex-start|flex-end|baseline|initial|inherit; */
+
+    /* order(0): item의 정렬 순서 */
+    /* number|initial|inherit */
   </style>
 
   <div class="container">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div> -->
 
-  <!-- <style>
-    /* flex container properties: */
-    
-    /* - */
-    /* # flex-direction(row): direction of the flexible items */
-    /* row|row-reverse|column|column-reverse|initial|inherit */
+  <!-- # flex container properties -->
+  <!-- <h1>flex container</h1>
 
-    /* # flex-wrap(nowrap): the flexible items should wrap or not */
-    /* nowrap|wrap|wrap-reverse|initial|inherit; */
-
-    /* # flex-flow(row nowrap): flex-direction / flex-wrap */
-
-    /* # justify-content(flex-start): align the flex items */
-    /* flex-start|flex-end|center|space-between|space-around|space-evenly|initial|inherit; */
-
-    /* # align-items(stretch): alignment for items inside the flexible container */
-    /* stretch|center|flex-start|flex-end|baseline|initial|inherit; */
-
-    /* # align-content(stretch): align the flex lines */
-    /* stretch|center|flex-start|flex-end|space-between|space-around|initial|inherit; */
-
-
-    /* flex item properties: */
-
-    /* - */
-    /* # order(0): order of the flex items */
-    /* number|initial|inherit */
-
-    /* # flex-grow(0): how much the item will grow relative to the rest of the flexible items inside the same container */
-    /* number|initial|inherit */
-
-    /* # flex-shrink(1): how the item will shrink relative to the rest of the flexible items inside the same container */
-    /* number|initial|inherit; */
-
-    /* # flex-basis(auto): initial length of a flexible item */
-    /* number|auto|initial|inherit */
-
-    /* # flex: flex-grow / flow-shrink / flex-basis */
-
-    /* # align-self(auto): alignment for the selected item inside the flexible container. */
-    /* auto|stretch|center|flex-start|flex-end|baseline|initial|inherit; */
-  </style> -->
-
-  <!-- flex container properties -->
-  <!-- flex direction -->
-  
-  <!-- <style>
-    .flex {
+  <style>
+    .container {
       display: flex;
       background-color: #ddd;
     }
@@ -174,29 +125,31 @@
     }
     .item {
       border: 1px dashed;
-      width: 100px;
-      height: 100px;
+      padding: 0.5rem;
     }
   </style>
 
-  <div class="flex flex-row">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
+  <h3>flex-direction: row(default)</h3>
+  <div class="container flex-row">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div>
 
-  <hr>
+  <h3>flex-direction: column</h3>
 
-  <div class="flex flex-col">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
+  <div class="container flex-col">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div> -->
 
   <!-- flex wrap -->
 
-  <!-- <style>
-    .flex {
+  <!-- <h1>flex container</h1>
+
+  <style>
+    .container {
       display: flex;
       background-color: #ddd;
     }
@@ -208,35 +161,36 @@
     }
     .item {
       border: 1px dashed;
+      padding: 0.5rem;
       width: 200px;
-      height: 100px;
     }
   </style>
   
-  <div class="flex flex-nowrap">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
+  <h3>flex-wrap: nowrap(default)</h3>
+  <div class="container flex-nowrap">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div> 
   
-  <hr>
-
-  <div class="flex flex-wrap">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
+  <h3>flex-wrap: wrap</h3>
+  <div class="container flex-wrap">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div> -->
 
   <!-- justify-content -->
 
-  <!-- <style>
-    .flex {
+  <!-- <h1>flex container</h1>
+
+  <style>
+    .container {
       display: flex;
       background-color: #ddd;
     }
     .item {
-      width: 100px;
-      height: 100px;
+      padding: 0.5rem;
       border: 1px dashed;
     }
     .justify-start {
@@ -253,46 +207,44 @@
     }
   </style>
 
-  <div class="flex justify-start">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+  <h3>justify-content: flex-start(default)</h3>
+  <div class="container justify-start">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div>
 
-  <hr>
-
-  <div class="flex justify-center">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+  <h3>justify-content: center</h3>
+  <div class="container justify-center">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div>
 
-  <hr>
-
-  <div class="flex justify-between">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+  <h3>justify-content: space-between</h3>
+  <div class="container justify-between">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div>
 
-  <hr>
-
-  <div class="flex justify-end">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+  <h3>justify-content: flex-start</h3>
+  <div class="container justify-end">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div> -->
 
-  <!-- <style>
-    .flex {
+  <!-- <h1>flex container</h1>
+
+  <style>
+    .container {
       display: flex;
       flex-direction: column;
       background-color: #ddd;
-      height: 200px;
+      height: 100px;
     }
     .item {
-      width: 50px;
-      height: 50px;
       border: 1px dashed;
     }
     .justify-start {
@@ -309,48 +261,46 @@
     }
   </style>
 
-  <div class="flex justify-start">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+  <h3>justify-content: flex-start(default)</h3>
+  <div class="container justify-start">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div>
+  
+  <h3>justify-content: center</h3>
+  <div class="container justify-center">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div>
 
-  <hr>
-
-  <div class="flex justify-center">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+  <h3>justify-content: space-between</h3>
+  <div class="container justify-between">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div>
 
-  <hr>
-
-  <div class="flex justify-between">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-  </div>
-
-  <hr>
-
-  <div class="flex justify-end">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+  <h3>justify-content: flex-end</h3>
+  <div class="container justify-end">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div> -->
 
   <!-- align-items -->
 
-  <!-- <style>
-    .flex {
+  <!-- <h1>flex container</h1>
+
+  <style>
+    .container {
       display: flex;
       background-color: #ddd;
       height: 100px;
     }
     .item {
-      width: 50px;
       border: 1px dashed;
-      height: auto;
     }
     .align-stretch {
       align-items: stretch
@@ -366,45 +316,44 @@
     }
   </style>
 
-  <div class="flex align-stretch">
-    <div class="item">1</div>
-    <div class="item">3</div>
-    <div class="item">3</div>
+  <h3>align-items: stretch(default)</h3>
+  <div class="container align-stretch">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div>
+  
+  <h3>align-items: baseline</h3>
+  <div class="container align-baseline">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div>
 
-  <hr>
-
-  <div class="flex align-baseline">
-    <div class="item">1</div>
-    <div class="item">3</div>
-    <div class="item">3</div>
+  <h3>align-items: center</h3>
+  <div class="container align-center">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div>
 
-  <hr>
-
-  <div class="flex align-center">
-    <div class="item">1</div>
-    <div class="item">3</div>
-    <div class="item">3</div>
-  </div>
-
-  <hr>
-
-  <div class="flex align-end">
-    <div class="item">1</div>
-    <div class="item">3</div>
-    <div class="item">3</div>
+  <h3>align-items: flex-end</h3>
+  <div class="container align-end">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div> -->
 
-  <!-- <style>
-    .flex {
+  <!-- <h1>flex container</h1>
+
+  <style>
+    .container {
       display: flex;
       flex-direction: column;
       background-color: #ddd;
-      height: 200px;
+      height: 100px;
     }
     .item {
-      height: 50px;
       border: 1px dashed;
     }
     .align-stretch {
@@ -421,34 +370,32 @@
     }
   </style>
 
-  <div class="flex align-stretch">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
+  <h3>align-items: stretch(default)</h3>
+  <div class="container align-stretch">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div>
 
-  <hr>
-
-  <div class="flex align-start">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
+  <h3>align-items: flex-start</h3>
+  <div class="container align-start">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div>
+  
+  <h3>align-items: center</h3>
+  <div class="container align-center">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div>
 
-  <hr>
-
-  <div class="flex align-center">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
-  </div>
-
-  <hr>
-
-  <div class="flex align-end">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
+  <h3>align-items: flex-end</h3>
+  <div class="container align-end">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div> -->
 
   <!-- flex item properties -->

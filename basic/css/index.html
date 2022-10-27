@@ -935,9 +935,9 @@
   </div>   -->
 
   <!-- # white-space -->
-  <!-- how white-space(공백) inside an element is handled -->
 
   <!-- <h1>white-space</h1>
+  <p>handling white space of content</p>
   
   <style>
     .container {
@@ -950,11 +950,13 @@
       width: 200px;
     }
     .whitespace-normal {
+      /* container wraps the items */
       white-space: normal;
     }
   </style>
   
-  <h3>whitespace: normal</h3>
+  <h3>whitespace: normal (default)</h3>
+
   <div class="container whitespace-normal">
     <div class="item">item</div>
     <div class="item">item</div>
@@ -979,6 +981,7 @@
   </style>
 
   <h3>whitespace: nowrap</h3>
+
   <div class="container whitespace-nowrap">
     <div class="item">item</div>
     <div class="item">item</div>
@@ -987,50 +990,167 @@
 
   <!-- # position -->
 
-  <!-- <style>
+  <!-- <h1>position</h1>
+  <p>static relative absolute fixed</p>
+
+  <style>
+    .container {
+      background-color: #ddd;
+    }
     .item {
-      width: 100px;
-      height: 100px;
       border: 1px dashed;
     }
     .static {
+      /* default  */
       position: static;
-    }
-    .relative {
-      position: relative;
-      left: 50px;
-    }
-    .fixed {
-      position: fixed;
-      top: 0;
-      right: 0;
     }
   </style>
 
-  <div class="item static">static</div>
-  <div class="item static">static</div>
-  <div class="item relative">relative</div>
-  <div class="item fixed">fixed</div> -->
+  <h3>position: static</h3>
+  <p>position on natural flow</p>
 
-  <!-- <style>
+  <div class="container">
+    <div class="item static">static</div>
+    <div class="item static">static</div>
+    <div class="item static">static</div>
+  </div> -->
+
+  <!-- <h1>position</h1>
+
+  <style>
     .container {
+      background-color: #ddd;
+    }
+    .item {
+      border: 1px dashed;
+      display: inline-block;
+    }
+    .item:nth-child(2) {
+      top: 10px;
+      left: 10px;
+    }
+    .relative {
+      position: relative;
+    }
+  </style>
+
+  <h3>position: relative</h3>
+  <p>relative position to it's natural position</p>
+
+  <div class="container">
+    <div class="item">static</div>
+    <div class="item relative">static</div>
+    <div class="item">static</div>
+  </div> -->
+
+  <!-- <h1>position</h1>
+
+  <style>
+    .container {
+      background-color: #ddd;
       width: 100px;
       height: 100px;
-      border: 1px dashed;
       position: relative;
     }
     .item {
-      background-color: red;
-      width: 10px;
-      height: 10px;
+      border: 1px dashed;
       position: absolute;
+    }
+    .item:nth-child(1) {
+      top: 0;
+      left: 0;
+    }
+    .item:nth-child(2) {
+      top: 0;
+      right: 0;
+    }
+    .item:nth-child(3) {
+      bottom: 0;
+      left: 0;
+    }
+    .item:nth-child(4) {
       bottom: 0;
       right: 0;
     }
   </style>
 
+  <h3>position: absolute</h3>
+  <p>absolute position based on parent(relative position)</p>
+
   <div class="container">
-    <div class="item"></div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div> -->
+
+  <!-- <h1>position</h1>
+
+  <style>
+    body {
+      min-height: 1000px;
+    }
+    .container {
+      background-color: #ddd;
+      width: 100px;
+      height: 100px;
+      position: relative;
+    }
+    .item {
+      border: 1px dashed;
+      position: fixed;
+    }
+    .item:nth-child(1) {
+      top: 0;
+      left: 0;
+    }
+    .item:nth-child(2) {
+      top: 0;
+      right: 0;
+    }
+    .item:nth-child(3) {
+      bottom: 0;
+      left: 0;
+    }
+    .item:nth-child(4) {
+      bottom: 0;
+      right: 0;
+    }
+  </style>
+
+  <h3>position: fixed</h3>
+  <p>position based on viewport</p>
+
+  <div class="container">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div> -->
+
+  <!-- <h1>Q. position</h1>
+
+  <style>
+    .container {
+      position: relative;
+      background-color: green;
+      position: relative;
+      width: 200px;
+      height: 100px;
+    }
+    .item {
+      color: red;
+      font-size: 50px;
+      position: absolute;
+      top: 20px;
+      left: 75px;
+    }
+  </style>
+
+  <h3>HEINEKEN</h3>
+  <div class="container">
+    <div class="item">&#9733</div>
+  </div> -->
+
 </body>
 </html>
