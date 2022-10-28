@@ -1135,265 +1135,160 @@ export default App;
 //   )
 // }
 
-// Beer form: create
-// const initialBeers = [
-//   {id: "b1", name: "Heineken"},
-// ];
-
+// # Modal
 // function App() {
-//   const [beers, setBeers] = useState(initialBeers);
-//   const [name, setName] = useState("");
+//   const [active, setActive] = useState(false);
 
-//   function handleSubmit(e) {
-//     e.preventDefault();
-
-//     const newBeer = {id: Math.random(), name};
-//     const updatedBeers = [...beers, newBeer];
-//     setBeers(updatedBeers);
-
-//     setName("");
+//   const style = {
+//     position: "fixed",
+//     bottom: "0",
+//     left: "0",
+//     width: "100%",
+//     // dynamic style
+//     maxHeight: active ? "100px" : "0",
+//     backgroundColor: "#eee",
+//     transition: "0.2s",
 //   }
 
-//   function handleChange(e) {
-//     const name = e.target.value;
-//     setName(name);
-//   }
-
-//   const beerList = beers.map(beer => (
-//     <li key={beer.id}>
-//       {beer.name}
-//     </li>
-//   ))
+//   const modal = (
+//     <div style={style} onClick={() => setActive(false)}>
+//       <ul>
+//         <li>list item</li>
+//         <li>list item</li>
+//         <li>list item</li>
+//       </ul>
+//     </div>
+//   )
 
 //   return (
 //     <>
-//       <h1>Beers</h1>
-//       <form onSubmit={handleSubmit}>
-//         <input
-//           type="text"
-//           placeholder="Guinness"
-//           onChange={handleChange}
-//           value={name}
-//         />
-//         <button
-//           type="submit"
-//           disabled={!name}
-//         >
-//           Add
-//         </button>
-//       </form>
-//       <ul>
-//         {beerList}
-//       </ul>
+//       <h1>Modal</h1>
+//       <button 
+//         onClick={() => setActive(true)}
+//       >
+//         Button
+//       </button>
+//       {modal}
 //     </>  
 //   )
 // }
 
-// Beer form: delete
-// const initialBeers = [
-//   {id: "b1", name: "Heineken"},
-//   {id: "b2", name: "Guinness"},
-//   {id: "b3", name: "Kloud"}
-// ];
+// Q.
+function App() {
+  const [active, setActive] = useState(false);
 
+  const style = {
+    position: "fixed",
+    top: "0",
+    left: "0",
+    width: "100%",
+    height: "100%",
+    backgroundColor: "rgba(0 0 0 / 0.2)",
+    display: active ? "block" : "none"
+  }
+
+  const sideBar = (
+    <>
+      <div style={{position: "fixed", backgroundColor: "#fff", top: "0", left: active ? "0" : "-200px", zIndex: "1", width: "200px", height: "100%", transition: "0.2s"}}>
+        <ul>
+          <li>list item</li>
+          <li>list item</li>
+          <li>list item</li>
+        </ul>
+      </div>
+      <div className="" style={style} onClick={() => setActive(false)}></div>
+    </>
+  )
+
+  return (
+    <>
+      <h1>Navigation</h1>
+      <button 
+        onClick={() => setActive(true)}
+      >
+        Button
+      </button>
+      {sideBar}
+    </>  
+  )
+}
+
+// # Carousel
 // function App() {
-//   const [beers, setBeers] = useState(initialBeers);
+//   const [index, setIndex] = useState(0);
 
-//   function deleteBeer(beerId) {
-//     const updatedBeers = beers.filter(beer => {
-//       if (beer.id!==beerId) {
-//         return beer;
-//       }
-//     })
+//   console.log(index);
 
-//     setBeers(updatedBeers);
+//   const images = ["Foo", "Bar", "Baz"];
+
+//   const container = {
+//     width: "100px",
+//     height: "100px",
+//     backgroundColor: "#ddd",
+//     display: "flex",
+//     transform: `translateX(-${index*100}px)`,
+//     transition: "0.2s"
 //   }
 
-//   const beerList = beers.map(beer => (
-//     <li key={beer.id}>
-//       {beer.name} {" "}
-//       <button onClick={() => deleteBeer(beer.id)}>Delete</button>
-//     </li>  
-//   ))
+//   const item = {
+//     width: "100%",
+//     height: "100%",
+//     border: "1px dashed",
+//     flexShrink: "0",
+//     display: "flex",
+//     justifyContent: "center",
+//     alignItems: "center"
+//   }
 
 //   return (
 //     <>
-//       <h1>Beers</h1>
-//       <form>
-//         <input
-//           type="text"
-//           placeholder="Guinness"
-//           disabled={true}
-//         />
-//         <button
-//           type="submit"
-//           disabled={true}
-//         >
-//           Add
-//         </button>
-//       </form>
-//       <ul>
-//         {beerList}
-//       </ul>
-//     </>
-//   )
-// }
+//       <h1>Carousel</h1>
 
-// Beer form: update
-// const initialBeers = [
-//   {id: "b1", name: "Heineken", available: true},
-//   {id: "b2", name: "Guinness", available: false},
-//   {id: "b3", name: "Kloud", available: true}
-// ];
-
-// function App() {
-//   const [beers, setBeers] = useState(initialBeers);
-
-//   function editBeer(beerId) {
-//     const editedBeers = beers.map(beer => {
-//       if (beer.id===beerId) {
-//         return {...beer, available: !beer.available}
-//       }
-//       return beer;
-//     })
-
-//     setBeers(editedBeers);
-//   }
-
-//   const beerList = beers.map(beer => (
-//     <li key={beer.id}>
-//       {beer.name} {" "}
-//         <button onClick={() => editBeer(beer.id)}>
-//           {beer.available ? "Available" : "Unavailable"}
-//         </button>
-//     </li>   
-//   ))
-
-//   return (
-//     <>
-//       <h1>Beers</h1>
-//       <form>
-//         <input
-//           type="text"
-//           placeholder="Guinness"
-//           disabled={true}
-//         />
-//         <button
-//           type="submit"
-//           disabled={true}
-//         >
-//           Add
-//         </button>
-//       </form>
-//       <ul>
-//         {beerList}
-//       </ul>
-//     </>
-//   )
-// }
-
-// const initialBeers = [
-//   {id: "b1", name: "Heineken", available: true},
-//   {id: "b2", name: "Guinness", available: false},
-//   {id: "b3", name: "Kloud", available: true}
-// ];
-
-// function App() {
-//   const [beers, setBeers] = useState(initialBeers);
-//   console.log(beers);
-
-//   function addBeer(name) {
-//     const newBeer = {id: Math.random(), name, available: true};
-
-//     const updatedBeers = [...beers, newBeer];
-//     setBeers(updatedBeers);
-//   }
-
-//   function editBeer(beerId) {
-//     const editedBeers = beers.map(beer => {
-//       if (beer.id===beerId) {
-//         return {...beer, available: !beer.available}
-//       }
-//       return beer;
-//     })
-
-//     setBeers(editedBeers);
-//   }
-
-//   function deleteBeer(beerId) {
-//     const updatedBeers = beers.filter(beer => {
-//       if (beer.id!==beerId) {
-//         return beer;
-//       }
-//     })
-
-//     setBeers(updatedBeers);
-//   }
-
-//   const beerList = beers.map(beer => (
-//     <Beer 
-//       key={beer.id} 
-//       beer={beer} 
-//       editBeer={editBeer}
-//       deleteBeer={deleteBeer}
-//     /> 
-//   ))
-
-//   return (
-//     <>
-//       <h1>Beers</h1>
-//       <Form addBeer={addBeer} />
-//       <ul>
-//         {beerList}
-//       </ul>
-//     </>
-//   )
-// }
-
-// function Form({addBeer}) {
-//   const [name, setName] = useState("");
-
-//   function handleSubmit(e) {
-//     e.preventDefault();
-//     addBeer(name);
-//     setName("");
-//   }
-
-//   function handleChange(e) {
-//     const name = e.target.value;
-//     setName(name);
-//   }
-
-//   return (
-//     <form onSubmit={handleSubmit}>
-//       <input
-//         type="text"
-//         placeholder="Guinness"
-//         onChange={handleChange}
-//         value={name}
-//       />
-//       <button
-//         type="submit"
-//         disabled={!name}
-//       >
-//         Add
-//       </button>
-//     </form>  
-//   )
-// }
-
-// function Beer({beer, editBeer, deleteBeer}) {
-//   return (
-//     <li>
-//       {beer.name} 
-//       <div>
-//         <button onClick={() => deleteBeer(beer.id)}>
-//           Delete
-//         </button>
-//         <button onClick={() => editBeer(beer.id)}>
-//           {beer.available ? "Available" : "Unavailable"}
-//         </button>
+//       <div className="images">
+//         <h3>Images</h3>
+//         <div className="container" style={container}>
+//           {images.map(image => (
+//             <div
+//               key={image}
+//               className="item"
+//               style={item}
+//             >
+//               {image}
+//             </div>
+//           ))}
+//         </div>
 //       </div>
-//     </li>   
+
+
+//       <div className="navigation">
+//         <h3>Navigation</h3>
+//         <button 
+//           onClick={() => setIndex(index - 1)}
+//           style={{visibility: index===0 && "hidden"}}
+//           >
+//             Prev
+//           </button>
+//         <button 
+//           onClick={() => setIndex(index + 1)}
+//           style={{visibility: index===2 && "hidden"}}
+//           >
+//             Next
+//           </button>
+//       </div>
+
+//       <div className="indicator">
+//         <h3>Indicator</h3>
+//         <div>
+//           {images.map((image, dot) => (
+//             <span 
+//               key={image} 
+//               style={{color: dot===index && "red"}}
+//             >
+//               @
+//             </span>  
+//           ))}
+//         </div>
+//       </div>
+//     </>  
 //   )
 // }

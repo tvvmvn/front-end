@@ -4,7 +4,7 @@ export default function ArticleList({articles}) {
   return (
     <>
       {articles.map(article => (
-        <Link key={article._id} to={`/p/${article._id}`}>
+        <Link key={article._id} to={`/article/${article._id}`}>
           <img 
             src={`http://localhost:3000/posts/${article.photos[0]}`} 
           />

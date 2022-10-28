@@ -5,7 +5,7 @@ export default function Modal({children}) {
   const [active, setActive] = useState(false);
 
   const modal = (
-    <div className="" style={{display: !active && "none"}}>
+    <div className="" style={{display: !active && "none", backgroundColor: "#ddd"}}>
       <h3>Modal</h3>
       <ul>
         {children}

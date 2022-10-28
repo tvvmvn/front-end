@@ -6,7 +6,7 @@ export default function Carousel({images}) {
   console.log(index);
 
   const container = {
-    transform: `translateX(-${index*100}%)`, 
+    transform: `translateX(-${index*100}px)`, 
     transition: "0.2s",
     backgroundColor: "#ddd",
     whiteSpace: "nowrap"
@@ -43,7 +43,6 @@ export default function Carousel({images}) {
               key={image}
               src={`http://localhost:3000/posts/${image}`}
               alt={image}
-              style={{width: "100%"}}
             />
           ))}
         </div>

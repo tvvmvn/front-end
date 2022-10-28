@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {AuthContext} from "./AuthContext";
+import AuthContext from "./AuthContext";
 
 export default function AuthProvider({children}) {
   const [error, setError] = useState(null);
