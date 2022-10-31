@@ -1,33 +1,44 @@
-import {useState} from "react";
+import {useState, useContext} from "react";
 import {Link} from "react-router-dom";
-import Modal from "./Modal";
+import AuthContext from "./AuthContext";
 import Carousel from "./Carousel";
 
-export default function ArticleItem({initialArticle}) {
-  const [article, setArticle] = useState(initialArticle);
+export default function ArticleItem({article, editArticle, deleteArticle}) {
 
-  function deleteArticle(articleId) {
-    console.log("Delete", articleId)
-  }
+  const auth = useContext(AuthContext);
+  const isMaster = auth.user.username === article.user.username;
+  const created = new Date(article.created).toLocaleDateString();
 
   return (
-    <>
-      <Modal>
-        <li>
-          <button onClick={() => deleteArticle(article._id)}>Delete</button>
-        </li>
-      </Modal>
+    <div className="mb-2">
+      <h3>
+        <Link to={`/profile/${article.user.username}`}>{article.user.username}</Link>
+      </h3>
 
-      <h3>Carousel</h3>
+      <details>
+        <summary>Modal</summary>
+        <ul>
+          <li>
+            <button onClick={() => deleteArticle(article._id)}>Delete</button>
+          </li>
+        </ul>
+      </details>
+
       <Carousel images={article.photos} />
 
+      <div className="">
+        <div className="mb-2">{article.favoriteCount} likes</div>
+        <button type="button" onClick={() => editArticle(article.isFavorite, article._id)}>
+          {article.isFavorite ? "Dislikes" : "Likes"}
+        </button>
+      </div>
+
       <p>{article.description}</p>
-      <small>{article.created}</small>
-      
-      <p>
+      <div className="mb-2">
         <Link to={`/article/${article._id}/comments`}>Comments</Link>
-      </p>
-    </>  
+      </div>
+      <small>{created}</small>
+    </div>  
   )
 }
 

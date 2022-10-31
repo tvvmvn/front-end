@@ -1,9 +1,6 @@
 exports.user = async (req, res, next) => {
   try {
-    setTimeout(() => {
-      res.json(req.user);
-    }, 1000)
-
+    res.json(req.user);
   } catch (error) {
     next(error)
   }

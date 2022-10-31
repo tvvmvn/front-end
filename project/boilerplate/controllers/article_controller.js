@@ -18,12 +18,10 @@ exports.feed = async (req, res, next) => {
       const favorite = await Favorite
         .findOne({ user: loginUser._id, article: article._id });
 
-      article.isFavorite = favorite ? true : false;
+      article.isFavorite = !!favorite;
     }
 
-    setTimeout(() => {
-      res.json(articles)
-    }, 1000)
+    res.json(articles)
 
   } catch (error) {
     next(error)
@@ -31,7 +29,6 @@ exports.feed = async (req, res, next) => {
 }
 
 exports.create = async (req, res, next) => {
-  
   const form = formidable({ multiples: true });
   
   form.parse(req, async (err, fields, files) => {
@@ -53,14 +50,13 @@ exports.create = async (req, res, next) => {
         return next(err);
       }
 
-      // image validation check needed
-      // ...
-
+      // validate image...
+      
       const photos = images.map(photo => {
         const oldpath = photo.filepath;
         const ext = photo.originalFilename.split(".")[1]
         const newName = photo.newFilename + "." + ext;
-        const newpath = __dirname + "/data/posts/" + newName;
+        const newpath = __dirname + "/data/articles/" + newName;
 
         fs.renameSync(oldpath, newpath);
 
@@ -75,9 +71,7 @@ exports.create = async (req, res, next) => {
 
       await article.save();
 
-      setTimeout(() => {
-        res.json(photos)
-      }, 1000)
+      res.json(photos)
 
     } catch (error) {
       next(error)
@@ -93,18 +87,15 @@ exports.article_list = async (req, res, next) => {
       .skip(req.query.skip)
       .limit(req.query.limit);
 
-    setTimeout(() => {
       res.json(articles);
-    }, 1000)
 
   } catch (error) {
     next(error)
   }
 }
 
-// Article
 exports.article = async (req, res, next) => {
-  try {    
+  try {   
     const loginUser = req.user;
     const id = req.params.id;
     const article = await Article
@@ -121,13 +112,9 @@ exports.article = async (req, res, next) => {
     const favorite = await Favorite
       .findOne({ user: loginUser._id, article: article._id })      
     
-    article.isFavorite = favorite ? true : false;
+    article.isFavorite = !!favorite;
 
-    console.log(article);
-
-    setTimeout(() => {
-      res.json(article);
-    }, 1000)
+    res.json(article);
  
   } catch (error) {
     next(error)
@@ -148,16 +135,13 @@ exports.delete = async (req, res, next) => {
     
     await article.delete();
     
-    setTimeout(() => {
-      res.end();
-    }, 1000)
+    res.end();
 
   } catch (error) {
     next(error)
   }
 }
 
-// Favorite and unfavorite article
 exports.favorite = async (req, res, next) => {
   try { 
     const loginUser = req.user;
@@ -183,9 +167,7 @@ exports.favorite = async (req, res, next) => {
 
     await article.save();
 
-    setTimeout(() => {
-      res.end();
-    }, 1000)
+    res.end();
 
   } catch (error) {
     next(error)
@@ -211,9 +193,7 @@ exports.unfavorite = async (req, res, next) => {
     article.favoriteCount--;
     await article.save();
 
-    setTimeout(() => {
-      res.end();
-    }, 1000)
+    res.end();
 
   } catch (error) {
     next(error)

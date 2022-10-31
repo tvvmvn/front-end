@@ -21,15 +21,13 @@ exports.profile = async (req, res, next) => {
       username: user.username,
       bio: user.bio,
       image: user.image,
-      isFollowing: follow ? true : false,
+      isFollowing: !!follow,
       followersCount,
       followingCount,
       articlesCount
     }
 
-    setTimeout(() => {
-      res.json(profile);
-    }, 1000)
+    res.json(profile);
 
   } catch (error) {
     next(error)
@@ -53,9 +51,7 @@ exports.timeline = async (req, res, next) => {
       .skip(req.query.skip)
       .limit(req.query.limit);
 
-    setTimeout(() => {
       res.json(articles);
-    }, 1000)
 
   } catch (error) {
     next(error)
@@ -70,9 +66,7 @@ exports.follower_list = async (req, res, next) => {
       .find({ following: user._id }, "follower")
       .populate("follower")
     
-    setTimeout(() => {
       res.json(follows)
-    }, 1000)
 
   } catch (error) {
     next(error)
@@ -87,9 +81,7 @@ exports.following_list = async (req, res, next) => {
       .find({ follower: user._id }, "following")
       .populate("following")
     
-    setTimeout(() => {
       res.json(follows)
-    }, 1000)
 
   } catch (error) {
     next(error)
@@ -117,9 +109,7 @@ exports.follow = async (req, res, next) => {
 
     await newFollow.save();
 
-    setTimeout(() => {
-      res.end();
-    }, 1000)
+    res.end();
 
   } catch (error) {
     next(error)
@@ -142,10 +132,8 @@ exports.unfollow = async (req, res, next) => {
 
     await follow.delete();
 
-    setTimeout(() => {
-      res.end();
-    }, 1000)
-
+    res.end();
+    
   } catch (error) {
     next(error)
   }

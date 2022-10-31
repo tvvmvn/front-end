@@ -12,14 +12,17 @@ export default function Profile() {
   const [initialArticles, setInitialArticles] = useState(null);
 
   useEffect(() => {
-    Promise.all([
-      fetch(`http://localhost:3000/profiles/${username}`, {
-        headers: {"Authorization": `Bearer ${localStorage.getItem("token")}`}
-      }),
-      fetch(`http://localhost:3000/profiles/${username}/articles`, {
-        headers: {"Authorization": `Bearer ${localStorage.getItem("token")}`}
-      })
-    ])
+    setIsLoaded(false);
+
+    const profilePromise = fetch(`http://localhost:3000/profiles/${username}`, {
+      headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
+    })
+
+    const articlesPromise = fetch(`http://localhost:3000/profiles/${username}/articles`, {
+      headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
+    })
+
+    Promise.all([profilePromise, articlesPromise])
     .then(([res1, res2]) => {
       if (!res1.ok) {
         throw res1;
@@ -37,13 +40,13 @@ export default function Profile() {
       setError(error)
     })
     .finally(() => setIsLoaded(true));
-  }, [])
+  }, [username])
 
   if (error) {
-    return <p>Error</p>
+    return <p>failed to fetch</p>
   }
   if (!isLoaded) {
-    return <p>Loading...</p>
+    return <p>fetching profile...</p>
   } 
   return (
     <>
@@ -57,25 +60,94 @@ export default function Profile() {
 function ProfileDetail({initialProfile}) {
   const [profile, setProfile] = useState(initialProfile);
   const auth = useContext(AuthContext);
+  const isMaster = auth.user.username === profile.username;
+
+  useEffect(() => {
+    setProfile(initialProfile)
+  }, [initialProfile]);
+
+  function editProfile() {
+    if (!profile.isFollowing) {
+      fetch(`http://localhost:3000/profiles/${profile.username}/follow`, {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${localStorage.getItem("token")}` }
+      })
+      .then(res => {
+        if (!res.ok) {
+          throw res;
+        }
+        const editedProfile = {...profile, isFollowing: true}
+        setProfile(editedProfile);
+      })
+      .catch(error => alert("failed to follow"))
+    } else {
+      fetch(`http://localhost:3000/profiles/${profile.username}/follow`, {
+        method: 'DELETE',
+        headers: { 'Authorization': `Bearer ${localStorage.getItem("token")}` }
+      })
+      .then(res => {
+        if (!res.ok) {
+          throw res;
+        }
+        const editedProfile = {...profile, isFollowing: false}
+        setProfile(editedProfile);
+      })
+      .catch(error => alert("failed to unfollow"))
+    }
+  }
+
+  const accountTemplate = (
+    <>
+      <div className="mb-2">
+        <Link to="/accounts/edit">Edit profile</Link>
+      </div>
+      <button type="button" onClick={auth.signOut}>Logout</button>
+    </>
+  )
+
+  const editTemplate = (
+    <button onClick={editProfile}>
+      {!profile.isFollowing ? "Follow" : "Unfollow"}
+    </button>  
+  )
   
   return (
-    <>
+    <div>
+      <div>
+        <img src={`http://localhost:3000/users/${profile.image || "avatar.jpeg"}`} />
+      </div>
+
       <h3>{profile.username}</h3>
-      <button type="button" onClick={auth.signOut}>Logout</button>
-    </>  
+      <p>{profile.bio}</p>
+
+      {isMaster ? accountTemplate : editTemplate}
+
+      <div>
+        <ul>
+          <li>Follower {profile.followersCount}</li>
+          <li>Following {profile.followingCount}</li>
+          <li>Articles {profile.articlesCount}</li>
+        </ul>
+      </div>
+
+    </div>  
   )
 }
 
 function ProfileTimeline({initialArticles}) {
   const [articles, setArticles] = useState(initialArticles);
 
+  useEffect(() => {
+    setArticles(initialArticles)
+  }, [initialArticles])
+
   return (
     <>
-      <h3>Articles</h3>
+      <h3>Timeline</h3>
       {articles.map(article => (
         <Link key={article._id} to={`/article/${article._id}`}>
           <img
-            src={`http://localhost:3000/posts/${article.photos[0]}`}
+            src={`http://localhost:3000/articles/${article.photos[0]}`}
           />
         </Link>
       ))}

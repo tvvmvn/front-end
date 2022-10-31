@@ -2,6 +2,7 @@ const { User } = require("../models/model");
 const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
 const formidable = require("formidable");
+const fs = require("fs");
 
 exports.login = async (req, res, next) => {
   try {
@@ -27,9 +28,7 @@ exports.login = async (req, res, next) => {
 
     const token = jwt.sign({ username: user.username }, "shhhhh");
 
-    setTimeout(() => {
-      res.json({ user, token })
-    }, 1000)
+    res.json({ user, token })
 
   } catch (error) {
     next(error)
@@ -39,15 +38,28 @@ exports.login = async (req, res, next) => {
 exports.register = [
   async (req, res, next) => {
     try {
-      const {username, password, email} = req.body;
-  
-      if (!username) {
-        const err = new Error("username is required");
-        err.status = 400;
-        return next(err);
+      const {username, email, password} = req.body;
+
+      {
+        const user = await User.findOne({username});
+        
+        if (user) {
+          const err = new Error("Username must be unique");
+          err.status = 400;
+          return next(err);
+        }
+      }
+
+      {
+        const user = await User.findOne({email});
+        
+        if (user) {
+          const err = new Error("Email must be unique");
+          err.status = 400;
+          return next(err);
+        }
       }
   
-      // next callback
       next();
 
     } catch (error) {
@@ -57,8 +69,9 @@ exports.register = [
 
   async (req, res, next) => {
     try {
-      res.json(req.body)
-      return;
+      const {username, email, password} = req.body;
+
+      return console.log(req.body);
 
       const salt = crypto.randomBytes(16).toString("hex");
       const hashedPassword = crypto
@@ -74,9 +87,7 @@ exports.register = [
 
       await user.save();
 
-      setTimeout(() => {
-        res.json(user)
-      }, 1000)
+      res.json(user)
 
     } catch (error) {
       next(error)
@@ -92,9 +103,7 @@ exports.edit = async (req, res, next) => {
     user.bio = bio;
     await user.save();
   
-    setTimeout(() => {
-      res.json(user.bio)
-    }, 1000)
+    res.json(user.bio)
 
   } catch (error) {
     next(error)
@@ -117,16 +126,14 @@ exports.upload_image = async (req, res, next) => {
       const oldPath = image.filepath;
       const ext = image.originalFilename.split(".")[1];
       const newName = image.newFilename + "." + ext;
-      const newPath = __dirname + "/data/users/" + newName;
+      const newPath = "data/users/" + newName;
 
       fs.renameSync(oldPath, newPath);
 
       user.image = newName;
       await user.save();
       
-      setTimeout(() => {
-        res.json(newName);
-      }, 1000)
+      res.json(newName);
 
     } catch (error) {
       next(error)
@@ -142,9 +149,7 @@ exports.delete_image = async (req, res, next) => {
     user.image = null;
     await user.save();
 
-    setTimeout(() => {
-      res.end();
-    }, 1000)
+    res.end();
 
   } catch (error) {
     next(error)

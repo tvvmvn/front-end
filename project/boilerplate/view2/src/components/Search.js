@@ -1,10 +1,9 @@
 import {useState} from "react";
-
+import {Link} from "react-router-dom";
 
 export default function() {
 
   const [users, setUsers] = useState([]);
-  const [error, setError] = useState(null);
 
   function handleChange(e) {
     const username = e.target.value;
@@ -26,8 +25,8 @@ export default function() {
     .then(data => {
       setUsers(data)
     })
-    .then(error => {
-      setError(error)
+    .catch(error => {
+      alert(error)
     })
   } 
 
@@ -41,7 +40,11 @@ export default function() {
       />
       <ul>
         {users.map((user, index) => (
-          <li key={index}>{user.username}</li>  
+          <li key={index}>
+            <Link to={`/profile/${user.username}`}>
+              {user.username}
+            </Link>
+          </li>  
         ))}
       </ul>
     </>

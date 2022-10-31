@@ -38,10 +38,7 @@ app.use('/', indexRouter);
 // # ERROR HANDLER
 app.use((err, req, res, next) => {
   console.error(err);
-
-  setTimeout(() => {
-    res.status(err.status || 500).json(err); 
-  }, 1000)
+  res.status(err.status || 500).json(err); 
 })
 
 // # SERVER RUNNING MESSAGE

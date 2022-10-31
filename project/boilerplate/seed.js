@@ -13,6 +13,7 @@ async function createUser(username, email, password = "123") {
   
   const oldPath = `${__dirname}/seeds/profiles/${file}`;
   const newPath = `${__dirname}/data/users/${newFile}`;
+
   fs.copyFileSync(oldPath, newPath);
 
   const user = new User({
@@ -38,7 +39,7 @@ async function createArticle(username, postId) {
     const newFile = `${crypto.randomBytes(24).toString("hex")}.${file.split(".")[1]}`;
     
     const oldPath = `${__dirname}/seeds/${username}/${file}`;
-    const newPath = `${__dirname}/data/posts/${newFile}`;
+    const newPath = `${__dirname}/data/articles/${newFile}`;
     fs.copyFileSync(oldPath, newPath);
 
     return newFile;
@@ -55,13 +56,13 @@ async function createArticle(username, postId) {
   return 0;
 }
 
-async function createFollowing(username, following) {
-  const user = await User.findOne({username});
-  const followedUser = await User.findOne({username: following});
+async function createFollowing(follower, following) {
+  const _follower = await User.findOne({username: follower});
+  const _following = await User.findOne({username: following});
 
   const follow = new Follow({
-    user: user._id,
-    following: followedUser._id
+    follower: _follower._id,
+    following: _following._id
   })
 
   await follow.save();

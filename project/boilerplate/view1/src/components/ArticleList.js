@@ -9,7 +9,7 @@ export default function ArticleList({ articles }) {
       to={`/p/${article._id}`}
     >
       <img 
-        src={`http://localhost:3000/posts/${article.photos[0]}`} 
+        src={`http://localhost:3000/articles/${article.photos[0]}`} 
         alt="d" 
         className="w-full h-full object-cover" 
       />

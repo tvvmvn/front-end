@@ -1,7 +1,6 @@
 import {useContext, useState, useEffect} from "react";
 import {Link, useParams} from "react-router-dom";
 import AuthContext from "./AuthContext";
-import Modal from "./Modal";
 
 export default function () {
   const params = useParams();
@@ -30,10 +29,10 @@ export default function () {
   }, [])
 
   if (error) {
-    return <p>Error</p>
+    return <p>failed to fetch</p>
   }
   if (!isLoaded) {
-    return <p>Loading...</p>
+    return <p>fetching comments...</p>
   } 
   return (
     <Comments   
@@ -46,15 +45,7 @@ export default function () {
 function Comments({ articleId, initialComments }) {
   const [comments, setComments] = useState(initialComments);
   
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(null);
-  const [message, setMessage] = useState("");
-  
   function createComment(text, setText) {
-    setIsLoaded(false)
-    setError(null)
-    setMessage("");
-
     const formData = JSON.stringify({ content: text });
 
     fetch(`http://localhost:3000/articles/${articleId}/comments`, {
@@ -74,18 +65,13 @@ function Comments({ articleId, initialComments }) {
     .then(newComment => {
       setComments([newComment, ...comments])
       setText("")
-      setMessage("Successfully created")
     })
     .catch(error => {
-      setError("failed to create comment")
+      alert("failed to create comment")
     })
-    .finally(() => setIsLoaded(true))
   }
 
   function deleteComment(commentId) {
-    setError(null);
-    setMessage("");
-
     fetch(`http://localhost:3000/comments/${commentId}`, {
       method: "DELETE",
       headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` },
@@ -96,16 +82,13 @@ function Comments({ articleId, initialComments }) {
       }
       const updatedComments = comments.filter(comment => comment._id !== commentId);
       setComments(updatedComments);
-      setMessage("Successfully deleted");
     })
     .catch(error => {
-      setError("failed to delete comment");
+      alert("failed to delete comment");
     })
   }
 
   function editComment(isFavorite, commentId) {
-    setError(null);
-
     if (!isFavorite) {
       fetch(`http://localhost:3000/comments/${commentId}/favorite`, {
         method: 'POST',
@@ -123,7 +106,7 @@ function Comments({ articleId, initialComments }) {
         })
         setComments(editedCommentList);
       })
-      .catch(error => setError("failed to create favorite"))
+      .catch(error => alert("failed to create favorite"))
     } else {
       fetch(`http://localhost:3000/comments/${commentId}/favorite`, {
         method: 'DELETE',
@@ -141,20 +124,18 @@ function Comments({ articleId, initialComments }) {
         })
         setComments(editedCommentList);
       })
-      .catch(error => setError("failed to delete favorite"))
+      .catch(error => alert("failed to delete favorite"))
     }
   }
 
   const commentList = comments.map(comment => (
-    <div key={comment._id} className="">
-      <hr />
-      <Comment 
-        comment={comment} 
-        editComment={editComment} 
-        deleteComment={deleteComment} 
-      />
-    </div>
-  ))
+    <Comment 
+      key={comment._id}
+      comment={comment} 
+      editComment={editComment} 
+      deleteComment={deleteComment} 
+    />
+))
 
   return (
     <div className="">
@@ -180,10 +161,9 @@ function Form({createComment}) {
   }
 
   return(
-    <form onSubmit={handleSubmit} className="">
+    <form onSubmit={handleSubmit} className="mb-3">
       <textarea 
-        type="text" 
-        name="text"
+        rows="3"
         className=""
         value={text} 
         onChange={handleChange} 
@@ -204,32 +184,44 @@ function Comment({comment, editComment, deleteComment}) {
   const auth = useContext(AuthContext);
   const isMaster = auth.user.username === comment.user.username;
 
-  return (
-    <>
-      {isMaster &&
-        <Modal>
-          <li className="">
-            <button 
-              onClick={() => deleteComment(comment._id)}
-            >
-              Delete
-            </button>
-          </li>
-        </Modal>
-      }
+  const modal = (
+    <details>
+      <summary>Modal</summary>
+      <ul>
+        <li>
+          <button
+            onClick={() => deleteComment(comment._id)}
+          >
+            Delete
+          </button>
+        </li>
+      </ul>
+    </details>
+  )
 
-      <p className="">{comment.content}</p>
+  const created = new Date(comment.created).toLocaleDateString();
+
+  return (
+    <div className="mb-3">
+      <h4>
+        <Link to={`/profile/${comment.user.username}`}>{comment.user.username}</Link>
+      </h4>
+      {isMaster && modal}
+
+      <p>{comment.content}</p>
       
-      <div className="">
+      <div className="mb-3">
+        <div className="mb-3">
+          {comment.favoriteCount} likes
+        </div>
         <button 
           onClick={() => editComment(comment.isFavorite, comment._id)}
         >
           {comment.isFavorite ? "Dislike" : "Like"}
         </button> 
-        <div className="">{comment.favoriteCount} likes</div>
       </div>
 
-      <small className="">{comment.created}</small>
-    </>  
+      <small>{created}</small>
+    </div>  
   )
 }

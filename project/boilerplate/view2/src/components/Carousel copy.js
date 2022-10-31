@@ -29,7 +29,7 @@ export default function Carousel({images}) {
   )
 
   const indicator = images.map((image, i) => (
-    <span key={i} style={{ color: i === index && "red" }}>
+    <span key={i} className={"d"}>
       *
     </span>
   ))

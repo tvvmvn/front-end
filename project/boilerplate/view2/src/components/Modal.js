@@ -2,24 +2,14 @@ import {useState} from "react";
 
 export default function Modal({children}) {
 
-  const [active, setActive] = useState(false);
-
-  const modal = (
-    <div className="" style={{display: !active && "none", backgroundColor: "#ddd"}}>
-      <h3>Modal</h3>
-      <ul>
-        {children}
-        <li>
-          <button onClick={() => setActive(false)}>Cancel</button>
-        </li>
-      </ul>
-    </div>
-  )
-
   return (
-    <>
-      <button onClick={() => setActive(true)}>Modal</button>
-      {modal}
-    </>
+    // <div className="mb-2">
+    //   <button onClick={() => setActive(true)}>Modal</button>
+    //   {modal}
+    // </div>
+    <details>
+      <summary>Modal</summary>
+      {children}
+    </details>
   )
 }

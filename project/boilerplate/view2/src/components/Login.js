@@ -1,19 +1,23 @@
 import {useState, useContext} from "react";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import AuthContext from "./AuthContext";
 
 export default function Login() {
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
-  const [user, setUser] = useState(null);
+  const [email, setEmail] = useState(localStorage.getItem("email") || "");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
 
+    const formData = {email, password}
+
     fetch(`http://localhost:3000/accounts/login`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(user)
+      body: JSON.stringify(formData)
     })
     .then(res => {
       if (!res.ok) {
@@ -23,6 +27,7 @@ export default function Login() {
     })
     .then(data => {
       auth.signIn(data, () => navigate("/", {replace: true}));
+      localStorage.setItem("email", email)
     })
     .catch(error => {
       if (error.status === 401) {
@@ -32,31 +37,44 @@ export default function Login() {
     })
   }
 
-  function handleChange(e) {
-    const name = e.target.name;
-    const value = e.target.value;
-
-    setUser({...user, [name]: value});
-  }
-
   return (
     <>
       <h1>Login</h1>
 
       <form onSubmit={handleSubmit}>
-        <div className="">
-          <label htmlFor="">
-            Email
-            <input type="text" name="email" onChange={handleChange} required />
+        <div className="mb-2">
+          <label htmlFor="">Email</label>
+          <input 
+            type="text" 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)} 
+          />
+        </div>
+        <div className="mb-2">
+          <label htmlFor="">Password</label>
+          <input 
+            type={showPassword ? "text" : "password"} 
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <label>
+            <input 
+            type="checkbox" 
+            onChange={(e) => setShowPassword(e.target.checked)} 
+          />
+            Show password
           </label>
         </div>
-        <div className="">
-          <label htmlFor="">  
-            Password
-            <input type="text" name="password" onChange={handleChange} required />
-          </label>
+        <div className="mb-2">
+          <button 
+            type="submit" 
+            disabled={!email.trim() || !password.trim()}
+          >
+            Submit
+          </button>
         </div>
-        <button type="submit">Submit</button>
+        <div>
+          <Link to="/register">Create account</Link>
+        </div>
       </form>
     </>  
   )

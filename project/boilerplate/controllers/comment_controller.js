@@ -19,9 +19,7 @@ exports.comment_list = async (req, res, next) => {
       comment.isFavorite = favoriteComment ? true : false;
     }
     
-    setTimeout(() => {
-      res.json(comments);
-    }, 1000)
+    res.json(comments);
 
   } catch (error) {
     next(error)
@@ -42,9 +40,7 @@ exports.create = async (req, res, next) => {
 
     await comment.save();
 
-    setTimeout(async () => {
-      res.json(await comment.populate("user"));
-    }, 1000);
+    res.json(await comment.populate("user"));
 
   } catch (error) {
     next(error)
@@ -65,9 +61,7 @@ exports.delete = async (req, res, next) => {
 
     await comment.delete();
 
-    setTimeout(() => {
-      res.end();
-    }, 1000)
+    res.end();
 
   } catch (error) {
     next(error)
@@ -99,8 +93,6 @@ exports.favorite = async (req, res, next) => {
 
     await comment.save();
 
-    setTimeout(() => {
-    }, 1000)
     res.end();
 
   } catch (error) {
@@ -127,8 +119,6 @@ exports.unfavorite = async (req, res, next) => {
     comment.favoriteCount--;
     await comment.save();
 
-    setTimeout(() => {
-    }, 1000)
     res.end();
 
   } catch (error) {
