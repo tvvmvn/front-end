@@ -302,43 +302,43 @@
     .item {
       border: 1px dashed;
     }
-    .align-stretch {
+    .items-stretch {
       align-items: stretch
     }
-    .align-center {
+    .items-center {
       align-items: center;
     }
-    .align-baseline {
+    .items-baseline {
       align-items: baseline;
     }
-    .align-end {
+    .items-end {
       align-items: flex-end;
     }
   </style>
 
   <h3>align-items: stretch(default)</h3>
-  <div class="container align-stretch">
+  <div class="container items-stretch">
     <div class="item">item</div>
     <div class="item">item</div>
     <div class="item">item</div>
   </div>
   
   <h3>align-items: baseline</h3>
-  <div class="container align-baseline">
+  <div class="container items-baseline">
     <div class="item">item</div>
     <div class="item">item</div>
     <div class="item">item</div>
   </div>
 
   <h3>align-items: center</h3>
-  <div class="container align-center">
+  <div class="container items-center">
     <div class="item">item</div>
     <div class="item">item</div>
     <div class="item">item</div>
   </div>
 
   <h3>align-items: flex-end</h3>
-  <div class="container align-end">
+  <div class="container items-end">
     <div class="item">item</div>
     <div class="item">item</div>
     <div class="item">item</div>
@@ -356,62 +356,90 @@
     .item {
       border: 1px dashed;
     }
-    .align-stretch {
+    .items-stretch {
       align-items: stretch;
     }
-    .align-start {
+    .items-start {
       align-items: flex-start;
     }
-    .align-center {
+    .items-center {
       align-items: center;
     }
-    .align-end {
+    .items-end {
       align-items: flex-end;
     }
   </style>
 
   <h3>align-items: stretch(default)</h3>
-  <div class="container align-stretch">
+  <div class="container items-stretch">
     <div class="item">item</div>
     <div class="item">item</div>
     <div class="item">item</div>
   </div>
 
   <h3>align-items: flex-start</h3>
-  <div class="container align-start">
+  <div class="container items-start">
     <div class="item">item</div>
     <div class="item">item</div>
     <div class="item">item</div>
   </div>
   
   <h3>align-items: center</h3>
-  <div class="container align-center">
+  <div class="container items-center">
     <div class="item">item</div>
     <div class="item">item</div>
     <div class="item">item</div>
   </div>
 
   <h3>align-items: flex-end</h3>
-  <div class="container align-end">
+  <div class="container items-end">
     <div class="item">item</div>
     <div class="item">item</div>
     <div class="item">item</div>
   </div> -->
 
-  <!-- flex item properties -->
-  <!-- flex order -->
+  <!-- <h1>Q. flex container</h1>
+  <p>justify-content, align-items</p>
 
-  <!-- <style>
-    .flex {
+  <style>
+    .container {
+      width: 200px;
+      height: 100px;
+      background-color: green;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    .item {
+      color: red;
+      font-size: 50px;
+    }
+  </style>
+
+  <h1>HEINEKEN</h1>
+  <div class="container">
+    <div class="item">&#9733;</div>
+  </div> -->
+
+  <!-- flex item properties -->
+
+  <!-- <h1>order</h1>
+  <p>order for flex items</p>
+
+  <style>
+    .container {
       background-color: #ddd;
       display: flex;
     }
     .item {
-      width: 50px;
-      height: 50px;
       border: 1px dashed;
+      padding: 0.5rem;
     }
     .item:first-child {
+      order: 3;
+    }
+    .item:nth-child(2) {
       order: 2;
     }
     .item:last-child {
@@ -419,22 +447,25 @@
     }
   </style>
 
-  <div class="flex">
-    <div class="item">1</div>
-    <div class="item">2</div>
+  <div class="container">
+    <div class="item">item 1</div>
+    <div class="item">item 2</div>
+    <div class="item">item 3</div>
   </div> -->
 
   <!-- flex-grow -->
 
-  <!-- <style>
-    .flex {
+  <!-- <h1>flex-grow</h1>
+  <p>an item fills available space of container</p>
+
+  <style>
+    .container {
       background-color: #ddd;
       display: flex;
     }
     .item {
-      width: 100px;
-      height: 100px;
       border: 1px dashed;
+      padding: 0.5rem;
       flex-grow: 0;
     }
     .item:nth-child(2) {
@@ -442,80 +473,66 @@
     }
   </style>
 
-  <div class="flex">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+  <div class="container">
+    <div class="item">item</div>
+    <div class="item">item(grow)</div>
+    <div class="item">item</div>
   </div> -->
 
-  <!-- <style>
-    .flex {
-      background-color: #ddd;
-      display: flex;
-    }
-    .item {
-      width: 100px;
-      height: 100px;
-      border: 1px dashed;
-      flex-grow: 1;
-    }
-  </style>
+  <!-- <h1>flex shrink</h1>
+  <p>items are basically shrinkable</p>
 
-  <div class="flex">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-  </div> -->
-
-  <!-- flex-shrink -->
-
-  <!-- <style>
-    .flex {
+  <style>
+    .container {
       background-color: #ddd;
       display: flex;
     }
     .item {
       width: 200px;
-      height: 100px;
       border: 1px dashed;
       flex-shrink: 1;
+      padding: 0.5rem;
     }
     .item:nth-child(2) {
       flex-shrink: 0;
     }
   </style>
 
-  <div class="flex">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+  <div class="container">
+    <div class="item">item</div>
+    <div class="item">item (not shrink)</div>
+    <div class="item">item</div>
   </div> -->
 
-  <!-- flex-basis -->
+  <!-- <h1>flex-basis</h1>
+  <p>width of flex items</p>
 
-  <!-- <style>
-    .flex {
+  <style>
+    .container {
       background-color: #ddd;
       display: flex;
-      /* flex-wrap: nowrap; */
+      flex-wrap: wrap;
     }
     .item {
-      height: 100px;
       border: 1px dashed;
-      flex-basis: 33.33333%;
+      padding: 0.5rem;
+      /* works only on wrap */
+      flex-basis: 50%;
+      box-sizing: border-box;
     }
   </style>
 
-  <div class="flex">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+  <div class="container">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div> -->
 
-  <!-- align self -->
+  <!-- <h1>align-self</h1>
+  <p>override align-items property of container</p>
 
-  <!-- <style>
-    .flex {
+  <style>
+    .container {
       background-color: #ddd;
       display: flex;
       align-items: center;
@@ -525,82 +542,51 @@
       width: 100px;
       border: 1px dashed;
     }
-    .item:last-child {
+    .item:nth-child(4) {
       align-self: flex-start;
     }
   </style>
   
-  <div class="flex">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
-    <div class="item">4</div>
-  </div> -->
-
-  <!-- <style>
-    .container {
-      display: flex;
-      background-color: #ddd;
-      height: 300px;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-    }
-    .item {
-      background-color: #888;
-      width: 100px;
-      height: 100px;
-    }
-    .item:first-child {
-      align-self:auto;
-    }
-    .item:nth-child(2) {
-      align-self: center;
-    }
-    .item:last-child {
-      align-self: flex-end;
-    }
-  </style>
-
   <div class="container">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+    <div class="item">item 1</div>
+    <div class="item">item 2</div>
+    <div class="item">item 3</div>
+    <div class="item">item 4</div>
   </div> -->
 
-  <!-- <style>
+  <!-- <h1>Q. flex items</h1>
+  <p>flex-wrap, flex-basis</p>
+
+  <style>
     .container {
       display: flex;
       background-color: #ddd;
-      height: 200px;
-      justify-content: center;
-      align-items: center;
+      flex-wrap: wrap;
     }
     .item {
-      display: flex;
+      flex-basis: 33.33333%;
+      box-sizing: border-box;
       border: 1px dashed;
-      width: 100px;
-      height: 100px;
-      align-items: flex-start;
-      justify-content: flex-end;
-    }
-    .dot {
-      width: 10px;
-      height: 10px;
-      background-color: red;
+      padding: 0.5rem;
     }
   </style>
 
   <div class="container">
-    <div class="item">
-      <div class="dot"></div>
-    </div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div> -->
 
-  <!-- # grid -->
+  <!-- <h1>grid</h1>
 
-  <!-- <style>
-    .grid {
+  <style>
+    .container {
       background-color: #ddd;
       display: grid;
       /* minmax(min, max) */
@@ -608,82 +594,95 @@
       /* minmax() CSS function defines a size range greater than or equal to min 
       and less than or equal to max. It is used with CSS Grids */
       /* fr: fraction (분수) */
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.25rem;
     }
     .item {
       border: 1px dashed;
-      overflow: auto;
-      padding: 10px;
-      text-align: center;
+      padding: 0.5rem;
     }
   </style>
 
-  <div class="grid">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
-    <div class="item">4</div>
-    <div class="item">5</div>
-    <div class="item">6</div>
-    <div class="item">7</div>
-    <div class="item">8</div>
-    <div class="item">9</div>
-    <div class="item">10</div>
-    <div class="item">11</div>
-    <div class="item">12</div>
+  <div class="container">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div> -->
 
-  <!-- # transform -->
-  <!-- translate, scale, rotate, skew -->
+  <!-- <h1>transform</h1>
+  <p>translate, scale, rotate</p>
 
-  <!-- <style>
+  <h3>translate</h3>
+  <p>moves from its' base position</p>
+
+  <style>
     .container {
       background-color: #ddd;
-      width: 200px;
-      height: 200px;
-    }
-    .item {
       width: 100px;
       height: 100px;
+    }
+    .item {
       border: 1px dashed;
-      transform: translate(25px, 25px);
+      transform: translate(10px, 10px);
     }
   </style>
 
   <div class="container">
-    <div class="item"></div>
+    <div class="item">item</div>
   </div> -->
 
-  <!-- <style>
+  <!-- <h1>transform</h1>
+  <p>scale</p>
+
+  <style>
+    .container {
+      background-color: #ddd;
+    }
     .item {
-      width: 100px;
-      height: 100px;
       border: 1px dashed;
-      transform: scale(1.1, 1.1);
+      padding: 0.5rem;
+      display: inline-block;
+    }
+    .item:nth-child(2) {
+      transform: scale(2, 2)
     }
   </style>
 
   <div class="container">
-    <div class="item"></div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div> -->
 
-  <!-- <style>
+  <!-- <h1>transform</h1>
+  <p>rotate</p>
+
+  <style>
     .item {
-      width: 100px;
-      height: 100px;
+      padding: 0.5rem;
+      display: inline-block;
       border: 1px dashed;
       transform: rotate(45deg);
     }
   </style>
 
   <div class="container">
-    <div class="item"></div>
+    <div class="item">item</div>
   </div> -->
 
-  <!-- # Responsive with @media keyword -->
+  <!-- <h1>Responsive style</h1>
+  <p>styles according to screen size</p>
 
-  <!-- <style>
+  <style>
+  .container {
+    background-color: #ddd;
+  }
     /* Mobile first */
   .title::after {
     content: "Extra small devices";
@@ -717,7 +716,7 @@
   </style>
 
   <div class="container">
-    <h1 class="title"></h1>
+    <h3 class="title">Devices: </h3>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. 
       Asperiores at fugit quia, explicabo facere pariatur iste rerum sapiente incidunt 
@@ -725,16 +724,42 @@
     </p>
   </div> -->
 
-  <!-- # image: img tag and background-image -->
+  <!-- <h1>Q. responsive</h1>
+  <p>flex-wrap, flex-basis</p>
 
-  <!-- <style>
+  <style>
     .container {
+      background-color: #ddd;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .item {
+      border: 1px dashed;
+      padding: 0.5rem;
+      flex-basis: 100%;
+      box-sizing: border-box;
+    }
+    @media (min-width: 640px) {
+      .item {
+        flex-basis: 50%;
+      }
+    }
+  </style>
+
+  <div class="container">
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div> -->
+
+  <!-- <h1>style images</h1>
+
+  <style>
+    .container {
+      background-color: #ddd;
+    }
+    img {
       width: 100px;
       height: 100px;
-    }
-    .container img {
-      width: 100%;
-      height: 100%;
       object-fit: cover;
     }
   </style>
@@ -743,28 +768,33 @@
     <img src="../../img/bunny.jpeg" alt="">
   </div> -->
 
-  <!-- <style>
+  <!-- <h1>background-image</h1>
+  <p>put image into element</p>
+
+  <style>
     .container {
+      background-color: #ddd;
+    }
+    .item {
       width: 100px;
       height: 100px;
       display: inline-block;
     }
-    .bg-light-grey {
-      background-color: #ddd;
-    }
     .bg-gradient-to-r {
-      background-image: linear-gradient(to right, #333, #888);
+      background-image: linear-gradient(to right, #000, #fff);
     }
     .bg-image {
       background-image: url("../../img/bunny.jpeg");
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
     }
   </style>
 
-  <div class="container bg-light-grey"></div>
-  <div class="container bg-gradient-to-r"></div>
-  <div class="container bg-image"></div> -->
+  <div class="container">
+    <div class="item bg-gradient-to-r"></div>
+    <div class="item bg-image"></div>
+  </div> -->
   
 </body>
 </html>

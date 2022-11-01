@@ -1136,7 +1136,7 @@ export default App;
 //   )
 // }
 
-// # Modal
+// # Drawer
 // function App() {
 //   const [active, setActive] = useState(false);
 
@@ -1307,45 +1307,45 @@ export default App;
 // }
 
 // # Router
-function Home() {
-  return <h1>Home</h1>
-}
+// function Home() {
+//   return <h1>Home</h1>
+// }
 
-function Posts() {
-  return (
-    <>
-      <h1>Posts</h1>
-      <ul>
-        <li>
-          <Link to="/post/p1">Post 1</Link>
-        </li>
-        <li>
-          <Link to="/post/p2">Post 2</Link>
-        </li>
-      </ul>
-    </>  
-  )
-}
+// function Posts() {
+//   return (
+//     <>
+//       <h1>Posts</h1>
+//       <ul>
+//         <li>
+//           <Link to="/post/p1">Post 1</Link>
+//         </li>
+//         <li>
+//           <Link to="/post/p2">Post 2</Link>
+//         </li>
+//       </ul>
+//     </>  
+//   )
+// }
 
-function Post() {
-  const params = useParams();
-  const postId = params.postId;
+// function Post() {
+//   const params = useParams();
+//   const postId = params.postId;
 
-  return (
-    <>
-      <h1>Post</h1>
-      <p>{postId}</p>
-    </>  
-  )
-}
+//   return (
+//     <>
+//       <h1>Post</h1>
+//       <p>{postId}</p>
+//     </>  
+//   )
+// }
 
-function Contact() {
-  return <h1>Contact</h1>
-}
+// function Contact() {
+//   return <h1>Contact</h1>
+// }
 
-function NotFound() {
-  return <h1>404 NotFound</h1>
-}
+// function NotFound() {
+//   return <h1>404 NotFound</h1>
+// }
 
 // function App() {
 //   return (
@@ -1381,95 +1381,95 @@ function NotFound() {
 // login update user state.
 // Authorization completed.
 
-const AuthContext = createContext();
+// const AuthContext = createContext();
 
-function AuthProvider({children}) {
-  const [user, setUser] = useState(null);
+// function AuthProvider({children}) {
+//   const [user, setUser] = useState(null);
 
-  function signIn(username) {
-    setUser(username);
-  }
+//   function signIn(username) {
+//     setUser(username);
+//   }
 
-  function signOut() {
-    setUser(null)
-  }
+//   function signOut() {
+//     setUser(null)
+//   }
 
-  const value = {user, signIn, signOut};
+//   const value = {user, signIn, signOut};
 
-  return (
-    <AuthContext.Provider value={value}>
-      {children}
-    </AuthContext.Provider>
-  )
-}
+//   return (
+//     <AuthContext.Provider value={value}>
+//       {children}
+//     </AuthContext.Provider>
+//   )
+// }
 
-function AuthRequired({children}) {
-  const auth = useContext(AuthContext);
+// function AuthRequired({children}) {
+//   const auth = useContext(AuthContext);
   
-  if (!auth.user) {
-    return <p>Unauthorized</p>
-  }
+//   if (!auth.user) {
+//     return <p>Unauthorized</p>
+//   }
 
-  return children;
-}
+//   return children;
+// }
 
-function Login() {
-  const auth = useContext(AuthContext);
-  const [username, setUsername] = useState("");
+// function Login() {
+//   const auth = useContext(AuthContext);
+//   const [username, setUsername] = useState("");
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    auth.signIn(username);
-  }
+//   function handleSubmit(e) {
+//     e.preventDefault();
+//     auth.signIn(username);
+//   }
 
-  const form = (
-    <form onSubmit={handleSubmit}>
-      <h1>Sign in</h1>
-      <input type="text" onChange={(e) => setUsername(e.target.value)} />
-      <button type="submit">Submit</button>
-    </form>
-  )
+//   const form = (
+//     <form onSubmit={handleSubmit}>
+//       <h1>Sign in</h1>
+//       <input type="text" onChange={(e) => setUsername(e.target.value)} />
+//       <button type="submit">Submit</button>
+//     </form>
+//   )
 
-  const account = (
-    <div>
-      <h1>Sign out</h1>
-      <p>{auth.user}</p>
-      <button onClick={auth.signOut}>Submit</button>
-    </div>
-  )
+//   const account = (
+//     <div>
+//       <h1>Sign out</h1>
+//       <p>{auth.user}</p>
+//       <button onClick={auth.signOut}>Submit</button>
+//     </div>
+//   )
 
-  return auth.user ? account : form;
-}
+//   return auth.user ? account : form;
+// }
 
-function App() {
-  return (
-    <Router>
-      <nav>
-        <ul> 
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="posts">Posts</Link>
-          </li>
-          <li>
-            <Link to="login">Login</Link>
-          </li>
-        </ul>
-      </nav>
-      <AuthProvider>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="posts" element={
-            <AuthRequired>
-              <Posts />
-            </AuthRequired>
-          } />
-          <Route path="post/:postId" element={<Post />} />
-          <Route path="login" element={<Login />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </AuthProvider>
-    </Router>  
-  )
-}
+// function App() {
+//   return (
+//     <Router>
+//       <nav>
+//         <ul> 
+//           <li>
+//             <Link to="/">Home</Link>
+//           </li>
+//           <li>
+//             <Link to="posts">Posts</Link>
+//           </li>
+//           <li>
+//             <Link to="login">Login</Link>
+//           </li>
+//         </ul>
+//       </nav>
+//       <AuthProvider>
+//         <Routes>
+//           <Route path="/" element={<Home />} />
+//           <Route path="posts" element={
+//             <AuthRequired>
+//               <Posts />
+//             </AuthRequired>
+//           } />
+//           <Route path="post/:postId" element={<Post />} />
+//           <Route path="login" element={<Login />} />
+//           <Route path="*" element={<NotFound />} />
+//         </Routes>
+//       </AuthProvider>
+//     </Router>  
+//   )
+// }
