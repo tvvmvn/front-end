@@ -1377,13 +1377,14 @@ export default App;
 // # Router with auth
 // AuthProvider maintain user(state).
 // user is accessible from AuthProvider's children.
-// Posts is protected page (authorization is required).
+// Post is protected page (authorization is required).
 // login update user state.
 // Authorization completed.
 
 // const AuthContext = createContext();
 
 // function AuthProvider({children}) {
+//   // user is accessible from its children.
 //   const [user, setUser] = useState(null);
 
 //   function signIn(username) {
@@ -1403,14 +1404,46 @@ export default App;
 //   )
 // }
 
-// function AuthRequired({children}) {
+// function Home() {
+//   return <h1>Home</h1>
+// }
+
+// function Posts() {
+//   return (
+//     <>
+//       <h1>Posts</h1>
+//       <ul>
+//         <li>
+//           <Link to="/post/p1">Post 1</Link>
+//         </li>
+//         <li>
+//           <Link to="/post/p2">Post 2</Link>
+//         </li>
+//       </ul>
+//     </>  
+//   )
+// }
+
+// function Post() {
+//   const params = useParams();
+//   const postId = params.postId;
+
 //   const auth = useContext(AuthContext);
   
 //   if (!auth.user) {
 //     return <p>Unauthorized</p>
 //   }
 
-//   return children;
+//   return (
+//     <>
+//       <h1>Post</h1>
+//       <p>{postId}</p>
+//     </>  
+//   )
+// }
+
+// function NotFound() {
+//   return <h1>404 NotFound</h1>
 // }
 
 // function Login() {
@@ -1422,7 +1455,7 @@ export default App;
 //     auth.signIn(username);
 //   }
 
-//   const form = (
+//   const loginTemplate = (
 //     <form onSubmit={handleSubmit}>
 //       <h1>Sign in</h1>
 //       <input type="text" onChange={(e) => setUsername(e.target.value)} />
@@ -1430,7 +1463,7 @@ export default App;
 //     </form>
 //   )
 
-//   const account = (
+//   const logoutTemplate = (
 //     <div>
 //       <h1>Sign out</h1>
 //       <p>{auth.user}</p>
@@ -1438,7 +1471,7 @@ export default App;
 //     </div>
 //   )
 
-//   return auth.user ? account : form;
+//   return auth.user ? logoutTemplate : loginTemplate;
 // }
 
 // function App() {
@@ -1460,16 +1493,88 @@ export default App;
 //       <AuthProvider>
 //         <Routes>
 //           <Route path="/" element={<Home />} />
-//           <Route path="posts" element={
-//             <AuthRequired>
-//               <Posts />
-//             </AuthRequired>
-//           } />
+//           <Route path="posts" element={<Posts />} />
 //           <Route path="post/:postId" element={<Post />} />
 //           <Route path="login" element={<Login />} />
 //           <Route path="*" element={<NotFound />} />
 //         </Routes>
 //       </AuthProvider>
 //     </Router>  
+//   )
+// }
+
+// # fetch data
+// function App() {
+//   const [count, setCount] = useState(0);
+
+//   // useEffetch
+//   // work asynchronously
+
+//   // use case
+//   // useEffect(callback): excute callback whenever component is executed.
+//   // useEffect(callback, []): excute callback only at first.
+//   // useEffect(callback, [dep]): excute callback at first and whenever dependency is changed.
+//   useEffect(() => {
+//     const time = new Date().toLocaleTimeString();
+//     console.log(time);
+//   }, [])
+
+//   return (
+//     <>
+//       <h1>App</h1>
+//       <p>App is rendered for {count} times</p>
+//       <button onClick={() => setCount(count + 1)}>Add</button>
+//     </>  
+//   )
+// }
+
+// preteding API Server returns data after 2 seconds.
+// function fakeApi() {
+//   const beer = [
+//     {id: "b1", name: "Heineken"},
+//     {id: "b2", name: "Guinness"},
+//     {id: "b3", name: "Asahi"},
+//   ];
+  
+//   const promise = new Promise((res, rej) => {
+//     setTimeout(() => {
+//       res(beer)
+//     }, 2000)
+//   })
+
+//   return promise;
+// }
+
+// function App() {
+//   const [beers, setBeers] = useState(null);
+//   const [error, setError] = useState(null);
+//   const [isLoaded, setIsLoaded] = useState(false);
+
+//   useEffect(() => {
+//     fakeApi()
+//     .then(data => {
+//       setBeers(data)
+//     })
+//     .catch(error => {
+//       setError(error)
+//     })
+//     .finally(() => setIsLoaded(true))
+//   }, [])
+
+//   if (error) {
+//     return <p>failed to fetch</p>
+//   }
+//   if (!isLoaded) {
+//     return <p>fetching data...</p>
+//   }
+//   return (
+//     <>
+//       <h1>Beers</h1>
+//       <ul>
+//         {beers.map(beer => (
+//           <li key={beer.id}>{beer.name}</li>  
+//         ))}
+//       </ul>
+//     </>  
 //   )
 // }

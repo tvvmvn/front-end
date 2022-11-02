@@ -19,7 +19,7 @@ useContext
 - Event
 click, change, submit
 - Manage DOM
-useState, useEffect / useRef
+useState
 - Form
 - Carousel, Modal
 - Router Basic
