@@ -1507,7 +1507,7 @@ export default App;
 // function App() {
 //   const [count, setCount] = useState(0);
 
-//   // useEffetch
+//   // useEffetch Hook
 //   // work asynchronously
 
 //   // use case
