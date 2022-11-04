@@ -16,7 +16,7 @@
       position: relative;
       display: inline-block;
     }
-    .container:hover .content {
+    .container:hover ul {
       display: block;
     }
     button {
@@ -26,7 +26,10 @@
       color: #fff;
       border: none;
     }
-    .content {
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
       /* floating */
       position: absolute;
       width: 200px;
@@ -34,14 +37,8 @@
       background-color: #fff;
       display: none;
     }
-    ul {
-      padding: 0;
-      margin: 0;
-      list-style: none;
-    }
     ul li {
       padding: 0.5rem;
-      cursor: pointer;
     }
     li:hover {
       background-color: #eee;
@@ -50,13 +47,11 @@
 
   <div class="container">
     <button>Dropdown</button>
-    <div class="content">
-      <ul>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-      </ul>
-    </div>
+    <ul>
+      <li>list item</li>
+      <li>list item</li>
+      <li>list item</li>
+    </ul>
   </div>
 
   <p>...</p>
