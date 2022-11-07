@@ -151,7 +151,6 @@ function Comments({ articleId, resource }) {
   return (
     <div className="mt-3 px-3">
       <h1 className="text-2xl mb-3">Comments</h1>
-
       <Form createComment={createComment} />
 
       {commentList} 
@@ -180,17 +179,20 @@ function Form({createComment}) {
       <textarea 
         type="text" 
         name="text"
-        className="border w-full p-1 outline-none"
+        rows="3"
+        className="w-full outline-none border"
         value={text} 
         onChange={handleChange} 
       />
-      <button 
-        type="submit" 
-        className="border p-1 disabled:text-gray-300" 
-        disabled={!text.trim()}
-      >
-        Submit
+      <div className="flex justify-end">
+        <button 
+          type="submit" 
+          className="border border-black p-1 disabled:opacity-[0.2]" 
+          disabled={!text.trim()}
+        >
+          Submit
       </button>
+      </div>
     </form>  
   )
 }
@@ -198,6 +200,7 @@ function Form({createComment}) {
 function Comment({comment, editComment, deleteComment}) {
   const auth = useContext(AuthContext);
   const isMaster = auth.user.username === comment.user.username;
+  const created = new Date(comment.created).toLocaleDateString();
 
   return (
     <>
@@ -231,7 +234,7 @@ function Comment({comment, editComment, deleteComment}) {
         <p className="ml-1 text-xs">{comment.favoriteCount} likes</p>
       </div>
 
-      <div className="text-xs text-gray-400 mb-2">{comment.created}</div>
+      <div className="text-xs text-gray-400 mb-2">{created}</div>
     </>  
   )
 }

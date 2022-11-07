@@ -7,7 +7,7 @@ export default function ModalWindow({children}) {
   const modal = (
     <div className="fixed inset-0 bg-black bg-opacity-20 z-10">
       <div className="h-full flex justify-center items-center">
-        <ul className="bg-white w-60 rounded">
+        <ul className="bg-white w-60 rounded-md">
           {children}
           <li>
             <button

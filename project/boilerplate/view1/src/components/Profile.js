@@ -99,20 +99,23 @@ function ProfileDetail({ resource }) {
   return (
     <>
       <div className="flex mt-3 mb-3 px-3">
-        <div className="w-24 h-24 rounded-full overflow-hidden">
-          <img 
-            src={`http://localhost:3000/users/${profile.image || "avatar.jpeg"}`} 
-            className="w-full h-full object-cover"
-          />
-        </div>
+        <img 
+          src={`http://localhost:3000/users/${profile.image || "avatar.jpeg"}`} 
+          className="w-24 h-24 rounded-full object-cover"
+        />
         <div className="grow ml-3">
           <div className="flex flex-col">
             <div className="text-xl mb-2">{profile.username}</div>
               {isMaster ?
-                <Link to={`/accounts/edit`} className="border p-1 text-center">Edit Profile</Link> 
+                <Link 
+                  to={`/accounts/edit`} 
+                  className="border border-black p-1 text-center text-sm"
+                >
+                  Edit Profile
+                </Link> 
                 :
                 <button
-                  className={`border p-1 w-full`}
+                  className={`border border-black p-1 w-full text-sm`}
                   onClick={editFollow}
                 >
                   {profile.isFollowing ? "Following" : "Follow"}
@@ -126,6 +129,12 @@ function ProfileDetail({ resource }) {
         <p className="">
           {profile.bio}
         </p>
+        <button 
+          className="text-xs text-red-500"
+          onClick={auth.signOut}
+        >
+          Logout
+        </button>
       </div>
 
       <ul className="flex border-y mb-3 py-1">

@@ -4,12 +4,10 @@ import { Link } from "react-router-dom";
 export default function Avatar({ user }) {
   return (
     <Link to={`/profiles/${user.username}`} className="inline-flex items-center">
-      <div className="w-10 h-10 rounded-full overflow-hidden">
-        <img
-          src={`http://localhost:3000/users/${user.image || "avatar.jpeg"}`}
-          className="w-full h-full object-cover"
-        />
-      </div>
+      <img
+        src={`http://localhost:3000/users/${user.image || "avatar.jpeg"}`}
+        className="w-8 h-8 rounded-full object-cover"
+      />
       <div className="ml-2">
         {user.username}
       </div>

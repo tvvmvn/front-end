@@ -8,7 +8,7 @@ export default function Carousel({ photos }) {
     <div className="">
 
       <div className="relative">
-        <div className="flex overflow-hidden h-48">
+        <div className="flex overflow-hidden h-96">
           {photos.map(photo => (
             <div 
               key={photo} 
@@ -49,7 +49,7 @@ export default function Carousel({ photos }) {
           <span 
             key={dot} 
             className="w-2 h-2 rounded-full bg-gray-200" 
-            style={{backgroundColor: dot===index && "#000"}}
+            style={{backgroundColor: dot===index && "#888"}}
           >
           </span>
         ))}

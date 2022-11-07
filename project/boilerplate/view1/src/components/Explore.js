@@ -60,10 +60,12 @@ function Explore({ resource }) {
   }
 
   return (
-    <>
-      <h1 className="text-2xl mt-3 mb-3 px-3">Explore</h1>
+    <div className="mt-3">
       <div className="mb-3 px-3">
-        <Link to="/search">Search</Link>
+        <h1 className="text-2xl mb-3">Explore</h1>
+        <Link to="/search">
+          Search
+        </Link>
       </div>
 
       <ArticleList articles={articles} />
@@ -73,7 +75,7 @@ function Explore({ resource }) {
       </LoadButton>
 
       <ErrorMessage error={error} />
-    </>
+    </div>
   )
 }
 

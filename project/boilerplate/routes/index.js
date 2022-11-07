@@ -19,6 +19,10 @@ router.get('/', (req, res) => {
   res.json({ message: "hello express" })
 })
 
+router.get('/todos', (req, res) => {
+  res.json([])
+})
+
 // AUTH
 router.get('/user', auth, auth_controller.user)
 

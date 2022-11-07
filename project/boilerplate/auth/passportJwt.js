@@ -14,7 +14,6 @@ passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
     if (err) {
       return done(err, false);
     } 
-    
     if (user) {
       return done(null, user);
     } else {

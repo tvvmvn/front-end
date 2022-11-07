@@ -9,6 +9,7 @@ export default function ArticleItem({ article, editArticle, deleteArticle }) {
   
   const auth = useContext(AuthContext);
   const isMaster = auth.user.username === article.user.username; 
+  const created = new Date(article.created).toLocaleDateString();
 
   return (
     <>
@@ -47,12 +48,12 @@ export default function ArticleItem({ article, editArticle, deleteArticle }) {
           </p>
         </div>
 
-        <div className="mb-2">
-          <Link to={`/p/${article._id}/comments`} className="text-gray-400">Comments</Link>
+        <div className="">
+          <Link to={`/p/${article._id}/comments`} className="text-sm text-gray-400">Comments</Link>
         </div>
 
         <div className="text-xs text-gray-400">
-          {article.created}
+          {created}
         </div>
       </div>
     </>

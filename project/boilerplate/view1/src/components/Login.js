@@ -11,7 +11,7 @@ export default function Login() {
     email: localStorage.getItem("email") || "",
     password: ""
   });
-  const [passwordType, setPasswordType] = useState("password");
+  const [showPassword, setShowPassword] = useState(false);
 
   const [isLoaded, setIsLoaded] = useState(null);
   const [error, setError] = useState(null);
@@ -54,21 +54,15 @@ export default function Login() {
 
     setUser({...user, [name]: value});
   }
-
-  function togglePassword() {
-    if (passwordType === "password") {
-      setPasswordType("text");
-    } else {
-      setPasswordType("password");
-    }
-  }
-
+  
   return (
-    <div className="flex justify-center h-96 items-end">
+    <div className="flex justify-center">
       <form className="w-60" onSubmit={handleSubmit}>
-        <h1 className="text-2xl mb-3">My App</h1>
+        <div className="flex h-36 justify-center items-center mb-3">
+          <h1 className="text-2xl">My App</h1>
+        </div>
         <div className="mb-2">
-          <label htmlFor="email" className="block font-bold">Email</label>
+          <label htmlFor="email" className="block">Email</label>
           <input 
             type="text" 
             name="email" 
@@ -81,10 +75,10 @@ export default function Login() {
         </div>
 
         <div className="mb-2">
-          <label htmlFor="password" className="block font-bold">Password</label>
+          <label htmlFor="password" className="block">Password</label>
           <div className="relative">
             <input 
-              type={passwordType}
+              type={showPassword ? "text" : "password"}
               name="password"
               id="password"
               className="border w-full py-1 pl-1 pr-16 outline-none"
@@ -96,9 +90,9 @@ export default function Login() {
               <button 
                 type="button"
                 className="h-full flex items-center px-2"
-                onClick={togglePassword}
+                onClick={() => setShowPassword(!showPassword)}
               >
-                {passwordType === "password" ? "show" : "hide"}
+                {showPassword ? "hide" : "show"}
               </button>
             </div>
           </div>
@@ -106,18 +100,18 @@ export default function Login() {
 
         <div className="mb-2">
           <button 
-            className="border w-full p-1 disabled:text-gray-300" 
+            className="border border-black w-full p-1 disabled:opacity-[0.2]" 
             type="submit" 
             disabled={!user.email.trim() || !user.password.trim()}
           >
             Submit
           </button>
         </div>
-        <div className="">
+        <div className="mb-3">
           <Link to="/accounts/signup">Create Account</Link>
         </div>
-        <div className="text-center">
-          <small>2022 &copy; myapp</small>
+        <div className="text-center text-xs">
+          2022 &copy; myapp
         </div>
       </form>
 

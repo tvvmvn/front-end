@@ -8,6 +8,8 @@ exports.login = async (req, res, next) => {
   try {
     const {email, password} = req.body;
 
+    console.log(req.user);
+
     const user = await User.findOne({email});
 
     if (!user) {

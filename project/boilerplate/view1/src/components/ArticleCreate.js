@@ -57,14 +57,11 @@ export default function ArticleCreate() {
 
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label htmlFor="images" className="border p-1">
-            Photos +
-          </label>
+          <label htmlFor="images" className="block">Photos</label>
           <input 
             type="file" 
             name="images"
             id="images" 
-            className="hidden" 
             multiple={true} 
             accept="image/*" 
             onChange={handleFile}
@@ -78,7 +75,7 @@ export default function ArticleCreate() {
         </ul>
       
         <div className="">
-          <label htmlFor="description" className="block font-bold">
+          <label htmlFor="description" className="block">
             Description
           </label>
           <textarea 
@@ -93,7 +90,7 @@ export default function ArticleCreate() {
         <div className="">
           <button 
             type="submit" 
-            className="border p-1 disabled:text-gray-300"  
+            className="border border-black p-1 disabled:opacity-[0.2]"  
             disabled={files.length < 1}
           >
             Submit

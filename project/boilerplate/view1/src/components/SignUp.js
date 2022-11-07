@@ -41,11 +41,13 @@ export default function SignUp() {
   }
 
   return (
-    <div className="flex justify-center h-96 items-end">
+    <div className="flex justify-center">
       <form onSubmit={handleSubmit} className="w-60">
-        <h1 className="text-2xl mb-3">Sign up</h1>
+        <div className="flex h-36 items-end mb-3">
+          <h1 className="text-2xl">Sign up</h1>
+        </div>
         <div className="mb-2">
-          <label htmlFor="" className="block font-bold">Username</label>
+          <label htmlFor="" className="block">Username</label>
           <input
             type="text"
             name="username"
@@ -54,7 +56,7 @@ export default function SignUp() {
           />
         </div>
         <div className="mb-2">
-          <label htmlFor="" className="block font-bold">Email</label>
+          <label htmlFor="" className="block">Email</label>
           <input
             type="text"
             name="email"
@@ -63,7 +65,7 @@ export default function SignUp() {
           />
         </div>
         <div className="mb-2">
-          <label htmlFor="" className="block font-bold">Password</label>
+          <label htmlFor="" className="block">Password</label>
           <input
             type="text"
             name="username"
@@ -72,7 +74,7 @@ export default function SignUp() {
           />
         </div>
         <div className="mb-2">
-          <label htmlFor="" className="block font-bold">Password confirm</label>
+          <label htmlFor="" className="block">Password confirm</label>
           <input
             type="text"
             name="username"
@@ -83,7 +85,7 @@ export default function SignUp() {
         <div className="">
           <button 
             type="submit"
-            className="border w-full p-1 disabled:text-gray-300"
+            className="border border-black w-full p-1 disabled:opacity-[0.2]"
             disabled={!newUser.username}
           >
             Submit
