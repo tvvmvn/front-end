@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- <h1>layout: row</h1>
+
+  <style>
+    .row {
+      background-color: #222;
+    }
+    p {
+      color: #888;
+    }
+    .container {
+      max-width: 640px;
+      margin: auto;
+      box-sizing: border-box;
+      padding: 3rem 1rem;
+      color: #fff;
+    }
+  </style>
+
+  <div class="row">
+    <div class="container">
+      <h1>Heading</h1>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores, pariatur? 
+        Reiciendis ab quae illum vero amet illo sed soluta atque error. 
+        Vero laboriosam temporibus a atque commodi quisquam mollitia odio?</p>
+    </div>
+  </div> -->
+
+  <!-- <h1>layout: row</h1>
+
+  <style>
+    .container {
+      max-width: 640px;
+      margin: auto;
+      box-sizing: border-box;
+      padding: 3rem 1rem;
+    }
+    .bg-gray {
+      background-color: #222;
+    }
+    .text-white {
+      color: #fff;
+    }
+    .text-gray {
+      color: #888;
+    }
+  </style>
+
+  <div class="row">
+    <div class="container">
+      <h1>Heading</h1>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores, pariatur? 
+        Reiciendis ab quae illum vero amet illo sed soluta atque error. 
+        Vero laboriosam temporibus a atque commodi quisquam mollitia odio?</p>
+    </div>
+  </div>
+  <div class="row bg-gray">
+    <div class="container">
+      <h1 class="text-white">Heading</h1>
+      <p class="text-gray">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores, pariatur? 
+        Reiciendis ab quae illum vero amet illo sed soluta atque error. 
+        Vero laboriosam temporibus a atque commodi quisquam mollitia odio?</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container">
+      <h1>Heading</h1>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores, pariatur? 
+        Reiciendis ab quae illum vero amet illo sed soluta atque error. 
+        Vero laboriosam temporibus a atque commodi quisquam mollitia odio?</p>
+    </div>
+  </div> -->
+
+  <!-- <h1>Layout: article</h1>
+  
+  <style>
+    .row {
+      background-color: #eee;
+    }
+    .container {
+      max-width: 768px;
+      padding: 3rem 1rem;
+      margin: 0 auto;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+
+    }
+    .item:nth-child(2) {
+      width: 300px;
+      height: 300px;
+      flex-shrink: 0;
+      margin-left: 1rem;
+      border: 1px solid;
+    }
+  </style>
+
+  <div class="row">
+    <div class="container">
+      <div class="item">
+        <h1>Heading</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+          Minus praesentium quasi aspernatur in voluptas enim, 
+          hic nemo accusamus dolor esse voluptates magnam quod tempore 
+          numquam unde eligendi nulla et voluptatum!</p>
+      </div>
+      <div class="item"></div>
+    </div>
+  </div> -->
+
+  <!-- <h1>Layout: article responsive</h1>
+
+  <style>
+    .row {
+      background-color: #eee;
+    }
+    .container {
+      max-width: 768px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+    }
+    .image {
+      width: 300px;
+      height: 300px;
+      border: 1px solid;
+      flex-shrink: 0;
+    }
+    .ml-4 {
+      margin-left: 1rem;
+    }
+  </style>
+
+  <div class="row">
+    <div class="container">
+      <div class="item">
+        <h1>Heading</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+          Minus praesentium quasi aspernatur in voluptas enim, 
+          hic nemo accusamus dolor esse voluptates magnam quod tempore 
+          numquam unde eligendi nulla et voluptatum!</p>
+      </div>
+      <div class="image ml-4"></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="container">
+      <div class="image"></div>
+      <div class="item ml-4">
+        <h1>Heading</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+          Minus praesentium quasi aspernatur in voluptas enim, 
+          hic nemo accusamus dolor esse voluptates magnam quod tempore 
+          numquam unde eligendi nulla et voluptatum!</p>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <h1>50:50 layout</h1>
+
+  <style>
+    .row {
+      background-color: #eee;
+    }
+    .container {
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 768px;
+    }
+    .item {
+      /* border: 1px dashed; */
+      padding: 3rem 1rem;
+      flex-basis: 50%;
+      box-sizing: border-box;
+    }
+  </style>
+  
+  <div class="row">
+    <div class="container">
+      <div class="item">
+        <h1>Heading</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit ducimus labore aperiam eaque repudiandae ab pariatur suscipit vitae in quae natus aut dolorum, commodi quasi, ex cupiditate. Eum, ad velit.</p>
+      </div>
+      <div class="item">
+        <h1>Heading</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit ducimus labore aperiam eaque repudiandae ab pariatur suscipit vitae in quae natus aut dolorum, commodi quasi, ex cupiditate. Eum, ad velit.</p>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <h1>50:50 responsive layout</h1>
+
+  <style>
+    .row {
+      background-color: #eee;
+    }
+    .container {
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 768px;
+    }
+    .item {
+      /* border: 1px dashed; */
+      flex-basis: 100%;
+      padding: 3rem 1rem;
+      box-sizing: border-box;
+    }
+    @media (min-width: 640px) {
+      .item {
+        flex-basis: 50%;
+      }
+    }
+  </style>
+  
+  <div class="row">
+    <div class="container">
+      <div class="item">
+        <h1>Heading</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia culpa debitis saepe? Aperiam perspiciatis magnam repudiandae impedit doloribus in libero. Suscipit cum vel inventore veniam fugiat provident sed omnis excepturi.</p>
+      </div>
+      <div class="item">
+        <h1>Heading</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia culpa debitis saepe? Aperiam perspiciatis magnam repudiandae impedit doloribus in libero. Suscipit cum vel inventore veniam fugiat provident sed omnis excepturi.</p>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <h1>Footer</h1>
+
+  <style>
+    .row {
+      background-color: #eee;
+    }
+    .container {
+      max-width: 768px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+    } 
+    .item {
+      /* border: 1px dashed; */
+      box-sizing: border-box;
+      flex-basis: 100%;
+      padding: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .item {
+        flex-basis: 50%;
+      }
+    }
+  </style>
+
+  <div class="row">
+    <div class="container">
+      <div class="item">
+        <h3>heading</h3>
+        <ul>
+          <li>list item</li>
+          <li>list item</li>
+          <li>list item</li>
+        </ul>
+      </div>
+      <div class="item">
+        <h3>heading</h3>
+        <ul>
+          <li>list item</li>
+          <li>list item</li>
+          <li>list item</li>
+        </ul>
+      </div>
+      <div class="item">
+        <h3>heading</h3>
+        <ul>
+          <li>list item</li>
+          <li>list item</li>
+          <li>list item</li>
+        </ul>
+      </div>
+    </div>
+  </div> -->
+
+</body>
+</html>
