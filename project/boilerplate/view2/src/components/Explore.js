@@ -1,6 +1,5 @@
 import {useState, useEffect, Suspense} from "react";
 import {Link} from "react-router-dom";
-import ArticleList from "./ArticleList";
 
 const limit = 9;
 
@@ -9,10 +8,10 @@ export default function () {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [initialArticles, setInitialArticles] = useState(null);
-
+  
   useEffect(() => {    
     fetch(`http://localhost:3000/articles/?limit=${limit}`, {
-      headers: {"Authorization": `Bearer ${localStorage.getItem("token")}`}
+      headers: {"Authorization": `Bearer ${localStorage.getItem("token")}`},
     })
     .then(res => {
       if (!res.ok) {
@@ -32,10 +31,10 @@ export default function () {
   }, [])
 
   if (error) {
-    return <p>Error</p>
+    return <p>failed to fetch articles</p>
   }
   if (!isLoaded) {
-    return <p>Loading...</p>
+    return <p>fetching articles...</p>
   }
   return <Explore initialArticles={initialArticles} />
 }
@@ -58,15 +57,15 @@ function Explore({initialArticles}) {
       setArticles([...articles, ...data])
       setSkip(skip + limit);
     })
-    .catch(error => alert("failed to load articles"))
+    .catch(error => alert("failed to fetch articles"))
   }
 
   return (
     <>
       <h1 className="text-2xl">Explore</h1>
-      <p>
+      <div className="mb-2">
         <Link to={`/search`}>Search</Link>
-      </p>
+      </div>
       <div className="mb-2">
         {articles.map(article => (
           <Link key={article._id} to={`/article/${article._id}`}>

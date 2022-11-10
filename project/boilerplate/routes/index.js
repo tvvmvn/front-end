@@ -19,8 +19,8 @@ router.get('/', (req, res) => {
   res.json({ message: "hello express" })
 })
 
-router.get('/todos', (req, res) => {
-  res.json([])
+router.get('/test', (req, res) => {
+  console.log(req.cookies)
 })
 
 // AUTH

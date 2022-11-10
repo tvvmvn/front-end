@@ -36,16 +36,14 @@ export default function Carousel({images}) {
 
   return (
     <div className="mb-2">
-      <div style={{overflow: "hidden"}}>        
-        <div style={container}>
-          {images.map(image => (
-            <img
-              key={image}
-              src={`http://localhost:3000/articles/${image}`}
-              alt={image}
-            />
-          ))}
-        </div>
+      <div style={container}>
+        {images.map(image => (
+          <img
+            key={image}
+            src={`http://localhost:3000/articles/${image}`}
+            alt={image}
+          />
+        ))}
       </div>
 
       <div className="">

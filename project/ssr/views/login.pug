@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  h1= title
+
+  form(action="") 
+    input(type="text" value="bunny" disabled)
+    button Submit
+
+  script.
+    const form = document.querySelector("form");
+
+    //- cookie: authenticaion, shopping cart, theme, ...
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+
+      fetch(`/login`, {
+        method: "POST"
+      })
+      .then(res => {
+        if (!res.ok) {
+          throw res;
+        }
+        return res.json()
+      })
+      .then(data => {
+        // stores token in client-side storage (cookies)
+        // or save user in server-side (session)
+        document.cookie = `username=${data}`;
+      })
+      .catch(error => {
+        console.error(error)
+      })
+    })

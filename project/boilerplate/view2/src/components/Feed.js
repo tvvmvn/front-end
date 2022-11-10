@@ -31,10 +31,10 @@ export default function () {
   }, [])
 
   if (error) {
-    return <p>Error</p>
+    return <p>failed to fetch feeds</p>
   }
   if (!isLoaded) {
-    return <p>Loading...</p>
+    return <p>fetching feeds...</p>
   }
   return <Feed initialArticles={initialArticles} />
 }
@@ -61,7 +61,7 @@ function Feed({initialArticles}) {
         })
         setArticles(editedArticles);
       })
-      .catch(error => alert("failed to create favorite"));
+      .catch(error => alert("failed to edit an article to favorite"));
     } else {
       fetch(`http://localhost:3000/articles/${articleId}/favorite`, {
         method: 'DELETE',
@@ -79,7 +79,7 @@ function Feed({initialArticles}) {
         })
         setArticles(editedArticles);
       })
-      .catch(error => alert("failed to delete favorite"));
+      .catch(error => alert("failed to edit an article to unfavorite"));
     }
   }
 
@@ -114,7 +114,7 @@ function Feed({initialArticles}) {
       setArticles([...articles, ...data])
       setSkip(skip + limit);
     })
-    .catch(error => alert("failed to load articles"))
+    .catch(error => alert("failed to fetch articles"))
   }
 
   const articleList = articles.map(article => (

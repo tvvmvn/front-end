@@ -1,6 +1,7 @@
 import {useContext, useState, useEffect} from "react";
 import {Link, useParams} from "react-router-dom";
 import AuthContext from "./AuthContext";
+import Modal from "./Modal";
 
 export default function () {
   const params = useParams();
@@ -29,7 +30,7 @@ export default function () {
   }, [])
 
   if (error) {
-    return <p>failed to fetch</p>
+    return <p>failed to fetch comments</p>
   }
   if (!isLoaded) {
     return <p>fetching comments...</p>
@@ -106,7 +107,7 @@ function Comments({ articleId, initialComments }) {
         })
         setComments(editedCommentList);
       })
-      .catch(error => alert("failed to create favorite"))
+      .catch(error => alert("failed to edit comment to favorite"))
     } else {
       fetch(`http://localhost:3000/comments/${commentId}/favorite`, {
         method: 'DELETE',
@@ -124,7 +125,7 @@ function Comments({ articleId, initialComments }) {
         })
         setComments(editedCommentList);
       })
-      .catch(error => alert("failed to delete favorite"))
+      .catch(error => alert("failed to edit comment to unfavorite"))
     }
   }
 
@@ -185,18 +186,15 @@ function Comment({comment, editComment, deleteComment}) {
   const isMaster = auth.user.username === comment.user.username;
 
   const modal = (
-    <details>
-      <summary>Modal</summary>
-      <ul>
-        <li>
-          <button
-            onClick={() => deleteComment(comment._id)}
-          >
-            Delete
-          </button>
-        </li>
-      </ul>
-    </details>
+    <Modal>
+      <li>
+        <button
+          onClick={() => deleteComment(comment._id)}
+        >
+          Delete
+        </button>
+      </li>
+    </Modal>
   )
 
   const created = new Date(comment.created).toLocaleDateString();

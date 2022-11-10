@@ -32,10 +32,10 @@ export default function () {
   }, [])
 
   if (error) {
-    return <p>Error</p>
+    return <p>failed to fetch an article.</p>
   }
   if (!isLoaded) {
-    return <p>Loading...</p>
+    return <p>fetching an article...</p>
   }
   return (
     <>
@@ -63,7 +63,7 @@ function ArticleView({initialArticle}) {
         const editedArticle = {...article, isFavorite: true, favoriteCount: article.favoriteCount + 1 };
         setArticle(editedArticle);
       })
-      .catch(error => alert("failed to create favorite"))
+      .catch(error => alert("failed to edit an article to favorite"))
     } else {
       fetch(`http://localhost:3000/articles/${articleId}/favorite`, {
         method: 'DELETE',
@@ -76,7 +76,7 @@ function ArticleView({initialArticle}) {
         const editedArticle = {...article, isFavorite: false, favoriteCount: article.favoriteCount - 1 };
         setArticle(editedArticle);
       })
-      .catch(error => alert("failed to delete favorite"))
+      .catch(error => alert("failed to edit an article to unfavorite"))
     }
   }
 

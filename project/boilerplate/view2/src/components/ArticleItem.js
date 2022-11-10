@@ -2,6 +2,7 @@ import {useState, useContext} from "react";
 import {Link} from "react-router-dom";
 import AuthContext from "./AuthContext";
 import Carousel from "./Carousel";
+import Modal from "./Modal";
 
 export default function ArticleItem({article, editArticle, deleteArticle}) {
 
@@ -9,20 +10,21 @@ export default function ArticleItem({article, editArticle, deleteArticle}) {
   const isMaster = auth.user.username === article.user.username;
   const created = new Date(article.created).toLocaleDateString();
 
+  const modal = (
+    <Modal>
+      <li>
+        <button onClick={() => deleteArticle(article._id)}>Delete</button>
+      </li>
+    </Modal>
+  )
+
   return (
     <div className="mb-2">
       <h3>
         <Link to={`/profile/${article.user.username}`}>{article.user.username}</Link>
       </h3>
 
-      <details>
-        <summary>Modal</summary>
-        <ul>
-          <li>
-            <button onClick={() => deleteArticle(article._id)}>Delete</button>
-          </li>
-        </ul>
-      </details>
+      {isMaster && modal}
 
       <Carousel images={article.photos} />
 

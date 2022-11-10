@@ -12,6 +12,9 @@ export default function () {
   function handleSubmit(e) {
     e.preventDefault();
 
+    if (username.length<5) {
+      return setError("Username must be at least 5 letters")
+    }
     if (password !==passwordConfirm) {
       return setError("Password not match");
     }
@@ -36,7 +39,7 @@ export default function () {
       if (error.status===400) {
         return setError("Username and email must be unique");
       }
-      setError("try it later");
+      setError("failed to sign up");
     })
   }
 

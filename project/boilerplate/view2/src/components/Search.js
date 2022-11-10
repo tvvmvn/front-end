@@ -26,7 +26,7 @@ export default function() {
       setUsers(data)
     })
     .catch(error => {
-      alert(error)
+      alert("failed to fetch users")
     })
   } 
 

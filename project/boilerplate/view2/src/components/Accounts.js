@@ -26,10 +26,10 @@ export default function () {
   }, [])
 
   if (error) {
-    return <p>failed to fetch</p>
+    return <p>failed to fetch accounts</p>
   }
   if (!isLoaded) {
-    return <p>fetching profile...</p>
+    return <p>fetching accounts...</p>
   }
   return <Accounts initialProfile={initialProfile} />
 }
@@ -58,7 +58,7 @@ function Accounts({initialProfile}) {
     .then(data => {
       const editedProfile = {...profile, image: data};
       setProfile(editedProfile);
-      alert("Successfully updated");
+      alert("image is uploaded");
     })
     .catch(error => {
       alert("failed to upload image");
@@ -103,7 +103,7 @@ function Accounts({initialProfile}) {
       const editedProfile = {...profile, bio: data};
       
       setProfile(editedProfile);
-      alert("Successfully updated")
+      alert("account is updated")
       setText("");
     })
     .catch(error => {

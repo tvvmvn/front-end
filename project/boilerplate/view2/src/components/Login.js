@@ -33,7 +33,7 @@ export default function Login() {
       if (error.status === 401) {
         return alert("User not found");
       }
-      alert("Try later");
+      alert("failed to login");
     })
   }
 

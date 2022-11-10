@@ -8,13 +8,29 @@ router.get('/', function(req, res, next) {
     if (err) {
       return next(err)
     };
-    res.render('blog_list', { title: 'Blogs', posts });
+
+    res.render('blog_list', { 
+      title: 'Blogs', 
+      posts, 
+      username: req.cookies.username 
+    });
   })
 });
 
 // About
 router.get('/about', function(req, res, next) {
   res.render('about', { title: 'About' });
+});
+
+// Login
+router.get('/login', function(req, res, next) {
+  res.render('login', { title: 'Login' });
+});
+
+router.post('/login', function(req, res, next) {
+  // send token to client (cookie)
+  // or save user in server (session) 
+  res.json('bunny');
 });
 
 // Create

@@ -3,6 +3,8 @@ extends layout
 block content
   h1= title
 
+  h3= (username ? `hi ${username}` : "Not logged in")
+
   ul 
     each post in posts 
       li

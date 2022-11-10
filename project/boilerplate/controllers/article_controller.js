@@ -81,6 +81,9 @@ exports.create = async (req, res, next) => {
 
 exports.article_list = async (req, res, next) => {
   try {
+    console.log(req.cookies);
+    console.log(req.headers);
+
     const articles = await Article.find()
       .sort([["created", "descending"]])
       .populate("user")

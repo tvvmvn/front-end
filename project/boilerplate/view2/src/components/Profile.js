@@ -1,7 +1,6 @@
 import {useState, useEffect, useContext} from "react";
 import {useParams, Link} from "react-router-dom";
 import AuthContext from "./AuthContext";
-import ArticleList from "./ArticleList";
 
 export default function Profile() {
   const params = useParams();
@@ -43,7 +42,7 @@ export default function Profile() {
   }, [username])
 
   if (error) {
-    return <p>failed to fetch</p>
+    return <p>failed to fetch profile</p>
   }
   if (!isLoaded) {
     return <p>fetching profile...</p>
@@ -79,7 +78,7 @@ function ProfileDetail({initialProfile}) {
         const editedProfile = {...profile, isFollowing: true}
         setProfile(editedProfile);
       })
-      .catch(error => alert("failed to follow"))
+      .catch(error => alert("failed to edit profile to follow"))
     } else {
       fetch(`http://localhost:3000/profiles/${profile.username}/follow`, {
         method: 'DELETE',
@@ -92,7 +91,7 @@ function ProfileDetail({initialProfile}) {
         const editedProfile = {...profile, isFollowing: false}
         setProfile(editedProfile);
       })
-      .catch(error => alert("failed to unfollow"))
+      .catch(error => alert("failed to edit profile to unfollow"))
     }
   }
 
