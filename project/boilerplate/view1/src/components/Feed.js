@@ -137,18 +137,16 @@ function Feed({ resource }) {
     <>
       {articleList}
 
-      <LoadButton isLoaded={isLoaded}>
-        <button onClick={addArticles}>Load more</button>
-      </LoadButton>
+      <div className="mb-2 px-2">
+        <button 
+          className="p-1 w-full border border-black"
+          onClick={addArticles}
+        >
+          Load more
+        </button>
+      </div>
 
-      <ErrorMessage error={error} />
+      {error && <ErrorMessage error={error} />}
     </>
   )
-}
-
-function LoadButton({ isLoaded, children }) {
-  if (isLoaded === false) {
-    return <p>fetching articles...</p>
-  }
-  return children;
 }

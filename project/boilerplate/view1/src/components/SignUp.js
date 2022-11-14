@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { ErrorMessage } from "./Progress";
 
 export default function SignUp() {
@@ -41,59 +41,59 @@ export default function SignUp() {
   }
 
   return (
-    <div className="flex justify-center">
-      <form onSubmit={handleSubmit} className="w-60">
-        <div className="flex h-36 items-end mb-3">
-          <h1 className="text-2xl">Sign up</h1>
-        </div>
-        <div className="mb-2">
-          <label htmlFor="" className="block">Username</label>
-          <input
-            type="text"
-            name="username"
-            className="border w-full p-1 outline-none"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mb-2">
-          <label htmlFor="" className="block">Email</label>
-          <input
-            type="text"
-            name="email"
-            className="border w-full p-1 outline-none"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mb-2">
-          <label htmlFor="" className="block">Password</label>
-          <input
-            type="text"
-            name="username"
-            className="border w-full p-1 outline-none"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mb-2">
-          <label htmlFor="" className="block">Password confirm</label>
-          <input
-            type="text"
-            name="username"
-            className="border w-full p-1 outline-none"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="">
-          <button 
-            type="submit"
-            className="border border-black w-full p-1 disabled:opacity-[0.2]"
-            disabled={!newUser.username}
-          >
-            Submit
-          </button>
-        </div>
-      </form>
-
-      <ErrorMessage error={error} />
-    </div>  
+    <form onSubmit={handleSubmit} className="max-w-xs mx-auto">
+      <div className="flex h-36 items-end mb-3">
+        <h1 className="text-2xl">Sign up</h1>
+      </div>
+      <div className="mb-2">
+        <label htmlFor="" className="block">Username</label>
+        <input
+          type="text"
+          name="username"
+          className="border w-full p-1"
+          onChange={handleChange}
+        />
+      </div>
+      <div className="mb-2">
+        <label htmlFor="" className="block">Email</label>
+        <input
+          type="text"
+          name="email"
+          className="border w-full p-1"
+          onChange={handleChange}
+        />
+      </div>
+      <div className="mb-2">
+        <label htmlFor="" className="block">Password</label>
+        <input
+          type="text"
+          name="username"
+          className="border w-full p-1"
+          onChange={handleChange}
+        />
+      </div>
+      <div className="mb-2">
+        <label htmlFor="" className="block">Password confirm</label>
+        <input
+          type="text"
+          name="username"
+          className="border w-full p-1"
+          onChange={handleChange}
+        />
+      </div>
+      <div className="mb-2">
+        <button 
+          type="submit"
+          className="border border-blue-500 text-blue-500 w-full p-1 disabled:opacity-[0.2]"
+          disabled={!newUser.username}
+        >
+          Submit
+        </button>
+      </div>
+      <div className="">
+        <Link to="/accounts/login" className="text-blue-500">Login</Link>
+      </div>
+      {error && <ErrorMessage error={error} />}
+    </form>
   )
 }

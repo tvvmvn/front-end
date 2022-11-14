@@ -7,10 +7,8 @@ export default function Login() {
 
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
-  const [user, setUser] = useState({
-    email: localStorage.getItem("email") || "",
-    password: ""
-  });
+  const [email, setEmail] = useState(localStorage.getItem("email") || "");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const [isLoaded, setIsLoaded] = useState(null);
@@ -22,12 +20,12 @@ export default function Login() {
     setIsLoaded(false);
     setError(null)
 
-    const formData = JSON.stringify(user);
+    const user = {email, password};
 
     fetch(`http://localhost:3000/accounts/login`, {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
-      body: formData
+      body: JSON.stringify(user)
     })
     .then(res => {
       if (!res.ok) {
@@ -36,7 +34,7 @@ export default function Login() {
       return res.json();
     })
     .then(data => {
-      localStorage.setItem("email", user.email);
+      localStorage.setItem("email", email);
       auth.signIn(data, () => navigate("/", { replace: true }));
     })
     .catch(error => {
@@ -48,76 +46,64 @@ export default function Login() {
     .finally(() => setIsLoaded(true))
   }
 
-  function handleChange(e) {
-    const name = e.target.name;
-    const value = e.target.value;
+  useEffect(() => {
+    if (error) {
+      setTimeout(() => {
+        setError(null);
+      }, 2000)
+    }
+  }, [error])
 
-    setUser({...user, [name]: value});
-  }
-  
   return (
-    <div className="flex justify-center">
-      <form className="w-60" onSubmit={handleSubmit}>
-        <div className="flex h-36 justify-center items-center mb-3">
-          <h1 className="text-2xl">My App</h1>
-        </div>
-        <div className="mb-2">
-          <label htmlFor="email" className="block">Email</label>
-          <input 
-            type="text" 
-            name="email" 
-            id="email" 
-            className="border w-full p-1 outline-none"
-            value={user.email} 
-            onChange={handleChange} 
-            autoComplete="off"
-          />
-        </div>
+    <form className="max-w-xs mx-auto" onSubmit={handleSubmit}>
+      <div className="flex h-36 justify-center items-center mb-3">
+        <h1 className="text-2xl">My App</h1>
+      </div>
+      <div className="mb-2">
+        <label htmlFor="email" className="block">Email</label>
+        <input 
+          type="text" 
+          name="email" 
+          id="email" 
+          className="border w-full p-1"
+          value={email} 
+          onChange={(e) => setEmail(e.target.value) } 
+          autoComplete="off"
+        />
+      </div>
 
-        <div className="mb-2">
-          <label htmlFor="password" className="block">Password</label>
-          <div className="relative">
-            <input 
-              type={showPassword ? "text" : "password"}
-              name="password"
-              id="password"
-              className="border w-full py-1 pl-1 pr-16 outline-none"
-              value={user.password}
-              onChange={handleChange}
-              autoComplete="off"
-            />
-            <div className="absolute top-0 right-0 bottom-0">
-              <button 
-                type="button"
-                className="h-full flex items-center px-2"
-                onClick={() => setShowPassword(!showPassword)}
-              >
-                {showPassword ? "hide" : "show"}
-              </button>
-            </div>
-          </div>
-        </div>
+      <div className="mb-2">
+        <label htmlFor="password" className="block">Password</label>
+        <input 
+          type={showPassword ? "text" : "password"}
+          name="password"
+          id="password"
+          className="border w-full p-1"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          autoComplete="off"
+        />
+        <label htmlFor="">
+          <input type="checkbox" onChange={(e) => setShowPassword(!showPassword)} /> Show password
+        </label>
+      </div>
 
-        <div className="mb-2">
-          <button 
-            className="border border-black w-full p-1 disabled:opacity-[0.2]" 
-            type="submit" 
-            disabled={!user.email.trim() || !user.password.trim()}
-          >
-            Submit
-          </button>
-        </div>
-        <div className="mb-3">
-          <Link to="/accounts/signup">Create Account</Link>
-        </div>
-        <div className="text-center text-xs">
-          2022 &copy; myapp
-        </div>
-      </form>
-
-
-      <Loading isLoaded={isLoaded} />
-      <ErrorMessage error={error} />
-    </div>
+      <div className="mb-2">
+        <button 
+          className="border border-blue-500 text-blue-500 w-full p-1 disabled:opacity-[0.2]" 
+          type="submit" 
+          disabled={!email.trim() || !password.trim()}
+        >
+          Login
+        </button>
+      </div>
+      <div className="mb-3">
+        <Link to="/accounts/signup" className="text-blue-500">Create Account</Link>
+      </div>
+      <div className="text-center text-xs">
+        2022 &copy; myapp
+      </div>
+      {error && <ErrorMessage error={error} />}
+    </form>
   )
 }

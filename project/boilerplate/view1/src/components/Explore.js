@@ -1,7 +1,6 @@
 import { Suspense, useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import NotFound from "./NotFound";
-import ArticleList from "./ArticleList";
 import { ErrorMessage, Loading } from "./Progress";
 import wrapPromise from "./wrapPromise";
 
@@ -59,29 +58,49 @@ function Explore({ resource }) {
     .finally(() => setIsLoaded(true));
   }
 
+  const articleList = articles.map(article => (
+    <Link
+      key={article._id}
+      className="h-40 bg-gray-100"
+      to={`/p/${article._id}`}
+    >
+      <img
+        src={`http://localhost:3000/articles/${article.photos[0]}`}
+        alt=""
+        className="w-full h-full object-cover"
+      />
+    </Link>
+  ))
+
   return (
-    <div className="mt-3">
+    <>
       <div className="mb-3 px-3">
         <h1 className="text-2xl mb-3">Explore</h1>
-        <Link to="/search">
-          Search
-        </Link>
+        <div className="">
+          <Link to="/search">
+            <input 
+              type="text"
+              className="border p-1 w-full outline-none"
+              placeholder="Search"
+            />
+          </Link>
+        </div>
       </div>
 
-      <ArticleList articles={articles} />
-      
-      <LoadButton isLoaded={isLoaded}>
-        <button onClick={addArticles}>Load more</button>
-      </LoadButton>
+      <div className="grid grid-cols-3 gap-1 mb-2">
+        {articleList}
+      </div>
 
-      <ErrorMessage error={error} />
-    </div>
+      <div className="mb-2 px-2">
+        <button 
+          className="p-1 w-full border border-black"
+          onClick={addArticles}
+        >
+          Load more
+        </button>
+      </div>
+
+      {error && <ErrorMessage error={error} />}
+    </>
   )
-}
-
-function LoadButton({ isLoaded, children }) {
-  if (isLoaded === false) {
-    return <p>fetching articles...</p>
-  }
-  return children;
 }

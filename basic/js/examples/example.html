@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- # FAVORITE -->
+
+  <!-- <h1>Subscribe</h1>
+
+  <button>Subscribe</button>
+  
+  <script>
+    const button = document.querySelector('button');
+  
+    button.addEventListener("click", (e) => {
+      if (button.textContent==='Subscribe') {
+        button.textContent = 'Subscribed'
+      } else {
+        button.textContent = 'Subscribe'
+      }
+    })
+  </script> -->
+
+  
+  <!-- # FORM -->
+
+  <!-- <h1>Google</h1>
+
+  <form action="">
+    <input type="text" placeholder="Search">
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    const form = document.querySelector("form");
+    
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      
+      const input = document.querySelector("input");
+      
+      console.log("query:", input.value);
+    })
+  </script> -->
+
+  <!-- <h1>Login</h1>
+
+  <form action="">
+    <div class="">
+      <label for="">Username</label>
+      <input type="text" required>
+    </div>
+    <div class="">
+      <label for="">Password</label>
+      <input type="text" required>
+    </div>
+    <div class="">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+
+  <script>
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const inputs = document.querySelectorAll("input");
+
+      const user = {
+        username: inputs[0].value, 
+        password: inputs[1].value
+      }
+
+      console.log("user:", user);
+    })
+  </script> -->
+
+  <!-- <h1>Validate password</h1>
+
+  <form action="">
+    <div class="">
+      <label for="">Password</label>
+      <input type="text">
+    </div>
+    <p>Enter Password</p>
+  </form>
+
+  <script>
+    const input = document.querySelector("input");
+
+    input.addEventListener("keyup", (e) => {
+      const p = document.querySelector("p");
+
+      if (!e.target.value) {
+        p.textContent = "Password is required"
+      } else if (e.target.value.length < 6) {
+        p.textContent = "Not safe"
+      } else {
+        p.textContent = "Safe"
+      }
+    })
+  </script> -->
+
+  <!-- <h1>Beers</h1>
+
+  <form action="">
+    <input type="text" placeholder="e.g) Guinness, Ireland" required>
+    <button type="submit">Submit</button>
+  </form>
+  <ul></ul>
+
+  <script>
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      if (!input.value) return;
+
+      const input = document.querySelector("input");
+      const ul = document.querySelector("ul");
+      const li = document.createElement("li");
+
+      li.textContent = input.value;
+      ul.appendChild(li);
+
+      input.value = "";
+    })
+  </script> -->
+
+  <!-- # ACCORDION -->
+
+  <!-- <h1>Accordion</h1>
+
+  <style>
+    button {
+      padding: 0.5rem;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      border: none;
+    }
+    p {
+      margin: 0;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <div>
+    <button>Tab</button>
+    <p class="hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt maiores iusto pariatur ipsum dicta dolorem quas suscipit, eum voluptas doloremque commodi in ullam odio. Voluptate labore impedit asperiores repellat accusamus?</p>
+  </div>
+
+  <script>
+    const button = document.querySelector("button");
+
+    button.addEventListener("click", (e) => {
+      const p = e.target.nextElementSibling;
+
+      p.classList.toggle("hidden");
+    })
+  </script> -->
+
+  <!-- <h1>Animated Accordion</h1>
+
+  <style>
+    button {
+      padding: 0.5rem;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      border: none;
+    }
+    p {
+      margin: 0;
+      overflow: hidden;
+      transition: 0.5s;
+    }
+    .max-h-0 {
+      max-height: 0;
+    }
+    .max-h-20 {
+      max-height: 5rem;
+    }
+  </style>
+
+  <div>
+    <button>Tab</button>
+    <p class="max-h-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt maiores iusto pariatur ipsum dicta dolorem quas suscipit, eum voluptas doloremque commodi in ullam odio. Voluptate labore impedit asperiores repellat accusamus?</p>
+  </div>
+
+  <script>
+    const button = document.querySelector("button");
+
+    button.addEventListener("click", (e) => {
+      const p = e.target.nextElementSibling;
+
+      p.classList.toggle("max-h-0");
+      p.classList.toggle("max-h-20");
+    })  
+  </script> -->
+
+  <!-- <h1>Multiple Accordion</h1>
+
+  <style>
+    button {
+      padding: 0.5rem;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      border: none;
+    }
+    p {
+      margin: 0;
+      overflow: hidden;
+      transition: 0.5s;
+    }
+    .max-h-0 {
+      max-height: 0;
+    }
+    .max-h-20 {
+      max-height: 5rem;
+    }
+  </style>
+
+  <div>
+    <button>Tab 1</button>
+    <p class="max-h-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt maiores iusto pariatur ipsum dicta dolorem quas suscipit, eum voluptas doloremque commodi in ullam odio. Voluptate labore impedit asperiores repellat accusamus?</p>
+  </div>
+  <div>
+    <button>Tab 2</button>
+    <p class="max-h-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  </div>
+  <div>
+    <button>Tab 3</button>
+    <p class="max-h-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt maiores iusto pariatur ipsum dicta dolorem quas suscipit, eum voluptas doloremque commodi in ullam odio. Voluptate labore impedit asperiores repellat accusamus?</p>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll("button");
+
+    for (let i=0; i<buttons.length; i++) {
+      buttons[i].addEventListener("click", (e) => {
+        const p = e.target.nextElementSibling;
+
+        p.classList.toggle("max-h-0");
+        p.classList.toggle("max-h-20");
+      })
+    }
+  </script> -->
+
+  <!-- # NAVIGATION -->
+
+  <!-- <style>
+    header {
+      border: 1px solid #ddd;
+    }
+    button {
+      padding: 0.5rem;
+      border: none;
+      cursor: pointer;
+      background-color: #fff;
+    }
+    a {
+      display: block;
+      padding: 0.5rem;
+    }
+    a:hover {
+      background-color: #eee;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <h1>Top navigation</h1>
+
+  <header>
+    <div>
+      <button>=</button>
+    </div>
+    <nav class="hidden">
+      <a href="">Link</a>
+      <a href="">Link</a>
+      <a href="">Link</a>
+    </nav>
+  </header>
+
+  <script>
+    const button = document.querySelector("button");
+    button.addEventListener("click", (e) => {
+      const nav = document.querySelector("nav");
+      nav.classList.toggle("hidden");
+    })
+  </script>  -->
+
+  <!-- <style>
+    header {
+      border: 1px solid #ddd;
+    }
+    button { 
+      padding: 0.5rem;
+      border: none;
+      cursor: pointer;
+      background-color: #fff;
+    }
+    nav {
+      overflow-y: auto;
+      transition: 0.2s;
+    }
+    a {
+      display: block;
+      padding: 0.5rem;
+    }
+    a:hover {
+      background-color: #eee;
+    }
+    .max-h-0 {
+      max-height: 0;
+    }
+    .max-h-20 {
+      max-height: 5rem;
+    }
+  </style>
+
+  <h1>Animated top navigation</h1>
+
+  <header>
+    <div>
+      <button>=</button>
+    </div>
+    <nav class="max-h-0">
+      <a href="">Link</a>
+      <a href="">Link</a>
+      <a href="">Link</a>
+    </nav>
+  </header>
+
+  <script>
+    const button = document.querySelector("button");
+    button.addEventListener("click", (e) => {
+      const nav = document.querySelector("nav");
+
+      nav.classList.toggle("max-h-0");
+      nav.classList.toggle("max-h-20");
+    })
+  </script>  -->
+
+  <!-- <style>
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 15rem;
+      background-color: #fff;
+      z-index: 1;
+      transition: 0.2s;
+    }
+    nav a {
+      display: block;
+      padding: 0.5rem;
+    }
+    nav a:hover {
+      background-color: #eee;
+    }
+    button {
+      border: 1px solid;
+      background-color: transparent;
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+    #overlay {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0 0 0 / 0.2);
+    }
+    .-left-60 {
+      left: -15rem;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <div class="">
+    <nav class="-left-60">
+      <a href="">Link</a>
+      <a href="">Link</a>
+      <a href="">Link</a>
+    </nav>
+    <div id="overlay" class="hidden"></div>
+  </div>
+
+  <button>=</button>
+  <h1>Side navigation</h1>
+
+  <script>
+    const button = document.querySelector("button");
+    const nav = document.querySelector("nav");
+    const overlay = document.getElementById("overlay");
+
+    button.addEventListener("click", (e) => {
+      nav.classList.remove("-left-60");
+      overlay.classList.remove("hidden");
+    })
+
+    overlay.addEventListener("click", (e) => {
+      nav.classList.add("-left-60");
+      overlay.classList.add("hidden");
+    })
+  </script> -->
+
+  <!-- # MODAL -->
+
+  <!-- <h1>Modal</h1>
+
+  <style>
+    button {
+      border: none;
+      padding: 0.5rem;
+      background-color: transparent;
+      border: 1px solid;
+      cursor: pointer;
+    }
+    #overlay {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0 0 0 / 0.2);
+    }
+    #modal {
+      background-color: #fff;
+      width: 20rem;
+      margin: 100px auto 0;
+      padding: 1rem;
+      border-radius: 1rem;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <button>Open</button>
+
+  <div id="overlay" class="hidden">
+    <div id="modal">
+      <h3>Modal Content</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat fugit vitae, deserunt molestias id quibusdam quasi eius laborum doloribus alias? Facere quibusdam totam dolorem in veritatis vero eum consequuntur numquam?
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const button = document.querySelector("button");
+    const modal = document.getElementById("modal");
+    const overlay = document.getElementById("overlay");
+
+    button.addEventListener("click", (e) => {
+      overlay.classList.remove("hidden");
+    })
+
+    overlay.addEventListener("click", (e) => {
+      // e.target: an element in which an event occur. 
+      // e.target can be overlay or overlay's children.
+      const r = Object.is(e.target, overlay); // copy
+
+      if (r) {
+        e.target.classList.add("hidden");
+      }
+    })
+  </script> -->
+
+  <!-- # GALLERY -->
+
+  <!-- <h1>Gallery</h1>
+
+  <style>
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .main {
+      width: 400px;
+      height: 300px;
+      background-color: #ddd;
+      margin-bottom: 0.5rem;
+    }
+    .container {
+      display: flex;
+    }
+    .item {
+      width: 100px;
+      height: 100px;
+      cursor: pointer;
+      opacity: 0.8;
+    }
+    .item:hover {
+      opacity: 1;
+    }
+  </style>
+
+  <div class="main">
+    <img id="main-image" src="../../img/bunny.jpeg" alt="">
+  </div>
+  
+  <div class="container">
+    <div class="item">
+      <img src="../../img/bunny.jpeg" alt="" onclick="f(this)">
+    </div>
+    <div class="item">
+      <img src="../../img/cat.jpeg" alt="" onclick="f(this)">
+    </div>
+    <div class="item">
+      <img src="../../img/bird.jpeg" alt="" onclick="f(this)">
+    </div>
+    <div class="item">
+      <img src="../../img/duck.jpeg" alt="" onclick="f(this)">
+    </div>
+  </div>
+
+  <script>
+    function f(el) {
+      const mainImage = document.getElementById("main-image");
+      mainImage.src = el.src;
+    }
+  </script> -->
+
+  <!-- <h1>Q. Modal Gallery</h1>
+
+  <style>
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    #overlay {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0 0 0 / 0.2);
+    }
+    #modal {
+      width: 300px;
+      height: 400px;
+      background-color: #ddd;
+      margin-bottom: 0.5rem;
+      background-color: #fff;
+      display: block;
+      margin: 100px auto;
+    }
+    .container {
+      display: flex;
+    }
+    .item {
+      width: 100px;
+      height: 100px;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <div id="overlay" class="hidden">
+    <img src="" alt="" id="modal">
+  </div>
+  
+  <div class="container">
+    <div class="item">
+      <img src="../../img/bunny.jpeg" alt="" onclick="f(this)">
+    </div>
+    <div class="item">
+      <img src="../../img/cat.jpeg" alt="" onclick="f(this)">
+    </div>
+    <div class="item">
+      <img src="../../img/bird.jpeg" alt="" onclick="f(this)">
+    </div>
+    <div class="item">
+      <img src="../../img/duck.jpeg" alt="" onclick="f(this)">
+    </div>
+  </div>
+
+  <script>
+    const overlay = document.getElementById("overlay");
+
+    function f(el) {
+      const modal = document.getElementById("modal");
+      overlay.classList.remove("hidden");
+      modal.src = el.src;
+    }
+
+    overlay.addEventListener("click", (e) => {
+      const r = Object.is(e.target, overlay);
+
+      if (r) {
+        e.target.classList.add("hidden");
+      }
+    })
+  </script> -->
+
+  <!-- # CAROUSEL -->
+
+  <!-- <h1>Carousel</h1>
+
+  <style>
+    .wrap {
+      position: relative;
+      width: 200px;
+      box-shadow: 0 0 10px #ddd;
+      margin: auto;
+    }
+    .container {
+      width: 200px;
+      height: 200px;
+      display: flex;
+      overflow-x: hidden;
+    }
+    .item {
+      width: inherit;
+      height: inherit;
+      flex-shrink: 0;
+      transition: 0.2s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .left, .right {
+      position: absolute;
+      display: flex;
+      align-items: center;
+    }
+    .left {
+      top: 0;
+      left: 0;
+      bottom: 0;
+    }
+    .right {
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+    #prev, #next {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    .indicator {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      padding: 0.5rem 0;
+    }
+    .dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      margin: 0 3px;
+      background-color: #ddd;
+    }
+    .hidden {
+      display: none;
+    }
+    .bg-black {
+      background-color: #000;
+    }
+  </style>
+
+  <div class="wrap">
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+  
+    <div class="left">
+      <button id="prev" class="hidden" onclick="f(-1)">&#10094;</button>
+    </div>
+    <div class="right">
+      <button id="next" onclick="f(1)">&#10095;</button>
+    </div>
+
+    <div class="indicator">
+      <span class="dot bg-black"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+  
+  <script>
+    // # Tutorial
+    // Get CSS for vertical alignment of items.
+    // Create buttons.
+    // define function <f> and print index.
+    // make image move using marginLeft property.
+    // Polish <f> to make buttons work exactly (add condition).
+    // Add position property to CSS to look more carousel.
+    // Finally, add the indicators.
+    
+    // ? excute <f> as soon as document is loaded.
+
+    // Index
+    let index = 0;
+    // Items
+    const items = document.querySelectorAll(".item");
+    // Buttons
+    const prev = document.getElementById("prev");
+    const next = document.getElementById("next");
+    // Indicator
+    const dots = document.querySelectorAll(".dot");
+
+    function f(x) {
+      // Index
+      index += x;
+
+      // Items
+      items[0].style.marginLeft = `-${index*200}px`;
+      
+      // Buttons
+      prev.classList.remove("hidden"); // not error
+      next.classList.remove("hidden");
+
+      if (index===0) {
+        prev.classList.add("hidden");
+      }
+
+      if (index===items.length-1) {
+        next.classList.add("hidden");
+      }
+
+      // Indicator 
+      for (dot of dots) {
+        dot.classList.remove("bg-black");
+      }
+      dots[index].classList.add("bg-black");
+    }
+  </script> -->
+
+  <!-- <h1>JavaScript with CSS Animation</h1>
+
+  <style>
+    .container {
+      position:fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    svg {
+      fill: #fff;
+      flex-shrink: 0;
+      animation: grow 1s;
+    }
+    .hidden {
+      display: none;
+    }
+    @keyframes grow {
+      from {width: 10rem;}
+      to {width: 100rem;}
+    }
+  </style>
+  
+  <div class="container">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <path d="M415.44 512h-95.11L212.12 357.46v91.1L125.69 512H28V29.82L68.47 0h108.05l123.74 176.13V63.45L386.69 0h97.69v461.5zM38.77 35.27V496l72-52.88V194l215.5 307.64h84.79l52.35-38.17h-78.27L69 13zm82.54 466.61l80-58.78v-101l-79.76-114.4v220.94L49 501.89h72.34zM80.63 10.77l310.6 442.57h82.37V10.77h-79.75v317.56L170.91 10.77zM311 191.65l72 102.81V15.93l-72 53v122.72z"/>
+    </svg>
+  </div>
+
+  <script>
+    const svg = document.querySelector("svg");
+
+    setTimeout(() => {
+      svg.classList.add("hidden");
+    }, 1000)
+  </script> -->
+
+</body>
+</html>

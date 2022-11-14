@@ -12,7 +12,7 @@ const profile_controller = require("../controllers/profile_controller");
 
 // router handles 404 NotFound
 // auth handles 401 NotAuthorized
-// They do not use Error handler
+// They do not use error handler
 
 // INDEX
 router.get('/', (req, res) => {

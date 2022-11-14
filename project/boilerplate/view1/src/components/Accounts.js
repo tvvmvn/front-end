@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react";
+import { ErrorMessage, SuccessMessage } from "./Progress";
 
 export default function () {
 
@@ -36,9 +37,11 @@ export default function () {
 
 function Accounts({initialProfile}) {
   const [profile, setProfile] = useState(initialProfile);
+  const [error, setError] = useState(null);
+  const [message, setMessage] = useState("");
+  const [isLoaded, setIsLoaded] = useState(false);
 
   function uploadImage(e) {
-
     const files = e.target.files;
 
     const formData = new FormData();
@@ -58,10 +61,10 @@ function Accounts({initialProfile}) {
     .then(data => {
       const editedProfile = {...profile, image: data};
       setProfile(editedProfile);
-      alert("Successfully updated");
+      setMessage("Successfully updated");
     })
     .catch(error => {
-      alert("failed to upload image");
+      setError("failed to upload image");
     })
   }
 
@@ -78,7 +81,7 @@ function Accounts({initialProfile}) {
       setProfile(editedProfile);
     })
     .catch(error => {
-      alert("failed to delete image")
+      setError("failed to delete image")
     })
   }
   
@@ -103,18 +106,36 @@ function Accounts({initialProfile}) {
       const editedProfile = {...profile, bio: data};
       
       setProfile(editedProfile);
-      alert("Successfully updated")
+      setMessage("Successfully updated")
       setText("");
     })
     .catch(error => {
-      alert("failed to update account")
+      setError("failed to update account")
     })
   }
 
+  useEffect(() => {
+    if (message) {
+      setTimeout(() => {
+        setMessage("")
+      }, 2000)
+    }
+    if (error) {
+      setTimeout(() => {
+        setError(null)
+      }, 2000)
+    }
+  }, [message, error])
+
   return (
-    <div className="mt-3 px-3">
+    <div className="px-3">
+      <h1 className="text-2xl mb-2">Edit Profile</h1>
+      
       <EditImage profile={profile} uploadImage={uploadImage} deleteImage={deleteImage} />
       <EditProfile profile={profile} editProfile={editProfile} />
+
+      {error && <ErrorMessage error={error} />}
+      {message && <SuccessMessage message={message} />}
     </div>  
   )
 }
@@ -123,20 +144,27 @@ function EditImage({profile, uploadImage, deleteImage}) {
 
   return (
     <div className="mb-3">
+      <h3 className="text-lg mb-2">Image</h3>  
       <div className="mb-2">
         <img 
           src={`http://localhost:3000/users/${profile.image || "avatar.jpeg"}`} 
           className="w-24 h-24 rounded-full object-cover"
         />
       </div>
-      {profile.image ? 
-        <button type="button" onClick={deleteImage}>Delete</button>
-        :
-        <input 
-          type="file" 
+      {profile.image ? (
+        <button
+          type="button"
+          className="text-red-400"
+          onClick={deleteImage}
+        >
+          Delete image
+        </button>
+      ) : (
+        <input
+          type="file"
           onChange={uploadImage}
         />
-      }
+      )}
     </div>
   )
 }
@@ -152,6 +180,7 @@ function EditProfile({profile, editProfile}) {
 
   return (
     <form onSubmit={handleSubmit}>
+      <h3 className="text-lg mb-2">Accounts</h3>  
       <div className="mb-2">
         <label htmlFor="">Username</label>
         <input 

@@ -12,7 +12,7 @@ export default function Carousel({ photos }) {
           {photos.map(photo => (
             <div 
               key={photo} 
-              className="w-full shrink-0 transition-all bg-gray-100"
+              className="w-full shrink-0 transition-all"
               style={{transform: `translateX(-${index * 100}%)`}}
             > 
               <img 
@@ -23,9 +23,9 @@ export default function Carousel({ photos }) {
           ))}
         </div>
 
-        <div className="absolute top-0 left-0 bottom-0 flex items-center">
+        <div className="absolute top-0 left-0 h-full flex items-center">
           <button 
-            className="p-1 bg-white" 
+            className="p-2 bg-white" 
             onClick={() => setIndex(index - 1)} 
             style={{display: index===0 && "none"}}
           >
@@ -33,9 +33,9 @@ export default function Carousel({ photos }) {
           </button>
         </div>
         
-        <div className="absolute top-0 right-0 bottom-0 flex items-center">
+        <div className="absolute top-0 right-0 h-full flex items-center">
           <button 
-            className="p-1 bg-white" 
+            className="p-2 bg-white" 
             onClick={() => setIndex(index + 1)} 
             style={{display: index===photos.length-1 && "none"}}
           >
@@ -44,7 +44,7 @@ export default function Carousel({ photos }) {
         </div>
       </div>
       
-      <div className="flex justify-center gap-1 py-2">
+      <div className="flex justify-center gap-1 mt-2 mb-2">
         {photos.map((photo, dot) => (
           <span 
             key={dot} 

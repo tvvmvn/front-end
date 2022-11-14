@@ -52,7 +52,7 @@ export default function ArticleCreate() {
   }
 
   return (
-    <div className="mt-3 px-3">
+    <div className="px-3">
       <h1 className="text-2xl mb-3">New Article</h1>
 
       <form onSubmit={handleSubmit}>
@@ -82,7 +82,7 @@ export default function ArticleCreate() {
             type="text" 
             name="description" 
             id="description" 
-            className="border w-full p-1 outline-none"
+            className="border w-full p-1"
             onChange={handleChange} 
           />
         </div>
@@ -99,7 +99,7 @@ export default function ArticleCreate() {
       </form>
 
       {/* <Loading isLoaded={isLoaded} /> */}
-      <ErrorMessage error={error} />
+      {error && <ErrorMessage error={error} />}
     </div>
   )
 }

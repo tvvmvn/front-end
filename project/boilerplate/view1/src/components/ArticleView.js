@@ -106,7 +106,7 @@ function ArticleView({ resource }) {
         deleteArticle={deleteArticle}
       />
 
-      <ErrorMessage error={error} />
+      {error && <ErrorMessage error={error} />}
     </>  
   )
 }

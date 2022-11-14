@@ -6,20 +6,20 @@ export default function Layout() {
   const auth = useContext(AuthContext);
 
   return (
-    <div className="pt-8">
-      <div className="fixed top-0 left-0 right-0 z-10">
-        <ul className="flex px-3 items-center gap-2 border-b bg-white/[0.8] h-8">
+    <div className="pt-14">
+      <div className="fixed top-0 left-0 w-full z-10">
+        <ul className="flex border-b bg-white">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" className="block p-2">Home</Link>
           </li>
           <li>
-            <Link to="/explore">Explore</Link>
+            <Link to="/explore" className="block p-2">Explore</Link>
           </li>
           <li>
-            <Link to="/create">Create</Link>
+            <Link to="/create" className="block p-2">Create</Link>
           </li>
           <li>
-            <Link to={`/profiles/${auth.user.username}`}>Profile</Link>
+            <Link to={`/profiles/${auth.user.username}`} className="block p-2">Profile</Link>
           </li>
         </ul>
       </div>

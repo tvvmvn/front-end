@@ -51,12 +51,12 @@ export default function Search() {
   ));
 
   return (
-    <div className="mt-3 px-3">
+    <div className="px-3">
       <h1 className="text-2xl mb-3">Search</h1>
       <div className="mb-3">
         <input 
           type="text" 
-          className="border p-1 w-full outline-none"
+          className="border p-1 w-full"
           onChange={handleChange} 
           placeholder="Search" 
           ref={inputEl}
@@ -67,7 +67,7 @@ export default function Search() {
         {userList}
       </ul>
 
-      <ErrorMessage error={error} />
+      {error && <ErrorMessage error={error} />}
     </div>
   )
 }

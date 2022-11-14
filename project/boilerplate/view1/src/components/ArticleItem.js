@@ -13,7 +13,7 @@ export default function ArticleItem({ article, editArticle, deleteArticle }) {
 
   return (
     <>
-      <div className="flex justify-between px-3 mt-3 mb-2">
+      <div className="flex justify-between px-3 mb-2">
         <Avatar user={article.user} />
         {isMaster && 
           <ModalWindow>
@@ -41,15 +41,13 @@ export default function ArticleItem({ article, editArticle, deleteArticle }) {
           <p className="ml-2">{article.favoriteCount} likes</p>
         </div>
         
-        <div className="mb-2">
-          <p>
-            <span className="font-bold">{article.user.username}</span> {" "}
-            {article.description}
-          </p>
-        </div>
+        <p className="mb-2">
+          <span className="font-bold">{article.user.username}</span> {" "}
+          {article.description}
+        </p>
 
         <div className="">
-          <Link to={`/p/${article._id}/comments`} className="text-sm text-gray-400">Comments</Link>
+          <Link to={`/p/${article._id}/comments`} className="text-gray-400">Comments</Link>
         </div>
 
         <div className="text-xs text-gray-400">

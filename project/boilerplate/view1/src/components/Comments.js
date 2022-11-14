@@ -149,15 +149,14 @@ function Comments({ articleId, resource }) {
   ))
 
   return (
-    <div className="mt-3 px-3">
+    <div className="px-3">
       <h1 className="text-2xl mb-3">Comments</h1>
       <Form createComment={createComment} />
 
       {commentList} 
 
-      <Loading isLoaded={isLoaded} />
-      <ErrorMessage error={error} />
-      <SuccessMessage message={message} />
+      {error && <ErrorMessage error={error} />}
+      {message && <SuccessMessage message={message} />}
     </div>  
   )
 }
@@ -180,14 +179,14 @@ function Form({createComment}) {
         type="text" 
         name="text"
         rows="3"
-        className="w-full outline-none border"
+        className="w-full border p-1"
         value={text} 
         onChange={handleChange} 
       />
-      <div className="flex justify-end">
+      <div className="">
         <button 
           type="submit" 
-          className="border border-black p-1 disabled:opacity-[0.2]" 
+          className="border border-black p-1 disabled:opacity-[0.2] text-sm" 
           disabled={!text.trim()}
         >
           Submit
@@ -220,7 +219,7 @@ function Comment({comment, editComment, deleteComment}) {
         }
       </div>
 
-      <div className="mb-2">{comment.content}</div>
+      <p className="mb-2">{comment.content}</p>
       
       <div className="flex mb-2">
         <button 
