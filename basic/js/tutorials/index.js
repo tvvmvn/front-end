@@ -1,55 +1,65 @@
 // ### JavaScript
 
-// # DATA TYPE
+// console.log('Hello JavaScript!');
+
+// # DATA TYPE (7 types)
 // - Number, BigInt, Boolean, Null, Undefined, String, Symbol
 
-// ### Number
-// double precision floating point number
-// value: integer, decimals, NaN(Not a number), -Infinity, +Inifinity
+// ### String (문자열)
+// - inside single or double quotes '', ""
+// - value: a sequence of characters
 
-// console.log(typeof 3)
-// console.log(typeof 3.14)
-// console.log(typeof NaN)
-// console.log(typeof -Infinity)
-// console.log(typeof +Infinity)
-// console.log(100 / "hello");
-// console.log("hello" - 1)
+// console.log('Hello JavaScript');
+// console.log('foo') 
+// console.log("foo") 
+// console.log("")
+// console.log("2022")
+
+// var foo = 'bar';
+// console.log(foo[0])
+// console.log(foo[1])
+// console.log(foo[2])
+// console.log(foo.length);
+
+// ### Number
+// - double precision floating point number
+// - represent number between -(2^-1024) and +(2^1024)
+// - value: integer, decimals, NaN(Not a number), +Infinity, -Inifinity
+
+// console.log(2022)
+// console.log(3.14)
+// console.log(0)
+// console.log(-2)
+// console.log(2/'foo');
 // console.log(2/0)
 // console.log(-2/0)
-// console.log(Math.PI)
 
 // ### BigInt
-// Outside safe integer -(2^53) ~ 2^53-1
-// check with isSafeInteger
+// - represent integer outside safe integer  -(2^53-1) ~ +(2^53-1)
+// - value: 
+
+// console.log(Number.MAX_SAFE_INTEGER)
+// console.log(9007199254740991) // max safe integer
+// console.log(9999999999999999)
+// console.log(9999999999999999n) // represent number as BigInt type
 
 // ### Boolean
 // - value: true or false
-// console.log(typeof true) 
-// console.log(typeof false)
+// console.log(true) 
+// console.log(false)
+// console.log(1>0)
 
 // ### Null
+// intend to represent 'invalid'
 // - value: null
-// var x = null;
-// console.log(typeof x); 
+
+// console.log(null); 
+// console.log(typeof null); 
 
 // ### Undefined
 // - value: undefined
 // var x;
 // console.log(typeof x); 
-// var x = undefined;
-// console.log(typeof x)
-
-// ### String (문자열)
-// - value: character
-// console.log(typeof "hello") 
-// console.log(typeof 'hello') 
-// console.log(typeof "")
-// console.log(typeof "2022")
-// console.log("I'm foo")
-// console.log('I am "foo"')
-// const foo = "bar";
-// const char = foo[0]
-// console.log(foo[0])
 
 // ### Symbol
 // const x = {}
@@ -59,6 +69,7 @@
 
 // console.log(x)
 // console.log(x.id)
+
 
 // # OPERATOR
 // - Assignment, Arithmetic, Comparison, Logical, Type, Bitwise
