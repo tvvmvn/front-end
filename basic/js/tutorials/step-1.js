@@ -589,28 +589,33 @@
 // const r = f();
 // console.log(r);
 
+// function f() {
+//   return 'foo'
+//   console.log('...')
+// }
+
+// const r = f();
+// console.log(r);
+
 // > when stop execution
 // function f() {
 //   console.log('foo')
-//   console.log('bar')
 //   return;
-//   console.log('baz')
+//   console.log('...')
 // }
 // f();
 
 // 5 function parameter
 
-// f("foo");
-// function f(data) {
-//   console.log(data);
+// function add(x, y) {
+//   return x + y;
 // }
-
-// function add(a, b) {
-//   return a + b;
-// }
-
 // let r = add(1, 2);
-// console.log(r);
+// console.log(r)
+
+/* 
+  Q. Function
+*/
 
 // function isAdult(age) {
 //   if (age >= 18) {
@@ -623,9 +628,6 @@
 // let r = isAdult(20)
 // console.log(r)
 
-/* 
-  Q. Function
-*/
 
 // 6 callback
 // function as parameter
