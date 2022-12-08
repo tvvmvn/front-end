@@ -1,5 +1,4 @@
-# JavaScript 
-
+# JavaScript
 
 # PREREQUISITES
 - node.js
@@ -10,7 +9,8 @@ restarting the node application when file changes in the directory are detected.
 
 
 # TUTORIAL
-# Basic
+
+# Step 1
 - Data Type
 primary data type and method
 - Operator
@@ -18,25 +18,27 @@ primary data type and method
 if else, switch
 - Loop 
 for, while
-- Function and Method, callback, arrow function
-- Variable and Scope
+- Variables and constanct 
 var, let, const
-- Array 
-- Object
+- Function
+callback, scope, arrow function
 - Error Handling
 try/catch, Error Object
-- Class: constructor, property, method, static, 
-- method and property of objects(string, array, ...)
-- destructing/spread operator 
-# Asynchronous
-- asynchronous function 
-- promise object, async, async/await
-- error handling 
-# JSON
+- Array 
+- Object
+
+# Step 2
+- Class
+constructor, property, method, static, 
+- destructing
+- spread operator 
+- asynchronous 
+function 
+- Promise 
+promise object, async, async/await, error
 - JSON
 
 
-# HTML BOM/DOM
 # HTML BOM(Browser Object Model)
 - screen
 - location
