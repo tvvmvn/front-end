@@ -382,7 +382,7 @@
 // (ternary)
 
 // var johnAge = 20;
-// var r = johnAge >= 18 ? 'He is adult' : 'He is not adult';
+var r = johnAge >= 18 ? 'He is adult' : 'He is not adult';
 // console.log(r)
 
 /*
