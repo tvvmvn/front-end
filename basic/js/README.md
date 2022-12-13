@@ -12,18 +12,12 @@ restarting the node application when file changes in the directory are detected.
 
 # Step 1
 - Data Type
-primary data type and method
 - Operator
 - Condition
-if else, switch
 - Loop 
-for, while
-- Variables and constanct 
-var, let, const
+- Variables and constant 
 - Function
-callback, scope, arrow function
 - Error Handling
-try/catch, Error Object
 - Array 
 - Object
 
