@@ -4,12 +4,7 @@
   data type which can hold more than one value;
 
   1 Access Array
-
   2 Array method
-  > Array.push()
-  > Array.pop()
-  > Array.splice()
-
   3 Loop array
 */
 
@@ -39,6 +34,27 @@
 // let arr = ['foo', 'bar', 'baz'];
 // arr.splice(1, 2);
 // console.log(arr);
+
+// > arr.concat()
+// let arr1 = ['foo', 'bar'];
+// let arr2 = ['baz']
+
+// const arr = arr1.concat(arr2)
+
+// console.log(arr)
+
+// > filter(callback)
+// this method pass item, index, array to callback.
+// this method filter array items in specific condition
+// return new array as results
+
+// const arr = ["foo", "bar", "baz"];
+// const r = arr.filter(function (item, index, array) {
+//   if (item[0] === "b") {
+//     return item;
+//   }
+// })
+// console.log(r);
 
 // 3 Loop through an array
 // let arr = ['foo', 'bar', 'baz'];

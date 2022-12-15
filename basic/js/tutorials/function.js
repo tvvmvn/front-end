@@ -119,6 +119,28 @@
 //   return "foo"
 // })
 
+// # pass parameter to callback
+// function f(callback) {
+//   const foo = 'bar'
+//   callback(foo);
+// }
+
+// function cb(data) {
+//   console.log(data)
+// }
+
+// f(cb)
+
+// # pass parameter to anonymous function
+// function f(callback) {
+//   const foo = 'bar'
+//   callback(foo);
+// }
+
+// f(function (data) {
+//   console.log(data)
+// })
+
 // # Clock with callback
 // setInterval(callback, ms)
 

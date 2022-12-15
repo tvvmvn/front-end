@@ -58,3 +58,17 @@
 //   console.log(europeanBeers[i])
 // }
 
+// Q3. create new beer array with available beers
+// const beers = [
+//   {name: 'Guinness', origin: 'Ireland', available: false},
+//   {name: 'Heineken', origin: 'Netherlands', available: true},
+//   {name: 'Budwiser', origin: 'USA', available: true},
+// ]
+
+// const availableBeers = beers.filter(function (beer) {
+//   if (beer.available) {
+//     return beer;
+//   }
+// })
+
+// console.log(availableBeers);

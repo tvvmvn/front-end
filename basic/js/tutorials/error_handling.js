@@ -54,7 +54,7 @@
 // try {
 //   console.log(x);
 // } catch (err) {
-//   console.log(err)
+//   console.error(err)
 // }
 
 // > SyntaxError

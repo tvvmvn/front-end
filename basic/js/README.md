@@ -23,32 +23,20 @@ restarting the node application when file changes in the directory are detected.
 
 # Step 2
 - Class
-constructor, property, method, static, 
-- destructing
-- spread operator 
-- asynchronous 
-function 
-- Promise 
-promise object, async, async/await, error
+constructor, property, method, static 
+- Asynchronous 
+callback, promise
 - JSON
 
+# Step 3
+- ES6
+destructing spread operator
 
-# HTML BOM(Browser Object Model)
-- screen
-- location
-- history
-- storage 
-- fetch 
-- navigator.geolocation
-# HTML DOM(Document Object Model)
-- Selector
-- Property
-innerHTML, classList, attribute, style
-- Method
-createElement, appendChild, classList(add, remove),
-getAttribute, setAttribute
-- Event
-
+# Step 4
+- HTML BOM
+screen, location, history, storage, fetch, navigator.geolocation
+- HTML DOM
+Selector, Property and method, Event
 
 # EXAMPLES
 - Favorite/Count
