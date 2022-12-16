@@ -29,7 +29,7 @@
 // const cat = new Cat('Kitty', 2);
 // console.log(cat)
 // console.log(cat instanceof Cat);
-// // # inheritance
+// // # inheritance (reusability)
 // console.log(cat.sound())
 
 // 3 static property and method

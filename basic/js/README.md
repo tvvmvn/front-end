@@ -26,11 +26,11 @@ restarting the node application when file changes in the directory are detected.
 constructor, property, method, static 
 - Asynchronous 
 callback, promise
-- JSON
 
 # Step 3
 - ES6
 destructing spread operator
+- JSON
 
 # Step 4
 - HTML BOM

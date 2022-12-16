@@ -8,34 +8,36 @@
 </head>
 <body>
 
-<!-- <h1>BOM and DOM</h1>
-<p>BOM: Browser Object Model</p>
-<p>DOM: Document Object Model</p>
+<!-- <h1>JavaScript and HTML</h1>
+
+<ul>
+  <li>Window Object</li>
+  <li>Elements Selector</li>
+  <li>Elements Property</li>
+  <li>Elements Method</li>
+  <li>Event</li>
+</ul> -->
+
+
+<!-- <h1>window Object</h1>
 
 <script>  
-  // Browser Object
+  // window: toolkit for web development
   console.log(window);
-
-  // window's methods and property is toolkit for web development
+  // location based application
   console.log(window.navigator) 
-  console.log(window.screen)
-  console.log(window.location)
+  // application with navigation button
   console.log(window.history)
-  console.log(window.XMLHttpRequest)
-
-  // Document Object
-  console.log(window.document);
+  // request data to server
+  console.log(window.XMLHttpRequest) 
+  // HTML
+  console.log(window.document)
 </script> -->
 
-<!-- <h1>Accessing DOM</h1>
-<script>
-  console.log(window.document);
-  console.log(window.document.title)
-  console.log(window.document.body)
-</script> -->
 
-<!-- <h1>DOM Selector</h1>
-<p>tag name</p>
+<!-- <h1>Elements Selector</h1> 
+<p>select elements to handle in JavaScript</p>
+
 <ul>
   <li>foo</li>
   <li>bar</li>
@@ -43,53 +45,55 @@
 </ul>
 
 <script>
+  // select elements by tag name
   const ul = document.querySelector("ul");
   const li = document.querySelectorAll("li");
 
   console.log(ul)
-  console.log(li)
+  console.log(li) // NodeList
   console.log(li.length)
   console.log(li[0])
 </script> -->
 
-<!-- <h1>DOM Selector</h1>
-<p>id, class</p>
+
+<!-- <h1>Elements Selector</h1>
+
 <ul>
-  <li id="foo" class="item">foo</li>
-  <li class="item">bar</li>
-  <li class="item">baz</li>
+  <li id="foo">foo</li>
+  <li>bar</li>
+  <li>baz</li>
 </ul>
 
 <script>
-  const items = document.getElementsByClassName("item");
+  // select item by id
   const foo = document.getElementById("foo");
+  // const foo = document.querySelector("#foo");
 
-  console.log(items)
-  console.log(items.length)
-  console.log(items[1])
   console.log(foo)
 </script> -->
 
+
 <!-- <h1>DOM Selector</h1>
-<p>id, class</p>
+
 <ul>
-  <li id="foo" class="item">foo</li>
+  <li class="item">foo</li>
   <li class="item">bar</li>
   <li class="item">baz</li>
 </ul>
 
 <script>
-  const items = document.querySelectorAll(".item");
-  const foo = document.querySelector("#foo");
+  // selet items by class
+  const items = document.getElementsByClassName("item")
+  // const items = document.querySelectorAll(".item");
 
   console.log(items)
   console.log(items.length)
   console.log(items[1])
-  console.log(foo)
 </script> -->
 
+
 <!-- <h1>DOM Selector</h1>
-<p>children</p>
+
 <ul>
   <li>foo</li>
   <li>bar</li>
@@ -97,14 +101,19 @@
 </ul>
 
 <script>
+  // children
   const ul = document.querySelector("ul");
   
-  console.log(ul.children)
-  console.log(ul.children.length)
+  console.log(ul.children) // HTMLCollection
+
   console.log(ul.children[0])
+  console.log(ul.children[1])
+  console.log(ul.children[2])
+  console.log(ul.children.length)
   console.log(ul.firstElementChild)
   console.log(ul.lastElementChild)
 </script> -->
+
 
 <!-- <h1>Q. World beers</h1>
 <table>
@@ -116,15 +125,15 @@
     </tr>
   </thead>
   <tbody>
-    <tr id="dutchBeer" class="beer">
-      <td>Heineken</td>
-      <td>Netherlands</td>
-      <td>Yes</td>
-    </tr>
     <tr id="irishBeer" class="beer">
       <td>Guinness</td>
       <td>Ireland</td>
       <td>No</td>
+    </tr>
+    <tr id="dutchBeer" class="beer">
+      <td>Heineken</td>
+      <td>Netherlands</td>
+      <td>Yes</td>
     </tr>
     <tr id="koreanBeer" class="beer">
       <td>Kloud</td>
@@ -135,18 +144,18 @@
 </table>
 
 <script>
+  // select rows by class
   const beers = document.getElementsByClassName("beer")
+
+  // select each row by id
   const koreanBeer = document.getElementById("koreanBeer");
   const dutchBeer = document.getElementById("dutchBeer");
   const irishBeer = document.getElementById("irishBeer");
-  
-  console.log("Beers", beers)
-  console.log("Korean beer", koreanBeer);
-  console.log("Dutch beer", dutchBeer);
-  console.log("Irish beer", irishBeer);
 
-  console.log("Is Irish beer available?", irishBeer.lastElementChild);
+  // select specific cell by children
+  const isIrishBeerAvailable = irishBeer.lastElementChild;
 </script> -->
+
 
 <!-- <h1>DOM Property</h1>
 <p>innerHTML</p>
@@ -279,6 +288,7 @@
   li[0].style.textDecoration = "underline"
 </script> -->
 
+
 <!-- <h1>DOM Method</h1>
 <p>createElement, appendChild</p>
 <ul>
@@ -380,6 +390,7 @@
   console.log(bar.getAttribute("alt"))
   console.log(baz.getAttribute("value"))
 </script> -->
+
 
 <!-- <h1>DOM Method</h1>
 <p>setAttribute</p>
