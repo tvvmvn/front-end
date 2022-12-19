@@ -1,6 +1,6 @@
 /* 
   *** Asychronous operations ***
-  to handle potential blocking operations
+  to handle blocking 
   such as fetching resources from a server.
 
   1 synchronous operations
@@ -21,7 +21,7 @@
 
 
 // 2 Asynchronous function
-// excuted at last
+// excuted at last ? 실행이 되고 결과가 도착하면 리턴한다?
 
 // function f() {
 //   setTimeout(() => {

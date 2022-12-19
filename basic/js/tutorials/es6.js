@@ -130,13 +130,13 @@
 /// 2 Object
 
 // add property
-// const o = {prop1: "foo", prop2: "bar"}
-// const r = {...o, prop3: "baz"};
+// const o = {foo: "foo", bar: "bar"}
+// const r = {...o, baz: "baz"};
 // console.log(r)
 
 // update property
-// const o = {prop1: "foo", prop2: "bar", prop3: "baz"};
-// const r = {...o, prop2: null}
+// const o = {foo: "foo", bar: "bar", baz: "baz"};
+// const r = {...o, bar: null}
 // console.log(r);
 
 
