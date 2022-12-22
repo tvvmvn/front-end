@@ -12,7 +12,16 @@
 
 <ol>
   <li>Window Object</li>
-  <li>Manipulate elements</li>
+  <li>
+    Manipulate elements: 
+    <br>
+    element selector, 
+    handling class, 
+    handling attribute, 
+    handling style, 
+    handling text content, 
+    create/insert element
+  </li>
   <li>Event and event handling</li>
 </ol> -->
 
@@ -39,7 +48,7 @@
   console.log(window.XMLHttpRequest) 
   console.log(window.fetch)
   
-  // Storage 
+  // Storage API
   // store data from server in browser 
   // e.g) login token, theme, shopping cart
   console.log(window.localStorage)
@@ -79,6 +88,7 @@
   // # id
   // const foo = document.getElementById('foo');
   // console.log(foo)
+  querySelector(#id)
 
   // # children
   // const ul = document.querySelector('ul');
@@ -267,20 +277,23 @@
 <ul></ul>
 
 <script>
-  const ul = document.querySelector("ul");
+  let ul = document.querySelector("ul");
   
-  const arr = ["Guinness", "Heineken", "Budwiser"];
-  
-  for (let i=0; i<arr.length; i++) {
+  let beers = ["Guinness", "Heineken", "Budwiser"];
+
+  for (let i=0; i<beers.length; i++) {
     let li = document.createElement("li");
-    li.innerHTML = arr[i]
+    li.innerHTML = beers[i]
     ul.appendChild(li);
   }
 </script> -->
 
 
 <!-- <h1>3 Event and event handling</h1>
-<p>Event is user's action in web site such as click, scroll, resize, point move, key down, etc.</p>
+<p>
+  Event is user's action in web site - <br>
+  such as click, scroll, resize, point move, key down, etc.
+</p>
 
 <button>Button</button>
 
@@ -289,24 +302,10 @@
 
   // element.addEventListener(event, callback)
   button.addEventListener("click", (e) => {
-    // console.log(e); // PointerEvent
-    // console.log(e.target); // element that event occur (button)
+    console.log(e); // PointerEvent
+    console.log(e.target); // element that event occur (button)
 
-    alert('clicked!')
-  })
-</script> -->
-
-
-<!-- <h1>Q. Event</h1>
-<p>Subscribe button</p>
-
-<button>Subscribe</button>
-
-<script>
-  let button = document.querySelector('button');
-
-  button.addEventListener('click', (e) => {
-    e.target.innerHTML = 'Subscribed'
+    alert('lol');
   })
 </script> -->
 
