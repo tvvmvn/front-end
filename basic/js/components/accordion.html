@@ -28,7 +28,7 @@
       overflow-y: hidden;
       transition: 0.2s;
     }
-    p {
+    .item p {
       margin: 0;
       padding: 1rem;
     }
@@ -72,10 +72,10 @@
   </div>
 
   <script>
-    function f(button) {
-      const item = button.nextElementSibling;
+    function f(el) {
+      const item = el.nextElementSibling;
 
-      button.classList.toggle('active')
+      el.classList.toggle('active')
       item.classList.toggle("max-h-0");
       item.classList.toggle("max-h-40");
     }
