@@ -7,93 +7,71 @@
   <title>Document</title>
 </head>
 <body>
-<!-- # GALLERY -->
-
   <!-- <h1>Gallery</h1>
 
   <style>
-    img {
-      width: 100%;
-      height: 100%;
+    #main {
+      width: 300px;
+      height: 200px;
       object-fit: cover;
-    }
-    .main {
-      width: 400px;
-      height: 300px;
       background-color: #ddd;
       margin-bottom: 0.5rem;
     }
     .container {
       display: flex;
     }
-    .item {
+    .container img {
       width: 100px;
       height: 100px;
+      object-fit: cover;
       cursor: pointer;
       opacity: 0.8;
     }
-    .item:hover {
+    .container img:hover {
       opacity: 1;
     }
   </style>
 
-  <div class="main">
-    <img id="main-image" src="../../img/bunny.jpeg" alt="">
-  </div>
+  <img src="/Users/jintaemin/my_server/img/bunny.jpeg" alt="" id="main">
   
   <div class="container">
-    <div class="item">
-      <img src="../../img/bunny.jpeg" alt="" onclick="f(this)">
-    </div>
-    <div class="item">
-      <img src="../../img/cat.jpeg" alt="" onclick="f(this)">
-    </div>
-    <div class="item">
-      <img src="../../img/bird.jpeg" alt="" onclick="f(this)">
-    </div>
-    <div class="item">
-      <img src="../../img/duck.jpeg" alt="" onclick="f(this)">
-    </div>
+    <img src="/Users/jintaemin/my_server/img/bunny.jpeg" alt="" onclick="f(this)">
+    <img src="/Users/jintaemin/my_server/img/cat.jpeg" alt="" onclick="f(this)">
+    <img src="/Users/jintaemin/my_server/img/bird.jpeg" alt="" onclick="f(this)">
   </div>
 
   <script>
     function f(el) {
-      const mainImage = document.getElementById("main-image");
-      mainImage.src = el.src;
+      const main = document.getElementById("main");
+      main.src = el.src;
     }
   </script> -->
 
-  <!-- <h1>Q. Modal Gallery</h1>
 
+  <!-- <h1>Q. Modal Gallery</h1>
   <style>
-    img {
+    #modal {
+      position: fixed;
+      background-color: rgba(0 0 0 / 0.8);
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
     }
-    #overlay {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: rgba(0 0 0 / 0.2);
-    }
-    #modal {
+    #main {
       width: 300px;
-      height: 400px;
-      background-color: #ddd;
-      margin-bottom: 0.5rem;
-      background-color: #fff;
+      height: 300px;
+      object-fit: cover;
       display: block;
-      margin: 100px auto;
+      margin: 100px auto 0;
     }
     .container {
       display: flex;
     }
-    .item {
+    .container img {
       width: 100px;
       height: 100px;
+      object-fit: cover;
       cursor: pointer;
     }
     .hidden {
@@ -101,181 +79,33 @@
     }
   </style>
 
-  <div id="overlay" class="hidden">
-    <img src="" alt="" id="modal">
+  <div id="modal" class="hidden">
+    <img src="" alt="" id="main">
   </div>
   
   <div class="container">
-    <div class="item">
-      <img src="../../img/bunny.jpeg" alt="" onclick="f(this)">
-    </div>
-    <div class="item">
-      <img src="../../img/cat.jpeg" alt="" onclick="f(this)">
-    </div>
-    <div class="item">
-      <img src="../../img/bird.jpeg" alt="" onclick="f(this)">
-    </div>
-    <div class="item">
-      <img src="../../img/duck.jpeg" alt="" onclick="f(this)">
-    </div>
+    <img src="/Users/jintaemin/my_server/img/bunny.jpeg" alt="" onclick="f(this)">
+    <img src="/Users/jintaemin/my_server/img/cat.jpeg" alt="" onclick="f(this)">
+    <img src="/Users/jintaemin/my_server/img/bird.jpeg" alt="" onclick="f(this)">
   </div>
 
   <script>
-    const overlay = document.getElementById("overlay");
+    let modal = document.getElementById("modal");
+    let main = document.getElementById('main');
 
     function f(el) {
-      const modal = document.getElementById("modal");
-      overlay.classList.remove("hidden");
-      modal.src = el.src;
+      modal.classList.remove("hidden");
+      main.src = el.src;
     }
 
-    overlay.addEventListener("click", (e) => {
-      const r = Object.is(e.target, overlay);
+    modal.addEventListener("click", (e) => {
+      const isOverlayClicked = Object.is(e.target, modal);
 
-      if (r) {
+      if (isOverlayClicked) {
         e.target.classList.add("hidden");
       }
     })
   </script> -->
-
-  <!-- # CAROUSEL -->
-
-  <!-- <h1>Carousel</h1>
-
-  <style>
-    .wrap {
-      position: relative;
-      width: 200px;
-      box-shadow: 0 0 10px #ddd;
-      margin: auto;
-    }
-    .container {
-      width: 200px;
-      height: 200px;
-      display: flex;
-      overflow-x: hidden;
-    }
-    .item {
-      width: inherit;
-      height: inherit;
-      flex-shrink: 0;
-      transition: 0.2s;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .left, .right {
-      position: absolute;
-      display: flex;
-      align-items: center;
-    }
-    .left {
-      top: 0;
-      left: 0;
-      bottom: 0;
-    }
-    .right {
-      top: 0;
-      right: 0;
-      bottom: 0;
-    }
-    #prev, #next {
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-    }
-    .indicator {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      display: flex;
-      justify-content: center;
-      padding: 0.5rem 0;
-    }
-    .dot {
-      width: 0.5rem;
-      height: 0.5rem;
-      border-radius: 50%;
-      margin: 0 3px;
-      background-color: #ddd;
-    }
-    .hidden {
-      display: none;
-    }
-    .bg-black {
-      background-color: #000;
-    }
-  </style>
-
-  <div class="wrap">
-    <div class="container">
-      <div class="item">1</div>
-      <div class="item">2</div>
-      <div class="item">3</div>
-    </div>
   
-    <div class="left">
-      <button id="prev" class="hidden" onclick="f(-1)">&#10094;</button>
-    </div>
-    <div class="right">
-      <button id="next" onclick="f(1)">&#10095;</button>
-    </div>
-
-    <div class="indicator">
-      <span class="dot bg-black"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
-  </div>
-  
-  <script>
-    // # Tutorial
-    // Get CSS for vertical alignment of items.
-    // Create buttons.
-    // define function <f> and print index.
-    // make image move using marginLeft property.
-    // Polish <f> to make buttons work exactly (add condition).
-    // Add position property to CSS to look more carousel.
-    // Finally, add the indicators.
-    
-    // ? excute <f> as soon as document is loaded.
-
-    // Index
-    let index = 0;
-    // Items
-    const items = document.querySelectorAll(".item");
-    // Buttons
-    const prev = document.getElementById("prev");
-    const next = document.getElementById("next");
-    // Indicator
-    const dots = document.querySelectorAll(".dot");
-
-    function f(x) {
-      // Index
-      index += x;
-
-      // Items
-      items[0].style.marginLeft = `-${index*200}px`;
-      
-      // Buttons
-      prev.classList.remove("hidden"); // not error
-      next.classList.remove("hidden");
-
-      if (index===0) {
-        prev.classList.add("hidden");
-      }
-
-      if (index===items.length-1) {
-        next.classList.add("hidden");
-      }
-
-      // Indicator 
-      for (dot of dots) {
-        dot.classList.remove("bg-black");
-      }
-      dots[index].classList.add("bg-black");
-    }
-  </script> -->
 </body>
 </html>

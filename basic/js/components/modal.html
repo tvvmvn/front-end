@@ -7,9 +7,6 @@
   <title>Document</title>
 </head>
 <body>
-
-  <!-- drawer, dropdown -->
-  
   <style>
     #modal {
       position: fixed;
@@ -18,9 +15,6 @@
       width: 100%;
       height: 100%;
       position: fixed;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       background-color: rgba(0 0 0 / 0.2);
     }
     .container {
@@ -28,9 +22,14 @@
       width: 20rem;
       padding: 1rem;
       border-radius: 1rem;
+      margin: 100px auto 0;
+    }
+    span {
+      float: right;
+      cursor: pointer;
     }
     .hidden {
-      visibility: hidden;
+      display: none;
     }
   </style>
 
@@ -39,6 +38,8 @@
 
   <div id="modal" class="hidden">
     <div class="container">
+      <!-- Question: close button -->
+      <span>&times;</span>
       <h1>Modal Content</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat fugit vitae, deserunt molestias id quibusdam quasi eius laborum doloribus alias? Facere quibusdam totam dolorem in veritatis vero eum consequuntur numquam?
@@ -48,21 +49,27 @@
 
 
   <script>
-    const button = document.querySelector("button");
-    const modal = document.getElementById("modal");
+    let button = document.querySelector("button");
+    let modal = document.getElementById("modal");
+    let span = document.querySelector('span');
 
     button.addEventListener("click", (e) => {
       modal.classList.remove("hidden");
     })
 
+    span.addEventListener('click', (e) => {
+      modal.classList.add("hidden");
+    })
+
     modal.addEventListener('click', (e) => {
-      let isOverlayClicked = Object.is(e.target, modal);
+      let isOverlayClicked = e.target === modal;
 
       if (isOverlayClicked) {
         e.target.classList.add('hidden');
       }
     })
   </script>
+
 
 </body>
 </html>

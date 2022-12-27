@@ -7,35 +7,97 @@
   <title>Document</title>
 </head>
 <body>
-
-  <!-- SSG with AJAX -->
-
-  <h1>Newsletter</h1>
+  <style>
+    label {
+      display: block;
+      font-weight: bold;
+    }
+    input {
+      padding: 0.5rem;
+      width: 12rem;
+      transition: 0.2s;
+      outline: none;
+    }
+    .red {
+      color: #f00;
+    }
+  </style>
+  
+  <h1>Validate username</h1>
 
   <form action="">
-    <input type="text" placeholder="bunny@example.com">
-    <button>Subscribe</button>
+    <label for="">Username</label>
+    <input type="text">
+    <p></p>
   </form>
 
-  <ul></ul>
-
   <script>
-    const form = document.querySelector("form");
+    let input = document.querySelector('input');
+    let p = document.querySelector('p');
 
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
+    input.addEventListener('keyup', (e) => {
+      let value = e.target.value.trim();
+      let message;
 
-      if (!input.value) return;
+      p.classList.add('red');
 
-      const input = document.querySelector("input");
-      const ul = document.querySelector("ul");
-      const li = document.createElement("li");
+      if (!value) {
+        message = 'Not empty allowed'
+      } else if (value.length < 5) {
+        message = 'Username is too short'
+      } else {
+        p.classList.remove('red');
+        message = 'Awesome username'
+      }
 
-      li.textContent = input.value;
-      ul.appendChild(li);
-
-      input.value = "";
+      p.innerHTML = message;
     })
   </script>
+
+
+  <!-- <style>
+    form {
+      display: flex;
+      height: 2rem;
+    }
+    input {
+      width: 12rem;
+      padding: 0 0.5rem;
+    }
+    button {
+      border: none;
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #222;
+    }
+  </style>
+
+  <h1>Newsletter</h1>
+  <div id="container">
+    <form action="">
+      <input type="text" placeholder="bunny@example.com" required>
+      <button>Subscribe</button>
+    </form>
+  </div>
+
+  <script>
+    let container = document.getElementById('container');
+    let form = document.querySelector('form');
+
+    form.addEventListener('submit', (e) => {
+      /*
+        # Event.preventDefault();
+
+        not execute element default function
+        used with AJAX request
+      */
+      e.preventDefault();
+
+      container.innerHTML = `<h1>Thank you for subscribing!</h1>`
+    })
+  </script> -->
 </body>
 </html>
