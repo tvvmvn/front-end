@@ -107,7 +107,7 @@
     })
   </script> -->
   
-  
+
   <!-- <style>
     * {box-sizing: border-box;}
     .wrap {
@@ -132,9 +132,6 @@
       justify-content: center;
       align-items: center;
     }
-    .hidden {
-      display: none;
-    }
     .nav button {
       position: absolute;
       height: 100%;
@@ -156,9 +153,21 @@
       width: 100%;
       display: flex;
       justify-content: center;
+      padding-bottom: 0.5rem;
+    }
+    .dot {
+      display: block;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background-color: #ddd;
+      margin: 0 2px;
+    }
+    .hidden {
+      display: none;
     }
     .active {
-      color: #00f;
+      background-color: #888;
     }
   </style>
 
@@ -175,13 +184,11 @@
       <button id="next" onclick="f(1)">&#10095;</button>
     </div>
     <div class="indicator">
-      <span class="dot active">*</span>
-      <span class="dot">*</span>
-      <span class="dot">*</span>
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
     </div>
   </div>
-
-
 
   <script>
     let index = 0;
@@ -215,9 +222,8 @@
       for (dot of dots) {
         dot.classList.remove('active');
       }
-      dots[index].classList.add('active')
+      dots[index].classList.add('active');
     }
-
   </script> -->
 
 </body>
