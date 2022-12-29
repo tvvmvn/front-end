@@ -19,7 +19,10 @@
       outline: none;
     }
     .red {
-      color: #f00;
+      color: red;
+    }
+    .green {
+      color: green;
     }
   </style>
   
@@ -34,70 +37,74 @@
   <script>
     let input = document.querySelector('input');
     let p = document.querySelector('p');
-
+    
     input.addEventListener('keyup', (e) => {
-      let value = e.target.value.trim();
-      let message;
+      try {
+        let username = e.target.value;
 
-      p.classList.add('red');
+        if (!username) {
+          throw 'Username is required'
+        }
+        if (username.length < 5) {
+          throw 'Username is too short'
+        }
 
-      if (!value) {
-        message = 'Not empty allowed'
-      } else if (value.length < 5) {
-        message = 'Username is too short'
-      } else {
-        p.classList.remove('red');
-        message = 'Awesome username'
+        p.innerHTML = '<span class="green">Awesome username</span>'
+      } catch (err) {
+        p.innerHTML = `<span class="red">${err}</span>`
       }
-
-      p.innerHTML = message;
     })
   </script>
 
 
   <!-- <style>
     form {
-      display: flex;
-      height: 2rem;
+      width: 20rem;
     }
-    input {
-      width: 12rem;
-      padding: 0 0.5rem;
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
     }
     button {
-      border: none;
-      background-color: #333;
-      color: #fff;
+      padding: 0.5rem;
       cursor: pointer;
-    }
-    button:hover {
-      background-color: #222;
     }
   </style>
 
-  <h1>Newsletter</h1>
   <div id="container">
     <form action="">
-      <input type="text" placeholder="bunny@example.com" required>
-      <button>Subscribe</button>
+      <h1>Contact</h1>
+      <input type="text" name="name" placeholder="Name">
+      <input type="text" name="email" placeholder="Email">
+      <textarea name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
+      <button>Send</button>
     </form>
   </div>
 
   <script>
-    let container = document.getElementById('container');
     let form = document.querySelector('form');
 
     form.addEventListener('submit', (e) => {
-      /*
-        # Event.preventDefault();
+      try {
+        e.preventDefault();
 
-        not execute element default function
-        used with AJAX request
-      */
-      e.preventDefault();
+        let formData = new FormData(form);
+        let container = document.getElementById('container');
 
-      container.innerHTML = `<h1>Thank you for subscribing!</h1>`
+        if (!formData.get('name')) {
+          throw 'Name is required'
+        }
+        if (!formData.get('email')) {
+          throw 'Email is required'
+        }
+
+        container.innerHTML = '<h1>Send you back ASAP</h1>'
+      } catch (err) {
+        alert(err)
+      }
     })
   </script> -->
+
 </body>
 </html>

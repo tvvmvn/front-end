@@ -14,7 +14,6 @@
       left: 0;
       width: 100%;
       height: 100%;
-      position: fixed;
       background-color: rgba(0 0 0 / 0.2);
     }
     .container {
@@ -62,9 +61,7 @@
     })
 
     modal.addEventListener('click', (e) => {
-      let isOverlayClicked = e.target === modal;
-
-      if (isOverlayClicked) {
+      if (e.target === modal) {
         e.target.classList.add('hidden');
       }
     })
