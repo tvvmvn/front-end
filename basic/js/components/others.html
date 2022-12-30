@@ -7,46 +7,195 @@
   <title>Document</title>
 </head>
 <body>
-<!-- <h1>JavaScript with CSS Animation</h1>
+  <!-- <h1>Drag and Drop</h1>
 
   <style>
-    .container {
-      position:fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    #container {
+      border: 4px dashed #ddd;
+      width: 200px;
+      height: 100px;
+      padding: 1rem;
     }
-    svg {
-      fill: #fff;
-      flex-shrink: 0;
-      animation: grow 1s;
+  </style>
+
+  <div id="container">
+    <p>Drag one or more files to this <i>drop zone</i>.</p>
+  </div>
+
+  <script>
+    let container = document.getElementById('container');
+
+    container.addEventListener('drop', dropHandler);
+    container.addEventListener('dragover', dragOverHandler);
+
+    function dropHandler(ev) {
+      console.log('File(s) dropped');
+
+      // Prevent default behavior (Prevent file from being opened)
+      ev.preventDefault();
+
+      /*
+        FileList
+        - This interface was an attempt to create an unmodifiable list
+
+        - only continues to be supported to not break code that is already using it.
+        
+        - Modern APIs use types 
+        that wrap around ES array types
+        instead
+        
+        - treat them like ES arrays
+      */
+      
+      let files = Array.from(...ev.dataTransfer.files);
+
+      files.map(file => {
+        console.log(file.name);
+      });
+    }
+    
+    function dragOverHandler(ev) {
+      console.log('File(s) in drop zone');
+
+      // Prevent default behavior (Prevent file from being opened)
+      ev.preventDefault();
+    }
+  </script> -->
+
+
+  <!-- <h1>Drag and Drop</h1>
+
+  <style>
+    #drop_zone {
+      border: 4px dashed #ddd;
+      width: 200px;
+      height: 100px;
+      padding: 1rem;
+    }
+  </style>
+
+  <div id="container">
+    <div id="drop_zone">
+      <p>Drag one or more files to this <i>drop zone</i>.</p>
+    </div>
+  </div>
+
+  <script>
+    let dropZone = document.getElementById('drop_zone');
+
+    dropZone.addEventListener('drop', dropHandler);
+    dropZone.addEventListener('dragover', dragOverHandler);
+
+    function dropHandler(e) {
+      console.log('File(s) dropped');
+
+      // prevent default behavior (file is opened)
+      e.preventDefault();
+
+      // FileList
+      console.log(e.dataTransfer.files); 
+
+      let files = Array.from(e.dataTransfer.files);
+      
+      for (let file of files) {
+        console.log(file.name);
+      }
+      
+      // ...send to server
+
+      document
+        .getElementById('container')
+        .innerHTML = '<h1>Submitted</h1>';
+    }
+    
+    function dragOverHandler(e) {
+      console.log('File(s) in drop zone');
+      
+      // prevent default behavior (file is opened)
+      e.preventDefault();
+    }
+  </script> -->
+
+
+  <!-- <style>
+    html {scroll-behavior:smooth;}
+    body {
+      min-height: 1000px;
+    }
+    button {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
     }
     .hidden {
       display: none;
     }
-    @keyframes grow {
-      from {width: 10rem;}
-      to {width: 100rem;}
-    }
   </style>
-  
-  <div class="container">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-      <path d="M415.44 512h-95.11L212.12 357.46v91.1L125.69 512H28V29.82L68.47 0h108.05l123.74 176.13V63.45L386.69 0h97.69v461.5zM38.77 35.27V496l72-52.88V194l215.5 307.64h84.79l52.35-38.17h-78.27L69 13zm82.54 466.61l80-58.78v-101l-79.76-114.4v220.94L49 501.89h72.34zM80.63 10.77l310.6 442.57h82.37V10.77h-79.75v317.56L170.91 10.77zM311 191.65l72 102.81V15.93l-72 53v122.72z"/>
-    </svg>
-  </div>
+
+  <h1>Top button</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos perspiciatis eius fugiat illum amet fuga dolor
+    consectetur, vero rerum tempore facilis qui minima vel dolores minus rem, voluptate dolore voluptatem.</p>
+
+  <button class="hidden"> 
+    Top
+  </button>
 
   <script>
-    const svg = document.querySelector("svg");
+    let button = document.querySelector('button');
 
-    setTimeout(() => {
-      svg.classList.add("hidden");
-    }, 1000)
+    window.addEventListener('scroll', (e) => {
+      console.log(document.documentElement.scrollTop);
+
+      if (document.documentElement.scrollTop < 200) {
+        button.classList.add('hidden')
+      } else {
+        button.classList.remove('hidden')
+      }
+    })
+
+    button.addEventListener('click', (e) => {
+      document.documentElement.scrollTop = 0;
+    })
   </script> -->
+
+  <style>
+    .dark {
+      background-color: #222;
+      color: #fff;
+    }
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 {
+      font-size: 3rem;
+    }
+  </style>
+
+  <h1 id="clock"></h1>
+
+  <script>
+    
+    setInterval(f, 1000);
+    f();
+
+    function f() {
+      let date = new Date();  
+      let hours = date.getHours();
+      // hours = 20;
+      
+      if (hours >= 18 || hours < 6) {
+        document.documentElement.classList.add('dark');
+      }
+
+      document
+        .getElementById('clock')
+        .innerHTML = date.toLocaleTimeString();
+    }
+    </script>
+
 </body>
 </html>

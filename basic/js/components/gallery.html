@@ -226,5 +226,87 @@
     }
   </script> -->
 
+
+  <h1>Auto carousel</h1>
+
+  <style>
+    .container {
+      width: 200px;
+      height: 200px;
+      position:relative;
+      border: 1px solid;
+    }
+    .item {
+      width: inherit;
+      height: inherit;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .indicator {
+      position:absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .hidden {
+      display: none;
+    }
+    .indicator .dot {
+      color: #ddd;
+    }
+    .indicator .active {
+      color: #000;
+    }
+  </style>
+
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item hidden">2</div>
+    <div class="item hidden">3</div>
+    
+    <div class="indicator">
+      <span class="dot active">*</span>
+      <span class="dot">*</span>
+      <span class="dot">*</span>
+    </div>
+  </div>
+
+  <script>
+
+    let index = 0;
+    let items = document.querySelectorAll('.item');
+    let dots = document.querySelectorAll('.dot');
+
+    setInterval(f, 3000);
+
+    function f() {
+      // # index
+      index += 1;
+
+      if (index===3) {
+        index = 0;
+      }
+
+      console.log(index);
+
+      // # Images
+      for (let item of items) {
+        item.classList.add('hidden');
+      }
+
+      items[index].classList.remove('hidden');
+
+      // # Indicator
+      for (let dot of dots) {
+        dot.classList.remove('active');
+      }
+
+      dots[index].classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
