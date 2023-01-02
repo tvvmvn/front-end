@@ -159,43 +159,60 @@
   </script> -->
 
   <style>
+    html {
+      transition: 0.2s;
+    }
     .dark {
       background-color: #222;
       color: #fff;
     }
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    h1 {
-      font-size: 3rem;
-    }
   </style>
 
-  <h1 id="clock"></h1>
+  <h1>Toggle Mode</h1>
+
+  <label>
+    Darkmode
+    <input type="checkbox">
+  </label>
 
   <script>
-    
-    setInterval(f, 1000);
-    f();
 
-    function f() {
-      let date = new Date();  
-      let hours = date.getHours();
-      // hours = 20;
-      
-      if (hours >= 18 || hours < 6) {
-        document.documentElement.classList.add('dark');
+    let input = document.querySelector('input');
+
+    window.addEventListener('DOMContentLoaded', (e) => {
+
+      if (!localStorage.getItem('theme')) {
+        return;
       }
 
-      document
-        .getElementById('clock')
-        .innerHTML = date.toLocaleTimeString();
+      if (localStorage.getItem('theme') === 'dark') {
+        input.checked = true;
+        document.documentElement.classList.add('dark');
+      } 
+      
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.classList.remove('dark');
+      }
+
+    })
+
+    input.addEventListener('change', (e) => {
+      let isChecked = e.target.checked;
+
+      if (isChecked) {
+        localStorage.setItem('theme', 'dark')
+        document.documentElement.classList.add('dark');
+      } else {
+        localStorage.setItem('theme', 'light')
+        document.documentElement.classList.remove('dark');
+      }
+    })
+
+    function toggleTheme(theme) {
+      document.documentElement.classList.remove(theme);
     }
-    </script>
+
+  </script>
 
 </body>
 </html>
