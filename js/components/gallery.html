@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <h1>Gallery</h1>
+
+  <style>
+    #main {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      background-color: #ddd;
+    }
+    .container {
+      display: flex;
+    }
+    .container img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      cursor: pointer;
+      opacity: 0.8;
+    }
+    .container img:hover {
+      opacity: 1;
+    }
+  </style>
+
+  <img src="/Users/jintaemin/my_server/img/bunny.jpeg" alt="" id="main">
+  
+  <div class="container">
+    <img src="/Users/jintaemin/my_server/img/bunny.jpeg" alt="" onclick="f(this)">
+    <img src="/Users/jintaemin/my_server/img/cat.jpeg" alt="" onclick="f(this)">
+    <img src="/Users/jintaemin/my_server/img/bird.jpeg" alt="" onclick="f(this)">
+  </div>
+
+  <script>
+    function f(el) {
+      const main = document.getElementById("main");
+      main.src = el.src;
+    }
+  </script> -->
+
+
+  <!-- <h1>Q. Modal Gallery</h1>
+
+  <style>
+    #modal {
+      position: fixed;
+      background-color: rgba(0 0 0 / 0.8);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    #main {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      margin: 100px auto 0;
+    }
+    .container {
+      display: flex;
+    }
+    .container img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <div id="modal" class="hidden">
+    <img src="" alt="" id="main">
+  </div>
+  
+  <div class="container">
+    <img src="/Users/jintaemin/my_server/img/bunny.jpeg" alt="" onclick="f(this)">
+    <img src="/Users/jintaemin/my_server/img/cat.jpeg" alt="" onclick="f(this)">
+    <img src="/Users/jintaemin/my_server/img/bird.jpeg" alt="" onclick="f(this)">
+  </div>
+
+  <script>
+    let modal = document.getElementById("modal");
+    let main = document.getElementById('main');
+
+    function f(el) {
+      modal.classList.remove("hidden");
+      main.src = el.src;
+    }
+
+    modal.addEventListener("click", (e) => {
+      const isOverlayClicked = Object.is(e.target, modal);
+
+      if (isOverlayClicked) {
+        e.target.classList.add("hidden");
+      }
+    })
+  </script> -->
+  
+
+  <!-- <style>
+    * {box-sizing: border-box;}
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .wrap {
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 50px #ddd;
+      margin: 0 auto;
+    }
+    #container {
+      width: 200px;
+      height: 200px;
+      display: inline-flex;
+      transition: 0.2s;
+    }
+    .item {
+      width: inherit;
+      height: inherit;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav button {
+      position: absolute;
+      height: 100%;
+      border: none;
+      background-color: transparent;
+    }
+    .nav #prev {
+      top: 0; 
+      left: 0;
+    }
+    .nav #next {
+      top: 0;
+      right: 0;
+    }
+    .indicator {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 0.5rem;
+    }
+    .dot {
+      display: block;
+      width: 0.4rem;
+      height: 0.4rem;
+      border-radius: 50%;
+      background-color: #ddd;
+      margin: 0 2px;
+    }
+    .hidden {
+      display: none;
+    }
+    .active {
+      background-color: #888;
+    }
+  </style>
+
+  <h1>Carousel</h1>
+
+  <div class="wrap">
+    <ul id="container">
+      <li class="item">1</li>
+      <li class="item">2</li>
+      <li class="item">3</li>
+    </ul>
+
+    <div class="nav">
+      <button id="prev" class="hidden" onclick="f(-1)">&#10094;</button>
+      <button id="next" onclick="f(1)">&#10095;</button>
+    </div>
+    
+    <ul class="indicator">
+      <li class="dot active"></li>
+      <li class="dot"></li>
+      <li class="dot"></li>
+    </div>
+  </div>
+
+  <script>
+    let index = 0;
+    let container = document.getElementById('container');
+    let prev = document.getElementById('prev');
+    let next = document.getElementById('next');
+    let dots = document.querySelectorAll('.dot')
+
+    function f(data) {
+      index += data;
+
+      console.log(index);
+
+      // # images
+      container.style.transform = `translateX(-${index*200}px)`
+
+      // # button
+      if (index===0) {
+        prev.classList.add('hidden')
+      } else {
+        prev.classList.remove('hidden')
+      }
+
+      if (index===2) {
+        next.classList.add('hidden');
+      } else {
+        next.classList.remove('hidden');
+      }
+
+      // # indicator
+      for (dot of dots) {
+        dot.classList.remove('active');
+      }
+      dots[index].classList.add('active');
+    }
+  </script> -->
+
+
+  <h1>Auto carousel</h1>
+
+  <style>
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .wrap {
+      position:relative;
+      width: 200px;
+      height: 200px;
+      border: 1px solid;
+    }
+    .container {
+      width: inherit;
+      height: inherit;
+    }
+    .item {
+      width: inherit;
+      height: inherit;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .indicator {
+      position:absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .hidden {
+      display: none;
+    }
+    .indicator .dot {
+      color: #ddd;
+    }
+    .indicator .active {
+      color: #000;
+    }
+  </style>
+
+  <div class="wrap">
+    <ul class="container">
+      <li class="item">1</li>
+      <li class="item hidden">2</li>
+      <li class="item hidden">3</li>
+    </ul>
+  
+    <ul class="indicator">
+      <li class="dot active">*</li>
+      <li class="dot">*</li>
+      <li class="dot">*</li>
+    </ul>
+  </div>
+
+  <script>
+    let index = 0;
+    let items = document.querySelectorAll('.item');
+    let dots = document.querySelectorAll('.dot');
+
+    setInterval(f, 3000);
+
+    function f() {
+      // # index
+      index += 1;
+
+      if (index===3) {
+        index = 0;
+      }
+
+      console.log(index);
+
+      // # Images
+      for (let item of items) {
+        item.classList.add('hidden');
+      }
+
+      items[index].classList.remove('hidden');
+
+      // # Indicator
+      for (let dot of dots) {
+        dot.classList.remove('active');
+      }
+
+      dots[index].classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
