@@ -1,4 +1,18 @@
+export default function ManageDOM() {
+
+  return (
+    <>
+      <h1>Manage DOM</h1>
+      <p>
+        with useState Hook
+      </p>
+    </>
+  )
+}
+
+
 // # Manage DOM 
+
 // function App() {
 //   // const [state, setState] = useState(initialValue);
 //   // state: a variable in Component
@@ -14,7 +28,9 @@
 //   )
 // }
 
+
 // DOM Update without state Hook.
+
 // function App() {
 //   let count = 0;
 
@@ -35,6 +51,7 @@
 //   )
 // }
 
+
 // function App() {
 //   const initialTime = new Date().toLocaleTimeString();
 //   const [time, setTime] = useState(initialTime);
@@ -52,6 +69,7 @@
 //   )
 // }
 
+
 // Q. Count
 // function App() {
 //   const [count, setCount] = useState(0);
@@ -66,6 +84,7 @@
 //   )
 // }
 
+
 // Q. Subscribe
 // function App() {
 //   const [subscribe, setSubscribe] = useState(false);
@@ -79,6 +98,7 @@
 //     </>  
 //   )
 // }
+
 
 // Q. Subscribe with Subscribers
 // function App() {

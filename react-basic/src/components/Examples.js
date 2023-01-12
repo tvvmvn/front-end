@@ -1,4 +1,18 @@
+export default function Examples() {
+
+  return (
+    <>
+      <h1>Examples</h1>
+      <p>
+        Drawer, Side Bar, Carousel
+      </p>
+    </>  
+  )
+}
+
+
 // # Drawer
+
 // function App() {
 //   const [active, setActive] = useState(false);
 
@@ -36,7 +50,9 @@
 //   )
 // }
 
+
 // Q. Side bar
+
 // function App() {
 //   const [active, setActive] = useState(false);
 
@@ -88,7 +104,9 @@
 //   )
 // }
 
+
 // # Carousel
+
 // function App() {
 //   const [index, setIndex] = useState(0);
 

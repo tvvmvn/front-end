@@ -1,4 +1,19 @@
+
+
+export default function Form() {
+  return (
+    <>
+      <h1>Form</h1>  
+      <p>
+
+      </p>
+    </>  
+  )
+}
+
+
 // # Form handling
+
 // function App() {
 //   const [username, setUsername] = useState("");
 
@@ -33,7 +48,9 @@
 //   )
 // }
 
+
 // Q. Password toggle
+
 // function App() {
 //   const [type, setType] = useState("password");
 
@@ -61,6 +78,9 @@
 //     </form>  
 //   )
 // }
+
+
+// Live search
 
 // function App() {
 //   const [beers, setBeers] = useState([]);

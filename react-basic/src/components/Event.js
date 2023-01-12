@@ -1,8 +1,23 @@
-// # Event
-// add attribute on element that trigger event:
-// onEventName={eventHandler}
+
+
+
+export default function Event() {
+
+  return (
+    <>
+      <h1>Event</h1>
+      <p>
+        add attribute on element that trigger event:
+        onEventName=eventHandler
+      </p>
+
+    </>  
+  )
+}
+
 
 // ### click event
+
 // function App() {
 //   function handleClick(e) {
 //     console.log(e.target);
@@ -43,7 +58,9 @@
 //   )
 // }
 
+
 // ### change event
+
 // function App() {
 //   function handleChange(e) {
 //     console.log(e.target.value);
@@ -94,7 +111,9 @@
 //   )
 // }
 
+
 // ### submit event
+
 // function App() {
 //   function handleSubmit(e) {
 //     e.preventDefault();

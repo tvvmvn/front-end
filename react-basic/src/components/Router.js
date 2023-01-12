@@ -1,3 +1,16 @@
+export default function RouterComponent() {
+
+  return (
+    <>
+      <h1>React Router</h1>
+      <p>
+        Basic router, Router with auth
+      </p>
+    </>  
+  )
+}
+
+
 // # Router
 // function Home() {
 //   return <h1>Home</h1>
@@ -65,6 +78,7 @@
 //     </Router>  
 //   )
 // }
+
 
 // # Router with auth
 // AuthProvider maintain user(state).

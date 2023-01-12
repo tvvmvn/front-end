@@ -1,92 +1,94 @@
+import React from 'react';
+
 export default function JSX() {
 
   return (
     <>
       <h1>JSX</h1>
+      <Content />
     </>  
   )
 }
 
-// # JSX Syntax
-// A Syntax extension to JavaScript
-// Declarative like HTML
-// BABEL compile JSX to JavaScript Object.
 
-// function App() {
-//   return <h1>Hello React</h1>
-// }
+/*
+  What is JSX
+  
+  Stands for JavaScript extension 
+  A Syntax extension to JavaScript
+  used for create virtual DOM
 
-// Without JSX
-// function App() {
-//   const h1 = React.createElement('h1', 'null', 'Hello React');
+  1 What is JSX 
+  2 JSX Syntax
+  3 print JavaScript result in JSX
+  4 Condition in JSX
+  5 Loop in JSX
+*/
+
+
+/*
+  1 What is JSX
+*/
+
+// function Content() {
+//   const h1 = React.createElement('p', {}, 'Hello React');
+
 //   return h1;
 // }
 
-// ### JSX elements must be wrapped in one element.
-// function App() {
+// function Content() {
+//   return <p>Hello React</p>
+// }
+
+
+/*
+  2 JSX Syntax
+
+    - React Fragment
+    - element attribute
+    - inline style
+*/
+
+
+// function Content() {
 //   return (
 //     <div>
-//       <h2>Wrapping Elements</h2>
-//       <div>Foo</div>
-//       <div>Bar</div>
-//       <div>Baz</div>
+//       <h3>React Fragment</h3>
+//       <ul>
+//         <li>Foo</li>
+//         <li>bar</li>
+//         <li>baz</li>
+//       </ul>
 //     </div>  
 //   )
 // }
 
-// function App() {
-//   return (
-//     <div>Foo</div>
-//     <div>Bar</div>
-//     <div>Baz</div>
-//   )
-// }
 
-// ### React.Fragment
-// function App() {
-//   return (
-// DOM에 별도의 노드를 추가하지 않고 자식을 그룹화 할 수 있다
-//     <React.Fragment>
-//       <h2>React Fragment</h2>
-//       <div>Foo</div>
-//       <div>Bar</div>
-//       <div>Baz</div>
-//     </React.Fragment>
-//   )
-// }
-
-// function App() {
+// function Content() {
 //   return (
 //     <>
-//       <h2>React fragment with empty tag</h2>
-//       <div>Foo</div>
-//       <div>Bar</div>
-//       <div>Baz</div>
-//     </>  
-//   )
-// }
-
-// ### JSX Attribute
-// function App() {
-//   return (
-//     <>
-//       <h2>JSX attribute</h2>
+//       <h3>JSX attribute</h3>
 //       <ul>
-//         <li><a href="https://google.com" target="_blank">Foo</a></li>
-//         <li><img src="/" alt="Bar" /></li>
-//         <li><input type="text" placeholder="Baz" autoComplete="off" /></li>
+//         <li>
+//           <a href="https://google.com" target="_blank">Foo</a>
+//         </li>
+//         <li>
+//           <img src="/" alt="Bar" />
+//         </li>
+//         <li>
+//           <input type="text" placeholder="Baz" autoComplete="off" />
+//         </li>
 //       </ul>
 //     </>  
 //   )
 // }
 
-// ### JSX inline style attribute
-// pass the style object to style attribute
 
-// function App() {
+// function Content() {
 //   return (
 //     <>
-//       <h1>JSX inline Styles</h1>
+//       <h3>JSX inline styles</h3>
+
 //       <ul style={{border: "1px solid"}}>
 //         <li style={{textDecoration: "underline"}}>Foo</li>
 //         <li>Bar</li>
@@ -96,75 +98,122 @@ export default function JSX() {
 //   )
 // }
 
-// ### write expressions in JSX
-// function App() {
-//   const foo = "Foo";
-//   return (
-//     <>
-//       <h2>Write expressions in JSX</h2>
-//       <div>{foo}</div>
-//       <div>{"Ba" + "r"}</div>
-//       <div>{"Baz".valueOf()}</div>
-//     </>
-//   )
-// }
 
-// Q. Complete DOM with JS Object.
-// function App() {
-//   const dutchBeer = "Heineken";
-//   const irishBeer = "Guinness";
-//   const japaneseBeer = "Asahi";
+// function Content() {
 
-//   const soldOut = {
+//   const st = {
 //     textDecoration: "line-through",
-//     color: "#ddd"
+//     color: "#f00"
 //   };
 
 //   return (
 //     <>
-//       <h2>Beers</h2>
+//       <h3>Q. List beers using a variable</h3>
 //       <ul>
-//         <li>{dutchBeer}</li>
-//         <li style={soldOut}>{irishBeer}</li>
-//         <li>{japaneseBeer}</li>
+//         <li style={st}>Guinness, Ireland</li>
+//         <li>Heineken, Netherlands</li>
+//         <li>Budwiser, USA</li>
 //       </ul>
 //     </>  
 //   )
 // }
 
-// ### JSX Condition
-// Logical operator, Ternary operator
-// && (AND): expr1 && expr2
-// || (OR): expr1 || expr2
-// ! (NOT): !expr
-// Ternary: condition ? expr if true : expr if false
 
-// function App() {
+/*
+  3 print result in JSX
+*/
 
-//   // &&
-//   console.log(true && 1); // 1
-//   console.log(1 && 0); // 0
-//   console.log(0 && 1); // 0
-//   console.log(0 && false); // 0
+// function Content() {
 
-//   // ||
-//   console.log(1 || true); // 1
-//   console.log(1 || 0); // 1
-//   console.log(0 || 1); // 1
-//   console.log(false || 0); // 0
+//   let cat = {
+//     name: 'Kitty',
+//     age: 2,
+//     home: null,
+//     sound: function () {
+//       return 'meow'
+//     }
+//   }
 
 //   return (
 //     <>
-//       <h2>JSX condition</h2>
-//       <div>{true && "Foo"}</div>
-//       <div>{false || "Bar"}</div>
-//       <div>{!true ? "" : "Baz"}</div>
+//       <h3>{cat.name}</h3>
+//       <ul>
+//         <li>Name: {cat.name}</li>
+//         <li>Age: {cat.age}</li>
+//         <li>Home: {cat.home}</li>
+//         <li>Sound: {cat.sound()}</li>
+//       </ul>
 //     </>  
 //   )
 // }
 
-// ### Loop in JSX
-// function App() {
+
+/*
+  4 Conditional statement in JSX
+  Logical Operator and Ternary
+
+  && (AND)
+  || (OR)
+  ! (NOT)
+  ?(Ternary)
+*/
+
+
+// function Content() {
+
+//   return (
+//     <>
+//       <h3>JSX condition</h3>
+//       <p>Condition 1 &amp;&amp;(AND) Condition 2</p>
+//       <ul>
+//         <li>{'lol' && 'Foo'}</li>
+//         <li>{false && 'Bar'}</li>
+//         <li>{"lol" && false}</li>
+//       </ul>
+//     </>  
+//   )
+// }
+
+
+// function Content() {
+
+//   return (
+//     <>
+//       <h3>JSX condition</h3>
+//       <p>|| (OR)</p>
+      
+//       <ul>
+//         <li>{'lol' || 'Foo'}</li>
+//         <li>{false || 'Bar'}</li>
+//         <li>{"lol" || false}</li>
+//       </ul>
+//     </>  
+//   )
+// }
+
+
+// function Content() {
+
+//   return (
+//     <>
+//       <h3>JSX condition</h3>
+//       <p>!(NOT) and ?(Ternary)</p>
+      
+//       <ul>
+//         <li>{!'Foo'}</li>
+//         <li>{true ? 'Bar' : ''}</li>
+//         <li>{false ? '' : 'Baz'}</li>
+//       </ul>
+//     </>  
+//   )
+// }
+
+
+/*
+  5 Loop in JSX
+*/
+
+// function Content() {
 //   const arr = ["Foo", "Bar", "Baz"];
 
 //   return (
@@ -179,39 +228,21 @@ export default function JSX() {
 //   )
 // }
 
-// function App() {
-//   const arr = ["Foo", "Bar", "Baz"];
 
-//   const list = arr.map((item, index) => (
-//     <li key={index}>{item}</li>  
-//   ))
-
-//   return (
-//     <>
-//       <h2>Loop in JSX</h2>
-//       <ul>
-//         {list}
-//       </ul>
-//     </>
-//   )
-// }
-
-// Q. Complete DOM with JS Object.
-// const beers = [
-//   {name: "Heineken", origin: "Netherlands"},
-//   {name: "Guinness", origin: "Ireland"},
-//   {name: "Asahi", origin: "Japan"}
-// ]
-
-// function App() {
-
+// function Content() {
+//   const beers = [
+//     {name: "Heineken", origin: "Netherlands"},
+//     {name: "Guinness", origin: "Ireland"},
+//     {name: "Asahi", origin: "Japan"}
+//   ]
+  
 //   const list = beers.map((beer, index) => (
 //     <li key={index}>{beer.name}, {beer.origin}</li>
 //   ))
 
 //   return (
 //     <>
-//       <h2>Beers</h2>
+//       <h2>Q. list beers using variables</h2>
 //       <ul>
 //         {list}
 //       </ul>

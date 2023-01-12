@@ -1,8 +1,23 @@
-// # COMPONENTS
-// independent and reusable pieces to build completex UIs.
-// 2 types of components: function components, class components
+
+
+
+export default function Components() {
+
+  return (
+    <>
+      <h1>Components</h1>
+      
+      <p>
+        independent and reusable pieces to build completex UIs.
+        2 types of components: function components, class components
+      </p>
+
+    </>  
+  )
+}
 
 // ### Component Basic
+
 // Components must starts with Uppercase letter.
 // function components is basically function
 // function App() {
@@ -13,7 +28,9 @@
 //   return <h1>App</h1>
 // }
 
+
 /// ### Components Composition
+
 // function Foo() {
 //   return <li>Foo</li>
 // }
@@ -88,6 +105,7 @@
 //   )
 // }
 
+
 // ### props
 // parameters to pass components
 
@@ -112,6 +130,7 @@
 //     </>
 //   )
 // }
+
 
 // Q. Basic props
 // function Beer(props) {
@@ -184,6 +203,7 @@
 //   )
 // }
 
+
 // Q. Object props
 // function Beer(props) {
 //   const beer = props.beer;
@@ -233,6 +253,7 @@
 //     </>  
 //   )
 // }
+
 
 // ### children props
 // function C(props) {
@@ -301,6 +322,7 @@
 //     </>
 //   )
 // }
+
 
 // ### Nested children props
 
@@ -432,6 +454,7 @@
 //     </Beers>
 //   )
 // }
+
 
 // ### pass props to children 
 
