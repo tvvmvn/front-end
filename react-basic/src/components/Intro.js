@@ -26,8 +26,8 @@
   
 
 3 Structure
-  it has single page structure
-  insert virtual DOM to HTML
+  - it has single page structure
+  - insert virtual DOM to HTML
 
 
   * library: a bundle of code for temporal use

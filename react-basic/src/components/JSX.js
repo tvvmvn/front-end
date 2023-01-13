@@ -17,6 +17,8 @@ export default function JSX() {
   Stands for JavaScript extension 
   A Syntax extension to JavaScript
   used for create virtual DOM
+  Declarative
+  Compile to plain JavaScript Object
 
   1 What is JSX 
   2 JSX Syntax
@@ -50,18 +52,18 @@ export default function JSX() {
 */
 
 
-// function Content() {
-//   return (
-//     <div>
-//       <h3>React Fragment</h3>
-//       <ul>
-//         <li>Foo</li>
-//         <li>bar</li>
-//         <li>baz</li>
-//       </ul>
-//     </div>  
-//   )
-// }
+function Content() {
+  return (
+    <div>
+      <h3>React Fragment</h3>
+      <ul>
+        <li>Foo</li>
+        <li>bar</li>
+        <li>baz</li>
+      </ul>
+    </div>  
+  )
+}
 
 
 // function Content() {
@@ -120,7 +122,7 @@ export default function JSX() {
 
 
 /*
-  3 print result in JSX
+  3 print variables in JSX
 */
 
 // function Content() {
