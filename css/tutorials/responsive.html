@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h1>Responsive style</h1>
+  <p>styles according to screen size</p>
+
+  <style>
+  /* Mobile first */
+  .title::after {
+    content: "Extra small devices";
+  }
+
+  @media (min-width: 640px) {
+    .title::after {
+      content: "Small devices";
+    }
+  }
+  @media (min-width: 768px) {
+    .title::after {
+      content: "Medium devices";
+    }
+  }
+  @media (min-width: 1024px) {
+    .title::after {
+      content: "Large devices";
+    }
+  }
+  @media (min-width: 1280px) {
+    .title::after {
+      content: "Extra Large devices";
+    }
+  }
+  @media (min-width: 1536px) {
+    .title::after {
+      content: "2 Extra large devices";
+    }
+  }
+  </style>
+
+  <div class="container">
+    <h3 class="title">Devices: </h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Asperiores at fugit quia, explicabo facere pariatur iste rerum sapiente incidunt 
+      repudiandae est doloribus nesciunt architecto expedita neque dolor quisquam, in eaque?
+    </p>
+  </div>
+
+
+
+  <!-- <h1>Q. responsive</h1>
+  <p>flex-wrap, flex-basis</p>
+
+  <style>
+    .container {
+      background-color: #ddd;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .item {
+      border: 1px dashed;
+      padding: 0.5rem;
+      flex-basis: 100%;
+      box-sizing: border-box;
+    }
+    @media (min-width: 640px) {
+      .item {
+        flex-basis: 50%;
+      }
+    }
+  </style>
+
+  <div class="container">
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div> -->
+</body>
+</html>

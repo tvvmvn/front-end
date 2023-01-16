@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Margin</h1>
+  <p>space outside element</p>
+
+  <style>
+    .item {
+      border: 1px dashed;
+      display: inline-block;
+    }
+    .m-2 {
+      margin: 1rem;
+    }
+    .mt-2 {
+      margin-top: 1rem;
+    }
+    .mx-2 {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  </style>
+
+  <div class="container">
+    <div class="item">margin 0</div>
+    <div class="item m-2">margin all</div>
+    <div class="item mt-2">margin top</div>
+    <div class="item mx-2">margin left/right</div>
+  </div>
+
+
+  <h1>Q. Buttons</h1>
+
+  <style>
+    button {
+      padding: 0.5rem;
+    }
+    button:nth-child(2) {
+      margin-left: 0.5rem;
+    }
+  </style>
+
+  <h3>Save or not</h3>
+  
+  <div class="container">
+    <button>Save</button>
+    <button>Cancel</button>
+  </div>
+  
+</body>
+</html>

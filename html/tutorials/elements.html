@@ -7,6 +7,7 @@
   <title>Document</title>
 </head>
 <body>
+  <h1>HTML</h1>
 
   <h1>Elements</h1>
 
@@ -35,6 +36,7 @@
   <h3>Form</h3>
   <ul>
     <li>form</li>
+    <li>label</li>
     <li>input</li>
     <li>button</li>
   </ul>
@@ -49,7 +51,7 @@
 
 
 
-  <!-- <h3>h3 - h6</h3>
+  <h3>h3 - h6</h3>
   <p>Heading (title)</p>
 
   <h1>Heading 1</h1>
@@ -57,34 +59,34 @@
   <h3>Heading 3</h3>
   <h4>Heading 4</h4>
   <h5>Heading 5</h5>
-  <h6>Heading 6</h6> -->
+  <h6>Heading 6</h6>
 
   
-  <!-- <h3>p</h3>
+  <h3>p</h3>
   <p>Paragraph</p>
 
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia delectus laudantium recusandae? Nam placeat
     provident tempore perspiciatis corrupti, rerum quibusdam distinctio? Vel dignissimos aliquid harum voluptate, itaque
-    reprehenderit expedita incidunt?</p> -->
+    reprehenderit expedita incidunt?</p>
   
-  <!-- <h3>span</h3>
+  <h3>span</h3>
   <p>span (한뼘)</p>
 
   <p>
     <span style="font-weight: bold">Heineken</span> Heineken is dutch beeer
-  </p> -->
+  </p>
 
   
-  <!-- <h3>a</h3>
+  <h3>a</h3>
   <p>anchor (link)</p>
 
-  <a href="https://google.com" target="_blank">Google</a> -->
+  <a href="https://google.com" target="_blank">Google</a>
 
 
-  <!-- <h3>br</h3>
+  <h3>br</h3>
   <p>breaking rule</p>
 
-  <p>Heineken is dutch beers. <br> Guinness is irish beer.</p> -->
+  <p>Heineken is dutch beers. <br> Guinness is irish beer.</p>
 
 
   
@@ -96,16 +98,16 @@
   
   
 
-  <!-- <h3>header</h3>
+  <h3>header</h3>
   <p>header of web page</p>
 
   <header>
     <h1>Guinness</h1>
     <p>Irish beer</p>
-  </header> -->
+  </header>
 
 
-  <!-- <h3>nav</h3>
+  <h3>nav</h3>
   <p>navigation (menu)</p>
 
   <nav>
@@ -121,10 +123,10 @@
         <a href="#">Blog</a>
       </li>
     </ul>
-  </nav> -->
+  </nav>
 
 
-  <!-- <h3>article</h3>
+  <h3>article</h3>
   <p>an article</p>
 
   <article>
@@ -133,10 +135,10 @@
       Itaque, illo praesentium ratione adipisci fuga commodi iste
       molestiae rerum odio ducimus consectetur fugiat nostrum 
       corrupti earum velit numquam nesciunt quaerat delectus.</p>
-  </article> -->
+  </article>
 
 
-  <!-- <h3>section</h3>
+  <h3>section</h3>
   <p>section</p>
 
   <section>
@@ -155,10 +157,10 @@
         mollitia suscipit repellat veniam animi, quibusdam magnam 
         at reprehenderit! Magnam inventore odit ad.</p>
     </article>
-  </section> -->
+  </section>
 
 
-  <!-- <h3>ul, li</h3>
+  <h3>ul, li</h3>
   <p>ul: unordered list, li: list item</p>
   
   <h3>Beers</h3>
@@ -166,10 +168,20 @@
     <li>Guinness</li>
     <li>Heineken</li>
     <li>Budwiser</li>
-  </ul> -->
+  </ul>
+
+  <h3>ol, li</h3>
+  <p>ul: ordered list, li: list item</p>
+  
+  <h3>Beers</h3>
+  <ol>
+    <li>Guinness</li>
+    <li>Heineken</li>
+    <li>Budwiser</li>
+  </ol>
 
 
-  <!-- <h3>table</h3>
+  <h3>table</h3>
   <p>Table</p>
 
   <table border="1">
@@ -197,10 +209,10 @@
         <td>Yes</td>
       </tr>
     </tbody>
-  </table> -->
+  </table>
 
 
-  <!-- <h3>div</h3>
+  <h3>div</h3>
   <p>divide</p>
 
   <div>
@@ -211,10 +223,10 @@
   <div>
     <h3>Asahi</h3>
     <p>Asahi is japanese beer.</p>
-  </div> -->
+  </div>
 
 
-  <!-- <h3>hr</h3>
+  <h3>hr</h3>
   <p>horizontal rule</p>
   
   <hr>
@@ -224,43 +236,53 @@
     <li>Heineken</li>
     <li>Kloud</li>
   </ul>
-  <hr> -->
+  <hr>
 
-  <!-- <h3>footer</h3>
+
+  <h3>footer</h3>
   <p>webpage bottom</p>
 
   <footer>
     <p>2023 &copy; Guinness</p>
     <a href="#">Privacy & Terms</a>
-  </footer> -->
+  </footer>
 
 
 
 
 
+  <style>
+    label {display: block}
+  </style>
 
-  <!-- <h3>form</h3>
-  <p>form that receive user's data</p>
+  <h3>form</h3>
+  <p>
+    form that receive user's data <br>
+    e.g) Login, Sign up, Create article 
+  </p>
 
   <form action="">
     <h1>Contact</h1>
     <div>
-      <label for="name">Name</label>
-      <input type="text" id="name">
+      <label for="username">Name</label>
+      <input type="text" id="username" name="username">
     </div>
     <div>
       <label for="email">Email</label>
-      <input type="password" id="email">
+      <input type="password" id="email" name="email">
     </div>
     <div>
-      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <label for="message">Message</label> 
+      <textarea name="message" id="message" cols="30" rows="10"></textarea>
     </div>
     <div>
-      <input type="checkbox" name="" id="agree">
-      <label for="agree">I agree with Privacy & Terms</label>
+      <label>
+        <input type="checkbox" name="agree">
+        I agree with Privacy & Terms
+      </label>
     </div>
     <button type="submit">Send</button>
-  </form> -->
+  </form>
 
 
 
@@ -269,11 +291,15 @@
 
 
 
-  <!-- <h3>img</h3>
+  <h3>img</h3>
   <p>get image to Document</p>
 
   <h3>Guinness</h3>
-  <img src="https://media.diageo.com/600x600/filters:quality(85)/diageo-corporate-media/media/yvsdtuuk/guinness-close-up.jpg" alt="Describe" width="200"> -->
+  <img 
+    src="https://media.diageo.com/600x600/filters:quality(85)/diageo-corporate-media/media/yvsdtuuk/guinness-close-up.jpg" 
+    alt="Guinness" 
+    width="200"
+  >
 
 
 </body>

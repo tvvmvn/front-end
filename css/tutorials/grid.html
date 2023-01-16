@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<h1>grid</h1>
+
+  <style>
+    .container {
+      background-color: #ddd;
+      display: grid;
+      /* minmax(min, max) */
+      /* minmax(>=min, <=max) */
+      /* minmax() CSS function defines a size range greater than or equal to min 
+      and less than or equal to max. It is used with CSS Grids */
+      /* fr: fraction (분수) */
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.25rem;
+    }
+    .item {
+      border: 1px dashed;
+      padding: 0.5rem;
+    }
+  </style>
+
+  <div class="container">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div>
+  
+</body>
+</html>

@@ -9,36 +9,49 @@
 </head>
 
 <body>
+  
   <!-- HEADER -->
   <header>
-    <h1>&#127866; WORLD-BEER</h1>
-    <p>Beers from all over the world</p>
+    <h1>&#127866; WORLD-BEER </h1>
+    <p>Beers from all over the world &#127758;</p>
   </header>
 
+
   <!-- VIDEO -->
+
 
   <!-- NAVIGATION -->
   <nav>
     <h2>Menu</h2>
     <ul>
-      <li>About</li>
-      <li>Table</li>
-      <li>Contact</li>
+      <li>
+        <a href="#">About</a>
+      </li>
+      <li>
+        <a href="#">Table</a>
+      </li>
+      <li>
+        <a href="#">Contact</a>
+      </li>
     </ul>
   </nav>
+
 
   <!-- ABOUT -->
   <section>
     <h2>About</h2>
-    <img src="../../img/bunny.jpeg" alt="about" width="200">
-    <img src="/img/bunny.jpeg" alt="about" width="200">
+    <img 
+      src="https://media.diageo.com/600x600/filters:quality(85)/diageo-corporate-media/media/yvsdtuuk/guinness-close-up.jpg" 
+      alt="Guinness" 
+      width="200"
+    >
     <p>
-      <span style="font-weight: bold">Lorem</span> ipsum dolor sit, <br>
-      amet consectetur adipisicing elit. <br>
-      Quae quisquam, similique est ipsam <br>
-      sequi magni excepturi illo quod
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+      Aliquam repudiandae, nobis dolorem expedita quo facere tenetur accusantium consequuntur culpa voluptatem ipsam, 
+      explicabo saepe debitis. Adipisci officia architecto voluptatum veritatis harum?
     </p>
   </section>
+
 
   <!-- TABLE -->
   <section>
@@ -76,39 +89,45 @@
     </table>
   </section>
 
+
   <!-- CONTACT -->
+  <style>
+    label {display: block}
+  </style>
+
   <section>
     <form action="">
       <h2>Contact</h2>
       <div>
-        <label for="name">Name</label><br>
-        <input type="text" id="name" placeholder="Enter name">
+        <label for="username">Name</label>
+        <input type="text" id="username" name="username" placeholder="John Doe">
       </div>
       <div>
-        <label for="email">Email</label><br>
-        <input type="text" id="email" placeholder="Enter email">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="John@example.com">
       </div>
       <div>
-        <label for="message">Message</label><br>
-        <textarea name="" id="message" cols="30" rows="5" placeholder="Enter message"></textarea>
+        <label for="message">Message</label>
+        <textarea name="message" id="message" cols="30" rows="5" placeholder="Enter message"></textarea>
       </div>
       <div>
-        <input type="checkbox" name="" id="agree">
-        <label for="agree">
-          I agree with <a href="#" target="_blank">The privacy & Terms policy</a>
+        <label>
+          <input type="checkbox" name="agree">
+          I agree with Terms & Policy
         </label>
       </div>
-      <div>
-        <button type="submit">Send</button>
-      </div>
+      <button type="submit">Send</button>
     </form>
   </section>
 
+
   <!-- MAP -->
+
 
   <!-- FOOTER -->
   <footer>
-    <small>2022 &copy; WORLD-BEER All rights reserved</small>
+    <small>2022 &copy; WORLD-BEER</small>
   </footer>
+
 </body>
 </html>
