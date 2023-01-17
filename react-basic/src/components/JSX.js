@@ -5,7 +5,8 @@ export default function JSX() {
   return (
     <>
       <h1>JSX</h1>
-      <Content />
+
+      <App />
     </>  
   )
 }
@@ -32,13 +33,13 @@ export default function JSX() {
   1 What is JSX
 */
 
-// function Content() {
+// function App() {
 //   const h1 = React.createElement('p', {}, 'Hello React');
 
 //   return h1;
 // }
 
-// function Content() {
+// function App() {
 //   return <p>Hello React</p>
 // }
 
@@ -52,21 +53,21 @@ export default function JSX() {
 */
 
 
-function Content() {
-  return (
-    <div>
-      <h3>React Fragment</h3>
-      <ul>
-        <li>Foo</li>
-        <li>bar</li>
-        <li>baz</li>
-      </ul>
-    </div>  
-  )
-}
+// function App() {
+//   return (
+//     <div>
+//       <h3>React Fragment</h3>
+//       <ul>
+//         <li>Foo</li>
+//         <li>bar</li>
+//         <li>baz</li>
+//       </ul>
+//     </div>  
+//   )
+// }
 
 
-// function Content() {
+// function App() {
 //   return (
 //     <>
 //       <h3>JSX attribute</h3>
@@ -86,7 +87,7 @@ function Content() {
 // }
 
 
-// function Content() {
+// function App() {
 //   return (
 //     <>
 //       <h3>JSX inline styles</h3>
@@ -101,7 +102,7 @@ function Content() {
 // }
 
 
-// function Content() {
+// function App() {
 
 //   const st = {
 //     textDecoration: "line-through",
@@ -125,7 +126,7 @@ function Content() {
   3 print variables in JSX
 */
 
-// function Content() {
+// function App() {
 
 //   let cat = {
 //     name: 'Kitty',
@@ -161,7 +162,7 @@ function Content() {
 */
 
 
-// function Content() {
+// function App() {
 
 //   return (
 //     <>
@@ -177,7 +178,7 @@ function Content() {
 // }
 
 
-// function Content() {
+// function App() {
 
 //   return (
 //     <>
@@ -194,7 +195,7 @@ function Content() {
 // }
 
 
-// function Content() {
+// function App() {
 
 //   return (
 //     <>
@@ -215,23 +216,23 @@ function Content() {
   5 Loop in JSX
 */
 
-// function Content() {
-//   const arr = ["Foo", "Bar", "Baz"];
+function App() {
+  const arr = ["foo", "bar", "baz"];
 
-//   return (
-//     <>
-//       <h2>Loop in JSX</h2>
-//       <ul>
-//         {arr.map((item, index) => (
-//           <li key={index}>{item}</li>
-//         ))}
-//       </ul>
-//     </>
-//   )
-// }
+  return (
+    <>
+      <h2>Loop in JSX</h2>
+      <ul>
+        {arr.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </>
+  )
+}
 
 
-// function Content() {
+// function App() {
 //   const beers = [
 //     {name: "Heineken", origin: "Netherlands"},
 //     {name: "Guinness", origin: "Ireland"},

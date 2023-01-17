@@ -15,13 +15,16 @@ export default function Home() {
           <Link to="jsx">JSX</Link>
         </li>
         <li>
-          <Link to="dom">Manage DOM</Link>
-        </li>
-        <li>
           <Link to="components">Components</Link>
         </li>
         <li>
+          <Link to="props">Props</Link>
+        </li>
+        <li>
           <Link to="event">Event</Link>
+        </li>
+        <li>
+          <Link to="dom">Manage document</Link>
         </li>
         <li>
           <Link to="form">Form</Link>
