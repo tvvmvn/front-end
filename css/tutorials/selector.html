@@ -27,7 +27,7 @@
 
   
 
-  <h1>class selector</h1>
+  <!-- <h1>class selector</h1>
 
   <style>
     ul {
@@ -36,16 +36,16 @@
     .line-through {
       text-decoration: line-through;
     }
-    .gray {
-      color: #888;
+    .italic {
+      font-style: italic;
     }
   </style>
 
-  <ul>
+  <ul class="border">
     <li class="line-through">list item</li>
-    <li class="line-through gray">list item</li>
+    <li class="line-through italic">list item</li>
     <li>list item</li>
-  </ul>
+  </ul> -->
 
 
 
@@ -71,45 +71,87 @@
   <!-- <h1>children selector</h1>
 
   <style>
-    ul a {
-      color: #000;
-    }
-    li a {
-      text-decoration: none;
+    #list2 li {
+      text-decoration: line-through;
     }
   </style>
 
-  <nav>
-    <ul>
-      <li>
-        <a href="">Link</a>
-      </li>
-      <li>
-        <a href="">Link</a>
-      </li>
-      <li>
-        <a href="">Link</a>
-      </li>
-    </ul>
-  </nav> -->
+  <ul>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+  </ul>
+
+  <ul id="list2">
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+  </ul> -->
 
 
+  <!-- <h1>sibling selector</h1>
 
-  <!-- <h1>Q. CSS Selector</h1>
-  <p>class, children selector</p>
+  <style>
+    #first + li {
+      text-decoration: line-through;
+    }
+  </style>
+
+  <ul>
+    <li id="first">list item</li>
+    <li>list item</li>
+    <li>list item</li>
+  </ul> -->
+
+
+  <!-- <h1>pseudo class</h1>
+  <p>select element under special state</p>
+
+  <style>
+    li:hover {
+      text-decoration: underline;
+    }
+    li:nth-child(2) {
+      font-style: italic;
+    }
+  </style>
+
+  <ul>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+  </ul> -->
+
+
+  <!-- <h1>pseudo element</h1>
+  <p>select virtual element to style</p>
+
+  <style>
+    li::before {
+      content: '{';
+      color: #000;
+    }
+    li::after {
+      content: '}';
+      color: #000;
+    }
+  </style>
+
+  <ul>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+  </ul> -->
+
+
+  <h1>Q. CSS Selector</h1>
 
   <style>
     ul {
       border: 1px solid;
     }
-    ul li {
-      text-transform: uppercase;
-    }
     .line-through {
       text-decoration: line-through;
-    }
-    .gray {
-      color: #888;
     }
     .font-bold {
       font-weight: bold;
@@ -117,12 +159,14 @@
   </style>
 
   <h3>Beers</h3>
+  
   <ul>
     <li>Heineken</li>
-    <li class="line-through gray">Guinness</li>
+    <li class="line-through">Guinness</li>
+    <li>Budwiser</li>
     <li>Asahi</li>
     <li class="font-bold">Kloud</li>
-  </ul> -->
+  </ul>
   
 </body>
 </html>
