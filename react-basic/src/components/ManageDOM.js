@@ -4,36 +4,42 @@ export default function ManageDOM() {
 
   return (
     <>
-      <h1>Update Document</h1>
-      <p>
-        with useState Hook
-      </p>
-      
+      <p>Update Document</p>
       <App />
     </>
   )
 }
 
 
-// function App() {
+/*
 
-//   /*
-//     const [state, setState] = useState(initialValue);
-//     state: a variable in Component
-//     setState: a method that updates state.
-//     initialValue: initial value of state.
-//   */
+  Update Document in React
 
-//   const [count, setCount] = useState(0);
+*/
 
-//   return (
-//     <>
-//       <h1>Count</h1>
-//       <p>{count}</p>
-//       <button onClick={() => setCount(count + 1)}>Add</button>
-//     </>
-//   )
-// }
+
+function App() {
+
+  /*
+    useState Hook
+
+    const [state, setState] = useState(initialValue);
+
+    state: a variable in Component
+    setState: a method that updates state.
+    initialValue: initial value of state.
+  */
+
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <h1>Count</h1>
+      <p>{count}</p>
+      <button onClick={() => setCount(count + 1)}>Add</button>
+    </>
+  )
+}
 
 
 // function App() {
@@ -62,43 +68,20 @@ export default function ManageDOM() {
 // }
 
 
-// Q. Subscribe
-function App() {
-  const [subscribe, setSubscribe] = useState(false);
-
-  return (
-    <>
-      <h1>Subscribe</h1>
-      <button onClick={() => setSubscribe(!subscribe)}>
-        {!subscribe ? "Subscribe" : "Subscribed"}
-      </button>
-    </>  
-  )
-}
-
-
-// Q. Subscribe with Subscribers
 // function App() {
-//   const [subscribe, setSubscribe] = useState(false);
-//   const [subscribers, setSubscribers] = useState(0);
+//   const [subscribed, setSubscribed] = useState(false);
 
-//   function handleClick(subscribe) {
-//     if (subscribe) {
-//       setSubscribe(false);
-//       setSubscribers(subscribers - 1)
-//     } else {
-//       setSubscribe(true);
-//       setSubscribers(subscribers + 1)
-//     }
+//   function handleClick() {
+//     setSubscribed(!subscribed);
 //   }
 
 //   return (
 //     <>
-//       <h1>Subscribe</h1>
-//       <p>Subscriber: {subscribers}</p>
-//       <button onClick={() => handleClick(subscribe)}>
-//         {!subscribe ? "Subscribe" : "Subscribed"}
+//       <h1>Subscribe button</h1>
+//       <button onClick={handleClick}>
+//         {!subscribed ? "Subscribe" : "Subscribed"}
 //       </button>
 //     </>  
 //   )
 // }
+

@@ -8,31 +8,32 @@ import JSX from './components/JSX';
 import Components from './components/Components';
 import Props from './components/Props';
 import Event from './components/Event';
-import RouterComponent from './components/Router';
+import MyRouter from './components/MyRouter';
 import Examples from './components/Examples';
-import Form from './components/Form';
 import FetchData from './components/FetchData';
 import ManageDOM from './components/ManageDOM';
+import NotFound from './components/NotFound';
 
 export default function App() {
 
   return (
     <Router>
-      <p>
+      <nav style={{backgroundColor: '#ddd', padding: '0.5rem'}}>
         <Link to="/">Home</Link>
-      </p>
+      </nav>
+
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route index element={<Home />} />
         <Route path="intro" element={<Intro />} />
         <Route path="jsx" element={<JSX />} />
         <Route path="components" element={<Components />} />
         <Route path="props" element={<Props />} />
         <Route path="event" element={<Event />} />
         <Route path="dom" element={<ManageDOM />} />
-        <Route path="Form" element={<Form />} />
-        <Route path="router" element={<RouterComponent />} />
+        <Route path="router/*" element={<MyRouter />} />
         <Route path="fetch" element={<FetchData />} />
         <Route path="examples" element={<Examples />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   )

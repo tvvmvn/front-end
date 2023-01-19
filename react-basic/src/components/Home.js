@@ -4,9 +4,8 @@ export default function Home() {
 
   return (
     <>
-      <h1>React Basic</h1>
+      <p>Tutorials</p>
 
-      <h3>Tutorials</h3>
       <ol>
         <li>
           <Link to="intro">Intro</Link>
@@ -24,10 +23,7 @@ export default function Home() {
           <Link to="event">Event</Link>
         </li>
         <li>
-          <Link to="dom">Manage document</Link>
-        </li>
-        <li>
-          <Link to="form">Form</Link>
+          <Link to="dom">Update document</Link>
         </li>
         <li>
           <Link to="router">Router</Link>
@@ -35,11 +31,12 @@ export default function Home() {
         <li>
           <Link to="fetch">Fetch data</Link>
         </li>
+      </ol>
+
+      <p>Examples</p>
+      <ol>
         <li>
-          <Link to=""></Link>
-        </li>
-        <li>
-          <Link to=""></Link>
+          <Link to="">Todo list</Link>
         </li>
       </ol>
     </>  

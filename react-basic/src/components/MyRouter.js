@@ -1,96 +1,111 @@
-export default function RouterComponent() {
+import {createContext, useContext, useState} from 'react';
+import {BrowserRouter as Router, Routes, Route, Link, Outlet, useParams} from "react-router-dom";
+
+export default function MyRouter() {
 
   return (
     <>
-      <h1>React Router</h1>
-      <p>
-        Basic router, Router with auth
-      </p>
+      <p>React Router</p>
+      <App />
     </>  
   )
 }
 
+/*
 
-// # Router
-// function Home() {
-//   return <h1>Home</h1>
-// }
+  React Router
 
-// function Posts() {
-//   return (
-//     <>
-//       <h1>Posts</h1>
-//       <ul>
-//         <li>
-//           <Link to="/post/p1">Post 1</Link>
-//         </li>
-//         <li>
-//           <Link to="/post/p2">Post 2</Link>
-//         </li>
-//       </ul>
-//     </>  
-//   )
-// }
+  1 Basic Router
+  2 Router with authorization
 
-// function Post() {
-//   const params = useParams();
-//   const postId = params.postId;
-
-//   return (
-//     <>
-//       <h1>Post</h1>
-//       <p>{postId}</p>
-//     </>  
-//   )
-// }
-
-// function Contact() {
-//   return <h1>Contact</h1>
-// }
-
-// function NotFound() {
-//   return <h1>404 NotFound</h1>
-// }
-
-// function App() {
-//   return (
-//     <Router>
-//       <nav>
-//         <ul> 
-//           <li>
-//             <Link to="/">Home</Link>
-//           </li>
-//           <li>
-//             <Link to="/posts">Posts</Link>
-//           </li>
-//           <li>
-//             <Link to="/contact">Contact</Link>
-//           </li>
-//         </ul>
-//       </nav>
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/posts" element={<Posts />} />
-//         <Route path="/post/:postId" element={<Post />} />
-//         <Route path="/contact" element={<Contact />} />
-//         <Route path="*" element={<NotFound />} />
-//       </Routes>
-//     </Router>  
-//   )
-// }
+*/
 
 
-// # Router with auth
-// AuthProvider maintain user(state).
-// user is accessible from AuthProvider's children.
-// Post is protected page (authorization is required).
-// login update user state.
-// Authorization completed.
+function Home() {
+  return <h1>Home</h1>
+}
+
+function Posts() {
+  return (
+    <>
+      <h1>Posts</h1>
+      <ul>
+        <li>
+          <Link to="/router/post/p1">Post 1</Link>
+        </li>
+        <li>
+          <Link to="/router/post/p2">Post 2</Link>
+        </li>
+      </ul>
+    </>  
+  )
+}
+
+function Post() {
+  const params = useParams();
+  const postId = params.postId;
+
+  // Send to server
+  console.log('postId:', postId);
+
+  return (
+    <>
+      <h1>Title</h1>
+      <p>Content</p>
+    </>  
+  )
+}
+
+function About() {
+  return <h1>About</h1>
+}
+
+function NotFound() {
+  return <h1>404 NotFound</h1>
+}
+
+function App() {
+  return (
+    <>
+      <nav>
+        <ul> 
+          <li>
+            <Link to="/router/">Home</Link>
+          </li>
+          <li>
+            <Link to="/router/about">About</Link>
+          </li>
+          <li>
+            <Link to="/router/posts">Posts</Link>
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="posts" element={<Posts />} />
+        <Route path="post/:postId" element={<Post />} />
+        <Route path="about" element={<About />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
+  )
+}
+
+
+
+/*
+  2 Router with auth
+
+  AuthProvider maintain user(state).
+  user is accessible from AuthProvider's children.
+  Post is protected page (authorization is required).
+  login update user state.
+  Authorization completed.
+*/
 
 // const AuthContext = createContext();
 
 // function AuthProvider({children}) {
-//   // user is accessible from its children.
 //   const [user, setUser] = useState(null);
 
 //   function signIn(username) {
@@ -120,10 +135,10 @@ export default function RouterComponent() {
 //       <h1>Posts</h1>
 //       <ul>
 //         <li>
-//           <Link to="/post/p1">Post 1</Link>
+//           <Link to="/router/post/p1">Post 1</Link>
 //         </li>
 //         <li>
-//           <Link to="/post/p2">Post 2</Link>
+//           <Link to="/router/post/p2">Post 2</Link>
 //         </li>
 //       </ul>
 //     </>  
@@ -182,20 +197,21 @@ export default function RouterComponent() {
 
 // function App() {
 //   return (
-//     <Router>
+//     <>
 //       <nav>
 //         <ul> 
 //           <li>
-//             <Link to="/">Home</Link>
+//             <Link to="/router">Home</Link>
 //           </li>
 //           <li>
-//             <Link to="posts">Posts</Link>
+//             <Link to="/router/posts">Posts</Link>
 //           </li>
 //           <li>
-//             <Link to="login">Login</Link>
+//             <Link to="/router/login">Login</Link>
 //           </li>
 //         </ul>
 //       </nav>
+
 //       <AuthProvider>
 //         <Routes>
 //           <Route path="/" element={<Home />} />
@@ -205,6 +221,6 @@ export default function RouterComponent() {
 //           <Route path="*" element={<NotFound />} />
 //         </Routes>
 //       </AuthProvider>
-//     </Router>  
+//     </>
 //   )
 // }

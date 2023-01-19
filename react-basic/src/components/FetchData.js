@@ -1,42 +1,60 @@
+import {useState, useEffect} from 'react';
+
 export default function FetchData() {
 
   return (
     <>
-      <h1>Fetch Data</h1>
-      <p>
-        useEffect, fakeApi
-      </p>
-
+      <p>Fetch Data</p>
+      <App />
     </>   
   )
 }
 
 
-// # fetch data
+/*
 
-// function App() {
-//   const [count, setCount] = useState(0);
+  Fetch data
 
-//   // useEffetch Hook
-//   // work asynchronously
+  1 What is fetching data
+    request data to server, and receive response from server
+  2 useEffect Hook
+  3 data fetching example
 
-//   // use case
-//   // useEffect(callback): excute callback whenever component is executed.
-//   // useEffect(callback, []): excute callback only at first.
-//   // useEffect(callback, [dep]): excute callback at first and whenever dependency is changed.
-//   useEffect(() => {
-//     const time = new Date().toLocaleTimeString();
-//     console.log(time);
-//   }, [])
+*/
 
-//   return (
-//     <>
-//       <h1>App</h1>
-//       <p>App is rendered for {count} times</p>
-//       <button onClick={() => setCount(count + 1)}>Add</button>
-//     </>  
-//   )
-// }
+
+/*
+  2 useEffect
+*/
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  // useEffetch Hook
+  // work asynchronously
+
+  // use case
+  // useEffect(callback): excute callback whenever component is executed.
+  // useEffect(callback, []): excute callback only at first.
+  // useEffect(callback, [dep]): excute callback at first and whenever dependency is changed.
+
+  useEffect(() => {
+    const time = new Date().toLocaleTimeString();
+    console.log(time);
+  }, [])
+
+  return (
+    <>
+      <h1>App</h1>
+      <p>App is rendered for {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Add</button>
+    </>  
+  )
+}
+
+/*
+  3 data fetching example
+*/
 
 // preteding API Server returns data after 2 seconds.
 // function fakeApi() {
