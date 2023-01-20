@@ -18,28 +18,27 @@ export default function ManageDOM() {
 */
 
 
-function App() {
+// function App() {
 
-  /*
-    useState Hook
+//   /*
+//     useState Hook
 
-    const [state, setState] = useState(initialValue);
+//     const [state, setState] = useState(initialValue);
 
-    state: a variable in Component
-    setState: a method that updates state.
-    initialValue: initial value of state.
-  */
+//     state: a variable in Component
+//     setState: a method that updates state.
+//     initialValue: initial value of state.
+//   */
 
-  const [count, setCount] = useState(0);
+//   const [count, setCount] = useState(0);
 
-  return (
-    <>
-      <h1>Count</h1>
-      <p>{count}</p>
-      <button onClick={() => setCount(count + 1)}>Add</button>
-    </>
-  )
-}
+//   return (
+//     <>
+//       <p>count: {count}</p>
+//       <button onClick={() => setCount(count + 1)}>Add</button>
+//     </>
+//   )
+// }
 
 
 // function App() {
@@ -56,6 +55,7 @@ function App() {
 
 //   function handleClick(e) {
 //     count++;
+//     console.log(count)
 //   }
 
 //   return (
@@ -71,17 +71,38 @@ function App() {
 // function App() {
 //   const [subscribed, setSubscribed] = useState(false);
 
-//   function handleClick() {
-//     setSubscribed(!subscribed);
-//   }
-
 //   return (
 //     <>
 //       <h1>Subscribe button</h1>
-//       <button onClick={handleClick}>
+//       <button onClick={() => setSubscribed(!subscribed)}>
 //         {!subscribed ? "Subscribe" : "Subscribed"}
 //       </button>
 //     </>  
 //   )
 // }
 
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <p>count: {count}</p>
+
+      <Article 
+        count={count}
+        setCount={setCount} 
+      />  
+    </>
+  )
+}
+
+function Article(props) {
+  return (
+    <>
+      <button onClick={() => props.setCount(props.count + 1)}>
+        Add
+      </button>
+    </>  
+  )
+}

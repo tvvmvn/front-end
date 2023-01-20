@@ -15,8 +15,15 @@ export default function MyRouter() {
 
   React Router
 
-  1 Basic Router
-  2 Router with authorization
+  1 What is React Router
+    perform work for request(path)
+    install/import react-router-dom 
+
+  2 Basic Router
+  3 Router with authorization
+    Basic Router + auth
+
+    basic > auth provider > auth required > login > logout
 
 */
 
@@ -42,16 +49,18 @@ function Posts() {
 }
 
 function Post() {
+  /*
+    # useParams Hook
+    access parameters passed in url
+  */ 
+  
   const params = useParams();
   const postId = params.postId;
-
-  // Send to server
-  console.log('postId:', postId);
 
   return (
     <>
       <h1>Title</h1>
-      <p>Content</p>
+      <p>{postId}</p>
     </>  
   )
 }
@@ -81,10 +90,10 @@ function App() {
         </ul>
       </nav>
       <Routes>
-        <Route index element={<Home />} />
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
         <Route path="posts" element={<Posts />} />
         <Route path="post/:postId" element={<Post />} />
-        <Route path="about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
@@ -95,13 +104,27 @@ function App() {
 
 /*
   2 Router with auth
-
-  AuthProvider maintain user(state).
-  user is accessible from AuthProvider's children.
-  Post is protected page (authorization is required).
-  login update user state.
-  Authorization completed.
 */
+
+// function App() {
+  
+//   return (
+//     <AuthProvider>
+//       <Routes>
+//         <Route path="/" element={<Layout />}>
+//           <Route index element={<Home />} />
+//           <Route path="posts" element={<Posts />} />
+//           <Route path="post/:postId" element={
+//             <AuthRequired>
+//               <Post />
+//             </AuthRequired>
+//           } />
+//           <Route path="*" element={<NotFound />} />
+//         </Route>
+//       </Routes>
+//     </AuthProvider>
+//   )
+// }
 
 // const AuthContext = createContext();
 
@@ -125,6 +148,36 @@ function App() {
 //   )
 // }
 
+// function Layout() {
+//   const auth = useContext(AuthContext);
+
+//   return (
+//     <>
+//       <nav>
+//         <ul> 
+//           <li>
+//             <Link to="/router">Home</Link>
+//           </li>
+//           <li>
+//             <Link to="/router/posts">Posts</Link>
+//           </li>
+//         </ul>
+//       </nav>
+
+//       {auth.user ? (
+//         <p>
+//           Hi, {auth.user} {" "} 
+//           <button onClick={auth.signOut}>Log out</button>
+//         </p> 
+//       ) : (
+//         <p>Not logged in </p>
+//       )}
+
+//       <Outlet />
+//     </>
+//   )
+// }
+
 // function Home() {
 //   return <h1>Home</h1>
 // }
@@ -145,15 +198,33 @@ function App() {
 //   )
 // }
 
+// function AuthRequired(props) {
+//   const auth = useContext(AuthContext);
+
+//   function handleSubmit(e) {
+//     e.preventDefault();
+
+//     const formData = new FormData(e.target);
+
+//     auth.signIn(formData.get('username'))
+//   }
+
+//   if (!auth.user) {
+//     return (
+//       <form onSubmit={handleSubmit}>
+//         <h1>Login</h1>
+//         <input type="text" name="username" required />
+//         <button type="submit">Login</button>
+//       </form>  
+//     )
+//   }
+
+//   return props.children;
+// }
+
 // function Post() {
 //   const params = useParams();
 //   const postId = params.postId;
-
-//   const auth = useContext(AuthContext);
-  
-//   if (!auth.user) {
-//     return <p>Unauthorized</p>
-//   }
 
 //   return (
 //     <>
@@ -165,62 +236,4 @@ function App() {
 
 // function NotFound() {
 //   return <h1>404 NotFound</h1>
-// }
-
-// function Login() {
-//   const auth = useContext(AuthContext);
-//   const [username, setUsername] = useState("");
-
-//   function handleSubmit(e) {
-//     e.preventDefault();
-//     auth.signIn(username);
-//   }
-
-//   const loginTemplate = (
-//     <form onSubmit={handleSubmit}>
-//       <h1>Sign in</h1>
-//       <input type="text" onChange={(e) => setUsername(e.target.value)} />
-//       <button type="submit">Submit</button>
-//     </form>
-//   )
-
-//   const logoutTemplate = (
-//     <div>
-//       <h1>Sign out</h1>
-//       <p>{auth.user}</p>
-//       <button onClick={auth.signOut}>Submit</button>
-//     </div>
-//   )
-
-//   return auth.user ? logoutTemplate : loginTemplate;
-// }
-
-// function App() {
-//   return (
-//     <>
-//       <nav>
-//         <ul> 
-//           <li>
-//             <Link to="/router">Home</Link>
-//           </li>
-//           <li>
-//             <Link to="/router/posts">Posts</Link>
-//           </li>
-//           <li>
-//             <Link to="/router/login">Login</Link>
-//           </li>
-//         </ul>
-//       </nav>
-
-//       <AuthProvider>
-//         <Routes>
-//           <Route path="/" element={<Home />} />
-//           <Route path="posts" element={<Posts />} />
-//           <Route path="post/:postId" element={<Post />} />
-//           <Route path="login" element={<Login />} />
-//           <Route path="*" element={<NotFound />} />
-//         </Routes>
-//       </AuthProvider>
-//     </>
-//   )
 // }

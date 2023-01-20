@@ -30,23 +30,24 @@ export default function FetchData() {
 function App() {
   const [count, setCount] = useState(0);
 
-  // useEffetch Hook
-  // work asynchronously
+  /*
+    
+    # useEffetch Hook
 
-  // use case
-  // useEffect(callback): excute callback whenever component is executed.
-  // useEffect(callback, []): excute callback only at first.
-  // useEffect(callback, [dep]): excute callback at first and whenever dependency is changed.
+    useEffect(effect): excute effect whenever component is executed.
+    useEffect(effect, []): excute effect only at first.
+    useEffect(effect, [dep]): excute effect at first and whenever dependency is changed.
+
+  */
 
   useEffect(() => {
-    const time = new Date().toLocaleTimeString();
-    console.log(time);
+    console.log('lol');
   }, [])
 
   return (
     <>
       <h1>App</h1>
-      <p>App is rendered for {count} times</p>
+      <p>{count}</p>
       <button onClick={() => setCount(count + 1)}>Add</button>
     </>  
   )
@@ -56,17 +57,17 @@ function App() {
   3 data fetching example
 */
 
-// preteding API Server returns data after 2 seconds.
-// function fakeApi() {
-//   const beer = [
-//     {id: "b1", name: "Heineken"},
-//     {id: "b2", name: "Guinness"},
-//     {id: "b3", name: "Asahi"},
-//   ];
+// function fetchData() {
+
+//   const DATA = {
+//     username: 'danaka',
+//     image: 'https://image.xportsnews.com/contents/images/upload/article/2022/1206/mb_1670300078707386.jpg',
+//     bio: '안녕하세요 여러붕구, 다나카입니다'
+//   }
   
 //   const promise = new Promise((res, rej) => {
 //     setTimeout(() => {
-//       res(beer)
+//       res(DATA)
 //     }, 2000)
 //   })
 
@@ -75,14 +76,15 @@ function App() {
 
 
 // function App() {
-//   const [beers, setBeers] = useState(null);
+
 //   const [error, setError] = useState(null);
 //   const [isLoaded, setIsLoaded] = useState(false);
+//   const [profile, setProfile] = useState(null);
 
 //   useEffect(() => {
-//     fakeApi()
+//     fetchData()
 //     .then(data => {
-//       setBeers(data)
+//       setProfile(data)
 //     })
 //     .catch(error => {
 //       setError(error)
@@ -91,19 +93,28 @@ function App() {
 //   }, [])
 
 //   if (error) {
-//     return <p>failed to fetch</p>
+//     return <p>failed to fetch profile</p>
 //   }
+
 //   if (!isLoaded) {
-//     return <p>fetching data...</p>
+//     return <p>fetching profile...</p>
 //   }
+
 //   return (
 //     <>
-//       <h1>Beers</h1>
-//       <ul>
-//         {beers.map(beer => (
-//           <li key={beer.id}>{beer.name}</li>  
-//         ))}
-//       </ul>
+//       <h1>Profile</h1>
+//       <img
+//         src={profile.image}
+//         alt={profile.username}
+//         style={{
+//           width: '100px',
+//           height: '100px',
+//           objectFit: 'cover',
+//           borderRadius: '50%'
+//         }}
+//       />
+//       <h3>{profile.username}</h3>
+//       <p>{profile.bio}</p>
 //     </>  
 //   )
 // }

@@ -36,7 +36,7 @@ export default function Home() {
       <p>Examples</p>
       <ol>
         <li>
-          <Link to="">Todo list</Link>
+          <Link to="todo">Todo App</Link>
         </li>
       </ol>
     </>  
