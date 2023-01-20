@@ -62,7 +62,7 @@ function App() {
 //   const DATA = {
 //     username: 'danaka',
 //     image: 'https://image.xportsnews.com/contents/images/upload/article/2022/1206/mb_1670300078707386.jpg',
-//     bio: '안녕하세요 여러붕구, 다나카입니다'
+//     bio: '안녕하세요 여러붕구, 다나카입니다 ^00^'
 //   }
   
 //   const promise = new Promise((res, rej) => {
