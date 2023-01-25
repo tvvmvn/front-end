@@ -7,126 +7,102 @@
   <title>Document</title>
 </head>
 <body>
-<!-- # Height -->
 
   <!-- <h1>height</h1>
 
   <style>
-    .container {
+    .item {
       background-color: #ddd;
     }
-    .item {
-      border: 1px dashed; 
-    }
-    .item:nth-child(2) {
+    .h-auto {
       height: auto;
     }
-    .item:nth-child(4) {
+    .h-100px {
       height: 100px;
     }
   </style>
 
-  <div class="container">
-    <h3>height: auto</h3>
-    <div class="item">item</div>
-    <h3>height: 100px</h3>
-    <div class="item">item</div>
-  </div> -->
+  <h3>height: auto</h3>
+  <div class="item h-auto">item</div>
+  <h3>height: 100px</h3>
+  <div class="item h-100px">item</div> -->
+
 
   <!-- <h1>max-height</h1> 
 
   <style>
     .item {
-      border: 1px dashed;
+      background-color: #ddd;
+    }
+    .max-h-50px {
       max-height: 50px;
     }
   </style>
 
-  <div class="container">
-    <div class="item">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-    </div>
-
-    <br>
     
-    <div class="item">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-      Illum ut consequuntur voluptates culpa labore corrupti porro reprehenderit accusantium, 
-      temporibus quos odit expedita. Facere cumque excepturi nulla facilis aliquam vel mollitia?
-    </div>
+  <h3>max-height: 50px</h3>
+  <div class="item max-h-50px">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+  </div>
+
+  <h3>max-height: 50px</h3>
+  <div class="item max-h-50px">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Illum ut consequuntur voluptates culpa labore corrupti porro reprehenderit accusantium, 
+    temporibus quos odit expedita. Facere cumque excepturi nulla facilis aliquam vel mollitia?
   </div> -->
+
 
   <!-- <h1>min-height</h1>
 
   <style>
     .item {
-      border: 1px dashed;
+      background-color: #ddd;
       display: inline-block;
+    }
+    .min-height-50px {
       min-height: 50px;
     }
   </style>
 
-  <div class="container">
-    <h3>min-height: 50px;</h3>
-    <div class="item">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-    </div>
-    <h3>min-height: 50px;</h3>
-    <div class="item">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-      Illum ut consequuntur voluptates culpa labore corrupti porro reprehenderit accusantium, 
-      temporibus quos odit expedita. Facere cumque excepturi nulla facilis aliquam vel mollitia?
-    </div>
+  <h3>min-height: 50px;</h3>
+  <div class="item min-height-50px">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+  </div>
+
+  <h3>min-height: 50px;</h3>
+  <div class="item min-height-50px">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Illum ut consequuntur voluptates culpa labore corrupti porro reprehenderit accusantium, 
+    temporibus quos odit expedita. Facere cumque excepturi nulla facilis aliquam vel mollitia?
   </div> -->
 
-  <!-- <h1>Q. Ireland flag</h1>
+
+  <h1>Q. flag</h1>
 
   <style>
-    .item {
-      width: 50px;
-      height: 100px;
-      display: inline-block;
-    }
-    .item:nth-child(1) {
-      background-color: green
-    }
-    .item:nth-child(2) {
-      background-color: #fff;
-    }
-    .item:nth-child(3) {
-      background-color: orange;
-    }
+    .inline-block {display: inline-block}
+    .block {display: block;}
+    .w-50px {width: 50px}
+    .w-150px {width: 150px}
+    .h-100px {height: 100px}
+    .h-16px {height: 35px}
+    .bg-green {background-color: green;}
+    .bg-red {background-color: red;}
+    .bg-blue {background-color: blue;}
+    .bg-yellow {background-color: gold;}
   </style>
 
-  <div class="container">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-  </div> -->
+  <h3>Ireland</h3>
+  <div class="inline-block w-50px h-100px bg-green"></div>
+  <div class="inline-block w-50px h-100px bg-white"></div>
+  <div class="inline-block w-50px h-100px bg-yellow"></div>
 
-  <!-- <h1>Q. Netherlands flag</h1>
+  <h3>Netherlands</h3>
 
-  <style>
-    .item {
-      width: 150px;
-      height: 30px;
-      display: block;
-    }
-    .item:nth-child(1) {
-      background-color: red;
-    }
-    .item:nth-child(2) {
-      background-color: white;
-    }
-    .item:nth-child(3) {
-      background-color: blue;
-    }
-  </style>
+  <div class="block w-150px h-16px bg-red"></div>
+  <div class="block w-150px h-16px"></div>
+  <div class="block w-150px h-16px bg-blue"></div>
 
-  <div class="container">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-  </div> -->
 </body>
 </html>

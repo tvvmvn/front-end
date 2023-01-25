@@ -81,16 +81,16 @@ function App() {
 //   const [isLoaded, setIsLoaded] = useState(false);
 //   const [profile, setProfile] = useState(null);
 
-//   useEffect(() => {
-//     fetchData()
-//     .then(data => {
-//       setProfile(data)
-//     })
-//     .catch(error => {
-//       setError(error)
-//     })
-//     .finally(() => setIsLoaded(true))
-//   }, [])
+  // useEffect(() => {
+  //   fetchData()
+  //     .then(data => {
+  //       setProfile(data)
+  //     })
+  //     .catch(error => {
+  //       setError(error)
+  //     })
+  //     .finally(() => setIsLoaded(true))
+  // }, [])
 
 //   if (error) {
 //     return <p>failed to fetch profile</p>
