@@ -7,84 +7,79 @@
   <title>Document</title>
 </head>
 <body>
-<!-- # Flex -->
 
-  <!-- <h1>flex</h1>
-  <p>display: flex</p>
+  <h1>flex &#129321;</h1>
 
   <style>
-    /* flex container */
     .container {
-      background-color: #ddd;
       display: flex;
-    }
-
-    /* flex item */
-    .item {
       border: 1px dashed;
-      padding: 0.5rem;
     }
-
-    /* # FLEX CONTAINER 속성 */
-
-    /* flex-direction(row): item의 배열 방향 */
-    /* row|row-reverse|column|column-reverse|initial|inherit */
-
-    /* flex-wrap(nowrap): item을 감쌀 것인지 결정 */
-    /* nowrap|wrap|wrap-reverse|initial|inherit; */
-
-    /* flex-flow(row nowrap): flex-direction flex-wrap */
-
-    /* justify-content(flex-start): item의 수평정렬(row), 수직정렬(column) */
-    /* flex-start|flex-end|center|space-between|space-around|space-evenly|initial|inherit; */
-
-    /* align-items(stretch): item의 수직정렬(row), 수평정렬(column) */
-    /* stretch|center|flex-start|flex-end|baseline|initial|inherit; */
-
-
-    /* # FLEX ITEM 속성 */
-    
-    /* flex-grow(0): item의 크기 증가 */
-    /* number|initial|inherit */
-    
-    /* flex-shrink(1): item의 크기 감소 */
-    /* number|initial|inherit; */
-    
-    /* flex-basis(auto): item의 넓이 */
-    /* number|auto|initial|inherit */
-    
-    /* flex(0 1 auto): flex-grow flow-shrink flex-basis */
-    
-    /* align-self(auto): 특정 item의 수평 정렬 */
-    /* auto|stretch|center|flex-start|flex-end|baseline|initial|inherit; */
-
-    /* order(0): item의 정렬 순서 */
-    /* number|initial|inherit */
+    .item {
+      padding: 0.5rem;
+      background-color: #ddd;
+    }
   </style>
 
   <div class="container">
     <div class="item">item</div>
     <div class="item">item</div>
     <div class="item">item</div>
-  </div> -->
+  </div>
 
-  <!-- # flex container properties -->
-  <!-- <h1>flex container</h1>
+  <pre>
+    # FLEX CONTAINER 속성
+  
+    - flex-direction(row): item의 배열 방향
+    row|row-reverse|column|column-reverse
+  
+    - flex-wrap(nowrap): item을 감쌀 것인지 여부 
+    nowrap|wrap|wrap-reverse
+  
+    - flex-flow(row nowrap): flex-direction flex-wrap 속기
+  
+    - justify-content(flex-start): item의 수평정렬(flex-direction: row), 수직정렬(flex-direction: column)
+    flex-start|flex-end|center|space-between|space-around|space-evenly
+  
+    - align-items(stretch): item의 수직정렬(flex-direction: row), 수평정렬(flex-direction: column)
+    stretch|center|flex-start|flex-end|baseline
+  
+  
+    # FLEX ITEM 속성
+    
+    - flex-grow(0): item의 크기 증가
+    number
+    
+    - flex-shrink(1): item의 크기 측소
+    number
+    
+    - flex-basis(auto): item의 넓이
+    number|auto
+    
+    - flex(0 1 auto): flex-grow flow-shrink flex-basis 속기
+  
+    - order(0): item의 정렬 순서
+    number
+  </pre>
+
+
+
+  <!-- <h1>flex direction</h1>
 
   <style>
     .container {
       display: flex;
+      border: 1px dashed;
+    }
+    .item {
       background-color: #ddd;
+      padding: 0.5rem;
     }
     .flex-row {
       flex-direction: row;
     }
     .flex-col {
       flex-direction: column;
-    }
-    .item {
-      border: 1px dashed;
-      padding: 0.5rem;
     }
   </style>
 
@@ -103,14 +98,18 @@
     <div class="item">item</div>
   </div> -->
 
-  <!-- flex wrap -->
 
-  <!-- <h1>flex container</h1>
+  <!-- <h1>flex wrap</h1>
 
   <style>
     .container {
       display: flex;
+      border: 1px dashed;
+    }
+    .item {
       background-color: #ddd;
+      width: 200px;
+      padding: 0.5rem;
     }
     .flex-wrap {
       flex-wrap: wrap
@@ -118,12 +117,7 @@
     .flex-nowrap {
       flex-wrap: nowrap
     }
-    .item {
-      border: 1px dashed;
-      padding: 0.5rem;
-      width: 200px;
-    }
-  </style>
+    </style>
   
   <h3>flex-wrap: nowrap(default)</h3>
   <div class="container flex-nowrap">
@@ -139,18 +133,18 @@
     <div class="item">item</div>
   </div> -->
 
-  <!-- justify-content -->
 
-  <!-- <h1>flex container</h1>
+  <!-- <h1>justify-content (row)</h1>
 
   <style>
     .container {
       display: flex;
-      background-color: #ddd;
+      flex-direction: row;
+      border: 1px dashed;
     }
     .item {
       padding: 0.5rem;
-      border: 1px dashed;
+      background-color: #ddd;
     }
     .justify-start {
       justify-content: flex-start;
@@ -194,17 +188,19 @@
     <div class="item">item</div>
   </div> -->
 
-  <!-- <h1>flex container</h1>
+
+  <!-- <h1>justify-content (column)</h1>
 
   <style>
     .container {
       display: flex;
       flex-direction: column;
-      background-color: #ddd;
-      height: 100px;
+      border: 1px dashed;
+      height: 200px;
     }
     .item {
-      border: 1px dashed;
+      padding: 0.5rem;
+      background-color: #ddd;
     }
     .justify-start {
       justify-content: flex-start;
@@ -248,18 +244,19 @@
     <div class="item">item</div>
   </div> -->
 
-  <!-- align-items -->
 
-  <!-- <h1>flex container</h1>
+  <!-- <h1>align items (row)</h1>
 
   <style>
     .container {
       display: flex;
-      background-color: #ddd;
+      flex-direction: row;
+      border: 1px dashed;
       height: 100px;
     }
     .item {
-      border: 1px dashed;
+      background-color: #ddd;
+      padding: 0.5rem;
     }
     .items-stretch {
       align-items: stretch
@@ -303,17 +300,18 @@
     <div class="item">item</div>
   </div> -->
 
-  <!-- <h1>flex container</h1>
+  
+  <!-- <h1>align items (column)</h1>
 
   <style>
     .container {
       display: flex;
       flex-direction: column;
-      background-color: #ddd;
-      height: 100px;
+      border: 1px dashed;
     }
     .item {
-      border: 1px dashed;
+      background-color: #ddd;
+      padding: 0.5rem;
     }
     .items-stretch {
       align-items: stretch;
@@ -357,31 +355,116 @@
     <div class="item">item</div>
   </div> -->
 
+
   <!-- <h1>Q. flex container</h1>
-  <p>justify-content, align-items</p>
 
   <style>
     .container {
-      width: 200px;
       height: 100px;
-      background-color: green;
       display: flex;
-      flex-direction: row;
-      justify-content: center;
+      border: 1px dashed;
+      justify-content: space-between;
       align-items: center;
     }
     .item {
-      color: red;
-      font-size: 50px;
+      padding: 0.5rem;
+      background-color: #ddd;
     }
   </style>
 
-  <h1>HEINEKEN</h1>
   <div class="container">
-    <div class="item">&#9733;</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div> -->
 
-  <!-- flex item properties -->
+
+
+  <!-- <h1>flex grow</h1>
+  <p>an item fills available space of container</p>
+
+  <style>
+    .container {
+      border: 1px dashed;
+      display: flex;
+    }
+    .item {
+      background-color: #ddd;
+      padding: 0.5rem;
+    }
+    .grow {
+      /* default */
+      flex-grow: 0;
+    }
+    .grow {
+      flex-grow: 1;
+    }
+  </style>
+
+  <div class="container">
+    <div class="item grow-0">item</div>
+    <div class="item grow">item(grow)</div>
+  </div> -->
+
+
+  <!-- <h1>flex shrink</h1>
+  <p>items are basically shrinkable</p>
+
+  <style>
+    .container {
+      border: 1px dashed;
+      display: flex;
+    }
+    .item {
+      width: 200px;
+      background-color: #ddd;
+      padding: 0.5rem;
+    }
+    .item:nth-child(2) {
+      flex-shrink: 0;
+    }
+    .shrink {
+      flex-shrink: 1;
+    }
+    .shrink-0 {
+      flex-shrink: 0;
+    }
+    .bg-blue {
+      background-color: #0af;
+    }
+  </style>
+
+  <div class="container">
+    <div class="item">item</div>
+    <div class="item shrink-0 bg-blue">item (not shrink)</div>
+    <div class="item">item</div>
+  </div> -->
+
+
+
+  <!-- <h1>flex basis</h1>
+  <p>width of flex items</p>
+
+  <style>
+    .container {
+      border: 1px dashed;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .item {
+      background-color: #ddd;
+      padding: 0.5rem;
+      flex-basis: 33.33333%;
+    }
+  </style>
+
+  <div class="container">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div> -->
+
+
 
   <!-- <h1>order</h1>
   <p>order for flex items</p>
@@ -410,81 +493,6 @@
     <div class="item">item 1</div>
     <div class="item">item 2</div>
     <div class="item">item 3</div>
-  </div> -->
-
-  <!-- flex-grow -->
-
-  <!-- <h1>flex-grow</h1>
-  <p>an item fills available space of container</p>
-
-  <style>
-    .container {
-      background-color: #ddd;
-      display: flex;
-    }
-    .item {
-      border: 1px dashed;
-      padding: 0.5rem;
-      flex-grow: 0;
-    }
-    .item:nth-child(2) {
-      flex-grow: 1;
-    }
-  </style>
-
-  <div class="container">
-    <div class="item">item</div>
-    <div class="item">item(grow)</div>
-    <div class="item">item</div>
-  </div> -->
-
-  <!-- <h1>flex shrink</h1>
-  <p>items are basically shrinkable</p>
-
-  <style>
-    .container {
-      background-color: #ddd;
-      display: flex;
-    }
-    .item {
-      width: 200px;
-      border: 1px dashed;
-      flex-shrink: 1;
-      padding: 0.5rem;
-    }
-    .item:nth-child(2) {
-      flex-shrink: 0;
-    }
-  </style>
-
-  <div class="container">
-    <div class="item">item</div>
-    <div class="item">item (not shrink)</div>
-    <div class="item">item</div>
-  </div> -->
-
-  <!-- <h1>flex-basis</h1>
-  <p>width of flex items</p>
-
-  <style>
-    .container {
-      background-color: #ddd;
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .item {
-      border: 1px dashed;
-      padding: 0.5rem;
-      /* works only on wrap */
-      flex-basis: 50%;
-      box-sizing: border-box;
-    }
-  </style>
-
-  <div class="container">
-    <div class="item">item</div>
-    <div class="item">item</div>
-    <div class="item">item</div>
   </div> -->
 
   <!-- <h1>align-self</h1>
@@ -541,5 +549,6 @@
     <div class="item">item</div>
     <div class="item">item</div>
   </div> -->
+
 </body>
 </html>

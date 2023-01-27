@@ -8,17 +8,19 @@
 </head>
 <body>
 
-  <h1>float</h1>
+  <h1>float &#128519;</h1>
   <p>float element to left or right</p>
 
   <style>
     .container {
-      background-color: #ddd;
+      border: 1px dashed;
+    }
+    .clear-both {
+      clear: both;
     }
     .item {
-      width: 50px;
-      height: 50px;
-      border: 1px dashed;
+      background-color: #ddd;
+      padding: 0.5rem;
     }
     .float-left {
       float: left;
@@ -29,22 +31,17 @@
   </style>
 
   <h3>float: left</h3>
-  <div class="container">
-    <div class="item float-left">item</div>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus esse, dicta asperiores, magnam voluptatem dolorum,
-      sint quisquam neque totam autem accusantium! Vitae quis deserunt laborum animi ut nostrum magnam voluptates?
-    </p>
-  </div>
+  <div class="item float-left">item</div>
+  <div class="item float-left">item</div>
+  <div class="item float-left">item</div>
+
+  <div class="clear-both"></div>
 
   <h3>float: right</h3>
-  <div class="container">
-    <div class="item float-right">item</div>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus esse, dicta asperiores, magnam voluptatem dolorum,
-      sint quisquam neque totam autem accusantium! Vitae quis deserunt laborum animi ut nostrum magnam voluptates?
-    </p>
-  </div>
+  <div class="item float-right">item</div>
+  <div class="item float-right">item</div>
+  <div class="item float-right">item</div>
+  
   
 </body>
 </html>

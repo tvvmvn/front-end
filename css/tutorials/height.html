@@ -12,7 +12,7 @@
 
   <style>
     .item {
-      background-color: #ddd;
+      background-color: #ddd
     }
     .h-auto {
       height: auto;
@@ -24,6 +24,7 @@
 
   <h3>height: auto</h3>
   <div class="item h-auto">item</div>
+  
   <h3>height: 100px</h3>
   <div class="item h-100px">item</div> -->
 
@@ -42,7 +43,7 @@
     
   <h3>max-height: 50px</h3>
   <div class="item max-h-50px">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    item
   </div>
 
   <h3>max-height: 50px</h3>
@@ -58,7 +59,6 @@
   <style>
     .item {
       background-color: #ddd;
-      display: inline-block;
     }
     .min-height-50px {
       min-height: 50px;
@@ -67,7 +67,7 @@
 
   <h3>min-height: 50px;</h3>
   <div class="item min-height-50px">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    item
   </div>
 
   <h3>min-height: 50px;</h3>
@@ -78,31 +78,40 @@
   </div> -->
 
 
-  <h1>Q. flag</h1>
+  <h1>Q. display, width/height</h1>
 
   <style>
-    .inline-block {display: inline-block}
-    .block {display: block;}
-    .w-50px {width: 50px}
-    .w-150px {width: 150px}
-    .h-100px {height: 100px}
-    .h-16px {height: 35px}
+    #ireland .item {
+      width: 50px;
+      height: 100px;
+      display: inline-block;
+    }
+    #netherlands .item {
+      width: 160px;
+      height: 40px;
+    }
     .bg-green {background-color: green;}
+    .bg-white {background-color: #fff;}
+    .bg-gold {background-color: gold;}
     .bg-red {background-color: red;}
     .bg-blue {background-color: blue;}
-    .bg-yellow {background-color: gold;}
+    
   </style>
 
   <h3>Ireland</h3>
-  <div class="inline-block w-50px h-100px bg-green"></div>
-  <div class="inline-block w-50px h-100px bg-white"></div>
-  <div class="inline-block w-50px h-100px bg-yellow"></div>
+  <div id="ireland">
+    <div class="item bg-green"></div>
+    <div class="item bg-white"></div>
+    <div class="item bg-gold"></div>
+  </div>
 
   <h3>Netherlands</h3>
 
-  <div class="block w-150px h-16px bg-red"></div>
-  <div class="block w-150px h-16px"></div>
-  <div class="block w-150px h-16px bg-blue"></div>
+  <div id="netherlands">
+    <div class="item bg-red"></div>
+    <div class="item bg-white"></div>
+    <div class="item bg-blue"></div>
+  </div>
 
 </body>
 </html>

@@ -13,16 +13,20 @@
   
   <style>
     .container {
-      background-color: #ddd;
+      border: 1px dashed;
+      overflow: auto;
     }
     .item {
-      border: 1px dashed;
+      background-color: #ddd;
       display: inline-block;
       width: 200px;
     }
     .whitespace-normal {
       /* container wraps the items */
       white-space: normal;
+    }
+    .whitespace-nowrap {
+      white-space: nowrap;
     }
   </style>
   
@@ -34,28 +38,13 @@
     <div class="item">item</div>
   </div> 
 
-  <!-- <h1>white-space</h1>
-  
-  <style>
-    .container {
-      background-color: #ddd;
-    }
-    .item {
-      border: 1px dashed;
-      display: inline-block;
-      width: 200px;
-    }
-    .whitespace-nowrap {
-      white-space: nowrap;
-    }
-  </style>
-
   <h3>whitespace: nowrap</h3>
 
   <div class="container whitespace-nowrap">
     <div class="item">item</div>
     <div class="item">item</div>
     <div class="item">item</div>
-  </div> -->
+  </div>
+
 </body>
 </html>

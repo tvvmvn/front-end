@@ -11,66 +11,37 @@
   <h1>transform</h1>
   <p>translate, scale, rotate</p>
 
-  <h3>translate</h3>
-  <p>moves from its' base position</p>
-
   <style>
-    .container {
+    .item {
       background-color: #ddd;
       width: 100px;
       height: 100px;
     }
-    .item {
-      border: 1px dashed;
-      transform: translate(10px, 10px);
+    .translate-4 {
+      /* translate(x, y) */
+      transform: translate(1rem, 1rem);
+    }
+    .scale-110 {
+      transform: scale(1.1);
+    }
+    .rotate-12 {
+      transform: rotate(12deg)
     }
   </style>
 
-  <div class="container">
-    <div class="item">item</div>
-  </div>
+  <h3>transform: none(default)</h3>
+  <div class="item"></div>
 
-
-
-  <!-- <h1>transform</h1>
-  <p>scale</p>
-
-  <style>
-    .container {
-      background-color: #ddd;
-    }
-    .item {
-      border: 1px dashed;
-      padding: 0.5rem;
-      display: inline-block;
-    }
-    .item:nth-child(2) {
-      transform: scale(2, 2)
-    }
-  </style>
-
-  <div class="container">
-    <div class="item">item</div>
-    <div class="item">item</div>
-    <div class="item">item</div>
-  </div> -->
-
-
+  <h3>transform: translate</h3>
+  <div class="item translate-4"></div>
   
-  <!-- <h1>transform</h1>
-  <p>rotate</p>
+  <h3>transform: scale</h3>
+  <div class="item scale-110"></div>
 
-  <style>
-    .item {
-      padding: 0.5rem;
-      display: inline-block;
-      border: 1px dashed;
-      transform: rotate(45deg);
-    }
-  </style>
+  <h3>transform: rotate</h3>
+  <div class="item rotate-12"></div>
 
-  <div class="container">
-    <div class="item">item</div>
-  </div> -->
+
+
 </body>
 </html>
