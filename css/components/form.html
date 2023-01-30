@@ -8,102 +8,81 @@
 </head>
 <body>
 
-  <!-- <style>
-    * {box-sizing: border-box}
+
+  <!-- <h1>Search</h1>
+
+  <style>
     form {
-      max-width: 300px;
-      margin: 0 auto;
-    }
-    h1 {
-      height: 100px;
+      /* border: 1px dashed; */
       display: flex;
-      justify-content: center;
-      align-items: flex-end;
-    }
-    .form-group {
-      position: relative;
+      max-width: 300px;
+      margin: auto;
     }
     input {
-      width: 100%;
-      padding: 0.5rem 1rem;
-      border-radius: 1rem;
+      padding: 0.5rem;
+      flex-grow: 1;
       border: 1px solid #ddd;
-      outline: none;
     }
     button {
-      position: absolute;
-      top: 0;
-      right: 0rem; 
-      width: 3rem;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: transparent;
-      border: none;
       cursor: pointer;
     }
   </style>
   
-  <form action="">
-    <h1>G o o g l e</h1>
-    <div class="form-group">
-      <input type="text"> 
-      <button>&#128269;</button>
-    </div>
-  </form> -->
+  <form action="#">
+    <input type="text"> 
+    <button>Search</button>
+  </form>  -->
 
 
-  <!-- <style>
-    * {box-sizing: border-box;}
+
+  <!-- <h1>Contact</h1>
+
+  <style>
     form {
       /* border: 1px dashed; */
+      max-width: 300px;
     }
-    .form-group {margin-bottom: 0.5rem;}
-    .form-group:nth-of-type(2) {
-      display: flex;
-      justify-content: flex-end;
+    .form-group {
+      margin-bottom: 0.5rem;
     }
-    textarea {
+    label {
       display: block;
-      width: 100%;
+      font-weight: bold;
+    }
+    input, textarea {
       padding: 0.5rem;
+      width: 100%;
       border: 1px solid #ddd;
-      outline: none;
+      box-sizing: border-box;
     }
     button {
       padding: 0.5rem;
-      border: none;
-      background-color: #333;
-      color: #fff;
       cursor: pointer;
     }
   </style>
 
   <form action="">
-    <h1>Comments</h1>
     <div class="form-group">
-      <textarea name="" id="comments" cols="30" rows="3" placeholder="comments..."></textarea>
+      <label for="">Name</label>
+      <input type="text">
     </div>
     <div class="form-group">
-      <button>Submit</button>
+      <label for="">Phone</label>
+      <input type="text">
     </div>
+    <div class="form-group">
+      <label for="">Message</label>
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+    </div>
+    <button type="submit">Send</button>
   </form> -->
 
 
 
   <style>
-    * {box-sizing: border-box;}
     form {
-      padding: 1rem;
       max-width: 300px;
-      margin: 0 auto;
-    }
-    h1 {
-      height: 100px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      margin: 100px auto 0;
     }
     .form-group {
       margin-bottom: 0.5rem;
@@ -111,27 +90,15 @@
     label {
       display: block;
     }
-    input[type=text], input[type=password] {
+    input {
       padding: 0.5rem;
       width: 100%;
       border: 1px solid #ddd;
+      box-sizing: border-box;
     }
-    .relative {
-      position: relative;
-    }
-    button[type=button] {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-      background-color: transparent;
-      border: none;
-    }
-    button[type=submit] {
+    button {
       width: 100%;
       padding: 0.5rem;
-      background-color: #333;
-      color: #fff;
       border: none;
       cursor: pointer;
     }
@@ -147,12 +114,12 @@
       <label for="password">Password</label>
       <div class="relative">
         <input type="password" id="password" autocomplete="off">
-        <button type="button">Show</button>
       </div>
     </div>
     <div class="form-group">
       <button type="submit">Login</button>
     </div>
+    <a href="#">Sign Up</a>
   </form>
 
 </body>

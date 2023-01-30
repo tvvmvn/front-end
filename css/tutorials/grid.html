@@ -8,27 +8,50 @@
 </head>
 <body>
 
-<h1>grid</h1>
+  <h1>grid</h1>
 
   <style>
-    .container {
-      background-color: #ddd;
+    .grid {
       display: grid;
-      /* minmax(min, max) */
-      /* minmax(>=min, <=max) */
-      /* minmax() CSS function defines a size range greater than or equal to min 
-      and less than or equal to max. It is used with CSS Grids */
-      /* fr: fraction (분수) */
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.25rem;
+      gap: 0.5rem;
     }
+    .grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .grid-cols-6 {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
     .item {
-      border: 1px dashed;
+      background-color: #ddd;
       padding: 0.5rem;
+    }
+    .col-span-2 {
+      grid-column: span 2 / span 2;
+    }
+    .col-span-4 {
+      grid-column: span 4 / span 4;
+    }
+    .col-start-1 {
+      grid-column-start: 1;
+    }
+    .col-start-2 {
+      grid-column-start: 2;
+    }
+    .col-end-3 {
+      grid-column-end: 3;
+    }
+    .col-end-4 {
+      grid-column-end: 4;
+    }
+    .col-end-7 {
+      grid-column-end: 7;
     }
   </style>
 
-  <div class="container">
+  <h3>basic</h3>
+
+  <div class="grid grid-cols-3">
     <div class="item">item</div>
     <div class="item">item</div>
     <div class="item">item</div>
@@ -39,6 +62,37 @@
     <div class="item">item</div>
     <div class="item">item</div>
   </div>
+
+  <h3>column span</h3>
+
+  <div class="grid grid-cols-3">
+    <div class="item">item 1</div>
+    <div class="item">item 2</div>
+    <div class="item">item 3</div>
+    <div class="item col-span-2">item 4</div>
+    <div class="item">item 5</div>
+    <div class="item">item 6</div>
+    <div class="item col-span-2">item 7</div>
+  </div>
+
+  <h3>column start, column end</h3>
+
+  <div class="grid grid-cols-6">
+    <div class="item col-start-2 col-span-4">item 1</div>
+    <div class="item col-start-1 col-end-3">item 2</div>
+    <div class="item col-end-7 col-span-2">item 3</div>
+    <div class="item col-start-1 col-end-7">item 4</div>
+  </div>
+
+  <!-- <h1>Q. grid</h1>
+
+  <div class="grid grid-cols-3">
+    <div class="item">item</div>
+    <div class="item col-span-2">item</div>
+    <div class="item col-span-2">item</div>
+    <div class="item">item</div>
+  </div> -->
   
+
 </body>
 </html>

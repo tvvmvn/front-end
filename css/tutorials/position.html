@@ -8,175 +8,95 @@
 </head>
 <body>
 
-  <h1>position</h1>
+  <!-- <h1>position</h1>
   <p>static relative absolute fixed</p>
 
   <style>
-    .container {
-      background-color: #ddd;
-    }
     .item {
-      border: 1px dashed;
+      display: inline-block;
+      background-color: #ddd;
+      padding: 0.5rem;
     }
     .static {
       /* default  */
       position: static;
     }
-  </style>
-
-  <h3>position: static</h3>
-  <p>elements have static position</p>
-
-  <div class="container">
-    <div class="item static">static</div>
-    <div class="item static">static</div>
-    <div class="item static">static</div>
-  </div>
-
-
-
-  <!-- <h1>position</h1>
-
-  <style>
-    .container {
-      background-color: #ddd;
-    }
-    .item {
-      border: 1px dashed;
-      display: inline-block;
-    }
-    .item:nth-child(2) {
-      top: 10px;
-      left: 10px;
-    }
     .relative {
       position: relative;
     }
+    .top-2 {
+      top: 0.5rem;
+    }
+    .left-2 {
+      left: 0.5rem;
+    }
   </style>
+
+  <h3>position: static</h3>
+
+  <div class="item static">static</div>
+  <div class="item static">static</div>
+  <div class="item static">static</div>
 
   <h3>position: relative</h3>
-  <p>relative position to it's natural position</p>
 
-  <div class="container">
-    <div class="item">static</div>
-    <div class="item relative">relative</div>
-    <div class="item">static</div>
-  </div> -->
+  <div class="item static">static</div>
+  <div class="item relative top-2 left-2">relative</div>
+  <div class="item static">static</div> -->
 
 
-
-  <!-- <h1>position</h1>
-
+  <!-- <h3>position: absolute</h3>
+  
   <style>
     .container {
-      background-color: #ddd;
-      width: 100px;
-      height: 100px;
-      position: relative;
-    }
-    .item {
-      border: 1px dashed;
-      position: absolute;
-    }
-    .item:nth-child(1) {
-      top: 0;
-      left: 0;
-    }
-    .item:nth-child(2) {
-      top: 0;
-      right: 0;
-    }
-    .item:nth-child(3) {
-      bottom: 0;
-      left: 0;
-    }
-    .item:nth-child(4) {
-      bottom: 0;
-      right: 0;
-    }
-  </style>
-
-  <h3>position: absolute</h3>
-  <p>absolute position based on parent(relative position)</p>
-
-  <div class="container">
-    <div class="item">item</div>
-    <div class="item">item</div>
-    <div class="item">item</div>
-    <div class="item">item</div>
-  </div> -->
-
-
-
-  <!-- <h1>position</h1>
-
-  <style>
-    body {
-      min-height: 1000px;
-    }
-    .container {
-      background-color: #ddd;
-      width: 100px;
-      height: 100px;
-      position: relative;
-    }
-    .item {
-      border: 1px dashed;
-      position: fixed;
-    }
-    .item:nth-child(1) {
-      top: 0;
-      left: 0;
-    }
-    .item:nth-child(2) {
-      top: 0;
-      right: 0;
-    }
-    .item:nth-child(3) {
-      bottom: 0;
-      left: 0;
-    }
-    .item:nth-child(4) {
-      bottom: 0;
-      right: 0;
-    }
-  </style>
-
-  <h3>position: fixed</h3>
-  <p>position based on viewport</p>
-
-  <div class="container">
-    <div class="item">item</div>
-    <div class="item">item</div>
-    <div class="item">item</div>
-    <div class="item">item</div>
-  </div> -->
-
-
-
-  <!-- <h1>Q. position</h1>
-
-  <style>
-    .container {
-      position: relative;
-      background-color: green;
       position: relative;
       width: 200px;
       height: 100px;
+      border: 1px dashed;
     }
     .item {
-      color: red;
-      font-size: 50px;
+      background-color: #ddd;
+      padding: 0.5rem;
+    }
+    .absolute {
       position: absolute;
-      top: 20px;
-      left: 75px;
+    }
+    .left-0 {
+      left: 0;
+    }
+    .bottom-0 {
+      bottom: 0;
     }
   </style>
 
-  <h3>HEINEKEN</h3>
   <div class="container">
-    <div class="item">&#9733</div>
+    <div class="item absolute left-0 bottom-0">item</div>
   </div> -->
+
   
+  <!-- <h3>position: fixed</h3>
+
+  <style>
+    body {
+      height: 1000px;
+    }
+    .item {
+      background-color: #ddd;
+      padding: 0.5rem;
+    }
+    .fixed {
+      position: fixed;
+    }
+    .top-0 {
+      top: 0;
+    }
+    .right-0 {
+      right: 0;
+    }
+  </style>
+
+  <div class="item fixed top-0 right-0">item</div> -->
+  
+
 </body>
 </html>

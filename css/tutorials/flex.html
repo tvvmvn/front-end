@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <h1>flex &#129321;</h1>
+  <!-- <h1>flex &#129321;</h1>
 
   <style>
     .container {
@@ -56,11 +56,11 @@
     - flex-basis(auto): item의 넓이
     number|auto
     
-    - flex(0 1 auto): flex-grow flow-shrink flex-basis 속기
+    - flex(0 1 auto): flex-grow flex-shrink flex-basis 속기
   
     - order(0): item의 정렬 순서
     number
-  </pre>
+  </pre> -->
 
 
 
@@ -181,7 +181,7 @@
     <div class="item">item</div>
   </div>
 
-  <h3>justify-content: flex-start</h3>
+  <h3>justify-content: flex-end</h3>
   <div class="container justify-end">
     <div class="item">item</div>
     <div class="item">item</div>
@@ -361,10 +361,11 @@
   <style>
     .container {
       height: 100px;
-      display: flex;
       border: 1px dashed;
+      display: flex;
+      flex-direction: row;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-end;
     }
     .item {
       padding: 0.5rem;
@@ -381,7 +382,6 @@
 
 
   <!-- <h1>flex grow</h1>
-  <p>an item fills available space of container</p>
 
   <style>
     .container {
@@ -389,15 +389,16 @@
       display: flex;
     }
     .item {
-      background-color: #ddd;
       padding: 0.5rem;
     }
-    .grow {
+    .grow-0 {
+      background-color: #ddd;
       /* default */
       flex-grow: 0;
     }
     .grow {
       flex-grow: 1;
+      background-color: #0bf;
     }
   </style>
 
@@ -408,7 +409,6 @@
 
 
   <!-- <h1>flex shrink</h1>
-  <p>items are basically shrinkable</p>
 
   <style>
     .container {
@@ -417,51 +417,65 @@
     }
     .item {
       width: 200px;
-      background-color: #ddd;
       padding: 0.5rem;
     }
-    .item:nth-child(2) {
-      flex-shrink: 0;
-    }
     .shrink {
+      background-color: #ddd;
+      /* default */
       flex-shrink: 1;
     }
     .shrink-0 {
       flex-shrink: 0;
-    }
-    .bg-blue {
-      background-color: #0af;
+      background-color: #0bf;
     }
   </style>
 
   <div class="container">
-    <div class="item">item</div>
-    <div class="item shrink-0 bg-blue">item (not shrink)</div>
-    <div class="item">item</div>
+    <div class="item shrink">item</div>
+    <div class="item shrink-0">item (not shrink)</div>
+    <div class="item shrink">item</div>
   </div> -->
 
 
-
   <!-- <h1>flex basis</h1>
-  <p>width of flex items</p>
 
   <style>
     .container {
       border: 1px dashed;
       display: flex;
-      flex-wrap: wrap;
     }
     .item {
       background-color: #ddd;
       padding: 0.5rem;
-      flex-basis: 33.33333%;
+    }
+    .basis-auto {
+      /* default */
+      flex-basis: auto;
+    }
+    .basis-100px {
+      flex-basis: 100px;
+    }
+    .basis-50 {
+      flex-basis: 50%;
     }
   </style>
 
+  <h3>flex basis: auto (default)</h3>
   <div class="container">
-    <div class="item">item</div>
-    <div class="item">item</div>
-    <div class="item">item</div>
+    <div class="item basis-auto">item</div>
+    <div class="item basis-auto">item</div>
+  </div>
+  
+  <h3>flex basis: 100px</h3>
+  <div class="container">
+    <div class="item basis-100px">item</div>
+    <div class="item basis-100px">item</div>
+  </div>
+
+  <h3>flex basis: 50%</h3>
+  <div class="container">
+    <div class="item basis-50">item</div>
+    <div class="item basis-50">item</div>
   </div> -->
 
 
@@ -471,82 +485,54 @@
 
   <style>
     .container {
-      background-color: #ddd;
+      border: 1px dashed;
       display: flex;
     }
     .item {
-      border: 1px dashed;
+      background-color: #ddd;
       padding: 0.5rem;
     }
-    .item:first-child {
-      order: 3;
-    }
-    .item:nth-child(2) {
-      order: 2;
-    }
-    .item:last-child {
+    .order-1 {
       order: 1;
     }
+    .order-2 {
+      order: 2;
+    }
+    .order-none {
+      /* default */
+      order: 0
+    }
   </style>
 
   <div class="container">
-    <div class="item">item 1</div>
-    <div class="item">item 2</div>
-    <div class="item">item 3</div>
+    <div class="item order-2">item 1</div>
+    <div class="item order-1">item 2</div>
+    <div class="item order-none">item 3</div>
+    <div class="item order-none">item 4</div>
   </div> -->
 
-  <!-- <h1>align-self</h1>
-  <p>override align-items property of container</p>
-
-  <style>
-    .container {
-      background-color: #ddd;
-      display: flex;
-      align-items: center;
-      height: 100px;
-    }
-    .item {
-      width: 100px;
-      border: 1px dashed;
-    }
-    .item:nth-child(4) {
-      align-self: flex-start;
-    }
-  </style>
-  
-  <div class="container">
-    <div class="item">item 1</div>
-    <div class="item">item 2</div>
-    <div class="item">item 3</div>
-    <div class="item">item 4</div>
-  </div> -->
 
   <!-- <h1>Q. flex items</h1>
-  <p>flex-wrap, flex-basis</p>
 
   <style>
     .container {
       display: flex;
-      background-color: #ddd;
-      flex-wrap: wrap;
+      border: 1px dashed;
     }
     .item {
-      flex-basis: 33.33333%;
       box-sizing: border-box;
-      border: 1px dashed;
+      background-color: #ddd;
       padding: 0.5rem;
+    }
+    .grow {
+      flex-grow: 1;
+      background-color: #0bf;
     }
   </style>
 
   <div class="container">
     <div class="item">item</div>
-    <div class="item">item</div>
-    <div class="item">item</div>
-    <div class="item">item</div>
-    <div class="item">item</div>
-    <div class="item">item</div>
-    <div class="item">item</div>
-    <div class="item">item</div>
+    <div class="item grow">item</div>
     <div class="item">item</div>
   </div> -->
 
