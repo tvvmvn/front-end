@@ -103,10 +103,10 @@ export default function App() {
     /> 
   ))
 
-  // document
-  //   .body
-  //   .style
-  //   .backgroundColor = '#f1f1f1';
+  document
+    .body
+    .style
+    .backgroundColor = '#f1f1f1';
 
   return (
     <div className="max-w-sm mx-auto mt-8 border p-4 bg-white">
@@ -228,23 +228,21 @@ function Todo(props) {
         onChange={(e) => setNewName(e.target.value)}
         ref={inputEl}
       />
-      <div>
-        <div className="flex flex-nowrap gap-1">
-          <button
-            type="button"
-            className="w-1/2 p-1 border"
-            onClick={() => setIsEditing(false)}
-          >
-            Cancel
-          </button>
-          <button
-            type="submit"
-            className="w-1/2 p-1 border disabled:opacity-50 text-blue-500"
-            disabled={!newName.trim()}
-          >
-            Save
-          </button>
-        </div>
+      <div className="flex flex-nowrap gap-1">
+        <button
+          type="button"
+          className="w-1/2 p-1 border"
+          onClick={() => setIsEditing(false)}
+        >
+          Cancel
+        </button>
+        <button
+          type="submit"
+          className="w-1/2 p-1 border disabled:opacity-50 text-blue-500"
+          disabled={!newName.trim()}
+        >
+          Save
+        </button>
       </div>
     </form>
   )

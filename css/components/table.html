@@ -7,85 +7,38 @@
   <title>Document</title>
 </head>
 <body>
-<!-- # Table -->
   
-  <!-- <h1>Table: Basic</h1>
+  <h1>Table</h1>
 
   <style>
     table {
-      border-collapse: seperate;
-      /* border-collapse: collapse; */
-      caption-side: bottom;
+      /* default */
+      /* border-collapse: seperate; */
+      border-collapse: collapse;
     }
     caption {
       text-align: left;
+      caption-side: bottom;
     }
     td[scope=row] {
       font-weight: bold;
-    }
-    th, td {
-      border: 1px solid #eee;
-      padding: 0.5rem;
-    }
-  </style>
-
-  <table>
-    <caption>Caption</caption>
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Origin</th>
-        <th scope="col">Available</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td scope="row">1</td>
-        <td>Heineken</td>
-        <td>Netherlands</td>
-        <td>Yes</td>
-      </tr>
-      <tr>
-        <td scope="row">2</td>
-        <td>Guinness</td>
-        <td>Ireland</td>
-        <td>No</td>
-      </tr>
-      <tr>
-        <td scope="row">3</td>
-        <td colspan="2">Asahi, Japan</td>
-        <td>Yes</td>
-      </tr>
-    </tbody>
-  </table> -->
-
-
-  
-  <h1>Table: Striped rows</h1>
-
-  <style>
-    table {
-      border-collapse: collapse;
     }
     thead tr {
       border-bottom: 1px solid;
     }
-    td[scope=row] {
-      font-weight: bold;
+    tbody tr:nth-child(odd) {
+      background-color: #eee;
     }
     th, td {
       padding: 0.5rem;
     }
-    tbody tr:nth-child(odd) {
-      background-color: #eee;
-    }
   </style>
 
   <table>
+    <caption>* caption</caption>
     <thead>
       <tr>
-        <th scope="col">#</th>
+        <th scope="col">No</th>
         <th scope="col">Name</th>
         <th scope="col">Origin</th>
         <th scope="col">Available</th>
@@ -106,7 +59,8 @@
       </tr>
       <tr>
         <td scope="row">3</td>
-        <td colspan="2">Asahi, Japan</td>
+        <td>Budwiser</td>
+        <td>USA</td>
         <td>Yes</td>
       </tr>
     </tbody>
