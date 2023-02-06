@@ -11,7 +11,7 @@
   <h1>Modal</h1>
 
   <style>
-    .container {
+    .overlay {
       position: fixed;
       top: 0;
       left: 0;
@@ -19,24 +19,25 @@
       right: 0;
       background-color: rgba(0 0 0 / 0.2);
     }
-    .item {
+    
+    .modal {
       padding: 1rem;
       background-color: #fff;
-      max-width: 300px;
+      max-width: 20rem;
       margin: 100px auto 0;
       position: relative;
-      border-radius: 0.5rem;
+      border-radius: 1rem;
     }
+
     button {
       width: 100%;
       padding: 0.5rem;
       cursor: pointer;
-      /* background-color: transparent; */
     }
   </style>
 
-  <div class="container">
-    <div class="item">
+  <div class="overlay">
+    <div class="modal">
       <h1>Heading</h1>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. 

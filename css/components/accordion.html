@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Accordion</h1>
+
+  <style>
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      border-bottom: 1px solid #ddd;
+    }
+
+    input[type=checkbox] {
+      display: none;
+    }
+
+    label {
+      display: block;
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+    
+    label::after {
+      content: "+";
+      float: right;
+      transition: transform 0.2s;
+    }
+
+    input[type=checkbox]:checked ~ label::after {
+      transform: rotate(45deg);
+    }
+
+    .content {
+      /* border: 1px dashed; */
+      overflow-y: hidden;
+      max-height: 0;
+      transition: max-height 0.2s;
+    }
+
+    input[type=checkbox]:checked ~ .content {
+      max-height: 8rem;
+    }
+  </style>
+
+  <ul>
+    <li>
+      <input type="checkbox" name="" id="acc0">
+      <label for="acc0">Title</label>
+      <div class="content">
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet doloremque dignissimos quas aut expedita, adipisci temporibus obcaecati cupiditate maiores iste ex distinctio saepe molestias neque, ipsum quam vero dolorem. Aut.
+        </p>
+      </div>
+    </li>
+
+    <li>
+      <input type="checkbox" name="" id="acc1">
+      <label for="acc1">Title</label>
+      <div class="content">
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet doloremque dignissimos quas aut expedita, adipisci temporibus obcaecati cupiditate maiores iste ex distinctio saepe molestias neque, ipsum quam vero dolorem. Aut.
+        </p>
+      </div>
+    </li>
+
+    <li>
+      <input type="checkbox" name="" id="acc2">
+      <label for="acc2">Title</label>
+      <div class="content">
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet doloremque dignissimos quas aut expedita, adipisci temporibus obcaecati cupiditate maiores iste ex distinctio saepe molestias neque, ipsum quam vero dolorem. Aut.
+        </p>
+      </div>
+    </li>
+  </ul>
+
+</body>
+</html>

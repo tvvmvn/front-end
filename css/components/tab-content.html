@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Tab Content</h1>
+
+  <style>
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    input[type=radio] {
+      display: none;
+    }
+
+    label {
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+
+    input[type=radio]:checked + label {
+      font-weight: 600;
+      border-bottom: 2px solid;
+    }
+
+    p {
+      display: none;
+      width: 100%;
+      /* last item */
+      order: 1;
+    }
+
+    input[type=radio]:checked + label + p {
+      display: block;
+    }
+  </style>
+
+  <div class="container">
+    <input type="radio" name="tab-name" id="tab0" checked>
+    <label for="tab0">Tab 1</label>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam suscipit velit eligendi voluptatem ipsum dolorum culpa, consequatur alias totam nesciunt itaque illo nihil maxime illum tenetur reprehenderit ipsam! Voluptatibus, nostrum.
+    </p>
+
+    <input type="radio" name="tab-name" id="tab1">
+    <label for="tab1">Tab 2</label>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam suscipit velit eligendi voluptatem ipsum dolorum culpa, consequatur alias totam nesciunt itaque illo nihil maxime illum tenetur reprehenderit ipsam! 
+    </p>
+
+    <input type="radio" name="tab-name" id="tab2">
+    <label for="tab2">Tab 3</label>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    </p>
+  </div>
+  
+</body>
+</html>
