@@ -11,44 +11,51 @@
   <!-- <h1>Avatar</h1>
 
   <style>
-    .container {
-      display: inline-flex;
-      align-items: center;
-    }
     img {
+      border: 1px solid #ddd;
       width: 4rem;
       height: 4rem;
       object-fit: cover;
-      border-radius: 50%;
-      border: 1px solid #ddd;
-    }
-    h3 {
-      margin-left: 0.5rem;
+      border-radius: 2rem;
     }
   </style>
 
-  <div class="container">
-    <img src="https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&quality=85&auto=format&fit=max&s=a52bbe202f57ac0f5ff7f47166906403" alt="">
-    <h3>Kitty</h3>
-  </div> -->
+  <img src="https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&quality=85&auto=format&fit=max&s=a52bbe202f57ac0f5ff7f47166906403" alt=""> -->
 
 
+
+  <!-- <h1>Responsive image</h1>
+
+  <style>
+    img {
+      width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+    }
+  </style>
+
+  <img src="https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&quality=85&auto=format&fit=max&s=a52bbe202f57ac0f5ff7f47166906403" alt=""> -->
   
-  <!-- <h1>Scalable thumbnails</h1>
+
+
+  <!-- <h1>Scalable Image</h1>
 
   <style>
     .container {
-      overflow: hidden;
+      border: 1px solid #ddd;
       width: 200px;
       height: 200px;
+      overflow: hidden;
       cursor: pointer;
     }
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: 0.2s;
+      transition: transform 0.2s;
     }
+
     .container:hover img {
       transform: scale(1.1);
     }
@@ -60,34 +67,130 @@
 
 
 
-  <!-- <h1>Text on Thumbnails</h1>
+  <!-- <h1>Overlay on Image</h1>
 
   <style>
     .container {
-      height: 20rem;
-      border: 1px solid;
-      background-image: url('https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&quality=85&auto=format&fit=max&s=a52bbe202f57ac0f5ff7f47166906403');
-      background-position: center;
-      background-size: cover;
+      border: 1px solid #ddd;
+      width: 200px;
+      height: 200px;
+      position: relative;
     }
+
     img {
-      width: 100%;
-      height: 100%;
+      width: inherit;
+      height: inherit;
       object-fit: cover;
     }
-    .item {
-      max-width: 24rem;
-      margin: auto;
-      height: 100%;
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: inherit;
+      height: inherit;
+      background-color: rgba(0 0 0 / 0.5);
+    }
+
+    .text-composer {
+      width: inherit;
+      height: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .text {
+      color: #fff;
     }
   </style>
   
   <div class="container">
-    <div class="item">
-      <h1>Heading</h1>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, rerum officiis qui, ea ipsa error culpa nam quia natus quaerat non dolorum minus omnis vel, maxime eaque quibusdam quas aperiam.
-      </p>
+    <img src="https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&quality=85&auto=format&fit=max&s=a52bbe202f57ac0f5ff7f47166906403" alt="">
+    <div class="overlay">
+      <div class="text-composer">
+        <p class="text">Text on overlay</p>
+      </div>
+    </div>
+  </div> -->
+
+
+
+  <!-- <h1>Main image</h1>
+
+  <style>
+    .container {
+      border: 1px solid #ddd;
+      height: 300px;
+      background-image: url('https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&quality=85&auto=format&fit=max&s=a52bbe202f57ac0f5ff7f47166906403');
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(50%);
+    }
+    .text-composer {
+      width: inherit;
+      height: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: stretch;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .text {
+      text-align: center;
+    }
+  </style>
+
+  <div class="container">
+    <div class="text-composer">
+      <h1 class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h1>
+    </div>
+  </div> -->
+
+
+
+  <!-- <h1>Q. Modal Image</h1>
+
+  <style>
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0 0 0 / 0.5);
+    }
+
+    .modal {
+      width: 20rem;
+      height: 20rem;
+      margin: 100px auto 0;
+    }
+
+    button {
+      font-size: 2rem;
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      float: right;
+    }
+
+    img {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+      border-radius: 1.5rem;
+    }
+  </style>
+  
+  <div class="overlay">
+    <button>&times;</button>
+    <div class="modal">
+      <img src="https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&quality=85&auto=format&fit=max&s=a52bbe202f57ac0f5ff7f47166906403" alt="">
     </div>
   </div> -->
 

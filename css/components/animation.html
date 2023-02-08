@@ -12,10 +12,10 @@
 
   <style>
     #spinner {
-      width: 50px;
-      height: 50px;
-      border: 5px solid;
-      border-top: 5px solid transparent;
+      width: 3rem;
+      height: 3rem;
+      border: 4px solid;
+      border-top: 4px solid transparent;
       border-radius: 50%;
       
       animation-name: spin;
@@ -38,40 +38,6 @@
   <div id="spinner"></div>  -->
 
 
-  <!-- <h1>Progress Bar</h1>
-
-  <style>
-    .container {
-      width: 200px;
-      height: 5px;
-      background-color: #ddd;
-    }
-    .item {
-      height: 100%;
-      background-color: #222;
-
-      animation-name: fill;
-      animation-duration: 2s;
-      animation-iteration-count: 1;
-      animation-timing-function: ease;
-      
-      /* animation: fill 2s 1 ease; */
-    }
-
-    @keyframes fill {
-      from {
-        width: 0;
-      } to {
-        width: 100%;
-      }
-    }
-  </style>
-
-  <div class="container">
-    <div class="item"></div>
-  </div> -->
-
-
 
   <!-- <h1>Menu button</h1>
 
@@ -84,10 +50,10 @@
       justify-content: space-between;
     }
     .bar {
-      width: 50px;
+      width: inherit;
       height: 4px;
       background-color: #000;
-      transition: 0.2s;
+      transition: transform 0.2s;
     }
     .bars:hover .bar:first-child {
       transform: translateY(8px) rotate(45deg);
@@ -105,154 +71,37 @@
 
 
 
-  <!-- <h1>Menu button</h1>
-
-  <style>
-    .bars {
-      width: 50px;
-      height: 50px;
-      display: inline-flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .bar {
-      width: 50px;
-      height: 4px;
-      background-color: #000;
-      transition: .5s;
-    }
-    /* 4px + 19px = 23px */
-    .bars:hover .bar:first-child {
-      transform: translateY(23px) rotate(45deg);
-    }
-    .bars:hover .bar:nth-child(2) {
-      opacity: 0;
-    }
-    .bars:hover .bar:last-child {
-      transform: translateY(-23px) rotate(-45deg);
-    }
-
-  </style>
-  
-  <div class="bars">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-  </div>  -->
-
-
-
-  <!-- <style>
-    body {
-      display: flex;
-      background-color: #222;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .container {
-      /* border: 1px dashed; */
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .item {
-      width: 25px;
-      height: 50px;
-      background-color: #fff;
-      animation-name: wave;
-      animation-duration: 0.3s;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
-      animation-direction: alternate;
-      /* animation: wave 0.4s infinite linear; */
-    }
-    .item:nth-child(2) {
-      animation-delay: 0.1s;
-    }
-    .item:last-child {
-      animation-delay: 0.2s;
-    }
-    
-    @keyframes wave {
-      from {
-        height: 50px;
-      } to {
-        height: 150px;
-      }
-    }
-  </style>
-
-  <div class="container">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-  </div> -->
-
-
-
-  <!-- <style>
-    body {
-      height: 100vh;
-      background-color: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-    #logo {
-      width: 100px;
-      height: 100px;
-      background-color: #fff;
-      animation-name: grow;
-      animation-duration: 1s;
-      animation-delay: 1s;
-      animation-iteration-count: 1;
-    }
-    @keyframes grow {
-      from {
-        transform: scale(1, 1)
-      } to {
-        transform: scale(10, 10)
-      }
-    }
-  </style>
-  
-  <div id="logo"></div> -->
-
-
-
   <!-- <style>
     body {
       margin: 0;
       height: 100vh;
       background-color: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
+
     #earth {
       width: 200px;
       height: 200px;
       background-color: #000;
       border-radius: 50%;
       box-shadow: 0 0 40px 0px #00f inset;
-    }
-    #moon {
-      width: 200px;
-      height: 200px;
-      /* border: 1px dashed #fff; */
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      animation: move 10s infinite linear;
     }
-    #moon::after {
-      content: "";
-      display: block;
+
+    #orbit-creator {
+      border: 1px dashed #fff;
+      width: 200px;
+      height: 200px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /* animation: move 10s infinite linear; */
+    }
+
+    #moon {
       width: 20px;
       height: 20px;
       background-color: #ddd;
@@ -270,14 +119,16 @@
   </style>
 
   <div id="earth"></div>
-  <div id="moon"></div> -->
+  <div id="orbit-creator">
+    <div id="moon"></div>
+  </div> -->
 
 
 
-  <style>
+  <!-- <style>
     body {
       height: 100vh;
-      background-color: #a00;
+      background-color: pink;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -329,7 +180,7 @@
     }
   </style>
 
-  <h1>&#127876; Merry Christmas &#127876;</h1>
+  <h1>Spring</h1>
 
   <div class="container">
     <div class="item">&#10052;</div>
@@ -337,7 +188,7 @@
     <div class="item">&#10052;</div>
     <div class="item">&#10052;</div>
     <div class="item">&#10052;</div>
-  </div>
+  </div> -->
   
 </body>
 </html>
