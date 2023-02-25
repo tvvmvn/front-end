@@ -7,17 +7,36 @@
   <title>Document</title>
 </head>
 <body>
-  
-  <h1>color/background-color</h1>
 
-  <style>
-    li {
-      background-color: #333;
-      color: #fff;
+  
+  <h1>Color notation</h1>
+
+  <style>    
+    li:first-child {
+      /* name */
+      color: red;
+    }
+    li:nth-child(2) {
+      /* rgb(r g b) */
+      color: rgb(255 0 0)
+    }
+    li:nth-child(3) {
+      /* rgba(r g b / opacity) */
+      color: rgba(255 0 0 / 0.5)
+    }
+    li:nth-child(4) {
+      /* #rrggbb */
+      color: #ff0000;
+    }
+    li:last-child {
+      /* #rgb */
+      color: #f00;
     }
   </style>
 
   <ul>
+    <li>list item</li>
+    <li>list item</li>
     <li>list item</li>
     <li>list item</li>
     <li>list item</li>
