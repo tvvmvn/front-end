@@ -7,7 +7,8 @@
   <title>Document</title>
 </head>
 <body>
-<!-- <h1>flex grow</h1>
+
+<h1>flex grow</h1>
 
   <style>
     .container {
@@ -26,25 +27,6 @@
       flex-grow: 1;
       background-color: #0bf;
     }
-  </style>
-
-  <div class="container">
-    <div class="item grow-0">item</div>
-    <div class="item grow">item(grow)</div>
-  </div> -->
-
-
-  <!-- <h1>flex shrink</h1>
-
-  <style>
-    .container {
-      border: 1px dashed;
-      display: flex;
-    }
-    .item {
-      width: 200px;
-      padding: 0.5rem;
-    }
     .shrink {
       background-color: #ddd;
       /* default */
@@ -53,26 +35,6 @@
     .shrink-0 {
       flex-shrink: 0;
       background-color: #0bf;
-    }
-  </style>
-
-  <div class="container">
-    <div class="item shrink">item</div>
-    <div class="item shrink-0">item (not shrink)</div>
-    <div class="item shrink">item</div>
-  </div> -->
-
-
-  <!-- <h1>flex basis</h1>
-
-  <style>
-    .container {
-      border: 1px dashed;
-      display: flex;
-    }
-    .item {
-      background-color: #ddd;
-      padding: 0.5rem;
     }
     .basis-auto {
       /* default */
@@ -84,7 +46,34 @@
     .basis-50 {
       flex-basis: 50%;
     }
+    .order-1 {
+      order: 1;
+    }
+    .order-2 {
+      order: 2;
+    }
+    .order-none {
+      /* default */
+      order: 0
+    }
   </style>
+
+  <div class="container">
+    <div class="item grow-0">item</div>
+    <div class="item grow">item(grow)</div>
+  </div>
+
+
+  <h1>flex shrink</h1>
+
+  <div class="container">
+    <div class="item shrink">item</div>
+    <div class="item shrink-0">item (not shrink)</div>
+    <div class="item shrink">item</div>
+  </div>
+
+
+  <h1>flex basis</h1>
 
   <h3>flex basis: auto (default)</h3>
   <div class="container">
@@ -102,40 +91,16 @@
   <div class="container">
     <div class="item basis-50">item</div>
     <div class="item basis-50">item</div>
-  </div> -->
+  </div>
 
-
-
-  <!-- <h1>order</h1>
-  <p>order for flex items</p>
-
-  <style>
-    .container {
-      border: 1px dashed;
-      display: flex;
-    }
-    .item {
-      background-color: #ddd;
-      padding: 0.5rem;
-    }
-    .order-1 {
-      order: 1;
-    }
-    .order-2 {
-      order: 2;
-    }
-    .order-none {
-      /* default */
-      order: 0
-    }
-  </style>
+  <h1>order</h1>
 
   <div class="container">
     <div class="item order-2">item 1</div>
     <div class="item order-1">item 2</div>
     <div class="item order-none">item 3</div>
     <div class="item order-none">item 4</div>
-  </div> -->
+  </div>
 
 
   <!-- <h1>Q. flex items</h1>
@@ -161,5 +126,6 @@
     <div class="item grow">item</div>
     <div class="item">item</div>
   </div> -->
+  
 </body>
 </html>
