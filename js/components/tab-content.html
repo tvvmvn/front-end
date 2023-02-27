@@ -85,7 +85,9 @@
 
   <script>
     function f(id) {      
-      let tabContents = document.getElementById('container').children;
+      let tabContents = document
+        .getElementById('container')
+        .children;
 
       for (let i=0; i<tabContents.length; i++) {
         tabContents[i].classList.add('hidden');

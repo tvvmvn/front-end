@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <style>
+    * {box-sizing: border-box;}
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .wrap {
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 50px #ddd;
+      margin: 0 auto;
+    }
+    #container {
+      width: 200px;
+      height: 200px;
+      display: inline-flex;
+      transition: 0.2s;
+    }
+    .item {
+      width: inherit;
+      height: inherit;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav button {
+      position: absolute;
+      height: 100%;
+      border: none;
+      background-color: transparent;
+    }
+    .nav #prev {
+      top: 0; 
+      left: 0;
+    }
+    .nav #next {
+      top: 0;
+      right: 0;
+    }
+    .indicator {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 0.5rem;
+    }
+    .dot {
+      display: block;
+      width: 0.4rem;
+      height: 0.4rem;
+      border-radius: 50%;
+      background-color: #ddd;
+      margin: 0 2px;
+    }
+    .hidden {
+      display: none;
+    }
+    .active {
+      background-color: #888;
+    }
+  </style>
+
+  <h1>Carousel</h1>
+
+  <div class="wrap">
+    <ul id="container">
+      <li class="item">1</li>
+      <li class="item">2</li>
+      <li class="item">3</li>
+    </ul>
+
+    <div class="nav">
+      <button id="prev" class="hidden" onclick="f(-1)">&#10094;</button>
+      <button id="next" onclick="f(1)">&#10095;</button>
+    </div>
+    
+    <ul class="indicator">
+      <li class="dot active"></li>
+      <li class="dot"></li>
+      <li class="dot"></li>
+    </div>
+  </div>
+
+  <script>
+    let index = 0;
+    let container = document.getElementById('container');
+    let prev = document.getElementById('prev');
+    let next = document.getElementById('next');
+    let dots = document.querySelectorAll('.dot')
+
+    function f(data) {
+      index += data;
+
+      console.log(index);
+
+      // # images
+      container.style.transform = `translateX(-${index*200}px)`
+
+      // # button
+      if (index===0) {
+        prev.classList.add('hidden')
+      } else {
+        prev.classList.remove('hidden')
+      }
+
+      if (index===2) {
+        next.classList.add('hidden');
+      } else {
+        next.classList.remove('hidden');
+      }
+
+      // # indicator
+      for (dot of dots) {
+        dot.classList.remove('active');
+      }
+      dots[index].classList.add('active');
+    }
+  </script>
+  
+</body>
+</html>

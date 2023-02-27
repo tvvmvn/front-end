@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    form {
+      width: 20rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    button {
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+  </style>
+
+  <div id="container">
+    <form action="">
+      <h1>Contact</h1>
+      <input type="text" name="name" placeholder="Name">
+      <input type="text" name="email" placeholder="Email">
+      <textarea name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
+      <button>Send</button>
+    </form>
+  </div>
+
+  <script>
+    let form = document.querySelector('form');
+
+    form.addEventListener('submit', (e) => {
+      try {
+        e.preventDefault();
+
+        let formData = new FormData(form);
+        let container = document.getElementById('container');
+
+        if (!formData.get('name')) {
+          throw 'Name is required'
+        }
+        if (!formData.get('email')) {
+          throw 'Email is required'
+        }
+
+        container.innerHTML = '<h1>Send you back ASAP</h1>'
+      } catch (err) {
+        alert(err)
+      }
+    })
+  </script>
+</body>
+</html>

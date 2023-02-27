@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<h1>Manipulate elements</h1>
+
+<p>class</p>
+
+<ul>
+  <li id="foo" class="class1 class2">foo</li>
+  <li>bar</li>
+  <li>baz</li>
+</ul>
+
+<script>
+  const foo = document.getElementById('foo')
+
+  // # className
+  console.log(foo.className)
+  foo.className += ' class3'
+  console.log(foo.className);
+
+  // # classList
+  // console.log(foo.classList) // DOMTokenList(length)
+  // foo.classList.add('class3')
+  // console.log(foo.classList)
+  // foo.classList.remove('class3')
+  // console.log(foo.classList)
+</script>
+
+<p>attributes (property that extends element's functionality)</p>
+
+<ul>
+  <li><a id="foo" href="Foo">Foo</a></li>
+  <li><img id="bar" src="" alt="Bar"></li>
+  <li><input id="baz" type="text" value="Baz"></li>
+</ul>
+
+<script>
+  const foo = document.getElementById("foo");
+  const bar = document.getElementById("bar");
+  const baz = document.getElementById("baz");
+
+  // # read attribute
+  // console.log(foo.href)
+  // console.log(bar.alt)
+  // console.log(baz.value)
+
+  // # update attribute
+  // foo.href = 'FOO'
+  // bar.alt = 'BAR'
+  // baz.value = 'BAZ'
+
+  // # read attribute
+  // console.log(foo.getAttribute('href'))
+  // console.log(bar.getAttribute('alt'))
+  // console.log(baz.getAttribute('value'))
+  
+  // # update attribute
+  // foo.setAttribute('href', 'Foo')
+  // bar.setAttribute('alt', 'Bar')
+  // baz.setAttribute('value', 'Baz')
+</script>
+
+
+<p>style (attribute)</p>
+
+<ul>
+  <li>foo</li>
+  <li>bar</li>
+  <li>baz</li>
+</ul>
+
+<script>
+  const ul = document.querySelector("ul");
+  const li = document.querySelectorAll('li')
+  
+  console.log(ul.style); // CSSStyleDeclaration
+  console.log(ul.style.border) // ""
+
+  ul.style.border = '1px solid'
+  li[0].style.textDecoration = 'underline'
+</script>
+
+
+<p>text content</p>
+
+<ul>
+  <li id="foo">foo</li>
+  <li>bar</li>
+  <li>baz</li>
+</ul>
+
+<script>
+  const foo = document.getElementById('foo');
+
+  // read
+  console.log(foo.innerHTML);
+
+  // update
+  foo.innerHTML = 'FOO'
+</script>
+
+
+<p>create and append elements to document</p>
+
+<ul>
+  <li>foo</li>
+  <li>bar</li>
+</ul>
+
+<script>
+  const ul = document.querySelector("ul")
+
+  // create element
+  let li = document.createElement('li');
+  // set text content
+  li.innerHTML = 'baz'
+  // append to ul (last children)
+  ul.appendChild(li)
+</script>
+
+
+<p>Beers</p>
+
+<ul></ul>
+
+<script>
+  let ul = document.querySelector("ul");
+  
+  let beers = ["Guinness", "Heineken", "Budwiser"];
+
+  for (let i=0; i<beers.length; i++) {
+    let li = document.createElement("li");
+    li.innerHTML = beers[i]
+    ul.appendChild(li);
+  }
+</script>
+
+
+
+
+</body>
+</html>

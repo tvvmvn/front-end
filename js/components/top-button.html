@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<style>
+    html {scroll-behavior:smooth;}
+    body {
+      min-height: 1000px;
+    }
+    button {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <h1>Top button</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos perspiciatis eius fugiat illum amet fuga dolor
+    consectetur, vero rerum tempore facilis qui minima vel dolores minus rem, voluptate dolore voluptatem.</p>
+
+  <button class="hidden"> 
+    Top
+  </button>
+
+  <script>
+    let button = document.querySelector('button');
+
+    window.addEventListener('scroll', (e) => {
+      console.log(document.documentElement.scrollTop);
+
+      if (document.documentElement.scrollTop < 200) {
+        button.classList.add('hidden')
+      } else {
+        button.classList.remove('hidden')
+      }
+    })
+
+    button.addEventListener('click', (e) => {
+      document.documentElement.scrollTop = 0;
+    })
+  </script>
+
+</body>
+</html>

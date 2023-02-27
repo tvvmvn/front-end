@@ -4,11 +4,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>CSS</title>
 </head>
 <body>
 
-  <h1>* CSS</h1>
+  <style>
+    a { 
+      color: #000; 
+    }
+  </style>
+
+  <h1>CSS &#127912;</h1>
 
   <h1>Tutorials</h1>
 
@@ -114,10 +120,70 @@
 
 
   <h1>Components</h1>
+  <h3>Form</h3>
   <ul>
     <li>
-      <a href="components/form/">Form</a>
+      <a href="components/form/search.html">Search</a>
     </li>
+    <li>
+      <a href="components/form/personal.html">Personal</a>
+    </li>
+    <li>
+      <a href="components/form/login.html">Login</a>
+    </li>
+  </ul>
+
+  <h3>image</h3>
+  <ul>
+    <li>
+      <a href="components/image/avatar.html">Avatar</a>
+    </li>
+    <li>
+      <a href="components/image/scalable.html">Scalable</a>
+    </li>
+    <li>
+      <a href="components/image/overlay.html">Overlay</a>
+    </li>
+    <li>
+      <a href="components/image/hero.html">Hero</a>
+    </li>
+    <li>
+      <a href="components/image/modal.html">Modal</a>
+    </li>
+  </ul>
+
+  <h3>Animation</h3>
+  <ul>
+    <li>
+      <a href="components/animation/spinner.html">Spinner</a>
+    </li>
+    <li>
+      <a href="components/animation/orbit.html">Orbit</a>
+    </li>
+    <li>
+      <a href="components/animation/snowflakes.html">Snowflakes</a>
+    </li>
+  </ul>
+
+  <h3>Others</h3>
+  <ul>
+    <li>
+      <a href="components/accordion.html">Accordion</a>
+    </li>
+    <li>
+      <a href="components/tab-content.html">Tab Content</a>
+    </li>
+  </ul>
+
+  <h3>Navigation</h3>
+  <ul>
+    <li>
+      <a href="components/nav.html">Navigation</a>
+    </li>
+  </ul>
+
+  <h3>..</h3>
+  <ul>
     <li>
       <a href="components/table.html">Table</a>
     </li>
@@ -125,22 +191,7 @@
       <a href="components/dropdown.html">Dropdown</a>
     </li>
     <li>
-      <a href="components/nav.html">Navigation</a>
-    </li>
-    <li>
-      <a href="components/accordion.html">Accordion</a>
-    </li>
-    <li>
-      <a href="components/tab-content.html">Tab Content</a>
-    </li>
-    <li>
       <a href="components/modal.html">Modal</a>
-    </li>
-    <li>
-      <a href="components/image.html">Images</a>
-    </li>
-    <li>
-      <a href="components/animation.html">Animation</a>
     </li>
   </ul>
 
@@ -160,6 +211,19 @@
       <a href="templates/dashboard.html">Dashboard</a>
     </li>
   </ul>
+
+
+  <button id="cafe">Cafe</button>
+
+  <script>
+    document
+      .getElementById('cafe')
+      .addEventListener('click', e => {
+        
+        window.open('templates/cafe.html', 'lol', 'top=100, left=100, width=400, height=400')
+      })
+
+  </script>
 
 </body>
 </html>

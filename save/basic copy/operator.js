@@ -1,5 +1,6 @@
 /*
   *** OPERATOR ***
+  
   1 Arithmetic operator
   2 Assignment operator
   3 Comparison operator

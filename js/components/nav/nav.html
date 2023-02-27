@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    body {
+      min-height: 1000px;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border: 1px solid #ddd;
+      backdrop-filter: blur(8px);
+    }
+    .container {
+      position: relative;
+    }
+    .container h3 {
+      text-align: center;
+      margin: 0;
+      padding: 1rem 0;
+    }
+    .container button {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      border: none;
+      cursor: pointer;
+      font-size: 2rem;
+      background-color: transparent;
+    }
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    nav a {
+      display: block;
+      text-align: center;
+      padding: 0.5rem;
+      text-decoration: none;
+      color: #555;
+      border-top: 1px solid #ddd;
+    }
+    nav a:hover {
+      color: #000;
+    }
+    main {
+      padding-top: 3rem;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <header>
+    <div class="container">
+      <button>&#9776;</button>
+      <h3>Logo</h3>
+    </div>
+    <nav class="hidden">
+      <ul>
+        <li>
+          <a href="">Link</a>
+        </li>
+        <li>
+          <a href="">Link</a>
+        </li>
+        <li>
+          <a href="">Link</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Top navigation</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, explicabo iure ipsum rerum corrupti rem maiores
+      doloremque porro deserunt illum non sequi! Veritatis perspiciatis vitae enim error. In, magnam officia?</p>
+  </main>
+
+  <script>
+    const button = document.querySelector("button");
+
+    button.addEventListener("click", (e) => {
+      const nav = document.querySelector("nav");
+      nav.classList.toggle("hidden");
+    })
+  </script> 
+
+  
+</body>
+</html>

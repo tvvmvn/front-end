@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>2 Manipulate elements</h1>
+  <p>Select elements to handle</p>
+  
+  <ul>
+    <li id="foo" class="item">foo</li>
+    <li class="item">bar</li>
+    <li class="item">baz</li>
+  </ul>
+  
+  <script>
+    // # tag name
+    // const ul = document.querySelector("ul");
+    // const li = document.querySelectorAll("li");
+  
+    // console.log(ul)
+    // console.log(li) // NodeList(length)
+    // console.log(li[0])
+    // console.log(li.length)
+  
+    // # class
+    // const li = document.getElementsByClassName('item')
+    // console.log(li) // HTMLCollection(length)
+  
+    // const li = document.querySelectorAll('.item');
+    // console.log(li) // NodeList(length)
+  
+    // # id
+    // const foo = document.getElementById('foo');
+    // console.log(foo)
+    // querySelector(#id)
+  
+    // # children
+    // const ul = document.querySelector('ul');
+    // console.log(ul.children) // HTMLCollection(length)
+    // console.log(ul.children[0])
+    // console.log(ul.lastElementChild)
+  
+    // # sibling
+    // const foo = document.getElementById('foo')
+    // console.log(foo.nextElementSibling)
+  </script>
+  
+  
+  <h1>Q. Element selector</h1>
+  <p>Beer table</p>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Origin</th>
+        <th>available</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="irishBeer" class="beer">
+        <td>Guinness</td>
+        <td>Ireland</td>
+        <td>No</td>
+      </tr>
+      <tr id="dutchBeer" class="beer">
+        <td>Heineken</td>
+        <td>Netherlands</td>
+        <td>Yes</td>
+      </tr>
+      <tr id="koreanBeer" class="beer">
+        <td>Kloud</td>
+        <td>S.Korea</td>
+        <td>Yes</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <script>
+    let beers, koreanBeer, dutchBeer, irishBeer, irishBeerName;
+  
+    // select rows with 'beer' class
+    beers = document.getElementsByClassName("beer")
+  
+    // select each row with id
+    koreanBeer = document.getElementById("koreanBeer");
+    dutchBeer = document.getElementById("dutchBeer");
+    irishBeer = document.getElementById("irishBeer");
+  
+    // select td with children
+    irishBeerName = irishBeer.firstElementChild;
+  </script>
+  
+</body>
+</html>

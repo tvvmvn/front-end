@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Auto carousel</h1>
+
+  <style>
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .wrap {
+      position:relative;
+      width: 200px;
+      height: 200px;
+      border: 1px solid;
+    }
+    .container {
+      width: inherit;
+      height: inherit;
+    }
+    .item {
+      width: inherit;
+      height: inherit;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .indicator {
+      position:absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .hidden {
+      display: none;
+    }
+    .indicator .dot {
+      color: #ddd;
+    }
+    .indicator .active {
+      color: #000;
+    }
+  </style>
+
+  <div class="wrap">
+    <ul class="container">
+      <li class="item">1</li>
+      <li class="item hidden">2</li>
+      <li class="item hidden">3</li>
+    </ul>
+  
+    <ul class="indicator">
+      <li class="dot active">*</li>
+      <li class="dot">*</li>
+      <li class="dot">*</li>
+    </ul>
+  </div>
+
+  <script>
+    let index = 0;
+    let items = document.querySelectorAll('.item');
+    let dots = document.querySelectorAll('.dot');
+
+    setInterval(f, 3000);
+
+    function f() {
+      // # index
+      index += 1;
+
+      if (index===3) {
+        index = 0;
+      }
+
+      console.log(index);
+
+      // # Images
+      for (let item of items) {
+        item.classList.add('hidden');
+      }
+
+      items[index].classList.remove('hidden');
+
+      // # Indicator
+      for (let dot of dots) {
+        dot.classList.remove('active');
+      }
+
+      dots[index].classList.add('active');
+    }
+  </script>
+  
+</body>
+</html>
