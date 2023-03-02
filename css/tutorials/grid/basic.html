@@ -8,17 +8,17 @@
 </head>
 <body>
 
-  <h1>flex basis</h1>
+  <h1>grid</h1>
 
   <style>
     .container {
-      display: flex;
-      border: 1px solid;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
     }
     .item {
       background-color: #ddd;
       padding: 0.5rem;
-      flex-basis: 100px;
     }
   </style>
 
@@ -26,7 +26,13 @@
     <div class="item">item</div>
     <div class="item">item</div>
     <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
   </div>
-
+  
 </body>
 </html>
