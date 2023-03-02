@@ -9,75 +9,82 @@
 </head>
 
 <body>
-  <h1>Personal Form</h1>
 
   <style>
-    form {
-      /* border: 1px dashed; */
-      max-width: 24rem;
-      margin: auto;
+    * {
+      box-sizing: border-box;
     }
-
+    .container {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 1rem;
+    }
     label {
       display: block;
     }
-
-    input,
-    select {
+    input, select {
       padding: 0.5rem;
       width: 100%;
       border: 1px solid #ddd;
-      box-sizing: border-box;
+      border-radius: 0.25rem;
     }
-
-    button {
-      padding: 0.5rem;
-      cursor: pointer;
+    .col-span-2 {
+      grid-column: span 2 / span 2;
     }
-
-    .flex {
-      display: flex;
+    .col-span-3 {
+      grid-column: span 3 / span 3;
     }
-
-    .basis-50 {
-      flex-basis: 50%;
+    .col-span-4 {
+      grid-column: span 4 / span 4;
     }
-
-    .ml-2 {
-      margin-left: 0.5rem;
-    }
-
-    .mb-2 {
-      margin-bottom: 0.5rem;
+    .col-span-6 {
+      grid-column: span 6 / span 6;
     }
   </style>
 
+  <h1>Personal Information</h1>
+
   <form action="" autocomplete="off">
-    <h2>Personal Information</h2>
-    <div class="mb-2 flex">
-      <div class="basis-50">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" placeholder="Doe">
+    <div class="container">
+      <div class="col-span-3">
+        <label for="fname">First name</label>
+        <input type="text" id="fname">
       </div>
-      <div class="basis-50 ml-2">
-        <label for="lname">Last Name</label>
-        <input type="text" placeholder="John">
+      <div class="col-span-3">
+        <label for="lname">Last name</label>
+        <input type="text" id="lname">
+      </div>
+      <div class="col-span-4">
+        <label for="email">Email address</label>
+        <input type="text" id="email">
+      </div>
+      <div class="col-span-3">
+        <label for="">Country</label>
+        <select name="country" id="">
+          <option value="us">United States</option>
+          <option value="ca">Canada</option>
+          <option value="mx">Mexico</option>
+        </select>
+      </div>
+      <div class="col-span-6">
+        <label for="address">Street Address</label>
+        <input type="text" id="address">
+      </div>
+      <div class="col-span-2">
+        <label for="city">City</label>
+        <input type="text" id="city">
+      </div>
+      <div class="col-span-2">
+        <label for="state">State / Province</label>
+        <input type="text" id="state">
+      </div>
+      <div class="col-span-2">
+        <label for="zip">ZIP / Postal code</label>
+        <input type="text" id="zip">
       </div>
     </div>
-    <div class="mb-2">
-      <label for="email">Email</label>
-      <input type="text" id="email" placeholder="John Doe@example.com">
-    </div>
-    <div class="mb-2">
-      <label for="city">City</label>
-      <select name="city" id="city">
-        <option value="seoul">Seoul</option>
-        <option value="incheon">Incheon</option>
-        <option value="busan">Busan</option>
-      </select>
-    </div>
-    <button type="submit">Save</button>
   </form>
+
 </body>
 
 </html>

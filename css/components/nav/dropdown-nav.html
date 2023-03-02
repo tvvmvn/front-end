@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <style>
+    body {
+      height: 1000px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu-list {
+      display: flex;
+    }
+    
+    a {
+      display: block;
+      padding: 0.5rem;
+      color: #000;
+      text-decoration: none;
+    }
+
+    .menu-item:hover {
+      background-color: #eee;
+    }
+
+    .dropdown-container:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-btn {
+      height: 100%;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+      background-color: transparent;
+    }
+
+    .dropdown-content {
+      display: none;
+      background-color: #fff;
+      position: absolute;
+      width: 200px;
+      border: 1px solid #ddd;
+    }
+
+    main {
+      margin-top: 4rem;
+    }
+  </style>
+
+  <nav>
+    <ul class="menu-list">
+      <li>
+        <a href="#" class="menu-item">Link</a>
+      </li>
+      <li>
+        <a href="#" class="menu-item">Link</a>
+      </li>
+      <li class="dropdown-container">
+        <button class="dropdown-btn menu-item">Dropdown</button>
+        <ul class="dropdown-content">
+          <li>
+            <a href="#" class="menu-item">Link</a>
+          </li>
+          <li>
+            <a href="#" class="menu-item">Link</a>
+          </li>
+          <li>
+            <a href="#" class="menu-item">Link</a>
+          </li>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Q. NavBar with Sub Menu</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum molestias corrupti recusandae et optio temporibus cum tempore, sequi sint impedit voluptatem, voluptas velit adipisci asperiores voluptatum debitis quaerat quidem modi.
+    </p>
+  </main>
+
+</body>
+</html>

@@ -13,15 +13,18 @@
       display: block;
       font-weight: bold;
     }
+
     input {
       padding: 0.5rem;
       width: 12rem;
       transition: 0.2s;
       outline: none;
     }
+
     .red {
       color: red;
     }
+
     .green {
       color: green;
     }
@@ -41,18 +44,30 @@
     
     input.addEventListener('keyup', (e) => {
       try {
+        
         let username = e.target.value;
 
         if (!username) {
           throw 'Username is required'
         }
+
         if (username.length < 5) {
           throw 'Username is too short'
         }
 
-        p.innerHTML = '<span class="green">Awesome username</span>'
+        p.innerHTML = `
+          <span class="green">
+            Awesome username
+          </span>
+        `
+
       } catch (err) {
-        p.innerHTML = `<span class="red">${err}</span>`
+        
+        p.innerHTML = `
+          <span class="red">
+            ${err}
+          </span>
+        `
       }
     })
   </script>

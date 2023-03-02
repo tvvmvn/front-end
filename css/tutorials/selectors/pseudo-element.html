@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Pseudo element</h1>
+  <pre>
+    create and select an virtual element.
+  </pre>
+
+  <style>
+    li::before {
+      content: "{";
+    }
+    li::after {
+      content: "}"
+    }
+  </style>
+
+  <ul>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+  </ul>
+  
+</body>
+</html>
