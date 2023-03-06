@@ -11,7 +11,6 @@
   <style>
     label {
       display: block;
-      font-weight: bold;
     }
 
     input {
@@ -21,53 +20,52 @@
       outline: none;
     }
 
-    .red {
-      color: red;
+    .blue {
+      color: #05f;
     }
-
-    .green {
-      color: green;
+    
+    .red {
+      color: #f00;
     }
   </style>
   
-  <h1>Validate username</h1>
+  <h1>Live validator for username</h1>
 
   <form action="">
     <label for="">Username</label>
     <input type="text">
-    <p></p>
+    <div id="message"></div>
   </form>
 
   <script>
     let input = document.querySelector('input');
-    let p = document.querySelector('p');
+    let message = document.getElementById('message');
     
     input.addEventListener('keyup', (e) => {
       try {
         
+        e.target.value = e.target.value.replace(' ', '_');
+
         let username = e.target.value;
 
         if (!username) {
-          throw 'Username is required'
+          throw 'Username is required';
+        }
+
+        // console.log(username.match(/[^a-z0-9_]/g));
+
+        if (username.match(/[^a-z0-9_]/g)) {
+          throw 'lowercase letters, number and underscore are only accepted.'
         }
 
         if (username.length < 5) {
           throw 'Username is too short'
         }
 
-        p.innerHTML = `
-          <span class="green">
-            Awesome username
-          </span>
-        `
+        message.innerHTML = '<p class="blue">Awesome username!</p>'
 
       } catch (err) {
-        
-        p.innerHTML = `
-          <span class="red">
-            ${err}
-          </span>
-        `
+        message.innerHTML = `<p class="red">${err}</p>`
       }
     })
   </script>

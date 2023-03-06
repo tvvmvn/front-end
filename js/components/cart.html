@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Shopping cart</h1>
+
+  <ul>
+    <li>
+      <h3>Denim Jacket</h3>
+      <p>$49</p>
+      <button type="button" onclick="addToCart('p1')">Add to Cart</button>
+    </li>
+    <li>
+      <h3>Cotton Pants</h3>
+      <p>$29</p>
+      <button type="button" onclick="addToCart('p2')">Add to Cart</button>
+    </li>
+    <li>
+      <h3>Boston Bag</h3>
+      <p>$9</p>
+      <button type="button" onclick="addToCart('p3')">Add to Cart</button>
+    </li>
+  </ul>
+
+  <script>
+
+    var cart = localStorage.getItem('cart');
+
+    if (!cart) {
+      localStorage.setItem('cart', '[]');
+    }
+
+    function addToCart(id) {
+      var cart = JSON.parse(localStorage.getItem('cart'));
+
+      var inCart = cart.find(item => id === item.id);
+
+      if (!inCart) {
+        cart.push({ id, quantity: 1 })
+        localStorage.setItem('cart', JSON.stringify(cart));
+      }
+    }
+
+  </script>
+  
+</body>
+</html>

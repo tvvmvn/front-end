@@ -7,53 +7,79 @@
   <title>Document</title>
 </head>
 <body>
+
   <style>
     form {
       width: 20rem;
     }
+
     input, textarea {
       width: 100%;
       padding: 0.5rem;
       margin-bottom: 0.5rem;
     }
+
     button {
       padding: 0.5rem;
       cursor: pointer;
     }
+    .message {
+      margin: 0;
+      color: #f00;
+    }
   </style>
 
-  <div id="container">
-    <form action="">
-      <h1>Contact</h1>
-      <input type="text" name="name" placeholder="Name">
-      <input type="text" name="email" placeholder="Email">
-      <textarea name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
-      <button>Send</button>
-    </form>
-  </div>
+  <form action="">
+    <h1>Contact</h1>
+    <div class="">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Name">
+      <p id="error-name" class="message"></p>
+    </div>
+    <div class="">
+      <label for="email">E-mail</label>
+      <input type="text" name="email" id="email" placeholder="Email">
+      <p id="error-email" class="message"></p>
+    </div>
+    <div class="">
+      <label for="message">Message</label>
+      <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+      <p id="error-message" class="message"></p>
+    </div>
+    <button type="submit">Send</button>
+  </form>
+
 
   <script>
     let form = document.querySelector('form');
 
-    form.addEventListener('submit', (e) => {
-      try {
+      form.addEventListener('submit', (e) => {
         e.preventDefault();
 
         let formData = new FormData(form);
-        let container = document.getElementById('container');
+
+        let _error = {};
 
         if (!formData.get('name')) {
-          throw 'Name is required'
-        }
-        if (!formData.get('email')) {
-          throw 'Email is required'
+          _error.name = 'Name is required';
         }
 
-        container.innerHTML = '<h1>Send you back ASAP</h1>'
-      } catch (err) {
-        alert(err)
-      }
-    })
+        if (!formData.get('email')) {
+          _error.email = 'E-mail is required';
+        }
+
+        if (!formData.get('message')) {
+          _error.message = 'Write message.'
+        }
+
+        console.log(_error)
+
+        for (let pair of formData.entries()) {
+          console.log(pair);
+        }
+
+      })
   </script>
+  
 </body>
 </html>

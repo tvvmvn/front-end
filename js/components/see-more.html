@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>See more</h1>
+
+  <p id="container"></p>
+
+  <button id="btn" type="button" onclick="toggleText()"></button>
+
+  <script>
+
+    let o = {
+      text: `
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+        Aliquam nemo cupiditate deleniti consectetur. 
+        Optio deserunt, doloribus unde mollitia similique at nisi corrupti vitae 
+        quidem consectetur quod reprehenderit et totam voluptatibus!
+      `,
+      enum: ['See more', 'See less']
+    }
+
+    let active = false;
+
+    if (active) {
+      document.getElementById('container').textContent = o.text.substr(0, 30) + '...';
+      document.getElementById('btn').textContent = 'See more'
+    } else {
+      document.getElementById('container').textContent = o.text;
+      document.getElementById('btn').textContent = 'See less'
+    }
+
+    function toggleText() {
+      active = !active;
+
+      if (active) {
+        document.getElementById('container').textContent = o.text.substr(0, 30) + '...';
+        document.getElementById('btn').textContent = 'See more'
+      } else {
+        document.getElementById('container').textContent = o.text;
+        document.getElementById('btn').textContent = 'See less'
+      }
+    }
+
+  </script>
+  
+</body>
+</html> 

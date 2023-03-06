@@ -7,8 +7,23 @@
   <title>Document</title>
 </head>
 <body>
-
   
+  <h1>back button</h1>
+
+  <a href="../" id="link">&#10094; Back</a>
+  
+  <script>
+
+    document
+      .getElementById('link')
+      .addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        history.back()
+      })
+    
+
+  </script>
 
 </body>
 </html>

@@ -8,25 +8,21 @@
 </head>
 <body>
 
-  <h1>createElement</h1>
+  <h1>eventListener</h1>
 
-  <ul id="list">
-    <li>Foo</li>
-    <li>Bar</li>
-  </ul>
-
+  <pre>
+    addEventListener(eventName, eventHandler)
+  </pre>
+  
+  <button id="btn">button</button>
 
   <script>
-
-    var list = document.getElementById('list');
-
-    var li = document.createElement('li');
-
-    li.textContent = 'Baz';
-
-    list.appendChild(li);
-
-  </script>
+    const btn = document.getElementById('btn')
   
+    btn.addEventListener("click", (e) => {
+      alert('lol');
+    })
+  </script>
+
 </body>
 </html>

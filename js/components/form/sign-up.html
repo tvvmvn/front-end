@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Sign Up</h1>
+
+  <form action="">
+    <input type="text" name="username" onkeyup="handleChange(event)"> 
+    <input type="text" name="email" onkeyup="handleChange(event)">
+    <input type="text" name="password" onkeyup="handleChange(event)">
+  </form>
+
+  
+  <script>
+    let user = {}
+
+    function handleChange(e) {  
+
+      let name = e.target.name;
+      let value = e.target.value;
+      
+      user = { ...user, [name]: value }
+
+      console.log(user);
+    }
+  </script>
+  
+</body>
+</html>
