@@ -9,37 +9,75 @@
 <body>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    ul li {
+      margin-bottom: 1rem;
+    }
+    body {
+      margin: 0;
+      background-color: #555;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+    }
+    #side-bar {
+      background-color: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 16rem;
+      height: 100%;
+      padding: 1rem;
+    } 
+    input {
+      width: 100%;
+    }
     #canvas {
       border: 1px solid;
       max-width: 100%;
     }
+    #workspace {
+      margin-left: 16rem;
+      padding: 1rem;
+    }
   </style>
 
-  <h1>Image Editor</h1>
+  <div id="side-bar">
+    <h2>JS Image Editor</h2>
+    <ul>
+      <li>
+        <input type="file" name="" id="file-input">
+      </li>
+      <li>
+        <label for="brightness">Brigtness</label>
+        <input type="range" name="brightness" id="brightness" min="0" max="200" value="100">
+      </li>
+      <li>
+        <label for="saturation">Saturation</label>
+        <input type="range" name="saturation" id="saturation" min="0" max="200" value="100">
+      </li>
+      <li>
+        <label for="inversion">Inversion</label>
+        <input type="range" name="inversion" id="inversion" min="0" max="100" value="0">
+      </li>
+      <li>
+        <label for="blur">Blur</label>
+        <input type="range" name="blur" id="blur" min="0" max="10" value="0">
+      </li>
+    </ul>
+  </div>
 
-  <input type="file" name="" id="file-input">
-
-  <ul>
-    <li>
-      <label for="brightness">Brigtness</label>
-      <input type="range" name="brightness" id="brightness" min="0" max="200" value="100">
-    </li>
-    <li>
-      <label for="saturation">Saturation</label>
-      <input type="range" name="saturation" id="saturation" min="0" max="200" value="100">
-    </li>
-    <li>
-      <label for="inversion">Invert</label>
-      <input type="range" name="inversion" id="inversion" min="0" max="100" value="0">
-    </li>
-    <li>
-      <label for="blur">Blur</label>
-      <input type="range" name="blur" id="blur" min="0" max="10" value="0">
-    </li>
-  </ul>
-
-
-  <canvas id="canvas" width="300" height="300"></canvas>
+  <main id="workspace">
+    <canvas id="canvas" width="300" height="300"></canvas>
+  </main>
 
   <script>
 
@@ -56,6 +94,38 @@
     let filter = {};
 
     fileInput.addEventListener('change', createURL);
+
+    function createURL(e) {
+      
+      let file = e.target.files[0];
+      let src = URL.createObjectURL(file);
+
+      drawImage(src);
+    }
+
+    function drawImage(src) {
+      image  = new Image();
+      image.setAttribute('src', src);
+      
+      image.addEventListener('load', (e) => {
+        canvas.width = image.width;
+        canvas.height = image.height;
+
+        ctx.drawImage(image, 0, 0);
+      })
+    }
+
+    function applyFilter() {
+      
+      let value = Object.keys(filter).map(name => {
+        return `${name}(${filter[name]})`;
+      })
+
+      console.log(filter);
+
+      ctx.filter = value.join(' ');
+      ctx.drawImage(image, 0, 0);
+    }
 
     brightnessInput.addEventListener('change', (e) => {
       filter.brightness = e.target.value + '%';
@@ -76,40 +146,6 @@
       filter.blur = e.target.value + 'px';
       applyFilter()
     })
-
-    function applyFilter() {
-      
-      let value = Object.keys(filter).map(name => {
-        return `${name}(${filter[name]})`
-      })
-
-      ctx.filter = value.join(' ');
-      ctx.drawImage(image, 0, 0);
-
-      console.log(ctx.filter);
-    }
-
-    function createURL(e) {
-      
-      let file = e.target.files[0];
-      let src = URL.createObjectURL(file);
-
-      drawImage(src)
-    }
-
-    function drawImage(src) {
-      image  = new Image();
-      image.setAttribute('src', src);
-
-      
-      image.addEventListener('load', (e) => {
-        canvas.width = image.width;
-        canvas.height = image.height;
-
-        ctx.drawImage(image, 0, 0);
-      })
-    }
-
   </script>
   
 </body>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>2023 March</h1>
+
+  <style>
+    #days {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 0.2rem;
+    }
+
+    .day {
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    #dates {
+      display: grid;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 0.2rem;
+    }
+
+    li {
+      padding: 0.5rem;
+      /* background-color: #eee; */
+      text-align: center;
+    }
+
+    li:first-child {
+      grid-column-start: 4;
+    }
+    
+    .sun {
+      color: #f00;
+    }
+
+    .sat {
+      color: #00f;
+    }
+    .today {
+      background-color: #ddd;
+    }
+  </style>
+
+  <div class="">
+    <div id="days">
+      <div class="day sun">SUN</div>
+      <div class="day">MON</div>
+      <div class="day">TUE</div>
+      <div class="day">WED</div>
+      <div class="day">THU</div>
+      <div class="day">FRI</div>
+      <div class="day sat">SAT</div>
+    </div>
+  
+    <ul id="dates"></ul>
+  </div>
+
+  <script>
+
+    let d = new Date();
+    let dates = document.getElementById('dates');
+
+    for (let i = 1; i <= 31; i++) {
+
+      let li = document.createElement('li');
+      li.textContent = i;
+
+      if (i === d.getDate()) {
+        li.className = 'today';
+      }
+
+      dates.appendChild(li);
+    }
+
+  </script>
+
+</body>
+</html>

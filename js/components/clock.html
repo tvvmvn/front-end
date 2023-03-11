@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Clock</h1>
+
+  <style>
+    #clock {
+      font-size: 4rem;
+    }
+  </style>
+
+  <div id="clock"></div>
+
+  <script>
+
+    let clock = document.getElementById('clock');
+
+    let d = new Date();
+
+    let year = d.getFullYear();
+    let month = d.getMonth() + 1;
+    let date = d.getDate();
+    let weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednsday', 'Thursday', 'Friday', 'Saturday'];
+
+    let day = weekday[d.getDay()];
+
+    let hours = d.getHours();
+    let h;
+
+    let or = hours >= 12 ? 'PM' : 'AM'
+
+    if (hours > 12) {
+      h = hours - 12
+    }
+
+    if (hours === 0) {
+      h = 12
+    }
+
+    console.log(year, month, date, day, h, or)
+  </script>
+  
+</body>
+</html>

@@ -33,15 +33,16 @@
       outline: none;
     }
     
-    #addBtn {
+    #add-btn {
       font-size: 4rem;
       height: 10rem;
       background-color: rgba(0 0 0 / 0.1);
       border: none;
       cursor: pointer;
+      color: #fff;
     }
 
-    #addBtn:hover {
+    #add-btn:hover {
       background-color: rgba(0 0 0 / 0.2);
     }
   </style>
@@ -52,14 +53,11 @@
   </div>
 
   <script>
-
     let addBtn = document.getElementById('add-btn');
     let container = document.getElementById('container');
 
-
     window.addEventListener('DOMContentLoaded', getNotes);
     addBtn.addEventListener('click', addNote);
-
 
     function createNoteElement(id, content) {
 
@@ -71,17 +69,14 @@
 
       container.insertBefore(NoteElement, addBtn);
     }
-
     
     function getDocs() {
       return JSON.parse(localStorage.getItem('notesStorage'));
     }
 
-    
     function saveDoc(notes) {
       localStorage.setItem('notesStorage', JSON.stringify(notes));
     }
-
 
     function getNotes(e) {
 
@@ -96,7 +91,6 @@
       }
     }
 
-
     function addNote(e) {
 
       let notes = getDocs();
@@ -109,7 +103,6 @@
       createNoteElement(newNote.id, newNote.content);
     }
 
-    
     function editNote(id, content) {
 
       let notes = getDocs();
@@ -124,7 +117,6 @@
       saveDoc(updatedNotes);
     }
 
-
     function deleteNote(NoteElement, id) {
 
       let notes = getDocs();
@@ -134,7 +126,6 @@
 
       container.removeChild(NoteElement);
     }
-   
   </script>
   
 </body>
