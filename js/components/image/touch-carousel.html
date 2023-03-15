@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
 
   <h1>Touch Carousel</h1>
@@ -16,11 +18,13 @@
       height: 200px;
       overflow-x: hidden;
     }
+
     #container {
       display: flex;
       width: 600px;
       transition: transform 0.2s;
     }
+
     .item {
       width: 200px;
       height: 200px;
@@ -30,14 +34,16 @@
       justify-content: center;
       align-items: center;
     }
+
     .dot.active {
       color: #f00;
     }
+
     .hidden {
       display: none;
     }
   </style>
-  
+
   <div id="wrapper">
     <div id="container">
       <div class="item">1</div>
@@ -62,54 +68,46 @@
     let nextBtn = document.getElementById('next-btn');
     let dots = document.getElementsByClassName('dot');
     let width = 200;
+    let thisIndex = 0;
     let firstIndex = 0;
     let lastIndex = 2;
-    let thisIndex = 0;
+    let wasIndex = null;
     let startPoint;
     let fromStartPoint = 0;
-    let wasIndex = null;
 
-    window.addEventListener('DOMContentLoaded', setButtonAndDot)
-    prevBtn.addEventListener('click', () => translate(-1))
-    nextBtn.addEventListener('click', () => translate(1))
+    window.addEventListener('DOMContentLoaded', setButtonAndDot);
+    prevBtn.addEventListener('click', () => {
+      turnOver(-1);
+      setButtonAndDot();
+    })
+    nextBtn.addEventListener('click', () => {
+      turnOver(1);
+      setButtonAndDot()
+    })
     wrapper.addEventListener('touchstart', saveStartPoint)
-    wrapper.addEventListener('touchmove', move)
-    wrapper.addEventListener('touchend', stayOrTurnOver)
-    
-    function saveStartPoint(e) {
-      startPoint = e.touches[0].clientX;
-    }
-    
-    function move(e) {
-      let clientX = e.touches[0].clientX;
-      fromStartPoint = clientX - startPoint;
-
-      if (thisIndex === firstIndex && fromStartPoint > 0) return;
-      if (thisIndex === lastIndex && fromStartPoint < 0) return;
-
-      let fromLeft = - (thisIndex * width) + fromStartPoint;
-      container.style.transform = `translateX(${fromLeft}px)`;
-    }
-
-    function stayOrTurnOver() {
+    wrapper.addEventListener('touchmove', moving)
+    wrapper.addEventListener('touchend', (e) => {
+      // stay
       if (fromStartPoint > -50 || fromStartPoint < 50) {
-        translate(0);
+        turnOver(0);
       }
+      // turn over to next photo
       if (thisIndex < lastIndex && fromStartPoint < -50) {
-        translate(1)
+        turnOver(1)
         setButtonAndDot();
       }
+      // turn over to prev photo
       if (thisIndex > firstIndex && fromStartPoint > 50) {
-        translate(-1)
+        turnOver(-1)
         setButtonAndDot();
       }
-      
+      // reset move
       fromStartPoint = 0;
-    }
+    })
 
-    function translate(data) {
+    function turnOver(data) {
       thisIndex += data;
-      container.style.transform = `translateX(-${thisIndex * width}px)`;     
+      container.style.transform = `translateX(-${thisIndex * width}px)`;
     }
 
     function setButtonAndDot() {
@@ -134,7 +132,25 @@
 
       wasIndex = thisIndex;
     }
+
+    function saveStartPoint(e) {
+      startPoint = e.touches[0].clientX;
+    }
+
+    function moving(e) {
+      let clientX = e.touches[0].clientX;
+      fromStartPoint = clientX - startPoint;
+
+      let movingToPrevInFirst = thisIndex === firstIndex && fromStartPoint > 0;
+      let movingToNextInLast = thisIndex === lastIndex && fromStartPoint < 0;
+
+      if (movingToPrevInFirst || movingToNextInLast) return;
+
+      let fromLeft = - (thisIndex * width) + fromStartPoint;
+      container.style.transform = `translateX(${fromLeft}px)`;
+    }
   </script>
-  
+
 </body>
+
 </html>

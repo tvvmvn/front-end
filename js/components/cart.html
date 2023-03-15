@@ -8,45 +8,100 @@
 </head>
 <body>
 
-  <h1>Shopping cart</h1>
+  <style>
+    .block { display: block }
+  </style>
 
-  <ul>
-    <li>
-      <h3>Denim Jacket</h3>
-      <p>$49</p>
-      <button type="button" onclick="addToCart('p1')">Add to Cart</button>
-    </li>
-    <li>
-      <h3>Cotton Pants</h3>
-      <p>$29</p>
-      <button type="button" onclick="addToCart('p2')">Add to Cart</button>
-    </li>
-    <li>
-      <h3>Boston Bag</h3>
-      <p>$9</p>
-      <button type="button" onclick="addToCart('p3')">Add to Cart</button>
-    </li>
-  </ul>
+  <h1>What needs to be done?</h1>
+
+  <form action="" id="form">
+    <h3>Form</h3>
+    <input type="text" name="name">
+    <button type="submit">Add</button>
+  </form>
+  
+  <h3>List</h3>
+  <div id="list"></div>
 
   <script>
 
-    var cart = localStorage.getItem('cart');
+    let list = document.getElementById('list');
+    let form = document.getElementById('form');
+    let tasks;
 
-    if (!cart) {
-      localStorage.setItem('cart', '[]');
+    window.addEventListener('DOMContentLoaded', getTasks);
+    form.addEventListener('submit', handleSubmit);
+
+    function getDocs() {
+      if (!localStorage.getItem('tasks')) {
+        localStorage.setItem('tasks', '[]');
+      }
+
+      tasks = JSON.parse(localStorage.getItem('tasks'));
+
+      return tasks;
     }
 
-    function addToCart(id) {
-      var cart = JSON.parse(localStorage.getItem('cart'));
+    function saveDocs() {
+      localStorage.setItem('tasks', JSON.stringify(tasks))
+    }
 
-      var inCart = cart.find(item => id === item.id);
+    function getTasks() {
+      tasks = getDocs();
 
-      if (!inCart) {
-        cart.push({ id, quantity: 1 })
-        localStorage.setItem('cart', JSON.stringify(cart));
+      for (let i=0; i<tasks.length; i++) {
+        createElement(tasks[i]);
       }
     }
 
+    function handleSubmit(e) {
+      e.preventDefault();
+
+      var formData = new FormData(e.target);
+      var newTask = { id: 'todo-' + Date.now(), name: formData.get('name'), completed: true };
+      
+      addTask(newTask);
+    }
+
+    function addTask(newTask) {
+      tasks = JSON.parse(localStorage.getItem('tasks'));
+      
+      tasks.push(newTask);
+      saveDocs();
+
+      createElement(newTask);
+    }
+    
+    function deleteTask(element, id) {
+      tasks = tasks.filter(task => task.id !== id);
+      
+      saveDocs();
+      list.removeChild(element);
+    }
+    
+    function createElement(task) {
+      var input = document.createElement('input');
+      input.classList.add('block');
+
+      input.addEventListener('dblclick', (e) => {
+        deleteTask(input, task.id);
+      })
+
+      input.addEventListener('change', (e) => {
+        editTask(task.id)
+      })
+
+      input.value = task.name;
+      list.appendChild(input); // (!) append not replace.
+    }
+
+    function editTask(id) {
+      tasks = JSON.parse(localStorage.getItem('tasks'));
+
+      let updatedTasks = tasks.map(task => {
+        if (task.id) {}
+      })
+    }
   </script>
   
 </body>

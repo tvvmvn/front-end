@@ -60,7 +60,6 @@
     addBtn.addEventListener('click', addNote);
 
     function createNoteElement(id, content) {
-
       let NoteElement = document.createElement('textarea');
 
       NoteElement.value = content;
@@ -79,7 +78,6 @@
     }
 
     function getNotes(e) {
-
       if (!localStorage.getItem('notesStorage')) {
         localStorage.setItem('notesStorage', '[]');
       }
@@ -104,7 +102,6 @@
     }
 
     function editNote(id, content) {
-
       let notes = getDocs();
 
       let updatedNotes = notes.map(note => {
@@ -118,7 +115,6 @@
     }
 
     function deleteNote(NoteElement, id) {
-
       let notes = getDocs();
 
       let remainingNotes = notes.filter(note => id !== note.id);
