@@ -24,30 +24,20 @@
   <div id="list"></div>
 
   <script>
-
     let list = document.getElementById('list');
     let form = document.getElementById('form');
-    let tasks;
 
     window.addEventListener('DOMContentLoaded', getTasks);
     form.addEventListener('submit', handleSubmit);
 
-    function getDocs() {
-      if (!localStorage.getItem('tasks')) {
+    function getTasks() {
+      let initialTasks = localStorage.getItem('tasks');
+      
+      if (!initialTasks) {
         localStorage.setItem('tasks', '[]');
       }
 
-      tasks = JSON.parse(localStorage.getItem('tasks'));
-
-      return tasks;
-    }
-
-    function saveDocs() {
-      localStorage.setItem('tasks', JSON.stringify(tasks))
-    }
-
-    function getTasks() {
-      tasks = getDocs();
+      let tasks = getDocs();
 
       for (let i=0; i<tasks.length; i++) {
         createElement(tasks[i]);
@@ -58,29 +48,53 @@
       e.preventDefault();
 
       var formData = new FormData(e.target);
-      var newTask = { id: 'todo-' + Date.now(), name: formData.get('name'), completed: true };
+      var newTask = { 
+        id: 'todo-' + Date.now(), 
+        name: formData.get('name'), 
+        completed: true
+      };
       
       addTask(newTask);
     }
 
     function addTask(newTask) {
-      tasks = JSON.parse(localStorage.getItem('tasks'));
+      let tasks = getDocs();
+      let updatedTasks = [...tasks, newTask];
       
-      tasks.push(newTask);
-      saveDocs();
-
+      saveDocs(updatedTasks);
       createElement(newTask);
     }
     
     function deleteTask(element, id) {
-      tasks = tasks.filter(task => task.id !== id);
+      let remainingTasks = tasks = tasks.filter(task => task.id !== id);
       
-      saveDocs();
+      saveDocs(remainingTasks);
       list.removeChild(element);
+    }
+
+    function editTask(id, newName) {
+      let tasks = getDocs();
+
+      let updatedTasks = tasks.map(task => {
+        if (task.id === id) {
+          return { ...task, name: newName }
+        }
+        return task;
+      })
+
+      saveDocs(updatedTasks);
+    }
+
+    function getDocs() {
+      return JSON.parse(localStorage.getItem('tasks'));
+    }
+
+    function saveDocs(tasks) {
+      localStorage.setItem('tasks', JSON.stringify(tasks))
     }
     
     function createElement(task) {
-      var input = document.createElement('input');
+      var input = document.createElement('1input');
       input.classList.add('block');
 
       input.addEventListener('dblclick', (e) => {
@@ -88,19 +102,11 @@
       })
 
       input.addEventListener('change', (e) => {
-        editTask(task.id)
+        editTask(task.id, e.target.value)
       })
 
       input.value = task.name;
       list.appendChild(input); // (!) append not replace.
-    }
-
-    function editTask(id) {
-      tasks = JSON.parse(localStorage.getItem('tasks'));
-
-      let updatedTasks = tasks.map(task => {
-        if (task.id) {}
-      })
     }
   </script>
   

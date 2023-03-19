@@ -9,24 +9,18 @@
 <body>
   
   <h1>event</h1>
-  <pre>
-    Event is user's action in web site:
-    such as click, scroll, resize, point move, key down, etc.
-
-    onEventName="eventHandler()"
-  </pre>
 
   <button 
     type="button" 
-    onclick="handleClick()"
+    onclick="handleClick(event)"
   >
     button
   </button>
 
   <script>
 
-    function handleClick() {
-      alert('lol')
+    function handleClick(e) {
+      console.log(e)
     }
 
   </script>
