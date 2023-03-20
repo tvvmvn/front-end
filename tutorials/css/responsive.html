@@ -1,0 +1,51 @@
+<!-- 
+  responsive
+
+  responsive to device
+-->
+
+<style>
+  /* Mobile first */
+  .title::after {
+    content: "Extra small devices";
+  }
+
+  @media (min-width: 640px) {
+    .title::after {
+      content: "Small devices";
+    }
+  }
+
+  @media (min-width: 768px) {
+    .title::after {
+      content: "Medium devices";
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .title::after {
+      content: "Large devices";
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .title::after {
+      content: "Extra Large devices";
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .title::after {
+      content: "2 Extra large devices";
+    }
+  }
+</style>
+
+<div class="container">
+  <h3 class="title">Devices: </h3>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Asperiores at fugit quia, explicabo facere pariatur iste rerum sapiente incidunt
+    repudiandae est doloribus nesciunt architecto expedita neque dolor quisquam, in eaque?
+  </p>
+</div>

@@ -1,0 +1,129 @@
+<!-- 
+  Properties
+
+  innerHTML
+  classList
+  attribute
+  style
+  createElement
+-->
+
+
+<!-- 
+  innerHTML
+
+  return tree as string type
+-->
+
+
+<ul id="list">
+  <li>list item</li>
+  <li>list item</li>
+  <li>list item</li>
+</ul>
+
+<script>
+  var list = document.getElementById('list');
+
+  // access inside list
+  console.log(list.innerHTML) // li elements as string 
+
+  list.innerHTML = `
+    <li>Guinness</li>
+    <li>Heineken</li>
+    <li>Budwiser</li>
+  `
+
+  console.log(list.innerHTML) // beers
+</script>
+
+
+<!-- 
+  classList
+  return class list
+-->
+
+<ul id="list">
+  <li id="foo" class="class1">Foo</li>
+  <li>Bar</li>
+  <li>Baz</li>
+</ul>
+
+<script>
+  var foo = document.getElementById('foo');
+
+  // access class list of foo
+  console.log(foo.classList)
+  // > [class1]
+
+
+  // add new class
+  foo.classList.add('class2')
+
+  console.log(foo.classList)
+  // > [class1, class2]
+
+
+  // remove class
+  foo.classList.remove('class2');
+
+  console.log(foo.classList)
+  // > [class1]
+</script>
+
+
+<!-- attribute -->
+
+<input 
+  type="text" 
+  id="input"
+  name="username" 
+  value="John Doe" 
+  placeholder="Username"
+>
+
+<script>
+
+  var input = document.getElementById('input');
+
+  // access attribute
+  console.log(input.type)
+  console.log(input.id)
+  console.log(input.name)
+  console.log(input.value)
+  console.log(input.placeholder)
+
+  // Update attribute
+  input.value = 'Jane Doe';
+
+  console.log(input.value)
+  // > Jane Doe
+
+</script>
+
+
+<!-- style -->
+
+
+
+
+<!-- 
+  createElement
+-->
+
+<ul id="list">
+  <li>Foo</li>
+  <li>Bar</li>
+</ul>
+
+<script>
+  var list = document.getElementById('list');
+
+  // create element li
+  var li = document.createElement('li');
+
+  li.textContent = 'Baz'
+
+  // append li to list
+  list.appendChild(li);
+</script>

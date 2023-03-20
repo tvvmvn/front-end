@@ -1,0 +1,60 @@
+<!-- 
+  position
+  positioning element
+
+  static
+  relative
+  absolute
+  fixed
+-->
+
+
+<!-- static -->
+<style>
+  .static {
+    /* default */
+    position: static;
+  }
+</style>
+
+<div class="item static">static</div>
+<div class="item static">static</div>
+<div class="item static">static</div>
+
+
+<!-- relative -->
+<style>
+  .relative {
+    position: relative;
+  }
+  /* .relative-item {} */
+</style>
+
+<div class="item">static</div>
+<div class="item relative">relative</div>
+<div class="item">static</div>
+
+
+<!-- absolute -->
+<style>
+  .relative {
+    position: relative;
+  }
+  .absolute {
+    position: absolute;
+  }
+</style>
+
+<div class="container relative">
+  <div class="item absolute">item</div>
+</div>
+
+
+<!-- fixed -->
+<style>
+  .fixed {
+    position: fixed;
+  }
+</style>
+
+<div class="item fixed">item</div>

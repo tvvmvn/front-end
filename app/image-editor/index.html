@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    ul li {
+      margin-bottom: 1rem;
+    }
+    body {
+      margin: 0;
+      background-color: #555;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+    }
+    #side-bar {
+      background-color: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 16rem;
+      height: 100%;
+      padding: 1rem;
+    } 
+    input {
+      width: 100%;
+    }
+    #canvas {
+      border: 1px solid;
+      max-width: 100%;
+    }
+    #workspace {
+      margin-left: 16rem;
+      padding: 1rem;
+    }
+  </style>
+
+  <div id="side-bar">
+    <h2>JS Image Editor</h2>
+    <ul>
+      <li>
+        <input type="file" name="" id="file-input">
+      </li>
+      <li>
+        <label for="brightness">Brigtness</label>
+        <input type="range" name="brightness" id="brightness" min="0" max="200" value="100">
+      </li>
+      <li>
+        <label for="saturation">Saturation</label>
+        <input type="range" name="saturation" id="saturation" min="0" max="200" value="100">
+      </li>
+      <li>
+        <label for="inversion">Inversion</label>
+        <input type="range" name="inversion" id="inversion" min="0" max="100" value="0">
+      </li>
+      <li>
+        <label for="blur">Blur</label>
+        <input type="range" name="blur" id="blur" min="0" max="10" value="0">
+      </li>
+    </ul>
+  </div>
+
+  <main id="workspace">
+    <canvas id="canvas" width="300" height="300"></canvas>
+  </main>
+
+  <script src="./script.js"></script>
+  
+</body>
+</html>

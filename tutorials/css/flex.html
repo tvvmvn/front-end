@@ -1,0 +1,288 @@
+<!-- 
+  flex
+
+  1 what is flex
+
+  2 flex container
+  flex direction
+  flex wrap
+  justify content
+  align items
+  
+  3 flex item
+-->
+
+
+<!-- 1 what is flex -->
+<style>
+  .container {
+    display: flex;
+  }
+</style>
+
+<div class="container">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+</div>
+
+<!-- 2 flex container -->
+
+
+<!-- 
+  flex direction 
+  direction to arrange items
+
+  row
+  column
+-->
+
+
+<style>
+  .container {
+    display: flex;
+  }
+  .flex-row {
+    flex-direction: row;
+  } 
+  .flex-col {
+    flex-direction: column;
+  }
+</style>
+
+<div class="container">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+</div>
+
+
+<div class="container">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+</div>
+
+
+<!-- 
+  flex wrap 
+
+  wrap
+  nowrap
+-->
+
+<style>
+  .container {
+    display: flex;
+  }
+  .flex-nowrap {
+    /* default */
+    flex-wrap: nowrap
+  }
+  .flex-wrap {
+    flex-wrap: wrap
+  }
+</style>
+
+<div class="container">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+</div>
+
+<div class="container">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+</div>
+
+
+<!-- 
+  justify content (row)
+
+  flex start
+  center
+  flex end
+  space between
+--> 
+
+<style>
+  .container {
+    display: flex;
+  }
+  .justify-start {
+    /* default */
+    justify-content: flex-start;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .justify-end {
+    justify-content: flex-end;
+  }
+</style>
+
+<div class="container">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+</div>
+
+<div class="container">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+</div>
+
+<div class="container">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+</div>
+
+<div class="container">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+</div>
+
+
+<!-- 
+  align items
+
+  stretch
+  flex start
+  center
+  flex end
+-->
+
+
+<style>
+  .container {
+    display: flex;
+  }
+  .items-stretch {
+    align-items: stretch;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-end {
+    align-items: flex-end;
+  }
+</style>
+
+<div class="container items-stretch">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+</div>
+
+<div class="container items-start">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+</div>
+
+<div class="container items-center">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+</div>
+
+<div class="container items-end">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+</div>
+
+
+
+<!-- flex grow -->
+<style>
+  .container {
+    display: flex;
+  }
+  .grow-0 {
+    /* default */
+    flex-grow: 0
+  }
+  .grow {
+    flex-grow: 1
+  }
+</style>
+
+<div class="container">
+  <div class="item grow-0">item</div>
+  <div class="item grow">item</div>
+  <div class="item grow-0">item</div>
+</div>
+
+
+<!-- flex shrink -->
+<style>
+  .container {
+    display: flex;
+  }
+  .shrink-0 {
+    flex-shrink: 0;
+  }
+  .shrink {
+    /* default */
+    flex-shrink: 1;
+  }
+</style>
+
+<div class="container">
+  <div class="item shrink">item</div>
+  <div class="item shrink-0">item</div>
+  <div class="item shrink">item</div>
+</div>
+
+
+<!-- flex basis -->
+<style>
+  .container {
+    display: flex;
+  }
+  .basis-24 {
+    flex-basis: 24rem;
+  }
+</style>
+
+<div class="container">
+  <div class="item">item</div>
+  <div class="item basis-24">item</div>
+  <div class="item">item</div>
+</div>
+
+
+
+<!-- order -->
+<style>
+  .container {
+    display: flex;
+  }
+  .order-none {
+    /* default */
+    order: 0;
+  }
+  .order-1 {
+    order: 1;
+  }
+  .order-2 {
+    order: 2;
+  }
+</style>
+
+<div class="container">
+  <div class="item order-2">item</div>
+  <div class="item order-1">item</div>
+  <div class="item order-none">item</div>
+</div>
