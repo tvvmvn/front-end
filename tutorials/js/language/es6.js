@@ -65,24 +65,14 @@ function f(irishBeer) {
   var origin = irishBeer.origin;
   var available = irishBeer.available;
 
-  console.log('name:', name)
-  console.log('origin:', origin)
-  console.log('available:', available);
-  // > Guinness
-  // > Ireland
-  // > false
+  // ...
 }
 
-f(irishBeer)
+f(irishBeer);
 
 
 function f({ name, origin, available }) {
-  console.log('name:', name)
-  console.log('origin:', origin)
-  console.log('available:', available);
-  // > Guinness
-  // > Ireland
-  // > false
+  // ...
 }
 
 f(irishBeer);
@@ -92,6 +82,7 @@ f(irishBeer);
   Spread operator: Array
 
   make items of array to copy easily.
+  ...array to copy
 */
 
 
@@ -118,6 +109,7 @@ console.log(worldBeers);
   Spread operator: Object
 
   make properties of object to copy easily.
+  ...object to copy
 */
 
 
@@ -132,4 +124,31 @@ var irishBeer = {
 var updatedIrishBeer = { ...irishBeer, available: true };
 
 console.log(updatedIrishBeer);
+
+
+/*
+  Q. ES6
+*/
+
+// Q1. Destructing 
+var asianBeers = ['Kloud', 'Asahi'];
+
+var [koreanBeer, japaneseBeer] = asianBeers;
+
+
+// Q2. Spread Operator
+var cat = {
+  name: 'Kitty',
+  age: 1,
+  home: null,
+  sound: function () {
+    return 'Meow'
+  }
+}
+
+var updatedCat = { ...cat, home: 'Samsan-dong' };
+
+console.log(updatedCat);
+
+
 

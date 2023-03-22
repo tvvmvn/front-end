@@ -18,7 +18,6 @@
   
   array
   object
-  > C와 비교...
   class
 
   error
@@ -29,4 +28,6 @@
   regex (eyes ?)
   json
 
+
+  * References: W3Schools
 */

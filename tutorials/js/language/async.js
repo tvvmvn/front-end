@@ -1,8 +1,9 @@
 /* 
 
   *** Asychronous operations ***
-  to handle blocking 
+  to prevent blocking 
   such as fetching resources from a server.
+  asynchronous function perform this operation
 
   1 synchronous operations
   2 asynchronous operations
@@ -13,7 +14,7 @@
 /*
   1 Synchronous operation
   
-  wait for result
+  executed in order (it is invoked)
 */
 
 function f() {
@@ -30,7 +31,7 @@ console.log("next operations");
 /*
   2 Asynchronous operation
 
-  not wait for result
+  executed as it's faster
 */
 
 
@@ -40,7 +41,7 @@ function fetchData(callback) {
   
   setTimeout(() => {
     callback(null, data);
-  }, 1000)
+  }, 1000);
 }
 
 
