@@ -75,9 +75,10 @@ console.log("next operations");
   async / await
 
   wait for promise returning it results.
-  improve readablility of promise. 
+  improve readablility of promise.
   handling error in try/catch
 */
+
 
 function fetchData() {
   const promise = new Promise((res, rej) => {
@@ -86,8 +87,6 @@ function fetchData() {
 
   return promise;
 }
-
-f();
 
 async function f() {
   try {
@@ -98,9 +97,10 @@ async function f() {
 
     console.log(data);
 
-    console.log('next operations');
-
   } catch (err) {
     console.error(err)
   }
 }
+
+f();
+console.log('next operations');

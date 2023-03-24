@@ -1,4 +1,4 @@
-// Canvas and pencil
+// Canvas and Pencil
 let canvas = document.getElementById('myCanvas');
 let ctx = canvas.getContext('2d');
 
@@ -12,8 +12,8 @@ let dy = -2;
 
 
 // Paddle
-let paddleHeight = 5;
-let paddleWidth = 80;
+let paddleHeight = 10;
+let paddleWidth = 75;
 let paddleX = (canvas.width - paddleWidth) / 2;
 let leftPressed = false;
 let rightPressed = false;
@@ -24,7 +24,7 @@ let brickRowCount = 3;
 let brickColumnCount = 5;
 let brickWidth = 75;
 let brickHeight = 20;
-let brickPadding = 10;
+let brickMargin = 10;
 let brickOffsetLeft = 30;
 let brickOffsetTop = 30;
 let bricks = []
@@ -33,12 +33,11 @@ for (let c = 0; c < brickColumnCount; c++) {
   bricks[c] = [];
 
   for (let r = 0; r < brickRowCount; r++) {
-    bricks[c][r] = {x: 0, y: 0, status: 1}
+    bricks[c][r] = { x: 0, y: 0, status: 1 }
   }
 }
 
-// console.log(bricks);
-
+console.log(bricks);
 
 // Score
 let score = 0;
@@ -48,21 +47,28 @@ let score = 0;
 let lives = 2;
 
 
+function drawBall() {
+  ctx.beginPath();
+  ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
+  ctx.fill();
+}
+
+function drawPaddle() {
+  // fillRect(left, top, width, height);
+  ctx.fillRect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
+}
+
 function drawBricks() {
   for (let c = 0; c < brickColumnCount; c++) {  
     for (let r = 0; r < brickRowCount; r++) {
       let brick = bricks[c][r];
       
-      brick.x = c * (brickWidth + brickPadding) + brickOffsetLeft;
-      brick.y = r * (brickHeight + brickPadding) + brickOffsetTop;
+      brick.x = c * (brickWidth + brickMargin) + brickOffsetLeft;
+      brick.y = r * (brickHeight + brickMargin) + brickOffsetTop;
       
+      // Draw alive bricks
       if (brick.status === 1) {
-        // creat rect...
-        ctx.beginPath();
-        ctx.rect(brick.x, brick.y, brickWidth, brickHeight);
-        ctx.fillStyle = "#333";
-        ctx.fill();
-        ctx.closePath();
+        ctx.fillRect(brick.x, brick.y, brickWidth, brickHeight);
   
         // when collision occur
         if (
@@ -87,71 +93,27 @@ function drawBricks() {
   }
 }
 
+function drawScore() {
+  ctx.font = "16px Arial";
+  ctx.fillText(`Score: ${score}`, 8, 20);
+}
 
-// move paddle
-document.addEventListener('keydown', (e) => {
-  console.log('keydown', e.key)
-
-  if (e.key === 'ArrowRight') {
-    rightPressed = true;
-  }
-  if (e.key === 'ArrowLeft') {
-    leftPressed = true;
-  }
-});
-
-
-// stop paddle
-document.addEventListener('keyup', (e) => {
-  console.log('keyup', e.key)
-
-  if (e.key === 'ArrowRight') {
-    rightPressed = false;
-  }
-  if (e.key === 'ArrowLeft') {
-    leftPressed = false;
-  }
-});
-
+function drawLives() {
+  ctx.font = "16px Arial";
+  ctx.fillText(`Lives: ${lives}`, canvas.width - 65, 20);
+}
 
 function draw() {
 
-  /* clearRect(x:left, y:top, x:bottom, y:right) */
-  // let this method clear whole area
+  /* let this method clear whole area */
+  // clearRect(x:left, y:top, x:bottom, y:right)
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-
-  /* draw ball */
-  ctx.beginPath();
-  ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
-  ctx.fillStyle = '#333';
-  ctx.fill();
-  ctx.closePath();
-
-
-  /* draw paddle */
-  ctx.beginPath();
-  // rect(left, top, width, height);
-  ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-  ctx.fillStyle = '#333';
-  ctx.fill();
-  ctx.closePath();
-
-
-  /* Draw bricks*/
+  drawBall();
+  drawPaddle();
   drawBricks();
-
-
-  /* Score */
-  ctx.font = "16px Arial";
-  ctx.fillStyle = "#333";
-  ctx.fillText(`Score: ${score}`, 8, 20);
-
-
-  /* Lives */
-  ctx.font = "16px Arial";
-  ctx.fillStyle = "#333";
-  ctx.fillText(`Lives: ${lives}`, canvas.width - 65, 20);
+  drawScore();
+  drawLives();
 
 
   /* Arrow key control */
@@ -172,17 +134,19 @@ function draw() {
   }
 
 
+  /* when ball against wall */
+  
   // right 
   if (x > canvas.width - ballRadius) {
     dx = -dx;
   }
 
-  // top
+  // top 
   if (y < 0 + ballRadius) {
     dy = -dy;
   }
   
-  // bottom
+  // bottom 
   if (y > canvas.height - ballRadius) {
     
     if (x > paddleX && x < paddleX + paddleWidth) {
@@ -210,10 +174,30 @@ function draw() {
   }
 
 
-  // Increase (x, y)
+  /* Increse x and y */
   x += dx;
   y += dy;
 }
 
+// move paddle
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight') {
+    rightPressed = true;
+  }
+  if (e.key === 'ArrowLeft') {
+    leftPressed = true;
+  }
+});
+
+
+// stop paddle
+document.addEventListener('keyup', (e) => {
+  if (e.key === 'ArrowRight') {
+    rightPressed = false;
+  }
+  if (e.key === 'ArrowLeft') {
+    leftPressed = false;
+  }
+});
 
 setInterval(draw, 10);

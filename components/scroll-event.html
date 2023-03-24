@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <style>
+    .el {
+      opacity: 0;
+      transition: 0.5s;
+    }
+    .opacity-100 {
+      opacity: 1;
+    }
+  </style>
+
+  <h1>Scroll event</h1>
+
+  <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis aliquam harum id animi! Ipsa nihil quae tenetur omnis, sequi molestias debitis accusantium quos. Quia perspiciatis necessitatibus quo nostrum ex vero.</h1>
+  <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis aliquam harum id animi! Ipsa nihil quae tenetur omnis, sequi molestias debitis accusantium quos. Quia perspiciatis necessitatibus quo nostrum ex vero.</h1>
+  <h1 class="el">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis aliquam harum id animi! Ipsa nihil quae tenetur omnis, sequi molestias debitis accusantium quos. Quia perspiciatis necessitatibus quo nostrum ex vero.</h1>
+  <h1 class="el">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis aliquam harum id animi! Ipsa nihil quae tenetur omnis, sequi molestias debitis accusantium quos. Quia perspiciatis necessitatibus quo nostrum ex vero.</h1>
+  <h1 class="el">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis aliquam harum id animi! Ipsa nihil quae tenetur omnis, sequi molestias debitis accusantium quos. Quia perspiciatis necessitatibus quo nostrum ex vero.</h1>
+
+  <script>
+
+    var els = document.getElementsByClassName('el');
+
+    window.addEventListener('scroll', (e) => {
+      let viewPortHeight = window.innerHeight; 
+      
+      for (var i=0; i<els.length; i++) {
+        let y = els[i].getBoundingClientRect().y;
+      
+        if (y < viewPortHeight - 100) {
+          els[i].classList.add('opacity-100');
+        }
+      }
+
+    })
+
+  </script>
+  
+</body>
+</html>
