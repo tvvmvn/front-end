@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>classList</h1>
+  <pre>
+    store class list
+  
+    methods
+    1 add(newClass): add new class
+    2 remove(class): remove class
+  </pre>
+
+
+  <style>
+    .text-italic {
+      font-style: italic;
+    }
+    .underline {
+      text-decoration: underline;
+    }
+    .font-bold {
+      font-weight: bold;
+    }
+  </style>
+  
+  <ul>
+    <li id="foo" class="font-bold text-italic">foo</li>
+    <li>bar</li>
+    <li>baz</li>
+  </ul>
+  
+  <script>
+    var foo = document.getElementById('foo');
+    
+    // access class list
+    console.log(foo.classList); // DOMTokenList(length)
+  
+    // add class
+    foo.classList.add('underline'); 
+  
+    // remove class
+    foo.classList.remove('font-bold');
+  </script>
+
+</body>
+</html>

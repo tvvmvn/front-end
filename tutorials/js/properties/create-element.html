@@ -7,23 +7,26 @@
   <title>Document</title>
 </head>
 <body>
+  <h1>createElement</h1>
   
-  <h1>event</h1>
   <p>
-    user's action such as click, scroll, touch.
+    create new element
   </p>
-
-
-  <button id="btn">button</button>
-
-  <script>
-    var btn = document.getElementById('btn');
-
-    // addEventListener(eventName, eventHandler)
-    btn.addEventListener('click', () => {
-      alert('lol')
-    })
-  </script>
   
+  <ul id="list">
+    <li>Foo</li>
+    <li>Bar</li>
+  </ul>
+  
+  <script>
+    var list = document.getElementById('list');
+
+    var li = document.createElement('li');
+  
+    li.textContent = 'Baz'
+  
+    list.appendChild(li);
+  </script>
+
 </body>
 </html>

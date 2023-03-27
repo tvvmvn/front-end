@@ -54,6 +54,7 @@ function drawBall() {
 }
 
 function drawPaddle() {
+  // fillRect(left, top, width, height);
   ctx.fillRect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
 }
 
@@ -115,7 +116,7 @@ function draw() {
 
   /* Arrow key control */
   if (leftPressed) {
-    paddleX -= 4; 
+    paddleX -= 6; 
 
     if (paddleX < 0) {
       paddleX = 0;
@@ -123,7 +124,7 @@ function draw() {
   }
 
   if (rightPressed) {
-    paddleX += 4;
+    paddleX += 6;
 
     if (paddleX + paddleWidth > canvas.width) {
       paddleX = canvas.width - paddleWidth;
@@ -156,8 +157,7 @@ function draw() {
       // no lives 
       if (!lives) {
         alert('GAME OVER');
-        document.location.reload();
-        return;
+        return document.location.reload();
       }
 
       // reset

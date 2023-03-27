@@ -7,17 +7,20 @@
   <title>Document</title>
 </head>
 <body>
-
-  <style>
-    #canvas {
-      background-color: #eee;
-    }
-  </style>
   
-  <canvas id="canvas" width="150" height="300"></canvas>
+  <h1>id selector</h1>
 
-  <script src="./script.js"></script>
+  <ul>
+    <li id="foo">foo</li>
+    <li>bar</li>
+    <li>baz</li>
+  </ul>
+
+  <script>
+    var foo = document.getElementById('foo');
+
+    console.log(foo);
+  </script>
 
 </body>
 </html>
-

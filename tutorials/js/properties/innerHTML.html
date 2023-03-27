@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>innerHTML</h1>
+  <p>
+    store tree as string
+  </p>
+  
+  <div id="container">
+    <ul>
+      <li>foo</li>
+      <li>bar</li>
+      <li>baz</li>
+    </ul>
+  </div>
+  
+  <script>
+    var container = document.getElementById('container');
+  
+    // access inside list
+    console.log(container.innerHTML)
+  
+    // update innerHTML
+    container.innerHTML = `
+      <ul>
+        <li>Guinness</li>
+        <li>Heineken</li>
+        <li>Budwiser</li>
+      </ul>
+    `
+  
+  </script>
+</body>
+</html>

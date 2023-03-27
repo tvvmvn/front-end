@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    
+  <h1>attributes</h1>
+  <pre>
+    attributes such as id, class, style, etc.
+  </pre>
+  
+  <input 
+    type="text" 
+    id="input"
+    name="q" 
+    style="padding: 0.5rem; width: 16rem"
+    value="Search Google"
+  >
+  
+  <script>
+  
+    var input = document.getElementById('input');
+  
+    // access attribute
+    console.log(input.type)
+    console.log(input.id)
+    console.log(input.name)
+    console.log(input.value)
+    console.log(input.style.padding)
+    console.log(input.style.width)
+  
+    // update attribute
+    input.value = 'Search Naver'
+  
+  </script>
+</body>
+</html>

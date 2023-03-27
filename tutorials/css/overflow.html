@@ -1,45 +1,68 @@
-<!-- 
-  overflow
-
-  how to handle overflow 
--->
-
-
-<style>
-  .hidden {
-    overflow: hidden
-  }
-  .scroll {
-    overflow: scroll;
-  }
-  .auto {
-    overflow: auto;
-  }
-  .visible {
-    overflow: visible;
-  }
-</style>
-
-<div class="hidden">
-  Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-  Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
-  et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
-</div>
-
-<div class="scroll">
-  Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-  Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
-  et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
-</div>
-
-<div class="auto">
-  Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-  Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
-  et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
-</div>
-
-<div class="visible">
-  Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-  Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
-  et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
-</div>  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>overflow</h1>
+  <p>handle oveflow contents.</p>
+  
+  <style>
+    .container-hidden {
+      overflow: hidden;
+      border: 1px solid;
+      height: 50px;
+    }
+    .container-scroll {
+      overflow: scroll;
+      border: 1px solid;
+      height: 50px;
+    }
+    .container-auto {
+      overflow: auto;
+      border: 1px solid;
+      height: 50px;
+    }
+    .container-visible {
+      overflow: visible;
+      border: 1px solid;
+      height: 50px;
+    }
+  </style>
+  
+  <h3>overflow: hidden</h3>
+  <p>hide overflown contents.</p>
+  <div class="container-hidden">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
+    et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
+  </div>
+  
+  <h3>overflow: scroll</h3>
+  <p>create scroll area x and y axis</p>
+  <div class="container-scroll">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
+    et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
+  </div>
+  
+  <h3>overflow: auto</h3>
+  <p>create scroll area only at axis that overflow occur in</p>
+  <div class="container-auto">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
+    et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
+  </div>
+  
+  <h3>overflow: visible</h3>
+  <p>You can still see overflown contents.</p>
+  <div class="container-visible">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
+    et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
+  </div>  
+</body>
+</html>

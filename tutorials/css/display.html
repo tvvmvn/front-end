@@ -1,31 +1,62 @@
-<!-- 
-  display 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
 
-  block
-  inline-block
-  inline
-  none
--->
+  <h1>display</h1>
+  <p>how to display elements. 
+    each element has different display property. </p>
 
-<style>
-  .block {
-    display: block;
-  }
+  <style>
+    .block-item {
+      background-color: #ddd;
+      padding: 0.5rem;
+      margin-top: 4px;
+    }
+    .inline-block-item {
+      display: inline-block;
+      padding: 0.5rem;
+      background-color: #ddd;
+    }
+    .inline-item {
+      display: inline;
+      padding: 0.5rem;
+      background-color: #ddd;
+    }
+    .none-item {
+      display: none;
+    }
+  </style>
 
-  .inline-block {
-    display: inline-block
-  }
+  <h3>display: block</h3>
+  <p>element get all width of parent element.</p>
 
-  .inline {
-    display: inline;
-  }
+  <div class="block-item">block</div>
+  <div class="block-item">block</div>
+  <div class="block-item">block</div>
 
-  .none {
-    display: none;
-  }
-</style>
 
-<div class="item block">block</div>
-<div class="item inline-block">inline-block</div>
-<div class="item inline">inline</div>
-<div class="item none">none</div>
+  <h3>display: inline-block</h3>
+  <p>elements has width only as many as they need.</p>
+  <div class="inline-block-item">inline block</div>
+  <div class="inline-block-item">inline block</div>
+  <div class="inline-block-item">inline block</div>
+  
+
+  <h3>display: inline</h3>
+  <p>element cannot have width, height and y-axis margin/padding. it is mainly default display property in text processing element.</p>
+  <div class="inline-item">inline</div>
+  <div class="inline-item">inline</div>
+  <div class="inline-item">inline</div>
+
+  <h3>display: none</h3>
+  <p>element not appear.</p>
+  <div class="none-item">none</div>
+  
+</body>
+</html>

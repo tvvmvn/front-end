@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>children selector</h1>
+
+  <ul id="list">
+    <li>foo</li>
+    <li>bar</li>
+    <li>baz</li>
+  </ul>
+
+  <script>
+    var list = document.getElementById('list');
+
+    console.log(list.children); // HTMLCollection(length)
+    
+    console.log(list.length) // 3
+
+    console.log(list.children[0]) // foo
+    console.log(list.children[1]) // bar
+    console.log(list.children[2]) // baz
+  </script>
+  
+</body>
+</html>
