@@ -9,17 +9,32 @@
 <body>
 
 <style>
-    html {scroll-behavior:smooth;}
+    html {
+      scroll-behavior:smooth;
+    }
     body {
       min-height: 1000px;
     }
-    button {
+    #btn {
       position: fixed;
-      bottom: 1rem;
-      right: 1rem;
+      bottom: 2rem;
+      right: 2rem;
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: none;
+      background-color: #333;
+      cursor: pointer;
     }
-    .hidden {
-      display: none;
+    .invisible {
+      visibility: hidden;
+    }
+    #arrow-top {
+      width: 1rem;
+      fill: #fff;
     }
   </style>
 
@@ -27,24 +42,30 @@
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos perspiciatis eius fugiat illum amet fuga dolor
     consectetur, vero rerum tempore facilis qui minima vel dolores minus rem, voluptate dolore voluptatem.</p>
 
-  <button class="hidden"> 
-    Top
+  <button id="btn" class="invisible"> 
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      viewBox="0 0 384 512"
+      id="arrow-top"
+    >
+      <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/>
+    </svg>
   </button>
 
   <script>
-    let button = document.querySelector('button');
+    let btn = document.getElementById('btn');
 
-    window.addEventListener('scroll', (e) => {
+    window.addEventListener('scroll', () => {
       console.log(document.documentElement.scrollTop);
 
       if (document.documentElement.scrollTop < 200) {
-        button.classList.add('hidden')
+        btn.classList.add('invisible')
       } else {
-        button.classList.remove('hidden')
+        btn.classList.remove('invisible')
       }
     })
 
-    button.addEventListener('click', (e) => {
+    btn.addEventListener('click', () => {
       document.documentElement.scrollTop = 0;
     })
   </script>

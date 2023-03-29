@@ -8,47 +8,47 @@
 </head>
 <body>
 
-  <h1>See more</h1>
+  <h1>See more button</h1>
 
-  <p id="container"></p>
+  <style>
+    #container {
+      display: inline;
+    }
+    #btn {
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+      color: #888;
+      padding: 0;
+    }
+    #btn.hidden {
+      display: none;
+    }
+  </style>
 
-  <button id="btn" type="button" onclick="toggleText()"></button>
+  <p id="container">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+    Itaque ut odit commodi officiis fugiat praesentium, 
+    eum aut tenetur porro sint voluptate repellendus ab laudantium dolor, 
+    quasi id ea obcaecati eaque?
+  </p>
+  
+  <button id="btn">more</button>
 
   <script>
+    var container = document.getElementById('container');
+    var btn = document.getElementById('btn');
+    var fullContent = container.textContent;
+    var lessContent = fullContent.substring(0, 50) + '...';
 
-    let o = {
-      text: `
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-        Aliquam nemo cupiditate deleniti consectetur. 
-        Optio deserunt, doloribus unde mollitia similique at nisi corrupti vitae 
-        quidem consectetur quod reprehenderit et totam voluptatibus!
-      `,
-      enum: ['See more', 'See less']
-    }
+    container.textContent = lessContent;
 
-    let active = false;
-
-    if (active) {
-      document.getElementById('container').textContent = o.text.substr(0, 30) + '...';
-      document.getElementById('btn').textContent = 'See more'
-    } else {
-      document.getElementById('container').textContent = o.text;
-      document.getElementById('btn').textContent = 'See less'
-    }
-
-    function toggleText() {
-      active = !active;
-
-      if (active) {
-        document.getElementById('container').textContent = o.text.substr(0, 30) + '...';
-        document.getElementById('btn').textContent = 'See more'
-      } else {
-        document.getElementById('container').textContent = o.text;
-        document.getElementById('btn').textContent = 'See less'
-      }
-    }
-
+    btn.addEventListener('click', () => {
+      container.textContent = fullContent;
+      btn.classList.add('hidden');
+    })
   </script>
+
   
 </body>
 </html> 
