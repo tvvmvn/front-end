@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h1>Live Search</h1>
+
+  <style>
+    .container {
+      width: 20rem;
+    }
+
+    #input {
+      padding: 0.5rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    #list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .item {
+      padding: 0.5rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <div class="container">
+    <input type="text" name="" id="input" placeholder="Search">
+    
+    <ul id="list">
+      <li class="item">Guinness</li>
+      <li class="item">Heineken</li>
+      <li class="item">Budwiser</li>
+      <li class="item">Kloud</li>
+      <li class="item">Asahi</li>
+    </ul>
+  </div>
+
+  <script>
+    var input = document.getElementById('input');
+
+    input.addEventListener('keyup', (e) => {
+      var items = document.getElementsByClassName('item');
+
+      var value = e.target.value.toLowerCase();
+
+      for (var i = 0; i < items.length; i++) {
+        var textContent = items[i].textContent.toLocaleLowerCase();
+
+        if (textContent.includes(value)) {
+          items[i].classList.remove('hidden');
+        } else {
+          items[i].classList.add('hidden');
+        }
+      }
+    })
+
+  </script>
+
+</body>
+
+</html>

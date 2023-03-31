@@ -9,52 +9,53 @@
 <body>
   
   <style>
+    .container {
+      width: 16rem;
+    }
+
     label {
       display: block;
     }
 
     input {
       padding: 0.5rem;
-      width: 12rem;
-      transition: 0.2s;
-      outline: none;
+      width: 100%;
+      box-sizing: border-box;
     }
 
-    .blue {
-      color: #05f;
+    .success {
+      color: #0a0;
     }
     
-    .red {
+    .danger {
       color: #f00;
     }
   </style>
   
   <h1>Live validator for username</h1>
 
-  <form action="">
+  <div class="container">
     <label for="">Username</label>
-    <input type="text">
-    <div id="message"></div>
-  </form>
+    <input type="text" id="input">
+    <p id="message"></div>
+  </div>
 
   <script>
-    let input = document.querySelector('input');
-    let message = document.getElementById('message');
+    var input = document.getElementById('input');
+    var message = document.getElementById('message');
     
     input.addEventListener('keyup', (e) => {
       try {
-        
-        e.target.value = e.target.value.replace(' ', '_');
-
-        let username = e.target.value;
+        var username = e.target.value;
 
         if (!username) {
           throw 'Username is required';
         }
 
-        // console.log(username.match(/[^a-z0-9_]/g));
+        // regular expression
+        console.log(username.match(/[^a-z0-9_]/));
 
-        if (username.match(/[^a-z0-9_]/g)) {
+        if (username.match(/[^a-z0-9_]/)) {
           throw 'lowercase letters, number and underscore are only accepted.'
         }
 
@@ -62,10 +63,18 @@
           throw 'Username is too short'
         }
 
-        message.innerHTML = '<p class="blue">Awesome username!</p>'
-
+        message.innerHTML = `
+          <span class="success">
+            Cool name!
+          </span>
+        `
+        
       } catch (err) {
-        message.innerHTML = `<p class="red">${err}</p>`
+        message.innerHTML = `
+          <span class="danger">
+            ${err}
+          </span>
+        `
       }
     })
   </script>

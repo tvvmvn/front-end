@@ -1,85 +1,232 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
 
+  <h1>Contact Form</h1>
+
   <style>
-    form {
+    #form {
       width: 20rem;
     }
 
-    input, textarea {
-      width: 100%;
-      padding: 0.5rem;
+    .form-group {
       margin-bottom: 0.5rem;
     }
 
-    button {
-      padding: 0.5rem;
-      cursor: pointer;
+    label {
+      display: block;
     }
-    .message {
-      margin: 0;
+
+    input {
+      padding: 0.5rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button[type=submit] {
+      padding: 0.5rem;
+    }
+
+    .error-message {
       color: #f00;
+      margin: 0;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
 
-  <form action="">
-    <h1>Contact</h1>
-    <div class="">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" placeholder="Name">
-      <p id="error-name" class="message"></p>
+  <form action="" id="form">
+    <div class="form-group">
+      <label for="">First name</label>
+      <input type="text" name="fname" placeholder="John">
+      <p id="fname-error" class="error-message hidden"></p>
     </div>
-    <div class="">
-      <label for="email">E-mail</label>
-      <input type="text" name="email" id="email" placeholder="Email">
-      <p id="error-email" class="message"></p>
+    <div class="form-group">
+      <label for="">Last Name</label>
+      <input type="text" name="lname" placeholder="Doe">
+      <p id="lname-error" class="error-message hidden"></p>
     </div>
-    <div class="">
-      <label for="message">Message</label>
-      <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
-      <p id="error-message" class="message"></p>
+    <div class="form-group">
+      <label for="">E-mail</label>
+      <input type="text" name="email" id="" placeholder="JohnDoe@example.com">
+      <p id="email-error" class="error-message hidden"></p>
     </div>
-    <button type="submit">Send</button>
+    <button type="submit">Submit</button>
   </form>
 
+  <script>
+    var form = document.getElementById('form');
+    // error message
+    var fnameError = document.getElementById('fname-error')
+    var lnameError = document.getElementById('lname-error')
+    var emailError = document.getElementById('email-error')
+
+    form.addEventListener('submit', (e) => {
+      // do not submit form
+      e.preventDefault();
+
+      var formData = new FormData(e.target);
+
+      var fname = formData.get('fname');
+      var lname = formData.get('lname');
+      var email = formData.get('email');
+
+      if (!fname.trim()) {
+        fnameError.classList.remove('hidden');
+        fnameError.textContent = 'First name is required';
+      } else {
+        fnameError.classList.add('hidden');
+        fnameError.textContent = '';
+      }
+
+      if (!lname.trim()) {
+        lnameError.classList.remove('hidden');
+        lnameError.textContent = 'Last name is required';
+      } else {
+        lnameError.classList.add('hidden');
+        lnameError.textContent = ''
+      }
+
+      if (!email.trim()) {
+        emailError.classList.remove('hidden');
+        emailError.textContent = 'E-mail is required';
+      } else {
+        emailError.classList.add('hidden');
+        emailError.textContent = ''
+      }
+    })
+  </script>
+
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h1>Contact Form</h1>
+
+  <style>
+    #form {
+      width: 20rem;
+    }
+
+    .form-group {
+      margin-bottom: 0.5rem;
+    }
+
+    label {
+      display: block;
+    }
+
+    input {
+      padding: 0.5rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button[type=submit] {
+      padding: 0.5rem;
+    }
+
+    .error-message {
+      color: #f00;
+      margin: 0;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <form action="" id="form">
+    <div class="form-group">
+      <label for="">First name</label>
+      <input type="text" name="fname" placeholder="John">
+      <p id="fname-error" data-error="fname" class="error-message hidden"></p>
+    </div>
+    <div class="form-group">
+      <label for="">Last Name</label>
+      <input type="text" name="lname" placeholder="Doe">
+      <p id="lname-error" data-error="lname" class="error-message hidden"></p>
+    </div>
+    <div class="form-group">
+      <label for="">E-mail</label>
+      <input type="text" name="email" id="" placeholder="JohnDoe@example.com">
+      <p id="email-error" data-error="email" class="error-message hidden"></p>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
 
   <script>
-    let form = document.querySelector('form');
+    var form = document.getElementById('form');
+    // error message
+    var fnameError = document.getElementById('fname-error')
+    var lnameError = document.getElementById('lname-error')
+    var emailError = document.getElementById('email-error')
 
-      form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', (e) => {
+      try {
+        // do not submit form
         e.preventDefault();
-
-        let formData = new FormData(form);
-
-        let _error = {};
-
-        if (!formData.get('name')) {
-          _error.name = 'Name is required';
-        }
-
-        if (!formData.get('email')) {
-          _error.email = 'E-mail is required';
-        }
-
-        if (!formData.get('message')) {
-          _error.message = 'Write message.'
-        }
-
-        console.log(_error)
-
-        for (let pair of formData.entries()) {
-          console.log(pair);
-        }
-
-      })
-  </script>
   
+        var formData = new FormData(e.target);
+  
+        var fname = formData.get('fname');
+        var lname = formData.get('lname');
+        var email = formData.get('email');
+  
+        var _error = {};
+  
+        if (!fname) {
+          _error.fname = 'First name is required'
+        }
+
+        if (!name) {
+          _error.lnaem = 'Last name is required'
+        }
+
+        if (!email) {
+          _error.email = 'Email is required'
+        }
+
+        if (Object.keys(_error).length > 0) {
+          throw _error;
+        }
+
+        console.log('submitted');
+      
+      } catch (error) {
+
+        for (key in error) {
+          console.log(key, error[key])
+          document.getAttribute
+        }
+
+      }
+    })
+  </script>
+
 </body>
+
 </html>
