@@ -1,76 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-
 <body>
 
-  <h1>Live Search</h1>
+  <h1>Search history</h1>
 
   <style>
-    .container {
-      width: 20rem;
-    }
-
-    #input {
-      padding: 0.5rem;
-      width: 100%;
+    * {
       box-sizing: border-box;
     }
-
-    #list {
+    form {
+      width: 20rem;
+    }
+    input {
+      padding: 0.5rem;
+      width: 100%;
+    }
+    ul {
       list-style: none;
       padding: 0;
       margin: 0;
+      width: 20rem;
+      position: absolute;
+      border: 1px solid #ddd;
+      background-color: #fff;
     }
-
-    .item {
+    li {
       padding: 0.5rem;
     }
-
     .hidden {
       display: none;
     }
   </style>
 
-  <div class="container">
-    <input type="text" name="" id="input" placeholder="Search">
-    
-    <ul id="list">
-      <li class="item">Guinness</li>
-      <li class="item">Heineken</li>
-      <li class="item">Budwiser</li>
-      <li class="item">Kloud</li>
-      <li class="item">Asahi</li>
+  <form action="" id="form">
+    <input type="search" name="q" id="input" autocomplete="off">
+    <ul id="list" class="hidden">
+      <li>list item</li>
+      <li><a href="#" target="_blank">dsf</a></li>
+      <li>list item</li>
     </ul>
-  </div>
+  </form>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 
   <script>
     var input = document.getElementById('input');
+    var list = document.getElementById('list');
+    var form = document.getElementById('form');
 
     input.addEventListener('keyup', (e) => {
-      var items = document.getElementsByClassName('item');
+      
+    })
 
-      var value = e.target.value.toLowerCase();
+    input.addEventListener('focus', (e) => {
+      list.classList.remove('hidden')
+    })
 
-      for (var i = 0; i < items.length; i++) {
-        var textContent = items[i].textContent.toLocaleLowerCase();
-
-        if (textContent.includes(value)) {
-          items[i].classList.remove('hidden');
-        } else {
-          items[i].classList.add('hidden');
-        }
+    window.addEventListener('click', (e) => {
+      if (!e.target.matches('#input')) {
+        list.classList.add('hidden');
       }
     })
 
   </script>
-
+  
 </body>
-
 </html>

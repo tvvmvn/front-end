@@ -17,25 +17,17 @@
       left: 0;
       width: 100%;
       border: 1px solid #ddd;
-      backdrop-filter: blur(8px);
     }
     .container {
-      position: relative;
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
     }
-    .container h3 {
-      text-align: center;
-      margin: 0;
-      padding: 1rem 0;
-    }
-    .container button {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
+    #btn {
       border: none;
-      cursor: pointer;
-      font-size: 2rem;
       background-color: transparent;
+      font-size: 2rem;
+      cursor: pointer;
     }
     nav {
       backdrop-filter: blur(8px);
@@ -57,28 +49,27 @@
       color: #000;
     }
     main {
-      padding-top: 3rem;
+      margin-top: 4rem;
     }
     .hidden {
       display: none;
     }
   </style>
 
-  <header>
+  <header id="header">
     <div class="container">
-      <button>&#9776;</button>
-      <h3>Logo</h3>
+      <button id="btn">&#9776;</button>
     </div>
-    <nav class="hidden">
+    <nav class="hidden" id="nav">
       <ul>
         <li>
-          <a href="">Link</a>
+          <a href="#">Link</a>
         </li>
         <li>
-          <a href="">Link</a>
+          <a href="#">Link</a>
         </li>
         <li>
-          <a href="">Link</a>
+          <a href="#">Link</a>
         </li>
       </ul>
     </nav>
@@ -91,12 +82,19 @@
   </main>
 
   <script>
-    const button = document.querySelector("button");
+    const btn = document.getElementById('btn');
 
-    button.addEventListener("click", (e) => {
-      const nav = document.querySelector("nav");
+    btn.addEventListener("click", (e) => {
+      const nav = document.getElementById('nav');
       nav.classList.toggle("hidden");
     })
+
+    document.addEventListener('click', (e) => {
+      if (e.target !== btn) {
+        nav.classList.add('hidden');
+      }
+    })
+
   </script> 
 
   

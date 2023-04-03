@@ -12,20 +12,58 @@
     body {
       height: 1000px;
     }
-    header {
-      background-color: #eee;
+    #header {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      position: fixed; 
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: top 0.2s;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    header h3 {
-      text-align: center
+    #header.hidden {
+      top: -50px;
+    }
+    main {
+      margin-top: 75px;
     }
   </style>
 
-  <header>
-    <h3>Header</h3>
+  <header id="header">
+    Header
   </header>
 
+  <main>
+    <h1>Switch NavBar</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse ad odio doloremque corrupti architecto quam error natus illo commodi adipisci deleniti eligendi officiis molestiae eum iste, tenetur, rerum, eius fuga.</p>
+  </main>
+
   <script>
-    
+
+    var header = document.getElementById('header')
+    var previousScrollTop = 0;
+
+    window.addEventListener('scroll', (e) => {
+
+      var scrollTop = document.documentElement.scrollTop;
+
+      // console.log('previous scrollTop:', previousScrollTop);
+      // console.log('scrollTop', scrollTop);
+
+      if (scrollTop - previousScrollTop > 0) {
+        header.classList.add('hidden')
+      } else {
+        header.classList.remove('hidden')
+      }
+
+      // Update previous scrollTop
+      previousScrollTop = scrollTop;
+    })
+
   </script>
   
 </body>

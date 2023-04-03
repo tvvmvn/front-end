@@ -26,7 +26,7 @@
     .success {
       color: #0a0;
     }
-    
+
     .danger {
       color: #f00;
     }
@@ -37,12 +37,12 @@
   <div class="container">
     <label for="">Username</label>
     <input type="text" id="input">
-    <p id="message"></div>
+    <p id="message-container">Enter username.</p>
   </div>
 
   <script>
     var input = document.getElementById('input');
-    var message = document.getElementById('message');
+    var messageContainer = document.getElementById('message-container');
     
     input.addEventListener('keyup', (e) => {
       try {
@@ -55,28 +55,23 @@
         // regular expression
         console.log(username.match(/[^a-z0-9_]/));
 
-        if (username.match(/[^a-z0-9_]/)) {
-          throw 'lowercase letters, number and underscore are only accepted.'
-        }
-
         if (username.length < 5) {
-          throw 'Username is too short'
+          throw 'Username is too short';
         }
 
-        message.innerHTML = `
-          <span class="success">
-            Cool name!
-          </span>
-        `
-        
-      } catch (err) {
-        message.innerHTML = `
-          <span class="danger">
-            ${err}
-          </span>
-        `
+        // match(pattern): return matching results with pattern.
+        // regular expression: provide pattern to search strings.
+        if (username.match(/[^a-z0-9_]/)) {
+          throw 'lowercase letters, number and underscore are only accepted.';
+        }
+
+        messageContainer.innerHTML = `<span class="success">Awesome username!</span>`
+
+      } catch (error) {
+        messageContainer.innerHTML = `<span class="danger">${error}</span>`
       }
     })
+
   </script>
 
 </body>

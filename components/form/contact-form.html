@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -65,6 +65,7 @@
   </form>
 
   <script>
+
     var form = document.getElementById('form');
     // error message
     var fnameError = document.getElementById('fname-error')
@@ -82,11 +83,11 @@
       var email = formData.get('email');
 
       if (!fname.trim()) {
-        fnameError.classList.remove('hidden');
-        fnameError.textContent = 'First name is required';
+        errorHandler('First name is required', fnameError);
+      } else if (fname.length < 5) {
+        errorHandler('Name is too short', fnameError);
       } else {
-        fnameError.classList.add('hidden');
-        fnameError.textContent = '';
+        errorHandler(null, fnameError);
       }
 
       if (!lname.trim()) {
@@ -94,7 +95,6 @@
         lnameError.textContent = 'Last name is required';
       } else {
         lnameError.classList.add('hidden');
-        lnameError.textContent = ''
       }
 
       if (!email.trim()) {
@@ -102,129 +102,18 @@
         emailError.textContent = 'E-mail is required';
       } else {
         emailError.classList.add('hidden');
-        emailError.textContent = ''
       }
     })
-  </script>
 
-</body>
-
-</html> -->
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-
-  <h1>Contact Form</h1>
-
-  <style>
-    #form {
-      width: 20rem;
-    }
-
-    .form-group {
-      margin-bottom: 0.5rem;
-    }
-
-    label {
-      display: block;
-    }
-
-    input {
-      padding: 0.5rem;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    button[type=submit] {
-      padding: 0.5rem;
-    }
-
-    .error-message {
-      color: #f00;
-      margin: 0;
-    }
-
-    .hidden {
-      display: none;
-    }
-  </style>
-
-  <form action="" id="form">
-    <div class="form-group">
-      <label for="">First name</label>
-      <input type="text" name="fname" placeholder="John">
-      <p id="fname-error" data-error="fname" class="error-message hidden"></p>
-    </div>
-    <div class="form-group">
-      <label for="">Last Name</label>
-      <input type="text" name="lname" placeholder="Doe">
-      <p id="lname-error" data-error="lname" class="error-message hidden"></p>
-    </div>
-    <div class="form-group">
-      <label for="">E-mail</label>
-      <input type="text" name="email" id="" placeholder="JohnDoe@example.com">
-      <p id="email-error" data-error="email" class="error-message hidden"></p>
-    </div>
-    <button type="submit">Submit</button>
-  </form>
-
-  <script>
-    var form = document.getElementById('form');
-    // error message
-    var fnameError = document.getElementById('fname-error')
-    var lnameError = document.getElementById('lname-error')
-    var emailError = document.getElementById('email-error')
-
-    form.addEventListener('submit', (e) => {
-      try {
-        // do not submit form
-        e.preventDefault();
-  
-        var formData = new FormData(e.target);
-  
-        var fname = formData.get('fname');
-        var lname = formData.get('lname');
-        var email = formData.get('email');
-  
-        var _error = {};
-  
-        if (!fname) {
-          _error.fname = 'First name is required'
-        }
-
-        if (!name) {
-          _error.lnaem = 'Last name is required'
-        }
-
-        if (!email) {
-          _error.email = 'Email is required'
-        }
-
-        if (Object.keys(_error).length > 0) {
-          throw _error;
-        }
-
-        console.log('submitted');
-      
-      } catch (error) {
-
-        for (key in error) {
-          console.log(key, error[key])
-          document.getAttribute
-        }
-
+    function errorHandler(error, el) {
+      if (error) {
+        el.classList.remove('hidden');
+        el.textContent = error;
+      } else {
+        el.classList.add('hidden');
       }
-    })
+    }
+    
   </script>
 
 </body>

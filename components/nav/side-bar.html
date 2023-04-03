@@ -9,7 +9,7 @@
 <body>
   
   <style>
-    header button {
+    #btn {
       font-size: 2rem;
       background-color: transparent;
       cursor: pointer;
@@ -20,10 +20,10 @@
       top: 0;
       left: 0;
       bottom: 0;
-      width: 15rem;
+      width: 16rem;
       background-color: #fff;
-      z-index: 1;
       transition: 0.2s;
+      z-index: 1;
     }
     nav ul {
       list-style: none;
@@ -36,7 +36,6 @@
     nav a {
       display: block;
       padding: 0.75rem;
-      text-decoration: none;
       color: #000;
     }
     nav a:hover {
@@ -50,36 +49,32 @@
       left: 0;
       background-color: rgba(0 0 0 / 0.2);
     }
-    .-left-60 {
-      left: -15rem;
+    .-left-64 {
+      left: -16rem;
     }
     .hidden {
       display: none;
     }
   </style>
 
-  <header>
-    <button>&#9776;</button>
-  </header>
+  <button id="btn">&#9776;</button>
 
-  <div class="container">
-    <nav class="-left-60">
-      <h1>Logo</h3>
-      <ul>
-        <li>
-          <a href="">Link</a>
-        </li>
-        <li>
-          <a href="">Link</a>
-        </li>
-        <li>
-          <a href="">Link</a>
-        </li>
-      </ul>
-    </nav>
-
-    <div id="overlay" class="hidden"></div>
-  </div>
+  <nav class="-left-64">
+    <h1>Logo</h3>
+    <ul>
+      <li>
+        <a href="">Link</a>
+      </li>
+      <li>
+        <a href="">Link</a>
+      </li>
+      <li>
+        <a href="">Link</a>
+      </li>
+    </ul>
+  </nav>
+  
+  <div id="overlay" class="hidden"></div>
 
   <main>
     <h1>Side Bar</h1>
@@ -88,17 +83,17 @@
   </main>
 
   <script>
-    const button = document.querySelector("button");
+    const btn = document.getElementById("btn");
     const nav = document.querySelector("nav");
     const overlay = document.getElementById("overlay");
 
-    button.addEventListener("click", (e) => {
-      nav.classList.remove("-left-60");
+    btn.addEventListener("click", (e) => {
+      nav.classList.remove("-left-64");
       overlay.classList.remove("hidden");
     })
 
     overlay.addEventListener("click", (e) => {
-      nav.classList.add("-left-60");
+      nav.classList.add("-left-64");
       overlay.classList.add("hidden");
     })
   </script>
