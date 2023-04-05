@@ -83,11 +83,13 @@
       var email = formData.get('email');
 
       if (!fname.trim()) {
-        errorHandler('First name is required', fnameError);
-      } else if (fname.length < 5) {
-        errorHandler('Name is too short', fnameError);
+        fnameError.classList.remove('hidden');
+        fnameError.textContent = 'First name is required';
+      } else if (fname.length < 2) {
+        fnameError.classList.remove('hidden');
+        fnameError.textContent = 'incorrect name';
       } else {
-        errorHandler(null, fnameError);
+        fnameError.classList.add('hidden');
       }
 
       if (!lname.trim()) {
@@ -105,12 +107,13 @@
       }
     })
 
-    function errorHandler(error, el) {
+    // you can use this error handler to simplify validation.
+    function errorHandler(error, container) {
       if (error) {
-        el.classList.remove('hidden');
-        el.textContent = error;
+        container.classList.remove('hidden');
+        container.textContent = error;
       } else {
-        el.classList.add('hidden');
+        container.classList.add('hidden');
       }
     }
     

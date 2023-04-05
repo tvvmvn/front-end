@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
-  
+
   <style>
     #btn {
       font-size: 2rem;
@@ -15,7 +17,8 @@
       cursor: pointer;
       border: none;
     }
-    nav {
+
+    #side-bar {
       position: fixed;
       top: 0;
       left: 0;
@@ -25,22 +28,11 @@
       transition: 0.2s;
       z-index: 1;
     }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    nav h1 {
+
+    #side-bar h1 {
       text-align: center;
     }
-    nav a {
-      display: block;
-      padding: 0.75rem;
-      color: #000;
-    }
-    nav a:hover {
-      background-color: #eee;
-    }
+
     #overlay {
       position: fixed;
       top: 0;
@@ -49,54 +41,53 @@
       left: 0;
       background-color: rgba(0 0 0 / 0.2);
     }
-    .-left-64 {
+
+    #side-bar.hidden {
       left: -16rem;
     }
-    .hidden {
+
+    #overlay.hidden {
       display: none;
     }
   </style>
 
   <button id="btn">&#9776;</button>
 
-  <nav class="-left-64">
+  <nav id="side-bar" class="hidden">
     <h1>Logo</h3>
-    <ul>
-      <li>
-        <a href="">Link</a>
-      </li>
-      <li>
-        <a href="">Link</a>
-      </li>
-      <li>
-        <a href="">Link</a>
-      </li>
-    </ul>
+      <ul>
+        <li>Menu</li>
+        <li>Menu</li>
+        <li>Menu</li>
+      </ul>
   </nav>
-  
+
   <div id="overlay" class="hidden"></div>
 
   <main>
     <h1>Side Bar</h1>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa ipsum voluptatibus perferendis iusto consectetur odio
-      molestiae ratione est nobis facere quas nesciunt non animi commodi error, vel optio? Aspernatur, vel?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+      Ipsa ipsum voluptatibus perferendis iusto consectetur odio
+      molestiae ratione est nobis facere quas nesciunt non animi commodi error, 
+      vel optio? Aspernatur, vel?</p>
   </main>
 
   <script>
     const btn = document.getElementById("btn");
-    const nav = document.querySelector("nav");
+    const sideBar = document.getElementById("side-bar");
     const overlay = document.getElementById("overlay");
 
     btn.addEventListener("click", (e) => {
-      nav.classList.remove("-left-64");
+      sideBar.classList.remove("hidden");
       overlay.classList.remove("hidden");
     })
 
     overlay.addEventListener("click", (e) => {
-      nav.classList.add("-left-64");
+      sideBar.classList.add("hidden");
       overlay.classList.add("hidden");
     })
   </script>
 
 </body>
+
 </html>

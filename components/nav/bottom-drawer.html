@@ -38,7 +38,7 @@
     }
   </style>
 
-  <nav id="nav">
+  <nav id="nav" class="hidden">
     <button id="drawer-handle">Drag me</button>
     <ul>
       <li>list item</li>
@@ -47,50 +47,39 @@
     </ul>
   </nav>
 
-  <button id="open-btn" type="button">Open Drawer</button>
+  <button id="open-btn" type="button">More</button>
 
 
   <script>
-  let nav = document.getElementById('nav');
+    var nav = document.getElementById('nav');
 
-  let drawHandle = document.getElementById('drawer-handle');
-  let openBtn = document.getElementById('open-btn');
-  let TOP;
+    var drawHandle = document.getElementById('drawer-handle');
+    var openBtn = document.getElementById('open-btn');
+    var TOP;
 
-  openBtn.addEventListener('click', (e) => {
-    TOP = 30;
-    nav.style.top = TOP + 'vh';
-  })
+    openBtn.addEventListener('click', (e) => {
+      nav.style.top = '20vh';
+    })
 
-  drawHandle.addEventListener('touchstart', (e) => {
-    console.log('touch start')
-  })
+    drawHandle.addEventListener('touchmove', (e) => {
+      console.log('touching');
 
-  drawHandle.addEventListener('touchmove', (e) => {
-    console.log('touching');
+      var clientY = e.touches[0].clientY;
 
-    let clientY = e.touches[0].clientY;
+      TOP = clientY / window.innerHeight * 100;
 
-    TOP = clientY / window.innerHeight * 100
-    nav.style.top = TOP + 'vh';
-  })
+      nav.style.top = TOP + 'vh';
+    })
 
-  drawHandle.addEventListener('touchend', (e) => {
-    console.log('touch end');
+    drawHandle.addEventListener('touchend', (e) => {
+      console.log('touch end');
 
-    if (TOP < 10) {
-      nav.style.top = '0vh'
-    } else if (TOP > 10 && TOP < 50) {
-      nav.style.top = '30vh';
-    } else {
-      nav.style.top = '100vh';
-    }
-  })
-
-  // drawHandle.addEventListener('touchcancel', (e) => {
-  //   console.log('touch canceled')
-  // })
-
+      if (TOP > 50) {
+        nav.style.top = '100vh';
+      } else {
+        nav.style.top = '20vh';
+      }
+    })
   </script>
 
 </body>
