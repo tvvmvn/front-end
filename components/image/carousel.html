@@ -1,137 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
+  <h1>Carousel</h1>
 
   <style>
-    * {box-sizing: border-box;}
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    * {
+      box-sizing: border-box;
     }
+
     .wrap {
       width: 200px;
       height: 200px;
       overflow: hidden;
       position: relative;
-      box-shadow: 0 0 50px #ddd;
-      margin: 0 auto;
     }
+
+    /* images */
     #container {
-      width: 200px;
+      width: 600px;
       height: 200px;
       display: inline-flex;
       transition: 0.2s;
     }
+
     .item {
-      width: inherit;
-      height: inherit;
-      flex-shrink: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
     }
-    .nav button {
+
+    /* buttons */
+    #prev, #next {
       position: absolute;
       height: 100%;
-      border: none;
+      display: flex;
+      align-items: center;
       background-color: transparent;
+      border: none;
     }
-    .nav #prev {
-      top: 0; 
+
+    #prev {
+      top: 0;
       left: 0;
     }
-    .nav #next {
+
+    #next {
       top: 0;
       right: 0;
     }
+
+    /* indicator */
     .indicator {
       position: absolute;
-      left: 0;
-      bottom: 0;
+      bottom: 0.25rem;
       width: 100%;
-      display: flex;
-      justify-content: center;
-      padding-bottom: 0.5rem;
+      text-align: center;
     }
+    
     .dot {
-      display: block;
-      width: 0.4rem;
-      height: 0.4rem;
-      border-radius: 50%;
+      display: inline-block;
+      width: 0.5rem;
+      height: 0.5rem;
       background-color: #ddd;
-      margin: 0 2px;
+      border-radius: 50%;
     }
+
+    /* toggle class */
     .hidden {
-      display: none;
+      visibility: hidden
     }
+
     .active {
-      background-color: #888;
+      background-color: #555;
     }
   </style>
 
-  <h1>Carousel</h1>
-
   <div class="wrap">
-    <ul id="container">
-      <li class="item">1</li>
-      <li class="item">2</li>
-      <li class="item">3</li>
-    </ul>
-
-    <div class="nav">
-      <button id="prev" class="hidden" onclick="f(-1)">&#10094;</button>
-      <button id="next" onclick="f(1)">&#10095;</button>
+    <!-- images -->
+    <div id="container">
+      <img class="item" src="/img/Simba.webp" alt="">
+      <img class="item" src="/img/Timon.webp" alt="">
+      <img class="item" src="/img/Pumbaa.webp" alt="">
     </div>
-    
-    <ul class="indicator">
-      <li class="dot active"></li>
-      <li class="dot"></li>
-      <li class="dot"></li>
+
+    <!-- button -->
+    <button id="prev" class="hidden" onclick="navigateTo(-1)">&#10094;</button>
+    <button id="next" onclick="navigateTo(1)">&#10095;</button>
+
+    <!-- indicator -->
+    <div class="indicator">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
     </div>
   </div>
 
   <script>
-    let index = 0;
-    let container = document.getElementById('container');
-    let prev = document.getElementById('prev');
-    let next = document.getElementById('next');
-    let dots = document.querySelectorAll('.dot')
+    var container = document.getElementById('container');
+    var prev = document.getElementById('prev');
+    var next = document.getElementById('next');
+    var dots = document.getElementsByClassName('dot');
+    var imageWidth = 200;
+    var previousIndex = 0;
+    var thisIndex = 0;
 
-    function f(data) {
-      index += data;
+    function navigateTo(data) {
+      // previous ans this index
+      console.log('previous index:', previousIndex)
+      
+      thisIndex += data;
+      console.log('this index:', thisIndex);
 
-      console.log(index);
+      // images
+      container.style.transform = `translateX(-${thisIndex * imageWidth}px)`;
 
-      // # images
-      container.style.transform = `translateX(-${index*200}px)`
-
-      // # button
-      if (index===0) {
+      // button
+      if (thisIndex === 0) {
         prev.classList.add('hidden')
       } else {
         prev.classList.remove('hidden')
       }
 
-      if (index===2) {
+      if (thisIndex === 2) {
         next.classList.add('hidden');
       } else {
         next.classList.remove('hidden');
       }
 
-      // # indicator
-      for (dot of dots) {
-        dot.classList.remove('active');
-      }
-      dots[index].classList.add('active');
+      // indicator
+      dots[previousIndex].classList.remove('active');
+      dots[thisIndex].classList.add('active');
+
+      previousIndex = thisIndex;
     }
   </script>
-  
+
 </body>
+
 </html>

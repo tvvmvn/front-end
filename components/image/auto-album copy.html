@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h1>Gallery</h1>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* main image */
+    #figure {
+      width: 300px;
+      height: 300px;
+      position: relative;
+    }
+
+    #main {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #caption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      margin: 0;
+      padding: 0.5rem;
+      background-color: rgba(0 0 0 / 0.5);
+      text-align: center;
+      color: #fff;
+    }
+
+    /* thumbnails */
+    .container {
+      margin-top: 0.5rem;
+      display: flex;
+    }
+
+    .thumbnail {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      padding: 0.5rem;
+      border-radius: 9999px;
+      cursor: pointer;
+    }
+
+    /* toggle class */
+    .active {
+      outline: 2px solid #0bf
+    }
+  </style>
+
+  <!-- main image with caption -->
+  <div id="figure">
+    <img src="/img/Simba.webp" alt="" id="main">
+    <p id="caption">Simba</p>
+  </div>
+
+  <!-- thumbnails -->
+  <div class="container">
+    <img class="thumbnail active" src="/img/Simba.webp" alt="Simba">
+    <img class="thumbnail" src="/img/Timon.webp" alt="Timon">
+    <img class="thumbnail" src="/img/Pumbaa.webp" alt="Pumbaa">
+  </div>
+
+  <script>
+    var thumbnails = document.getElementsByClassName('thumbnail');
+    var caption = document.getElementById('caption');
+    var main = document.getElementById('main');
+    var thisIndex = 0;
+    var previousIndex = 0;
+
+    setInterval(jumpTo, 3000);
+
+    function jumpTo() {
+      // get previous and this index.
+      console.log('previous index:', thisIndex);
+      thisIndex++;
+
+      console.log('this index:', thisIndex);
+
+      if (thisIndex === thumbnails.length) {
+        thisIndex = 0;
+      }
+      
+      // outline on selected image.
+      thumbnails[thisIndex].classList.add('active');
+      thumbnails[previousIndex].classList.remove('active');
+
+      // update main image and caption
+      main.src = thumbnails[thisIndex].src;
+      caption.textContent = thumbnails[thisIndex].alt;
+
+      // get previous index
+      previousIndex = thisIndex;
+    }
+  </script>
+
+</body>
+
+</html>

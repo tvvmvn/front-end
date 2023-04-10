@@ -29,7 +29,7 @@
       width: 200px;
       height: 200px;
       font-size: 2rem;
-      background-image: linear-gradient(to right, #f00, #a00);
+      background-image: linear-gradient(to right, #0df, #0af);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -52,11 +52,11 @@
     </div>
   </div>
 
-  <button id="prev-btn">Prev</button>
-  <button id="next-btn">Next</button>
+  <button id="prev" class="hidden" onclick="turnOver(-1)">Prev</button>
+  <button id="next" onclick="turnOver(1)">Next</button>
 
   <div id="indicator">
-    <span class="dot">*</span>
+    <span class="dot active">*</span>
     <span class="dot">*</span>
     <span class="dot">*</span>
   </div>

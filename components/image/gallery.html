@@ -11,6 +11,7 @@
   <h1>Gallery</h1>
 
   <style>
+    /* main image */
     #main {
       width: 300px;
       height: 300px;
@@ -18,35 +19,55 @@
       background-color: #ddd;
     }
     
+    /* thumbnails */
     .container {
       display: flex;
     }
 
-    .container img {
+    .thumbnail {
       width: 100px;
       height: 100px;
       object-fit: cover;
       cursor: pointer;
-      opacity: 0.8;
+      box-sizing: border-box;
+      padding: 0.5rem;
     }
 
-    .container img:hover {
-      opacity: 1;
+    /* toggle class */
+    .active {
+      outline: 2px solid #0bf
     }
   </style>
 
+  <!-- main image -->
   <img src="/img/Simba.webp" alt="" id="main">
   
+  <!-- thumbnails -->
   <div class="container">
-    <img src="/img/Simba.webp" alt="" onclick="f(this)">
-    <img src="/img/Timon.webp" alt="" onclick="f(this)">
-    <img src="/img/Pumbaa.webp" alt="" onclick="f(this)">
+    <img class="thumbnail active" src="/img/Simba.webp" alt="" onclick="jumpTo(0)">
+    <img class="thumbnail" src="/img/Timon.webp" alt="" onclick="jumpTo(1)">
+    <img class="thumbnail" src="/img/Pumbaa.webp" alt="" onclick="jumpTo(2)">
   </div>
 
   <script>
-    function f(el) {
-      const main = document.getElementById("main");
-      main.src = el.src;
+    var thumbnails = document.getElementsByClassName('thumbnail');
+    var main = document.getElementById('main');
+    var previousIndex = 0;
+    
+    function jumpTo(thisIndex) {
+      // get previous and this index
+      console.log('previous index:', previousIndex);
+      console.log('this index:', thisIndex);
+
+      //  outline on a selected thumbnail;
+      thumbnails[thisIndex].classList.add('active');
+      thumbnails[previousIndex].classList.remove('active');
+
+      // update main image
+      main.src = thumbnails[thisIndex].src;
+
+      // update previous index.
+      previousIndex = thisIndex;
     }
   </script>
 
