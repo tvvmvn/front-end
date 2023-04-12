@@ -1,11 +1,9 @@
 # Front-End Class OPEN
 
 
-
 # PPT
 https://docs.google.com/presentation/d/e/2PACX-1vR4IMSXVc2JIGRcEj5GjPuiJ0zzAmLj1gBtkLZ9VDiuFGLqqEAqwk3QRiFIXn3sqWoD5GOVi4gfUCRk/pub?start=false&loop=false&delayms=3000
 https://docs.google.com/presentation/d/e/2PACX-1vR4IMSXVc2JIGRcEj5GjPuiJ0zzAmLj1gBtkLZ9VDiuFGLqqEAqwk3QRiFIXn3sqWoD5GOVi4gfUCRk/pub?start=false&loop=false&delayms=60000
-
 
 
 # Share inspiring Media
@@ -49,3 +47,8 @@ VSCode
 Chrome
 Project Directory
 Starts with Hello World!
+
+
+# info
+- App store 
+- Naver sources

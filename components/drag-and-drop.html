@@ -7,10 +7,11 @@
   <title>Document</title>
 </head>
 <body>
-<!-- <h1>Drag and Drop</h1>
+
+  <h1>Drag and Drop</h1>
 
   <style>
-    #container {
+    #drop-zone {
       border: 4px dashed #ddd;
       width: 200px;
       height: 100px;
@@ -18,21 +19,21 @@
     }
   </style>
 
-  <div id="container">
+  <div id="drop-zone">
     <p>Drag one or more files to this <i>drop zone</i>.</p>
   </div>
 
   <script>
-    let container = document.getElementById('container');
+    var dropZone = document.getElementById('drop-zone');
 
-    container.addEventListener('drop', dropHandler);
-    container.addEventListener('dragover', dragOverHandler);
+    dropZone.addEventListener('dragover', dragOverHandler);
+    dropZone.addEventListener('drop', dropHandler);
 
-    function dropHandler(ev) {
-      console.log('File(s) dropped');
-
-      // Prevent default behavior (Prevent file from being opened)
-      ev.preventDefault();
+    function dropHandler(e) {
+      // prevent default behavior (file is opened)
+      e.preventDefault();
+    
+      console.log('File(s) dropped!');
 
       /*
         FileList
@@ -46,75 +47,23 @@
         
         - treat them like ES arrays
       */
-      
-      let files = Array.from(...ev.dataTransfer.files);
-
-      files.map(file => {
-        console.log(file.name);
-      });
-    }
-    
-    function dragOverHandler(ev) {
-      console.log('File(s) in drop zone');
-
-      // Prevent default behavior (Prevent file from being opened)
-      ev.preventDefault();
-    }
-  </script> -->
-
-
-
-
-  <h1>Drag and Drop</h1>
-
-  <style>
-    #drop_zone {
-      border: 4px dashed #ddd;
-      width: 200px;
-      height: 100px;
-      padding: 1rem;
-    }
-  </style>
-
-  <div id="container">
-    <div id="drop_zone">
-      <p>Drag one or more files to this <i>drop zone</i>.</p>
-    </div>
-  </div>
-
-  <script>
-    let dropZone = document.getElementById('drop_zone');
-
-    dropZone.addEventListener('drop', dropHandler);
-    dropZone.addEventListener('dragover', dragOverHandler);
-
-    function dropHandler(e) {
-      console.log('File(s) dropped');
-
-      // prevent default behavior (file is opened)
-      e.preventDefault();
-
-      // FileList
-      console.log(e.dataTransfer.files); 
 
       let files = Array.from(e.dataTransfer.files);
-      
-      for (let file of files) {
-        console.log(file.name);
+
+      for (var i=0; i<files.length; i++) {
+        console.log(files[i].name);
       }
       
-      // ...send to server
+      // AJAX request
 
-      document
-        .getElementById('container')
-        .innerHTML = '<h1>Submitted</h1>';
+      alert('Submitted!');
     }
     
     function dragOverHandler(e) {
-      console.log('File(s) in drop zone');
-      
       // prevent default behavior (file is opened)
       e.preventDefault();
+
+      console.log('File(s) is moving in drop zone');
     }
   </script>
 

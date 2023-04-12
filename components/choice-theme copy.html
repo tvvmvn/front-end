@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <style>
+    body {
+      transition: background-color 0.2s;
+    }
+    .dark-mode {
+      background-color: #333;
+      color: #fff;
+    }
+
+    /* @media (prefers-color-scheme: dark) {} */
+  </style>
+
+  <h1>Theme</h1>
+  <p>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam reiciendis qui, recusandae atque distinctio sequi
+    dolor illo, ad sit sapiente odit omnis? Repellat doloribus maxime atque maiores eum ducimus saepe.
+  </p>
+
+  <label>
+    <input type="radio" id="light" name="option" value="light-mode" onchange="handleChange(this)">
+    Light
+  </label>
+  <label>
+    <input type="radio" id="dark" name="option" value="dark-mode" onchange="handleChange(this)">
+    Dark
+  </label>
+  <label>
+    <input type="radio" name="option" id="system" value="system-mode" onchange="handleChange(this)" checked>
+    System
+  </label>
+
+  <script>
+    var media = matchMedia('(prefers-color-scheme: dark)');
+    var isDarkMode = media.matches;
+
+    addEventListener('DOMContentLoaded', initializeTheme);
+
+    function initializeTheme() {
+      if (!localStorage.getItem('theme')) {
+        localStorage.setItem('theme', 'system');
+      }
+  
+      if (localStorage.getItem('theme') === 'dark') {
+        dark.checked = true;
+        document.body.classList.add('dark-mode');
+      }
+  
+      if (localStorage.getItem('theme') === 'light') {
+        light.checked = true;
+      }
+  
+      if (localStorage.getItem('theme') === 'system') {
+        system.checked = true;
+  
+        if (isDarkMode) {
+          document.body.classList.add('dark-mode')
+        } 
+      }
+    }
+
+    function handleChange(el) {
+      var option = el.value;
+
+      if (option === 'dark-mode') {
+        localStorage.setItem('theme', 'dark')
+        document.body.classList.add('dark-mode')
+      }
+
+      if (option === 'light-mode') {
+        localStorage.setItem('theme', 'light')
+        document.body.classList.remove('dark-mode')
+      }
+
+      if (option === 'system-mode') {
+        localStorage.setItem('theme', 'system')
+        if (isDarkMode) {
+          document.body.classList.add('dark-mode')
+        } else {
+          document.body.classList.remove('dark-mode')
+        }
+      }
+    }
+
+    // on system setting changes
+    media.addListener((e) => {
+      if (e.matches) {
+        isDarkMode = true;
+      } else {
+        isDarkMode = false;
+      }
+
+      // change theme lively according to system settings changes
+      if (localStorage.getItem('theme') === 'system') {
+        if (isDarkMode) {
+          document.body.classList.add('dark-mode');
+        } else {
+          document.body.classList.remove('dark-mode');
+        }
+      }
+    })
+
+  </script>
+
+</body>
+
+</html>

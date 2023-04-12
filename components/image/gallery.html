@@ -59,6 +59,10 @@
       console.log('previous index:', previousIndex);
       console.log('this index:', thisIndex);
 
+      if (previousIndex === thisIndex) {
+        return;
+      }
+
       //  outline on a selected thumbnail;
       thumbnails[thisIndex].classList.add('active');
       thumbnails[previousIndex].classList.remove('active');

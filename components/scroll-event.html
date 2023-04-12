@@ -31,11 +31,14 @@
     var els = document.getElementsByClassName('el');
 
     window.addEventListener('scroll', (e) => {
-      let viewPortHeight = window.innerHeight; 
+      // viewport height
+      var viewPortHeight = window.innerHeight; 
       
       for (var i=0; i<els.length; i++) {
+        // distance between viewport top and elements top
         let y = els[i].getBoundingClientRect().y;
       
+        // enter enough inside view port.
         if (y < viewPortHeight - 100) {
           els[i].classList.add('opacity-100');
         }

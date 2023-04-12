@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <style>
+    .dark-mode {
+      background-color: #333;
+      color: #fff;
+    }
+    </style>
+
+  <h1>Theme</h1>
+
+  <p>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Mollitia voluptas architecto optio totam dolore perspiciatis qui nihil? 
+    Nesciunt eligendi id impedit, expedita earum, enim veniam laudantium, 
+    pariatur quasi repellendus est.
+  </p>
+
+  <input 
+    type="checkbox" 
+    id="checkbox"
+    name="" 
+  >
+  <label for="checkbox">
+    Dark Mode
+  </label>
+
+  <script>
+    var checkbox = document.getElementById('checkbox');
+    var theme = localStorage.getItem('theme');
+
+    // visit website for the first time.
+    if (!theme) {
+      localStorage.setItem('theme', 'light');
+    }
+
+    // when dark mode was selected
+    if (theme === 'dark') {
+      document.body.classList.add('dark-mode');
+      checkbox.checked = true;
+    }
+
+    // change theme
+    checkbox.addEventListener('change', (e) => {
+      if (checkbox.checked === true) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    })
+
+  </script>
+  
+</body>
+</html>
