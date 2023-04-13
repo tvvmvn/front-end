@@ -1,15 +1,10 @@
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
+var x = 0;
+var y = 0;
 var width = 20;
 var height = 20;
-
-var x = 40;
-var y = 0;
-var bx = 20;
-var by = 0;
-var bbx = 0;
-var bby = 0;
 
 var dx = 0;
 var dy = 0;
@@ -45,48 +40,24 @@ setInterval(() => {
 
   // move to right 
   if (dx > s) {
-    bbx = bx;
-    bby = by;
-    
-    by = y;
-    bx = x;
-
     x += s;
     dx = 0
   }
 
   // move to left
   if (dx < -s) {
-    bbx = bx;
-    bby = by;
-
-    by = y;
-    bx = x;
-
     x -= s;
-    dx = 0;
+    dx = 0
   }
 
   // move to down
   if (dy > s) {
-    bbx = bx;
-    bby = by;
-
-    by = y;
-    bx = x;
-
     y += s;
     dy = 0;
   }
 
   // move to up
   if (dy < -s) {
-    bbx = bx;
-    bby = by;
-
-    by = y;
-    bx = x;
-
     y -= s;
     dy = 0;
   }
@@ -95,13 +66,7 @@ setInterval(() => {
     x = canvas.width - width;
   }
 
-  // body
-  ctx.fillStyle = '#888';
-  ctx.fillRect(bbx, bby, width, height);
-  ctx.fillRect(bx, by, width, height);
-  // head
-  ctx.fillStyle = '#000'
-  ctx.fillRect(x, y, width, height);  
+  ctx.fillRect(x, y, width, height);
 
 }, 10);
 
