@@ -1,49 +1,54 @@
-let canvas = document.getElementById('canvas');
-let ctx = canvas.getContext('2d');
-
-let brightnessInput = document.getElementById('brightness');
-let saturationInput = document.getElementById('saturation');
-let inversionInput = document.getElementById('inversion');
-let blurInput = document.getElementById('blur');
-
-let fileInput = document.getElementById('file-input');
-let image = null;
-let filter = {};
-
-fileInput.addEventListener('change', createURL);
-
-function createURL(e) {
+/*
   
-  let file = e.target.files[0];
-  let src = URL.createObjectURL(file);
+  JS Image Editor Tutorials
 
-  drawImage(src);
-}
-
-function drawImage(src) {
-  image  = new Image();
-  image.setAttribute('src', src);
+  1 presentation about how it works.
   
-  image.addEventListener('load', (e) => {
-    canvas.width = image.width;
-    canvas.height = image.height;
-
-    ctx.drawImage(image, 0, 0);
-  })
-}
-
-function applyFilter() {
+  2 declare all the variables and functions.
   
-  let value = Object.keys(filter).map(name => {
-    return `${name}(${filter[name]})`;
-  })
+  3 upload file
 
-  console.log(filter);
+  4 draw image on canvas with initializing each filter
 
-  ctx.filter = value.join(' ');
+  5 adjust each filter
+
+  6 apply filter
+
+*/
+
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+var fileInput = document.getElementById('file-input');
+var brightnessInput = document.getElementById('brightness');
+var saturationInput = document.getElementById('saturation');
+var inversionInput = document.getElementById('inversion');
+var blurInput = document.getElementById('blur');
+var image = new Image();
+var filter = {};
+
+// upload file
+fileInput.addEventListener('change', (e) => {
+  var file = e.target.files[0];
+  var src = URL.createObjectURL(file);
+
+  image.src = src;  
+});
+
+// draw image on canvas.
+image.addEventListener('load', (e) => {
+  canvas.width = image.width;
+  canvas.height = image.height;
+
   ctx.drawImage(image, 0, 0);
-}
 
+  // initialize each filter
+  brightnessInput.value = 100;
+  saturationInput.value = 100;
+  inversionInput.value = 0;
+  blurInput.value = 0;
+})
+
+// adjust each filter
 brightnessInput.addEventListener('change', (e) => {
   filter.brightness = e.target.value + '%';
   applyFilter()
@@ -63,3 +68,18 @@ blurInput.addEventListener('change', (e) => {
   filter.blur = e.target.value + 'px';
   applyFilter()
 })
+
+// apply filter to image
+function applyFilter() {
+
+  console.log(filter);
+
+  var effect_map = [];
+
+  for (key in filter) {
+    effect_map.push(`${key}(${filter[key]})`);
+  }
+
+  ctx.filter = effect_map.join(" ");
+  ctx.drawImage(image, 0, 0);
+}

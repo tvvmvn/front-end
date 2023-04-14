@@ -1,69 +1,100 @@
-let addBtn = document.getElementById('add-btn');
-    let container = document.getElementById('container');
+/*
 
-    window.addEventListener('DOMContentLoaded', getNotes);
-    addBtn.addEventListener('click', addNote);
+  Stick Notes Tutorial
 
-    function createNoteElement(id, content) {
-      let NoteElement = document.createElement('textarea');
+  1 presentation about how it works
+  
+  2 Complete HTML/CSS code 
 
-      NoteElement.value = content;
-      NoteElement.addEventListener('change', (e) => editNote(id, e.target.value));
-      NoteElement.addEventListener('dblclick', (e) => deleteNote(e.target, id));
+  3 declare all variables and functions with comments.
+  
+  4 helper function
+  
+  5 add note 
+  
+  6 get notes
 
-      container.insertBefore(NoteElement, addBtn);
+  7 update note
+
+  8 delete note
+
+*/
+
+var container = document.getElementById('container');
+var addBtn = document.getElementById('add-btn');
+
+// get all notes when page has been loaded 
+window.addEventListener('DOMContentLoaded', getNotes);
+// add new note
+addBtn.addEventListener('click', addNote);
+
+// get notes
+function getNotes() {
+  var notes = getDocs();
+
+  for (var i=0; i<notes.length; i++) {
+    createNoteElement(notes[i].id, notes[i].content);
+  }
+}
+
+// add note
+function addNote() {
+  var notes = getDocs();  
+  var newNote = { id: 'n' + Date.now(), content: '' };
+  notes.push(newNote);
+
+  saveDoc(notes);
+
+  createNoteElement(newNote.id, newNote.content);
+}
+
+// edit note
+function editNote(id, content) {
+  var notes = getDocs();
+
+  for (var i=0; i<notes.length; i++) {
+    if (notes[i].id === id) {
+      notes[i].content = content;
     }
-    
-    function getDocs() {
-      return JSON.parse(localStorage.getItem('notesStorage'));
+  }
+
+  saveDoc(notes);
+}
+
+// delete note
+function deleteNote(id, noteElement) {
+  var notes = getDocs();
+
+  for (var i=0; i<notes.length; i++) {
+    if (notes[i].id === id) {
+      notes.splice(i, 1);
     }
+  }
 
-    function saveDoc(notes) {
-      localStorage.setItem('notesStorage', JSON.stringify(notes));
-    }
+  saveDoc(notes);
 
-    function getNotes(e) {
-      if (!localStorage.getItem('notesStorage')) {
-        localStorage.setItem('notesStorage', '[]');
-      }
+  container.removeChild(noteElement);
+}
 
-      let initialNotes = getDocs();
+// helper function
+function createNoteElement(id, content) {
+  var noteElement = document.createElement('textarea');
 
-      for (let i = 0; i < initialNotes.length; i++) {
-        createNoteElement(initialNotes[i].id, initialNotes[i].content);
-      }
-    }
+  noteElement.value = content;
+  noteElement.addEventListener('change', (e) => editNote(id, e.target.value));
+  noteElement.addEventListener('dblclick', (e) => deleteNote(id, e.target));
 
-    function addNote(e) {
+  container.insertBefore(noteElement, addBtn);
+}
 
-      let notes = getDocs();
-    
-      let newNote = { id: 'n' + Date.now(), content: '' };
+function getDocs() {
+  if (!localStorage.getItem('notes')) {
+    localStorage.setItem('notes', '[]');
+  }
 
-      let updateNotes = [...notes, newNote];
-      saveDoc(updateNotes);
-      
-      createNoteElement(newNote.id, newNote.content);
-    }
+  return JSON.parse(localStorage.getItem('notes'));
+}
 
-    function editNote(id, content) {
-      let notes = getDocs();
-
-      let updatedNotes = notes.map(note => {
-        if (note.id === id) {
-          return { ...note, content }
-        }
-        return note;
-      })
-
-      saveDoc(updatedNotes);
-    }
-
-    function deleteNote(NoteElement, id) {
-      let notes = getDocs();
-
-      let remainingNotes = notes.filter(note => id !== note.id);
-      saveDoc(remainingNotes);
-
-      container.removeChild(NoteElement);
-    }
+function saveDoc(notes) {
+  localStorage.setItem('notes', JSON.stringify(notes));
+}

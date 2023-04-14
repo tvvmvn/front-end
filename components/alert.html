@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Block promotion</h1>
+
+  <style>
+    #promotion {
+      background-color: #eee;
+      padding: 1rem;
+    }
+    #close-btn {
+      float: right;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <div id="promotion">
+    <span id="close-btn">&times;</span>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    </p>
+    <button id="block-btn">Do not show anymore</button>
+  </div>
+
+  <script>
+
+    var closeBtn = document.getElementById('close-btn');
+    var blockBtn = document.getElementById('block-btn');
+    var promotion = document.getElementById('promotion');
+
+    if (localStorage.getItem('blockedAt')) {
+      promotion.classList.add('hidden');
+    }
+
+    closeBtn.addEventListener('click', () => {
+      promotion.classList.add('hidden');
+    })
+
+    blockBtn.addEventListener('click', () => {
+      promotion.classList.add('hidden');
+
+      localStorage.setItem('blockedAt', new Date().toLocaleString());
+    })
+
+  </script>
+
+  
+</body>
+</html>
