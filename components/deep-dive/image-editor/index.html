@@ -23,49 +23,35 @@
       width: 100%;
     }
 
-    #side-bar {
-      padding: 1rem;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 200px;
-      background-color: #eee;
-      height: 100%;
-      padding: 1rem;
-    }
-
-    main {
-      margin-left: 200px;
-      padding: 1rem;
+    #canvas {
+      width: 100%;
+      height: 300px;
+      border: 1px solid;
+      object-fit: cover;
     }
   </style>
 
+  <h1>JS Image Editor</h1>
+
+  <p>
+    <input type="file" name="" id="file-input">
+  </p>
+
+  <canvas id="canvas"></canvas>
+
   <nav>
-    <h3>JS Image Editor</h3>
-
-    <p>
-      <input type="file" name="" id="file-input">
-    </p>
-
     <label for="brightness">Brigtness</label>
     <input type="range" name="brightness" id="brightness" min="0" max="200" value="100">
-
+  
     <label for="saturation">Saturation</label>
     <input type="range" name="saturation" id="saturation" min="0" max="200" value="100">
-
+  
     <label for="inversion">Inversion</label>
     <input type="range" name="inversion" id="inversion" min="0" max="100" value="0">
-
+  
     <label for="blur">Blur</label>
     <input type="range" name="blur" id="blur" min="0" max="10" value="0">
   </nav>
-
-  <main>
-    <canvas id="canvas"></canvas>
-  </main>
 
   <script src="./script.js"></script>
 

@@ -1,6 +1,6 @@
 /*
 
-  Stick Notes Tutorial
+  Stick Notes Tutorials
 
   1 presentation about how it works
   
@@ -23,7 +23,7 @@
 var container = document.getElementById('container');
 var addBtn = document.getElementById('add-btn');
 
-// get all notes when page has been loaded 
+// get all notes
 window.addEventListener('DOMContentLoaded', getNotes);
 // add new note
 addBtn.addEventListener('click', addNote);
@@ -76,7 +76,7 @@ function deleteNote(id, noteElement) {
   container.removeChild(noteElement);
 }
 
-// helper function
+// render 
 function createNoteElement(id, content) {
   var noteElement = document.createElement('textarea');
 
@@ -84,9 +84,10 @@ function createNoteElement(id, content) {
   noteElement.addEventListener('change', (e) => editNote(id, e.target.value));
   noteElement.addEventListener('dblclick', (e) => deleteNote(id, e.target));
 
-  container.insertBefore(noteElement, addBtn);
+  container.prepend(noteElement);
 }
 
+// query 
 function getDocs() {
   if (!localStorage.getItem('notes')) {
     localStorage.setItem('notes', '[]');
