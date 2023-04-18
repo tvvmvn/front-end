@@ -8,18 +8,21 @@
 </head>
 <body>
 
-  <h1>background image</h1>
+  <h1>Pseudo element</h1>
+  <p>virtual element (does not exists Tree)</p>
 
   <style>
-    .container {
-      background-image: url('https://news.nateimg.co.kr/orgImg/xs/2022/12/06/1670300078707386.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 300px;
+    /* selector::pseudo-element */
+    li::marker {
+      color: #f00;
     }
   </style>
-  
-  <div class="container"></div>
+
+  <ul>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+  </ul>
   
 </body>
 </html>

@@ -18,6 +18,10 @@ fileInput.addEventListener('change', (e) => {
 
 // image is loaded on canvas.
 imgElement.addEventListener('load', (e) => {
+
+  canvas.width = imgElement.width;
+  canvas.height = imgElement.height;
+
   initialize();
   drawImage();
 })
@@ -65,4 +69,6 @@ function initialize() {
   saturationInput.value = 100;
   inversionInput.value = 0;
   blurInput.value = 0;
+
+  filter = {};
 }

@@ -1,42 +1,51 @@
-<!--
-  Margin 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Margin</h1>
+  <p>
+    space outside element.
+    used to make space between elements.
+    y-axis margin is overlapped.
+  </p>
+
+  <style>
+    .item {
+      border: 1px solid;
+    }
+
+    .m-2 {
+      margin: 1rem;
+    }
+
+    .mt-2 {
+      margin-top: 1rem;
+    }
+
+    .mx-2 {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  </style>
+
+
+  <h3>margin 0</h3>
+  <div class="item">margin 0</div>
+
+  <h3>margin on all side</h3>
+  <div class="item m-2">margin all</div>
+
+  <h3>margin on top</h3>
+  <div class="item mt-2">margin top</div>
+
+  <h3>margin on x-axis</h3>
+  <div class="item mx-2">margin left/right</div>
   
-  space outside element
--->
-
-<style>
-  .m-2 {
-    margin: 1rem;
-  }
-  .mt-2 {
-    margin-top: 1rem;
-  }
-  .mx-2 {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-</style>
-
-<div class="">margin 0</div>
-<div class="m-2">margin all</div>
-<div class="mt-2">margin top</div>
-<div class="mx-2">margin left/right</div>
-
-
-
-<!-- QUIZ -->
-<h1>Q. Buttons</h1>
-
-<style>
-  button {
-    padding: 0.5rem;
-  }
-  .ml-2 {
-    margin-left: 0.5rem;
-  }
-</style>
-
-<h3>Are you sure to submit?</h3>
-
-<button>Submit</button>
-<button class="ml-2">Cancel</button>
+</body>
+</html>
