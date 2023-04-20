@@ -1,14 +1,39 @@
-<!-- box sizing -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
 
-<style>
-  .content-box {
-    /* default */
-    box-sizing: content-box;
-  }
-  .border-box {
-    box-sizing: border-box;
-  }
-</style>
 
-<div class="content-box"></div>
-<div class="border-box"></div>
+  <h1>box sizing</h1>
+
+  <style>
+    .item {
+      width: 100px;
+      height: 100px;
+      border: 1px solid;
+      padding: 0.5rem;
+      background-color: #ddd;
+    }
+
+    .content-box {
+      box-sizing: content-box;
+    }
+
+    .border-box {
+      box-sizing: border-box;
+    }
+  </style>
+
+  <h3>box sizing: content box (default)</h3>
+  <div class="item content-box"></div>
+
+  <h3>box sizing: border box</h3>
+  <div class="item border-box"></div>
+    
+</body>
+</html>

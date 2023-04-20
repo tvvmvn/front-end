@@ -1,24 +1,51 @@
-<!-- 
-  width
--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
 
+  <h1>width</h1>
 
-<style>
-  .item {
-    width: auto;
-    background-color: #ddd;
-  }
+  <style>
+    .item {
+      background-color: #ddd;
+    }
 
-  .block {
-    display: block
-  }
+    .w-auto {
+      width: auto;
+    }
 
-  .inline-block {
-    display: inline-block
-  }
-</style>
+    .w-16 {
+      width: 4rem;
+    }
 
+    .block {
+      display: block;
+    }
 
-<!-- auto -->
-<div class="item">item</div>
-<div class="item">item</div>
+    .inline-block {
+      display: inline-block;
+    }
+  </style>
+
+  <h3>width: auto (default)</h3>
+  <div class="item w-auto">item</div>
+  <div class="item w-auto">item</div>
+  <div class="item w-auto">item</div>
+
+  <h3>width: 4rem (display: block)</h3>
+  <div class="item block w-16">item</div>
+  <div class="item block w-16">item</div>
+  <div class="item block w-16">item</div>
+
+  <h3>width: 4rem (display: inline-block)</h3>
+  <div class="item inline-block w-16">item</div>
+  <div class="item inline-block w-16">item</div>
+  <div class="item inline-block w-16">item</div>
+
+</body>
+</html>

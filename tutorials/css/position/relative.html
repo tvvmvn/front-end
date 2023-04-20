@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h3>position: relative</h3>
+  <p>relative to its original position</p>
+
+  <style>
+    .item {
+      background-color: #ddd;
+      display: inline-block;
+      position: relative;
+    }
+
+    .top-2 {
+      top: 0.5rem;
+    }
+
+    .left-2 {
+      left: 0.5rem;
+    }
+  </style>
+
+  <div class="item">item</div>
+  <div class="item top-2 left-2">item</div>
+  <div class="item">item</div>
+
+</body>
+</html>

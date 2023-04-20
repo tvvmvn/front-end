@@ -7,59 +7,44 @@
   <title>Document</title>
 </head>
 <body>
+
   <h1>overflow</h1>
-  <p>handle oveflow contents.</p>
   
   <style>
-    .container-hidden {
+    .container {
+      border: 1px solid;
+      height: 50px;
+    }
+
+    .overflow-hidden {
       overflow: hidden;
-      border: 1px solid;
-      height: 50px;
     }
-    .container-scroll {
-      overflow: scroll;
-      border: 1px solid;
-      height: 50px;
-    }
-    .container-auto {
+
+    .overflow-auto {
       overflow: auto;
-      border: 1px solid;
-      height: 50px;
     }
-    .container-visible {
+
+    .overflow-visible {
       overflow: visible;
-      border: 1px solid;
-      height: 50px;
     }
   </style>
   
   <h3>overflow: hidden</h3>
-  <p>hide overflown contents.</p>
-  <div class="container-hidden">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-    Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
-    et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
-  </div>
-  
-  <h3>overflow: scroll</h3>
-  <p>create scroll area x and y axis</p>
-  <div class="container-scroll">
+  <div class="container overflow-hidden">
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
     Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
     et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
   </div>
   
   <h3>overflow: auto</h3>
-  <p>create scroll area only at axis that overflow occur in</p>
-  <div class="container-auto">
+  <div class="container overflow-auto">
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
     Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
     et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
   </div>
   
-  <h3>overflow: visible</h3>
-  <p>You can still see overflown contents.</p>
-  <div class="container-visible">
+  <h3>overflow: visible (default)</h3>
+  <div class="container overflow-visible">
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
     Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
     et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
