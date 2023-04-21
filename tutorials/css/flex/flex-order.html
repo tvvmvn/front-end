@@ -8,16 +8,13 @@
 </head>
 <body>
 
-  <h1>flex grow</h1>
-  <p>
-    default: 0
-  </p>
+  <h1>flex order</h1>
 
-  <style>
+  <style> 
     .container {
       border: 1px solid;
     }
-
+    
     .flex {
       display: flex;
     }
@@ -27,20 +24,29 @@
       padding: 0.5rem;
     }
 
-    .grow-0 {
-      flex-grow: 0;
+    .order-none {
+      order: 0;
     }
 
-    .grow {
-      background-color: #0bf;
-      flex-grow: 1;
+    .order-1 {
+      order: 1
+    }
+
+    .order-2 {
+      order: 2
+    }
+
+    .order-3 {
+      order: 3
     }
   </style>
 
+
   <div class="container flex">
-    <div class="item grow-0">item</div>
-    <div class="item grow">grow item</div>
-    <div class="item grow-0">item</div>
+    <div class="item order-2">item 1</div>
+    <div class="item order-3">item 2</div>
+    <div class="item order-none">item 3</div>
+    <div class="item order-1">item 4</div>
   </div>
   
 </body>

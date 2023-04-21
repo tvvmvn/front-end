@@ -8,13 +8,15 @@
 </head>
 <body>
 
-  <h1>flex direction</h1>
+
+  <h1>flex</h1>
 
   <style>
     .container {
       border: 1px solid;
+      height: 200px;
     }
-     
+
     .flex {
       display: flex;
     }
@@ -24,8 +26,16 @@
       padding: 0.5rem;
     }
 
-    .flex-row {
-      flex-direction: row;
+    .justify-between {
+      justify-content: space-between;
+    }
+
+    .justify-end {
+      justify-content: flex-end;
+    }
+    
+    .items-center {
+      align-items: center;
     }
 
     .flex-col {
@@ -34,20 +44,19 @@
   </style>
 
 
-  <h3>flex direction: row (default)</h3>
-  <div class="container flex flex-row">
+  <h3>1</h3>
+  <div class="container flex justify-between items-center">
     <div class="item">item</div>
     <div class="item">item</div>
     <div class="item">item</div>
   </div>
 
-
-  <h3>flex direction: column</h3>
-  <div class="container flex flex-col">
+  <h3>2</h3>
+  <div class="container flex justify-end items-center flex-col">
     <div class="item">item</div>
     <div class="item">item</div>
     <div class="item">item</div>
   </div>
-
+  
 </body>
 </html>

@@ -8,46 +8,47 @@
 </head>
 <body>
 
-  <h1>flex direction</h1>
+  <h1>flex wrap</h1>
 
   <style>
     .container {
       border: 1px solid;
     }
-     
-    .flex {
-      display: flex;
-    }
 
     .item {
       background-color: #ddd;
+      width: 200px;
       padding: 0.5rem;
     }
 
-    .flex-row {
-      flex-direction: row;
+    .flex {
+      display: flex;
+    }
+    
+    .flex-nowrap {
+      flex-wrap: nowrap;
     }
 
-    .flex-col {
-      flex-direction: column;
+    .flex-wrap {
+      flex-wrap: wrap;
     }
   </style>
 
+  <h3>flex wrap: nowrap (default)</h3>
 
-  <h3>flex direction: row (default)</h3>
-  <div class="container flex flex-row">
+  <div class="container flex flex-nowrap">
     <div class="item">item</div>
     <div class="item">item</div>
     <div class="item">item</div>
   </div>
 
+  <h3>flex wrap: wrap</h3>
 
-  <h3>flex direction: column</h3>
-  <div class="container flex flex-col">
+  <div class="container flex flex-wrap">
     <div class="item">item</div>
     <div class="item">item</div>
     <div class="item">item</div>
   </div>
-
+  
 </body>
 </html>

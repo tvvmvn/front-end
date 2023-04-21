@@ -8,24 +8,25 @@
 </head>
 <body>
 
-  <h3>position: absolute</h3>
-  <p>absolute position to relative parent</p>
+  <h1>Q. position</h1>
 
   <style>
     .container {
-      border: 1px solid;
       width: 100px;
       height: 100px;
+      border: 1px solid;
     }
-    
+
     .item {
-      background-color: #ddd;
+      width: 50px; 
+      height: 50px;
+      background-color: #000;
     }
     
     .relative {
       position: relative;
     }
-    
+
     .absolute {
       position: absolute;
     }
@@ -45,15 +46,28 @@
     .right-0 {
       right: 0;
     }
+
+    .top-25px {
+      top: 25px;
+    }
+
+    .left-25px {
+      left: 25px;
+    }
   </style>
 
+  <h3>check</h3>
+
   <div class="container relative">
-    <div class="item absolute top-0 left-0">item</div>
-    <div class="item absolute top-0 right-0">item</div>
-    <div class="item absolute bottom-0 left-0">item</div>
-    <div class="item absolute bottom-0 right-0">item</div>
+    <div class="item absolute top-0 left-0"></div>
+    <div class="item absolute right-0 bottom-0"></div>
   </div>
 
+  <h3>center</h3>
+
+  <div class="container relative">
+    <div class="item absolute top-25px left-25px"></div>
+  </div>
   
 </body>
 </html>

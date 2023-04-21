@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>align items (col)</h1>
+  
+  <style>
+    .container {
+      border: 1px solid;
+    }
+
+    .item {
+      background-color: #ddd;
+      padding: 0.5rem;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+    
+    .items-stretch {
+      align-items: stretch;
+    }
+
+    .items-start {
+      align-items: flex-start;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .items-end {
+      align-items: flex-end;
+    }
+  </style>
+
+  <h3>align items: stretch (default)</h3>
+
+  <div class="container flex flex-col items-stretch">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div>
+
+  <h3>align items: flex start</h3>
+
+  <div class="container flex flex-col items-start">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div>
+  
+  <h3>align items: center</h3>
+
+  <div class="container flex flex-col items-center">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div>
+
+  <h3>align items: flex-end</h3>
+
+  <div class="container flex flex-col items-end">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div>
+  
+</body>
+</html>

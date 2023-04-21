@@ -8,9 +8,9 @@
 </head>
 <body>
 
-  <h1>flex grow</h1>
+  <h1>flex shrink</h1>
   <p>
-    default: 0
+    default: 1
   </p>
 
   <style>
@@ -25,22 +25,23 @@
     .item {
       background-color: #ddd;
       padding: 0.5rem;
+      width: 200px;
     }
 
-    .grow-0 {
-      flex-grow: 0;
+    .shrink {
+      flex-shrink: 1;
     }
 
-    .grow {
+    .shrink-0 {
       background-color: #0bf;
-      flex-grow: 1;
+      flex-shrink: 0;
     }
   </style>
 
   <div class="container flex">
-    <div class="item grow-0">item</div>
-    <div class="item grow">grow item</div>
-    <div class="item grow-0">item</div>
+    <div class="item shrink">item</div>
+    <div class="item shrink-0">grow item</div>
+    <div class="item shrink">item</div>
   </div>
   
 </body>

@@ -8,20 +8,27 @@
 </head>
 <body>
 
-  <h1>flex direction</h1>
+  <h1>flex basis</h1>
+  <p>
+    width in flex direction: row,
+    height in flex direction: column,
+  </p>
 
   <style>
     .container {
       border: 1px solid;
     }
-     
+
     .flex {
       display: flex;
+      flex-direction: column;
     }
 
     .item {
       background-color: #ddd;
       padding: 0.5rem;
+      /* defaut: auto */
+      flex-basis: 50px;
     }
 
     .flex-row {
@@ -33,21 +40,21 @@
     }
   </style>
 
+  <h3>flex direction: row</h3>
 
-  <h3>flex direction: row (default)</h3>
   <div class="container flex flex-row">
     <div class="item">item</div>
     <div class="item">item</div>
     <div class="item">item</div>
   </div>
 
-
   <h3>flex direction: column</h3>
+
   <div class="container flex flex-col">
     <div class="item">item</div>
     <div class="item">item</div>
     <div class="item">item</div>
   </div>
-
+  
 </body>
 </html>

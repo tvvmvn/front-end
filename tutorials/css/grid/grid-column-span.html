@@ -8,29 +8,69 @@
 </head>
 <body>
 
-  <!-- 
-  column span 
--->
-<style>
-  .container {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-  }
-  .col-span-2 {
-    grid-column: span 2 / span 2;
-  }
-</style>
+  <h1>grid columns start, end</h1>
 
-<div class="container">
-  <div class="item">item 1</div>
-  <div class="item">item 2</div>
-  <div class="item">item 3</div>
-  <div class="item col-span-2">item 4</div>
-  <div class="item">item 5</div>
-  <div class="item">item 6</div>
-  <div class="item col-span-2">item 7</div>
-</div>
-  
+  <style>
+    .grid {
+      display: grid;
+      gap: 0.5rem;
+    }
+    .item {
+      padding: 0.5rem;
+      background-color: #ddd;
+    }
+    .grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .grid-cols-6 {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+    .col-start-1 {
+      grid-column-start: 1;
+    }
+    .col-start-2 {
+      grid-column-start: 2;
+    }
+    .col-start-4 {
+      grid-column-start: 4;
+    }
+    .col-start-5 {
+      grid-column-start: 5;
+    }
+    .col-end-3 {
+      grid-column-end: 3;
+    }
+    .col-end-4 {
+      grid-column-end: 4;
+    }
+    .col-end-6 {
+      grid-column-end: 6;
+    }
+    .col-end-7 {
+      grid-column-end: 7;
+    }
+  </style>
+
+  <h3>1</h3>
+
+  <div class="container grid grid-cols-3">
+    <div class="item">item 1</div>
+    <div class="item">item 2</div>
+    <div class="item">item 3</div>
+    <div class="item col-start-1 col-end-3">item 4</div>
+    <div class="item">item 5</div>
+    <div class="item">item 6</div>
+    <div class="item col-start-2 col-end-4">item 7</div>
+  </div>
+
+  <h3>2</h3>
+
+  <div class="grid grid-cols-6">
+    <div class="item col-start-2 col-end-6">item 1</div>
+    <div class="item col-start-1 col-end-3">item 2</div>
+    <div class="item col-start-5 col-end-7">item 3</div>
+    <div class="item col-start-1 col-end-7">item 4</div>
+  </div>
+    
 </body>
 </html>
