@@ -12,6 +12,7 @@
   <p>
     width in flex direction: row,
     height in flex direction: column,
+    default is auto.
   </p>
 
   <style>
@@ -19,16 +20,14 @@
       border: 1px solid;
     }
 
-    .flex {
-      display: flex;
-      flex-direction: column;
-    }
-
     .item {
       background-color: #ddd;
       padding: 0.5rem;
-      /* defaut: auto */
       flex-basis: 50px;
+    }
+
+    .flex {
+      display: flex;
     }
 
     .flex-row {

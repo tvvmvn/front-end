@@ -1,51 +1,90 @@
-<!-- 
-  responsive
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
 
-  responsive to device
--->
+  <h1>Responsive Style</h1>
 
-<style>
-  /* Mobile first */
-  .title::after {
-    content: "Extra small devices";
-  }
-
-  @media (min-width: 640px) {
-    .title::after {
-      content: "Small devices";
+  <style>
+    .container {
+      border: 1px dashed;
     }
-  }
 
-  @media (min-width: 768px) {
-    .title::after {
-      content: "Medium devices";
+    .grid {
+      display: grid;
     }
-  }
 
-  @media (min-width: 1024px) {
-    .title::after {
-      content: "Large devices";
+    .gap-2 {
+      gap: 0.5rem;
     }
-  }
 
-  @media (min-width: 1280px) {
-    .title::after {
-      content: "Extra Large devices";
+    .item {
+      background-color: #ddd;
+      padding: 0.5rem;
     }
-  }
 
-  @media (min-width: 1536px) {
-    .title::after {
-      content: "2 Extra large devices";
+    .grid-cols-n {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
     }
-  }
-</style>
 
-<div class="container">
-  <h3 class="title">Devices: </h3>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    Asperiores at fugit quia, explicabo facere pariatur iste rerum sapiente incidunt
-    repudiandae est doloribus nesciunt architecto expedita neque dolor quisquam, in eaque?
-  </p>
-</div>
+    @media (min-width: 640px) {
+      .grid-cols-n {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 768px) {
+      .grid-cols-n {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .grid-cols-n {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .grid-cols-n {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1536px) {
+      .grid-cols-n {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+      }
+    }
+  </style>
+
+  <h3>Breakpoint</h3>
+
+  <ul>
+    <li>Mobile Device(default): ~ 640px</li>
+    <li>Small Device: 641px ~ 767px</li>
+    <li>Medium Device: 768px ~ 1023px</li>
+    <li>Large Device: 1024px ~ 1279px</li>
+    <li>Extra Large Device: 1280px ~ 1535px</li>
+    <li>2 Extra Large Device: 1536px ~ </li>
+  </ul>
+
+  <div class="container grid gap-2 grid-cols-n">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>AJAX (Asynchronous JavaScript and XML)</h1>
+  <p>A Technology that fetching data from server without refreshing the entire page</p>
+
+  <p id="message"></p>
+
+  <script>
+    var req = new XMLHttpRequest();
+
+    req.addEventListener('load', fetchData);    
+    req.open('GET', './data.json', true);
+    req.send();
+    
+    function fetchData() {
+      var data = JSON.parse(this.responseText);
+      console.log(data)
+
+      document
+        .getElementById('message')
+        .innerHTML = data.message;
+    }
+  </script>
+  
+  
+</body>
+</html>

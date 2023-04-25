@@ -17,15 +17,15 @@
     .container {
       border: 1px solid;
     }
-
-    .flex {
-      display: flex;
-    }
-
+    
     .item {
       background-color: #ddd;
       padding: 0.5rem;
       width: 200px;
+    }
+
+    .flex {
+      display: flex;
     }
 
     .shrink {
@@ -40,7 +40,7 @@
 
   <div class="container flex">
     <div class="item shrink">item</div>
-    <div class="item shrink-0">grow item</div>
+    <div class="item shrink-0">unshrinkable item</div>
     <div class="item shrink">item</div>
   </div>
   

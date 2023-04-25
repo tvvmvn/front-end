@@ -9,21 +9,30 @@
 <body>
 
 
-  <h1>flex</h1>
+  <h1>Q. flex</h1>
 
   <style>
     .container {
       border: 1px solid;
-      height: 200px;
+      width: 200px;
+      height: 100px;
+    }
+
+    .item {
+      background-color: #ddd;
+      padding: 0.5rem;
     }
 
     .flex {
       display: flex;
     }
 
-    .item {
-      background-color: #ddd;
-      padding: 0.5rem;
+    .flex-row {
+      flex-direction: row;
+    }
+
+    .flex-col {
+      flex-direction: column;
     }
 
     .justify-between {
@@ -37,24 +46,16 @@
     .items-center {
       align-items: center;
     }
-
-    .flex-col {
-      flex-direction: column;
-    }
   </style>
 
-
   <h3>1</h3>
-  <div class="container flex justify-between items-center">
-    <div class="item">item</div>
+  <div class="container flex flex-row justify-between items-center">
     <div class="item">item</div>
     <div class="item">item</div>
   </div>
 
   <h3>2</h3>
-  <div class="container flex justify-end items-center flex-col">
-    <div class="item">item</div>
-    <div class="item">item</div>
+  <div class="container flex flex-col justify-end items-center">
     <div class="item">item</div>
   </div>
   
