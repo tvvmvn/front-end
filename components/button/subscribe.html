@@ -45,9 +45,11 @@
       if (subscribed) {
         subscribeBtn.classList.add('hidden')
         subscribedBtn.classList.remove('hidden')
+        count.textContent = Number(count.textContent) + 1
       } else {
         subscribedBtn.classList.add('hidden')
         subscribeBtn.classList.remove('hidden')
+        count.textContent = Number(count.textContent) - 1
       }      
     }
 

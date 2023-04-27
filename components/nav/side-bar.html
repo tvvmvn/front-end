@@ -1,93 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-
 <body>
-
-  <style>
-    #btn {
-      font-size: 2rem;
-      background-color: transparent;
-      cursor: pointer;
-      border: none;
-    }
-
-    #side-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      width: 16rem;
-      background-color: #fff;
-      transition: 0.2s;
-      z-index: 1;
-    }
-
-    #side-bar h1 {
-      text-align: center;
-    }
-
-    #overlay {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: rgba(0 0 0 / 0.2);
-    }
-
-    #side-bar.hidden {
-      left: -16rem;
-    }
-
-    #overlay.hidden {
-      display: none;
-    }
-  </style>
-
-  <button id="btn">&#9776;</button>
-
-  <nav id="side-bar" class="hidden">
-    <h1>Logo</h3>
-      <ul>
-        <li>Menu</li>
-        <li>Menu</li>
-        <li>Menu</li>
-      </ul>
-  </nav>
-
-  <div id="overlay" class="hidden"></div>
-
-  <main>
-    <h1>Side Bar</h1>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-      Ipsa ipsum voluptatibus perferendis iusto consectetur odio
-      molestiae ratione est nobis facere quas nesciunt non animi commodi error, 
-      vel optio? Aspernatur, vel?</p>
-  </main>
-
-  <script>
-    const btn = document.getElementById("btn");
-    const sideBar = document.getElementById("side-bar");
-    const overlay = document.getElementById("overlay");
-
-    btn.addEventListener("click", (e) => {
-      sideBar.classList.remove("hidden");
-      overlay.classList.remove("hidden");
-    })
-
-    overlay.addEventListener("click", (e) => {
-      sideBar.classList.add("hidden");
-      overlay.classList.add("hidden");
-    })
-  </script>
-
+  
 </body>
-
 </html>

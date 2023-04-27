@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h1>grid columns start, end</h1>
+
+  <style>
+    .container {
+      border: 1px dashed;
+    }
+
+    .grid {
+      display: grid;
+    }
+
+    .gap-2 {
+      gap: 0.5rem;
+    }
+
+    .item {
+      padding: 0.5rem;
+      background-color: #ddd;
+    }
+
+    .grid-cols-6 {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    .col-start-1 {
+      grid-column-start: 1;
+    }
+
+    .col-start-2 {
+      grid-column-start: 2;
+    }
+
+    .col-start-5 {
+      grid-column-start: 5;
+    }
+
+    .col-end-3 {
+      grid-column-end: 3;
+    }
+    
+    .col-end-6 {
+      grid-column-end: 6;
+    }
+
+    .col-end-7 {
+      grid-column-end: 7;
+    }
+  </style>
+
+
+  <div class="container grid gap-2 grid-cols-6">
+    <div class="item col-start-2 col-end-6">item 1</div>
+    <div class="item col-start-1 col-end-3">item 2</div>
+    <div class="item col-start-5 col-end-7">item 3</div>
+    <div class="item col-start-1 col-end-7">item 4</div>
+  </div>
+
+</body>
+
+</html>

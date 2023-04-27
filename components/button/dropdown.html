@@ -15,35 +15,45 @@
       /* border: 1px dashed; */
       display: inline-block;
     }
+    
     .container:hover ul {
       display: block;
     }
+
     button {
-      padding: 0.5rem;
+      border: none;
+      background-color: #333;
+      color: #fff;
+      padding: 0.5rem 0.75rem;
+      font-size: 1rem;
       cursor: pointer;
     }
+
     ul {
       padding: 0;
       margin: 0;
       list-style: none;
-      /* floating */
-      position: absolute;
       width: 200px;
       border: 1px solid #ddd;
       background-color: #fff;
       display: none;
+      /* floating */
+      position: absolute;
     }
+
     a {
       display: block;
       padding: 0.5rem;
+      color: #000;
     }
+
     a:hover {
       background-color: #eee;
     }
   </style>
 
   <div class="container">
-    <button>Dropdown</button>
+    <button type="button">Dropdown</button>
     <ul>
       <li>
         <a href="#">list item</a>
@@ -58,8 +68,11 @@
   </div>
 
   <p>
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure ullam ipsa vero doloremque impedit, veritatis aliquid
-    repudiandae, dolorum non nostrum facilis maxime, eligendi suscipit quaerat at voluptates ipsum! Dicta, eos.
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Iure ullam ipsa vero doloremque impedit, veritatis aliquid
+    repudiandae, dolorum non nostrum facilis maxime, 
+    eligendi suscipit quaerat at voluptates ipsum! 
+    Dicta, eos.
   </p>
 
 </body>

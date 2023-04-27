@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
 
   <h1>Q. grid</h1>
@@ -14,60 +16,42 @@
     .container {
       border: 1px dashed;
     }
-    .grid {
-      display: grid;
-    }
-    .gap-2 {
-      gap: 0.5rem;
-    }
+
     .item {
       padding: 0.5rem;
       background-color: #ddd;
     }
-    .grid-cols-6 {
-      grid-template-columns: repeat(6, minmax(0, 1fr));
+
+    .grid {
+      display: grid;
     }
-    .col-start-1 {
-      grid-column-start: 1;
+
+    .gap-2 {
+      gap: 0.5rem;
     }
-    .col-start-2 {
-      grid-column-start: 2;
+
+    .grid-cols-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
-    .col-start-3 {
-      grid-column-start: 3;
+
+    .col-span-2 {
+      grid-column-start: span 2;
     }
-    .col-start-4 {
-      grid-column-start: 4;
-    }
-    .col-start-5 {
-      grid-column-start: 5;
-    }
-    .col-end-3 {
-      grid-column-end: 3;
-    }
-    .col-end-4 {
-      grid-column-end: 4;
-    }
-    .col-end-5 {
-      grid-column-end: 5;
-    }
-    .col-end-6 {
-      grid-column-end: 6;
-    }
-    .col-end-7 {
-      grid-column-end: 7;
+
+    .col-span-4 {
+      grid-column-start: span 4;
     }
   </style>
 
-  <div class="container grid gap-2 grid-cols-6">
-    <div class="item col-start-1 col-end-3">item 1</div>
-    <div class="item col-start-3 col-end-5">item 2</div>
-    <div class="item col-start-5 col-end-7">item 3</div>
-    <div class="item col-start-1 col-end-4">item 4</div>
-    <div class="item col-start-4 col-end-7">item 5</div>
-    <div class="item">item 6</div>
-    <div class="item col-start-2 col-end-6">item 7</div>
+  <div class="container grid gap-2 grid-cols-4">
+    <div class="item col-span-2">item</div>
+    <div class="item col-span-2">item</div>
+    <div class="item col-span-4">item</div>
+    <div class="item">item</div>
+    <div class="item col-span-2">item</div>
+    <div class="item">item</div>
   </div>
-    
+
 </body>
+
 </html>
