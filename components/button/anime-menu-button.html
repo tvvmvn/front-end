@@ -8,8 +8,37 @@
 </head>
 <body>
 
-  <h2>Animated hamburger button</h2>
+  <h2>Animate hamburger</h2>
 
+  <style>
+    .container {
+      /* border: 1px dashed; */
+      width: 50px;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .item {
+      width: inherit;
+      height: 5px;
+      background-color: #000;
+      transition: transform 0.2s;
+    }
+
+    .container:hover .top {
+      transform: translateY(10px) rotate(45deg);
+    }
+    .container:hover .bottom {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+  </style>
+
+  <div class="container">
+    <div class="item top"></div>
+    <div class="item bottom"></div>
+  </div>
   
   
 </body>

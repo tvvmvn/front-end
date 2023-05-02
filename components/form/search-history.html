@@ -36,6 +36,9 @@
     .hidden {
       display: none;
     }
+    input:focus + #list {
+      display: block;
+    }
   </style>
 
   <form action="" id="form">
@@ -58,15 +61,15 @@
       
     })
 
-    input.addEventListener('focus', (e) => {
-      list.classList.remove('hidden')
-    })
+    // input.addEventListener('focus', (e) => {
+    //   list.classList.remove('hidden')
+    // })
 
-    window.addEventListener('click', (e) => {
-      if (!e.target.matches('#input')) {
-        list.classList.add('hidden');
-      }
-    })
+    // window.addEventListener('click', (e) => {
+    //   if (!e.target.matches('#input')) {
+    //     list.classList.add('hidden');
+    //   }
+    // })
 
   </script>
   

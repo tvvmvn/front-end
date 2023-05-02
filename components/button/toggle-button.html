@@ -8,34 +8,41 @@
 </head>
 <body>
 
-  <h1>Toggle button</h1>
+  <h1>Toggle Switch</h1>
 
   <style>
     label {
       display: block; 
       background-color: #ddd;
-      width: 3rem;
-      padding: 0.25rem;
-      box-sizing: content-box;
-      border-radius: 9999px;
+      width: 56px;
+      height: 32px;
+      position: relative;
       cursor: pointer;
       transition: background-color 0.5s;
+      border-radius: 16px;
     }
+    
     .ball {
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 24px;
+      height: 24px;
       background-color: #fff;
       transition: transform 0.5s;
-      border-radius: 50%;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      border-radius: 12px;
     }
+
     input[type=checkbox] {
       display: none;
     }
+
     input:checked + label {
-      background-color: #0e0;
+      background-color: #333;
     }
+
     input:checked + label .ball {
-      transform: translateX(1.5rem);
+      transform: translateX(24px);
     }
   </style>
 
