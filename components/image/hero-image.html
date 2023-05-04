@@ -11,30 +11,38 @@
   <h1>Main image</h1>
 
   <style>
-    .container {
-      border: 1px solid #ddd;
-      height: 300px;
-      background-image: url('https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&quality=85&auto=format&fit=max&s=a52bbe202f57ac0f5ff7f47166906403');
-      background-size: cover;
-      background-position: center;
-      filter: grayscale(50%);
+    body {
+      margin: 0;
     }
+
+    .container {
+      /* border: 1px dashed; */
+      height: 300px;
+    }
+
     .text-composer {
       width: inherit;
       height: inherit;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      justify-content: center;
       align-items: stretch;
       max-width: 500px;
       margin: 0 auto;
+      padding: 0 1rem;
     }
+
+    .bg-image {
+      background-image: linear-gradient(to right, #0ff, #0bf);
+    }
+    
     .text {
+      color: #fff;
       text-align: center;
     }
   </style>
 
-  <div class="container">
+  <div class="container bg-image">
     <div class="text-composer">
       <h1 class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h1>
     </div>

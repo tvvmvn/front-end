@@ -8,42 +8,43 @@
 </head>
 <body>
 
-  <h1>Avatar</h1>
+  <h1>Card</h1>
 
   <style>
     .container {
       /* border: 1px dashed; */
-      display: inline-flex;
-      align-items: center;
+      width: 16rem;
+      padding: 0.75rem;
+      box-shadow: 0 0 10px #ddd;
     }
 
     img {
-      width: 4rem;
-      height: 4rem;
-      object-fit: cover;
-      border-radius: 2rem;
+      width: inherit;
     }
 
-    .item {
-      margin-left: 0.5rem;
-    }
-
-    h3 {
-      margin: 0;
-    }
-
-    .full-name {
+    .position {
       color: #888;
+    }
+
+    .contact-btn {
+      border: none;
+      background-color: #eee;
+      width: inherit;
+      padding: 0.5rem;
+      font-size: 1rem;
     }
   </style>
 
   <div class="container">
     <img src="https://media.istockphoto.com/id/1334070091/photo/pensive-bengal-cat-in-a-blue-tie-near-a-laptop-and-a-diary-sits-home-office-remote-work.jpg?s=612x612&w=0&k=20&c=vBp3dCwUVKXDxga-dESreruuLN24rAZYNr7Asc6KdtI=" alt="">
-    <div class="item">
-      <h3 class="username">cat</h3>
-      <span class="full-name">Kitty</span>
-    </div>
+    <h3>Kitty</h3>
+    <p class="position">CEO</p>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+      Doloribus in corporis illo.
+    </p>
+    <button class="contact-btn">Send an E-mail</button>
   </div>
-
+  
 </body>
 </html>

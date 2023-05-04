@@ -7,6 +7,81 @@
   <title>Document</title>
 </head>
 <body>
+
+  <style>
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #eee;
+      width: 16rem;
+      height: 100%;
+      display: none;
+    }
+
+    .logo {
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 0.75rem;
+      color: #000;
+    }
+
+    .nav-link:hover {
+      background-color: #ddd;
+    }
+
+    main {
+      margin-left: 0;
+      padding: 0 1rem;
+    }
+
+    @media (min-width: 768px) {
+      nav {
+        display: block;
+      }
+      main {
+        margin-left: 16rem;
+      }
+    }
+  </style>
+
+  <nav>
+    <h1 class="logo">Logo</h1>
+    <ul>
+      <li>
+        <a href="#" class="nav-link">Link</a>
+      </li>
+      <li>
+        <a href="#" class="nav-link">Link</a>
+      </li>
+      <li>
+        <a href="#" class="nav-link">Link</a>
+      </li>
+      <li>
+        <a href="#" class="nav-link">Link</a>
+      </li>
+    </ul>
+  </nav>
   
+  <main>
+    <h1>Side Bar</h1>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+      Maiores officiis iusto expedita numquam? 
+      Iste unde repudiandae pariatur assumenda? 
+      Veritatis voluptatum dolor cupiditate iste ipsa ab eos reiciendis. 
+      Architecto, doloribus ab.
+    </p>
+  </main>
+
 </body>
 </html>

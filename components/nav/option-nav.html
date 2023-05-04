@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Filter Menu</h1>
+
+  <style>
+    nav {
+      /* border: 1px dashed; */
+      width: 24rem;
+      overflow-x: auto;
+      padding: 0.5rem 0;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .item {
+      border: none;
+      background-color: #eee;
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      border-radius: 9999px;
+      font-size: 1rem;
+    }
+    
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    nav {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+  </style>
+
+  <nav>
+    <div class="container">
+      <button type="button" class="item">Seoul</button>
+      <button type="button" class="item">New&nbsp;York</button>
+      <button type="button" class="item">Tokyo</button>
+      <button type="button" class="item">Amsterdam</button>
+      <button type="button" class="item">London</button>
+      <button type="button" class="item">Paris</button>
+    </div>
+  </nav>
+
+  
+</body>
+</html>
