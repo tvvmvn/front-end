@@ -1,67 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>
 
+<body>
 
   <style>
     form {
-      max-width: 300px;
-      margin: auto;
+      /* border: 1px dashed; */
+      width: 300px;
+      margin: 100px auto 0;
     }
-    h2 {
+
+    .title {
       text-align: center
     }
-    .mb-2 {
+
+    .form-group {
       margin-bottom: 0.5rem;
     }
+
     label {
       display: block;
     }
+
     input {
       padding: 0.5rem;
       width: 100%;
       border: 1px solid #ddd;
       box-sizing: border-box;
+      font-size: 1rem;
     }
+
     button {
       width: 100%;
       padding: 0.5rem;
+      background-color: #333;
+      border: none;
+      color: #fff;
+      font-weight: 600;
       cursor: pointer;
     }
-    .flex {
+
+    .login-menu {
       display: flex;
-    }
-    .justify-between {
       justify-content: space-between;
     }
   </style>
 
   <form action="" autocomplete="off">
-    <h2>&#127760; Login</h2>
-    <div class="mb-2">
+    <h2 class="title">Login</h2>
+    <div class="form-group">
       <label for="username">Username</label>
       <input type="text" id="username">
     </div>
-    <div class="mb-2">
+    <div class="form-group">
       <label for="password">Password</label>
       <div class="relative">
         <input type="password" id="password">
       </div>
     </div>
-    <div class="mb-2">
+    <div class="form-group">
       <button type="submit">Login</button>
     </div>
-    <div class="flex justify-between">
+    <div class="login-menu">
       <a href="#">Sign Up</a>
       <a href="#">Forgot Password?</a>
     </div>
   </form>
 
 </body>
+
 </html>
