@@ -7,84 +7,87 @@
   <title>Document</title>
 </head>
 <body>
+
   <h1>Accordion</h1>
 
   <style>
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    button {
+    .item {
+      /* border: 1px dashed; */
+      border-bottom: 1px solid #ddd;
       padding: 0.5rem;
-      width: 100%;
-      text-align: left;
-      cursor: pointer;
-      border: none;
-      border-top: 1px solid #eee;
-      background-color: transparent;
     }
-    button::after {
-      content: '+';
+
+    /* checkbox */
+    input[type=checkbox] {
+      display: none;
+    }
+
+    /* label */
+    label {
+      display: block;
+      cursor: pointer;
+    }
+
+    label::after {
+      content: "+";
       float: right;
       transition: 0.2s;
     }
-    .item {
-      overflow-y: hidden;
-      transition: 0.2s;
-    }
-    .item p {
-      margin: 0;
-      padding: 1rem;
-    }
-    button.active::after {
-      content: '+';
+
+    input[type=checkbox]:checked + label::after {
       transform: rotate(45deg);
     }
-    .max-h-0 {
+
+    /* content */
+    .content {
+      overflow: hidden;
       max-height: 0;
+      transition: max-height 0.2s;
     }
-    .max-h-40 {
-      max-height: 10rem;
+    
+    input[type=checkbox]:checked + label + .content {
+      max-height: 200px;
     }
   </style>
 
-  <ul>
-    <li>
-      <button onclick="f(this)">Tab 1</button>
-      <div class="item max-h-0">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt maiores iusto pariatur ipsum dicta
-          dolorem quas suscipit, eum voluptas doloremque commodi in ullam odio. Voluptate labore impedit asperiores repellat
-          accusamus?</p>
+  <div class="container">
+    <div class="item">
+      <input type="checkbox" name="" id="tab1">
+      <label for="tab1">Tab 1</label>
+      <div class="content">
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+          Dignissimos reprehenderit quas recusandae temporibus nihil porro 
+          eius molestias soluta illum velit magni deleniti nisi, sit, 
+          voluptatem odit pariatur enim facere blanditiis!
+        </p>
       </div>
-    </li>
-    <li>
-      <button onclick="f(this)">Tab 2</button>
-      <div class="item max-h-0">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt maiores iusto pariatur ipsum dicta
-          dolorem quas suscipit, eum voluptas doloremque commodi in ullam odio. Voluptate labore impedit asperiores repellat
-          accusamus?</p>
+    </div>
+    <div class="item">
+      <input type="checkbox" name="" id="tab2">
+      <label for="tab2">Tab 2</label>
+      <div class="content">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Provident dicta ipsa velit consequuntur voluptate, 
+          at illo quaerat blanditiis earum modi beatae expedita. 
+          Repellat tempore iusto quis laboriosam. Consequuntur, porro laborum.
+        </p>
       </div>
-    </li>
-    <li>
-      <button onclick="f(this)">Tab 3</button>
-      <div class="item max-h-0">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt maiores iusto pariatur ipsum dicta
-          dolorem quas suscipit, eum voluptas doloremque commodi in ullam odio. Voluptate labore impedit asperiores repellat
-          accusamus?</p>
+    </div>
+    <div class="item">
+      <input type="checkbox" name="" id="tab3">
+      <label for="tab3">Tab 3</label>
+      <div class="content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+          Porro autem eaque aliquid, saepe sint impedit illum provident recusandae, 
+          eligendi cum corporis. Facilis cupiditate rerum perspiciatis voluptatem facere, 
+          ipsa similique aliquid?
+        </p>
       </div>
-    </li>
-  </ul>
-
-  <script>
-    function f(el) {
-      const item = el.nextElementSibling;
-
-      el.classList.toggle('active')
-      item.classList.toggle("max-h-0");
-      item.classList.toggle("max-h-40");
-    }
-  </script>
-
+    </div>
+  </div>
+  
 </body>
 </html>

@@ -18,20 +18,9 @@
     .container {
       display: grid;
       grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 1rem;
+      gap: 0.5rem;
     }
-
-    label {
-      display: block;
-    }
-
-    input, select {
-      padding: 0.5rem;
-      width: 100%;
-      border: 1px solid #ddd;
-      border-radius: 0.25rem;
-    }
-
+    
     .col-span-2 {
       grid-column-start: span 2;
     }
@@ -39,17 +28,28 @@
     .col-span-3 {
       grid-column-start: span 3;
     }
-
+    
     .col-span-4 {
       grid-column-start: span 4;
     }
-
+    
     .col-span-6 {
       grid-column-start: span 6;
     }
+
+    label {
+      display: block;
+    }
+
+    input, select {
+      border: 1px solid #ddd;
+      border-radius: 0.25rem;
+      padding: 0.5rem;
+      width: 100%;
+    }
   </style>
 
-  <h1>Personal Information</h1>
+  <h1>Personal Info</h1>
 
   <form action="" autocomplete="off">
     <div class="container">

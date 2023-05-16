@@ -16,21 +16,26 @@
       /* border-collapse: seperate; */
       border-collapse: collapse;
     }
+
     caption {
       text-align: left;
       caption-side: bottom;
     }
-    td[scope=row] {
-      font-weight: bold;
-    }
+
     thead tr {
       border-bottom: 1px solid;
     }
+    
+    th, td {
+      padding: 0.5rem;
+    }
+
     tbody tr:nth-child(odd) {
       background-color: #eee;
     }
-    th, td {
-      padding: 0.5rem;
+
+    td[scope=row] {
+      font-weight: bold;
     }
   </style>
 
@@ -47,15 +52,15 @@
     <tbody>
       <tr>
         <td scope="row">1</td>
-        <td>Heineken</td>
-        <td>Netherlands</td>
-        <td>Yes</td>
-      </tr>
-      <tr>
-        <td scope="row">2</td>
         <td>Guinness</td>
         <td>Ireland</td>
         <td>No</td>
+      </tr>
+      <tr>
+        <td scope="row">2</td>
+        <td>Heineken</td>
+        <td>Netherlands</td>
+        <td>Yes</td>
       </tr>
       <tr>
         <td scope="row">3</td>

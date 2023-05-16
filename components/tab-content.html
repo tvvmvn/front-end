@@ -8,97 +8,71 @@
 </head>
 <body>
 
+  <h1>Tab Content</h1>
+
   <style>
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .nav {
+    .container {
+      /* border: 1px dashed; */
       display: flex;
+      flex-wrap: wrap;
     }
-    label span {
-      display: block;
+
+    /* label */
+    label {
       padding: 0.5rem;
-      cursor: pointer;
+      font-weight: 600;
     }
-    input {
+    
+    input[type=radio]:checked + label {
+      border-bottom: 2px solid #0bf;
+      color: #0bf;
+    }
+
+    /* radio */
+    input[type=radio] {
       display: none;
     }
-    input:checked + span {
-      border-bottom: 2px solid;
+    
+    /* content */
+    .content {
+      display: none;
+      flex-basis: 100%;
+      order: 9999;
     }
-    .hidden {
-      display: none; 
+
+    input[type=radio]:checked + label + .content {
+      display: block;
     }
   </style>
+
+  <div class="container">
+    <input type="radio" name="beer" id="tab1" checked>
+    <label for="tab1">Guinness</label>
+    <p class="content">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+      Omnis, officiis doloremque unde optio ex alias non, 
+      reiciendis ducimus quasi tempora nisi itaque et quis 
+      vero aliquid incidunt amet, nesciunt aspernatur.
+    </p>
+
+    <input type="radio" name="beer" id="tab2">
+    <label for="tab2">Heineken</label>
+    <p class="content">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Dignissimos nostrum nulla ab dolorem aut fugiat placeat delectus 
+      laudantium non aspernatur quam, doloribus voluptatum porro nemo, 
+      praesentium molestias accusamus ipsam! Blanditiis.
+    </p>
+
+    <input type="radio" name="beer" id="tab3">
+    <label for="tab3">Budwiser</label>
+    <p class="content">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+      Neque consequuntur at ut molestias reprehenderit, hic ea ipsum. 
+      Sed excepturi itaque error nisi reiciendis perferendis numquam 
+      vitae dicta, cupiditate, sit ipsam.
+    </p>
+  </div>
   
-  <h1>Beers</h1>
-
-  <ul class="nav">
-    <li>
-      <label onclick="f('b0')">
-        <input type="radio" name="button" checked>
-        <span>
-          Guinness
-        </span>
-      </label>
-    </li>
-    <li>
-      <label onclick="f('b1')">
-        <input type="radio" name="button">
-        <span>
-          Heineken
-        </span>
-      </label>
-    </li>
-    <li>
-      <label onclick="f('b2')">
-        <input type="radio" name="button">
-        <span>
-          Budwiser
-        </span>
-      </label>
-    </li>
-  </ul>
-
-  <ul id="container">
-    <li id="b0">
-      <h3>Guinness</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil totam eos quam dolores, deserunt repellat sequi odit
-        distinctio ipsum, molestiae dolore ipsa ab dolorem corporis molestias placeat magni aut veritatis?</p>
-    </li>
-  
-    <li id="b1" class="hidden">
-      <h3>Heineken</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum autem accusantium corporis maiores ipsum! Voluptate
-        delectus quam necessitatibus debitis, et dignissimos laborum! Laudantium qui sunt quisquam fugit magni nulla vitae!
-      </p>
-    </li>
-  
-    <li id="b2" class="hidden">
-      <h3>Budwiser</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet animi voluptatem culpa labore magni doloremque vero
-        consectetur quis at harum. Doloremque blanditiis illo debitis voluptatum amet odio dolore inventore voluptates?</p>
-    </li>
-  </ul>
-
-  <script>
-    function f(id) {      
-      let tabContents = document
-        .getElementById('container')
-        .children;
-
-      for (let i=0; i<tabContents.length; i++) {
-        tabContents[i].classList.add('hidden');
-      }
-      
-      document
-        .getElementById(id)
-        .classList
-        .remove('hidden');
-    }
-  </script>
-
 </body>
 </html>
