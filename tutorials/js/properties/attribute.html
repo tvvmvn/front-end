@@ -14,11 +14,12 @@
   </pre>
   
   <input 
-    type="text" 
+    type="search" 
     id="input"
     name="q" 
-    style="padding: 0.5rem; width: 16rem"
-    value="Search Google"
+    style="padding: 0.5rem; border: 1px solid #ddd; width: 16rem"
+    placeholder="Search Google"
+    autocomplete="off"
   >
   
   <script>
@@ -29,12 +30,15 @@
     console.log(input.type)
     console.log(input.id)
     console.log(input.name)
-    console.log(input.value)
     console.log(input.style.padding)
     console.log(input.style.width)
+    console.log(input.placeholder)
+    console.log(input.autocomplete)
   
+
     // update attribute
-    input.value = 'Search Naver'
+    input.placeholder = "Search Naver";
+    input.style.borderRadius = "0.25rem"
   
   </script>
 </body>

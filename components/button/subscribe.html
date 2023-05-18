@@ -13,46 +13,47 @@
   <style>
     #subscribe-btn {
       padding: 0.5rem;
-      background-color: #b00;
+      background-color: #d00;
       color: #fff;
       border: none;
       padding: 0.5rem 1rem;
-      cursor: pointer;
+      font-weight: 600;
     }
-    #subscribed-btn {
+
+    #cancel-btn {
       padding: 0.5rem;
       background-color: #333;
       color: #fff;
       border: none;
       padding: 0.5rem 1rem;
-      cursor: pointer;
+      font-weight: 600;
     }
+
     .hidden {
       display: none;
     }
   </style>
 
   <p>Subscribers: <span id="count">999</span></p>
-  <button id="subscribe-btn" onclick="subscribe(true)">Subscribe</button>
-  <button id="subscribed-btn" onclick="subscribe(false)" class="hidden">Subscribed</button>
+  <button id="subscribe-btn">Subscribe</button>
+  <button id="cancel-btn" class="hidden">Subscribed</button>
   
   <script>
     var count = document.getElementById('count');
     var subscribeBtn = document.getElementById('subscribe-btn');
-    var subscribedBtn = document.getElementById('subscribed-btn');
+    var cancelBtn = document.getElementById('cancel-btn');
 
-    function subscribe(subscribed) {
-      if (subscribed) {
-        subscribeBtn.classList.add('hidden')
-        subscribedBtn.classList.remove('hidden')
-        count.textContent = Number(count.textContent) + 1
-      } else {
-        subscribedBtn.classList.add('hidden')
-        subscribeBtn.classList.remove('hidden')
-        count.textContent = Number(count.textContent) - 1
-      }      
-    }
+    subscribeBtn.addEventListener('click', function () {
+      subscribeBtn.classList.add('hidden')
+      cancelBtn.classList.remove('hidden')
+      count.textContent = parseFloat(count.textContent) + 1;
+    })
 
+    cancelBtn.addEventListener('click', function () {
+      subscribeBtn.classList.remove('hidden')
+      cancelBtn.classList.add('hidden')
+      count.textContent = parseFloat(count.textContent) - 1;
+    })
   </script>
 
 </body>

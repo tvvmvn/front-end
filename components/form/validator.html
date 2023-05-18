@@ -9,25 +9,21 @@
 <body>
   
   <style>
-    .container {
-      width: 16rem;
-    }
-
     label {
       display: block;
+      font-weight: 600;
     }
 
     input {
       padding: 0.5rem;
-      width: 100%;
-      box-sizing: border-box;
+      width: 16rem;
     }
 
     .success {
       color: #0a0;
     }
 
-    .danger {
+    .error {
       color: #f00;
     }
   </style>
@@ -37,12 +33,12 @@
   <div class="container">
     <label for="">Username</label>
     <input type="text" id="input">
-    <p id="message-container">Enter username.</p>
+    <p id="message">Enter username.</p>
   </div>
 
   <script>
     var input = document.getElementById('input');
-    var messageContainer = document.getElementById('message-container');
+    var message = document.getElementById('message');
     
     input.addEventListener('keyup', (e) => {
       try {
@@ -65,10 +61,10 @@
           throw 'lowercase letters, number and underscore are only accepted.';
         }
 
-        messageContainer.innerHTML = `<span class="success">Awesome username!</span>`
+        message.innerHTML = `<span class="success">cool username!</span>`
 
       } catch (error) {
-        messageContainer.innerHTML = `<span class="danger">${error}</span>`
+        message.innerHTML = `<span class="error">${error}</span>`
       }
     })
 
