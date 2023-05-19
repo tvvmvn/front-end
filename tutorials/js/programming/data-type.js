@@ -158,7 +158,8 @@ console.log(typeof x);
   represent integer outside safe integer  
   you can declare bigint type appending "n" to number.
   
-  safe integer: between -(2^53 - 1) and 2^53 - 1
+  safe integer: integer that Number type is able to represent accurately.
+  between -(2^53 - 1) and 2^53 - 1
   
   약 -9,000조 ~ 9,000조
 */

@@ -1,13 +1,8 @@
 /* 
   *** Object ***
   composition for data and function
-
-  1 Acess object
 */
 
-
-
-/* Access object */
 
 var cat = { 
   // properties
@@ -49,23 +44,22 @@ console.log(cat);
 // > Cat without home property.
 
 
-
 /*
   Q. Object
 */
 
-// 1 Access and print origin of Heineken.
+// 1 print origin of Heineken.
 var beers = [
   { name: 'Guinness', origin: 'Ireland'},
   { name: 'Heineken', origin: 'Netherlands'},
   { name: 'Budwiser', origin: 'USA'},
 ]
 
-console.log(beers[1].origin)
+console.log(beers[1].origin);
 // > Netherlands
 
 
-// 2 Name to uppercase
+// 2 print each beer name with uppercase using for loop.
 for (let i=0; i<beers.length; i++) {
   console.log(beers[i].name.toUpperCase());
 }

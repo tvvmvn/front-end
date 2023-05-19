@@ -9,10 +9,12 @@
 */
 
 
-/* 1 Access array */
+/* 
+  1 Access array 
+*/
 
 // String array
-let arr = ['foo', 'bar', 'baz'];
+var arr = ["foo", "bar", "baz"];
 
 // access array
 console.log(arr[0]);
@@ -28,20 +30,20 @@ console.log(arr.length);
 // > 3
 
 // update
-arr[2] = 'Baz'
+arr[2] = "Baz"
 
-console.log(arr[2])
+console.log(arr[2]);
 // > Baz
 
 // add
-arr[3] = 'duck'
-console.log(arr[3])
+arr[3] = "duck"
+console.log(arr[3]);
 // > duck
 
 
 
 /* 
-  Array methods 
+  2 Array methods 
   perform specific operations to Array.
 
   Array.push()
@@ -54,16 +56,16 @@ console.log(arr[3])
 
 
 // Array.push(newItem1, newItem2, ...)
-var arr = ['foo', 'bar'];
+var arr = ["foo", "bar"];
 
-arr.push('baz');
+arr.push("baz");
 
 console.log(arr);
 // > foo, bar, baz
 
 
 // Array.pop()
-var arr = ['foo', 'bar', 'baz'];
+var arr = ["foo", "bar", "baz"];
 
 arr.pop();
 
@@ -72,8 +74,8 @@ console.log(arr);
 
 
 // Array1.concat(Array2)
-var arr1 = ['foo', 'bar'];
-var arr2 = ['baz']
+var arr1 = ["foo", "bar"];
+var arr2 = ["baz"]
 
 var r = arr1.concat(arr2);
 
@@ -82,7 +84,7 @@ console.log(r);
 
 
 // Array.sort();
-var arr = ['foo', 'bar', 'baz'];
+var arr = ["foo", "bar", "baz"];
 
 arr.sort();
 
@@ -98,19 +100,19 @@ console.log(arr);
 */
 
 
-// change each item to uppercase
-var arr = ['foo', 'bar', 'baz'];
+// perform specific operation on each item
+var arr = ["foo", "bar", "baz"];
 
-for (let i=0; i<arr.length; i++) {
+for (var i=0; i<arr.length; i++) {
   console.log(arr[i].toUpperCase());
 }
 
 
-// filtering
-var arr = ['foo', 'bar', 'baz'];
+// filtering an array
+var arr = ["foo", "bar", "baz"];
 
-for (let i=0; i<arr.length; i++) {
-  if (arr[i][0] === 'bar') {
+for (var i=0; i<arr.length; i++) {
+  if (arr[i][0] === "bar") {
     console.log(arr[i]);
   }
 }
@@ -123,8 +125,8 @@ for (let i=0; i<arr.length; i++) {
 
 // 1 Array method
 // Add new beers to european beers.
-var beers = ['Guinness', 'Heineken'];
-var americanBeer = 'Budwiser';
+var beers = ["Guinness", "Heineken"];
+var americanBeer = "Budwiser";
 
 beers.push(americanBeer);
 
@@ -137,8 +139,8 @@ console.log(beers)
 // print adult ages
 var ages = [12, 19, 23, 30];
 
-for (let i=0; i<arr.length; i++) {
+for (var i=0; i<arr.length; i++) {
   if (arr[i] >= 18) {
-    console.log(arr[i])
+    console.log(arr[i]);
   }
 }
