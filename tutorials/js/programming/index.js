@@ -11,7 +11,6 @@
   
   7 array and array method
   8 object
-  for in loop
   9 class
 
   10 error

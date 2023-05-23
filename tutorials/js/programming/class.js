@@ -5,15 +5,14 @@
 
   1 class instance
   2 static property and method
-  3 predefined class
+  3 built-in class
   4 literal notation
 
 */
 
 
-
 /* 
-  class instance 
+  1 class instance 
 */
 
 class Cat {
@@ -54,13 +53,13 @@ console.log(cat.sound())
 /*
   2 Static property and method
 
-  provide utilities about class and instance
+  provide utilities for class and instance
 */
 
 
 class Cat {
   // static property
-  static family = 'Felidae'
+  static family = 'Felidae';
   
   // static method
   static isAdult(age) {

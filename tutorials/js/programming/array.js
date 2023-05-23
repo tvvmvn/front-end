@@ -30,13 +30,13 @@ console.log(arr.length);
 // > 3
 
 // update
-arr[2] = "Baz"
+arr[2] = "BAZ"
 
 console.log(arr[2]);
 // > Baz
 
 // add
-arr[3] = "duck"
+arr[3] = "lol"
 console.log(arr[3]);
 // > duck
 
@@ -75,7 +75,7 @@ console.log(arr);
 
 // Array1.concat(Array2)
 var arr1 = ["foo", "bar"];
-var arr2 = ["baz"]
+var arr2 = ["baz", "lol"]
 
 var r = arr1.concat(arr2);
 

@@ -19,17 +19,15 @@
 
 // toUpperCase()
 var foo = "bar";
-foo.toUpperCase();
 
-console.log(foo);
+console.log(foo.toUpperCase());
 // > BAR
 
 
 // trim()
 var foo = "  bar  ";
-foo.trim();
 
-console.log(foo)
+console.log(foo.trim())
 // > bar
 
 
@@ -46,9 +44,7 @@ console.log(result);
 // split()
 var foo = "Hello JavaScript";
 
-foo.split(" ");
-
-console.log(foo);
+console.log(foo.split(" "));
 // > [Hello, JavaScript]
 
 
@@ -56,8 +52,7 @@ console.log(foo);
   2 number method
 
   toPrecision()
-  isInteger()
-  isNaN()
+  isString()
 */
 
 
@@ -70,16 +65,8 @@ console.log(r)
 // > 3.14...
 
 
-// isInteger()
-var n = 1.2
-var r = n.isInteger(n);
+// toString()
+var n = 2023
 
-console.log(r)
-// > false
-
-
-// isNaN()
-var r = Number.isNaN('foo');
-
-console.log(r)
-// > true
+console.log(n.toString());
+// > 2023

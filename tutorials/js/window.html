@@ -11,68 +11,65 @@
   <h1>window object</h1>
   <p>toolkit for web development.</p>
 
-  <h3>message or confirm</h3>
-  <p>role as user interface.</p>
-  <ul>
-    <li>window.alert()</li>
-    <li>window.confirm()</li>
-  </ul>
-
-
-  <h3>get user information</h3>
-  <p>
-    to develop app based on user information
-    for example, location based app and device optimized app.
-  </p>
-  <ul>
-    <li>window.navigator.geolocation</li>
-    <li>window.navigator.userAgent</li>
-  </ul>
-
-
-  <h3>browsing history</h3>
-  <p>back button in application.</p>
-  <ul>
-    <li>window.history</li>
-  </ul>
-
-
-  <h3>request data</h3>
-  <p>AJAX request</p>
-
-  <ul>
-    <li>window.fetch()</li>
-    <li>window.XMLHttpRequest()</li>
-  </ul>
-
-
-  <h3>web storage</h3>
-  <p>save data in web browser.
-    for instance, login token, theme, shopping cart and etc.</p>
-  <ul>
-    <li>window.document.cookie</li>
-    <li>window.localStorage</li>
-  </ul>
-
-
-  <h3>view development</h3>
-  <ul>
-    <li>window.document</li>
-    <li>window.document.documentElement</li>
-    <li>window.innerHeight</li>
-  </ul>
-
-
   <script>
+    /*
+      window object
+      toolkit for web development.
+    */
+   
     console.log(window)
 
-    console.log(navigator)
-    
-    console.log(location)
+    /*
+      message or confirm
+      user interface
+    */
 
-    console.log(navigator.geolocation)
+    // window.alert()
+    // window.confirm('yes or no')
+
+    /*
+      access user information
+      to develop app based on user information for example, 
+      location based app and device optimized app.
+    */
+
+    console.log(window.navigator)
+    console.log(window.navigator.geolocation)
+    console.log(window.navigator.userAgent)
+    console.log(window.location)
+
+    /*
+      browsing history data
+
+      back button in app
+    */
+
+    console.log(window.history)
     
-    console.log(navigator.userAgent)
+    /*
+      request data to server
+    */
+
+    console.log(window.fetch);
+    console.log(window.XMLHttpRequest);
+
+    /*
+      web storage
+      store data in web browser.
+      for instance, login token, theme, shopping cart and etc.
+    */
+
+    console.log(window.document.cookie);
+    console.log(window.localStorage);
+
+    /*
+      view development
+    */
+
+    console.log(window.document);
+    console.log(window.innerWidth);
+    console.log(window.innerHeight);
+
   </script>
   
 </body>

@@ -8,7 +8,6 @@
 */
 
 
-
 /* 
   1 What is error
 
@@ -24,7 +23,7 @@ console.log(foo)
 
 /* 
   2 Error handling 
-  try / catch
+  try / catch 
 */
 
 try {
@@ -44,53 +43,67 @@ try {
   
   SyntaxError
   ReferenceError
+
   TypeError
   RangeError
   URIError 
-  Errors  
 */
 
 
-// ReferenceError
-// when refer a variable that doesn't exist 
+/* 
+  ReferenceError
+  when refer a variable that doesn't exist 
+*/
 
 console.log(x)
 // > ReferenceError: x is not defined.
 
 
-// SyntaxError
-// Syntax is wrong. It makes compile error
-// compile error: compiler couldn't understand your code.
+/*
+  SyntaxError
+  Syntax is wrong. It makes compile error
+  try/catch could not handle compile error.
+
+  * compile error: compiler couldn't understand your code.
+*/
 
 // console.log(2022));
 // > SyntaxError: unexpected token ')'
 
   
-// TypeError 
-// when a variable or parameter is not valid type.
+/*
+  TypeError 
+  when a variable or parameter is not valid type.
+*/
 
 setInterval(null, 1000);
 // > TypeError: callback must be a function. Received null.
 
 
-// RangeError
-// A value is not in the set of range of allowed values
+/*
+  RangeError
+  A value is not in the set of range of allowed values
+*/
+
 let pi = Math.PI;
 
 console.log(pi.toPrecision(200)) 
 // > toPrecision() argument must be between 1 and 100
 
 
-// URIError
-// encodeURI() or decodeURI() are passed invalid parameters.
+/*
+  URIError
+  encodeURI() or decodeURI() are passed invalid parameters.
+*/
 
 console.log(decodeURI('%')); 
 // > URIError: URI malformed
 
 
-
 /* 
   4 Custom Error 
+
+  generate error if need it
 */
 
 try {

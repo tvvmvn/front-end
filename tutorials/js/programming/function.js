@@ -37,7 +37,11 @@ f()
 // > foo
 
 
-// 2 Hoisting (게양)
+/* 
+  2 Hoisting (게양)
+
+  function declaration is hoisted 
+*/
 
 f()
 
@@ -46,7 +50,9 @@ function f() {
 }
 
 
-// 3 function parameter and argument 
+/*
+  3 function parameter and argument 
+*/
 
 function add(x, y) {
   console.log('addition result:', x + y);
@@ -56,7 +62,9 @@ add(1, 2);
 // > addition result: 3
 
 
-// 4 return 
+/* 
+  4 return 
+*/
 
 function add(x, y) {
   return x + y;
@@ -70,7 +78,7 @@ console.log('add result:', r);
 
 
 /*
-  6 callback
+  5 callback
   function argument
 */
 
