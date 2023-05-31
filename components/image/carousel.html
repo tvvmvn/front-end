@@ -16,7 +16,7 @@
       box-sizing: border-box;
     }
 
-    .wrap {
+    .section {
       width: 200px;
       height: 200px;
       overflow: hidden;
@@ -25,7 +25,6 @@
 
     /* images */
     #container {
-      width: 600px;
       height: 200px;
       display: inline-flex;
       transition: 0.2s;
@@ -38,21 +37,22 @@
     }
 
     /* buttons */
-    #prev, #next {
+    #prev-btn, #next-btn {
       position: absolute;
       height: 100%;
       display: flex;
       align-items: center;
       background-color: transparent;
+      color: #fff;
       border: none;
     }
 
-    #prev {
+    #prev-btn {
       top: 0;
       left: 0;
     }
 
-    #next {
+    #next-btn {
       top: 0;
       right: 0;
     }
@@ -69,8 +69,9 @@
       display: inline-block;
       width: 0.5rem;
       height: 0.5rem;
-      background-color: #ddd;
+      background-color: #fff;
       border-radius: 50%;
+      opacity: 0.5;
     }
 
     /* toggle class */
@@ -79,11 +80,11 @@
     }
 
     .active {
-      background-color: #555;
+      opacity: 1;
     }
   </style>
 
-  <div class="wrap">
+  <div class="section">
     <!-- images -->
     <div id="container">
       <img class="item" src="/img/Simba.webp" alt="">
@@ -92,8 +93,12 @@
     </div>
 
     <!-- button -->
-    <button id="prev" class="hidden" onclick="navigateTo(-1)">&#10094;</button>
-    <button id="next" onclick="navigateTo(1)">&#10095;</button>
+    <button id="prev-btn" class="hidden" onclick="navigateTo(-1)">
+      &#10094;
+    </button>
+    <button id="next-btn" onclick="navigateTo(1)">
+      &#10095;
+    </button>
 
     <!-- indicator -->
     <div class="indicator">
@@ -105,8 +110,8 @@
 
   <script>
     var container = document.getElementById('container');
-    var prev = document.getElementById('prev');
-    var next = document.getElementById('next');
+    var prevBtn = document.getElementById('prev-btn');
+    var nextBtn = document.getElementById('next-btn');
     var dots = document.getElementsByClassName('dot');
     var imageWidth = 200;
     var previousIndex = 0;
@@ -117,6 +122,7 @@
       console.log('previous index:', previousIndex)
       
       thisIndex += data;
+      
       console.log('this index:', thisIndex);
 
       // images
@@ -124,15 +130,15 @@
 
       // button
       if (thisIndex === 0) {
-        prev.classList.add('hidden')
+        prevBtn.classList.add('hidden')
       } else {
-        prev.classList.remove('hidden')
+        prevBtn.classList.remove('hidden')
       }
 
       if (thisIndex === 2) {
-        next.classList.add('hidden');
+        nextBtn.classList.add('hidden');
       } else {
-        next.classList.remove('hidden');
+        nextBtn.classList.remove('hidden');
       }
 
       // indicator

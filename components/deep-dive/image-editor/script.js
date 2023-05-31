@@ -18,10 +18,6 @@ fileInput.addEventListener('change', (e) => {
 
 // image is loaded on canvas.
 imgElement.addEventListener('load', (e) => {
-
-  canvas.width = imgElement.width;
-  canvas.height = imgElement.height;
-
   initialize();
   drawImage();
 })

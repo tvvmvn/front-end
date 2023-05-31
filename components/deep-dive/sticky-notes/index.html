@@ -7,11 +7,14 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Sticky Notes</h1>
-  
+
   <style>
     * {
       box-sizing: border-box;
+    }
+
+    body {
+      background-color: #eee;
     }
 
     #container {
@@ -23,29 +26,32 @@
     }
 
     textarea { 
-      resize: none;
-      border: none;
-      outline: none;
-      background-color: #eee;
       height: 12rem;
       padding: 1rem;
+      border: none;
+      box-shadow: 0 0 5px #ddd;
+      outline: none;
+      resize: none;
     }
     
     #add-btn {
-      background-color: #aaa;
-      border: none;
-      color: #fff;
-      font-size: 4rem;
+      /* position */
       position: fixed;
       right: 1rem;
       bottom: 1rem;
+      /* size */
       width: 4rem;
       height: 4rem;
+      /* display */
       display: flex;
       justify-content: center;
       align-items: center;
+      /* style */
+      background-color: #aaa;
+      color: #fff;
+      border: none;
       border-radius: 50%;
-      cursor: pointer;
+      font-size: 4rem;
     }
 
     #add-btn:hover {
@@ -53,6 +59,7 @@
     }
   </style>
 
+  <h1>Sticky Notes</h1>
 
   <div id="container"></div>
   <button id="add-btn">+</button>

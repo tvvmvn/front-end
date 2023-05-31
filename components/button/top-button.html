@@ -12,29 +12,21 @@
     html {
       scroll-behavior:smooth;
     }
+
     body {
       min-height: 1000px;
     }
+
     #btn {
       position: fixed;
       bottom: 2rem;
       right: 2rem;
       width: 2rem;
-      height: 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      border: none;
-      background-color: #333;
       cursor: pointer;
     }
+
     .invisible {
       visibility: hidden;
-    }
-    #arrow-top {
-      width: 1rem;
-      fill: #fff;
     }
   </style>
 
@@ -42,18 +34,16 @@
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos perspiciatis eius fugiat illum amet fuga dolor
     consectetur, vero rerum tempore facilis qui minima vel dolores minus rem, voluptate dolore voluptatem.</p>
 
-  <button id="btn" class="invisible"> 
-    <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      viewBox="0 0 384 512"
-      id="arrow-top"
-    >
-      <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/>
-    </svg>
-  </button>
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 512 512"
+    id="btn"
+  >
+    <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/>
+  </svg>
 
   <script>
-    let btn = document.getElementById('btn');
+    var btn = document.getElementById('btn');
 
     window.addEventListener('scroll', () => {
       console.log(document.documentElement.scrollTop);

@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
 
   <style>
     #form {
-      width: 20rem;
+      width: 24rem;
     }
+
     .form-group {
       display: flex;
     }
+
     input {
+      border: 1px solid #ddd;
       padding: 0.5rem;
       flex-grow: 1;
+      font-size: 1rem;
     }
+
+    .btn {
+      border: none;
+      background-color: #333;
+      color: #fff;
+      padding: 0.5rem 0.75rem;
+    }
+
     .hidden {
       display: none;
     }
   </style>
-  
+
   <form action="" id="form">
     <h1>Newsletter</h1>
+
     <div class="form-group">
       <input type="email" value="John@example.com" required>
-      <button>Submit</button>
+      <button class="btn">Submit</button>
     </div>
   </form>
 
@@ -36,7 +51,11 @@
     <h1>
       Thank you for subscribing us!
     </h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+      Debitis excepturi iste, alias cupiditate corporis cumque similique expedita ut. 
+      Quo, culpa debitis. Maxime neque aperiam assumenda rerum quis explicabo nobis laboriosam!
+    </p>
   </div>
 
   <script>
@@ -44,12 +63,14 @@
     var successMessage = document.getElementById('success-message');
 
     form.addEventListener('submit', (e) => {
+      // prevent refresh
       e.preventDefault();
 
       form.classList.add('hidden');
       successMessage.classList.remove('hidden')
     })
   </script>
-  
+
 </body>
+
 </html>

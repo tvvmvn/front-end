@@ -8,8 +8,6 @@
 </head>
 <body>
 
-  <h1>Gallery</h1>
-
   <style>
     /* main image */
     #main {
@@ -21,6 +19,7 @@
     
     /* thumbnails */
     .container {
+      width: 300px;
       display: flex;
     }
 
@@ -30,19 +29,21 @@
       object-fit: cover;
       cursor: pointer;
       box-sizing: border-box;
-      padding: 0.5rem;
     }
 
     /* toggle class */
     .active {
-      outline: 2px solid #0bf
+      outline: 4px solid #0bf;
+      z-index: 10;
     }
   </style>
+ 
+  <h1>Gallery</h1>
 
-  <!-- main image -->
   <img src="/img/Simba.webp" alt="" id="main">
   
-  <!-- thumbnails -->
+  <h3>Thumbnails</h3>
+
   <div class="container">
     <img class="thumbnail active" src="/img/Simba.webp" alt="" onclick="jumpTo(0)">
     <img class="thumbnail" src="/img/Timon.webp" alt="" onclick="jumpTo(1)">
@@ -59,18 +60,19 @@
       console.log('previous index:', previousIndex);
       console.log('this index:', thisIndex);
 
+      // when click a selected thumbnail
       if (previousIndex === thisIndex) {
         return;
       }
+
+      // update main image
+      main.src = thumbnails[thisIndex].src;
 
       //  outline on a selected thumbnail;
       thumbnails[thisIndex].classList.add('active');
       thumbnails[previousIndex].classList.remove('active');
 
-      // update main image
-      main.src = thumbnails[thisIndex].src;
-
-      // update previous index.
+      // update previous index at last.
       previousIndex = thisIndex;
     }
   </script>

@@ -18,7 +18,7 @@
     }
 
     /* main image */
-    .album {
+    .section {
       width: 300px;
       height: 300px;
       position: relative;
@@ -43,16 +43,16 @@
       width: 50px;
       height: 50px;
       object-fit: cover;
-      padding: 0.25rem;
     }
 
     /* toggle class */
     .active {
-      outline: 2px solid #0bf
+      outline: 2px solid #0bf;
+      z-index: 10;
     }
   </style>
 
-  <div class="album">
+  <div class="section">
     <!-- main image -->
     <img src="/img/Simba.webp" alt="" id="main">
     
@@ -76,6 +76,7 @@
     function navigate() {
       // get previous and this index.
       console.log('previous index:', thisIndex);
+      
       thisIndex++;
 
       console.log('this index:', thisIndex);
@@ -84,12 +85,12 @@
         thisIndex = 0;
       }
       
+      // update main image and caption
+      main.src = thumbnails[thisIndex].src;
+
       // outline on selected image.
       thumbnails[thisIndex].classList.add('active');
       thumbnails[previousIndex].classList.remove('active');
-
-      // update main image and caption
-      main.src = thumbnails[thisIndex].src;
 
       // get previous index
       previousIndex = thisIndex;

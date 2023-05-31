@@ -1,23 +1,8 @@
 /*
-
   Stick Notes Tutorials
 
-  1 presentation about how it works
-  
-  2 Complete HTML/CSS code 
-
-  3 declare all variables and functions with comments.
-  
-  4 helper function
-  
-  5 add note 
-  
-  6 get notes
-
-  7 update note
-
-  8 delete note
-
+  1 Create view and functions
+  2 add storage part.
 */
 
 var container = document.getElementById('container');
@@ -87,7 +72,7 @@ function createNoteElement(id, content) {
   container.prepend(noteElement);
 }
 
-// query 
+// function to use storage
 function getDocs() {
   if (!localStorage.getItem('notes')) {
     localStorage.setItem('notes', '[]');

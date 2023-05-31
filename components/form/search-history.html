@@ -22,18 +22,22 @@
     }
 
     input {
+      width: inherit;
       padding: 0.5rem;
-      width: 100%;
+      border: 1px solid #ddd;
     }
 
     ul {
       list-style: none;
       padding: 0;
       margin: 0;
+      /* size */
       width: 20rem;
-      position: absolute;
+      /* style */
       border: 1px solid #ddd;
       background-color: #fff;
+      /* display */
+      position: absolute;
     }
 
     li {
@@ -44,7 +48,7 @@
       display: none;
     }
 
-    input:focus+#list {
+    input:focus + #list {
       display: block;
     }
   </style>
@@ -53,33 +57,12 @@
     <input type="search" name="q" id="input" autocomplete="off">
     <ul id="list" class="hidden">
       <li>list item</li>
-      <li><a href="#" target="_blank">dsf</a></li>
+      <li>list item</li>
       <li>list item</li>
     </ul>
   </form>
 
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
-  <script>
-    var input = document.getElementById('input');
-    var list = document.getElementById('list');
-    var form = document.getElementById('form');
-
-    input.addEventListener('keyup', (e) => {
-
-    })
-
-    // input.addEventListener('focus', (e) => {
-    //   list.classList.remove('hidden')
-    // })
-
-    // window.addEventListener('click', (e) => {
-    //   if (!e.target.matches('#input')) {
-    //     list.classList.add('hidden');
-    //   }
-    // })
-
-  </script>
 
 </body>
 

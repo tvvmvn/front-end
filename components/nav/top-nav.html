@@ -1,63 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <style>
     body {
       min-height: 1000px;
     }
+
     header {
+      /* border: 1px dashed; */
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      border: 1px solid #ddd;
-    }
-    .container {
       backdrop-filter: blur(8px);
-      display: flex;
-      align-items: center;
     }
+
+    .header-inner {
+      border-bottom: 1px solid #ddd;
+    }
+
     #btn {
       border: none;
       background-color: transparent;
       font-size: 2rem;
       cursor: pointer;
     }
+
     nav {
-      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #ddd;
     }
+
     nav ul {
       margin: 0;
       padding: 0;
       list-style: none;
     }
+
     nav a {
       display: block;
       text-align: center;
       padding: 0.5rem;
       text-decoration: none;
-      color: #555;
-      border-top: 1px solid #ddd;
-    }
-    nav a:hover {
       color: #000;
+      opacity: 0.5;
     }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
     main {
       margin-top: 4rem;
     }
+
     .hidden {
       display: none;
     }
   </style>
 
-  <header id="header">
-    <div class="container">
+  <header>
+    <div class="header-inner">
       <button id="btn">&#9776;</button>
     </div>
     <nav class="hidden" id="nav">
@@ -82,10 +92,10 @@
   </main>
 
   <script>
-    const btn = document.getElementById('btn');
+    var btn = document.getElementById('btn');
+    var nav = document.getElementById('nav');
 
     btn.addEventListener("click", (e) => {
-      const nav = document.getElementById('nav');
       nav.classList.toggle("hidden");
     })
 
@@ -95,8 +105,9 @@
       }
     })
 
-  </script> 
+  </script>
 
-  
+
 </body>
+
 </html>

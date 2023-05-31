@@ -18,9 +18,11 @@
     }
 
     #input {
-      padding: 0.5rem;
       width: 100%;
+      padding: 0.5rem;
       box-sizing: border-box;
+      border: 1px solid #ddd;
+      font-size: 1rem;
     }
 
     #list {
@@ -56,12 +58,15 @@
     input.addEventListener('keyup', (e) => {
       var items = document.getElementsByClassName('item');
 
-      var value = e.target.value.toLowerCase();
+      var value = e.target.value;
 
       for (var i = 0; i < items.length; i++) {
-        var textContent = items[i].textContent.toLocaleLowerCase();
+        var textContent = items[i].textContent;
 
-        if (textContent.includes(value)) {
+        value = value.toLowerCase();
+        textContent = textContent.toLowerCase();
+
+        if (textContent.indexOf(value) > -1) {
           items[i].classList.remove('hidden');
         } else {
           items[i].classList.add('hidden');

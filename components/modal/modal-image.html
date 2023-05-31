@@ -27,7 +27,6 @@
       object-fit: cover;
       display: block;
       margin: 100px auto 0;
-      border-radius: 1rem;
     }
 
     #close-btn {
@@ -73,8 +72,8 @@
   </div>
 
   <script>
-    let overlay = document.getElementById("overlay");
-    let modal = document.getElementById('modal');
+    var overlay = document.getElementById("overlay");
+    var modal = document.getElementById('modal');
     var thumbnails = document.getElementsByClassName('thumbnail');
     var closeBtn = document.getElementById('close-btn');
 
@@ -90,6 +89,7 @@
       if (e.target === closeBtn) {
         overlay.classList.add("hidden");
       }
+      
       if (e.target === overlay) {
         overlay.classList.add("hidden");
       }
