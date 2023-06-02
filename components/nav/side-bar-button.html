@@ -77,12 +77,12 @@
     const sideBar = document.getElementById("side-bar");
     const overlay = document.getElementById("overlay");
 
-    btn.addEventListener("click", (e) => {
+    btn.addEventListener("click", () => {
       sideBar.classList.remove("hidden");
       overlay.classList.remove("hidden");
     })
 
-    overlay.addEventListener("click", (e) => {
+    overlay.addEventListener("click", () => {
       sideBar.classList.add("hidden");
       overlay.classList.add("hidden");
     })

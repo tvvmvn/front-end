@@ -10,8 +10,6 @@
 
 <body>
 
-  <h1>Auto Albums</h1>
-
   <style>
     * {
       box-sizing: border-box;
@@ -52,9 +50,11 @@
     }
   </style>
 
+  <h1>Auto Gallery</h1>
+
   <div class="section">
     <!-- main image -->
-    <img src="/img/Simba.webp" alt="" id="main">
+    <img src="https://tvvmvn.github.io/front-end/img/Simba.webp" alt="" id="main">
     
     <!-- thumbnails -->
     <div class="container">
@@ -74,11 +74,11 @@
     setInterval(navigate, 3000);
 
     function navigate() {
-      // get previous and this index.
-      console.log('previous index:', thisIndex);
       
       thisIndex++;
-
+      
+      // get previous and this index.
+      console.log('previous index:', thisIndex);
       console.log('this index:', thisIndex);
 
       if (thisIndex === thumbnails.length) {

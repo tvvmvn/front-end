@@ -69,13 +69,12 @@
       // console.log('previous scrollTop:', previousScrollTop);
       // console.log('scrollTop', scrollTop);
 
-      if (scrollTop - previousScrollTop > 0) {
+      if (scrollTop > previousScrollTop) {
         header.classList.add('hidden');
       } else {
         header.classList.remove('hidden');
       }
 
-      // Update previous scrollTop at last
       previousScrollTop = scrollTop;
     })
 
