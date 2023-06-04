@@ -18,12 +18,12 @@
 
   
   <script>
-    let user = {}
+    var user = {}
 
     function handleChange(e) {  
 
-      let name = e.target.name;
-      let value = e.target.value;
+      var name = e.target.name;
+      var value = e.target.value;
       
       user = { ...user, [name]: value }
 

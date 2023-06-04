@@ -10,8 +10,6 @@
 
 <body>
 
-  <h1>Contact Form</h1>
-
   <style>
     #form {
       width: 20rem;
@@ -49,6 +47,8 @@
     }
   </style>
 
+  <h1>Contact Form</h1>
+
   <form action="" id="form">
     <div class="form-group">
       <label for="">First name</label>
@@ -72,9 +72,9 @@
 
     var form = document.getElementById('form');
     // error message
-    var fnameError = document.getElementById('fname-error')
-    var lnameError = document.getElementById('lname-error')
-    var emailError = document.getElementById('email-error')
+    var fnameError = document.getElementById('fname-error');
+    var lnameError = document.getElementById('lname-error');
+    var emailError = document.getElementById('email-error');
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -110,7 +110,7 @@
       }
     })
 
-    // you can use this error handler to simplify validation.
+    // you can use this error handler to make this snippet simple.
     function errorHandler(error, container) {
       if (error) {
         container.classList.remove('hidden');
