@@ -1,6 +1,6 @@
 /*
 
-  *** DATA TYPE ***
+  * DATA TYPE *
 
   1 String
   2 Number
@@ -44,8 +44,6 @@ console.log(foo.length);
 
 /*
   2 Number
-  it represent number between -(2^1024 -1) and 2^1024 - 1
-  (or 1.7976931348623157e+308)
   
   type of values:
   integer
@@ -54,7 +52,8 @@ console.log(foo.length);
   +Infinity
   -Inifinity
   
-  ref
+  * ref
+  it represent number between -(2^1024 -1) and 2^1024 - 1
   double precision floating point number
 */
 
@@ -98,7 +97,7 @@ console.log(infinity)
 
 
 // Negative Infinity
-var negative_infinity = -Number.MAX_VALUE + 1.1;
+var negative_infinity = -Number.MAX_VALUE * 1.1;
 console.log(negative_infinity)
 // > -Infinity
 

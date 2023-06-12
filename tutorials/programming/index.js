@@ -1,5 +1,5 @@
 /*
-  * JS 1 *
+  * JavaScript Tutorials *
 
   1 data type and basic method
   2 operator
@@ -16,13 +16,4 @@
   10 error
   11 asynchronous operation
   12 json
-
-
-  * JS 2 (ES 6) *
-  destructing syntax
-  spread operator
-  let and const
-  array.map
-  arrow function
-  promise
 */

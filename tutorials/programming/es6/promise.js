@@ -1,5 +1,5 @@
 /* 
-  *** Promise object ***
+  * Promise object *
   represents status whether success or failure and 
   results of asynchronous operations.
   It is used to improve readability for asynchronous operations. 
@@ -13,7 +13,7 @@
 /*
   1 structure of promise
 
-  - create Promise instance
+  - Creating Promise instance
   pass callback that has two parameters to contructor. 
 
   fist parameter(resolve): invoked when success
@@ -104,3 +104,5 @@ async function f() {
 
 f();
 console.log('next operations');
+// > next operations
+// > data from server: { foo: 'bar' }
