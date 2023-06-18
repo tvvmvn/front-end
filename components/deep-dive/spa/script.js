@@ -1,30 +1,36 @@
 // using nav
 window.addEventListener('hashchange', (e) => {
-  router(location.hash);
+  router();
 })
 
 // load event
 window.addEventListener('load', (e) => {
-  router(location.hash);
+  router();
 })
 
 // router
-function router(hash) {
-  var url = hash.substr(1);
+function router() {
 
-  console.log(url);
+  var url = location.hash.substring(1);
 
   var routes = [
     { path: 'home', element: Home },
     { path: 'posts', element: Posts },
-    { path: 'post/2', element: Post },
+    { path: 'post', element: Post },
     { path: 'contact', element: Contact },
   ]
 
+  
   for (var i=0; i<routes.length; i++) {
-    if (routes[i].path === url) {
+    var path = routes[i].path;
+
+    if (url.indexOf("?postId") > 0) {
+      url = url.substring(0, url.indexOf("?"));
+    }
+    
+    if (path === url) {
       document
-        .getElementById('root')
+        .getElementById("root")
         .innerHTML = routes[i].element();
     }
   }    
@@ -42,32 +48,19 @@ function Posts() {
     <h1>Posts</h1>
     <ul>
       <li>
-        <a href="#post/2">Second post</a>
+        <a href="#post?postId=p1">Second post</a>
       </li>  
       <li>
-        First post
+        <a href="#post?postId=p0">First post</a>
       </li>  
     </ul>
   `)
 }
 
-function Post() {
-  // AJAX (request to server)
-  var DATA = { 
-    id: 2, 
-    contents: `
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-      Neque, deserunt quae, magnam similique, ducimus ex unde minima corrupti sit 
-      voluptatibus architecto eos provident aliquam iure placeat dolores in laborum delectus.`,
-    createdAt: '19 April, 2023'
-  }
-  
+function Post() {  
   return (`
-    <h1>Second post</h1>
-    <small>
-      posted <i>${DATA.createdAt}</i>
-    </small>
-    <p>${DATA.contents}</p>
+    <h1>Post</h1>
+    <p>...</p>
   `)
 }
 
