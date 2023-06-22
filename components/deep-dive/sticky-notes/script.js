@@ -7,7 +7,7 @@
 
 var container = document.getElementById("container");
 var addBtn = document.getElementById("add-btn");
-var notes;
+var notes = [];
 
 // add new note
 addBtn.addEventListener("click", addNote);
@@ -16,8 +16,6 @@ window.addEventListener("DOMContentLoaded", getNotes);
 
 // add note
 function addNote() {
-  notes = getDocs();  
-  
   var newNote = { id: "n" + Date.now(), content: "" };
   notes.push(newNote);
 
@@ -28,8 +26,6 @@ function addNote() {
 
 // edit note
 function editNote(id, content) {
-  notes = getDocs();
-
   for (var i=0; i<notes.length; i++) {
     if (notes[i].id === id) {
       notes[i].content = content;
@@ -41,8 +37,6 @@ function editNote(id, content) {
 
 // delete note
 function deleteNote(id, noteElement) {
-  notes = getDocs();
-
   for (var i=0; i<notes.length; i++) {
     if (notes[i].id === id) {
       notes.splice(i, 1);
@@ -59,7 +53,7 @@ function createNoteElement(id, content) {
   var noteElement = document.createElement("textarea");
 
   noteElement.value = content;
-  noteElement.addEventListener("change", (e) => editNote(id, e.target.value));
+  noteElement.addEventListener("keyup", (e) => editNote(id, e.target.value));
   noteElement.addEventListener("dblclick", (e) => deleteNote(id, e.target));
 
   container.prepend(noteElement);
