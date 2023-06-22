@@ -5,27 +5,20 @@
   2 add storage part.
 */
 
-var container = document.getElementById('container');
-var addBtn = document.getElementById('add-btn');
+var container = document.getElementById("container");
+var addBtn = document.getElementById("add-btn");
+var notes;
 
-// get all notes
-window.addEventListener('DOMContentLoaded', getNotes);
 // add new note
-addBtn.addEventListener('click', addNote);
-
-// get notes
-function getNotes() {
-  var notes = getDocs();
-
-  for (var i=0; i<notes.length; i++) {
-    createNoteElement(notes[i].id, notes[i].content);
-  }
-}
+addBtn.addEventListener("click", addNote);
+// get all notes
+window.addEventListener("DOMContentLoaded", getNotes);
 
 // add note
 function addNote() {
-  var notes = getDocs();  
-  var newNote = { id: 'n' + Date.now(), content: '' };
+  notes = getDocs();  
+  
+  var newNote = { id: "n" + Date.now(), content: "" };
   notes.push(newNote);
 
   saveDoc(notes);
@@ -35,7 +28,7 @@ function addNote() {
 
 // edit note
 function editNote(id, content) {
-  var notes = getDocs();
+  notes = getDocs();
 
   for (var i=0; i<notes.length; i++) {
     if (notes[i].id === id) {
@@ -48,7 +41,7 @@ function editNote(id, content) {
 
 // delete note
 function deleteNote(id, noteElement) {
-  var notes = getDocs();
+  notes = getDocs();
 
   for (var i=0; i<notes.length; i++) {
     if (notes[i].id === id) {
@@ -63,24 +56,34 @@ function deleteNote(id, noteElement) {
 
 // render 
 function createNoteElement(id, content) {
-  var noteElement = document.createElement('textarea');
+  var noteElement = document.createElement("textarea");
 
   noteElement.value = content;
-  noteElement.addEventListener('change', (e) => editNote(id, e.target.value));
-  noteElement.addEventListener('dblclick', (e) => deleteNote(id, e.target));
+  noteElement.addEventListener("change", (e) => editNote(id, e.target.value));
+  noteElement.addEventListener("dblclick", (e) => deleteNote(id, e.target));
 
   container.prepend(noteElement);
 }
 
-// function to use storage
-function getDocs() {
-  if (!localStorage.getItem('notes')) {
-    localStorage.setItem('notes', '[]');
-  }
+// get notes
+function getNotes() {
+  notes = getDocs();
 
-  return JSON.parse(localStorage.getItem('notes'));
+  for (var i=0; i<notes.length; i++) {
+    createNoteElement(notes[i].id, notes[i].content);
+  }
 }
 
+// get docs from localStorage
+function getDocs() {
+  if (!localStorage.getItem("noteStorage")) {
+    localStorage.setItem("noteStorage", "[]");
+  }
+
+  return JSON.parse(localStorage.getItem("noteStorage"));
+}
+
+// save doc to localStorage
 function saveDoc(notes) {
-  localStorage.setItem('notes', JSON.stringify(notes));
+  localStorage.setItem("noteStorage", JSON.stringify(notes));
 }
