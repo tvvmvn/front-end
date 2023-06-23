@@ -19,19 +19,19 @@ function router() {
     { path: 'post', element: Post },
     { path: 'contact', element: Contact },
   ]
-
   
   for (var i=0; i<routes.length; i++) {
     var path = routes[i].path;
 
-    if (url.indexOf("?postId") > 0) {
-      url = url.substring(0, url.indexOf("?"));
+    if (url.indexOf("?") > 0) {
+      var query = url.substring(url.indexOf("?"));
+      url = url.substring(url.indexOf("?"), -1);
     }
-    
+
     if (path === url) {
       document
         .getElementById("root")
-        .innerHTML = routes[i].element();
+        .innerHTML = routes[i].element(query);
     }
   }    
 }
@@ -57,10 +57,10 @@ function Posts() {
   `)
 }
 
-function Post() {  
+function Post(query) {  
   return (`
     <h1>Post</h1>
-    <p>...</p>
+    <p>${query}</p>
   `)
 }
 
