@@ -5,15 +5,16 @@ var x = (canvas.width - width) / 2
 var y = canvas.height - height;
 var isLeftPressed = false;
 var isRightPressed = false;
+
 var score = 0;
 
-var interval = setInterval(draw, 10);
 addEventListener("keydown", keyDownHandler);
-addEventListener("keyup", keyUpHandler)
+addEventListener("keyup", keyUpHandler);
 
 var obstacles = [];
+var obstacleCount = 100;
 
-for (var j = 0; j < 10; j++) {
+for (var j = 0; j < obstacleCount; j++) {
   var obstacle = { 
     x: 0, 
     y: 0, 
@@ -26,17 +27,12 @@ for (var j = 0; j < 10; j++) {
   obstacles.push(obstacle);
 }
 
+var time = 0;
+var level = 1;
 var k = 0;
+var lives = 1;
 
-// fire
-setInterval(() => {
-  if (k < obstacles.length) {
-    obstacles[k].active = true;
-    k++;
-  }
-}, 1000)
-
-// console.log(obstacles);
+draw()
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -49,11 +45,47 @@ function draw() {
     if (x + width < canvas.width) x += 2;
   }
 
+  drawLevel()
   
   drawObstacles();
   
   drawScore()
   drawActor();
+
+  requestAnimationFrame(draw);
+}
+
+function drawLevel() {
+  if (level === 1) {
+    time += 0.006;
+  }
+
+  if (level === 2) {
+    time += 0.008;
+  }
+
+  if (level === 3) {
+    time += 0.010;
+  }
+
+  if (time > 1) {
+    obstacles[k].active = true;
+    k++;
+
+    time = 0;
+  }
+
+  if (k > 10) {
+    level = 2;
+  }
+
+  if (k > 20) {
+    level = 3
+  }
+  
+  ctx.font = "16px Arial";
+  ctx.fillStyle = "#888";
+  ctx.fillText(`Level: ${level}`, 8, 20);
 }
 
 function drawObstacles() {
@@ -75,20 +107,18 @@ function drawObstacles() {
       var collided_h = (x < obstacle.hole) || (x + width > obstacle.hole + 40);
   
       if (collided_v && collided_h) {
-        clearInterval(interval);
-        alert("GAME OVER");
-        document.location.reload();
+        lives--;
       }
       
+      if (!lives) {
+        alert(`Score: ${score}`);
+        document.location.reload();
+        return;
+      }
+
       if (obstacle.y > canvas.height) {
         score++;
         obstacle.active = false;
-
-        if (score === obstacles.length) {
-          clearInterval(interval);
-          alert("YOU WIN");
-          document.location.reload();
-        }
       }
     }
   }
@@ -102,7 +132,7 @@ function drawActor() {
 function drawScore() {
   ctx.font = "16px Arial";
   ctx.fillStyle = "#888";
-  ctx.fillText(`rest: ${obstacles.length - score}`, 8, 20);
+  ctx.fillText(`Score: ${score}`, 8, 40);
 }
 
 function keyDownHandler(e) {
