@@ -9,7 +9,10 @@
 <body>
 
   <h1>display</h1>
-  <p>how to display elements.</p>
+  <pre>
+    엘리먼트의 정렬 방법
+    block, inline-block, inline, none 등
+  </pre>
 
   <style>
     .item {
@@ -34,24 +37,34 @@
   </style>
 
   <h3>display: block</h3>
-  <p>div, p, most of elements</p>
+  <p>부모 엘리먼트의 넓이를 모두 차지한다</p>
+  <p>div, p, nav등 대부분 엘리먼트의 기본값</p>
   <div class="item block">item</div>
   <div class="item block">item</div>
 
+
   <h3>display: inline-block</h3>
-  <p>buttons, input</p>
+  <p>컨텐츠에 필요한 만큼만 넓이를 갖는다</p>
+  <p>buttons, input등의 기본값</p>
   <div class="item inline-block">item</div>
   <div class="item inline-block">item</div>  
 
+
   <h3>display: inline</h3>
-  <p>span, a</p>
-  <p>
-    element cannot have width, height and y-axis margin. 
-  </p>
+  <p>컨텐츠에 필요한 만큼만 넓이를 갖는다</p>
+  <p>span, a등의 기본값</p>
+  <pre>
+    엘리먼트가 width, height 속성을 가질 수 없다
+    y축 padding, margin 속성이 적용되지 않는다
+    레이아웃 용으로 적합하지 않다
+    주로 텍스트를 처리하는 엘리먼트의 기본값
+  </pre>
   <div class="item inline">item</div>
   <div class="item inline">item</div>
 
+
   <h3>display: none</h3>
+  <p>화면에 나타나지 않는다</p>
   <div class="item hidden">item</div>
   
 </body>
