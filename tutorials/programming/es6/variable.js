@@ -7,15 +7,26 @@
 */
 
 
-/* 1 let */
+/* 
+  1 let 
+  almost same with var
+*/
+
 let foo = "bar";
 
 
-/* 2 const */
+/* 
+  2 const 
+  constant
+*/
+
 const foo = "bar";
 
 
-/* 3 block scope */
+/* 
+  3  block scope 
+*/
+
 {
   var varInBlock = true;
   let letInBlock = true;

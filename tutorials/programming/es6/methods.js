@@ -1,5 +1,5 @@
 /*
-  Methods
+  ES6 Methods
 
   1 Array.map()
   2 Object.keys()
