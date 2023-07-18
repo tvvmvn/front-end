@@ -10,8 +10,7 @@
   5 spread operator √
   6 promise
   
-
-  symbol
+  Symbol
 */
 
 

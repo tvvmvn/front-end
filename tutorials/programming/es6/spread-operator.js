@@ -1,17 +1,17 @@
 /*
   Spread Operator  
 
-  1 Array
-  make items of array to copy easily.
-  ...Array to copy
-
-  2 Object
-  make properties of object to copy easily.
-  ...object to copy
+  1 Spread Operator with Array
+  2 Spread Operator with Object
 */
 
 
-/* Array */
+/* 
+  Array 
+
+  make items of array to copy easily.
+  ...Array to copy
+*/
 
 // add new item
 var beers = ['Guinness', 'Heineken'];
@@ -33,7 +33,12 @@ console.log(worldBeers);
 // > Guinness, Heineken, Asahi, Kloud
 
 
-/* Object */
+/* 
+  Object 
+
+  make properties of object to copy easily.
+  ...object to copy  
+*/
 
 var irishBeer = { 
   name: 'Guinness', 

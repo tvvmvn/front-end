@@ -13,14 +13,14 @@
   return updated Array.
 */
 
-let beers = ["Guinness", "Heineken", "Budwiser"];
+let arr = [1, 2, 3];
 
-let updatedBeers = beers.map(function (beer) {
-  return beer.toUpperCase();
+let updatedArr = arr.map(function (item) {
+  return item * 10;
 })
 
-console.log(updatedBeers) 
-// > GUINNESS, HEINEKEN, BUDWISER
+console.log(updatedArr);
+// > 10, 20, 30
 
 
 /*
@@ -37,7 +37,23 @@ let cat = {
   }
 }
 
-const keys = Object.keys(cat);
+let keys = Object.keys(cat);
 
 console.log(keys) 
 // > name, home, sound
+
+
+/*
+  Quiz
+
+  Array.map()
+*/
+
+let beers = ["Guinness", "Heineken", "Budwiser"];
+
+let updatedBeers = beers.map(function (beer) {
+  return beer.toUpperCase();
+})
+
+console.log(updatedBeers) 
+// > GUINNESS, HEINEKEN, BUDWISER

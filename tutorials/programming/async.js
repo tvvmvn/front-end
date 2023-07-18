@@ -16,13 +16,13 @@
 */
 
 function f() {
-  console.log("foo");
+  console.log("operation 1");
 }
 
 f();
-console.log("bar");
-// > some operations
-// > next operations
+console.log("operation 2");
+// > operations 1
+// > operations 2
 
 
 /*
@@ -36,11 +36,15 @@ function fetchData(callback) {
   let data = { foo: "bar" }
   
   setTimeout(() => {
-    callback(data);
+    callback(null, data);
   }, 1000);
 }
 
-fetchData(function (data) {
+fetchData(function (err, data) {
+  if (err) {
+    throw err;
+  }
+
   console.log("data from server:", data);
 });
 

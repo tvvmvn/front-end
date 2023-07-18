@@ -9,7 +9,6 @@
 
 /* 1 let */
 let foo = "bar";
-let foo = "baz";
 
 
 /* 2 const */
