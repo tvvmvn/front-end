@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
 
   <h1>image</h1>
@@ -18,52 +20,40 @@
     }
 
     .object-fill {
-      /* default */
       object-fit: fill;
     }
-    
+
     .object-contain {
       object-fit: contain;
     }
-    
+
     .object-cover {
       object-fit: cover;
     }
   </style>
 
 
-  <h3>object fit: fill</h3>
+  <h3>object fit: fill (default)</h3>
   <p>
-    This is default. The image is resized to fill the given dimension. 
-    If necessary, the image will be stretched or squished to fit
+    이미지가 주어진 공간을 채운다
+    이미지가 늘어나거나 줄어들 수 있다
   </p>
-  <img 
-    class="object-fill"
-    src="/img/Pumbaa.webp" 
-    alt="" 
-  >
+  <img class="object-fill" src="../../img/homies.jpg" alt="">
 
   <h3>object fit: cover</h3>
   <p>
-    The image keeps its aspect ratio and fills the given dimension. 
-    The image will be clipped to fit
+    이미지가 주어진 공간을 채운다
+    이미지의 원본비율을 유지한다
+    이미지가 잘릴 수 있다
   </p>
-  <img 
-  class="object-cover"
-  src="/img/Pumbaa.webp" 
-  alt="" 
-  >
-  
+  <img class="object-cover" src="../../img/homies.jpg" alt="">
+
   <h3>object fit: contain</h3>
   <p>
-    The image keeps its aspect ratio, 
-    but is resized to fit within the given dimension
+    이미지가 원본비율을 유지한다
   </p>
-  <img 
-    class="object-contain"
-    src="/img/Pumbaa.webp" 
-    alt="" 
-  >
+  <img class="object-contain" src="../../img/homies.jpg" alt="">
 
 </body>
+
 </html>

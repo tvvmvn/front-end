@@ -25,6 +25,7 @@ const foo = "bar";
 
 /* 
   3  block scope 
+  let and const has block scope.
 */
 
 {

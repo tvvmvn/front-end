@@ -46,11 +46,14 @@ var { name, origin, available } = irishBeer;
 
 var irishBeer = { name: 'Guinness', origin: 'Ireland', available: false };
 
+// invoke
+f(irishBeer)
+
 // Traditional
-function f(irishBeer) {
-  var name = irishBeer.name;
-  var origin = irishBeer.origin;
-  var available = irishBeer.available;
+function f(beer) {
+  var name = beer.name;
+  var origin = beer.origin;
+  var available = beer.available;
 }
 
 // Destructing
