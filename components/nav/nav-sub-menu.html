@@ -43,12 +43,12 @@
     }
 
     .dropdown-btn {
-      height: 100%;
       font-size: 1rem;
       background-color: transparent;
       border: none;
       color: #fff;
       cursor: pointer;
+      padding: 0.5rem;
     }
 
     .dropdown-btn:hover {
@@ -59,8 +59,8 @@
       width: 200px;
       background-color: #fff;
       border: 1px solid #ddd;
-      display: none;
       position: absolute;
+      /* display: none; */
     }
     
     .drop-link {
@@ -81,7 +81,7 @@
       display: block;
     }
   </style>
-
+  
   <nav>
     <ul class="menu-list">
       <li>
@@ -90,18 +90,20 @@
       <li>
         <a href="#" class="menu-link">Link</a>
       </li>
-      <li class="dropdown-container">
-        <button class="dropdown-btn">Dropdown</button>
-        <ul class="dropdown-content">
-          <li>
-            <a href="#" class="drop-link">Link</a>
-          </li>
-          <li>
-            <a href="#" class="drop-link">Link</a>
-          </li>
-          <li>
-            <a href="#" class="drop-link">Link</a>
-          </li>
+      <li>
+        <div class="dropdown-container">
+          <button class="dropdown-btn">Dropdown</button>
+          <ul class="dropdown-content">
+            <li>
+              <a href="#" class="drop-link">Link</a>
+            </li>
+            <li>
+              <a href="#" class="drop-link">Link</a>
+            </li>
+            <li>
+              <a href="#" class="drop-link">Link</a>
+            </li>
+          </ul>
         </div>
       </li>
     </ul>
