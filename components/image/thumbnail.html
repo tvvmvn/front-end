@@ -13,33 +13,33 @@
   <style>
     .container {
       /* border: 1px dashed; */
-      height: 400px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+      width: 200px;
+      height: 200px;
+      position: relative;
     }
 
-    .bg-image {
-      background-image: url('https://tvvmvn.github.io/front-end/img/Pumbaa.webp');
-      background-position: center;
-      background-size: cover;
+    img {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
     }
 
     .overlay {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: inherit;
+      box-sizing: border-box;
       background-color: rgba(0 0 0 / 0.5);
       color: #fff;
-      padding: 0 1rem;
+      padding: 1rem;
+      text-align: center;
     }
   </style>
 
   <div class="container bg-image">
-    <div class="overlay">
-      <h1>Title</h1>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-        In sequi quibusdam dolor quam maiores possimus nisi ut corrupti nihil,
-      </p>
-    </div>
+    <img src="../../img/Pumbaa.webp" alt="">
+    <div class="overlay">Caption</div>
   </div>
 
   
