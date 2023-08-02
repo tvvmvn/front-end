@@ -11,7 +11,7 @@
 <body>
 
   <style>
-    form {
+    .login-form {
       /* border: 1px dashed; */
       width: 300px;
       margin: 100px auto 0;
@@ -27,9 +27,11 @@
 
     label {
       display: block;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
     }
 
-    input {
+    input[type=text], input[type=password] {
       padding: 0.5rem;
       width: 100%;
       border: 1px solid #ddd;
@@ -51,26 +53,30 @@
       display: flex;
       justify-content: space-between;
     }
+
+    .link {
+      color: #000;
+    }
   </style>
 
-  <form action="" autocomplete="off">
-    <h2 class="title">Login</h2>
+  <form action="" class="login-form" autocomplete="off">
+    <h2 class="title">Login Form</h2>
     <div class="form-group">
       <label for="username">Username</label>
-      <input type="text" id="username">
+      <input type="text" id="username" value="testuser">
     </div>
     <div class="form-group">
       <label for="password">Password</label>
       <div class="relative">
-        <input type="password" id="password">
+        <input type="password" id="password" value="shhhh">
       </div>
     </div>
     <div class="form-group">
       <button type="submit">Login</button>
     </div>
     <div class="login-menu">
-      <a href="#">Sign Up</a>
-      <a href="#">Forgot Password?</a>
+      <a href="#" class="link">Sign Up</a>
+      <a href="#" class="link">Forgot Password?</a>
     </div>
   </form>
 

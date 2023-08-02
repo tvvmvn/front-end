@@ -15,12 +15,12 @@
       box-sizing: border-box;
     }
 
-    .container {
+    .personal-form {
       display: grid;
       grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 0.5rem;
     }
-    
+
     .col-span-2 {
       grid-column-start: span 2;
     }
@@ -28,11 +28,11 @@
     .col-span-3 {
       grid-column-start: span 3;
     }
-    
+
     .col-span-4 {
       grid-column-start: span 4;
     }
-    
+
     .col-span-6 {
       grid-column-start: span 6;
     }
@@ -51,44 +51,42 @@
 
   <h1>Personal Info</h1>
 
-  <form action="" autocomplete="off">
-    <div class="container">
-      <div class="col-span-3">
-        <label for="fname">First name</label>
-        <input type="text" id="fname">
-      </div>
-      <div class="col-span-3">
-        <label for="lname">Last name</label>
-        <input type="text" id="lname">
-      </div>
-      <div class="col-span-4">
-        <label for="email">Email address</label>
-        <input type="text" id="email">
-      </div>
-      <div class="col-span-3">
-        <label for="country">Country</label>
-        <select name="country" id="country">
-          <option value="us">United States</option>
-          <option value="ca">Canada</option>
-          <option value="mx">Mexico</option>
-        </select>
-      </div>
-      <div class="col-span-6">
-        <label for="address">Street Address</label>
-        <input type="text" id="address">
-      </div>
-      <div class="col-span-2">
-        <label for="city">City</label>
-        <input type="text" id="city">
-      </div>
-      <div class="col-span-2">
-        <label for="state">State / Province</label>
-        <input type="text" id="state">
-      </div>
-      <div class="col-span-2">
-        <label for="zip">ZIP / Postal code</label>
-        <input type="text" id="zip">
-      </div>
+  <form action="" class="personal-form" autocomplete="off">
+    <div class="col-span-3">
+      <label for="fname">First name</label>
+      <input type="text" id="fname">
+    </div>
+    <div class="col-span-3">
+      <label for="lname">Last name</label>
+      <input type="text" id="lname">
+    </div>
+    <div class="col-span-4">
+      <label for="email">Email address</label>
+      <input type="text" id="email">
+    </div>
+    <div class="col-span-3">
+      <label for="country">Country</label>
+      <select name="country" id="country">
+        <option value="us">United States</option>
+        <option value="ca">Canada</option>
+        <option value="mx">Mexico</option>
+      </select>
+    </div>
+    <div class="col-span-6">
+      <label for="address">Street Address</label>
+      <input type="text" id="address">
+    </div>
+    <div class="col-span-2">
+      <label for="city">City</label>
+      <input type="text" id="city">
+    </div>
+    <div class="col-span-2">
+      <label for="state">State / Province</label>
+      <input type="text" id="state">
+    </div>
+    <div class="col-span-2">
+      <label for="zip">ZIP / Postal code</label>
+      <input type="text" id="zip">
     </div>
   </form>
 

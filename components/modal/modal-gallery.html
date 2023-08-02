@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Q. Modal Gallery</h1>
+
+  <style>
+    #overlay {
+      position: fixed;
+      background-color: rgba(0 0 0 / 0.5);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    #modal {
+      width: 20rem;
+      height: 20rem;
+      object-fit: cover;
+      display: block;
+      margin: 100px auto 0;
+    }
+
+    #close-btn {
+      font-size: 2rem;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      float: right;
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .container img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      cursor: pointer;
+      opacity: 0.8;
+    }
+
+    .container img:hover {
+      opacity: 1;
+    }
+    
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <div id="overlay" class="hidden">
+    <button id="close-btn">&times;</button>
+    <img src="" alt="" id="modal">
+  </div>
+  
+  <div class="container">
+    <img class="thumbnail" src="../../img/Simba.webp" alt="">
+    <img class="thumbnail" src="../../img/Timon.webp" alt="">
+    <img class="thumbnail" src="../../img/Pumbaa.webp" alt="">
+  </div>
+
+  <script>
+    var overlay = document.getElementById("overlay");
+    var modal = document.getElementById('modal');
+    var thumbnails = document.getElementsByClassName('thumbnail');
+    var closeBtn = document.getElementById('close-btn');
+
+    for (var i=0; i<thumbnails.length; i++) {
+      thumbnails[i].addEventListener('click', (e) => {
+
+        overlay.classList.remove("hidden");
+        modal.src = e.target.src;
+      })
+    }
+
+    overlay.addEventListener("click", (e) => {
+      if (e.target === closeBtn) {
+        overlay.classList.add("hidden");
+      }
+      
+      if (e.target === overlay) {
+        overlay.classList.add("hidden");
+      }
+    })
+  </script>
+  
+</body>
+</html>
