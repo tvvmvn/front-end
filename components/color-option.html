@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <style>
+    input[type=radio] {
+      display: none;
+    }
+
+    label {
+      border: 1px solid #ddd;;
+      display: inline-block;
+      margin-right: 0.25rem;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 99px;
+    }
+    
+    input[type=radio]:checked + label {
+      outline: 4px solid #ddd;
+    }
+    
+    .white {
+      background-color: #fff;
+    }
+    
+    .gray {
+      background-color: #888;
+    }
+    
+    .black {
+      background-color: #000;
+    }
+  </style>
+
+  <h1>Color options</h1>
+
+  <div class="container">
+    <input type="radio" name="color" id="white" checked>
+    <label for="white" class="white"></label>
+  
+    <input type="radio" name="color" id="gray">
+    <label for="gray" class="gray"></label>
+  
+    <input type="radio" name="color" id="black">
+    <label for="black" class="black"></label>
+  </div>
+  
+</body>
+</html>

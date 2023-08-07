@@ -17,27 +17,27 @@
       flex-wrap: wrap;
     }
 
+    /* radio */
+    input[type=radio] {
+      display: none;
+    }
+
     /* label */
     label {
-      padding: 0.5rem;
-      font-weight: 600;
+      padding: 0.25rem;
+      /* font-weight: 600; */
     }
     
     input[type=radio]:checked + label {
       border-bottom: 2px solid #0bf;
       color: #0bf;
     }
-
-    /* radio */
-    input[type=radio] {
-      display: none;
-    }
     
     /* content */
     .content {
       display: none;
       flex-basis: 100%;
-      order: 9999;
+      order: 9;
     }
 
     input[type=radio]:checked + label + .content {

@@ -8,22 +8,25 @@
 </head>
 <body>
 
-  <h1>Loader</h1>
+  <h1>Progress bar</h1>
 
   <style>
     .container {
-      width: 200px;
-      height: 5px;
+      width: 16rem;
+      height: 0.5rem;
       background-color: #ddd;
     }
 
     .item {
-      width: 70%;
-      height: 100%;
+      /* style */
+      height: inherit;
       background-color: #000;
+      
+      /* animation */
       animation-name: fill;
       animation-duration: 2s;
-      animation-iteration-count: infinite;
+      animation-iteration-count: 1;
+      animation-timing-function: ease;
     }
 
     @keyframes fill {
