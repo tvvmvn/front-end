@@ -5,20 +5,19 @@
   2 switch condition
   3 ? (ternary) condition
 
-  W3S references
+  references
 */
 
 
 /*
-  1 if condition
+  if condition
 
-  if (condition) {
-    a block of code excuted if condition is true
-  }
-
+  1 if
+  2 if/else
+  3 if/else if/else
 */
 
-
+// if
 var year = 2023
 
 if (year === 2023) {
@@ -27,6 +26,7 @@ if (year === 2023) {
 // > This year
 
 
+// if / else
 if (year === 2023) {
   console.log('This year')
 } else {
@@ -35,6 +35,7 @@ if (year === 2023) {
 // > This year
 
 
+// if / else if / else
 if (year === 2022) {
   console.log('Last year')
 } else if (year === 2023) {
@@ -45,7 +46,6 @@ if (year === 2022) {
   console.log('Not close year');
 }
 // > This year
-
 
 
 /*
@@ -71,35 +71,35 @@ switch(year) {
   default:
     console.log('not close year');
 }
-
 // > This year
 
 
 /* 
   ? (ternary)
 
-  condition ? value1 : value2
+  Condition ? value1 : value2
   
   if true, return value 1 
   if false, return value 2
 */
 
 var year = 2023;
+var r = year === 2023 ? 'This year' : 'Not this year';
 
-console.log(year === 2023 ? 'This year' : 'Not this year');
+console.log(r);
 // > This year
-
 
 
 /*
   Q. Condition
-*/
 
-// Q1. Make conditional statements that tells he is teenager or not according to variables
+  Make conditional statements that tells 
+  he is teenager or not according to variables
+*/
 
 var age = 20;
 
-// if/else condition
+// Q1. if/else condition
 if (age >= 18) {
   console.log("He is an adult.")
 } else {
@@ -108,7 +108,7 @@ if (age >= 18) {
 // > he is an adult
 
 
-// ternary condition
+// Q2. ternary condition
 var r = age >= 18 ? 'He is an adult' : 'He is not an adult';
 
 console.log(r)

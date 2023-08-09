@@ -10,32 +10,33 @@
 
 
 /*
-  1 Arithmetic operator
+  Arithmetic operator
 
   1 4-Rules
   +, -, *, / 
-
   2 increment operator
   ++ 
-
   3 decrement operator
   -- 
-
   4 exponentiation operator
   ** 
-
   5 modulus operator
   % 
 */
 
-
-// four arithmetic operation
+// Arithmetic 4 Rules
 var add = 1 + 1
 var subtract = 2 - 1
 var divide = 1 / 2
-var multiply = 1 * 1
+var multiply = 1 * 2
 
-console.log(add);
+console.log("add:", add);
+// > 2
+console.log("substract:", subtract);
+// > 1
+console.log("divide:", divide);
+// > 0.5
+console.log("multiply", multiply)
 // > 2
 
 
@@ -46,78 +47,76 @@ console.log(i)
 // > 2
 
 
-//  Exponentiation 
+// Exponentiation 
 var exp = 2 ** 7
 console.log(exp)
 // > 128
 
 
-// Modulus(Devision remainder)
+// Modulus (Devision remainder)
 var mod = 5 % 2;
 console.log(mod)
 // > 1
 
 
 /*
-  2 Assignment operator
+  Assignment operator
 
-  variables assignment operator
+  1 Variables assignment operator
   = 
-  addition assignment operator
+  2 Addition assignment operator
   += 
-  substraction assignment operator
+  3 Substraction assignment operator
   -= 
-  multiply assignment operator
+  4 Multiply assignment operator
   *=
-  division assignment operator
+  5 Division assignment operator
   /=
-  exponentiation assignment operator
+  6 Wxponentiation assignment operator
   **=
-  moduls assignment operator
+  7 Moduls assignment operator
   %= 
 */
 
-// variable assignment operator
+// Variable assignment operator
 var foo = "bar"
-console.log(foo) // bar
+
+console.log(foo) 
+// > bar
 
 
-// addition assignment operator
-var longVariablesName = 1;
+// Addition assignment operator
+var n = 1;
 
-//  longVariablesName = longVariablesName + 1, good for long variables name
-longVariablesName += 1; 
+// n = n + 1
+n += 1; 
 
-console.log(longVariablesName) 
+console.log(n) 
 // > 2
 
 
 /*
-  3 Comparison operator
+  Comparison operator
 
-  equal operator
+  1 Equal operator
   == 
-  not equal operator
+  2 Not equal operator
   != 
-
-  strict equal operator
+  3 Strict equal operator
   ===
-  strict not equal operator
+  4 Strict not equal operator
   !==
-
-  greather than operator
+  5 Greather than operator
   > 
-  greather than or equal operator
+  6 Greather than or equal operator
   >= 
-
-  less than operator
+  7 Less than operator
   < 
-  less than or equal operator
+  8 Less than or equal operator
   <=
 */
 
-
-// equal operation
+// Equal operation
 console.log(1 == 2);
 // > false
 console.log("foo" == "bar");
@@ -128,18 +127,7 @@ console.log(null == undefined)
 // > true
 
 
-// not equal operation
-console.log(1 != 2) 
-// > true
-console.log("foo" != "bar");
-// > true
-console.log(2023 != "2023") 
-// > false
-console.log(null != undefined) 
-// > false
-
-
-// strict equal operation
+// Strict equal operation
 console.log(1 === 2); 
 // > false
 console.log("foo" === "bar");
@@ -150,7 +138,18 @@ console.log(null === undefined);
 // > false
 
 
-// strict not equal operation
+// Not equal operation
+console.log(1 != 2) 
+// > true
+console.log("foo" != "bar");
+// > true
+console.log(2023 != "2023") 
+// > false
+console.log(null != undefined) 
+// > false
+
+
+// Strict not equal operation
 console.log(1 !== 2) 
 // > true
 console.log("foo" !== "bar");
@@ -162,19 +161,15 @@ console.log(null !== undefined)
 
 
 /*
-  4 Logical operator
-  perform logical operation
+  Logical operator
 
-  - && (AND)
+  1 && (AND)
   expr 1 && expr 2 
-  
-  - || (OR)
+  2 || (OR)
   expr 1 || expr 2 
-
-  - ! (NOT)
+  3 ! (NOT)
   !expr 
 */
-
 
 // AND
 console.log(1 > 0 && 1 < 2) 
@@ -193,27 +188,21 @@ console.log(!(1 > 0))
 // NOT in not boolean type
 console.log(!null)
 // > true
-
 console.log(!undefined)
 // > true
-
 console.log(!0);
 // > true
-
 console.log(!2023);
 // > false
-
 console.log(!"");
 // > true
-
 console.log(!"foo");
 // > false
 
 
-
 /*
-  5 Type operator
-  return type of argument
+  Type operator
+  return type of variables
 */
 
 var foo = "bar";
