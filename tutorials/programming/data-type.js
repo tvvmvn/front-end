@@ -14,9 +14,9 @@
   String (문자열)
 
   a sequence of characters. 
-  declare string value inside single or double quotes '', ""
 */
 
+// declare string value inside single or double quotes '', ""
 var foo = "bar";
 
 // value and type
@@ -43,11 +43,11 @@ console.log(foo.length);
   Number
   
   1 type of values:
-  integer
-  decimals 
-  NaN(Not a number)
-  +Infinity
-  -Inifinity
+  - integer
+  - decimals 
+  - NaN(Not a number)
+  - +Infinity
+  - -Inifinity
   
   * ref
   it represent number between -(2^1024 -1) and 2^1024 - 1
