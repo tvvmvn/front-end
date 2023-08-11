@@ -1,6 +1,5 @@
 /* 
-  *** Array ***
-
+  * Array
   data type which can hold more than one value;
 
   1 Access Array
@@ -29,33 +28,21 @@ console.log(arr[2]);
 console.log(arr.length);
 // > 3
 
-// update
-arr[2] = "BAZ"
-
-console.log(arr[2]);
-// > Baz
-
-// add
-arr[3] = "lol"
-console.log(arr[3]);
-// > duck
-
-
 
 /* 
-  2 Array methods 
+  Array methods 
   perform specific operations to Array.
 
-  Array.push()
-  Array.pop()
-  Array.concat()
-  Array.sort()
+  1 push
+  2 pop
+  3 concat
+  4 sort
 
-  W3Schools references
+  references
 */
 
 
-// Array.push(newItem1, newItem2, ...)
+// push(newItem1, newItem2, ...)
 var arr = ["foo", "bar"];
 
 arr.push("baz");
@@ -64,7 +51,7 @@ console.log(arr);
 // > foo, bar, baz
 
 
-// Array.pop()
+// pop()
 var arr = ["foo", "bar", "baz"];
 
 arr.pop();
@@ -73,14 +60,14 @@ console.log(arr);
 // > foo bar
 
 
-// Array1.concat(Array2)
+// Array1.concat(Array2, Array3, ...) 
 var arr1 = ["foo", "bar"];
-var arr2 = ["baz", "lol"]
+var arr2 = ["baz", "duck"] 
 
-var r = arr1.concat(arr2);
+var r = arr1.concat(arr2); 
 
 console.log(r);
-// > foo, bar, baz
+// > foo, bar, baz, duck
 
 
 // Array.sort();
@@ -92,39 +79,38 @@ console.log(arr);
 // > bar, baz, foo
 
 
-
 /*
-  Loop through array
+  Loop array
 
-  perform operation to array.
+  to perform operation to array.
 */
 
-
-// perform specific operation on each item
+// Perform specific operation on each item
 var arr = ["foo", "bar", "baz"];
 
 for (var i=0; i<arr.length; i++) {
   console.log(arr[i].toUpperCase());
 }
+// > FOO / BAR / BAZ
 
 
-// filtering an array
+// Filtering an array
 var arr = ["foo", "bar", "baz"];
 
 for (var i=0; i<arr.length; i++) {
-  if (arr[i][0] === "bar") {
+  if (arr[i][0] === "b") {
     console.log(arr[i]);
   }
 }
+// > bar / baz
 
 
-/*
-  Q. Array
+/* 
+  Q.1 Array method
+
+  Add new beer to beer list.
 */
 
-
-// 1 Array method
-// Add new beers to european beers.
 var beers = ["Guinness", "Heineken"];
 var americanBeer = "Budwiser";
 
@@ -134,9 +120,12 @@ console.log(beers)
 // > [Guinness, Heineken, Budwiser]
 
 
+/* 
+  Q.2 Array loop
 
-// 2 Array loop
-// print adult ages
+  print adult ages
+*/
+
 var ages = [12, 19, 23, 30];
 
 for (var i=0; i<arr.length; i++) {

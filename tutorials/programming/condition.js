@@ -93,8 +93,8 @@ console.log(r);
 /*
   Q. Condition
 
-  Make conditional statements that tells 
-  he is teenager or not according to variables
+  Make conditional statements that prints 
+  he is teenager or not according to age
 */
 
 var age = 20;

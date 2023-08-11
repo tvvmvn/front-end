@@ -8,7 +8,9 @@
 */
 
 
-/* for loop */
+/* 
+for loop 
+*/
 
 // execute a block of code in 10 times
 for (var i = 1; i <= 10; i++) {
@@ -27,7 +29,9 @@ console.log(sum);
 // > 55
 
 
-/* while loop */
+/* 
+while loop 
+*/
 
 // print 1 - 10
 var i = 1;

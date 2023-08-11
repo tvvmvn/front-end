@@ -1,13 +1,15 @@
 /* 
-  *** variables ***
-  a container that store values
+  Variables 
+  store value
   
-  1 basic usage
-  2 scope 
+  1 Basic usage
+  2 Global variable and local variable
 */
 
 
-// 1 basic usage
+/*
+Basic usage
+*/
 
 // declare and define
 var foo = "bar";
@@ -16,7 +18,7 @@ console.log(foo);
 // > bar
 
 
-// declare and define
+// declare and redefine
 var foo = 'bar'
 // redefine
 foo = "baz"; 
@@ -35,15 +37,17 @@ console.log(foo)
 
 
 /*
-  2 type of variable 
-
-  global variables
-  local variables
+  Global variables and local variables
 */
 
 
-// 1 global variable
-// declared outside function. accessible from anywhere in source code
+/*
+  Global variable
+  
+  Declared outside function. 
+  Accessible from anywhere in source code
+*/
+
 
 var varInGlobal = true;
 
@@ -51,15 +55,21 @@ console.log(varInGlobal);
 // > true;
 
 
-// 2 local variable
-// declared inside function. only accessible in function
+/*
+  Local variable
+  
+  Declared inside function. 
+  Only accessible in that function
+*/
 
 function f() {
   var varInFunction = true;
-
+  
   console.log(varInFunction)
   // > true  
 }
+
+f()
 
 console.log(varInFunction)
 // > ReferenceError

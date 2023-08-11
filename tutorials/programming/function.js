@@ -1,39 +1,26 @@
 /*
-  *** Function ***
+  * Function
   a block of code excuted only when it is invoked.
 
-  1 declare function
+  1 function declaration
   2 Hoisting
-  3 parameter
-  4 return keyword
-  5 callback
+  3 Parameter and argument
+  4 return 
+  5 Callback
 */
-
 
 
 /*
-  declare function
-
-  1 function declaration
-  2 function expression
+  function declaration 
 */
 
-
-// function declaration
+// declaration
 function f() {
   console.log("foo")
 }
 
+// invoke
 f() 
-// > foo
-
-
-// function expression
-var f = function () {
-  console.log("foo")
-}
-
-f()
 // > foo
 
 
@@ -43,27 +30,34 @@ f()
   function declaration is hoisted 
 */
 
+// invoke
 f()
 
+// declaration
 function f() {
   console.log("foo");
 }
 
 
 /*
-  3 function parameter and argument 
+Function parameter and argument 
+
+1 parameters: char that represent argument in function
+2 arguments: passing value to function
 */
 
-function add(x, y) {
-  console.log('addition result:', x + y);
+function add(x, y) { // parameters: x, y
+  console.log('result:', x + y);
 }
 
-add(1, 2);
+add(1, 2); // arguments: 1, 2
 // > addition result: 3
 
 
 /* 
-  4 return 
+  return 
+
+  function can return operation result.
 */
 
 function add(x, y) {
@@ -72,19 +66,19 @@ function add(x, y) {
 
 var r = add(1, 2);
 
-console.log('add result:', r);
+console.log('result:', r);
 // > add result: 3
 
 
-
 /*
-  5 callback
-  function argument
-*/
+  Callback
 
+  function arguments
+*/
 
 function f(callback) {
   let r = callback();
+
   console.log(r)
 }
 
@@ -96,7 +90,7 @@ f(cb);
 // > foo
 
 
-// realworld example
+// Realworld example of callback
 function getTime() {
   let time = new Date().toLocaleTimeString();
   console.log(time)
@@ -108,7 +102,7 @@ setInterval(getTime, 1000);
 
 
 /*
-  Q. declare function tells that whether he/she is an adult or not
+  Q. declare function that prints whether he/she is an adult or not
   according to age argument.
 */
 
