@@ -1,85 +1,155 @@
 /* 
-
-  *** Class ***
+  * Class
   Templates for JavaScript Objects.
 
-  1 class instance
-  2 static property and method
-  3 built-in class
-  4 literal notation
-
+  1 Class instance
+  2 Contructor
+  3 Inheritance
+  4 Static property and method
+  5 Built-in class
+  6 Literal notation
 */
 
 
 /* 
-  1 class instance 
+  Class instance 
+
+  object that is created from class
 */
 
-class Cat {
-  // to create instance properties
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
-
-  // class member (property)
-  home = null;
-  
-  // class member (method)
-  sound() {
-    return 'meow'
-  }
+class Beer {
+  // class member 
+  name;
+  origin;
+  available;
 }
 
+var irishBeer = new Beer();
+irishBeer.name = 'Guinness'
+irishBeer.origin = 'Ireland'
+irishBeer.available = false;
 
-// instance of Cat
-const cat = new Cat('Kitty', 2);
+console.log(irishBeer)
+// > Beer {...}
+console.log(irishBeer instanceof Beer)
+// > true
 
-console.log(cat)
-// > Cat cat
+var dutchBeer = new Beer();
+dutchBeer.name = 'Heineken'
+dutchBeer.origin = 'Netherlands'
+dutchBeer.available = true;
 
-console.log(cat instanceof Cat);
+console.log(dutchBeer)
+// > Beer {...}
+console.log(dutchBeer instanceof Beer)
 // > true
 
 
-// inheritance (reusability)
-console.log(cat.home)
-// > null
+/*
+  constructor
 
-console.log(cat.sound())
-// > meow
+  help setting properties of instance 
+*/
+
+class Beer {
+  constructor(name, origin, available) {
+    this.name = name;
+    this.origin = origin;
+    this.available = available;
+  }
+
+  name;
+  origin;
+  available;
+}
+
+var irishBeer = new Beer('Guinness', 'Ireland', false);
+
+console.log(irishBeer)
+
+
+/* 
+  Inheritance
+
+  instance inherites properties and method from class
+*/
+
+class Beer {
+
+  // ...
+
+  // method
+  drink() {
+    return 'Cool';
+  }
+}
+
+var beer = new Beer();
+
+// All instance of Beer can access drink method
+console.log(beer.drink())
+// > Cool
 
 
 /*
-  2 Static property and method
+  Static property and method
 
-  provide utilities for class and instance
+  Provide utilities for class
 */
 
-
-class Cat {
-  // static property
-  static family = 'Felidae';
+class Beer {
   
+  // ...
+
+  // static property
+  static history = 'B.C 3000'
+
   // static method
-  static isAdult(age) {
-    if (age < 1) {
-      return 'Kitten'
-    } else {
-      return 'Adult'
-    }
+  static recipe() {
+    return 'grains, hops, yeast and water'
+  }
+}
+
+// class itself invokes
+console.log(Beer.history)
+console.log(Beer.recipe())
+
+
+// Complete Beer class
+class Beer {
+  constructor (name, origin, available) {
+    this.name = name;
+    this.origin = origin;
+    this.available = available;
+  }
+
+  name;
+  origin;
+  available;
+
+  drink() {
+    return 'Cool';
+  }
+
+  static history = 'B.C 3000'
+
+  static recipe() {
+    return 'grains, hops, yeast and water'
   }
 }
 
 
-// class itself calls static property and static method
-console.log(Cat.personality)
-// > Cat
-console.log(Cat.isAdult(2))
-// > Adult
+/*
+  Built-in class in JavaScript
+  
+  1 Text processing: String
+  2 Number and Date: Number, Math, Date
+  3 Indexed collections: Array
+  4 Error: SyntaxError, ReferenceError and other error.
+  5 Others: Promise, JSON, Object
+*/
 
-
-// static properties of predefined class
+// Static properties of predefined class
 let pi = Math.PI;
 
 console.log(pi)
@@ -87,81 +157,52 @@ console.log(pi)
 
 
 /*
-  3 Predefined class in JS
-  
-  Text processing: String
-  Number and Date: Number, Math, Date
-  Indexed collections: Array
-  Error: SyntaxError, ReferenceError and others
-  Others: Promise, JSON
+  Literal notation
 */
 
-
-
-/*
-  4. literal notation
-*/
-
-
-// instance of String
-var foo = new String('bar'); // constructor
+// Instance of String
+var foo = new String('bar'); // Class
 var foo = 'bar'; // literal notation
 
-
-// instance of Number
-var year = new Number(2023); // constructor
+// Instance of Number
+var year = new Number(2023); // Class
 var year = 2023; // literal notation
 
-
-// instance of Object
-var o = new Object({ prop1: 'foo', prop2: 'bar'}) // constructor
-var o = { prop1: 'foo', prop2: 'bar' }; // literal notation
+// Class which is not supporting literal notation 
+var date = new Date();
+console.log(date)
 
 
 /*
-  Q. class
-  
-  Beer class
-  
-  > instance properties
-  name, origin
+  Q. Create an class names Car to be following:
 
-  > class member (properties)
-  history: B.C 3000
+  1 Class member
+  name, brand, color
 
-  > class member (method)
-  recipe: 'grains, hops, yeast and water'
+  2 constructor for all members
 
-  > static property
-  caution: too much drinking may cause much money.
+  3 static method - getAge
+  return car's age if you pass purchased date.
 */
 
-
-class Beer {
-  constructor(name, origin) {
+class Car {
+  constructor(name, brand, color) {
     this.name = name;
-    this.origin = origin;
+    this.brand = brand;
+    this.color = color;
   }
 
-  history = 'B.C 3000';
+  // member
+  name;
+  brand;
+  color;
 
-  recipe() {
-    return 'grains, hops, yeast and water.';
+  static getAge(purchased) {
+    return "Your car age is " + (2023 - purchased)
   }
-
-  static caution = 'too much drinking may cause much money.';
 }
 
+const genesis = new Car('GV80', 'Genesis', 'Black');
 
-// instance of Beer
-const irishBeer = new Beer('Guinness', 'Ireland');
-const dutchBeer = new Beer('Heineken', 'Netherlands');
-
-
-// instances of Beer
-console.log(irishBeer);
-console.log(dutchBeer);
-
-
-// static property
-console.log(Beer.caution);
+console.log(genesis)
+console.log(Car.getAge(2020))

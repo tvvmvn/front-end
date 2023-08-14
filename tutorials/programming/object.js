@@ -1,8 +1,7 @@
 /* 
-  *** Object ***
+  * Object
   composition for data and function
 */
-
 
 var cat = { 
   // properties
@@ -12,7 +11,6 @@ var cat = {
     return "meow";
   }
 }
-
 
 console.log(cat);
 // > Object cat
@@ -41,25 +39,36 @@ console.log(cat);
 delete cat.home;
 
 console.log(cat);
-// > Cat without home property.
 
 
 /*
-  Q. Object
+  Q1. Object
 */
 
-// 1 print origin of Heineken.
-var beers = [
-  { name: 'Guinness', origin: 'Ireland'},
-  { name: 'Heineken', origin: 'Netherlands'},
-  { name: 'Budwiser', origin: 'USA'},
-]
+var irishBeer = { 
+  name: 'Guinness', 
+  origin: 'Ireland',
+  available: false
+}
 
-console.log(beers[1].origin);
-// > Netherlands
+// Irish beer is restocked
+irishBeer.available = true;
 
+console.log(irishBeer)
+// ... available: true
+
+
+/*
+  Q2. Object
+*/
 
 // 2 print each beer name with uppercase using for loop.
+var beers = [
+  { name: 'Guinness', origin: 'Ireland' },
+  { name: 'Heineken', origin: 'Netherlands' },
+  { name: 'Budwiser', origin: 'USA' },
+]
+
 for (let i=0; i<beers.length; i++) {
   console.log(beers[i].name.toUpperCase());
 }

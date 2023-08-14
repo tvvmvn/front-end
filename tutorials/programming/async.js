@@ -1,42 +1,39 @@
 /* 
-
-  *** Asychronous operations ***
+  * Asychronous operations 
   It is used to prevent blocking in execution.
   e.g) fetching resources from a server.
 
-  1 synchronous operations
-  2 asynchronous operations
+  1 Synchronous operations
+  2 Asynchronous operations
 */
 
 
 /*
-  1 Synchronous operation
+  Synchronous operation
   
-  executed in order 
+  code is executed in order 
 */
 
 function f() {
-  console.log("operation 1");
+  console.log("Operation 1");
 }
 
 f();
-console.log("operation 2");
+console.log("Operation 2");
 // > operations 1
 // > operations 2
 
 
 /*
-  2 Asynchronous operation
+  Asynchronous operation
 
-  execute faster one at first.
+  Faster operation is executed ahead
 */
 
-// pretending that it takes 1s to fetch data from server.
+// Pretending that it takes 1s to fetch data from server.
 function fetchData(callback) {
-  let data = { foo: "bar" }
-  
   setTimeout(() => {
-    callback(null, data);
+    callback(null, "Duck");
   }, 1000);
 }
 
@@ -45,13 +42,12 @@ fetchData(function (err, data) {
     throw err;
   }
 
-  console.log("data from server:", data);
+  console.log("Data from server:", data);
 });
 
-console.log("next operations");
-
+console.log("Next operations");
 // > next operations
-// > { foo: "bar" }
+// > Data from sever: Duck
 
 
 

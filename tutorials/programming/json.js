@@ -1,5 +1,5 @@
 /* 
-  *** JSON (JavaScript Object Notation) *** 
+  * JSON (JavaScript Object Notation) 
   text format to store and transfer JavaScript object
 
   1 Object and JSON
@@ -50,7 +50,7 @@ console.log(json)
 */
 
 
-var json = '{"foo": "bar"}'
+var json = '{ "foo": "bar" }'
 var o = JSON.parse(json);
 
 console.log(o)

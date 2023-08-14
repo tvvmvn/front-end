@@ -1,28 +1,27 @@
 /* 
-  *** Error and Error Handling ***
+  * Error and Error Handling
   
   1 What is error
   2 Error handling
   3 Types of errors
-  4 Custom errors
+  4 Exceptions
 */
 
 
 /* 
-  1 What is error
+  What is error
 
-  error stops executing program.  
-  error must be handled
+  Error stops executing program.  
+  Error must be handled
 */
 
-
 console.log(foo) 
-// > ReferenceError: foo is not defined.
 // > app crashed
 
 
 /* 
-  2 Error handling 
+  Error handling 
+  
   try / catch 
 */
 
@@ -37,63 +36,87 @@ try {
 }
 
 
-
 /* 
-  3 types of error
+  Types of errors
   
-  SyntaxError
-  ReferenceError
-
-  TypeError
-  RangeError
-  URIError 
+  1 SyntaxError
+  2 ReferenceError
+  3 TypeError
+  4 RangeError
+  5 URIError 
 */
 
 
 /* 
   ReferenceError
+
   when refer a variable that doesn't exist 
 */
 
-console.log(x)
-// > ReferenceError: x is not defined.
+try {
+
+  console.log(x)
+  
+} catch (error) {
+  console.error(error)
+  // > ReferenceError: x is not defined.
+}
 
 
 /*
   SyntaxError
-  Syntax is wrong. It makes compile error
-  try/catch could not handle compile error.
 
-  * compile error: compiler couldn't understand your code.
+  It makes compile error
+  try/catch could not handle this error.
 */
 
-// console.log(2022));
-// > SyntaxError: unexpected token ')'
+try {
+
+  // console.log(2022));
+  // > app crashed
+
+} catch (error) {
+  console.error(error)
+}
 
   
 /*
   TypeError 
-  when a variable or parameter is not valid type.
+
+  A variable or parameter is not valid type.
 */
 
-setInterval(null, 1000);
-// > TypeError: callback must be a function. Received null.
+try {
 
+  setInterval(null, 1000);
+
+} catch (error) {
+  console.error(error)
+  // > TypeError: callback must be a function. Received null.
+}
 
 /*
   RangeError
-  A value is not in the set of range of allowed values
+
+  value is out of allowed range.
 */
 
-let pi = Math.PI;
+try {
 
-console.log(pi.toPrecision(200)) 
-// > toPrecision() argument must be between 1 and 100
+  let pi = Math.PI;
+
+  console.log(pi.toPrecision(200)) 
+
+} catch (error) {
+  console.error(error)
+  // > toPrecision() argument must be between 1 and 100
+}  
 
 
 /*
   URIError
-  encodeURI() or decodeURI() are passed invalid parameters.
+
+  Passed invalid args to encodeURI() or decodeURI() 
 */
 
 console.log(decodeURI('%')); 
@@ -101,9 +124,9 @@ console.log(decodeURI('%'));
 
 
 /* 
-  4 Custom Error 
+  Exceptions
 
-  generate error if need it
+  Generate error if it's need
 */
 
 try {
@@ -112,7 +135,6 @@ try {
   console.log('a student:', 'Guinness, please');
 
   if (age < 18) {
-    // throw custom error
     throw 'Too young to buy an alcohol';
   }
 
@@ -120,5 +142,5 @@ try {
   console.log('staff:', 'Here are Guinness');
 
 } catch (error) {
-  console.error('failed to buy an alcohol:', error)
+  console.error(error)
 }
