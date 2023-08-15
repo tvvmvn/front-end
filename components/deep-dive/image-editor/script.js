@@ -47,9 +47,11 @@ blurInput.addEventListener('change', (e) => {
 function applyFilter(name, value, unit) {
   filter[name] = value + unit;
 
+  console.log(filter)
+
   var filter_list = [];
 
-  for (key in filter) {
+  for (var key in filter) {
     filter_list.push(`${key}(${filter[key]})`);
   }
 
