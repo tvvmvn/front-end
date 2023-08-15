@@ -28,29 +28,22 @@
     }
   </style>
 
-  <p id="container">
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-    Itaque ut odit commodi officiis fugiat praesentium, 
-    eum aut tenetur porro sint voluptate repellendus ab laudantium dolor, 
-    quasi id ea obcaecati eaque?
-  </p>
-  
+  <p id="container"></p>
   <button id="btn">more</button>
 
   <script>
-    var container = document.getElementById('container');
-    var btn = document.getElementById('btn');
-    var fullContent = container.textContent;
-    var lessContent = fullContent.substring(0, 50) + '...';
+    var text = `Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+    Itaque ut odit commodi officiis fugiat praesentium, 
+    eum aut tenetur porro sint voluptate repellendus ab laudantium dolor, 
+    quasi id ea obcaecati eaque?`
 
-    container.textContent = lessContent;
+    container.textContent = text.substring(0, 50) + "..."
 
-    btn.addEventListener('click', () => {
-      container.textContent = fullContent;
-      btn.classList.add('hidden');
+    btn.addEventListener("click", () => {
+      container.textContent = text;
+      btn.classList.add("hidden");
     })
   </script>
 
-  
 </body>
 </html> 

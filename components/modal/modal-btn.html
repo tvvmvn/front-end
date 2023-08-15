@@ -30,20 +30,6 @@
       border-radius: 1rem;
     }
 
-    #close-btn {
-      /* display */
-      float: right;
-      
-      /* size */
-      padding: 1rem;
-
-      /* style */
-      border: none;
-      background-color: transparent;
-      color: #fff;
-      font-size: 2rem;
-    }
-
     .hidden {
       display: none;
     }
@@ -52,11 +38,14 @@
   <button id="btn">Open</button>
 
   <div id="overlay" class="hidden">
-    <button id="close-btn">&times;</button>
     <div id="modal">
       <h1>Heading</h1>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod, asperiores quam? Porro, sit cum maiores odio
-        reprehenderit ea, molestiae quibusdam iusto eos, id molestias quas ipsam temporibus quo quam distinctio!</p>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Quod, asperiores quam? 
+        Porro, sit cum maiores odio reprehenderit ea, 
+        molestiae quibusdam iusto eos, 
+        id molestias quas ipsam temporibus quo quam distinctio!
+      </p>
     </div>
   </div>
 
@@ -64,20 +53,13 @@
   <script>
     var overlay = document.getElementById('overlay');
     var btn = document.getElementById('btn');
-    var closeBtn = document.getElementById('close-btn');
 
     btn.addEventListener('click', (e) => {
       overlay.classList.remove('hidden');
     })
 
-    // Event listener in overlay
     overlay.addEventListener('click', (e) => {
-
       console.log(e.target);
-
-      if (e.target === closeBtn) {
-        overlay.classList.add('hidden');
-      }
 
       if (e.target === overlay) {
         overlay.classList.add('hidden');

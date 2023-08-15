@@ -35,24 +35,24 @@
     var checkbox = document.getElementById('checkbox');
     var theme = localStorage.getItem('theme');
 
-    // when dark mode was selected
-    var isDarkMode = localStorage.getItem('darken');
+    // When dark mode was selected
+    var isDarkMode = localStorage.getItem('darkedAt');
 
     if (isDarkMode) {
       document.body.classList.add('dark-mode');
       checkbox.checked = true;
     }
 
-    // change theme
+    // Change theme
     checkbox.addEventListener('change', (e) => {
       var checked = e.target.checked;
       
       if (checked) {
         document.body.classList.add('dark-mode');
-        localStorage.setItem('darken', new Date().toLocaleString());
+        localStorage.setItem('darkedAt', new Date().toLocaleString());
       } else {
         document.body.classList.remove('dark-mode');
-        localStorage.removeItem('darken');
+        localStorage.removeItem('darkedAt');
       }
     })
 

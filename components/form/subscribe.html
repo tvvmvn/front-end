@@ -11,26 +11,13 @@
 <body>
 
   <style>
-    #form {
-      width: 24rem;
-    }
-
-    .form-group {
+    form {
       display: flex;
     }
 
     input {
-      border: 1px solid #ddd;
       padding: 0.5rem;
       flex-grow: 1;
-      font-size: 1rem;
-    }
-
-    .btn {
-      border: none;
-      background-color: #333;
-      color: #fff;
-      padding: 0.5rem 0.75rem;
     }
 
     .hidden {
@@ -38,36 +25,28 @@
     }
   </style>
 
-  <form action="" id="form">
-    <h1>Newsletter</h1>
+  <h1>Newsletter</h1>
 
-    <div class="form-group">
-      <input type="email" value="John@example.com" required>
-      <button class="btn">Submit</button>
-    </div>
+  <form action="" id="form">
+    <input type="email" value="John@example.com" required>
+    <button class="btn">Subscribe</button>
   </form>
 
-  <div id="success-message" class="hidden">
-    <h1>
-      Thank you for subscribing us!
-    </h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-      Debitis excepturi iste, alias cupiditate corporis cumque similique expedita ut. 
-      Quo, culpa debitis. Maxime neque aperiam assumenda rerum quis explicabo nobis laboriosam!
-    </p>
-  </div>
+  <p id="done" class="hidden">
+    Thank you for subscribing us!
+  </p>
 
   <script>
     var form = document.getElementById('form');
-    var successMessage = document.getElementById('success-message');
+    var done = document.getElementById('done');
 
     form.addEventListener('submit', (e) => {
-      // prevent refresh
-      e.preventDefault();
+      e.preventDefault(); // prevent refresh
+      
+      // ... Server
 
       form.classList.add('hidden');
-      successMessage.classList.remove('hidden')
+      done.classList.remove('hidden')
     })
   </script>
 

@@ -8,13 +8,10 @@
 </head>
 <body>
 
-  <h1>Stop Watch</h1>
+  <h1>Stop-Watch</h1>
 
-  <div id="display">0</div>
-
-  <p>
-    <button id="btn">Pause</button>
-  </p>
+  <p id="display">0</p>
+  <button id="btn">Pause</button>
 
   <script>
     var s = 0;
@@ -23,7 +20,6 @@
     var myInterval = createInterval();
 
     btn.addEventListener("click", () => {
-
       paused = !paused;
 
       if (paused) {

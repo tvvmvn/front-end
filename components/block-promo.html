@@ -12,32 +12,27 @@
 
   <style>
     #promotion {
-      background-color: #eee;
+      background-color: #ddd;
       padding: 1rem;
-    }
-
-    #close-btn {
-      float: right;
-      cursor: pointer;
     }
 
     .hidden {
       display: none;
     }
 
-    #block-btn {
+    #block-btn, #close-btn {
       padding: 0.5rem 0.75rem;
-      border: none;
-      background-color: #333;
-      color: #fff;
     }
   </style>
 
   <div id="promotion">
-    <span id="close-btn">&times;</span>
-    <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-    </p>
+    <h1>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Eos eveniet maxime iste vitae odit iure totam quaerat, amet, 
+      minus voluptatum quasi non ipsa libero provident illum, 
+      recusandae nesciunt ratione. Tempore!
+    </h1>
+    <button id="close-btn">Close</button>
     <button id="block-btn">Do not show anymore</button>
   </div>
 
@@ -59,7 +54,6 @@
       promotion.classList.add('hidden');
       localStorage.setItem('blockedAt', new Date().toLocaleString());
     })
-
   </script>
 
   

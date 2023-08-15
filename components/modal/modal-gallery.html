@@ -29,16 +29,6 @@
       margin: 100px auto 0;
     }
 
-    #close-btn {
-      font-size: 2rem;
-      color: #fff;
-      padding: 0.5rem 1rem;
-      float: right;
-      cursor: pointer;
-      border: none;
-      background-color: transparent;
-    }
-
     .container {
       display: flex;
     }
@@ -61,7 +51,6 @@
   </style>
 
   <div id="overlay" class="hidden">
-    <button id="close-btn">&times;</button>
     <img src="" alt="" id="modal">
   </div>
   
@@ -75,21 +64,15 @@
     var overlay = document.getElementById("overlay");
     var modal = document.getElementById('modal');
     var thumbnails = document.getElementsByClassName('thumbnail');
-    var closeBtn = document.getElementById('close-btn');
 
     for (var i=0; i<thumbnails.length; i++) {
       thumbnails[i].addEventListener('click', (e) => {
-
         overlay.classList.remove("hidden");
         modal.src = e.target.src;
       })
     }
 
-    overlay.addEventListener("click", (e) => {
-      if (e.target === closeBtn) {
-        overlay.classList.add("hidden");
-      }
-      
+    overlay.addEventListener("click", (e) => {      
       if (e.target === overlay) {
         overlay.classList.add("hidden");
       }

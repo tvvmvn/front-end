@@ -10,17 +10,19 @@
 
   <h1>Counting Button</h1>
 
-  <p id="demo">0</p>
+  <p id="count"></p>
   <button id="btn">+</button>
 
   <script>
     var btn = document.getElementById("btn");
-    var demo = document.getElementById("demo");
-    var count = 0;
+    var count = document.getElementById("count");
+    var n = 0;
+
+    document.getElementById("count").textContent = n;
 
     btn.addEventListener("click", function () {
-      count++;
-      demo.textContent = count;
+      n++;
+      count.textContent = n;
     })
   </script>
   

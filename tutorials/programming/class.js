@@ -48,19 +48,19 @@ console.log(dutchBeer instanceof Beer)
 /*
   constructor
 
-  help setting properties of instance 
+  process setting properties of instance 
 */
 
 class Beer {
+  name;
+  origin;
+  available;
+
   constructor(name, origin, available) {
     this.name = name;
     this.origin = origin;
     this.available = available;
   }
-
-  name;
-  origin;
-  available;
 }
 
 var irishBeer = new Beer('Guinness', 'Ireland', false);
@@ -80,7 +80,7 @@ class Beer {
 
   // method
   drink() {
-    return 'Cool';
+    return 'Cool!';
   }
 }
 
@@ -105,27 +105,27 @@ class Beer {
   static history = 'B.C 3000'
 
   // static method
-  static recipe() {
+  static brewing() {
     return 'grains, hops, yeast and water'
   }
 }
 
 // class itself invokes
 console.log(Beer.history)
-console.log(Beer.recipe())
+console.log(Beer.brewing())
 
 
 // Complete Beer class
 class Beer {
+  name;
+  origin;
+  available;
+  
   constructor (name, origin, available) {
     this.name = name;
     this.origin = origin;
     this.available = available;
   }
-
-  name;
-  origin;
-  available;
 
   drink() {
     return 'Cool';
@@ -133,7 +133,7 @@ class Beer {
 
   static history = 'B.C 3000'
 
-  static recipe() {
+  static brewing() {
     return 'grains, hops, yeast and water'
   }
 }
@@ -197,12 +197,12 @@ class Car {
   brand;
   color;
 
-  static getAge(purchased) {
-    return "Your car age is " + (2023 - purchased)
+  static getAge(purchasedAt) {
+    return "Your car age is " + (2023 - purchasedAt)
   }
 }
 
-const genesis = new Car('GV80', 'Genesis', 'Black');
+const car = new Car('GV80', 'Genesis', 'Black');
 
-console.log(genesis)
+console.log(car)
 console.log(Car.getAge(2020))

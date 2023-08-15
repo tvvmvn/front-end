@@ -8,14 +8,13 @@
 </head>
 <body>
 
-  <h1>Drag and Drop</h1>
+  <h1>Drag & Drop</h1>
 
   <style>
     #drop-zone {
       border: 4px dashed #ddd;
-      width: 200px;
-      height: 100px;
-      padding: 1rem;
+      padding: 4rem;
+      text-align: center;
     }
   </style>
 
@@ -50,11 +49,9 @@
 
       var files = Array.from(e.dataTransfer.files);
 
-      for (var i=0; i<files.length; i++) {
-        console.log(files[i].name);
-      }
+      console.log(files);
       
-      // AJAX request
+      // ... Server interacation code
 
       alert('Submitted!');
     }

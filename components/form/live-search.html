@@ -9,23 +9,16 @@
 </head>
 
 <body>
-
-  <h1>Live Search</h1>
-
+  
   <style>
-    .container {
-      width: 20rem;
-    }
-
     #input {
       width: 100%;
       padding: 0.5rem;
       box-sizing: border-box;
-      border: 1px solid #ddd;
       font-size: 1rem;
     }
 
-    #list {
+    ul {
       list-style: none;
       padding: 0;
       margin: 0;
@@ -40,31 +33,27 @@
     }
   </style>
 
-  <div class="container">
-    <input type="text" name="" id="input" placeholder="Search">
-    
-    <ul id="list">
-      <li class="item">Guinness</li>
-      <li class="item">Heineken</li>
-      <li class="item">Budwiser</li>
-      <li class="item">Kloud</li>
-      <li class="item">Asahi</li>
-    </ul>
-  </div>
+  <h1>Live Search</h1>
+
+  <input type="text" name="" id="input" placeholder="Search">
+  
+  <ul>
+    <li class="item">Guinness</li>
+    <li class="item">Heineken</li>
+    <li class="item">Budwiser</li>
+    <li class="item">Kloud</li>
+    <li class="item">Asahi</li>
+  </ul>
 
   <script>
     var input = document.getElementById('input');
+    var items = document.getElementsByClassName('item');
 
     input.addEventListener('keyup', (e) => {
-      var items = document.getElementsByClassName('item');
-
-      var value = e.target.value;
+      var value = e.target.value.toLowerCase();
 
       for (var i = 0; i < items.length; i++) {
-        var textContent = items[i].textContent;
-
-        value = value.toLowerCase();
-        textContent = textContent.toLowerCase();
+        var textContent = items[i].textContent.toLowerCase();
 
         if (textContent.indexOf(value) > -1) {
           items[i].classList.remove('hidden');
@@ -73,7 +62,6 @@
         }
       }
     })
-
   </script>
 
 </body>

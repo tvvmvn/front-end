@@ -10,8 +10,15 @@ window.addEventListener('load', (e) => {
 
 // router
 function router() {
-
   var url = location.hash.substring(1);
+  var query;
+
+  console.log(url);
+
+  if (url.indexOf("?") > 0) {
+    query = url.substring(url.indexOf("?"));
+    url = url.substring(url.indexOf("?"), -1);
+  }
 
   var routes = [
     { path: 'home', element: Home },
@@ -22,11 +29,6 @@ function router() {
   
   for (var i=0; i<routes.length; i++) {
     var path = routes[i].path;
-
-    if (url.indexOf("?") > 0) {
-      var query = url.substring(url.indexOf("?"));
-      url = url.substring(url.indexOf("?"), -1);
-    }
 
     if (path === url) {
       document

@@ -18,18 +18,13 @@
       /* position */
       position: fixed;
       left: 0;
-      top: 100vh;
-
       /* size */
       width: 100%;
       height: 100vh;
       box-sizing: border-box;
-
       /* style */
-      border: 1px solid #ddd;
       background-color: #fff;
-      border-radius: 1rem 1rem 0 0;
-      
+      border-top: 1px solid #ddd;
       /* smooth */
       transition: top 0.5s;
     }
@@ -38,7 +33,6 @@
       /* size */
       width: 100%;
       padding: 1rem;
-
       /* style */
       border: none;
       background-color: transparent;
@@ -47,7 +41,7 @@
     }
   </style>
 
-  <nav id="nav" class="hidden">
+  <nav id="nav" style="top: 100vh;">
     <button id="drawer-handle">Drag me</button>
     <ul>
       <li>list item</li>
@@ -58,10 +52,8 @@
 
   <button id="open-btn" type="button">More</button>
 
-
   <script>
     var nav = document.getElementById('nav');
-
     var drawerHandle = document.getElementById('drawer-handle');
     var openBtn = document.getElementById('open-btn');
     var TOP;

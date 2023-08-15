@@ -29,51 +29,34 @@
       object-fit: cover;
       cursor: pointer;
       box-sizing: border-box;
+      opacity: 0.8;
     }
 
     /* toggle class */
-    .active {
-      outline: 4px solid #0bf;
-      z-index: 10;
+    .thumbnail:hover {
+      opacity: 1;
     }
   </style>
  
   <h1>Gallery</h1>
 
-  <img src="https://tvvmvn.github.io/front-end/img/Simba.webp" alt="" id="main">
+  <img src="../../img/Simba.webp" alt="" id="main">
   
   <h3>Thumbnails</h3>
 
   <div class="container">
-    <img class="thumbnail active" src="https://tvvmvn.github.io/front-end/img/Simba.webp" alt="" onclick="jumpTo(0)">
-    <img class="thumbnail" src="https://tvvmvn.github.io/front-end/img/Timon.webp" alt="" onclick="jumpTo(1)">
-    <img class="thumbnail" src="https://tvvmvn.github.io/front-end/img/Pumbaa.webp" alt="" onclick="jumpTo(2)">
+    <img class="thumbnail active" src="../../img/Simba.webp" alt="" onclick="jumpTo(0)">
+    <img class="thumbnail" src="../../img/Timon.webp" alt="" onclick="jumpTo(1)">
+    <img class="thumbnail" src="../../img/Pumbaa.webp" alt="" onclick="jumpTo(2)">
   </div>
 
   <script>
     var thumbnails = document.getElementsByClassName('thumbnail');
     var main = document.getElementById('main');
-    var previousIndex = 0;
     
-    function jumpTo(thisIndex) {
-      // get previous and this index
-      console.log('previous index:', previousIndex);
-      console.log('this index:', thisIndex);
-
-      // when click a selected thumbnail
-      if (previousIndex === thisIndex) {
-        return;
-      }
-
+    function jumpTo(index) {
       // update main image
-      main.src = thumbnails[thisIndex].src;
-
-      //  outline on a selected thumbnail;
-      thumbnails[thisIndex].classList.add('active');
-      thumbnails[previousIndex].classList.remove('active');
-
-      // update previous index at last.
-      previousIndex = thisIndex;
+      main.src = thumbnails[index].src;
     }
   </script>
 
