@@ -30,7 +30,7 @@ console.log(typeof json)
 
 
 /* 
-  2 JSON.stringify()
+  JSON.stringify()
   
   Object to JSON
 */
@@ -44,7 +44,7 @@ console.log(json)
 
 
 /*
-  3 JSON.parse
+  JSON.parse
   
   JSON to Object
 */

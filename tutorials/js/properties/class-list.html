@@ -12,14 +12,15 @@
     Store class list of element
   </pre>
 
-
   <style>
     .text-italic {
       font-style: italic;
     }
+
     .underline {
       text-decoration: underline;
     }
+    
     .font-bold {
       font-weight: bold;
     }
@@ -34,14 +35,16 @@
   <script>
     var foo = document.getElementById('foo');
     
-    // access class list
+    // Access class list
     console.log(foo.classList); // DOMTokenList(length)
-  
-    // add class
+
+    // Add class
     foo.classList.add('underline'); 
-  
-    // remove class
+    console.log(foo.classList); // underline added
+
+    // Remove class
     foo.classList.remove('font-bold');
+    console.log(foo.classList); // font-bold removed
   </script>
 
 </body>
