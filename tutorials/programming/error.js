@@ -2,9 +2,10 @@
   * Error and Error Handling
   
   1 What is error
-  2 Error handling
-  3 Types of errors
-  4 Exceptions
+  2 Error structure
+  3 Error handling
+  4 Types of errors
+  5 Exceptions
 */
 
 
@@ -17,6 +18,20 @@
 
 console.log(foo) 
 // > app crashed
+
+
+/* 
+  Error structure
+
+  1 name
+  2 message
+  3 stack
+*/
+
+console.log(foo)
+// name: ReferenceError
+// message: foo is not defind
+// stack: ...
 
 
 /* 
@@ -67,14 +82,13 @@ try {
   SyntaxError
 
   It makes compile error
-  try/catch could not handle this error.
 */
-
-try {
-
+ 
+ try {
+  
+  // try / catch could not handle this error.
   // console.log(2022));
-  // > app crashed
-
+  
 } catch (error) {
   console.error(error)
 }
@@ -83,7 +97,7 @@ try {
 /*
   TypeError 
 
-  A variable or parameter is not valid type.
+  An argument is not valid type.
 */
 
 try {
@@ -98,7 +112,7 @@ try {
 /*
   RangeError
 
-  value is out of allowed range.
+  argument excess allowed range.
 */
 
 try {

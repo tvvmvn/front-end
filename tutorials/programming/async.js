@@ -1,6 +1,6 @@
 /* 
   * Asychronous operations 
-  It is used to prevent blocking in execution.
+  It is used to prevent blocking 
   e.g) fetching resources from a server.
 
   1 Synchronous operations
@@ -33,7 +33,7 @@ console.log("Operation 2");
 // Pretending that it takes 1s to fetch data from server.
 function fetchData(callback) {
   setTimeout(() => {
-    callback(null, "Duck");
+    callback(null, "duck");
   }, 1000);
 }
 
@@ -47,7 +47,7 @@ fetchData(function (err, data) {
 
 console.log("Next operations");
 // > next operations
-// > Data from sever: Duck
+// > Data from sever: duck
 
 
 

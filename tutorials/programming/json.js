@@ -3,8 +3,8 @@
   text format to store and transfer JavaScript object
 
   1 Object and JSON
-  2 JSON.stringify()
-  3 JSON.parse()
+  2 JSON.stringify
+  3 JSON.parse
 */
 
 
@@ -30,7 +30,7 @@ console.log(typeof json)
 
 
 /* 
-  JSON.stringify()
+  JSON.stringify
   
   Object to JSON
 */
