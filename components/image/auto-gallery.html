@@ -69,7 +69,7 @@
     var caption = document.getElementById('caption');
     var main = document.getElementById('main');
     var thisIndex = 0;
-    var previousIndex = 0;
+    var prevIndex = 0;
 
     setInterval(navigate, 3000);
 
@@ -78,7 +78,7 @@
       thisIndex++;
       
       // get previous and this index.
-      console.log('previous index:', thisIndex);
+      console.log('previous index:', prevIndex);
       console.log('this index:', thisIndex);
 
       if (thisIndex === thumbnails.length) {
@@ -90,10 +90,10 @@
 
       // outline on selected image.
       thumbnails[thisIndex].classList.add('active');
-      thumbnails[previousIndex].classList.remove('active');
+      thumbnails[prevIndex].classList.remove('active');
 
-      // get previous index
-      previousIndex = thisIndex;
+      // get prev index
+      prevIndex = thisIndex;
     }
   </script>
 

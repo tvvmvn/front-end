@@ -1,4 +1,4 @@
-// using nav
+// using link
 window.addEventListener('hashchange', (e) => {
   router();
 })
@@ -11,11 +11,10 @@ window.addEventListener('load', (e) => {
 // router
 function router() {
   var url = location.hash.substring(1);
+  var hasQuery = url.indexOf("?") > 0;
   var query;
 
-  console.log(url);
-
-  if (url.indexOf("?") > 0) {
+  if (hasQuery) {
     query = url.substring(url.indexOf("?"));
     url = url.substring(url.indexOf("?"), -1);
   }

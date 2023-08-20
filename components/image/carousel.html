@@ -110,18 +110,19 @@
 
   <script>
     var container = document.getElementById('container');
+    var items = document.getElementsByClassName('item');
     var prevBtn = document.getElementById('prev-btn');
     var nextBtn = document.getElementById('next-btn');
     var dots = document.getElementsByClassName('dot');
     var imageWidth = 200;
-    var previousIndex = 0;
+    var prevIndex = 0;
     var thisIndex = 0;
 
     function navigateTo(data) {
       thisIndex += data;
       
       // previous and this index
-      console.log('previous index:', previousIndex)
+      console.log('prev index:', prevIndex)
       console.log('this index:', thisIndex);
 
       // images
@@ -134,17 +135,17 @@
         prevBtn.classList.remove('hidden')
       }
 
-      if (thisIndex === 2) {
+      if (thisIndex === items.length - 1) {
         nextBtn.classList.add('hidden');
       } else {
         nextBtn.classList.remove('hidden');
       }
 
       // indicator
-      dots[previousIndex].classList.remove('active');
+      dots[prevIndex].classList.remove('active');
       dots[thisIndex].classList.add('active');
 
-      previousIndex = thisIndex;
+      prevIndex = thisIndex;
     }
   </script>
 

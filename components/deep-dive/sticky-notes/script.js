@@ -55,7 +55,7 @@ function deleteNote(id, noteElement) {
 
   saveDoc(notes);
 
-  container.removeChild(noteElement);
+  noteElement.remove();
 }
 
 // Render 

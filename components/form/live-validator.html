@@ -21,8 +21,16 @@
       padding: 0.5rem;
     }
 
+    .success {
+      color: #0a0;
+    }
+
     .warning {
       color: #f00;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
   
@@ -31,15 +39,17 @@
   <label for="">Username</label>
   <input type="text" id="input">
 
-  <p id="message" class="warning"></p>
+  <p id="success-message" class="success hidden">Accepted</p>
+  <p id="error-message" class="warning hidden"></p>
 
   <script>
     var input = document.getElementById('input');
-    var message = document.getElementById('message');
+    var successMessage = document.getElementById('success-message');
+    var errorMessage = document.getElementById('error-message');
     
     input.addEventListener('keyup', (e) => {
       try {
-        var username = e.target.value;
+        var username = e.target.value
 
         if (!username) {
           throw 'Username is required';
@@ -54,12 +64,13 @@
           throw 'lowercase letters, number and underscore are only accepted.';
         }
 
-        message.classList.remove("warning")
-        message.textContent = "Accepted";
+        successMessage.classList.remove("hidden");
+        errorMessage.classList.add("hidden")
 
       } catch (error) {
-        message.classList.add("warning")
-        message.textContent = error;
+        errorMessage.classList.remove("hidden")
+        errorMessage.textContent = error;
+        successMessage.classList.add("hidden");
       }
     })
 

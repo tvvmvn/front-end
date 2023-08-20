@@ -22,26 +22,27 @@
       color: #888;
       padding: 0;
     }
-    
-    #btn.hidden {
-      display: none;
-    }
   </style>
 
-  <p id="container"></p>
-  <button id="btn">more</button>
-
-  <script>
-    var text = `Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+  <p id="container">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
     Itaque ut odit commodi officiis fugiat praesentium, 
     eum aut tenetur porro sint voluptate repellendus ab laudantium dolor, 
-    quasi id ea obcaecati eaque?`
+    quasi id ea obcaecati eaque?
+  </p>
 
-    container.textContent = text.substring(0, 50) + "..."
+  <button id="btn">more</button>
 
-    btn.addEventListener("click", () => {
-      container.textContent = text;
-      btn.classList.add("hidden");
+  <script>  
+    var container = document.getElementById("container");
+    var btn = document.getElementById("btn");
+    var content = container.textContent;
+
+    container.textContent = content.substring(0, 50) + "...";
+
+    btn.addEventListener("click", function () {
+      container.textContent = content;
+      btn.remove();
     })
   </script>
 

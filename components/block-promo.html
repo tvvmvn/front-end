@@ -16,10 +16,6 @@
       padding: 1rem;
     }
 
-    .hidden {
-      display: none;
-    }
-
     #block-btn, #close-btn {
       padding: 0.5rem 0.75rem;
     }
@@ -43,15 +39,15 @@
     var promotion = document.getElementById('promotion');
 
     if (localStorage.getItem('blockedAt')) {
-      promotion.classList.add('hidden');
+      promotion.remove()
     }
 
     closeBtn.addEventListener('click', () => {
-      promotion.classList.add('hidden');
+      promotion.remove()
     })
 
     blockBtn.addEventListener('click', () => {
-      promotion.classList.add('hidden');
+      promotion.remove()
       localStorage.setItem('blockedAt', new Date().toLocaleString());
     })
   </script>
