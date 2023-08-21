@@ -47,9 +47,12 @@
     var btn = document.getElementById('btn');
 
     window.addEventListener('scroll', () => {
-      console.log(document.documentElement.scrollTop);
+      var scrollTop = document.documentElement.scrollTop;
+      
+      // distance between document-top and viewport-top
+      console.log(scrollTop);
 
-      if (document.documentElement.scrollTop > 200) {
+      if (scrollTop > 200) {
         btn.classList.remove('hidden')
       } else {
         btn.classList.add('hidden')
