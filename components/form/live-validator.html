@@ -39,17 +39,15 @@
   <label for="">Username</label>
   <input type="text" id="input">
 
-  <p id="success-message" class="success hidden">Accepted</p>
-  <p id="error-message" class="warning hidden"></p>
+  <p id="message" class="hidden"></p>
 
   <script>
     var input = document.getElementById('input');
-    var successMessage = document.getElementById('success-message');
-    var errorMessage = document.getElementById('error-message');
+    var message = document.getElementById("message");
     
     input.addEventListener('keyup', (e) => {
       try {
-        var username = e.target.value
+        var username = e.target.value;
 
         if (!username) {
           throw 'Username is required';
@@ -64,16 +62,14 @@
           throw 'lowercase letters, number and underscore are only accepted.';
         }
 
-        successMessage.classList.remove("hidden");
-        errorMessage.classList.add("hidden")
+        message.innerHTML = `<span class="success">Accepted</span>`;
 
       } catch (error) {
-        errorMessage.classList.remove("hidden")
-        errorMessage.textContent = error;
-        successMessage.classList.add("hidden");
+        message.innerHTML = `<span class="warning">${error}</span>`;
+      } finally {
+        message.classList.remove("hidden");
       }
     })
-
   </script>
 
 </body>
