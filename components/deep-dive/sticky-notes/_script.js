@@ -1,78 +1,80 @@
-/*
-  Sticky Notes
-
-  1 Create view 
-  2 Add storage
-*/
-
 var container = document.getElementById("container");
 var addBtn = document.getElementById("add-btn");
-var notes = [];
 
-// Synchronize localStorage
-function saveDoc(notes) {
-  localStorage.setItem("noteStorage", JSON.stringify(notes));
-}
+class StickyNote { // react class component
+  
+  notes;
 
-// Get all notes
-window.addEventListener("DOMContentLoaded", function () {  
-  var docs = JSON.parse(localStorage.getItem("noteStorage") || "[]");
-
-  notes = docs;
-
-  for (var i=0; i<notes.length; i++) {
-    createNoteElement(notes[i].id, notes[i].content);
+  constructor() {
+    this.notes = JSON.parse(localStorage.getItem("noteStorage") || "[]");
   }
-});
 
-// Add new note
-addBtn.addEventListener("click", function () {
-  var newNote = { id: "n" + Date.now(), content: "" };
+  getNotes() {
+    return JSON.parse(localStorage.getItem("noteStorage") || "[]");
+  }
   
-  notes.push(newNote);
-  
-  saveDoc(notes);
-  
-  createNoteElement(newNote.id, newNote.content);
-});
+  saveDoc(notes) {
+    localStorage.setItem("noteStorage", JSON.stringify(notes));
+  }
 
-// Edit note
-function editNote(id, content) {
-  for (var i=0; i<notes.length; i++) {
-    if (notes[i].id === id) {
-      notes[i].content = content;
+  addNote() {
+    var newNote = { id: "n" + Date.now(), content: "" };  
+    var x = JSON.parse(localStorage.getItem("noteStorage") || "[]");
+    x.push(newNote)
+
+    localStorage.setItem("noteStorage", JSON.stringify(x));
+
+    this.render()
+  }
+
+  editNote(id, content) {
+    for (var i=0; i<notes.length; i++) {
+      if (notes[i].id === id) {
+        notes[i].content = content;
+      }
+    }
+  
+    this.saveDoc(notes);
+    this.render()
+  }
+
+  deleteNote(id, noteElement) {
+    for (var i=0; i<notes.length; i++) {
+      if (notes[i].id === id) {
+        notes.splice(i, 1);
+      }
+    }
+  
+    this.saveDoc(notes);
+    this.render()
+  }
+
+  render() {
+    var addBtn = document.createElement("button");    
+    addBtn.textContent = "New Note +";
+    addBtn.addEventListener("click", this.addNote);
+    document.body.prepend(addBtn);
+
+    var notes = this.notes;
+
+    for (var i=0; i<notes.length; i++) {
+      var noteElement = document.createElement("textarea");
+      noteElement.value = notes[i].content;
+      noteElement.addEventListener("keyup", (e) => {
+        this.editNote(id, e.target.value)
+      });
+      noteElement.addEventListener("dblclick", (e) => {
+        this.deleteNote(id, e.target.value)
+      });
+      container.prepend(noteElement);
     }
   }
-
-  saveDoc(notes);
 }
 
-// Delete note
-function deleteNote(id, noteElement) {
-  for (var i=0; i<notes.length; i++) {
-    if (notes[i].id === id) {
-      notes.splice(i, 1);
-    }
-  }
+var stickyNote = new StickyNote();
 
-  saveDoc(notes);
+stickyNote.render();
 
-  noteElement.remove();
-}
 
-// Render 
-function createNoteElement(id, content) {
-  var noteElement = document.createElement("textarea");
 
-  noteElement.value = content;
 
-  noteElement.addEventListener("keyup", function (e) {
-    editNote(id, e.target.value)
-  });
-
-  noteElement.addEventListener("dblclick", function (e) {
-    deleteNote(id, e.target)
-  });
-
-  container.prepend(noteElement);
-}

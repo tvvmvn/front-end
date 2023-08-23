@@ -19,7 +19,7 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
+      width: 100vw;
       backdrop-filter: blur(8px);
     }
 
@@ -31,30 +31,21 @@
       border: none;
       background-color: transparent;
       font-size: 2rem;
-      cursor: pointer;
     }
 
-    nav {
+    #nav {
       border-bottom: 1px solid #ddd;
     }
 
-    nav ul {
+    #nav ul {
       margin: 0;
       padding: 0;
       list-style: none;
     }
 
-    nav a {
-      display: block;
+    ul li {
       text-align: center;
       padding: 0.5rem;
-      text-decoration: none;
-      color: #000;
-      opacity: 0.5;
-    }
-
-    nav a:hover {
-      opacity: 1;
     }
 
     main {
@@ -72,23 +63,16 @@
     </div>
     <nav class="hidden" id="nav">
       <ul>
-        <li>
-          <a href="#">Link</a>
-        </li>
-        <li>
-          <a href="#">Link</a>
-        </li>
-        <li>
-          <a href="#">Link</a>
-        </li>
+        <li>Menu</li>
+        <li>Menu</li>
+        <li>Menu</li>
       </ul>
     </nav>
   </header>
 
   <main>
     <h1>Top navigation</h1>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, explicabo iure ipsum rerum corrupti rem maiores
-      doloremque porro deserunt illum non sequi! Veritatis perspiciatis vitae enim error. In, magnam officia?</p>
+    <p>...</p>
   </main>
 
   <script>
@@ -99,7 +83,12 @@
       nav.classList.toggle("hidden");
     })
 
+    // document
     document.addEventListener('click', (e) => {
+      // event target
+      console.log(e.target)
+
+      // when click area except for button
       if (e.target !== btn) {
         nav.classList.add('hidden');
       }

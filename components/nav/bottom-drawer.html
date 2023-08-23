@@ -58,11 +58,15 @@
     var openBtn = document.getElementById('open-btn');
     var TOP;
 
-    openBtn.addEventListener('click', (e) => {
+    openBtn.addEventListener('click', function (e) {
       nav.style.top = '20vh';
     })
 
-    drawerHandle.addEventListener('touchmove', (e) => {
+    drawerHandle.addEventListener("touchstart", function (e) {
+      console.log('touch start')
+    })
+
+    drawerHandle.addEventListener('touchmove', function (e) {
       console.log('touching');
 
       var clientY = e.touches[0].clientY;
@@ -72,7 +76,7 @@
       nav.style.top = TOP + 'vh';
     })
 
-    drawerHandle.addEventListener('touchend', (e) => {
+    drawerHandle.addEventListener('touchend', function (e) {
       console.log('touch end');
 
       if (TOP > 50) {

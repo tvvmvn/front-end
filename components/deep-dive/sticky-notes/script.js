@@ -17,7 +17,12 @@ function saveDoc(notes) {
 // Get all notes
 window.addEventListener("DOMContentLoaded", function () {  
   var docs = JSON.parse(localStorage.getItem("noteStorage") || "[]");
-  setNotes(docs)  
+
+  notes = docs;
+
+  for (var i=0; i<notes.length; i++) {
+    createNoteElement(notes[i].id, notes[i].content);
+  }
 });
 
 // Add new note
@@ -25,12 +30,10 @@ addBtn.addEventListener("click", function () {
   var newNote = { id: "n" + Date.now(), content: "" };
   
   notes.push(newNote);
-
-  var updatedNotes = [...notes, newNote];
-
-  setNotes(updatedNotes)
   
   saveDoc(notes);
+  
+  createNoteElement(newNote.id, newNote.content);
 });
 
 // Edit note
@@ -41,7 +44,7 @@ function editNote(id, content) {
     }
   }
 
-  setNotes(notes);
+  saveDoc(notes);
 }
 
 // Delete note
@@ -54,14 +57,7 @@ function deleteNote(id, noteElement) {
 
   saveDoc(notes);
 
-  setNotes(notes)
-}
-
-// setNotes
-function setNotes(notes) {
-  for (var i=0; i<notes.length; i++) {
-    createNoteElement(notes[i].id, notes[i].content);
-  }
+  noteElement.remove();
 }
 
 // Render 
