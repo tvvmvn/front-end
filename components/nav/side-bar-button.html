@@ -59,16 +59,16 @@
   <div id="overlay" class="hidden"></div>
 
   <script>
-    const btn = document.getElementById("btn");
-    const sideBar = document.getElementById("side-bar");
-    const overlay = document.getElementById("overlay");
+    var btn = document.getElementById("btn");
+    var sideBar = document.getElementById("side-bar");
+    var overlay = document.getElementById("overlay");
 
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", function () {
       sideBar.classList.remove("hidden");
       overlay.classList.remove("hidden");
     })
 
-    overlay.addEventListener("click", () => {
+    overlay.addEventListener("click", function () {
       sideBar.classList.add("hidden");
       overlay.classList.add("hidden");
     })

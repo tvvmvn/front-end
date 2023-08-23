@@ -47,21 +47,21 @@
     var btn = document.getElementById('btn');
 
     // scrolling
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', function () {
       var scrollTop = document.documentElement.scrollTop;
       
       // distance between document-top and viewport-top
       console.log(scrollTop);
 
       if (scrollTop > 200) {
-        btn.classList.remove('hidden')
+        btn.classList.remove('hidden');
       } else {
-        btn.classList.add('hidden')
+        btn.classList.add('hidden');
       }
     })
 
     // click top button
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', function () {
       document.documentElement.scrollTop = 0;
     })
   </script>
