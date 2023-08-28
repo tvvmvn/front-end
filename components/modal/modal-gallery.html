@@ -22,18 +22,18 @@
     }
 
     #modal {
-      width: 20rem;
-      height: 20rem;
-      object-fit: cover;
       display: block;
+      width: 400px;
+      height: 400px;
       margin: 100px auto 0;
+      object-fit: cover;
     }
 
-    .container {
+    .thumbnail-container {
       display: flex;
     }
 
-    .container img {
+    .thumbnail {
       width: 100px;
       height: 100px;
       object-fit: cover;
@@ -41,7 +41,7 @@
       opacity: 0.8;
     }
 
-    .container img:hover {
+    .thumbnail:hover {
       opacity: 1;
     }
     
@@ -54,7 +54,7 @@
     <img src="" alt="" id="modal">
   </div>
   
-  <div class="container">
+  <div class="thumbnail-container">
     <img class="thumbnail" src="../../img/Simba.webp" alt="">
     <img class="thumbnail" src="../../img/Timon.webp" alt="">
     <img class="thumbnail" src="../../img/Pumbaa.webp" alt="">
@@ -65,14 +65,22 @@
     var modal = document.getElementById('modal');
     var thumbnails = document.getElementsByClassName('thumbnail');
 
-    for (var i=0; i<thumbnails.length; i++) {
-      thumbnails[i].addEventListener('click', (e) => {
+    // HTMLCollection(length)
+    console.log(thumbnails);
+
+    // executed on load
+    for (var i=0; i<thumbnails.length; i++) { 
+      // each thumbnail click
+      thumbnails[i].addEventListener('click', function (e) {
         overlay.classList.remove("hidden");
         modal.src = e.target.src;
       })
     }
 
-    overlay.addEventListener("click", (e) => {      
+    // overlay click
+    overlay.addEventListener("click", function (e) {  
+      console.log(e.target);
+          
       if (e.target === overlay) {
         overlay.classList.add("hidden");
       }

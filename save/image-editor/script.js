@@ -20,7 +20,7 @@ var filter = {};
 */
 
 // 1 Upload file
-fileInput.addEventListener('change', (e) => {
+fileInput.addEventListener('change', function (e) {
   var file = e.target.files[0];
   var src = URL.createObjectURL(file);
 
@@ -28,11 +28,9 @@ fileInput.addEventListener('change', (e) => {
 });
 
 // 2 An image is loaded on canvas.
-imgElement.addEventListener('load', (e) => {
+imgElement.addEventListener('load', function (e) {
   canvas.width = imgElement.width;
   canvas.height = imgElement.height;
-
-  initializeFilter();
 
   render();
 })
@@ -82,19 +80,4 @@ function applyFilter(name, value, unit) {
 // draw image
 function render() {
   ctx.drawImage(imgElement, 0, 0);
-}
-
-// initialize filters
-function initializeFilter() {
-  brightnessInput.value = 100;
-  saturateInput.value = 100;
-  invertInput.value = 0;
-  blurInput.value = 0;
-
-  brightnessValue.textContent = 100;
-  saturateValue.textContent = 100;
-  invertValue.textContent = 0;
-  blurValue.textContent = 0;
-
-  filter = {};
 }

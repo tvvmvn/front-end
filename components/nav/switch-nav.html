@@ -16,64 +16,60 @@
     }
 
     #header {
-      /* position */
       position: fixed;
       top: 0;
       left: 0;
-      /* size */
-      width: 100%;
-      height: 50px;
-      /* display */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      /* style */
-      background-color: #fff;
+      width: 100vw;
       border-bottom: 1px solid #ddd;
-      /* smooth */
+      backdrop-filter: blur(8px);
       transition: top 0.2s;
     }
 
-    #header.hidden {
-      top: -50px;
+    .header-inner {
+      display: flex;
+      height: 50px;
+      justify-content: center;
+      align-items: center;
     }
-
+    
     main {
       margin-top: 4rem;
+    }
+    
+    #header.hidden {
+      top: -50px;
     }
   </style>
 
   <header id="header">
-    Header
+    <div class="header-inner">
+      Header
+    </div>
   </header>
 
   <main>
     <h1>Switch NavBar</h1>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse ad odio doloremque corrupti architecto quam error
-      natus illo commodi adipisci deleniti eligendi officiis molestiae eum iste, tenetur, rerum, eius fuga.</p>
+    <p>...</p>
   </main>
 
   <script>
-
     var header = document.getElementById('header');
-    var previousScrollTop = 0;
+    var prevScrollTop = 0;
 
-    window.addEventListener('scroll', (e) => {
-
+    window.addEventListener('scroll', function () {
       var scrollTop = document.documentElement.scrollTop;
 
-      console.log('previous scrollTop:', previousScrollTop);
+      console.log('previous scrollTop:', prevScrollTop);
       console.log('scrollTop', scrollTop);
 
-      if (scrollTop > previousScrollTop) {
+      if (scrollTop > prevScrollTop) { // scroll to down
         header.classList.add('hidden');
       } else {
         header.classList.remove('hidden');
       }
 
-      previousScrollTop = scrollTop;
+      prevScrollTop = scrollTop;
     })
-
   </script>
 
 </body>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <style>
+    .container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+    }
+
+    /* main image */
+    #main {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+    }
+    
+    /* thumbnails */
+    .thumbnail-container {
+      display: flex;
+    }
+
+    .thumbnail {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+    }
+
+    .date {
+      color: #888;
+      font-style: italic;
+    }
+
+    .prev, .next {
+      position: absolute;
+      height: 100%;
+      border: none;
+      font-size: 2rem;
+      background-color: transparent;
+      color: rgba(255 255 255 / 0.5);
+    }
+
+    .prev {
+      left: 0;
+    }
+
+    .next {
+      right: 0;
+    }
+
+    .active {
+      outline: 4px solid #fa0;
+      z-index: 1;
+    }
+  </style>
+ 
+  <h1>Photo review</h1>
+  
+  <div class="container">
+    <img src="../../img/Simba.webp" alt="" id="main">
+    <button class="prev" onclick="move(-1)">&#10094;</button>
+    <button class="next" onclick="move(1)">&#10095;</button>
+  </div>
+
+  <h3>John Doe</h3>
+  <small class="date">August 17, 2023</small>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laudantium nesciunt quasi, alias delectus quibusdam
+    placeat! Ipsum mollitia quo error ad, explicabo harum voluptas reiciendis ab est, quasi quam pariatur.
+  </p>
+  
+  <div class="thumbnail-container">
+    <img class="thumbnail active" src="../../img/Simba.webp" alt="">
+    <img class="thumbnail" src="../../img/Timon.webp" alt="">
+    <img class="thumbnail" src="../../img/Pumbaa.webp" alt="">
+  </div>
+
+  <script>
+    var thumbnails = document.getElementsByClassName('thumbnail');
+    var main = document.getElementById('main');
+    var index = 0;
+    var prevIndex = 0;
+
+    // HTMLCollection(length)
+    console.log(thumbnails)
+
+    function move(data) {
+      index += data;
+
+      if (index < 0) index = 2;
+      if (index > 2) index = 0;
+
+      console.log(index);
+
+      // update main image
+      main.src = thumbnails[index].src;
+      
+      // outline      
+      thumbnails[prevIndex].classList.remove("active");
+      thumbnails[index].classList.add("active");
+
+      prevIndex = index;
+    }
+  </script>
+
+</body>
+</html>

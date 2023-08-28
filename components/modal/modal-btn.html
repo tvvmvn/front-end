@@ -22,7 +22,7 @@
       background-color: rgba(0 0 0 / 0.2);
     }
 
-    #modal {
+    .modal {
       background-color: #fff;
       margin: 100px auto 0;
       max-width: 20rem;
@@ -38,7 +38,7 @@
   <button id="btn">Open</button>
 
   <div id="overlay" class="hidden">
-    <div id="modal">
+    <div class="modal">
       <h1>Heading</h1>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
         Quod, asperiores quam? 
@@ -54,11 +54,13 @@
     var overlay = document.getElementById('overlay');
     var btn = document.getElementById('btn');
 
-    btn.addEventListener('click', (e) => {
+    // open button click 
+    btn.addEventListener('click', function (e) {
       overlay.classList.remove('hidden');
     })
 
-    overlay.addEventListener('click', (e) => {
+    // overlay click
+    overlay.addEventListener('click', function (e) {
       console.log(e.target);
 
       if (e.target === overlay) {
