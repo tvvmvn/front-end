@@ -1,32 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
 
   <style>
-    canvas {
-      border: 4px solid red;
+    * {
+      box-sizing: border-box;
+    }
+
+    #canvas {
+      border: 2px solid red;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+    }
+
+    input[type=range] {
+      appearance: none;
+      -webkit-appearance: none;
+      background-color: #000;
+      width: 100%;
+      height: 1px;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 10px;
+      height: 10px;
+      background: #000
     }
   </style>
 
-  <h1>Editor</h1>
+  <!-- <h1>JS Image Editor</h1> -->
 
   <canvas id="canvas"></canvas>
 
-  <script>
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
-
-    var ctx = canvas.getContext("2d");
-    var img = new Image();
-    img.src = "../../../img/cat.jpeg"
-
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
-  </script>
+  <nav>
+    <div class="filter-group">
+      <label for="brightness">Brigtness</label>
+      <input type="range" name="brightness" id="brightness" min="0" max="200" value="100">
+      <p id="brightness-value">100</p>
+    </div>
   
+    <div class="filter-group">
+      <label for="saturate">Saturate</label>
+      <input type="range" name="saturate" id="saturate" min="0" max="200" value="100">
+      <p id="saturate-value">100</p>
+    </div>
+  
+    <div class="filter-group">
+      <label for="invert">Invert</label>
+      <input type="range" name="invert" id="invert" min="0" max="100" value="0">
+      <p id="invert-value">0</p>
+    </div>
+    
+    <div class="filter-group">
+      <label for="blur">Blur</label>
+      <input type="range" name="blur" id="blur" min="0" max="10" value="0">
+      <p id="blur-value">0</p>
+    </div>
+  </nav>
+
+  <script src="./script.js"></script>
+
 </body>
+
 </html>

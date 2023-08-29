@@ -1,6 +1,5 @@
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
-var fileInput = document.getElementById('file-input');
 
 var brightnessInput = document.getElementById('brightness');
 var saturateInput = document.getElementById('saturate');
@@ -15,27 +14,11 @@ var blurValue = document.getElementById("blur-value");
 var imgElement = new Image();
 var filter = {};
 
-/* 
-  JS Filter Steps
-*/
-
-// 1 Upload file
-fileInput.addEventListener('change', function (e) {
-  var file = e.target.files[0];
-  var src = URL.createObjectURL(file);
-
-  imgElement.src = src;
-});
-
-// 2 An image is loaded on canvas.
-imgElement.addEventListener('load', function (e) {
-  canvas.width = imgElement.width;
-  canvas.height = imgElement.height;
-
+document.addEventListener("DOMContentLoaded", function () {
+  imgElement.src = "../../../img/homies.jpg";
   render();
 })
 
-// 3 Adjust each filter
 brightnessInput.addEventListener('input', function (e) {
   applyFilter(e.target.name, e.target.value, '%');
   brightnessValue.textContent = e.target.value;
@@ -56,7 +39,6 @@ blurInput.addEventListener('input', function (e) {
   blurValue.textContent = e.target.value;
 })
 
-// 4 Apply filter to image
 function applyFilter(name, value, unit) {
   filter[name] = value + unit;
 
@@ -73,11 +55,6 @@ function applyFilter(name, value, unit) {
   render();
 }
 
-/* 
-  Helper functions
-*/
-
-// draw image
 function render() {
   ctx.drawImage(imgElement, 0, 0);
 }

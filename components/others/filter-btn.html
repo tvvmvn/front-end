@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <style>
+    .active {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <h1>Filter</h1>
+
+  <button data-selected onclick="setFilter(this, 'drink')" class="active">Drink</button>
+  <button onclick="setFilter(this, 'food')">Food</button>
+  <button onclick="setFilter(this, 'beverage')">Beverage</button> 
+
+  <ul id="list">
+    <li data-category="drink">Espresso</li>
+    <li data-category="drink">Frappuccino</li>
+    <li data-category="drink">Blended</li>
+    <li data-category="food" class="hidden">Bread</li>
+    <li data-category="beverage" class="hidden">Mug & Glass</li>
+  </ul>
+
+  <script>
+    var items = document.querySelectorAll("li[data-category]");
+    var prevTarget = document.querySelector("button[data-selected]");
+
+    function setFilter(target, category) {
+      console.log(category)
+
+      for (var i=0; i<items.length; i++) {
+        var item = items[i];
+
+        if (item.getAttribute('data-category') === category) {
+          item.classList.remove("hidden")
+        } else {
+          item.classList.add("hidden")
+        }
+      }
+
+      prevTarget.classList.remove("active");
+      target.classList.add("active");
+
+      prevTarget = target;
+    }
+  </script>
+
+</body>
+</html>

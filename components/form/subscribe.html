@@ -11,7 +11,7 @@
 <body>
 
   <style>
-    form {
+    .form-group {
       display: flex;
     }
 
@@ -19,7 +19,7 @@
       padding: 0.5rem;
       flex-grow: 1;
     }
-
+    
     .hidden {
       display: none;
     }
@@ -27,9 +27,11 @@
 
   <h1>Newsletter</h1>
 
-  <form action="" id="form">
-    <input type="email" value="John@example.com" required>
-    <button class="btn">Subscribe</button>
+  <form action="/server" id="form">
+    <div class="form-group">
+      <input type="text" name="email" placeholder="JohnDoe@example.com" autocomplete="off">
+      <button class="btn">Subscribe</button>
+    </div>
   </form>
 
   <p id="done" class="hidden">
@@ -39,11 +41,19 @@
   <script>
     var form = document.getElementById('form');
     var done = document.getElementById('done');
+    var error = document.getElementById("error");
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault(); // prevent refresh
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); // prevent submit
       
-      // ... Server request
+      var email = form.elements["email"].value;
+
+      if (!email.trim()) {
+        alert("E-mail is required");
+        return;
+      }
+
+      // AJAX requests..
 
       form.classList.add('hidden');
       done.classList.remove('hidden')

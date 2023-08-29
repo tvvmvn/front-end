@@ -45,29 +45,32 @@ function touchMoveHandler(e) {
   if (index === firstIndex && movingToRight) return;
   if (index === lastIndex && movingToLeft) return;
 
-  left = -(index * width) + (x2 - x1);
-
-  container.style.transform = `translateX(${left}px)`;
+  container.style.transform = `translateX(${left + (x2 - x1)}px)`;
 }
 
 function touchEndHandler() {
-  console.log('touch end')
+  console.log('touch end');
 
-  if (index < lastIndex && x2 - x1 < -limit) {
-    turnOver(1) // next
-  } else if (index > firstIndex && x2 - x1 > limit) {
-    turnOver(-1) 
-  } else {
-    turnOver(0)
+  var drawNotEnough = Math.abs(x2 - x1) < limit;
+  var drawEnoughToNext = x2 - x1 < -limit;
+  var drawEnoughToPrev = x2 - x1 > limit;
+  
+  if (drawNotEnough) {
+    turnOver(0) // stay
   }
+
+  if (index > firstIndex && drawEnoughToPrev) {
+    turnOver(-1) // prev
+  } 
+
+  if (index < lastIndex && drawEnoughToNext) {
+    turnOver(1) // next
+  } 
 }
 
 function turnOver(data) {
   index += data;
   
-  console.log('previous index:', previousIndex);
-  console.log('this index:', index);
-
   left = -(index * width);
 
   // images

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <style>
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      box-sizing: border-box;
+    }
+
+    button[type=submit] {
+      padding: 0.5rem 0.75rem;
+    }
+
+    .warning {
+      color: #f00;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <h1>Contact Form</h1>
+
+  <form action="" id="form">
+    <div class="form-group">
+      <label for="fname">First name</label>
+      <input type="text" id="fname" name="fname" placeholder="John">
+      <p id="fname-error" class="warning hidden"></p>
+    </div>
+
+    <div class="form-group">
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lname" placeholder="Doe">
+      <p id="lname-error" class="warning hidden"></p>
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input type="email" name="email" id="email" placeholder="JohnDoe@example.com">
+      <p id="email-error" class="warning hidden"></p>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+
+    var form = document.getElementById('form');
+    var fnameError = document.getElementById('fname-error');
+    var lnameError = document.getElementById('lname-error');
+    var emailError = document.getElementById('email-error');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      var formData = new FormData(e.target);
+
+      var fname = formData.get('fname');
+      var lname = formData.get('lname');
+      var email = formData.get('email');
+
+      if (!fname.trim()) {
+        fnameError.classList.remove('hidden');
+        fnameError.textContent = 'First name is required';
+      } else if (!fname.match(/^[a-zA-Z]$/)) {
+        fnameError.classList.remove('hidden');
+        fnameError.textContent = 'Incorrect first name';
+      } else {
+        fnameError.classList.add('hidden');
+      }
+
+      if (!lname.trim()) {
+        lnameError.classList.remove('hidden');
+        lnameError.textContent = 'Last name is required';
+      } else {
+        lnameError.classList.add('hidden');
+      }
+
+      if (!email.trim()) {
+        emailError.classList.remove('hidden');
+        emailError.textContent = 'E-mail is required';
+      } else {
+        emailError.classList.add('hidden');
+      }
+    })
+
+    // Use this error handler to make it simple.
+    function errorHandler(error, errorContainer) {
+      if (error) {
+        errorContainer.classList.remove('hidden');
+        errorContainer.textContent = error;
+      } else {
+        errorContainer.classList.add('hidden');
+      }
+    }
+    
+  </script>
+
+</body>
+
+</html>

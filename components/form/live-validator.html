@@ -16,7 +16,7 @@
     }
 
     input {
-      width: 100%;
+      width: 20rem;
       box-sizing: border-box;
       padding: 0.5rem;
     }
@@ -28,10 +28,6 @@
     .warning {
       color: #f00;
     }
-
-    .hidden {
-      display: none;
-    }
   </style>
   
   <h1>Live validator</h1>
@@ -39,36 +35,29 @@
   <label for="">Username</label>
   <input type="text" id="input">
 
-  <p id="message" class="hidden"></p>
+  <p id="message">Enter username</p>
 
   <script>
     var input = document.getElementById('input');
     var message = document.getElementById("message");
     
-    input.addEventListener('keyup', (e) => {
+    input.addEventListener('keyup', function (e) {
       try {
         var username = e.target.value;
 
-        if (!username) {
+        if (!username.trim()) {
           throw 'Username is required';
         }
 
-        if (username.length < 5) {
-          throw 'Username is too short';
-        }
-
-        // regular expression: provide pattern to search strings.
-        if (username.match(/[^a-z0-9_]/)) {
-          throw 'lowercase letters, number and underscore are only accepted.';
+        if (!username.match(/^[a-z0-9]{5,}$/)) {
+          throw 'must be lowercase letters and number at least 5 letters.';
         }
 
         message.innerHTML = `<span class="success">Accepted</span>`;
 
       } catch (error) {
-        message.innerHTML = `<span class="warning">${error}</span>`;
-      } finally {
-        message.classList.remove("hidden");
-      }
+        message.innerHTML = `<span class="warning">${error}</span>`;  
+      } 
     })
   </script>
 
