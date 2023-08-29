@@ -1,75 +1,86 @@
-var wrapper = document.getElementById('wrapper');
+// container and images
+var frame = document.getElementById('frame');
 var container = document.getElementById('container');
+var images = document.getElementsByClassName("image");
+var width = 200;
+// buttons
 var prev = document.getElementById('prev');
 var next = document.getElementById('next');
+// indicator
 var dots = document.getElementsByClassName('dot');
-var width = 200;
-
+// index
 var firstIndex = 0;
-var lastIndex = 2;
+var lastIndex = images.length - 1;
 var previousIndex = 0;
-var thisIndex = 0;
+var index = 0;
+// touch stuff
+var x1;
+var x2;
+var limit = 50;
+var left = 0
 
-var startPoint;
-var fromStartPoint = 0;
 
 // Touch Event
-wrapper.addEventListener('touchstart', saveStartPoint)
-wrapper.addEventListener('touchmove', moving)
-wrapper.addEventListener('touchend', handleEnd)
+frame.addEventListener('touchstart', touchStartHandler)
+frame.addEventListener('touchmove', touchMoveHandler)
+frame.addEventListener('touchend', touchEndHandler)
 
-function saveStartPoint(e) {
-  startPoint = e.touches[0].clientX;
+
+function touchStartHandler(e) {
+  console.log("touch start");
+
+  // save start point
+  x1 = e.touches[0].clientX;
 }
 
-function moving(e) {
-  var clientX = e.touches[0].clientX;
-  fromStartPoint = clientX - startPoint;
+function touchMoveHandler(e) {
+  console.log('touch move')
 
-  var movingToPrevInFirst = thisIndex === firstIndex && fromStartPoint > 0;
-  var movingToNextInLast = thisIndex === lastIndex && fromStartPoint < 0;
+  // touching point
+  x2 = e.touches[0].clientX;
 
-  if (movingToPrevInFirst || movingToNextInLast) return;
+  var movingToRight = x2 - x1 > 0;
+  var movingToLeft = x2 - x1 < 0;
 
-  var fromLeft = - (thisIndex * width) + fromStartPoint;
-  container.style.transform = `translateX(${fromLeft}px)`;
+  if (index === firstIndex && movingToRight) return;
+  if (index === lastIndex && movingToLeft) return;
+
+  left = -(index * width) + (x2 - x1);
+
+  container.style.transform = `translateX(${left}px)`;
 }
 
-function handleEnd() {
-  // stay
-  if (fromStartPoint > -50 || fromStartPoint < 50) {
-    turnOver(0);
+function touchEndHandler() {
+  console.log('touch end')
+
+  if (index < lastIndex && x2 - x1 < -limit) {
+    turnOver(1) // next
+  } else if (index > firstIndex && x2 - x1 > limit) {
+    turnOver(-1) 
+  } else {
+    turnOver(0)
   }
-  // turn over to next photo
-  if (thisIndex < lastIndex && fromStartPoint < -50) {
-    turnOver(1)
-  }
-  // turn over to prev photo
-  if (thisIndex > firstIndex && fromStartPoint > 50) {
-    turnOver(-1)
-  }
-  // reset move
-  fromStartPoint = 0;
 }
 
 function turnOver(data) {
-  console.log('previous index:', previousIndex);
+  index += data;
   
-  thisIndex += data;
+  console.log('previous index:', previousIndex);
+  console.log('this index:', index);
 
-  console.log('this index:', thisIndex);
+  left = -(index * width);
 
   // images
-  container.style.transform = `translateX(-${thisIndex * width}px)`;
+  container.style.transform = `translateX(${left}px)`;
 
   // button
-  if (thisIndex === 0) {
+  if (index === firstIndex) {
     prev.classList.add('hidden');
   } else {
     prev.classList.remove('hidden');
   }
 
-  if (thisIndex === 2) {
+  if (index === lastIndex) {
     next.classList.add('hidden');
   } else {
     next.classList.remove('hidden');
@@ -77,7 +88,7 @@ function turnOver(data) {
 
   // indicator
   dots[previousIndex].classList.remove('active');
-  dots[thisIndex].classList.add('active');
+  dots[index].classList.add('active');
 
-  previousIndex = thisIndex;
+  previousIndex = index;
 }

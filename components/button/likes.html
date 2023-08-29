@@ -36,10 +36,14 @@
 
   <script>
     var btn = document.getElementById('btn');
+    // state
     var count = document.getElementById("count");
     var likes = false;
 
     btn.addEventListener('click', function () {
+      
+      // AJAX requests..
+
       if (likes) {
         btn.classList.remove("active")
         count.textContent = parseInt(count.textContent) - 1
