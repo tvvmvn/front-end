@@ -7,19 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-
 <body>
-
-  <!-- <h1>Touch Carousel</h1>
-  <p>Set chrome to mobile mode to see the result.</p> -->
+  <h1>Touch Carousel</h1>
 
   <style>
+    /* frame */
     #frame {
       width: 200px;
       height: 200px;
+      position: relative;
       overflow-x: hidden;
     }
 
+    /* container and images */
     #container {
       display: flex;
       width: 600px;
@@ -34,39 +34,78 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      color: #fff;
     }
 
-    .dot.active {
-      color: #f00;
+    /* buttons */
+    #prev, #next {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      background-color: transparent;
+      border: none;
+      font-size: 2rem;
+      color: rgba(255 255 255 / 0.5);
     }
 
+    #prev {
+      left: 0;
+    }
+
+    #next {
+      right: 0;
+    }
+
+    /* indicator */
+    .indicator {
+      position: absolute;
+      bottom: 12px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .dot {
+      display: block;
+      width: 8px;
+      height: 8px;
+      background-color: #fff;
+      border-radius: 99px;
+      margin: 0 2px;
+      opacity: 0.5;
+    }
+
+    /* toggle class */
     .hidden {
       display: none;
+    }
+
+    .active {
+      opacity: 1;
     }
   </style>
 
   <h3>Images</h3>
   <div id="frame">
+    <!-- Images -->
     <div id="container">
       <div class="image">1</div>
       <div class="image">2</div>
       <div class="image">3</div>
     </div>
-  </div>
 
-  <h3>Buttons</h3>
-  <button id="prev" class="hidden" onclick="turnOver(-1)">Prev</button>
-  <button id="next" onclick="turnOver(1)">Next</button>
-
-  <h3>Indicator</h3>
-  <div id="indicator">
-    <span class="dot active">*</span>
-    <span class="dot">*</span>
-    <span class="dot">*</span>
+    <!-- Buttons -->
+    <button id="prev" class="hidden" onclick="turnOver(-1)">&#10094;</button>
+    <button id="next" onclick="turnOver(1)">&#10095;</button>
+    
+    <!-- Indicator -->
+    <div class="indicator">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
   </div>
 
   <script src="./script.js"></script>
-
 </body>
-
 </html>

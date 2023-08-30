@@ -49,13 +49,19 @@
     var input = document.getElementById('input');
     var items = document.getElementsByClassName('item');
 
-    input.addEventListener('keyup', (e) => {
-      var value = e.target.value.toLowerCase();
+    input.addEventListener('keyup', function (e) {
+      var q = e.target.value.toLowerCase();
+
+      // q
+      console.log("q:", q);
 
       for (var i = 0; i < items.length; i++) {
-        var textContent = items[i].textContent.toLowerCase();
+        var itemName = items[i].textContent.toLowerCase();
 
-        if (textContent.indexOf(value) > -1) {
+        // compare each item with q
+        console.log(q, itemName)
+
+        if (itemName.indexOf(q) > -1) {
           items[i].classList.remove('hidden');
         } else {
           items[i].classList.add('hidden');

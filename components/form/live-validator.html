@@ -32,10 +32,10 @@
   
   <h1>Live validator</h1>
 
-  <label for="">Username</label>
-  <input type="text" id="input">
+  <label for="">Password</label>
+  <input type="password" id="input">
 
-  <p id="message">Enter username</p>
+  <p id="message"></p>
 
   <script>
     var input = document.getElementById('input');
@@ -43,14 +43,39 @@
     
     input.addEventListener('keyup', function (e) {
       try {
-        var username = e.target.value;
+        var password = e.target.value;
 
-        if (!username.trim()) {
-          throw 'Username is required';
+        console.log(password);
+
+        /*
+          # Regular expression
+          provide pattern to search string.
+
+          /pattern/modifier(s)
+        */
+
+        var lowerCaseLetters = /[a-z]/
+        var uppperCaseLetters = /[A-Z]/
+        var numbers = /[0-9]/
+
+        if (!password) {
+          throw 'Password is required';
         }
 
-        if (!username.match(/^[a-z0-9]{5,}$/)) {
-          throw 'must be lowercase letters and number at least 5 letters.';
+        if (!password.match(lowerCaseLetters)) {
+          throw "Password must contain at least one lowercase letter";
+        }
+
+        if (!password.match(uppperCaseLetters)) {
+          throw "Password must contain at least one uppercase letter";
+        }
+
+        if (!password.match(numbers)) {
+          throw "Password must contain at least one number";
+        }
+
+        if (password.length < 8) {
+          throw "Password is not safe";
         }
 
         message.innerHTML = `<span class="success">Accepted</span>`;

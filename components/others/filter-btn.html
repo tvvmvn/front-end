@@ -8,11 +8,6 @@
 <body>
 
   <style>
-    .active {
-      background-color: #000;
-      color: #fff;
-    }
-
     .hidden {
       display: none;
     }
@@ -20,39 +15,42 @@
 
   <h1>Filter</h1>
 
-  <button data-selected onclick="setFilter(this, 'drink')" class="active">Drink</button>
-  <button onclick="setFilter(this, 'food')">Food</button>
-  <button onclick="setFilter(this, 'beverage')">Beverage</button> 
+  <button data-filter="drink" onclick="setFilter('drink')">Drink</button>
+  <button data-filter="food" onclick="setFilter('food')">Food</button>
+  <button data-filter="beverage" onclick="setFilter('beverage')">Beverage</button> 
 
-  <ul id="list">
+  <ul>
     <li data-category="drink">Espresso</li>
     <li data-category="drink">Frappuccino</li>
     <li data-category="drink">Blended</li>
-    <li data-category="food" class="hidden">Bread</li>
-    <li data-category="beverage" class="hidden">Mug & Glass</li>
+    <li data-category="food">Bread</li>
+    <li data-category="beverage">Mug & Glass</li>
   </ul>
 
   <script>
     var items = document.querySelectorAll("li[data-category]");
-    var prevTarget = document.querySelector("button[data-selected]");
+    var buttons = document.querySelectorAll("button[data-filter]");
 
-    function setFilter(target, category) {
-      console.log(category)
+    setFilter("drink");
 
-      for (var i=0; i<items.length; i++) {
-        var item = items[i];
+    function setFilter(filter) {
+      console.log(filter)
 
-        if (item.getAttribute('data-category') === category) {
-          item.classList.remove("hidden")
+      for (var i=0; i<buttons.length; i++) {
+        if (buttons[i].getAttribute("data-filter") === filter) {
+          buttons[i].disabled = true;
         } else {
-          item.classList.add("hidden")
+          buttons[i].disabled = false
         }
       }
 
-      prevTarget.classList.remove("active");
-      target.classList.add("active");
-
-      prevTarget = target;
+      for (var i=0; i<items.length; i++) {
+        if (items[i].getAttribute("data-category") === filter) {
+          items[i].classList.remove("hidden")
+        } else {
+          items[i].classList.add("hidden")
+        }
+      }
     }
   </script>
 
