@@ -2,7 +2,7 @@
 var frame = document.getElementById('frame');
 var container = document.getElementById('container');
 var images = document.getElementsByClassName("image");
-var imageWidth = 200;
+var imageWidth = 200
 // buttons
 var prev = document.getElementById('prev');
 var next = document.getElementById('next');
@@ -52,7 +52,6 @@ frame.addEventListener('touchstart', touchStartHandler)
 frame.addEventListener('touchmove', touchMoveHandler)
 frame.addEventListener('touchend', touchEndHandler)
 
-
 function touchStartHandler(e) {
   console.log("touch start");
 
@@ -84,24 +83,16 @@ function touchEndHandler() {
   // no touchmove 
   if (!x2) return;
 
-  var drawNotEnough = Math.abs(x2 - x1) < turnOverPoint;
-  var drawEnoughToNext = x2 - x1 < -turnOverPoint;
+  var drawEnoughToNext = -(x2 - x1) > turnOverPoint;
   var drawEnoughToPrev = x2 - x1 > turnOverPoint;
   
-  // stay
-  if (drawNotEnough) { 
+  if (index > firstIndex && drawEnoughToPrev) { // prev
+    turnOver(-1)
+  } else if (index < lastIndex && drawEnoughToNext) { // next
+    turnOver(1) 
+  } else { // stay
     container.style.transform = `translateX(${left}px)`;
   }
-
-  // prev
-  if (index > firstIndex && drawEnoughToPrev) { 
-    turnOver(-1)
-  } 
-
-  // next
-  if (index < lastIndex && drawEnoughToNext) { 
-    turnOver(1) 
-  } 
 
   // initialize touching point
   x2 = 0;
