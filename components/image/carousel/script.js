@@ -88,12 +88,14 @@ function touchEndHandler() {
   
   if (index > firstIndex && drawEnoughToPrev) { // prev
     turnOver(-1)
-  } else if (index < lastIndex && drawEnoughToNext) { // next
+  } 
+  
+  if (index < lastIndex && drawEnoughToNext) { // next
     turnOver(1) 
-  } else { // stay
-    container.style.transform = `translateX(${left}px)`;
-  }
+  } 
+    
+  container.style.transform = `translateX(${left}px)`;
 
-  // initialize touching point
+  // initialize touching point (in case of no touchmove)
   x2 = 0;
 }
