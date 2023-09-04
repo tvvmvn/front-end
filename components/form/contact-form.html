@@ -71,6 +71,23 @@
         var email = form.elements["email"].value;
   
         var errors = [];
+
+        /*
+          # RegEx modifiers
+
+          1 use case
+          /patten/modifiers
+
+          2 types of modifiers
+          1) i(insensitive)
+          find in case insensitive 
+
+          2) m(multiline)
+          find value in multiline
+
+          3) g(global)
+          find all matched value.
+        */
   
         if (!fname.trim()) {
           errors.push('First name is required')

@@ -43,8 +43,9 @@
     var done = document.getElementById('done');
     var error = document.getElementById("error");
 
+    // submit event: form submit
     form.addEventListener('submit', function (e) {
-      e.preventDefault(); // prevent submit
+      e.preventDefault(); // prevent form from submitting
       
       var email = form.elements["email"].value;
 

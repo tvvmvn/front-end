@@ -65,35 +65,41 @@ function touchMoveHandler(e) {
   // touching point
   x2 = e.touches[0].clientX;
 
+  // prevent moving in first and last photo.
   var movingToRight = x2 - x1 > 0;
   var movingToLeft = x2 - x1 < 0;
 
   if (index === firstIndex && movingToRight) return;
   if (index === lastIndex && movingToLeft) return;
 
+  // moving with finger
   container.style.transform = `translateX(${left + (x2 - x1)}px)`;
 }
 
 function touchEndHandler() {
   console.log('touch end');
 
-  // check x2 and x1
-  console.log(x2, x1)
-
   // no touchmove 
   if (!x2) return;
 
+  // check x2 and x1
+  console.log(x2, x1)
+
+  // check drawing value
   var drawEnoughToNext = -(x2 - x1) > turnOverPoint;
   var drawEnoughToPrev = x2 - x1 > turnOverPoint;
   
-  if (index > firstIndex && drawEnoughToPrev) { // prev
+  // get to prev
+  if (index > firstIndex && drawEnoughToPrev) { 
     turnOver(-1)
   } 
   
-  if (index < lastIndex && drawEnoughToNext) { // next
+  // get to next
+  if (index < lastIndex && drawEnoughToNext) { 
     turnOver(1) 
   } 
     
+  // get back to present photo.
   container.style.transform = `translateX(${left}px)`;
 
   // initialize touching point (in case of no touchmove)

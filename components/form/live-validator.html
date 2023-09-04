@@ -48,10 +48,11 @@
         console.log(password);
 
         /*
-          # Regular expression
+          # Regular expression(RegEx)
           provide pattern to search string.
 
-          /pattern/modifier(s)
+          1 use case
+          /pattern/
         */
 
         var lowerCaseLetters = /[a-z]/
@@ -75,7 +76,7 @@
         }
 
         if (password.length < 8) {
-          throw "Password is not safe";
+          throw "Password must be at least 8 letters";
         }
 
         message.innerHTML = `<span class="success">Accepted</span>`;

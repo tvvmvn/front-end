@@ -61,7 +61,8 @@
         // compare each item with q
         console.log(q, itemName)
 
-        if (itemName.indexOf(q) > -1) {
+        // an item name includes q
+        if (itemName.indexOf(q) > -1) { 
           items[i].classList.remove('hidden');
         } else {
           items[i].classList.add('hidden');
