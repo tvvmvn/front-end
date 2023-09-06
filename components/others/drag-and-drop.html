@@ -29,39 +29,35 @@
     dropZone.addEventListener('drop', dropHandler);
 
     function dropHandler(e) {
-      // prevent default behavior (file is opened)
+      // prevent file from opening
       e.preventDefault();
     
-      console.log('File(s) dropped!');
+      console.log('File(s) dropped');
 
-      /*
-        FileList
-        - This interface was an attempt to create an unmodifiable list
-
-        - only continues to be supported to not break code that is already using it.
-        
-        - Modern APIs use types 
-        that wrap around ES array types
-        instead
-        
-        - treat them like ES arrays
-      */
-
+      // transform FileList to Array
       var files = Array.from(e.dataTransfer.files);
 
-      console.log(files);
-      
-      // ... Server interacation code
+      // AJAX requests..
+      console.log("Submitted files:", files);
 
-      alert('Submitted!');
+      alert("Submitted!");
     }
     
     function dragOverHandler(e) {
-      // prevent default behavior (file is opened)
+      // prevent file from opening
       e.preventDefault();
 
-      console.log('File(s) is moving in drop zone');
+      console.log('dragging over');
     }
+
+    /*
+      * FileList
+
+      - This interface was an attempt to create an unmodifiable list
+      - only continues to be supported to not break code that is already using it.
+      - Modern APIs use types that wrap around ES array types instead
+      - treat them like ES arrays
+    */
   </script>
 
 </body>

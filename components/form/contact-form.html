@@ -27,12 +27,16 @@
       box-sizing: border-box;
     }
 
-    button[type=submit] {
+    button {
       padding: 0.5rem 0.75rem;
     }
 
     .warning {
       color: #f00;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
 
@@ -59,6 +63,10 @@
     <button type="submit">Submit</button>
   </form>
 
+  <p id="done" class="hidden">
+    Thank you and we'll contact with you soon
+  </p>
+
   <script>
     var form = document.getElementById('form');
 
@@ -71,36 +79,22 @@
         var email = form.elements["email"].value;
   
         var errors = [];
-
-        /*
-          # RegEx modifiers
-
-          1 use case
-          /patten/modifiers
-
-          2 types of modifiers
-          1) i(insensitive)
-          find in case insensitive 
-
-          2) m(multiline)
-          find value in multiline
-
-          3) g(global)
-          find all matched value.
-        */
   
+        // first name check
         if (!fname.trim()) {
           errors.push('First name is required')
-        } else if (fname.match(/[^a-zA-Z]/g)) {
+        } else if (fname.match(/[^a-zA-Z]/)) {
           errors.push('Incorrect first name')
         }
   
+        // last name check
         if (!lname.trim()) {
           errors.push('Last name is required'); 
-        } else if (lname.match(/[^a-zA-Z]/g)) {
+        } else if (lname.match(/[^a-zA-Z]/)) {
           errors.push('Incorrect last name')
         }
   
+        // email check
         if (!email.trim()) {
           errors.push('E-mail is required');
         } 
@@ -111,8 +105,9 @@
           throw errors;
         }
 
-        alert("Done");
-        
+        form.classList.add("hidden")
+        done.classList.remove("hidden")
+
       } catch (error) {
         document.getElementById("errors").innerHTML = errors.join("<br>")
       }

@@ -17,13 +17,12 @@
     }
   </style>
 
-  <h1>Theme</h1>
-
+  <h1>Choice Theme</h1>
   <p>
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-    Mollitia voluptas architecto optio totam dolore perspiciatis qui nihil?
-    Nesciunt eligendi id impedit, expedita earum, enim veniam laudantium,
-    pariatur quasi repellendus est.
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Tenetur minus quibusdam expedita? Quisquam magnam fugiat, 
+    autem fuga dolorem commodi tempora assumenda debitis repellendus quas. 
+    Eos iure quia praesentium quae hic.
   </p>
 
   <input type="checkbox" id="checkbox" name="">
@@ -33,29 +32,35 @@
 
   <script>
     var checkbox = document.getElementById('checkbox');
-    var theme = localStorage.getItem('theme');
 
-    // When dark mode was selected
-    var isDarkMode = localStorage.getItem('darkedAt');
+    /*
+      * localStorage
+
+      1 localStorage.setItem(key, value)
+      2 localStorage.getItem(key)
+      3 localStorgage.removeItem(key)
+    */
+
+    // when page is loaded
+    var isDarkMode = localStorage.getItem('darkTheme');
 
     if (isDarkMode) {
       document.body.classList.add('dark-mode');
       checkbox.checked = true;
     }
 
-    // Change theme
+    // when check state change
     checkbox.addEventListener('change', (e) => {
       var checked = e.target.checked;
       
       if (checked) {
         document.body.classList.add('dark-mode');
-        localStorage.setItem('darkedAt', new Date().toLocaleString());
+        localStorage.setItem('darkTheme', true);
       } else {
         document.body.classList.remove('dark-mode');
-        localStorage.removeItem('darkedAt');
+        localStorage.removeItem('darkTheme');
       }
     })
-
   </script>
 
 </body>
