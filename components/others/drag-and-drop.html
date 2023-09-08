@@ -16,14 +16,21 @@
       padding: 4rem;
       text-align: center;
     }
+    
+    .hidden {
+      display: none;
+    }
   </style>
 
   <div id="drop-zone">
     <p>Drag one or more files to this <i>drop zone</i>.</p>
   </div>
 
+  <p id="done" class="hidden">Submitted</p>
+
   <script>
     var dropZone = document.getElementById('drop-zone');
+    var done = document.getElementById("done");
 
     dropZone.addEventListener('dragover', dragOverHandler);
     dropZone.addEventListener('drop', dropHandler);
@@ -31,8 +38,17 @@
     function dropHandler(e) {
       // prevent file from opening
       e.preventDefault();
-    
+
       console.log('File(s) dropped');
+
+      /*
+        * FileList
+
+        - This interface was an attempt to create an unmodifiable list
+        - only continues to be supported to not break code that is already using it.
+        - Modern APIs use types that wrap around ES array types instead
+        - treat them like ES arrays
+      */
 
       // transform FileList to Array
       var files = Array.from(e.dataTransfer.files);
@@ -40,7 +56,8 @@
       // AJAX requests..
       console.log("Submitted files:", files);
 
-      alert("Submitted!");
+      dropZone.classList.add("hidden");
+      done.classList.remove("hidden");
     }
     
     function dragOverHandler(e) {
@@ -49,15 +66,6 @@
 
       console.log('dragging over');
     }
-
-    /*
-      * FileList
-
-      - This interface was an attempt to create an unmodifiable list
-      - only continues to be supported to not break code that is already using it.
-      - Modern APIs use types that wrap around ES array types instead
-      - treat them like ES arrays
-    */
   </script>
 
 </body>

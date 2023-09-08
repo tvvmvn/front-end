@@ -10,19 +10,11 @@
 
   <style>
     .el {
-      animation-name: born;
-      animation-duration: 1s;
-      animation-timing-function: linear;
-      animation-iteration-count: 1;
-      animation-play-state: paused;
+      transition: opacity 0.5s;
     }
 
-    @keyframes born {
-      from {
-        opacity: 0;
-      } to {
-        opacity: 1;
-      }
+    .opacity-0 {
+      opacity: 0
     }
   </style>
 
@@ -44,19 +36,19 @@
     sequi molestias debitis accusantium quos. 
     Quia perspiciatis necessitatibus quo nostrum ex vero.
   </h1>
-  <h1 class="el">
+  <h1 class="el opacity-0">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Corporis aliquam harum id animi! Ipsa nihil quae tenetur omnis, 
     sequi molestias debitis accusantium quos. 
     Quia perspiciatis necessitatibus quo nostrum ex vero.
   </h1>
-  <h1 class="el">
+  <h1 class="el opacity-0">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Corporis aliquam harum id animi! Ipsa nihil quae tenetur omnis, 
     sequi molestias debitis accusantium quos. 
     Quia perspiciatis necessitatibus quo nostrum ex vero.
   </h1>
-  <h1 class="el">
+  <h1 class="el opacity-0">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Corporis aliquam harum id animi! Ipsa nihil quae tenetur omnis, 
     sequi molestias debitis accusantium quos. 
@@ -67,6 +59,7 @@
     var els = document.getElementsByClassName('el');
 
     window.addEventListener('scroll', function (e) {
+      // viewport height
       var vh = window.innerHeight; 
       
       for (var i=0; i<els.length; i++) {
@@ -75,7 +68,7 @@
         
         // enter enough inside view port.
         if (y < vh * 0.9) {
-          els[i].style.animationPlayState = "running";
+          els[i].classList.remove("opacity-0")
         }
       }
     })
