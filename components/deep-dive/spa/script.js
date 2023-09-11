@@ -1,37 +1,67 @@
-// using link
-window.addEventListener('hashchange', (e) => {
-  router();
-})
+/*
+  1 Router
+  Connect request url with proper resource.
 
-// load event
-window.addEventListener('load', (e) => {
-  router();
-})
+  2 URL (Uniform Resource Locator)
+  Website/server address
+  
+  e.g) https://google.com/news/sports/?page=1
+  
+  1) Path
+  resource path
 
-// router
+  e.g) https://google.com/news/sports
+  
+  2) Query parameter
+  used to send small data inside url.
+  path?key=value
+
+  e.g) ?page=1
+  
+  3) Location hash
+  used to find specific spot in web page.
+
+  url#value
+
+  e.g) https://google.com/news/sports/?page=1#lastArticle
+*/
+
+// load 
+document.addEventListener("DOMContentLoaded", router);
+// on link
+window.addEventListener("hashchange", router);
+
+// Hash router
 function router() {
   var url = location.hash.substring(1);
-  var hasQuery = url.indexOf("?") > 0;
-  var query;
+  var path, query;
 
-  if (hasQuery) {
-    query = url.substring(url.indexOf("?"));
-    url = url.substring(url.indexOf("?"), -1);
+  console.log("URL:", url);
+
+  // url has query
+  if (url.indexOf("?") > -1) {
+    // substring(startIndex, endIndex)
+    path = url.substring(url.indexOf("?"), -1);
+    query = url.substring(url.indexOf("?"));    
+  } else { // url has no query
+    path = url;
+    query = null;
   }
 
+  console.log("path:", path);
+  console.log("query:", query);
+  
   var routes = [
-    { path: 'home', element: Home },
-    { path: 'posts', element: Posts },
-    { path: 'post', element: Post },
-    { path: 'contact', element: Contact },
+    { path: "", element: Home },
+    { path: "posts", element: Posts },
+    { path: "post", element: Post },
+    { path: "contact", element: Contact },
   ]
   
   for (var i=0; i<routes.length; i++) {
-    var path = routes[i].path;
-
-    if (path === url) {
+    if (routes[i].path === path) {
       document
-        .getElementById("root")
+        .getElementById("main")
         .innerHTML = routes[i].element(query);
     }
   }    

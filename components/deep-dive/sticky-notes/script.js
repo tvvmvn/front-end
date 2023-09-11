@@ -1,40 +1,38 @@
 /*
   Sticky Notes
 
-  1 Create view 
-  2 Add storage
+  1 Seed data
+  2 Create view 
 */
+
+// seedData();
 
 var container = document.getElementById("container");
 var addBtn = document.getElementById("add-btn");
 var notes = [];
 
-// Synchronize localStorage
-function saveDoc(notes) {
-  localStorage.setItem("noteStorage", JSON.stringify(notes));
-}
+document.addEventListener("DOMContentLoaded", getNotes);
+addBtn.addEventListener("click", addNote);
 
 // Get all notes
-window.addEventListener("DOMContentLoaded", function () {  
-  var docs = JSON.parse(localStorage.getItem("noteStorage") || "[]");
+function getNotes() {
+  notes = getData();
 
-  notes = docs;
-
-  for (var i=0; i<notes.length; i++) {
+  for (var i = 0; i < notes.length; i++) {
     createNoteElement(notes[i].id, notes[i].content);
   }
-});
+}
 
 // Add new note
-addBtn.addEventListener("click", function () {
+function addNote() {
   var newNote = { id: "n" + Date.now(), content: "" };
   
   notes.push(newNote);
   
-  saveDoc(notes);
+  saveData(notes);
   
   createNoteElement(newNote.id, newNote.content);
-});
+}
 
 // Edit note
 function editNote(id, content) {
@@ -44,20 +42,31 @@ function editNote(id, content) {
     }
   }
 
-  saveDoc(notes);
+  saveData(notes);
 }
 
 // Delete note
 function deleteNote(id, noteElement) {
   for (var i=0; i<notes.length; i++) {
     if (notes[i].id === id) {
+      // Array.splice(index, count)
       notes.splice(i, 1);
     }
   }
 
-  saveDoc(notes);
+  saveData(notes);
 
   noteElement.remove();
+}
+
+// Get data from localStorage
+function getData() {
+  return JSON.parse(localStorage.getItem("noteStorage"));
+}
+
+// Synchronize localStorage
+function saveData(notes) {
+  localStorage.setItem("noteStorage", JSON.stringify(notes));
 }
 
 // Render 
@@ -66,13 +75,20 @@ function createNoteElement(id, content) {
 
   noteElement.value = content;
 
-  noteElement.addEventListener("keyup", function (e) {
-    editNote(id, e.target.value)
+  noteElement.addEventListener("change", function () {
+    editNote(id, this.value);
   });
 
-  noteElement.addEventListener("dblclick", function (e) {
-    deleteNote(id, e.target)
+  noteElement.addEventListener("dblclick", function () {
+    deleteNote(id, this);
   });
 
   container.prepend(noteElement);
+}
+
+// Seed data
+function seedData() {
+  var seed = [{ id: "n0", content: "My first memo!" }];
+
+  saveData(seed);
 }

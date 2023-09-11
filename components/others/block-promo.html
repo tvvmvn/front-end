@@ -42,11 +42,11 @@
       promotion.remove()
     }
 
-    closeBtn.addEventListener('click', () => {
+    closeBtn.addEventListener('click', function () {
       promotion.remove()
     })
 
-    blockBtn.addEventListener('click', () => {
+    blockBtn.addEventListener('click', function () {
       promotion.remove()
       localStorage.setItem('blockedAt', new Date());
     })
