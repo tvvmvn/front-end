@@ -1,7 +1,9 @@
 /*
-  1 Router
-  Connect request url with proper resource.
+  1 SPA (Single Page Application)
+  Update page using JavaScript.
+  It provides fast and smooth UI
 
+  
   2 URL (Uniform Resource Locator)
   Website/server address
   
@@ -24,6 +26,10 @@
   url#value
 
   e.g) https://google.com/news/sports/?page=1#lastArticle
+
+
+  3 Router
+  Connect request url with proper resource.
 */
 
 // load 
