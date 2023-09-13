@@ -3,7 +3,7 @@
   Update page using JavaScript.
   It provides fast and smooth UI
 
-  
+
   2 URL (Uniform Resource Locator)
   Website/server address
   
