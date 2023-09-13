@@ -1,50 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
-  
-<style>
+
+  <style>
     body {
       height: 100vh;
-      background-color: pink;
+      background-color: #700;
       display: flex;
       justify-content: center;
       align-items: center;
     }
+
     h1 {
       color: #fff;
     }
+
     .item {
       color: #fff;
       position: fixed;
       top: -4rem;
       animation: shake 8s infinite ease, fall 8s infinite linear;
     }
+
     .item:nth-child(1) {
       font-size: 2rem;
       left: 10%;
       animation-delay: 0s;
     }
+
     .item:nth-child(2) {
       font-size: 3rem;
       left: 30%;
       animation-delay: 6s;
     }
+
     .item:nth-child(3) {
       font-size: 2rem;
       left: 50%;
       animation-delay: 3s;
     }
+
     .item:nth-child(4) {
       font-size: 4rem;
       left: 70%;
       animation-delay: 7s;
     }
+
     .item:nth-child(5) {
       font-size: 3rem;
       left: 90%;
@@ -52,18 +61,39 @@
     }
 
     @keyframes fall {
-      from {top: 0} to {top: 100%}
+      from {
+        top: -10vh;
+      }
+
+      to {
+        top: 100vh;
+      }
     }
+
     @keyframes shake {
-      0% {transform: translateX(0px)} 
-      25% {transform: translateX(-50px)}
-      50% {transform: translateX(50px)}
-      75% {transform: translateX(-50px)}
-      100% {transform: translateX(50px)}
+      0% {
+        transform: translateX(0px)
+      }
+
+      25% {
+        transform: translateX(-50px)
+      }
+
+      50% {
+        transform: translateX(50px)
+      }
+
+      75% {
+        transform: translateX(-50px)
+      }
+
+      100% {
+        transform: translateX(50px)
+      }
     }
   </style>
 
-  <h1>Spring</h1>
+  <h1>Merry Christmas</h1>
 
   <div class="container">
     <div class="item">&#10052;</div>
@@ -74,4 +104,5 @@
   </div>
 
 </body>
+
 </html>

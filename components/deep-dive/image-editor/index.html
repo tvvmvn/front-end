@@ -52,10 +52,15 @@
       background-color: #333;
       overflow: auto;
     }
+    
+    main::-webkit-scrollbar {
+      display: none;
+    }
   </style>
 
   <nav>
-    <h1>JS Image Editor</h1>
+    <h1>JS Image Editor &#127912;</h1>
+    
     <div class="filter-group">
       <label for="brightness">Brigtness</label>
       <input 
@@ -66,7 +71,7 @@
         value="100"
         oninput="setFilter(this)"
       >
-      <p id="brightness" class="filter-value">100</p>
+      <p class="filter-value">100</p>
     </div>
   
     <div class="filter-group">
@@ -79,7 +84,7 @@
         value="100"
         oninput="setFilter(this)"
       >
-      <p id="saturate" class="filter-value">100</p>
+      <p class="filter-value">100</p>
     </div>
   
     <div class="filter-group">
@@ -92,7 +97,7 @@
         value="0"
         oninput="setFilter(this)"
       >
-      <p id="invert" class="filter-value">0</p>
+      <p class="filter-value">0</p>
     </div>
     
     <div class="filter-group">
@@ -105,7 +110,7 @@
         value="0"
         oninput="setFilter(this)"
       >
-      <p id="blur" class="filter-value">0</p>
+      <p class="filter-value">0</p>
     </div>
   </nav>
 

@@ -45,7 +45,7 @@ function setFilter(element) {
   
   render();
 
-  document.getElementById(name).textContent = value;
+  element.nextElementSibling.textContent = value;
 }
 
 function render() {
