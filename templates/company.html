@@ -57,7 +57,7 @@
   </nav>
 
   <!-- OVERLAY -->
-  <div id="overlay" class="fixed inset-0 bg-black/80 z-20 hidden"></div>
+  <div id="navOverlay" class="fixed inset-0 bg-black/80 z-20 hidden"></div>
 
   <!-- MAIN -->
   <main class="mt-24 max-w-screen-lg mx-auto px-4 lg:ml-80">
@@ -113,13 +113,8 @@
     </div>
 
     <!-- MODAL IMAGE -->
-    <div id="modal" class="fixed inset-0 bg-black/80 z-40 hidden">
-      <img 
-        id="modalImage"
-        class="block max-w-screen-sm mt-24 mx-auto" 
-        src="" 
-        alt=""
-      >
+    <div id="modalOverlay" class="fixed inset-0 bg-black/80 z-40 hidden">
+      <img id="modal" class="block w-3/4 mt-24 mx-auto" src="" alt="">
     </div>
 
     <!-- SERVICES -->
@@ -274,7 +269,8 @@
           <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
         </svg>
         <p class="mt-4 text-center">
-          Gyeongwon-Daero, Bupyeong-gu <br>
+          Gyeongwon-Daero <br>
+          Bupyeong-gu <br>
           Incheon, KR
         </p>
       </div>
@@ -295,34 +291,32 @@
   <!-- FOOTER -->
   <footer class="mt-24 p-12 bg-gray-200">
     <p class="text-right">
-      Powered by <a href="#" class="underline">Me</a>
+      Powered by <a href="#" class="underline">Company</a>
     </p>
   </footer>
 
   <script>
-    // NAV BAR
-    openBtn.addEventListener('click', () => {
+    // NavBar
+    openBtn.addEventListener('click', function () {
       sideBar.classList.remove('hidden');
-      overlay.classList.remove('hidden');
+      navOverlay.classList.remove('hidden');
     })
 
-    overlay.addEventListener('click', () => {
+    navOverlay.addEventListener('click', function () {
+      this.classList.add('hidden');
       sideBar.classList.add('hidden');
-      overlay.classList.add('hidden');
     })
 
-    // MODAL
-    function openModal(el) {
-      modalImage.src = el.src;
-      modal.classList.remove('hidden')
+    // Modal Image
+    function openModal(img) {
+      modal.src = img.src;
+      modal.alt = img.alt;
+      modalOverlay.classList.remove('hidden');
     }
 
-    modal.addEventListener('click', () => {
-      modal.classList.add('hidden')
+    modalOverlay.addEventListener('click', function () {
+      this.classList.add('hidden');
     })
-
-    // Form AJAX 
-    // ..
   </script>
 </body>
 

@@ -18,7 +18,7 @@
   </style>
 </head>
 
-<body class="bg-stone-200">
+<body class="bg-gray-100">
   <!-- NAVBAR -->
   <nav class="sticky top-0 p-2 w-full z-10 bg-black">
     <ul class="flex">
@@ -47,7 +47,7 @@
         </span>
       </h1>
     </div>
-    <div class="mt-4 px-4 flex justify-between">
+    <div class="px-8 flex justify-between">
       <span class="bg-black text-sm text-white px-2 invisible md:visible">Open from 6am to 5pm</span>
       <span class="text-sm text-white">15 Adr street, 5015</span>
     </div>
@@ -100,83 +100,61 @@
       </h1>
     </div>
 
-    <div class="border bg-white shadow-lg flex flex-wrap px-4 py-2">
+    <div class="border bg-white shadow-lg flex flex-wrap p-4">
       <input type="radio" class="hidden peer/eat" name="menu" id="eat" checked>
-      <label for="eat"
-        class="w-1/2 text-lg text-center font-semibold cursor-pointer peer-checked/eat:bg-neutral-400 peer-checked/eat:text-white">
+      <label for="eat" class="w-1/2 text-lg text-center font-semibold cursor-pointer peer-checked/eat:bg-gray-400 peer-checked/eat:text-white">
         Eat
       </label>
 
       <input type="radio" class="hidden peer/drink" name="menu" id="drink">
-      <label for="drink"
-        class="w-1/2 text-lg text-center font-semibold cursor-pointer peer-checked/drink:bg-neutral-400 peer-checked/drink:text-white">
+      <label for="drink" class="w-1/2 text-lg text-center font-semibold cursor-pointer peer-checked/drink:bg-gray-400 peer-checked/drink:text-white">
         Drink
       </label>
 
       <!-- MENU: Eat -->
-      <div class="py-4 w-full hidden peer-checked/eat:block">
-        <div class="py-4">
-          <h3 class="my-4 text-xl font-semibold">Bread Basket</h3>
-          <p class="my-4 text-lg text-gray-500">Assortment of fresh baked fruit breads and muffins 5.50</p>
-        </div>
-        <div class="py-4">
-          <h3 class="my-4 text-xl font-semibold">Honey Almond Granola with Fruits</h3>
-          <p class="my-4 text-lg text-gray-500">
-            Natural cereal of honey toasted oats, raisins, almonds and dates 7.00
-          </p>
-        </div>
-        <div class="py-4">
-          <h3 class="my-4 text-xl font-semibold">Belgian Waffle</h3>
-          <p class="my-4 text-lg text-gray-500">
-            Vanilla flavored batter with malted flour 7.50
-          </p>
-        </div>
-        <div class="py-4">
-          <h3 class="my-4 text-xl font-semibold">Scrambled eggs</h3>
-          <p class="my-4 text-lg text-gray-500">
-            Scrambled eggs, roasted red pepper and garlic, with green onions 7.50
-          </p>
-        </div>
-        <div class="py-4">
-          <h3 class="my-4 text-xl font-semibold">Blueberry Pancakes</h3>
-          <p class="my-4 text-lg text-gray-500">
-            With syrup, butter and lots of berries 8.50
-          </p>
-        </div>
+      <div class="mt-4 w-full hidden peer-checked/eat:block">
+        <h3 class="my-4 text-xl font-semibold">Bread Basket</h3>
+        <p class="my-4 text-lg text-gray-500">Assortment of fresh baked fruit breads and muffins 5.50</p>
+        <h3 class="my-4 text-xl font-semibold">Honey Almond Granola with Fruits</h3>
+        <p class="my-4 text-lg text-gray-500">
+          Natural cereal of honey toasted oats, raisins, almonds and dates 7.00
+        </p>
+        <h3 class="my-4 text-xl font-semibold">Belgian Waffle</h3>
+        <p class="my-4 text-lg text-gray-500">
+          Vanilla flavored batter with malted flour 7.50
+        </p>
+        <h3 class="my-4 text-xl font-semibold">Scrambled eggs</h3>
+        <p class="my-4 text-lg text-gray-500">
+          Scrambled eggs, roasted red pepper and garlic, with green onions 7.50
+        </p>
+        <h3 class="my-4 text-xl font-semibold">Blueberry Pancakes</h3>
+        <p class="my-4 text-lg text-gray-500">
+          With syrup, butter and lots of berries 8.50
+        </p>
       </div>
 
       <!-- MENU: Drink -->
-      <div class="py-4 w-full hidden peer-checked/drink:block">
-        <div class="py-4">
-          <h3 class="text-xl font-semibold my-4">Coffee</h3>
-          <p class="mt-4 text-lg text-gray-500 my-4">
-            Regular coffee 2.50
-          </p>
-        </div>
-        <div class="py-4">
-          <h3 class="text-xl font-semibold my-4">Chocolato</h3>
-          <p class="my-4 text-lg text-gray-500">
-            Chocolate espresso with milk 4.50
-          </p>
-        </div>
-        <div class="py-4">
-          <h3 class="my-4 text-xl font-semibold">Corretto</h3>
-          <p class="my-4 text-lg text-gray-500">
-            Whiskey and coffee 5.00
-          </p>
-        </div>
-        <div class="py-4">
-          <h3 class="my-4 text-xl font-semibold">Iced tea</h3>
-          <p class="my-4 text-lg text-gray-500">
-            Hot tea, except not hot 3.00
-          </p>
-        </div>
-        <div class="py-4">
-          <h3 class="my-4 text-xl font-semibold">Soda</h3>
-          <p class="my-4 text-lg text-gray-500">
-            Coke, Sprite, Fanta, etc. 2.50
-          </p>
-        </div>
+      <div class="mt-4 w-full hidden peer-checked/drink:block">
+        <h3 class="text-xl font-semibold my-4">Coffee</h3>
+        <p class="mt-4 text-lg text-gray-500 my-4">
+          Regular coffee 2.50
+        </p>
+        <h3 class="text-xl font-semibold my-4">Chocolato</h3>
+        <p class="my-4 text-lg text-gray-500">
+          Chocolate espresso with milk 4.50
+        </p>
+        <h3 class="my-4 text-xl font-semibold">Corretto</h3>
+        <p class="my-4 text-lg text-gray-500">
+          Whiskey and coffee 5.00
+        </p>
+        <h3 class="my-4 text-xl font-semibold">Iced tea</h3>
+        <p class="my-4 text-lg text-gray-500">
+          Hot tea, except not hot 3.00
+        </p>
+        <h3 class="my-4 text-xl font-semibold">Soda</h3>
+        <p class="my-4 text-lg text-gray-500">
+          Coke, Sprite, Fanta, etc. 2.50
+        </p>
       </div>
     </div>
 
@@ -219,7 +197,7 @@
         <input type="text" class="border text-lg px-2 py-4 w-full" placeholder="Message / Special requirements" required>
       </div>
 
-      <button class="bg-black text-lg text-white px-4 py-2 hover:bg-gray-400 hover:text-black">
+      <button class="text-lg text-white px-4 py-2 bg-gray-600 hover:bg-gray-700">
         SEND MESSAGE
       </button>
     </form>
@@ -240,7 +218,7 @@
 <script>
   contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    
+
     this.classList.add("hidden");
     done.classList.remove("hidden");
   })
