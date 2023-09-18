@@ -41,9 +41,9 @@
     var input = document.getElementById('input');
     var message = document.getElementById("message");
     
-    input.addEventListener('keyup', function (e) {
+    input.addEventListener('keyup', function () {
       try {
-        var password = e.target.value;
+        var password = this.value;
 
         console.log(password);
 

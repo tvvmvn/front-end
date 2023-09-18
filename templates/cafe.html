@@ -5,8 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <!-- title -->
+  <title>the Cafe</title>
+  <!-- tailwind cdn -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- font api -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
   <style>
     body {
@@ -15,9 +18,7 @@
   </style>
 </head>
 
-<body class="bg-neutral-200">
-
-
+<body class="bg-stone-200">
   <!-- NAVBAR -->
   <nav class="sticky top-0 p-2 w-full z-10 bg-black">
     <ul class="flex">
@@ -36,10 +37,8 @@
     </ul>
   </nav>
 
-
   <!-- MAIN IMAGE -->
-  <div
-    class="h-[500px] bg-[url('https://www.w3schools.com/w3images/coffeehouse.jpg')] bg-cover bg-center grayscale-[50%]">
+  <div class="h-[500px] bg-[url('https://www.w3schools.com/w3images/coffeehouse.jpg')] bg-cover bg-center grayscale-[50%]">
     <div class="h-[450px] flex flex-col justify-center">
       <h1 class="text-8xl text-center text-white">
         the <br>
@@ -54,8 +53,8 @@
     </div>
   </div>
 
-
-  <main class="max-w-2xl mx-auto px-4">
+  <!-- MAIN -->
+  <main class="max-w-screen-sm mx-auto px-4">
     <!-- ABOUT -->
     <div id="about" class="py-16">
       <h1 class="text-2xl text-center tracking-widest">
@@ -93,7 +92,6 @@
     <p class="my-4 text-lg">
       <span class="font-semibold">Address:</span> 15 Adr street, 5015, NY
     </p>
-
 
     <!-- MENU -->
     <div id="menu" class="py-16">
@@ -184,7 +182,6 @@
 
     <img class="mt-8 grayscale-[80%]" src="https://www.w3schools.com/w3images/coffeehouse2.jpg" alt="">
 
-
     <!-- WHERE -->
     <div id="where" class="py-16">
       <h1 class="text-2xl text-center tracking-widest">
@@ -205,38 +202,32 @@
       satisfy the biggerst criteria of them all, both look and taste.
     </p>
 
-
-    <form action="" class="">
+    <form action="" id="contactForm" class="">
       <p class="my-4 text-lg">
         Reserve a table, ask for today's special or just send us a message:
       </p>
       <div class="mb-4">
-        <label>
-          <input type="text" class="border text-lg px-2 py-4 w-full" placeholder="Name">
-        </label>
+        <input type="text" class="border text-lg px-2 py-4 w-full" placeholder="Name" required>
       </div>
       <div class="mb-4">
-        <label>
-          <input type="number" class="border text-lg px-2 py-4 w-full" placeholder="How many people">
-        </label>
+        <input type="number" class="border text-lg px-2 py-4 w-full" placeholder="How many people" required>
       </div>
       <div class="mb-4">
-        <label>
-          <input type="date" class="border text-lg px-2 py-4 w-full" value="2023-01-16">
-        </label>
+        <input type="date" class="border text-lg px-2 py-4 w-full" value="2023-01-16" required>
       </div>
       <div class="mb-4">
-        <label>
-          <input type="text" class="border text-lg px-2 py-4 w-full" placeholder="Message \ Special requirements">
-        </label>
+        <input type="text" class="border text-lg px-2 py-4 w-full" placeholder="Message / Special requirements" required>
       </div>
 
       <button class="bg-black text-lg text-white px-4 py-2 hover:bg-gray-400 hover:text-black">
         SEND MESSAGE
       </button>
     </form>
-  </main>
 
+    <p id="done" class="text-lg text-center p-8 hidden">
+      Thank you and we'll contact with you soon!
+    </p>
+  </main>
 
   <!-- FOOTER -->
   <footer class="mt-16 bg-gray-200 py-16">
@@ -245,5 +236,14 @@
     </p>
   </footer>
 </body>
+
+<script>
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    
+    this.classList.add("hidden");
+    done.classList.remove("hidden");
+  })
+</script>
 
 </html>

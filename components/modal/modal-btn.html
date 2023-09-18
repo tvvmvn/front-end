@@ -55,7 +55,7 @@
     var btn = document.getElementById('btn');
 
     // open button click 
-    btn.addEventListener('click', function (e) {
+    btn.addEventListener('click', function () {
       overlay.classList.remove('hidden');
     })
 
@@ -63,7 +63,7 @@
     overlay.addEventListener('click', function (e) {
       console.log(e.target);
 
-      if (e.target === overlay) {
+      if (e.target === this) {
         overlay.classList.add('hidden');
       }
     })

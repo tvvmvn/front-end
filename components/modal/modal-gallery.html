@@ -71,9 +71,9 @@
     // executed on load
     for (var i=0; i<thumbnails.length; i++) { 
       // each thumbnail click
-      thumbnails[i].addEventListener('click', function (e) {
+      thumbnails[i].addEventListener('click', function () {
         overlay.classList.remove("hidden");
-        modal.src = e.target.src;
+        modal.src = this.src;
       })
     }
 
@@ -81,7 +81,7 @@
     overlay.addEventListener("click", function (e) {  
       console.log(e.target);
           
-      if (e.target === overlay) {
+      if (e.target === this) {
         overlay.classList.add("hidden");
       }
     })

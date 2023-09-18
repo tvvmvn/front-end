@@ -50,8 +50,8 @@
     }
 
     // when check state change
-    checkbox.addEventListener('change', function (e) {
-      var checked = e.target.checked;
+    checkbox.addEventListener('change', function () {
+      var checked = this.checked;
       
       if (checked) {
         document.body.classList.add('dark-mode');

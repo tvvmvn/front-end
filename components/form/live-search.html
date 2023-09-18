@@ -49,8 +49,8 @@
     var input = document.getElementById('input');
     var items = document.getElementsByClassName('item');
 
-    input.addEventListener('keyup', function (e) {
-      var q = e.target.value.toLowerCase();
+    input.addEventListener('keyup', function () {
+      var q = this.value.toLowerCase();
 
       // q
       console.log("q:", q);
