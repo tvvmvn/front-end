@@ -24,6 +24,12 @@ f()
 // > foo
 
 
+// or
+var f = function () {
+  console.log("foo")
+}
+
+
 /* 
   2 Hoisting (게양)
 

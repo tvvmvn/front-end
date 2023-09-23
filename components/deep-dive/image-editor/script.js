@@ -6,19 +6,18 @@ var UNIT = {
   invert: "%",
   blur: "px",
 }
-var imgElement = new Image();
 var filter = {};
+var imgElement = new Image();
 
-document.addEventListener("DOMContentLoaded", getImage);
 
-function getImage() {
-  imgElement.src = "../../../img/homies.jpg";
-  
+imgElement.src = "../../../img/homies.jpg";
+
+imgElement.addEventListener("load", function () {  
   canvas.width = imgElement.naturalWidth;
   canvas.height = imgElement.naturalHeight;
-
+  
   render();
-}
+});
 
 function setFilter(element) {
   // element
