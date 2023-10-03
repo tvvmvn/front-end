@@ -16,7 +16,7 @@
       display: inline-block;
     }
     
-    .dropdown-btn {
+    .btn {
       border: none;
       background-color: #333;
       color: #fff;
@@ -26,7 +26,7 @@
       font-weight: 600;
     }
     
-    .dropdown-content {
+    .content {
       padding: 0;
       margin: 0;
       list-style: none;
@@ -37,44 +37,38 @@
       /* floating */
       position: absolute;
     }
-    
-    a {
+
+    .container:hover .content {
       display: block;
-      padding: 0.5rem;
-      color: #000;
     }
     
-    .container:hover ul {
+    .link {
       display: block;
+      color: #000;
+      padding: 0.5rem;
     }
 
-    a:hover {
+    .link:hover {
       background-color: #eee;
     }
   </style>
 
   <div class="container">
-    <button class="dropdown-btn">Dropdown</button>
-    <ul class="dropdown-content">
+    <button class="btn">Dropdown</button>
+    <ul class="content">
       <li>
-        <a href="#">list item</a>
+        <a href="#" class="link">Link</a>
       </li>
       <li>
-        <a href="#">list item</a>
+        <a href="#" class="link">Link</a>
       </li>
       <li>
-        <a href="#">list item</a>
+        <a href="#" class="link">Link</a>
       </li>
     </ul>
   </div>
 
-  <p>
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-    Iure ullam ipsa vero doloremque impedit, veritatis aliquid
-    repudiandae, dolorum non nostrum facilis maxime, 
-    eligendi suscipit quaerat at voluptates ipsum! 
-    Dicta, eos.
-  </p>
+  <p>...</p>
 
 </body>
 </html>

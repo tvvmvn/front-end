@@ -9,6 +9,7 @@
 <body>
 
 <h1>grid template columns</h1>
+<p>column count</p>
 
 <style>
   .container {
@@ -25,6 +26,10 @@
   }
 
   .grid-cols-3 {
+    /* 
+    repeat(count, minmax(0, 1fr))
+    - grid has fixed column width.
+    */
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 

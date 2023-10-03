@@ -11,47 +11,45 @@
   <h1>Toggle Switch</h1>
 
   <style>
-    label {
-      display: block; 
-      background-color: #ddd;
+    .switch {
+      display: inline-block; 
       width: 56px;
       height: 32px;
+      background-color: #ddd;
       position: relative;
       cursor: pointer;
       transition: background-color 0.5s;
       border-radius: 16px;
     }
     
-    .ball {
+    .btn {
       width: 24px;
       height: 24px;
       background-color: #fff;
-      transition: transform 0.5s;
       position: absolute;
       top: 4px;
       left: 4px;
       border-radius: 12px;
+      transition: transform 0.5s;
     }
 
-    input[type=checkbox] {
+    #checkbox {
       display: none;
     }
 
-    input:checked + label {
+    #checkbox:checked + .switch {
       background-color: #333;
     }
 
-    input:checked + label .ball {
+    #checkbox:checked + .switch .btn {
       transform: translateX(24px);
     }
   </style>
 
-  <div class="container">
-    <input type="checkbox" name="" id="option">
-    <label for="option">
-      <div class="ball"></div>
-    </label>
-  </div>
+  <input type="checkbox" name="" id="checkbox">
+  <label for="checkbox" class="switch">
+    <div class="btn"></div>
+  </label>
   
 </body>
 </html>

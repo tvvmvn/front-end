@@ -3,33 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lab for Front-End</title>
+  <title>Document</title>
 </head>
 <body>
 
-  <!-- <style>
-    .item {
-      border: 1px dashed;
-      max-width: 700px;
+  <style>
+    .btn {
+      display: inline-block;
+      padding: 0.5rem;
+    }
+
+    .option {
+      display: none;
+    }
+
+    .option:checked + .hot {
+      background-color: #f00;
+      color: #fff;
+    }
+
+    .option:checked + .iced {
+      background-color: #00f;
+      color: #fff;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
 
-  <div class="item">hello</div>
+  <h1>Tab button</h1>
 
-  <div class="item">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-  </div> -->
+  <p>Cafe Americano</p>
+  <p class="hidden">Ice Cafe Americano</p>
 
+  <input type="radio" name="menu" id="hot" class="option" checked>
+  <label for="hot" class="btn hot">
+    HOT
+  </label>
 
-  <!-- <style>
-    img {
-      max-width: 700px;
-      width: 100%;
-      display: block;
-    }
-  </style>
+  <input type="radio" name="menu" id="iced" class="option">
+  <label for="iced" class="btn iced">
+    ICED
+  </label>
 
-  <img src="https://www.w3schools.com/w3images/livingroom2.jpg" alt=""> -->
-  
 </body>
 </html>
