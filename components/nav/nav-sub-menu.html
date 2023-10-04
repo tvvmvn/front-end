@@ -38,7 +38,7 @@
       background-color: #222;
     }
 
-    .dropdown-btn {
+    .drop-btn {
       font-size: 1rem;
       background-color: transparent;
       border: none;
@@ -47,16 +47,16 @@
       padding: 0.75rem;
     }
 
-    .dropdown-btn:hover {
+    .drop-btn:hover {
       background-color: #222;
     }
 
-    .dropdown-content {
+    .drop-content {
       width: 200px;
       background-color: #fff;
       border: 1px solid #ddd;
       position: absolute;
-      /* display: none; */
+      display: none;
     }
     
     .drop-link {
@@ -73,7 +73,7 @@
       margin-top: 4rem;
     }
 
-    .dropdown-container:hover .dropdown-content {
+    .drop-container:hover .drop-content {
       display: block;
     }
   </style>
@@ -87,9 +87,9 @@
         <a href="#" class="menu-link">Link</a>
       </li>
       <li>
-        <div class="dropdown-container">
-          <button class="dropdown-btn">Dropdown</button>
-          <ul class="dropdown-content">
+        <div class="drop-container">
+          <button class="drop-btn">Dropdown</button>
+          <ul class="drop-content">
             <li>
               <a href="#" class="drop-link">Link</a>
             </li>

@@ -15,7 +15,8 @@
       width: 100vw;
       height: 3rem;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      align-items: center;
       background-color: #ddd;
     }
 
@@ -24,30 +25,20 @@
     }
 
     .btn {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
       font-size: 2rem;
       padding: 0 0.75rem;
       background-color: transparent;
       border: none;
     }
-
-    .left {
-      display: flex;
-      align-items: center;
-    }
-
-    .right {
-      display: flex;
-      align-items: center;
-      margin-right: 1rem;
-    }
   </style>
 
   <header>
-    <div class="left">
-      <button class="btn">&#9776;</button>
-      <h3 class="logo">LOGO</h3>
-    </div>
-    <div class="right">Accounts</div>
+    <button class="btn">&#9776;</button>
+    <h3 class="logo">COMPANY NAME</h3>
   </header>
 
 </body>
