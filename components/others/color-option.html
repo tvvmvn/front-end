@@ -8,7 +8,7 @@
 <body>
 
   <style>
-    input[type=radio] {
+    .option {
       display: none;
     }
 
@@ -21,7 +21,7 @@
       border-radius: 99px;
     }
     
-    input[type=radio]:checked + label {
+    .option:checked + label {
       outline: 4px solid #ddd;
     }
     
@@ -41,13 +41,13 @@
   <h1>Color options</h1>
 
   <div class="container">
-    <input type="radio" name="color" id="white" checked>
+    <input type="radio" name="color" id="white" class="option" checked>
     <label for="white" class="white"></label>
   
-    <input type="radio" name="color" id="gray">
+    <input type="radio" name="color" id="gray" class="option">
     <label for="gray" class="gray"></label>
   
-    <input type="radio" name="color" id="black">
+    <input type="radio" name="color" id="black" class="option">
     <label for="black" class="black"></label>
   </div>
   

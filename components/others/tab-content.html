@@ -17,36 +17,37 @@
       flex-wrap: wrap;
     }
 
-    /* radio */
-    input[type=radio] {
-      display: none;
-    }
-
-    /* label */
     label {
-      padding: 0.25rem;
-      /* font-weight: 600; */
+      padding: 0.5rem;
+      font-weight: 600;
     }
     
-    input[type=radio]:checked + label {
-      border-bottom: 2px solid #0bf;
-      color: #0bf;
-    }
-    
-    /* content */
-    .content {
+    .option {
       display: none;
+    }
+    
+    .option:checked + label {
+      background-color: #0bf;
+      color: #fff;
+      border: none;
+    }
+    
+    .content {
       flex-basis: 100%;
       order: 9;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      margin: 0;
+      display: none;
     }
 
-    input[type=radio]:checked + label + .content {
+    .option:checked + label + .content {
       display: block;
     }
   </style>
 
   <div class="container">
-    <input type="radio" name="beer" id="tab1" checked>
+    <input type="radio" name="beer" id="tab1" class="option" checked>
     <label for="tab1">Guinness</label>
     <p class="content">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
@@ -55,7 +56,7 @@
       vero aliquid incidunt amet, nesciunt aspernatur.
     </p>
 
-    <input type="radio" name="beer" id="tab2">
+    <input type="radio" name="beer" id="tab2" class="option">
     <label for="tab2">Heineken</label>
     <p class="content">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -64,7 +65,7 @@
       praesentium molestias accusamus ipsam! Blanditiis.
     </p>
 
-    <input type="radio" name="beer" id="tab3">
+    <input type="radio" name="beer" id="tab3" class="option">
     <label for="tab3">Budwiser</label>
     <p class="content">
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. 

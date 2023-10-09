@@ -15,7 +15,7 @@
       box-sizing: border-box;
     }
 
-    .personal-form {
+    .container {
       display: grid;
       grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 0.5rem;
@@ -51,7 +51,7 @@
 
   <h1>Personal Info</h1>
 
-  <form action="" class="personal-form" autocomplete="off">
+  <div class="container">
     <div class="col-span-3">
       <label for="fname">First name</label>
       <input type="text" id="fname">
@@ -88,7 +88,7 @@
       <label for="zip">ZIP / Postal code</label>
       <input type="text" id="zip">
     </div>
-  </form>
+  </div>
 
 </body>
 

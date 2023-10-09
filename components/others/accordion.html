@@ -18,7 +18,7 @@
     }
 
     /* checkbox */
-    input[type=checkbox] {
+    .checkbox {
       display: none;
     }
 
@@ -26,15 +26,35 @@
     label {
       display: block;
       cursor: pointer;
+      position: relative;
     }
+
+    /* 
+      * Pseudo element
+
+      1 definition
+      a virtual element
+      doesn't exists in tree.
+      it increases code reusabiliy
+
+      2 Types of pseudo element
+      1) after
+      2) before
+      3) marker
+      ...
+
+      3 Usecase
+      selector::pseudo-element
+    */
 
     label::after {
       content: "+";
-      float: right;
+      position: absolute;
+      right: 0;
       transition: 0.2s;
     }
 
-    input[type=checkbox]:checked + label::after {
+    .checkbox:checked + label::after {
       transform: rotate(45deg);
     }
 
@@ -45,14 +65,14 @@
       transition: max-height 0.2s;
     }
     
-    input[type=checkbox]:checked + label + .content {
+    .checkbox:checked + label + .content {
       max-height: 200px;
     }
   </style>
 
   <div class="container">
     <div class="item">
-      <input type="checkbox" name="" id="tab1">
+      <input type="checkbox" name="" id="tab1" class="checkbox">
       <label for="tab1">Tab 1</label>
       <div class="content">
         <p>
@@ -65,7 +85,7 @@
     </div>
 
     <div class="item">
-      <input type="checkbox" name="" id="tab2">
+      <input type="checkbox" name="" id="tab2" class="checkbox">
       <label for="tab2">Tab 2</label>
       <div class="content">
         <p>
@@ -78,7 +98,7 @@
     </div>
 
     <div class="item">
-      <input type="checkbox" name="" id="tab3">
+      <input type="checkbox" name="" id="tab3" class="checkbox">
       <label for="tab3">Tab 3</label>
       <div class="content">
         <p>
