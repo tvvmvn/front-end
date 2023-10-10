@@ -1,7 +1,7 @@
 /*
   *** LOOP ***
 
-  execute a block of code multiple times.
+  statement that executes a block of code multiple times.
   
   1 for loop
   2 whie loop
@@ -10,10 +10,15 @@
 
 /* 
 for loop 
+
+for (initialValue; loop condition; variable change operation) 
+{ 
+  code to loop 
+}
 */
 
-// execute a block of code in 10 times
 for (var i = 1; i <= 10; i++) {
+  // access variable i
   console.log(i + "times executed"); 
 }
 
@@ -31,6 +36,13 @@ console.log(sum);
 
 /* 
 while loop 
+
+initialValue
+while (loop condition) 
+{
+  code to loop
+  variable change operation
+}
 */
 
 // print 1 - 10
@@ -44,13 +56,17 @@ while(i <= 10) {
 }
 
 
-/*  Q. Loop */
+/*  
+Q. Loop 
 
-// get sum numbers of 1/1, 1/2, 1/3, ... 1/10
+get sum of 1/1, 1/2, 1/3, ... 1/10
+using for loop
+*/
+
 var sum = 0;
 
 for (var i = 1; i <= 10; i++) { 
-  // Answer: sum += (1/i);
+  sum += (1/i);
 }
 
 console.log(sum);

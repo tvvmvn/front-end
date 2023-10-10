@@ -4,8 +4,6 @@
   1 if condition
   2 switch condition
   3 ? (ternary) condition
-
-  references
 */
 
 
@@ -53,6 +51,7 @@ if (year === 2022) {
   perform strict equal comparison operation.
 */
 
+
 var year = 2023;
 
 switch(year) {
@@ -94,10 +93,15 @@ console.log(r);
   Q. Condition
 
   Make conditional statements that prints 
-  he is teenager or not according to age
+  he is teenager or not according to age variable
+
+  1 if/else
+
+  2 ternary 
 */
 
 var age = 20;
+
 
 // Q1. if/else condition
 if (age >= 18) {

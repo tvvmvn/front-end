@@ -1,9 +1,9 @@
 /* 
   Variables 
-  store value
+  container then store value
   
   1 Basic usage
-  2 Global variable and local variable
+  2 Types of variable (according to scope)
 */
 
 
@@ -37,7 +37,10 @@ console.log(foo)
 
 
 /*
-  Global variables and local variables
+  Types of variable
+
+  1 Global variable
+  2 Local variable
 */
 
 
@@ -59,8 +62,9 @@ console.log(varInGlobal);
   Local variable
   
   Declared inside function. 
-  Only accessible in that function
+  Only accessible in function that a variable is declared
 */
+
 
 function f() {
   var varInFunction = true;
@@ -69,7 +73,7 @@ function f() {
   // > true  
 }
 
-f()
-
 console.log(varInFunction)
-// > ReferenceError
+// > reference error
+
+f();

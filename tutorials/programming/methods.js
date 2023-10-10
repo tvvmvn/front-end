@@ -1,6 +1,6 @@
 /*
   * Basic Methods 
-  perform specific operation on data
+  it performs specific operation on data
 
   1 String method
   2 Number method
@@ -70,7 +70,7 @@ console.log(precisePi)
 
 
 // toString
-var n = 2023
+var year = 2023
 
-console.log(n.toString());
-// > 2023
+console.log(year.toString());
+// > "2023"

@@ -24,37 +24,54 @@
   % 
 */
 
-// Arithmetic 4 Rules
+// Arithmetic operator
 var add = 1 + 1
 var subtract = 2 - 1
 var divide = 1 / 2
 var multiply = 1 * 2
 
-console.log("add:", add);
+console.log("1 + 1 =", add);
 // > 2
-console.log("substract:", subtract);
+console.log("2 - 1 =", subtract);
 // > 1
-console.log("divide:", divide);
+console.log("1 / 2 =", divide);
 // > 0.5
-console.log("multiply", multiply)
+console.log("1 * 2 =", multiply)
 // > 2
+
+
+// + with String
+var s = "hello" +  " world";
+
+console.log(s);
+
+var s = "hello " + 2024
+
+console.log(s);
+// > hello 2024
+console.log(typeof s)
+// > string
 
 
 //  Increment and decrement operator
 var i = 1;
+
 i++;
+
 console.log(i)
 // > 2
 
 
-// Exponentiation 
+// Exponentiation operator
 var exp = 2 ** 7
+
 console.log(exp)
 // > 128
 
 
-// Modulus (Devision remainder)
+// Modulus (Devision remainder) operator
 var mod = 5 % 2;
+
 console.log(mod)
 // > 1
 
@@ -106,13 +123,13 @@ console.log(n)
   ===
   4 Strict not equal operator
   !==
-  5 Greather than operator
+  5 gt operator
   > 
-  6 Greather than or equal operator
+  6 gte operator
   >= 
-  7 Less than operator
+  7 lt operator
   < 
-  8 Less than or equal operator
+  8 lte operator
   <=
 */
 
@@ -164,44 +181,65 @@ console.log(null !== undefined)
   Logical operator
 
   1 && (AND)
-  expr 1 && expr 2 
   2 || (OR)
-  expr 1 || expr 2 
   3 ! (NOT)
-  !expr 
 */
 
-// AND
+
+/*
+&& (AND)
+expr 1 && expr 2 
+
+return true when both expr1 and expr2 are true. 
+*/
+
+
 console.log(1 > 0 && 1 < 2) 
 // > true
 
 
-// OR
+/* 
+|| (OR)
+expr 1 || expr 2 
+
+return true when one of them is true or both is true 
+*/
+
 console.log(1 > 0 || 1 > 2) 
 // > true
 
 
-// NOT
+/* 
+! (NOT)
+
+!expr 
+*/
+
+
 console.log(!(1 > 0)) 
 // > false
 
-// NOT in not boolean type
-console.log(!null)
+
+// NOT with not boolean type
+console.log("not null:", !null)
 // > true
-console.log(!undefined)
+console.log("not undefined:", !undefined)
 // > true
-console.log(!0);
+console.log("not 0:", !0);
 // > true
-console.log(!2023);
+console.log("not number:", !2);
 // > false
-console.log(!"");
+console.log("not negative number:", !-2);
+// > false
+console.log("not emptry string:", !"");
 // > true
-console.log(!"foo");
+console.log("not string:", !"foo");
 // > false
 
 
 /*
   Type operator
+  
   return type of variables
 */
 
