@@ -5,7 +5,7 @@
   2 Error structure
   3 Error handling
   4 Types of errors
-  5 Exceptions
+  5 Exception
 */
 
 

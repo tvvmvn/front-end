@@ -1,8 +1,8 @@
 /*
   * Function
-  a block of code excuted only when it is invoked.
+  codes excuted when invoked.
 
-  1 function declaration
+  1 Function eclaration
   2 Hoisting
   3 Parameter and argument
   4 return 
@@ -11,7 +11,7 @@
 
 
 /*
-  function declaration 
+  Functino declaration 
 */
 
 // declaration
@@ -24,16 +24,10 @@ f()
 // > foo
 
 
-// or
-var f = function () {
-  console.log("foo")
-}
-
-
 /* 
-  2 Hoisting (게양)
+  Hoisting (게양)
 
-  function declaration is hoisted 
+  function declaration is hoisted higher than invoke
 */
 
 // invoke
@@ -46,18 +40,15 @@ function f() {
 
 
 /*
-Function parameter and argument 
-
-1 parameters: char that represent argument in function
-2 arguments: passing value to function
+parameter and argument 
 */
 
 function add(x, y) { // parameters: x, y
-  console.log('result:', x + y);
+  console.log("result:", x + y);
 }
 
 add(1, 2); // arguments: 1, 2
-// > addition result: 3
+// > result: 3
 
 
 /* 
@@ -72,7 +63,7 @@ function add(x, y) {
 
 var r = add(1, 2);
 
-console.log('result:', r);
+console.log("result:", r);
 // > add result: 3
 
 
@@ -83,14 +74,14 @@ console.log('result:', r);
 */
 
 function f(callback) {
-  let r = callback();
+  var foo = "bar";
 
-  console.log(r)
+  callback(foo);
 }
 
-function cb() {
-  return "foo"
-}
+function cb(data) {
+  console.log(data);
+} 
 
 f(cb);
 // > foo
@@ -102,8 +93,7 @@ function getTime() {
   console.log(time)
 }
 
-// setInterval(callback, ms)
-// execute callback in every ms
+// setInterval(callback, ms): execute callback in every ms
 setInterval(getTime, 1000);
 
 
@@ -113,16 +103,16 @@ setInterval(getTime, 1000);
 */
 
 function isAdult(age) {
-
-  if (typeof age !== 'number') {
-    console.log('argument type must be a number');
-    return; // stop function
+  // additional
+  if (typeof age !== "number") {
+    console.log("argument type must be a number");
+    return; // stop execution
   }
 
   if (age >= 18) {
-    console.log('He/she is an adult');
+    console.log("He/she is an adult");
   } else {
-    console.log('He/she is not adult');
+    console.log("He/she is not adult");
   }
 }
 

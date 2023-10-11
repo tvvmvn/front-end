@@ -3,9 +3,7 @@
   composition for data and function
 
   1 Access property
-  2 Add property
-  3 Update propery
-  4 Delete property
+  2 change object
 */
 
 
@@ -14,7 +12,7 @@ Access properties
 */
 
 var cat = { 
-  // properties
+  // properties 
   name: "Kitty",
   home: null,
   sound: function () { // method
@@ -23,10 +21,10 @@ var cat = {
 }
 
 console.log(cat);
-// > Object cat
+// > {..}
 console.log(cat.name);
 // > Kitty
-console.log(cat['name']);
+console.log(cat["name"]);
 // > null
 console.log(cat.color);
 // > undefined
@@ -35,63 +33,62 @@ console.log(cat.sound());
 
 
 /* 
-Add properties
+change object
 */
 
+var cat = { 
+  // properties 
+  name: "Kitty",
+  home: null,
+  sound: function () { // method
+    return "meow";
+  }
+}
+
+// add property
 cat.age = 2;
 console.log(cat);
 // > age: 2
 
+// update property
+cat.home = "Samsan-dong";
+console.log(cat)
+// > home: "Samsan-dong"
 
-/* 
-Update properties
-*/
- 
-cat.home = 'Samsan-dong';
-console.log(cat);
-
-
-/* 
-Delete properties
-*/
-
+// delete property
 delete cat.home;
-
-console.log(cat);
-
+console.log(cat)
+// no home 
 
 /*
-  Q1. Object
-  Irish beer is restocked
+  Q1. Irish beer is restocked
 */
 
 var irishBeer = { 
-  name: 'Guinness', 
-  origin: 'Ireland',
+  name: "Guinness", 
+  origin: "Ireland",
   available: false
 }
 
 irishBeer.available = true;
 
 console.log(irishBeer)
-// ... available: true
+// available: true
 
 
 /*
-  Q2. Object
-  print each beer name with uppercase using for loop.
+  Q2. print each beer name with uppercase using array loop.
 */
 
 var beers = [
-  { name: 'Guinness', origin: 'Ireland' },
-  { name: 'Heineken', origin: 'Netherlands' },
-  { name: 'Budwiser', origin: 'USA' },
+  { name: "Guinness", origin: "Ireland" },
+  { name: "Heineken", origin: "Netherlands" },
+  { name: "Budwiser", origin: "USA" },
 ]
 
 for (let i=0; i<beers.length; i++) {
   console.log(beers[i].name.toUpperCase());
 }
-
 // > GUINNESS
 // > HEINEKEN
 // > BUDWISER

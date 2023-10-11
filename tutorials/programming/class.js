@@ -2,7 +2,7 @@
   * Class
   Templates for JavaScript Objects.
 
-  1 Class instance
+  1 class instance
   2 Contructor
   3 Inheritance
   4 Static property and method
@@ -12,10 +12,11 @@
 
 
 /* 
-  Class instance 
+  instance 
 
   object that is created from class
 */
+
 
 class Beer {
   // class member 
@@ -29,15 +30,16 @@ irishBeer.name = 'Guinness'
 irishBeer.origin = 'Ireland'
 irishBeer.available = false;
 
-console.log(irishBeer)
-// > Beer {...}
-console.log(irishBeer instanceof Beer)
-// > true
-
 var dutchBeer = new Beer();
 dutchBeer.name = 'Heineken'
 dutchBeer.origin = 'Netherlands'
 dutchBeer.available = true;
+
+
+console.log(irishBeer)
+// > Beer {...}
+console.log(irishBeer instanceof Beer)
+// > true
 
 console.log(dutchBeer)
 // > Beer {...}
@@ -78,7 +80,7 @@ class Beer {
 
   // ...
 
-  // method
+  // function member
   drink() {
     return 'Cool!';
   }
@@ -150,9 +152,9 @@ class Beer {
 */
 
 // Static properties of predefined class
-let pi = Math.PI;
+var pi = Math.PI;
 
-console.log(pi)
+console.log(pi);
 // > 3.14
 
 

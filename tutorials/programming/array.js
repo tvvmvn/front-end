@@ -1,29 +1,46 @@
 /* 
   * Array
-  data type which can hold more than one value;
+  data type which can hold more than one value
 
-  1 Access Array
+  1 basic usage
   2 Array method
   3 Loop array
 */
 
 
 /* 
-  1 Access array 
+  1 basic usage
+
+  1) access item
+  2) update item
+  3) get the number of item
 */
 
-// String array
-var arr = ["foo", "bar", "baz"];
 
-// access array
+// access item
+
+var arr = [10, 20, 30];
+
 console.log(arr[0]);
-// > foo
-
+// > 10
 console.log(arr[1]);
-// > bar
-
+// > 20
 console.log(arr[2]);
-// > bar
+// > 30
+
+
+// update item
+
+var arr = [10, 20, 30];
+
+arr[2] = 40;
+
+console.log(arr)
+// > 10 20 40
+
+
+// get the number of items
+var arr = [10, 20, 30];
 
 console.log(arr.length);
 // > 3
@@ -37,46 +54,46 @@ console.log(arr.length);
   2 pop
   3 concat
   4 sort
-
-  references
 */
 
 
 // push(newItem1, newItem2, ...)
-var arr = ["foo", "bar"];
+var arr = [10, 20];
 
-arr.push("baz");
+var newItem = 30;
+
+arr.push(newItem);
 
 console.log(arr);
-// > foo, bar, baz
+// > 10, 20, 30
 
 
 // pop()
-var arr = ["foo", "bar", "baz"];
+var arr = [10, 20, 30];
 
 arr.pop();
 
 console.log(arr);
-// > foo bar
+// > 10, 20
 
 
-// Array1.concat(Array2, Array3, ...) 
-var arr1 = ["foo", "bar"];
-var arr2 = ["baz", "duck"] 
+// array1.concat(array1, array2, ...) 
+var arr1 = [10, 20];
+var arr2 = [30, 40] 
 
 var r = arr1.concat(arr2); 
 
 console.log(r);
-// > foo, bar, baz, duck
+// > 10, 20, 30, 40
 
 
 // Array.sort();
-var arr = ["foo", "bar", "baz"];
+var arr = [10, 30, 20];
 
 arr.sort();
 
 console.log(arr);
-// > bar, baz, foo
+// > 10, 20, 30
 
 
 /*
@@ -85,47 +102,19 @@ console.log(arr);
   to perform operation to array.
 */
 
-// Perform specific operation on each item
-var arr = ["foo", "bar", "baz"];
+
+// change each item
+var arr = [10, 20, 30];
 
 for (var i=0; i<arr.length; i++) {
-  console.log(arr[i].toUpperCase());
+  console.log(arr[i] * 10);
 }
-// > FOO / BAR / BAZ
+// > 100 
+// > 200
+// > 300
 
 
-// Filtering an array
-var arr = ["foo", "bar", "baz"];
-
-for (var i=0; i<arr.length; i++) {
-  if (arr[i][0] === "b") {
-    console.log(arr[i]);
-  }
-}
-// > bar / baz
-
-
-/* 
-  Q.1 Array method
-
-  Add new beer to beer list.
-*/
-
-var beers = ["Guinness", "Heineken"];
-var americanBeer = "Budwiser";
-
-beers.push(americanBeer);
-
-console.log(beers)
-// > [Guinness, Heineken, Budwiser]
-
-
-/* 
-  Q.2 Array loop
-
-  print adult ages
-*/
-
+// filtering an array
 var ages = [12, 19, 23, 30];
 
 for (var i=0; i<arr.length; i++) {
@@ -133,3 +122,34 @@ for (var i=0; i<arr.length; i++) {
     console.log(arr[i]);
   }
 }
+
+
+/* 
+Q1. Add new beer to list and print them.
+*/
+ 
+
+var beers = ["Guinness", "Heineken"];
+var americanBeer = "Budwiser";
+
+beers.push(americanBeer);
+
+console.log(beers)
+// > Guinness, Heineken, Budwiser
+
+
+/* 
+Q2. print items starts with b
+*/
+
+
+var arr = ["foo", "bar", "baz"];
+
+for (var i=0; i<arr.length; i++) {
+  if (arr[i][0] === "b") {
+    console.log(arr[i]);
+  }
+}
+// > bar
+// > baz
+

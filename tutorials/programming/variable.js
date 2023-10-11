@@ -1,9 +1,9 @@
 /* 
   Variables 
-  container then store value
+  container that store value
   
   1 Basic usage
-  2 Types of variable (according to scope)
+  2 global and local variable
 */
 
 
@@ -37,10 +37,7 @@ console.log(foo)
 
 
 /*
-  Types of variable
-
-  1 Global variable
-  2 Local variable
+  Global and local variable
 */
 
 
