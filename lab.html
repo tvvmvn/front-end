@@ -7,56 +7,30 @@
 </head>
 <body>
 
-  <style>
-    .checkbox {
-      display: none;
+  <h1>자음퀴즈</h1>
+  <p>Sponsored by 세종대왕</p>
+
+  <button id="btn">GO</button>
+  <h1 id="q"></h1>
+
+
+  <script>
+    var str = "ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎ";
+    
+    btn.addEventListener("click", create);
+
+    function create() {
+      var a = rand();
+      var b = rand();
+      var c = rand();
+
+      q.textContent = str[a] + str[b] 
     }
 
-    label {
-      display: inline-block;
-      padding: 0.5rem 0.75rem;
-      border-radius: 99px;
-      margin: 0.25rem;
-      border: 2px solid #ddd;
-      color: #888;
+    function rand() {
+      return Math.floor(Math.random() * 14);
     }
-
-    label::before {
-      content: "+ ";
-    }
-
-    .checkbox:checked + label {
-      background-color: #0ef;
-      color: #fff;
-    }
-
-    .checkbox:checked + label::before {
-      background-color: #000;
-      color: #fff;
-      content: "";
-    }
-  </style>
-
-  <h1>Multiple select</h1>
-
-  <p>Choose all skills you have</p>
-  <input type="checkbox" id="a" class="checkbox" checked>
-  <label for="a">HTML</label>
-
-  <input type="checkbox" id="b" class="checkbox">
-  <label for="b">CSS</label>
-
-  <input type="checkbox" id="c" class="checkbox">
-  <label for="c">JavaScript</label>
-
-  <input type="checkbox" id="d" class="checkbox">
-  <label for="d">React</label>
-
-  <input type="checkbox" id="e" class="checkbox">
-  <label for="e">TypeScript</label>
-
-  <input type="checkbox" id="f" class="checkbox">
-  <label for="f">jQuery</label>
+  </script>
 
 </body>
 </html>
