@@ -5,7 +5,7 @@
   2 Error structure
   3 Error handling
   4 Types of errors
-  5 Exception
+  5 Custom error
 */
 
 
@@ -31,13 +31,13 @@ console.log(foo)
 console.log(foo)
 // name: ReferenceError
 // message: foo is not defind
-// stack: ...
+// stack: details
 
 
 /* 
   Error handling 
   
-  try / catch 
+  try and catch 
 */
 
 try {
@@ -57,8 +57,6 @@ try {
   1 SyntaxError
   2 ReferenceError
   3 TypeError
-  4 RangeError
-  5 URIError 
 */
 
 
@@ -80,17 +78,16 @@ try {
 
 /*
   SyntaxError
-
-  It makes compile error
+  try / catch could not handle this error.
 */
  
  try {
   
-  // try / catch could not handle this error.
   // console.log(2022));
   
 } catch (error) {
   console.error(error)
+  // > SyntaxError: Unexpected token ')'
 }
 
   
@@ -109,42 +106,14 @@ try {
   // > TypeError: callback must be a function. Received null.
 }
 
-/*
-  RangeError
-
-  argument excess allowed range.
-*/
-
-try {
-
-  let pi = Math.PI;
-
-  console.log(pi.toPrecision(200)) 
-
-} catch (error) {
-  console.error(error)
-  // > toPrecision() argument must be between 1 and 100
-}  
-
-
-/*
-  URIError
-
-  Passed invalid args to encodeURI() or decodeURI() 
-*/
-
-console.log(decodeURI('%')); 
-// > URIError: URI malformed
-
-
 /* 
-  Exceptions
+  Custom error
 
   Generate error if it's need
 */
 
 try {
-  let age = 15;
+  var age = 15;
 
   console.log('a student:', 'Guinness, please');
 
@@ -156,5 +125,5 @@ try {
   console.log('staff:', 'Here are Guinness');
 
 } catch (error) {
-  console.error(error)
+  console.error(error);
 }

@@ -71,14 +71,12 @@ console.log(irishBeer)
 
 
 /* 
-  Inheritance
-
-  instance inherites properties and method from class
+  function member of class
 */
 
 class Beer {
 
-  // ...
+  // members...
 
   // function member
   drink() {
@@ -88,7 +86,7 @@ class Beer {
 
 var beer = new Beer();
 
-// All instance of Beer can access drink method
+// method of instance
 console.log(beer.drink())
 // > Cool
 
@@ -96,7 +94,7 @@ console.log(beer.drink())
 /*
   Static property and method
 
-  Provide utilities for class
+  Provide useful work about class
 */
 
 class Beer {
@@ -115,6 +113,13 @@ class Beer {
 // class itself invokes
 console.log(Beer.history)
 console.log(Beer.brewing())
+
+
+// Static properties of built-in class
+var pi = Math.PI;
+
+console.log(pi);
+// > 3.14
 
 
 // Complete Beer class
@@ -151,53 +156,61 @@ class Beer {
   5 Others: Promise, JSON, Object
 */
 
-// Static properties of predefined class
-var pi = Math.PI;
-
-console.log(pi);
-// > 3.14
-
 
 /*
   Literal notation
+
+  writes only value
 */
 
+
 // Instance of String
-var foo = new String('bar'); // Class
+var foo = new String('bar'); 
 var foo = 'bar'; // literal notation
 
+
 // Instance of Number
-var year = new Number(2023); // Class
+var year = new Number(2023); 
 var year = 2023; // literal notation
+
 
 // Class which is not supporting literal notation 
 var date = new Date();
 console.log(date)
 
 
+// Object VS Object
+// ..
+
+
 /*
-  Q. Create an class names Car to be following:
+  Q. Create an class <Car> to be following:
 
-  1 Class member
-  name, brand, color
+  1 Class member: name, brand, color
 
-  2 constructor for all members
+  2 it has constructor
 
-  3 static method - getAge
-  return car's age if you pass purchased date.
+  3 function member: sound
+
+  3 static method: getAge
+  get car's age if you pass purchased date.
 */
 
 class Car {
+  // members
+  name;
+  brand;
+  color;
+
   constructor(name, brand, color) {
     this.name = name;
     this.brand = brand;
     this.color = color;
   }
 
-  // member
-  name;
-  brand;
-  color;
+  sound() {
+    return "GRRRR";
+  }
 
   static getAge(purchasedAt) {
     return "Your car age is " + (2023 - purchasedAt)
@@ -207,4 +220,5 @@ class Car {
 const car = new Car('GV80', 'Genesis', 'Black');
 
 console.log(car)
+console.log(car.sound());
 console.log(Car.getAge(2020))

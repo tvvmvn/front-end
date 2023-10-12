@@ -1,7 +1,7 @@
 /* 
   * Asychronous operations 
   It is used to prevent blocking 
-  e.g) fetching resources from a server.
+  e.g) when fetching resources from a server.
 
   1 Synchronous operations
   2 Asynchronous operations
