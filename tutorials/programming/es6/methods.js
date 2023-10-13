@@ -1,35 +1,59 @@
 /*
   ES6 Methods
 
-  1 Array.map()
-  2 Object.keys()
+  1 Array.map
+  2 Array.filter
+  3 Object.keys
 */
 
 
 /* 
-  Array.map() 
+  Array.map
 
   perform specific operation to Array.
   return updated Array.
 */
 
-let arr = [1, 2, 3];
 
-let updatedArr = arr.map(function (item) {
+// get new array with each item multiplied by 10.
+
+var arr = [10, 20, 30];
+
+var updatedArr = arr.map(function (item, index, self) {
   return item * 10;
 })
 
 console.log(updatedArr);
-// > 10, 20, 30
+// > 100, 200, 300
+
+
+/* 
+  Array.filter (ES 5)
+*/
+
+var ages = [13, 20, 34, 40];
+
+var adults = ages.filter(function (age) {
+  if (age >= 18) {
+    return age;
+  }
+})
+
+var adults = ages.filter(function (age) {
+  return age >= 18;
+});
+
+console.log(ages);
+// > 20, 34, 40
 
 
 /*
-  Object.keys()
+  Object.keys
 
-  return key array of Object
+  return keys as string array of Object
 */
 
-let cat = {
+var cat = {
   name: "Kitty",
   home: null,
   sound: function () {
@@ -37,23 +61,23 @@ let cat = {
   }
 }
 
-let keys = Object.keys(cat);
+var keys = Object.keys(cat);
 
 console.log(keys) 
 // > name, home, sound
 
 
 /*
-  Quiz
-
-  Array.map()
+  Q. get new array with all items in uppercase
+  using beers array.
 */
 
-let beers = ["Guinness", "Heineken", "Budwiser"];
 
-let updatedBeers = beers.map(function (beer) {
+var beers = ["guinness", "heineken", "budwiser"];
+
+var updatedBeers = beers.map(function (beer) {
   return beer.toUpperCase();
 })
 
-console.log(updatedBeers) 
+console.log(updatedBeers);
 // > GUINNESS, HEINEKEN, BUDWISER

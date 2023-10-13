@@ -9,14 +9,15 @@
 
 /* 
   1 let 
-  almost same with var
 */
+
 
 let foo = "bar";
 
 
 /* 
   2 const 
+  
   constant
 */
 

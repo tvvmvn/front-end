@@ -25,45 +25,60 @@ var [ irishBeer, dutchBeer, americanBeer ] = beers;
 
 /* 
   Object Destructing 
-  assign properties of object to variables with simpler syntax
+  access properties with simpler syntax
 */
 
 var irishBeer = { name: 'Guinness', origin: 'Ireland', available: false }
 
 // Traditional
-var name = irishBeer.name;
-var origin = irishBeer.origin;
-var available = irishBeer.available;
+console.log(irishBeer.name, irishBeer.origin, irishBeer.available);
 
 // Destructing 
 var { name, origin, available } = irishBeer;
 
+console.log(name, origin, available)
+
 
 /* 
   Parameter Destructing 
-  assign properties of object to parameter with simpler syntax
+  access parameter with simpler syntax
 */
 
 var irishBeer = { name: 'Guinness', origin: 'Ireland', available: false };
 
-// invoke
-f(irishBeer)
-
 // Traditional
 function f(beer) {
-  var name = beer.name;
-  var origin = beer.origin;
-  var available = beer.available;
+  console.log(beer.name, beer.origin, beer.available);
 }
 
 // Destructing
-function f({ name, origin, available }) {}
+function f({ name, origin, available }) {
+  console.log(name, origin, available);
+}
 
+f(irishBeer)
 
 /*
-  Q1 assign each beer to variables with destructing syntax.
+  Q1. assign each beer to variables with destructing syntax.
 */
 
-var asianBeers = ['Kloud', 'Asahi'];
 
+var asianBeers = ['Kloud', 'Asahi'];
 var [koreanBeer, japaneseBeer] = asianBeers;
+
+console.log(koreanBeer);
+console.log(japaneseBeer);
+// > Kloud 
+// > Asahi
+
+
+/* 
+  Q2. access properties with destructing
+*/
+
+
+var car = { name: "Avante", color: "White" };
+var { name, color } = car;
+
+console.log(name, color);
+// Avante White

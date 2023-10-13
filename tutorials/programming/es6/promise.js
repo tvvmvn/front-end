@@ -1,39 +1,57 @@
 /* 
   * Promise object *
-  represents status whether success or failure and 
-  results of asynchronous operations.
+  represents status whether success or failure and results 
+  of asynchronous operations.
   It is used to improve readability for asynchronous operations. 
 
   1 Structure of promise
-  1 Realworld examples
-  2 async/await
+  2 Realworld examples
+  3 async / await
 */
 
 
 /*
-  Structure of promise
+  Structure of Promise
 
-  1 Creating Promise instance
-  pass callback that has two parameters to contructor. 
+  1 Promise instance
+  callback has two parameters - resolve and rejected
 
-  - fist parameter(resolve): invoked when success
-  - second parameter(rejected): invoked wheh failure
+  1) resolve
+  invoked when success
+
+  2) rejected
+  invoked wheh failure
+
 
   2 Promise status
-  - fullfilled: success of operations
-  - rejected: failure of operations
-  - pending: wait for end of operations
+  1) fullfilled
+  success of operations
+  
+  2) rejected
+  failure of operations
+
+  3) pending
+  wait for end of operations
+
 
   3 Promise method
-  - Promise.then(): handling data when success
-  - Promise.catch(): handling error when failed
-  - Promise.finally(): handling final operations (not relatable with success or failure)
+  1) Promise.then()
+  process data when success
+
+  2) Promise.catch()
+  process error when failed
+
+  3) Promise.finally()
+  process final operations that executed not relavant with success or failure
 */
 
+
+// instance 
 const promise = new Promise((res, rej) => {
-  res({ foo: 'bar'}); // success
+  res({ foo: "bar"}); // success
 }) 
 
+// usage
 promise
   .then((value) => { // success
     console.log(value)
@@ -46,13 +64,14 @@ promise
 /*
   2 Realworld examples
 
-  fetching data from server
+  when fetching data from server
 */ 
 
 
+// request data to server
 function fetchData() {
   const promise = new Promise((res, rej) => {
-    res({ foo: 'bar' });
+    res("duck"); // success
   })
 
   return promise;
@@ -60,27 +79,27 @@ function fetchData() {
 
 fetchData()
   .then(data => { 
-    console.log('data from server:', data);
+    console.log("data from server:", data);
   })
   .catch(error => {
     console.error(error)
   })
 
-// > data from server: { foo: 'bar' }
+// > data from server: duck
 
 
 /*
   async / await
 
-  wait for Promise object returning its results.
-  improve readablility of Promise Operations.
-  error handling in catch block
+  Wait for Promise object returning its results.
+  improve readablility of Promise
+  error handling in try/catch
 */
 
 
 function fetchData() {
   const promise = new Promise((res, rej) => {
-    res({ foo: 'bar' })
+    res("duck")
   })
 
   return promise;
@@ -98,4 +117,4 @@ async function f() {
   }
 }
 
-// > data from server: { foo: 'bar' }
+// > data from server: duck

@@ -1,17 +1,18 @@
 /*
   Spread Operator  
 
-  1 Spread Operator with Array
-  2 Spread Operator with Object
+  1 Spread operator in Array
+  2 Spread operator in Object
 */
 
 
 /* 
-  Array 
+  Spread operator in array
 
   make items of array to copy easily.
   ...Array to copy
 */
+
 
 // add new item
 var beers = ['Guinness', 'Heineken'];
@@ -23,7 +24,7 @@ console.log(updatedBeers)
 // > Guinness, Heineken, Budwiser
 
 
-// concat arrays
+// concatenate arrays
 var europeanBeers = ['Guinness', 'Heineken'];
 var asianBeers = ['Asahi', 'Kloud']
 
@@ -34,7 +35,7 @@ console.log(worldBeers);
 
 
 /* 
-  Object 
+  Spread operator in Object
 
   make properties of object to copy easily.
   ...object to copy  
@@ -46,14 +47,25 @@ var irishBeer = {
   available: false 
 };
 
-// add or update properties.
+// add or update 
 var updatedIrishBeer = { ...irishBeer, available: true };
 
 console.log(updatedIrishBeer);
 
 
+/* 
+  create an asian cars list with spread syntax
+*/
+
+var koreanCars = ["Hyundai", "Kia"];
+var japaneseCars = ["Toyota", "Honda"];
+
+var asianCars = [...koreanCars, ...japaneseCars];
+// > [Hyundai, Kia, Toyota, Honda]
+
+
 /*
-  Q. Update cat's home from null to Samsan-dong with spread operator
+  Q. Update cat's home to Samsan-dong with spread operator
 */
 
 var cat = {
@@ -68,3 +80,4 @@ var cat = {
 var updatedCat = { ...cat, home: 'Samsan-dong' };
 
 console.log(updatedCat);
+// > ..., home: Samsan-dong
