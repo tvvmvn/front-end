@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>DOM (Doc Object Model)</h1>
+
+  <pre>
+    It shows that every element in document is JS Object 
+    
+    - window object
+    - history
+    - location
+    - navigator
+    - server request 
+    - storage
+    - user message
+    - view dev
+  </pre>
+
+
+  <script>
+    /* 
+      window object
+
+      toolkit for web development
+    */
+
+    console.log(window);
+  </script>
+
+
+  <script>
+    /* 
+      history
+
+      it has browing history
+    */
+
+    // count of visiting page
+    console.log(history.length)
+    // get to next visiting page
+    console.log(history.forward)
+    // get to previous visiting page (back button)
+    console.log(history.back)
+    // get to specific page
+    console.log(history.go)
+
+  </script>
+
+
+  <script>
+    /*
+      location
+
+      user's location info in web
+    */
+
+    console.log(location)
+
+    // entire URL
+    console.log(location.href)
+    // protocol
+    console.log(location.protocol)
+
+    // refresh button
+    console.log(location.reload)
+  </script>
+
+
+  <script>
+    /*
+      navigator
+
+      browser's info
+    */
+
+    console.log(navigator)
+
+    console.log(navigator.language)
+    // online 
+    console.log(navigator.onLine)
+
+    // location based service
+    console.log(navigator.geolocation.getCurrentPosition)
+    console.log(navigator.geolocation.coordinates)
+  </script>
+
+
+  <script>
+    /*
+      server request operation
+
+      can be used for AJAX request
+    */
+    console.log(XMLHttpRequest)
+    console.log(fetch)
+  </script>
+
+
+  <script>
+    /*
+      web storage
+
+      the storage that brower provides
+    */
+
+    console.log(document.cookie)
+    console.log(localStorage)
+    console.log(sessionStorage)
+  </script>
+
+
+  <script>
+    /*
+      user message
+    */
+
+    // alert("hello user");
+    // confirm("Yes or No");
+  </script>
+
+
+  <script>
+    /*
+      view dev
+
+      user interface between user and web
+    */
+   
+    console.log(document)
+  </script>
+
+</body>
+</html>

@@ -10,7 +10,7 @@
 
   <style>
     body {
-      height: 1000px;
+      height: calc(100vh + 100px);
       margin: 0;
     }
 
@@ -45,8 +45,11 @@
   <script>
     var header = document.getElementById('header');
 
-    window.addEventListener('scroll', (e) => {
+    window.addEventListener('scroll', function () {
+      // distance between viewport-top and document-top
       var scrollTop = document.documentElement.scrollTop;
+
+      console.log(scrollTop);
 
       if (scrollTop > 50) {
         header.classList.add('active');

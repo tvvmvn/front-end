@@ -6,14 +6,18 @@
   <title>Document</title>
 </head>
 <body>
+  
+  <h1>textContent</h1>
+  <p>get text of element</p>
 
-  <h1>Server requests</h1>
-  <p>AJAX request</p>
+  <p id="song">Fly me to the moon</p>
 
   <script>
-    console.log(window.XMLHttpRequest)
-    console.log(window.fetch)
+    var song = document.getElementById("song");
+
+    console.log(song.textContent)
+    console.log(typeof song.textContent)
   </script>
-  
+
 </body>
 </html>

@@ -24,7 +24,11 @@
     
     /* thumbnails */
     .thumbnail-container {
+      position: absolute;
+      width: 100%;
+      bottom: 10px;
       display: flex;
+      justify-content: center;
     }
 
     .thumbnail {
@@ -33,53 +37,21 @@
       object-fit: cover;
     }
 
-    .date {
-      color: #888;
-      font-style: italic;
-    }
-
-    .prev, .next {
-      position: absolute;
-      height: 100%;
-      border: none;
-      font-size: 2rem;
-      background-color: transparent;
-      color: rgba(255 255 255 / 0.5);
-    }
-
-    .prev {
-      left: 0;
-    }
-
-    .next {
-      right: 0;
-    }
-
     .active {
-      outline: 4px solid #fa0;
+      outline: 4px solid #fff;
       z-index: 1;
     }
   </style>
  
-  <h1>Photo review</h1>
+  <h1>Auto Album</h1>
   
   <div class="container">
     <img src="../../img/Simba.webp" alt="" id="main">
-    <button class="prev" onclick="move(-1)">&#10094;</button>
-    <button class="next" onclick="move(1)">&#10095;</button>
-  </div>
-
-  <h3>John Doe</h3>
-  <small class="date">August 17, 2023</small>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laudantium nesciunt quasi, alias delectus quibusdam
-    placeat! Ipsum mollitia quo error ad, explicabo harum voluptas reiciendis ab est, quasi quam pariatur.
-  </p>
-  
-  <div class="thumbnail-container">
-    <img class="thumbnail active" src="../../img/Simba.webp" alt="">
-    <img class="thumbnail" src="../../img/Timon.webp" alt="">
-    <img class="thumbnail" src="../../img/Pumbaa.webp" alt="">
+    <div class="thumbnail-container">
+      <img class="thumbnail active" src="../../img/Simba.webp" alt="">
+      <img class="thumbnail" src="../../img/Timon.webp" alt="">
+      <img class="thumbnail" src="../../img/Pumbaa.webp" alt="">
+    </div>
   </div>
 
   <script>
@@ -88,16 +60,11 @@
     var index = 0;
     var prevIndex = 0;
 
-    // HTMLCollection(length)
-    console.log(thumbnails)
-
-    function move(data) {
-      index += data;
-
+    setInterval(function () {
+      index++;
+      
       if (index < 0) index = 2;
       if (index > 2) index = 0;
-
-      console.log(index);
 
       // update main image
       main.src = thumbnails[index].src;
@@ -107,7 +74,7 @@
       thumbnails[index].classList.add("active");
 
       prevIndex = index;
-    }
+    }, 3000)
   </script>
 
 </body>

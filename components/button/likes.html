@@ -22,10 +22,6 @@
     }
   </style>
 
-  <p>
-    <span id="count">99</span> likes
-  </p>
-
   <svg 
     id="btn" 
     xmlns="http://www.w3.org/2000/svg" 
@@ -36,22 +32,18 @@
 
   <script>
     var btn = document.getElementById('btn');
-    // state
-    var count = document.getElementById("count");
-    var likes = false;
+    var liked = false;
 
     btn.addEventListener('click', function () {
       
-      // AJAX requests..
+      console.log(liked);
 
-      if (likes) {
+      if (liked) {
         btn.classList.remove("active")
-        count.textContent = parseInt(count.textContent) - 1
-        likes = false
+        liked = false;
       } else {
         btn.classList.add("active")
-        count.textContent = parseInt(count.textContent) + 1
-        likes = true
+        liked = true;
       }
     })
   </script>

@@ -12,7 +12,7 @@
 
   <style>
     body {
-      height: 1000px;
+      height: calc(100vh + 100px);
     }
 
     #header {
@@ -59,10 +59,11 @@
     window.addEventListener('scroll', function () {
       var scrollTop = document.documentElement.scrollTop;
 
+      // previous value of variable.
       console.log('previous scrollTop:', prevScrollTop);
       console.log('scrollTop', scrollTop);
 
-      if (scrollTop > prevScrollTop) { // scroll to down
+      if (scrollTop > prevScrollTop) { // scrolling down
         header.classList.add('hidden');
       } else {
         header.classList.remove('hidden');

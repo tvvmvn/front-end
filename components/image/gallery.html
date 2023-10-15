@@ -9,23 +9,51 @@
 <body>
 
   <style>
-    /* main image */
-    #main {
+    .container {
+      position: relative;
       width: 300px;
       height: 300px;
+    }
+
+    /* main image */
+    #main {
+      width: inherit;
+      height: inherit;
       object-fit: cover;
     }
     
     /* thumbnails */
     .thumbnail-container {
       display: flex;
+      margin: 1rem 0;
     }
 
     .thumbnail {
-      width: 100px;
-      height: 100px;
+      width: 50px;
+      height: 50px;
       object-fit: cover;
-      cursor: pointer;
+    }
+
+    .date {
+      color: #888;
+      font-style: italic;
+    }
+
+    .prev, .next {
+      position: absolute;
+      height: 100%;
+      border: none;
+      font-size: 2rem;
+      background-color: transparent;
+      color: rgba(255 255 255 / 0.5);
+    }
+
+    .prev {
+      left: 0;
+    }
+
+    .next {
+      right: 0;
     }
 
     .active {
@@ -34,33 +62,52 @@
     }
   </style>
  
-  <h1>Gallery</h1>
-
-  <img src="../../img/Simba.webp" alt="" id="main">
+  <h1>Photo Review</h1>
   
-  <h3>Photos</h3>
-
-  <div class="thumbnail-container">
-    <img class="thumbnail active" src="../../img/Simba.webp" alt="" onclick="jumpTo(0)">
-    <img class="thumbnail" src="../../img/Timon.webp" alt="" onclick="jumpTo(1)">
-    <img class="thumbnail" src="../../img/Pumbaa.webp" alt="" onclick="jumpTo(2)">
+  <div class="container">
+    <img src="../../img/Simba.webp" alt="" id="main">
+    <button class="prev" onclick="move(-1)">&#10094;</button>
+    <button class="next" onclick="move(1)">&#10095;</button>
   </div>
+  
+  <div class="thumbnail-container">
+    <img class="thumbnail active" src="../../img/Simba.webp" onclick="jumpTo(0)" alt="">
+    <img class="thumbnail" src="../../img/Timon.webp" onclick="jumpTo(1)" alt="">
+    <img class="thumbnail" src="../../img/Pumbaa.webp" onclick="jumpTo(2)" alt="">
+  </div>
+
+  <h3>John Doe</h3>
+  <small class="date">August 17, 2023</small>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laudantium nesciunt quasi, alias delectus quibusdam
+    placeat! Ipsum mollitia quo error ad, explicabo harum voluptas reiciendis ab est, quasi quam pariatur.
+  </p>
 
   <script>
     var thumbnails = document.getElementsByClassName('thumbnail');
     var main = document.getElementById('main');
+    var index = 0;
     var prevIndex = 0;
 
-    // HTMLCollection(length)
-    console.log(thumbnails);
-    
-    function jumpTo(index) {
-      console.log(index);
+    function move(data) {
+      index += data;
 
+      if (index < 0) index = 2;
+      if (index > 2) index = 0;
+
+      f();
+    }
+
+    function jumpTo(data) {
+      index = data;
+      f();
+    }
+
+    function f() {
       // update main image
       main.src = thumbnails[index].src;
-
-      // outline
+      
+      // outline      
       thumbnails[prevIndex].classList.remove("active");
       thumbnails[index].classList.add("active");
 

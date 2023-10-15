@@ -13,16 +13,16 @@ for loop
 */
 
 // for (initialValue; loop condition; increase variable) 
-for (var i = 1; i <= 10; i++) {
-  console.log(i + "times executed"); 
+for (var n = 1; n <= 10; n++) {
+  console.log(n + "times executed"); 
 }
 
 
 // get sum on 1 - 10
 var sum = 0;
 
-for (var i = 1; i <= 10; i++) {
-  sum += i;
+for (var n = 1; n <= 10; n++) {
+  sum += n;
 }
 
 console.log(sum);
@@ -35,30 +35,44 @@ while loop
 
 
 // initialValue
-var i = 1;
+var n = 1;
 
 // while (condition)
-while (i <= 10) {
+while (n <= 10) {
 
-  console.log(i + "times executed");
+  console.log(n + "times executed");
 
   // increase variable
-  i++;
+  n++;
 }
 
 
 /*  
-Q. Loop 
-
-get sum of 1/1, 1/2, 1/3, ... 1/10 using for loop
+Q. get sum of 1/1, 1/2, 1/3, ... 1/10 using for loop
 */
 
 var sum = 0;
 
-for (var i = 1; i <= 10; i++) { 
-  sum += (1/i);
+for (var n = 1; n <= 10; n++) { 
+  sum += (1/n);
 }
 
 console.log(sum);
 
+
+/*
+Q. get sum of 1 - 10 using while loop
+*/
+
+
+var n = 0;
+var sum = 0
+
+while (n <= 10) {
+  sum += n;
+
+  n++;
+}
+
+console.log(sum);
 

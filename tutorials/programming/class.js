@@ -5,7 +5,7 @@
   1 class instance
   2 Contructor
   3 Inheritance
-  4 Static property and method
+  4 Static member
   5 Built-in class
   6 Literal notation
 */
@@ -102,7 +102,7 @@ class Beer {
   // ...
 
   // static property
-  static history = 'B.C 3000'
+  static HISTORY = 'B.C 3000'
 
   // static method
   static brewing() {
@@ -111,7 +111,7 @@ class Beer {
 }
 
 // class itself invokes
-console.log(Beer.history)
+console.log(Beer.HISTORY)
 console.log(Beer.brewing())
 
 

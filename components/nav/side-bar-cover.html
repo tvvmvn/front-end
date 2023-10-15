@@ -17,21 +17,25 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      backdrop-filter: blur(8px);
+      background-color: #fff;
       transition: 0.2s;
       z-index: 1;
     }
 
     #side-bar ul {
-      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    .link {
+      color: #000;
     }
 
     #close {
-      float: right;
-      background-color: transparent;
-      border: none;
+      position: absolute;
+      right: 0;
       font-size: 2rem;
       padding: 1rem;
+      cursor: pointer;
     }
 
     #side-bar.hidden {
@@ -44,11 +48,17 @@
   <button id="open">Open</button>
 
   <nav id="side-bar" class="hidden">
-    <button id="close">&times;</button>
+    <span id="close">&times;</span>
     <ul>
-      <li>Link</li>
-      <li>Link</li>
-      <li>Link</li>
+      <li>
+        <a href="#" class="link">Link</a>
+      </li>
+      <li>
+        <a href="#" class="link">Link</a>
+      </li>
+      <li>
+        <a href="#" class="link">Link</a>
+      </li>
     </ul>
   </nav>
 

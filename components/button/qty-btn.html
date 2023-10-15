@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Quantity button</h1>
+
+  <p id="count">0</p>
+  <button onclick="f(-1)">-</button>
+  <button onclick="f(1)">+</button>
+
+  <script>
+    var up = document.getElementById("up");
+    var down = document.getElementById("down");
+    var num = 0;
+
+    function f(data) {
+      num += data;
+      
+      if (num < 0) {
+        num = 0;
+      }
+
+      count.textContent = num;
+    }
+  </script>
+
+</body>
+</html>

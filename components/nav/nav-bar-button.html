@@ -15,7 +15,6 @@
     }
 
     header {
-      /* border: 1px dashed; */
       position: fixed;
       top: 0;
       left: 0;
@@ -24,6 +23,8 @@
     }
 
     .header-inner {
+      display: flex;
+      height: 3rem;
       border-bottom: 1px solid #ddd;
     }
 
@@ -43,7 +44,7 @@
       list-style: none;
     }
 
-    #nav a {
+    .link {
       display: block;
       padding: 0.5rem;
       text-align: center;
@@ -66,13 +67,13 @@
     <nav class="hidden" id="nav">
       <ul>
         <li>
-          <a href="#">Link</a>
+          <a href="#" class="link">Link</a>
         </li>
         <li>
-          <a href="#">Link</a>
+          <a href="#" class="link">Link</a>
         </li>
         <li>
-          <a href="#">Link</a>
+          <a href="#" class="link">Link</a>
         </li>
       </ul>
     </nav>
@@ -87,16 +88,17 @@
     var btn = document.getElementById('btn');
     var nav = document.getElementById('nav');
 
-    btn.addEventListener("click", (e) => {
+    // menu button click
+    btn.addEventListener("click", function () {
       nav.classList.toggle("hidden");
     })
 
-    // document
-    document.addEventListener('click', (e) => {
+    // document click
+    document.addEventListener('click', function (e) {
       // event target
       console.log(e.target)
 
-      // when click area except for button
+      // click area except for button
       if (e.target !== btn) {
         nav.classList.add('hidden');
       }
