@@ -31,6 +31,12 @@
     var btn = document.getElementById("btn");
     var content = container.textContent;
 
+    /*  
+      substring(startIndex, endIndex)
+      
+      substract string from text
+    */
+
     container.textContent = content.substring(0, 50) + "...";
 
     btn.addEventListener("click", function () {

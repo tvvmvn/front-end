@@ -14,7 +14,7 @@
     }
 
     body {
-      min-height: 1000px;
+      height: calc(100vh + 200px);
     }
 
     #btn {
@@ -31,8 +31,7 @@
   </style>
 
   <h1>Top button</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos perspiciatis eius fugiat illum amet fuga dolor
-    consectetur, vero rerum tempore facilis qui minima vel dolores minus rem, voluptate dolore voluptatem.</p>
+  <p>...</p>
 
   <svg 
     xmlns="http://www.w3.org/2000/svg" 
@@ -53,7 +52,7 @@
       // distance between document-top and viewport-top
       console.log(scrollTop);
 
-      if (scrollTop > 200) {
+      if (scrollTop > 100) {
         btn.classList.remove('hidden');
       } else {
         btn.classList.add('hidden');
