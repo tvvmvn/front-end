@@ -20,20 +20,13 @@
       top: 0;
       left: 0;
       width: 100vw;
-      border-bottom: 1px solid #ddd;
-      backdrop-filter: blur(8px);
-      transition: top 0.2s;
-    }
-
-    .header-inner {
       display: flex;
       height: 50px;
       justify-content: center;
       align-items: center;
-    }
-    
-    main {
-      margin-top: 4rem;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      transition: top 0.2s;
     }
     
     #header.hidden {
@@ -42,15 +35,8 @@
   </style>
 
   <header id="header">
-    <div class="header-inner">
-      Header
-    </div>
+    Switch Header
   </header>
-
-  <main>
-    <h1>Switch NavBar</h1>
-    <p>...</p>
-  </main>
 
   <script>
     var header = document.getElementById('header');
