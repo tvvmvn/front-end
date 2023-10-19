@@ -12,7 +12,8 @@
 
   <style>
     #promotion {
-      background-color: #ddd;
+      background-color: #333;
+      color: #fff;
       padding: 1rem;
     }
 
@@ -34,21 +35,21 @@
 
   <script>
 
-    var closeBtn = document.getElementById('close-btn');
-    var blockBtn = document.getElementById('block-btn');
-    var promotion = document.getElementById('promotion');
+    var closeBtn = document.getElementById("close-btn");
+    var blockBtn = document.getElementById("block-btn");
+    var promotion = document.getElementById("promotion");
 
-    if (localStorage.getItem('blockedAt')) {
-      promotion.remove()
+    if (localStorage.getItem("blockedAt")) {
+      promotion.remove();
     }
 
-    closeBtn.addEventListener('click', function () {
-      promotion.remove()
+    closeBtn.addEventListener("click", function () {
+      promotion.remove();
     })
 
-    blockBtn.addEventListener('click', function () {
+    blockBtn.addEventListener("click", function () {
       promotion.remove()
-      localStorage.setItem('blockedAt', new Date());
+      localStorage.setItem("blockedAt", new Date());
     })
   </script>
 

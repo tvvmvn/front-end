@@ -11,11 +11,10 @@
   <style>
     label {
       display: block;
-      font-weight: 600;
       margin-bottom: 0.25rem;
     }
 
-    input {
+    #input {
       width: 20rem;
       box-sizing: border-box;
       padding: 0.5rem;
@@ -32,7 +31,7 @@
   
   <h1>Live validator</h1>
 
-  <label for="">Password</label>
+  <label for="input">Password</label>
   <input type="password" id="input">
 
   <p id="message"></p>
@@ -48,10 +47,10 @@
         console.log(password);
 
         /*
-          # Regular expression(RegEx)
-          provide pattern to search string.
+          # Regular expression
+          pattern to search string.
 
-          1 use case
+          - use case
           /pattern/
         */
 

@@ -31,34 +31,38 @@
   </label>
 
   <script>
-    var checkbox = document.getElementById('checkbox');
-
     /*
       * localStorage
+      storage that browser provides
 
-      1 localStorage.setItem(key, value)
-      2 localStorage.getItem(key)
-      3 localStorgage.removeItem(key)
+      1 localStorgae method
+      1) localStorage.setItem(key, value)
+      2) localStorage.getItem(key)
+      3) localStorgage.removeItem(key)
     */
 
+    var checkbox = document.getElementById("checkbox");
+
     // when page is loaded
-    var isDarkMode = localStorage.getItem('darkTheme');
+    var isDarkMode = localStorage.getItem("darkTheme");
 
     if (isDarkMode) {
-      document.body.classList.add('dark-mode');
+      document.body.classList.add("dark-mode");
       checkbox.checked = true;
     }
 
-    // when check state change
-    checkbox.addEventListener('change', function () {
+    // when check state is changed
+    checkbox.addEventListener("change", function () {
       var checked = this.checked;
+
+      console.log(checked);
       
       if (checked) {
-        document.body.classList.add('dark-mode');
-        localStorage.setItem('darkTheme', true);
+        document.body.classList.add("dark-mode");
+        localStorage.setItem("darkTheme", true);
       } else {
-        document.body.classList.remove('dark-mode');
-        localStorage.removeItem('darkTheme');
+        document.body.classList.remove("dark-mode");
+        localStorage.removeItem("darkTheme");
       }
     })
   </script>

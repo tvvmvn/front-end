@@ -46,10 +46,10 @@
   </ul>
 
   <script>
-    var input = document.getElementById('input');
-    var items = document.getElementsByClassName('item');
+    var input = document.getElementById("input");
+    var items = document.getElementsByClassName("item");
 
-    input.addEventListener('keyup', function () {
+    input.addEventListener("keyup", function () {
       var q = this.value.toLowerCase();
 
       // q
@@ -58,14 +58,11 @@
       for (var i = 0; i < items.length; i++) {
         var itemName = items[i].textContent.toLowerCase();
 
-        // compare each item with q
-        console.log(q, itemName)
-
-        // an item name includes q
+        // includes q
         if (itemName.indexOf(q) > -1) { 
-          items[i].classList.remove('hidden');
+          items[i].classList.remove("hidden");
         } else {
-          items[i].classList.add('hidden');
+          items[i].classList.add("hidden");
         }
       }
     })
