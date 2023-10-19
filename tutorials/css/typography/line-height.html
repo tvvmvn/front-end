@@ -8,34 +8,48 @@
 </head>
 <body>
 
-
   <h1>line height</h1>
 
   <style>
-    .leading-none {
-      line-height: normal
+    /* 
+      em - a relative to its current font-size. 
+    */
+    .leading-tight {
+      line-height: 1.25em;
+    }
+
+    .leading-normal {
+      line-height: 1.5em
     }
     
-    .leading-8 {
-      line-height: 2rem;
+    .leading-relaxed {
+      line-height: 1.625em;
     }
   </style>
 
-  <h3>line height: normal (default)</h3>
-  <p class="leading-none">
+  <h3>line height: 1.25em</h3>
+  <p class="leading-tight">
     Lorem ipsum dolor sit amet consectetur adipisicing elit.
     Autem hic odio, dolore unde expedita ad voluptatibus nostrum
     perspiciatis architecto reiciendis quia, 
     voluptate ipsum tempore tenetur? Voluptatem est non omnis illum. 
   </p>
 
-  <h3>line height: 2rem</h3>
-  <p class="leading-8">
+  <h3>line height: 1.5em</h3>
+  <p class="leading-normal">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Autem hic odio, dolore unde expedita ad voluptatibus nostrum
+    perspiciatis architecto reiciendis quia, 
+    voluptate ipsum tempore tenetur? Voluptatem est non omnis illum. 
+  </p>
+
+  <h3>line height: 1.625em</h3>
+  <p class="leading-relaxed">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
     Autem hic odio, dolore unde expedita ad voluptatibus nostrum
     perspiciatis architecto reiciendis quia, 
     voluptate ipsum tempore tenetur? Voluptatem est non omnis illum. 
   </p>
-    
+
 </body>
 </html>
