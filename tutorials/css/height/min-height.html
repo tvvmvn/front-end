@@ -9,29 +9,39 @@
 <body>
 
   <h1>min height</h1>
-  <p>minimum height</p>
 
   <style>
     .item {
       background-color: #ddd;
     }
+    
+    .a {
+      height: 100px;
+      /* no effect */
+      min-height: 50px;
+    }
 
-    .min-h-12 {
-      min-height: 3rem;
+    .b {
+      height: 100px; 
+      min-height: 150px;
     }
   </style>
 
-  <h3>min-height: 3rem</h3>
-  <div class="item min-h-12">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+  <h3>1 height > min-height</h3>
+  <div class="item a">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Possimus illo cum expedita perspiciatis. 
+    Autem aut, perspiciatis facilis quo labore alias vel nisi, 
+    laborum iusto distinctio eos assumenda ut nulla repellat.
   </div>
 
-  <h3>min-height: 3rem</h3>
-  <div class="item min-h-12">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-    Illum ut consequuntur voluptates culpa labore corrupti porro reprehenderit accusantium,
-    temporibus quos odit expedita. Facere cumque excepturi nulla facilis aliquam vel mollitia?
+  <h3>2 height &lt; min-height</h3>
+  <div class="item b">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Possimus illo cum expedita perspiciatis. 
+    Autem aut, perspiciatis facilis quo labore alias vel nisi, 
+    laborum iusto distinctio eos assumenda ut nulla repellat.
   </div>
-    
+
 </body>
 </html>

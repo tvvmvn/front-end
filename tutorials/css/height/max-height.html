@@ -9,29 +9,39 @@
 <body>
 
   <h1>max height</h1>
-  <p>maximum height</p>
 
   <style>
     .item {
       background-color: #ddd;
     }
     
-    .max-h-12 {
-      max-height: 3rem
+    .a {
+      height: 100px; 
+      max-height: 50px;
+    }
+
+    .b {
+      height: 100px;
+      /* no effect */
+      max-height: 150px;
     }
   </style>
 
-
-  <h3>max height: 3rem</h3>
-  <div class="item max-h-12">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+  <h3>1 height > max-height</h3>
+  <div class="item a">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Possimus illo cum expedita perspiciatis. 
+    Autem aut, perspiciatis facilis quo labore alias vel nisi, 
+    laborum iusto distinctio eos assumenda ut nulla repellat.
   </div>
 
-  <h3>max height: 3rem</h3>
-  <div class="item max-h-12">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-    Illum ut consequuntur voluptates culpa labore corrupti porro reprehenderit accusantium,
-    temporibus quos odit expedita. Facere cumque excepturi nulla facilis aliquam vel mollitia?
+
+  <h3>2 height &lt; max-height</h3>
+  <div class="item b">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Possimus illo cum expedita perspiciatis. 
+    Autem aut, perspiciatis facilis quo labore alias vel nisi, 
+    laborum iusto distinctio eos assumenda ut nulla repellat.
   </div>
   
 </body>
