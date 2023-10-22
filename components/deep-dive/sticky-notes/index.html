@@ -13,10 +13,6 @@
       box-sizing: border-box;
     }
 
-    body {
-      background-color: #eee;
-    }
-
     #container {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -38,6 +34,8 @@
       color: #fff;
       border: none;
       padding: 0.5rem 0.75rem;
+      margin: 1rem 0;
+      font-size: 1rem;
       cursor: pointer;
     }
 
@@ -46,9 +44,7 @@
     }
   </style>
 
-  <h1>
-    <button id="add-btn">New Note +</button>
-  </h1>
+  <button id="add-btn">New Note +</button>
   
   <div id="container"></div>
 

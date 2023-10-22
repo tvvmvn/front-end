@@ -5,7 +5,9 @@
   2 Create view 
 */
 
-// seedData();
+if (!localStorage.getItem("noteStorage")) {
+  seedData();
+}
 
 var container = document.getElementById("container");
 var addBtn = document.getElementById("add-btn");

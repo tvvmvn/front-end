@@ -10,11 +10,12 @@
 
   <style>
     .el {
+      opacity: 0;
       transition: opacity 0.5s;
     }
 
-    .opacity-0 {
-      opacity: 0
+    .active {
+      opacity: 1
     }
   </style>
 
@@ -36,19 +37,19 @@
     sequi molestias debitis accusantium quos. 
     Quia perspiciatis necessitatibus quo nostrum ex vero.
   </h1>
-  <h1 class="el opacity-0">
+  <h1 class="el">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Corporis aliquam harum id animi! Ipsa nihil quae tenetur omnis, 
     sequi molestias debitis accusantium quos. 
     Quia perspiciatis necessitatibus quo nostrum ex vero.
   </h1>
-  <h1 class="el opacity-0">
+  <h1 class="el">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Corporis aliquam harum id animi! Ipsa nihil quae tenetur omnis, 
     sequi molestias debitis accusantium quos. 
     Quia perspiciatis necessitatibus quo nostrum ex vero.
   </h1>
-  <h1 class="el opacity-0">
+  <h1 class="el">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Corporis aliquam harum id animi! Ipsa nihil quae tenetur omnis, 
     sequi molestias debitis accusantium quos. 
@@ -68,7 +69,7 @@
         
         // enter enough inside view port.
         if (y < vh * 0.9) {
-          els[i].classList.remove("opacity-0")
+          els[i].classList.add("active")
         }
       }
     })

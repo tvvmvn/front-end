@@ -8,7 +8,7 @@
 <body>
 
   <style>
-    input[type=search] {
+    input {
       padding: 0.5rem;
       width: 100%;  
       box-sizing: border-box;
@@ -16,24 +16,19 @@
 
     ul {
       list-style: none;
-      padding: 0;
-      margin: 0;
+      padding: 0 0.5rem;
+      margin: 1rem 0 0;
     }
-
-    li {
-      padding: 0.5rem;
-    }
-
+    
     .item {
+      margin-bottom: 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
     .delete-btn {
-      border: none;
-      background-color: transparent;
-      font-size: 1.5rem;
+      cursor: pointer;
     }
 
     .hidden {
@@ -45,22 +40,22 @@
 
   <input type="search" placeholder="Search Google" disabled>
 
-  <ul id="list">
+  <ul>
     <li class="item">
-      <span>I believe I can fly</span>
-      <button class="delete-btn" onclick="deleteItem(0)">&times;</button>
+      I believe I can fly
+      <span class="delete-btn" onclick="deleteItem(0)">&times;</span>
     </li>
     <li class="item">
-      <span>I believe I can touch the sky</span>
-      <button class="delete-btn" onclick="deleteItem(1)">&times;</button>
+      I believe I can touch the sky
+      <span class="delete-btn" onclick="deleteItem(1)">&times;</span>
     </li>
     <li class="item">
-      <span>I think about it every night and day</span>
-      <button class="delete-btn" onclick="deleteItem(2)">&times;</button>
+      I think about it every night and day  
+      <span class="delete-btn" onclick="deleteItem(2)">&times;</span>
     </li>
     <li class="item">
-      <span>Spread my wings and fly away</span>
-      <button class="delete-btn" onclick="deleteItem(3)">&times;</button>
+      Spread my wings and fly away  
+      <span class="delete-btn" onclick="deleteItem(3)">&times;</span>
     </li>
   </ul>
 
