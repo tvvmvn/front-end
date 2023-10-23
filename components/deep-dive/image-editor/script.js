@@ -7,9 +7,9 @@ var UNIT = {
   blur: "px",
 }
 var filter = {};
+
+
 var imgElement = new Image();
-
-
 imgElement.src = "../../../img/homies.jpg";
 
 imgElement.addEventListener("load", function () {  
@@ -19,9 +19,8 @@ imgElement.addEventListener("load", function () {
   render();
 });
 
+
 function setFilter(element) {
-  // element
-  console.log(element)
 
   var name = element.name;
   var value = element.value;
@@ -46,6 +45,7 @@ function setFilter(element) {
 
   element.nextElementSibling.textContent = value;
 }
+
 
 function render() {
   ctx.drawImage(imgElement, 0, 0);

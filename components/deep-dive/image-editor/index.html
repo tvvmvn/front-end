@@ -13,19 +13,24 @@
   <style>
     * {
       box-sizing: border-box;
-    }
-
-    body {
       margin: 0;
+      padding: 0;
     }
 
     nav {
       position: fixed;
-      padding: 1rem;
+      padding: 0 1rem;
       top: 0;
       left: 0;
       width: 250px;
       height: 100vh;
+    }
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      height: 8rem;
+      justify-content: center;
     }
 
     .filter-group {
@@ -37,12 +42,8 @@
       font-weight: 600;
     }
 
-    input[type=range] {
+    .filter-input {
       width: 100%;
-    }
-
-    .filter-value {
-      margin: 0;
     }
 
     main {
@@ -52,20 +53,17 @@
       background-color: #333;
       overflow: auto;
     }
-    
-    main::-webkit-scrollbar {
-      display: none;
-    }
   </style>
 
   <nav>
-    <h1>JS Image Editor &#127912;</h1>
+    <h1 class="title"> JS Image Editor &#127912;</h1>
     
     <div class="filter-group">
       <label for="brightness">Brigtness</label>
       <input 
         type="range" 
         name="brightness" 
+        class="filter-input"
         min="0" 
         max="200" 
         value="100"
@@ -79,6 +77,7 @@
       <input 
         type="range" 
         name="saturate" 
+        class="filter-input"
         min="0" 
         max="200" 
         value="100"
@@ -92,6 +91,7 @@
       <input 
         type="range" 
         name="invert" 
+        class="filter-input"
         min="0" 
         max="100" 
         value="0"
@@ -105,6 +105,7 @@
       <input 
         type="range" 
         name="blur" 
+        class="filter-input"
         min="0" 
         max="10" 
         value="0"

@@ -1,29 +1,27 @@
 /*
-  1 SPA (Single Page Application)
+  1 SPA (Single Page Application) structrue
   Update page using JavaScript.
-  It provides fast and smooth UI
+  It is fast and smooth
 
 
   2 URL (Uniform Resource Locator)
   Website/server address
-  
   e.g) https://google.com/news/sports/?page=1
   
-    1) Path
-    resource path
+  - URL structure
+  1) Path
+  resource path
+  e.g) https://google.com/news/sports
+  
+  2) Query parameter
+  used to send small data inside url.
+  path?key=value
 
-    e.g) https://google.com/news/sports
-    
-    2) Query parameter
-    used to send small data inside url.
-    path?key=value
-
-    e.g) path?page=1
-    
-    3) Location hash
-    used to find specific spot in web page.
-
-    url#value
+  e.g) path?page=1
+  
+  3) Location hash
+  to find specific spot in web page.
+  url#value
 
   e.g) https://google.com/news/sports/?page=1#lastArticle
 
@@ -32,38 +30,11 @@
   Connect request url with proper resource.
 */
 
-var main = document.getElementById("main");
 
-// load 
-document.addEventListener("DOMContentLoaded", hashRouter);
-// on link
-window.addEventListener("hashchange", hashRouter);
+var root = document.getElementById("root");
 
-// Hash Router
-function hashRouter() {
-  // Request URL
-  var url = location.hash.substring(1);
-  console.log("Request URL:", url);
 
-  // url object
-  var urlData = parseUrl(url);
-  console.log(urlData);
-  
-  var routes = [
-    { path: "/", element: Home },
-    { path: "/posts", element: Posts },
-    { path: "/post", element: Post },
-    { path: "/contact", element: Contact },
-  ]
-  
-  for (var i=0; i<routes.length; i++) {
-    if (routes[i].path === urlData.path) {
-      main.innerHTML = routes[i].element(urlData.query);
-    }
-  }    
-}
-
-// parsing url
+// Parsing url
 function parseUrl(url) {
   var hasQuery  = url.indexOf("?") > -1;
   var path, query;
@@ -79,6 +50,13 @@ function parseUrl(url) {
   
   return { url, path, query };
 }
+
+
+// load 
+document.addEventListener("DOMContentLoaded", hashRouter);
+// on link
+window.addEventListener("hashchange", hashRouter);
+
 
 function Home() {
   return (`
@@ -114,3 +92,26 @@ function Contact() {
     <p>john@example.com</p>
   `)
 }
+
+// Hash Router
+function hashRouter() {
+  // Request URL
+  var url = location.hash.substring(1);
+
+  // url object
+  var urlData = parseUrl(url);
+  
+  var routes = [
+    { path: "/", element: Home },
+    { path: "/posts", element: Posts },
+    { path: "/post", element: Post },
+    { path: "/contact", element: Contact },
+  ]
+  
+  for (var i=0; i<routes.length; i++) {
+    if (routes[i].path === urlData.path) {
+      root.innerHTML = routes[i].element(urlData.query);
+    }
+  }    
+}
+

@@ -1,24 +1,29 @@
-/*
-  Sticky Notes
+var container = document.getElementById("container");
+var addBtn = document.getElementById("add-btn");
+var notes = [];
 
-  1 Seed data
-  2 Create view 
-*/
+// Synchronize localStorage
+function saveData(notes) {
+  localStorage.setItem("noteStorage", JSON.stringify(notes));
+}
+
+// Generate seed data
+function seedData() {
+  var seed = [{ id: "n0", content: "My first memo!" }];
+
+  saveData(seed);
+}
 
 if (!localStorage.getItem("noteStorage")) {
   seedData();
 }
-
-var container = document.getElementById("container");
-var addBtn = document.getElementById("add-btn");
-var notes = [];
 
 document.addEventListener("DOMContentLoaded", getNotes);
 addBtn.addEventListener("click", addNote);
 
 // Get all notes
 function getNotes() {
-  notes = getData();
+  notes = JSON.parse(localStorage.getItem("noteStorage"));
 
   for (var i = 0; i < notes.length; i++) {
     createNoteElement(notes[i].id, notes[i].content);
@@ -61,16 +66,6 @@ function deleteNote(id, noteElement) {
   noteElement.remove();
 }
 
-// Get data from localStorage
-function getData() {
-  return JSON.parse(localStorage.getItem("noteStorage"));
-}
-
-// Synchronize localStorage
-function saveData(notes) {
-  localStorage.setItem("noteStorage", JSON.stringify(notes));
-}
-
 // Render 
 function createNoteElement(id, content) {
   var noteElement = document.createElement("textarea");
@@ -88,9 +83,3 @@ function createNoteElement(id, content) {
   container.prepend(noteElement);
 }
 
-// Seed data
-function seedData() {
-  var seed = [{ id: "n0", content: "My first memo!" }];
-
-  saveData(seed);
-}
