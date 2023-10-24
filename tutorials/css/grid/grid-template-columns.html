@@ -8,33 +8,31 @@
 </head>
 <body>
 
-<h1>grid template columns</h1>
-<p>column count</p>
+<h1>grid basic</h1>
 
 <style>
   .container {
     border: 1px solid;
   }
 
-  .item {
-    background-color: #ddd;
-    padding: 0.5rem;
-  }
-
+  /* grid container */
   .grid {
     display: grid;
   }
-
+  
   .grid-cols-3 {
-    /* 
-    repeat(count, minmax(0, 1fr))
-    - grid has fixed column width.
-    */
+    /* column count */
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-
+  
   .gap-2 {
     gap: 0.5rem;
+  }
+
+  /* grid item */
+  .item {
+    background-color: #ddd;
+    padding: 0.5rem;
   }
 </style>
 

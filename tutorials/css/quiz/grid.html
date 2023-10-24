@@ -16,22 +16,22 @@
     .container {
       border: 1px solid;
     }
-
-    .item {
-      padding: 0.5rem;
-      background-color: #ddd;
-    }
-
+    
     .grid {
       display: grid;
     }
-
+    
+    .grid-cols-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    
     .gap-2 {
       gap: 0.5rem;
     }
 
-    .grid-cols-4 {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+    .item {
+      padding: 0.5rem;
+      background-color: #ddd;
     }
 
     .col-span-2 {

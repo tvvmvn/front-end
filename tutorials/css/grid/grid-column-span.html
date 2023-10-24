@@ -10,31 +10,30 @@
 
 <body>
 
-  <h1>grid columns span</h1>
-  <p>column span</p>
+  <h1>grid span</h1>
 
   <style>
     .container {
       border: 1px solid;
     }
-
-    .item {
-      padding: 0.5rem;
-      background-color: #ddd;
-    }
-
+    
     .grid {
       display: grid;
-    }
-
-    .gap-2 {
-      gap: 0.5rem;
     }
 
     .grid-cols-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-
+    
+    .gap-2 {
+      gap: 0.5rem;
+    }
+    
+    .item {
+      padding: 0.5rem;
+      background-color: #ddd;
+    }
+    
     .col-span-2 {
       grid-column-start: span 2;
     }
