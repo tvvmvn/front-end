@@ -8,10 +8,10 @@
 </head>
 <body>
 
-  <h1>Toggle Switch</h1>
+  <h1>Toggle</h1>
 
   <style>
-    .switch {
+    .toggle {
       display: inline-block; 
       width: 56px;
       height: 32px;
@@ -22,7 +22,7 @@
       border-radius: 16px;
     }
     
-    .btn {
+    .switch {
       width: 24px;
       height: 24px;
       background-color: #fff;
@@ -37,18 +37,18 @@
       display: none;
     }
 
-    #checkbox:checked + .switch {
+    #checkbox:checked + .toggle {
       background-color: #333;
     }
 
-    #checkbox:checked + .switch .btn {
+    #checkbox:checked + .toggle .switch {
       transform: translateX(24px);
     }
   </style>
 
   <input type="checkbox" name="" id="checkbox">
-  <label for="checkbox" class="switch">
-    <div class="btn"></div>
+  <label for="checkbox" class="toggle">
+    <div class="switch"></div>
   </label>
   
 </body>
