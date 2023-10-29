@@ -1,62 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-
 <body>
 
   <style>
+    body {
+      margin: 0;
+    }
+
+    #frame {
+      overflow-x: auto;
+      border: 1px solid #f00;
+    }
+
+    #container {
+      width: 1600px;
+      display: flex;
+    }
+
+    .item {
+      box-sizing: border-box;
+      width: 200px;
+      height: 200px;
+      border: 1px dashed;
+    }
     .hidden {
       display: none;
     }
   </style>
 
-  <h1>Filter button</h1>
+  <h1>Scroll</h1>
 
-  <button onclick="filter(this, 'all')" disabled>All</button>
-  <button onclick="filter(this, 'kr')">Korea</button>
-  <button onclick="filter(this, 'jp')">Japan</button>
-  <button onclick="filter(this, 'se')">Sweden</button>
+  <div id="frame">
+    <div id="container">
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+    </div>
+  </div>
 
-  <ul>
-    <li data-category="kr">HYUNDAI</li>
-    <li data-category="kr">KIA</li>
-    <li data-category="jp">TOYOTA</li>
-    <li data-category="jp">HONDA</li>
-    <li data-category="jp">LEXUS</li>
-    <li data-category="se">VOLVO</li>
-  </ul>
+  <button id="prev" class="hidden" onclick="f(event, -1)">Prev</button>
+  <button id="next" onclick="f(event, 1)">Next</button>
 
   <script>
-    var cars = document.querySelectorAll("[data-category]");
-    var prevBtn = document.querySelector("button[disabled]");
+    var left = 0;
+    var containerWidth = 1600;
+    var itemWidth = 200;
+    var vw = innerWidth;
 
-    function filter(activeBtn, filter) {
-      for (var i=0; i<cars.length; i++) {
-        var car = cars[i];
+    function f(event, data) {
+      console.log(event);
 
-        if (filter == "all") {
-          car.classList.remove("hidden")
-        } else {
-          if (car.getAttribute("data-category") == filter) {
-            car.classList.remove("hidden")
-          } else {
-            car.classList.add("hidden")
-          }
-        }
+      left += (data * itemWidth);
+
+      frame.scrollBy({
+        left: (data * itemWidth),
+        behavior: "smooth"
+      })
+
+      if (left >= itemWidth) {
+        prev.classList.remove("hidden")
+      } else {
+        prev.classList.add("hidden")
       }
 
-      activeBtn.disabled = true;
-      prevBtn.disabled = false;
+      if (left > containerWidth - vw) {
+        console.log("end")
+        next.classList.add("hidden")
+      } else {
+        next.classList.remove("hidden")
+      }
 
-      prevBtn = activeBtn;
+      console.log(left);
     }
+
+    addEventListener("resize", () => {
+      vw = innerWidth;
+    })
   </script>
 
 </body>
-
 </html>

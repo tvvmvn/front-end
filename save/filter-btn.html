@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
 
   <style>
@@ -13,46 +15,48 @@
     }
   </style>
 
-  <h1>Filter</h1>
+  <h1>Filter button</h1>
 
-  <button data-filter="drink" onclick="setFilter('drink')">Drink</button>
-  <button data-filter="food" onclick="setFilter('food')">Food</button>
-  <button data-filter="beverage" onclick="setFilter('beverage')">Beverage</button> 
+  <button onclick="filter(this, 'all')" disabled>All</button>
+  <button onclick="filter(this, 'kr')">Korea</button>
+  <button onclick="filter(this, 'jp')">Japan</button>
+  <button onclick="filter(this, 'se')">Sweden</button>
 
   <ul>
-    <li data-category="drink">Espresso</li>
-    <li data-category="drink">Frappuccino</li>
-    <li data-category="drink">Blended</li>
-    <li data-category="food">Bread</li>
-    <li data-category="beverage">Mug & Glass</li>
+    <li data-category="kr">HYUNDAI</li>
+    <li data-category="kr">KIA</li>
+    <li data-category="jp">TOYOTA</li>
+    <li data-category="jp">HONDA</li>
+    <li data-category="jp">LEXUS</li>
+    <li data-category="se">VOLVO</li>
   </ul>
 
   <script>
-    var items = document.querySelectorAll("li[data-category]");
-    var buttons = document.querySelectorAll("button[data-filter]");
+    var cars = document.querySelectorAll("[data-category]");
+    var prevBtn = document.querySelector("button[disabled]");
 
-    setFilter("drink");
+    function filter(activeBtn, filter) {
+      for (var i=0; i<cars.length; i++) {
+        var car = cars[i];
 
-    function setFilter(filter) {
-      console.log(filter)
-
-      for (var i=0; i<buttons.length; i++) {
-        if (buttons[i].getAttribute("data-filter") === filter) {
-          buttons[i].disabled = true;
+        if (filter == "all") {
+          car.classList.remove("hidden")
         } else {
-          buttons[i].disabled = false
+          if (car.getAttribute("data-category") == filter) {
+            car.classList.remove("hidden")
+          } else {
+            car.classList.add("hidden")
+          }
         }
       }
 
-      for (var i=0; i<items.length; i++) {
-        if (items[i].getAttribute("data-category") === filter) {
-          items[i].classList.remove("hidden")
-        } else {
-          items[i].classList.add("hidden")
-        }
-      }
+      activeBtn.disabled = true;
+      prevBtn.disabled = false;
+
+      prevBtn = activeBtn;
     }
   </script>
 
 </body>
+
 </html>
