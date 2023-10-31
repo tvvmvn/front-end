@@ -13,23 +13,20 @@
   <style>
     .toggle {
       display: inline-block; 
-      width: 56px;
-      height: 32px;
+      width: 50px;
+      height: auto;
       background-color: #ddd;
-      position: relative;
-      cursor: pointer;
       transition: background-color 0.5s;
-      border-radius: 16px;
+      padding: 5px;
+      border-radius: 15px;
+      cursor: pointer;
     }
     
     .switch {
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
       background-color: #fff;
-      position: absolute;
-      top: 4px;
-      left: 4px;
-      border-radius: 12px;
+      border-radius: 10px;
       transition: transform 0.5s;
     }
 
@@ -42,7 +39,7 @@
     }
 
     #checkbox:checked + .toggle .switch {
-      transform: translateX(24px);
+      transform: translateX(30px);
     }
   </style>
 
