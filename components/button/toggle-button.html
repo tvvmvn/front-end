@@ -8,10 +8,14 @@
 </head>
 <body>
 
-  <h1>Toggle</h1>
+  <h1>Toggle switch</h1>
 
   <style>
-    .toggle {
+    #checkbox {
+      display: none;
+    }
+
+    .switch {
       display: inline-block; 
       width: 50px;
       height: auto;
@@ -19,10 +23,13 @@
       transition: background-color 0.5s;
       padding: 5px;
       border-radius: 15px;
-      cursor: pointer;
+    }
+
+    #checkbox:checked + .switch {
+      background-color: #333;
     }
     
-    .switch {
+    .head {
       width: 20px;
       height: 20px;
       background-color: #fff;
@@ -30,22 +37,14 @@
       transition: transform 0.5s;
     }
 
-    #checkbox {
-      display: none;
-    }
-
-    #checkbox:checked + .toggle {
-      background-color: #333;
-    }
-
-    #checkbox:checked + .toggle .switch {
+    #checkbox:checked + .switch .head {
       transform: translateX(30px);
     }
   </style>
 
   <input type="checkbox" name="" id="checkbox">
-  <label for="checkbox" class="toggle">
-    <div class="switch"></div>
+  <label for="checkbox" class="switch">
+    <div class="head"></div>
   </label>
   
 </body>

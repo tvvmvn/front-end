@@ -9,7 +9,7 @@
 <body>
   
   <style>
-    nav {
+    .navbar {
       position: fixed;
       top: 0;
       left: 0;
@@ -39,12 +39,12 @@
     }
 
     .drop-btn {
-      font-size: 1rem;
-      background-color: transparent;
       border: none;
+      background-color: transparent;
       color: #fff;
-      cursor: pointer;
+      font-size: 1rem;
       padding: 0.75rem;
+      cursor: pointer;
     }
 
     .drop-btn:hover {
@@ -52,11 +52,15 @@
     }
 
     .drop-content {
-      width: 200px;
+      width: 12rem;
       background-color: #fff;
       border: 1px solid #ddd;
       position: absolute;
       display: none;
+    }
+
+    .drop-container:hover .drop-content {
+      display: block;
     }
     
     .drop-link {
@@ -72,13 +76,9 @@
     main {
       margin-top: 4rem;
     }
-
-    .drop-container:hover .drop-content {
-      display: block;
-    }
   </style>
   
-  <nav>
+  <nav class="navbar">
     <ul class="menu-list">
       <li>
         <a href="#" class="menu-link">Link</a>
@@ -107,7 +107,6 @@
 
   <main>
     <h1>NavBar with Sub Menu</h1>
-    <p>...</p>
   </main>
 
 </body>
