@@ -9,59 +9,59 @@
 <body>
 
   <style>
-    nav {
+    .side-bar {
       position: fixed;
       top: 0;
       left: 0;
-      background-color: #eee;
+      background-color: #333;
+      color: #fff;
       width: 16rem;
-      height: 100vh;
-      display: none;
+      height: 100%;
     }
-
+    
     .logo {
-      text-align: center;
+      padding: 1rem;
     }
 
-    .nav-link {
-      color: #000;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .link {
+      display: block;
+      padding: 1rem;
+      color: #fff;
+    }
+
+    .link:hover {
+      background-color: #222;
     }
 
     main {
-      margin-left: 0;
+      margin-left: 16rem;
       padding: 0 1rem;
-    }
-
-    /* Show sidebar on medium size */
-    @media (min-width: 768px) {
-      nav {
-        display: block;
-      }
-      
-      main {
-        margin-left: 16rem;
-      }
     }
   </style>
 
-  <nav>
+  <nav class="side-bar">
     <h1 class="logo">Logo</h1>
     <ul>
       <li>
-        <a href="#" class="nav-link">Link</a>
+        <a href="#" class="link">Link</a>
       </li>
       <li>
-        <a href="#" class="nav-link">Link</a>
+        <a href="#" class="link">Link</a>
       </li>
       <li>
-        <a href="#" class="nav-link">Link</a>
+        <a href="#" class="link">Link</a>
       </li>
     </ul>
   </nav>
   
   <main>
     <h1>Side Bar</h1>
-    <p>...</p>
   </main>
 
 </body>
