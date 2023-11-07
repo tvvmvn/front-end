@@ -8,13 +8,13 @@
 </head>
 <body>
 
-  <h1>Thumbnail</h1>
+  <h1>Figure</h1>
 
   <style>
     .container {
       /* border: 1px dashed; */
-      width: 200px;
-      height: 200px;
+      width: 400px;
+      height: 300px;
       position: relative;
     }
 
@@ -31,15 +31,22 @@
       width: inherit;
       box-sizing: border-box;
       background-color: rgba(0 0 0 / 0.5);
+      padding: 0 1rem;
+    }
+    
+    .content {
       color: #fff;
-      padding: 1rem;
-      text-align: center;
     }
   </style>
 
   <div class="container bg-image">
     <img src="../../img/Pumbaa.webp" alt="">
-    <div class="overlay">Caption</div>
+    <div class="overlay">
+      <div class="content">
+        <h3>Pumbaa</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+    </div>
   </div>
 
   

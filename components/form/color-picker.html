@@ -8,11 +8,11 @@
 <body>
 
   <style>
-    .option {
+    input {
       display: none;
     }
 
-    label {
+    .option {
       border: 1px solid #ddd;;
       display: inline-block;
       margin-right: 0.25rem;
@@ -21,7 +21,7 @@
       border-radius: 99px;
     }
     
-    .option:checked + label {
+    input:checked + .option {
       outline: 4px solid #ddd;
     }
     
@@ -38,17 +38,17 @@
     }
   </style>
 
-  <h1>Color options</h1>
+  <h1>Color picker</h1>
 
   <div class="container">
-    <input type="radio" name="color" id="white" class="option" checked>
-    <label for="white" class="white"></label>
+    <input type="radio" name="color" id="white" checked>
+    <label for="white" class="option white"></label>
   
-    <input type="radio" name="color" id="gray" class="option">
-    <label for="gray" class="gray"></label>
+    <input type="radio" name="color" id="gray">
+    <label for="gray" class="option gray"></label>
   
-    <input type="radio" name="color" id="black" class="option">
-    <label for="black" class="black"></label>
+    <input type="radio" name="color" id="black">
+    <label for="black" class="option black"></label>
   </div>
   
 </body>

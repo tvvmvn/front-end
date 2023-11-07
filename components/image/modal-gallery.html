@@ -55,9 +55,9 @@
   </div>
   
   <div class="thumbnail-container">
-    <img class="thumbnail" src="../../img/Simba.webp" alt="">
-    <img class="thumbnail" src="../../img/Timon.webp" alt="">
-    <img class="thumbnail" src="../../img/Pumbaa.webp" alt="">
+    <img class="thumbnail" src="../../img/Simba.webp" alt="" onclick="f(0)">
+    <img class="thumbnail" src="../../img/Timon.webp" alt="" onclick="f(1)">
+    <img class="thumbnail" src="../../img/Pumbaa.webp" alt="" onclick="f(2)">
   </div>
 
   <script>
@@ -68,13 +68,9 @@
     // HTMLCollection(length)
     console.log(thumbnails);
 
-    // executed on load
-    for (var i=0; i<thumbnails.length; i++) { 
-      // each thumbnail click
-      thumbnails[i].addEventListener('click', function () {
-        overlay.classList.remove("hidden");
-        modal.src = this.src;
-      })
+    function f(index) {
+      overlay.classList.remove("hidden");
+      modal.src = thumbnails[index].src;
     }
 
     // overlay click

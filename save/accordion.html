@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Accordion</h1>
+
+  <style>
+    .item {
+      /* border: 1px dashed; */
+      border-bottom: 1px solid #ddd;
+      padding: 0.5rem;
+    }
+
+    /* checkbox */
+    .checkbox {
+      display: none;
+    }
+
+    /* label */
+    label {
+      display: block;
+      cursor: pointer;
+      position: relative;
+    }
+
+    /* 
+      * Pseudo element
+
+      1 definition
+      a virtual element
+      doesn't exists in tree.
+      it increases code reusabiliy
+
+      2 Types of pseudo element
+      1) after
+      2) before
+      3) marker
+      ...
+
+      3 Usecase
+      selector::pseudo-element
+    */
+
+    label::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      transition: 0.2s;
+    }
+
+    .checkbox:checked + label::after {
+      transform: rotate(45deg);
+    }
+
+    /* content */
+    .content {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.2s;
+    }
+    
+    .checkbox:checked + label + .content {
+      max-height: 200px;
+    }
+  </style>
+
+  <div class="container">
+    <div class="item">
+      <input type="checkbox" name="" id="a" class="checkbox">
+      <label for="a">What</label>
+      <div class="content">
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+          Dignissimos reprehenderit quas recusandae temporibus nihil porro 
+          eius molestias soluta illum velit magni deleniti nisi, sit, 
+          voluptatem odit pariatur enim facere blanditiis!
+        </p>
+      </div>
+    </div>
+
+    <div class="item">
+      <input type="checkbox" name="" id="b" class="checkbox">
+      <label for="b">When</label>
+      <div class="content">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Provident dicta ipsa velit consequuntur voluptate, 
+          at illo quaerat blanditiis earum modi beatae expedita. 
+          Repellat tempore iusto quis laboriosam. Consequuntur, porro laborum.
+        </p>
+      </div>
+    </div>
+
+    <div class="item">
+      <input type="checkbox" name="" id="c" class="checkbox">
+      <label for="c">Where</label>
+      <div class="content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        </p>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>

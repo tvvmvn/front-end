@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <style>
+    input {
+      display: none;
+    }
+
+    .container {
+      /* border: 1px dashed; */
+      display: inline-grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.5rem;
+    }
+
+    .btn {
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    input:checked + .btn {
+      outline: 3px solid #333;
+    }
+  </style>
+
+  <h1>Option</h1>
+  <p>Choose RAM size</p>
+
+  <div class="container">
+    <input type="radio" name="btn" id="4gb">
+    <label for="4gb" class="btn">4GB</label>
+    <input type="radio" name="btn" id="8gb" checked>
+    <label for="8gb" class="btn">8GB</label>
+    <input type="radio" name="btn" id="16gb">
+    <label for="16gb" class="btn">16GB</label>
+    <input type="radio" name="btn" id="32gb">
+    <label for="32gb" class="btn">32GB</label>
+    <input type="radio" name="btn" id="64gb">
+    <label for="64gb" class="btn">64GB</label>
+  </div>
+
+</body>
+</html>

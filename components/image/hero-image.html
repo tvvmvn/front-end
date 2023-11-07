@@ -14,33 +14,35 @@
     }
 
     .container {
-      /* border: 1px dashed; */
-      height: 300px;
+      height: 400px;
+    }
+    
+    .bg-image {
+      background-image: linear-gradient(to right, #333, #222);
     }
 
-    .text-composer {
-      max-width: 640px;
+    .item {
       height: inherit;
+      max-width: 640px;
       margin: 0 auto;
+      padding: 0 1rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: stretch;
-    }
-
-    .bg-image {
-      background-image: linear-gradient(to right, #0ef, #0bf);
-    }
-    
-    .text {
       color: #fff;
-      text-align: center;
     }
   </style>
 
   <div class="container bg-image">
-    <div class="text-composer">
-      <h1 class="text">Text on main image</h1>
+    <div class="item">
+      <h1>Hero Image</h1>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Perferendis illo voluptas porro omnis. 
+        Quos asperiores distinctio ea enim quae nesciunt quisquam doloremque quis voluptate corporis minima fugit, 
+        inventore id repellat.
+      </p>
     </div>
   </div>
 
