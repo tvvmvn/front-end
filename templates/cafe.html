@@ -100,19 +100,14 @@
       </h1>
     </div>
 
-    <div class="border bg-white shadow-lg flex flex-wrap p-4">
-      <input type="radio" class="hidden peer/eat" name="menu" id="eat" checked>
-      <label for="eat" class="w-1/2 text-lg text-center font-semibold cursor-pointer peer-checked/eat:bg-gray-400 peer-checked/eat:text-white">
-        Eat
-      </label>
-
-      <input type="radio" class="hidden peer/drink" name="menu" id="drink">
-      <label for="drink" class="w-1/2 text-lg text-center font-semibold cursor-pointer peer-checked/drink:bg-gray-400 peer-checked/drink:text-white">
-        Drink
-      </label>
+    <div class="bg-white shadow-lg p-4">
+      <div class="flex">
+        <button id="eatBtn" class="w-1/2 p-1 font-semibold disabled:bg-gray-200" disabled>Eat</button>
+        <button id="drinkBtn" class="w-1/2 p-1 font-semibold disabled:bg-gray-200">Drink</button>
+      </div>
 
       <!-- MENU: Eat -->
-      <div class="mt-4 w-full hidden peer-checked/eat:block">
+      <div id="eat" class="w-full">
         <h3 class="my-4 text-xl font-semibold">Bread Basket</h3>
         <p class="my-4 text-lg text-gray-500">Assortment of fresh baked fruit breads and muffins 5.50</p>
         <h3 class="my-4 text-xl font-semibold">Honey Almond Granola with Fruits</h3>
@@ -134,9 +129,9 @@
       </div>
 
       <!-- MENU: Drink -->
-      <div class="mt-4 w-full hidden peer-checked/drink:block">
-        <h3 class="text-xl font-semibold my-4">Coffee</h3>
-        <p class="mt-4 text-lg text-gray-500 my-4">
+      <div id="drink" class="mt-4 w-full hidden">
+        <h3 class="my-4 text-xl font-semibold">Coffee</h3>
+        <p class="my-4 text-lg text-gray-500">
           Regular coffee 2.50
         </p>
         <h3 class="text-xl font-semibold my-4">Chocolato</h3>
@@ -216,6 +211,23 @@
 </body>
 
 <script>
+  // Menu
+  eatBtn.addEventListener("click", function () {
+    this.disabled = true;
+    drinkBtn.disabled = false;
+    eat.classList.remove("hidden");
+    drink.classList.add("hidden");
+  })
+
+  drinkBtn.addEventListener("click", function () {
+    this.disabled = true;
+    eatBtn.disabled = false;
+    drink.classList.remove("hidden");
+    eat.classList.add("hidden");
+  })
+  
+
+  // Form
   contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
 

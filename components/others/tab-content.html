@@ -52,10 +52,10 @@
       console.log("previous index:", prevIndex);
       console.log("this index:", index);
 
-      items[prevIndex].classList.remove("active");
-      items[index].classList.add("active");
       btns[prevIndex].disabled = false;
       btns[index].disabled = true;
+      items[prevIndex].classList.remove("active");
+      items[index].classList.add("active");
 
       prevIndex = index;
     }
