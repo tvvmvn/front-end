@@ -1,16 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
 
-  
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
 
+  <h3>Filter button</h3>
 
-  
+  <button onclick="f('all')">All</button>
+  <button onclick="f('kr')">Korea</button>
+  <button onclick="f('jp')">Japan</button>
+  <button onclick="f('se')">Sweden</button>
+
+  <ul>
+    <li class="car kr">Hyundai</li>
+    <li class="car kr">Kia</li>
+    <li class="car jp">Toyota</li>
+    <li class="car jp">Honda</li>
+    <li class="car jp">Lexus</li>
+    <li class="car se">Volvo</li>
+  </ul>
+
+  <script>
+
+    var cars = document.getElementsByClassName("car");
+
+    function f(filter) {
+      // button
+      
+
+      // car
+      for (var i=0; i<cars.length; i++) {
+        var car = cars[i];
+
+        if (car.classList.contains(filter)) {
+          car.classList.remove("hidden")
+        } else {
+          car.classList.add("hidden");
+        }
+      }
+    }
+
+  </script>
 
 </body>
+
 </html>
