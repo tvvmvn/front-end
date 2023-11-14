@@ -22,18 +22,23 @@
       /* 
       linear-gradient(direciton, color-stop1, color-stop2, ...)
       */
-      background-image: linear-gradient(to right, #333, #222);
+      background-image: linear-gradient(to right, #333, #000);
     }
 
     .item {
-      height: inherit;
+      /* center */
       max-width: 640px;
+      height: inherit;
       margin: 0 auto;
-      padding: 0 1rem;
+
+      /* adjusting text  */
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: stretch;
+
+      /* padding and color */
+      padding: 0 1rem;
       color: #fff;
     }
   </style>

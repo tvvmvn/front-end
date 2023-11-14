@@ -17,43 +17,50 @@
 
   <h1>Filter button</h1>
 
-  <button onclick="filter(this, 'all')" disabled>All</button>
-  <button onclick="filter(this, 'kr')">Korea</button>
-  <button onclick="filter(this, 'jp')">Japan</button>
-  <button onclick="filter(this, 'se')">Sweden</button>
+  <button id="all" onclick="f('all')">All</button>
+  <button id="kr" onclick="f('kr')">Korea</button>
+  <button id="jp" onclick="f('jp')">Japan</button>
+  <button id="se" onclick="f('se')">Sweden</button>
 
   <ul>
-    <li data-category="kr">HYUNDAI</li>
-    <li data-category="kr">KIA</li>
-    <li data-category="jp">TOYOTA</li>
-    <li data-category="jp">HONDA</li>
-    <li data-category="jp">LEXUS</li>
-    <li data-category="se">VOLVO</li>
+    <li class="car kr">Hyundai</li>
+    <li class="car kr">Kia</li>
+    <li class="car jp">Toyota</li>
+    <li class="car jp">Honda</li>
+    <li class="car jp">Lexus</li>
+    <li class="car se">Volvo</li>
   </ul>
 
   <script>
-    var cars = document.querySelectorAll("[data-category]");
-    var prevBtn = document.querySelector("button[disabled]");
+    var cars = document.getElementsByClassName("car");
+    var btn, prevBtn;
 
-    function filter(activeBtn, filter) {
-      for (var i=0; i<cars.length; i++) {
-        var car = cars[i];
+    f('all');
 
-        if (filter == "all") {
-          car.classList.remove("hidden")
-        } else {
-          if (car.getAttribute("data-category") == filter) {
-            car.classList.remove("hidden")
+    function f(filter) {
+      btn = document.getElementById(filter);
+
+      if (prevBtn) prevBtn.disabled = false;
+      btn.disabled = true;
+
+      if (filter == "all") {
+        for (var i=0; i<cars.length; i++) {
+          var car = cars[i];
+          car.classList.remove("hidden");
+        }
+      } else {
+        for (var i=0; i<cars.length; i++) {
+          var car = cars[i];
+  
+          if (car.classList.contains(filter)) {
+            car.classList.remove("hidden");
           } else {
-            car.classList.add("hidden")
+            car.classList.add("hidden");
           }
         }
       }
 
-      activeBtn.disabled = true;
-      prevBtn.disabled = false;
-
-      prevBtn = activeBtn;
+      prevBtn = btn;
     }
   </script>
 
