@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" item="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
 <body>
@@ -19,7 +19,7 @@
       margin: 0;
     }
 
-    .content {
+    .item {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.2s;
@@ -32,7 +32,7 @@
     .btn.active {
       background-color: #888;
     }
-    .content.active {
+    .item.active {
       max-height: 200px;
     }
   </style>
@@ -41,8 +41,8 @@
 
   <ul>
     <li>
-      <button class="btn" onclick="f(0)">button</button>
-      <div class="content">
+      <button class="btn" onclick="f(this, 0)">Guinness</button>
+      <div class="item">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
         Recusandae, libero temporibus eius saepe ullam voluptatibus 
         in consequatur cum maiores tempore dolore iste atque qui 
@@ -50,29 +50,30 @@
       </div>
     </li>
     <li>
-      <button class="btn" onclick="f(1)">button</button>
-      <div class="content">
+      <button class="btn" onclick="f(this, 1)">Heineken</button>
+      <div class="item">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
         Recusandae, libero temporibus eius saepe ullam voluptatibus 
         in consequatur cum maiores tempore dolore iste atque qui 
-        officiis velit labore doloribus sint. Dolor.
+        officiis velit labore doloribus sint. 
       </div>
     </li>
     <li>
-      <button class="btn" onclick="f(2)">button</button>
-      <div class="content">
+      <button class="btn" onclick="f(this, 2)">Budwiser</button>
+      <div class="item">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
       </div>
     </li>
   </ul>
 
   <script>
-    var btns = document.getElementsByClassName("btn");
-    var contents = document.getElementsByClassName("content");
+    var items = document.getElementsByClassName("item");
 
-    function f(index) {
-      btns[index].classList.toggle("active");
-      contents[index].classList.toggle("active");
+    function f(btn, contentIndex) {
+      // buttons
+      btn.classList.toggle("active");
+      // items
+      items[contentIndex].classList.toggle("active");
     }
   </script>
   

@@ -9,19 +9,15 @@
 <body>
 
 <style>
-    html {
-      scroll-behavior:smooth;
-    }
-
     body {
       height: calc(100vh + 200px);
     }
 
     #btn {
       position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      width: 2rem;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
       cursor: pointer;
     }
 
@@ -31,7 +27,7 @@
   </style>
 
   <h1>Top button</h1>
-  <p>...</p>
+  <p>Scroll down to see the button</p>
 
   <svg 
     xmlns="http://www.w3.org/2000/svg" 
@@ -45,9 +41,8 @@
   <script>
     var btn = document.getElementById('btn');
 
-    // scrolling
-    window.addEventListener('scroll', function () {
-      var scrollTop = document.documentElement.scrollTop;
+    document.addEventListener('scroll', function () {
+      var scrollTop = this.documentElement.scrollTop;
       
       // distance between document-top and viewport-top
       console.log(scrollTop);

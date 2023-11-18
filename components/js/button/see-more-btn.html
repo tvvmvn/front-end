@@ -18,10 +18,7 @@
   </style>
 
   <p id="container">
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-    Itaque ut odit commodi officiis fugiat praesentium, 
-    eum aut tenetur porro sint voluptate repellendus ab laudantium dolor, 
-    quasi id ea obcaecati eaque?
+    Lorem ipsum dolor, sit amet consectetur adipisicing...
   </p>
 
   <span id="btn">more</span>
@@ -29,18 +26,10 @@
   <script>  
     var container = document.getElementById("container");
     var btn = document.getElementById("btn");
-    var content = container.textContent;
-
-    /*  
-      substring(startIndex, endIndex)
-      
-      substract string from text
-    */
-
-    container.textContent = content.substring(0, 50) + "...";
-
+    var fullContent = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit architecto tenetur libero, eos deleniti ratione repudiandae perspiciatis culpa expedita, debitis a ipsa corporis cumque cum. Sunt iure nam unde facilis!";
+    
     btn.addEventListener("click", function () {
-      container.textContent = content;
+      container.textContent = fullContent;
       btn.remove();
     })
   </script>

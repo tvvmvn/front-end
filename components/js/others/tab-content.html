@@ -17,12 +17,13 @@
     }
   </style>
 
+
   <h1>Tab contents</h1>
 
   <div class="btn-container">
-    <button class="btn" disabled onclick="f(0)">Guinness</button>
-    <button class="btn" onclick="f(1)">Heineken</button>
-    <button class="btn" onclick="f(2)">Budwiser</button>
+    <button id="default" disabled onclick="f(this, 0)">Guinness</button>
+    <button onclick="f(this, 1)">Heineken</button>
+    <button onclick="f(this, 2)">Budwiser</button>
   </div>
 
   <div class="container">
@@ -41,23 +42,24 @@
     </div>
   </div>
 
+
   <script>
-    var btns = document.getElementsByClassName("btn");
     var items = document.getElementsByClassName("item");
-    var prevIndex = 0;
+    var prevBtn = document.getElementById("default");
+    var prevItemIndex = 0;
 
-    function f(index) {
+    function f(btn, itemIndex) {
+      // buttons
+      prevBtn.disabled = false;
+      btn.disabled = true;
+      
+      // set items
+      items[prevItemIndex].classList.remove("active");
+      items[itemIndex].classList.add("active");
 
-      // access previous and this index
-      console.log("previous index:", prevIndex);
-      console.log("this index:", index);
-
-      btns[prevIndex].disabled = false;
-      btns[index].disabled = true;
-      items[prevIndex].classList.remove("active");
-      items[index].classList.add("active");
-
-      prevIndex = index;
+      // set index
+      prevBtn = btn;
+      prevItemIndex = itemIndex;
     }
   </script>
   

@@ -55,9 +55,9 @@
   </div>
   
   <div class="thumbnail-container">
-    <img class="thumbnail" src="../../img/Simba.webp" alt="" onclick="f(0)">
-    <img class="thumbnail" src="../../img/Timon.webp" alt="" onclick="f(1)">
-    <img class="thumbnail" src="../../img/Pumbaa.webp" alt="" onclick="f(2)">
+    <img class="thumbnail" src="/img/Simba.webp" alt="" onclick="f(0)">
+    <img class="thumbnail" src="/img/Timon.webp" alt="" onclick="f(1)">
+    <img class="thumbnail" src="/img/Pumbaa.webp" alt="" onclick="f(2)">
   </div>
 
   <script>
@@ -75,11 +75,7 @@
 
     // overlay click
     overlay.addEventListener("click", function (e) {  
-      console.log(e.target);
-          
-      if (this === e.target) {
-        overlay.classList.add("hidden");
-      }
+      overlay.classList.add("hidden");
     })
   </script>
   
