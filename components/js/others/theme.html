@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <style>
+    .dark-mode {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+
+  <h1>Theme choice</h1>
+
+  <input type="checkbox" id="checkbox" name="">
+  <label for="checkbox">Dark Mode</label>
+
+  <ul id="list">
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+  </ul>
+
+  <script>
+    var checkbox = document.getElementById("checkbox");
+    var list = document.getElementById("list");
+
+    // when page is loaded
+    var isDarkMode = localStorage.getItem("darkTheme");
+
+    if (isDarkMode) {
+      list.classList.add("dark-mode");
+      checkbox.checked = true;
+    }
+
+    // when check state is changed
+    checkbox.addEventListener("change", function () {
+      var checked = this.checked;
+
+      console.log(checked);
+      
+      if (checked) {
+        list.classList.add("dark-mode");
+        localStorage.setItem("darkTheme", true);
+      } else {
+        list.classList.remove("dark-mode");
+        localStorage.removeItem("darkTheme");
+      }
+    })
+  </script>
+
+</body>
+
+</html>

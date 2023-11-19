@@ -10,13 +10,6 @@
 
 <body>
 
-  <style>
-    .dark-mode {
-      background-color: #333;
-      color: #fff;
-    }
-  </style>
-
   <h1>LocalStorage</h1>
 
   <pre>
@@ -36,41 +29,12 @@
     delete data from localStorage
   </pre>
 
-  <input type="checkbox" id="checkbox" name="">
-  <label for="checkbox">Dark Mode</label>
-
-  <ul id="list">
-    <li>list item</li>
-    <li>list item</li>
-    <li>list item</li>
-  </ul>
+  <button>Add</button>
+  <button>Remove</button>
+  <button>Get</button>
 
   <script>
-    var checkbox = document.getElementById("checkbox");
-    var list = document.getElementById("list");
-
-    // when page is loaded
-    var isDarkMode = localStorage.getItem("darkTheme");
-
-    if (isDarkMode) {
-      list.classList.add("dark-mode");
-      checkbox.checked = true;
-    }
-
-    // when check state is changed
-    checkbox.addEventListener("change", function () {
-      var checked = this.checked;
-
-      console.log(checked);
-      
-      if (checked) {
-        list.classList.add("dark-mode");
-        localStorage.setItem("darkTheme", true);
-      } else {
-        list.classList.remove("dark-mode");
-        localStorage.removeItem("darkTheme");
-      }
-    })
+    
   </script>
 
 </body>
