@@ -9,7 +9,8 @@
 <body>
   <h1>classList</h1>
   <pre>
-    Store class list of element
+    Store class list of element.
+    it has some methods to control class.
   </pre>
 
   <style>
@@ -40,11 +41,13 @@
 
     // Add class
     foo.classList.add('underline'); 
-    console.log(foo.classList); // underline added
 
     // Remove class
     foo.classList.remove('font-bold');
-    console.log(foo.classList); // font-bold removed
+
+    // Check some class
+    var isBold = foo.classList.contains("font-bold");
+    console.log(isBold);
   </script>
 
 </body>

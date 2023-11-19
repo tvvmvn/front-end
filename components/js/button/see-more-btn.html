@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <h1>See more</h1>
+  <h1>See more button</h1>
 
   <style>
     #btn {
@@ -17,19 +17,19 @@
     }
   </style>
 
-  <p id="container">
-    Lorem ipsum dolor, sit amet consectetur adipisicing...
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing<span id="dots">...</span>
   </p>
 
-  <span id="btn">more</span>
+  <span id="btn">See more</span>
 
   <script>  
-    var container = document.getElementById("container");
+    var dots = document.getElementById("dots");
     var btn = document.getElementById("btn");
-    var fullContent = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit architecto tenetur libero, eos deleniti ratione repudiandae perspiciatis culpa expedita, debitis a ipsa corporis cumque cum. Sunt iure nam unde facilis!";
+    var content = " elit. Odit architecto tenetur libero, eos deleniti ratione repudiandae perspiciatis culpa expedita, debitis a ipsa corporis cumque cum. Sunt iure nam unde facilis!";
     
     btn.addEventListener("click", function () {
-      container.textContent = fullContent;
+      dots.textContent = content;
       btn.remove();
     })
   </script>

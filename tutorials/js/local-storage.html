@@ -17,37 +17,43 @@
     }
   </style>
 
-  <h1>Choice Theme</h1>
-  <p>
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-    Tenetur minus quibusdam expedita? Quisquam magnam fugiat, 
-    autem fuga dolorem commodi tempora assumenda debitis repellendus quas. 
-    Eos iure quia praesentium quae hic.
-  </p>
+  <h1>LocalStorage</h1>
+
+  <pre>
+    A storage that browser provides.
+    used in theme choice, shopping cart, token save and etc.
+
+    
+    * localStorage methods
+
+    1 localStorage.setItem(key, value)
+    save data in localStorage
+
+    2 localStorage.getItem(key)
+    get data from localStorage
+
+    3 localStorgage.removeItem(key)
+    delete data from localStorage
+  </pre>
 
   <input type="checkbox" id="checkbox" name="">
-  <label for="checkbox">
-    Dark Mode
-  </label>
+  <label for="checkbox">Dark Mode</label>
+
+  <ul id="list">
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+  </ul>
 
   <script>
-    /*
-      * localStorage
-      storage that browser provides
-
-      1 localStorgae method
-      1) localStorage.setItem(key, value)
-      2) localStorage.getItem(key)
-      3) localStorgage.removeItem(key)
-    */
-
     var checkbox = document.getElementById("checkbox");
+    var list = document.getElementById("list");
 
     // when page is loaded
     var isDarkMode = localStorage.getItem("darkTheme");
 
     if (isDarkMode) {
-      document.body.classList.add("dark-mode");
+      list.classList.add("dark-mode");
       checkbox.checked = true;
     }
 
@@ -58,10 +64,10 @@
       console.log(checked);
       
       if (checked) {
-        document.body.classList.add("dark-mode");
+        list.classList.add("dark-mode");
         localStorage.setItem("darkTheme", true);
       } else {
-        document.body.classList.remove("dark-mode");
+        list.classList.remove("dark-mode");
         localStorage.removeItem("darkTheme");
       }
     })

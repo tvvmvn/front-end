@@ -18,7 +18,7 @@
     }
     
     #btn.active {
-      fill: #f00;
+      fill: #e00;
     }
   </style>
 
@@ -32,18 +32,15 @@
 
   <script>
     var btn = document.getElementById('btn');
-    var liked = false;
 
     btn.addEventListener('click', function () {
       
-      console.log(liked);
+      var liked = btn.classList.contains("active");
 
       if (liked) {
-        btn.classList.remove("active")
-        liked = false;
+        btn.classList.remove("active");
       } else {
-        btn.classList.add("active")
-        liked = true;
+        btn.classList.add("active");
       }
     })
   </script>
