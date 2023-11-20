@@ -8,6 +8,18 @@
 <body>
 
   <style>
+    .btn {
+      background-color: transparent;
+      border: none;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .btn:disabled {
+      color: #000;
+      border-bottom: 2px solid;
+    }
+
     .item {
       display: none;
     }
@@ -21,25 +33,25 @@
   <h1>Tab contents</h1>
 
   <div class="btn-container">
-    <button id="default" disabled onclick="f(this, 0)">Guinness</button>
-    <button onclick="f(this, 1)">Heineken</button>
-    <button onclick="f(this, 2)">Budwiser</button>
+    <button class="btn" id="default" disabled onclick="f(this, 0)">Guinness</button>
+    <button class="btn" onclick="f(this, 1)">Heineken</button>
+    <button class="btn" onclick="f(this, 2)">Budwiser</button>
   </div>
 
   <div class="container">
-    <div class="item active">
+    <p class="item active">
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
       Molestias vitae similique laborum a dolorem. 
       Quam rem porro perspiciatis repellat, 
       tenetur dolore maxime in dolores similique a ad magni nihil unde!
-    </div>
-    <div class="item">
+    </p>
+    <p class="item">
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
       Molestias vitae similique laborum a dolorem. 
-    </div>
-    <div class="item">
+    </p>
+    <p class="item">
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-    </div>
+    </p>
   </div>
 
 
@@ -57,7 +69,7 @@
       items[prevItemIndex].classList.remove("active");
       items[itemIndex].classList.add("active");
 
-      // set index
+      // set prev variables
       prevBtn = btn;
       prevItemIndex = itemIndex;
     }
