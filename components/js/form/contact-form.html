@@ -62,64 +62,63 @@
       </div>
   
       <div class="form-group col-span-2">
-        <label for="email">E-mail</label>
-        <input type="text" name="email" id="email" placeholder="JohnDoe@example.com">
+        <label for="phone">Phone</label>
+        <input type="text" name="phone" id="phone" placeholder="01012345678">
       </div>
     </div>
     <button type="submit">Submit</button>
 
-    <p id="errors" class="warning"></p>
+    <p id="error-message" class="warning"></p>
   </form>
 
   <p id="done" class="hidden">
     Thank you and we'll contact with you soon
   </p>
 
+
   <script>
     var form = document.getElementById('form');
+    var errorMessage = document.getElementById("error-message");
+    var fnamePatt = /^[a-zA-Z]+$/;
+    var lnamePatt = /^[a-zA-Z]+$/;
+    var phonePatt = /^\d{5,11}$/;
 
-    form.addEventListener('submit', function (e) {
-      try {
-        e.preventDefault();
-  
-        var fname = form.elements["fname"].value;
-        var lname = form.elements["lname"].value;
-        var email = form.elements["email"].value;
-  
-        var errors = [];
-  
-        // first name check
-        if (!fname.trim()) {
-          errors.push('First name is required')
-        } else if (fname.match(/[^a-zA-Z]/)) {
-          errors.push('Incorrect first name')
-        }
-  
-        // last name check
-        if (!lname.trim()) {
-          errors.push('Last name is required'); 
-        } else if (lname.match(/[^a-zA-Z]/)) {
-          errors.push('Incorrect last name')
-        }
-  
-        // email check
-        if (!email.trim()) {
-          errors.push('E-mail is required');
-        } 
+    form.addEventListener('submit', handleSubmit);
 
-        console.log(errors);
-  
-        if (errors.length) {
-          throw errors;
-        }
+    function handleSubmit(e) {
+      e.preventDefault();
 
-        form.classList.add("hidden")
-        done.classList.remove("hidden")
+      var fname = form.elements["fname"].value;
+      var lname = form.elements["lname"].value;
+      var phone = form.elements["phone"].value;
 
-      } catch (error) {
-        document.getElementById("errors").innerHTML = errors.join("<br>")
+      var errors = [];
+
+      // first name check
+      if (!fname.match(fnamePatt)) {
+        errors.push('Invalid first name')
       }
-    })
+
+      // last name check
+      if (!lname.match(lnamePatt)) {
+        errors.push('Invalid last name')
+      }
+
+      // phone check
+      if (!phone.match(phonePatt)) {
+        errors.push('Invalid phone number');
+      } 
+
+      console.log(errors);
+      
+      if (errors.length) {
+        errorMessage.innerHTML = errors.join("<br>");
+        return;
+      }
+
+      form.classList.add("hidden")
+      done.classList.remove("hidden")
+    }
   </script>
 
 </body>

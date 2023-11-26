@@ -8,12 +8,12 @@
 </head>
 <body>
 
-  <h1>DOM (Doc Object Model)</h1>
+  <h1>window object</h1>
 
   <pre>
-    It shows that every element in document is JS Object 
-    
-    - window object
+    A tool kit for view development.
+
+    some useful tools that window object provides are:
     - history
     - location
     - navigator
@@ -27,8 +27,6 @@
   <script>
     /* 
       window object
-
-      toolkit for web development
     */
 
     console.log(window);
@@ -39,18 +37,13 @@
     /* 
       history
 
-      it has browing history
+      it has browsing history
     */
 
     // count of visiting page
     console.log(history.length)
-    // get to next visiting page
-    console.log(history.forward)
     // get to previous visiting page (back button)
     console.log(history.back)
-    // get to specific page
-    console.log(history.go)
-
   </script>
 
 
@@ -61,15 +54,8 @@
       user's location info in web
     */
 
-    console.log(location)
-
     // entire URL
     console.log(location.href)
-    // protocol
-    console.log(location.protocol)
-
-    // refresh button
-    console.log(location.reload)
   </script>
 
 
@@ -79,8 +65,6 @@
 
       browser's info
     */
-
-    console.log(navigator)
 
     console.log(navigator.language)
     // online 
@@ -98,6 +82,7 @@
 
       can be used for AJAX request
     */
+
     console.log(XMLHttpRequest)
     console.log(fetch)
   </script>
@@ -118,7 +103,7 @@
 
   <script>
     /*
-      user message
+      communication with user
     */
 
     // alert("hello user");

@@ -47,22 +47,34 @@
     var form = document.getElementById("form");
     var done = document.getElementById("done");
     var error = document.getElementById("error");
+    // pattern to validate email
+    var patt = /[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$/;
+    
+    /*
+      * Regular expression
+      pattern to search string.
 
-    form.addEventListener("submit", function (e) {
+      - use case
+      /pattern/
+    */
+
+    form.addEventListener("submit", handleSubmit)
+
+    function handleSubmit(e) {
       e.preventDefault(); 
       
       var email = form.elements["email"].value;
 
-      if (!email.trim()) {
-        error.textContent = "E-mail is required";
+      if (!email.match(patt)) {
+        error.textContent = "Invalid E-mail";
         return;
       }
 
-      // AJAX requests here
+      // server requests here
 
       form.classList.add("hidden");
       done.classList.remove("hidden")
-    })
+    }
   </script>
 
 </body>

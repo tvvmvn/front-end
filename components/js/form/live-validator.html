@@ -39,25 +39,18 @@
   <script>
     var input = document.getElementById('input');
     var message = document.getElementById("message");
-    
-    input.addEventListener('keyup', function () {
+    var lowerCaseLetters = /[a-z]/
+    var upperCaseLetters = /[A-Z]/
+    var numbers = /[0-9]/
+
+    input.addEventListener('keyup', keyUpHandler);
+
+    function keyUpHandler() {
+      var password = this.value;
+
+      console.log(password);
+
       try {
-        var password = this.value;
-
-        console.log(password);
-
-        /*
-          # Regular expression
-          pattern to search string.
-
-          - use case
-          /pattern/
-        */
-
-        var lowerCaseLetters = /[a-z]/
-        var upperCaseLetters = /[A-Z]/
-        var numbers = /[0-9]/
-
         if (!password) {
           throw 'Password is required';
         }
@@ -66,7 +59,7 @@
           throw "Password must contain at least one lowercase letter";
         }
 
-        if (!password.match(uppperCaseLetters)) {
+        if (!password.match(upperCaseLetters)) {
           throw "Password must contain at least one uppercase letter";
         }
 
@@ -83,7 +76,7 @@
       } catch (error) {
         message.innerHTML = `<span class="warning">${error}</span>`;  
       } 
-    })
+    }
   </script>
 
 </body>
