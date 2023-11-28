@@ -8,14 +8,6 @@
 <body>
 
   <style>
-    .btn {
-      background-color: #eee;
-      border: none;
-      width: 100%;
-      padding: 0.5rem;
-      font-size: 1rem;
-    }
-
     ul {
       list-style: none;
       padding: 0;
@@ -23,30 +15,46 @@
     }
 
     .item {
+      margin-bottom: 0.25rem;
+    }
+
+    .btn {
+      background-color: #eee;
+      border: none;
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      text-align: left;
+    }
+
+    .btn::after {
+      content: "+";
+      float: right;
+    }
+
+    .active .btn::after {
+      content: "-";
+      float: right;
+    }
+
+    .content {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.2s;
     }
 
-    .btn {
-      text-align: left;
-    }
-
-    .btn.active {
-      background-color: #ddd;
-    }
-
-    .item.active {
+    .active .content {
       max-height: 200px;
     }
   </style>
   
+
   <h1>Accordion</h1>
 
   <ul>
-    <li>
-      <button class="btn" onclick="f(this, 0)">Guinness</button>
-      <div class="item">
+    <li class="item">
+      <button class="btn" onclick="f(0)">Guinness</button>
+      <div class="content">
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
           Recusandae, libero temporibus eius saepe ullam voluptatibus 
@@ -55,9 +63,9 @@
         </p>
       </div>
     </li>
-    <li>
-      <button class="btn" onclick="f(this, 1)">Heineken</button>
-      <div class="item">
+    <li class="item">
+      <button class="btn" onclick="f(1)">Heineken</button>
+      <div class="content">
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
           Recusandae, libero temporibus eius saepe ullam voluptatibus 
@@ -66,9 +74,9 @@
         </p>
       </div>
     </li>
-    <li>
-      <button class="btn" onclick="f(this, 2)">Budwiser</button>
-      <div class="item">
+    <li class="item">
+      <button class="btn" onclick="f(2)">Budwiser</button>
+      <div class="content">
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
         </p>
@@ -76,14 +84,12 @@
     </li>
   </ul>
 
+
   <script>
     var items = document.getElementsByClassName("item");
 
-    function f(btn, contentIndex) {
-      // buttons
-      btn.classList.toggle("active");
-      // items
-      items[contentIndex].classList.toggle("active");
+    function f(index) {
+      items[index].classList.toggle("active");
     }
   </script>
   

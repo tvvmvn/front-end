@@ -8,70 +8,69 @@
 <body>
 
   <style>
-    .btn {
-      background-color: transparent;
-      border: none;
-      padding: 0.5rem;
-      font-size: 1rem;
-    }
-
-    .btn:disabled {
-      color: #000;
-      border-bottom: 2px solid;
-    }
-
-    .item {
+    .hidden {
       display: none;
     }
 
-    .active {
-      display: block;
+    input {
+      display: none;
+    }
+
+    label {
+      display: inline-block;
+      padding: 0.5rem;
+    }
+
+    input:checked + label {
+      background-color: #000;
+      color: #fff;
     }
   </style>
 
+  <h1>Tab Contents</h1>
 
-  <h1>Tab contents</h1>
-
-  <div class="btn-container">
-    <button class="btn" id="default" disabled onclick="f(this, 0)">Guinness</button>
-    <button class="btn" onclick="f(this, 1)">Heineken</button>
-    <button class="btn" onclick="f(this, 2)">Budwiser</button>
+  <div class="">
+    <input type="radio" name="car" id="kr" checked>
+    <label for="kr" onclick="f('kr')">
+      Korea
+    </label>
+    <input type="radio" name="car" id="jp">
+    <label for="jp" onclick="f('jp')">
+      Japan
+    </label>
+    <input type="radio" name="car" id="se">
+    <label for="se" onclick="f('se')">
+      Sweden
+    </label>
   </div>
 
-  <div class="container">
-    <p class="item active">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-      Molestias vitae similique laborum a dolorem. 
-      Quam rem porro perspiciatis repellat, 
-      tenetur dolore maxime in dolores similique a ad magni nihil unde!
+  <div>
+    <p class="item kr">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+      Aliquam iste accusantium maiores ab obcaecati, exercitationem fuga? 
+      Dolores, debitis repudiandae laudantium necessitatibus nemo quae 
+      placeat cumque voluptatibus recusandae fuga a libero?
     </p>
-    <p class="item">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-      Molestias vitae similique laborum a dolorem. 
+    <p class="item hidden jp">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+      Aliquam iste accusantium maiores ab obcaecati, exercitationem fuga? 
     </p>
-    <p class="item">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+    <p class="item hidden se">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     </p>
   </div>
-
 
   <script>
     var items = document.getElementsByClassName("item");
-    var prevBtn = document.getElementById("default");
-    var prevItemIndex = 0;
 
-    function f(btn, itemIndex) {
-      // buttons
-      prevBtn.disabled = false;
-      btn.disabled = true;
-      
-      // set items
-      items[prevItemIndex].classList.remove("active");
-      items[itemIndex].classList.add("active");
-
-      // set prev variables
-      prevBtn = btn;
-      prevItemIndex = itemIndex;
+    function f(filter) {
+      for (var i=0; i<items.length; i++) {
+        if (items[i].classList.contains(filter)) {
+          items[i].classList.remove("hidden");
+        } else {
+          items[i].classList.add("hidden");
+        }
+      }
     }
   </script>
   

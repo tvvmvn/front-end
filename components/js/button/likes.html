@@ -17,7 +17,7 @@
       fill: #ddd;
     }
     
-    #btn.active {
+    #btn.liked {
       fill: #e00;
     }
   </style>
@@ -31,18 +31,21 @@
   </svg>
 
   <script>
-    var btn = document.getElementById('btn');
+    var btn = document.getElementById("btn");
 
-    btn.addEventListener('click', function () {
+    btn.addEventListener("click", handleClick);
+
+    function handleClick() {
+      var isLiked = this.classList.contains("liked");
+
+      console.log(isLiked);
       
-      var liked = btn.classList.contains("active");
-
-      if (liked) {
-        btn.classList.remove("active");
+      if (isLiked) {
+        btn.classList.remove("liked");
       } else {
-        btn.classList.add("active");
+        btn.classList.add("liked");
       }
-    })
+    }
   </script>
   
 </body>

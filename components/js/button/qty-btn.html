@@ -9,21 +9,15 @@
 
   <h1>Quantity button</h1>
 
-  <p id="count">0</p>
+  <input type="text" name="" id="item" value="0">
   <button onclick="f(-1)">-</button>
   <button onclick="f(1)">+</button>
 
   <script>
-    var num = 0;
-
     function f(data) {
-      num += data;
-      
-      if (num < 0) {
-        num = 0;
-      }
+      var item = document.getElementById("item");
 
-      count.textContent = num;
+      item.value++;
     }
   </script>
 

@@ -26,12 +26,17 @@
   <script>  
     var dots = document.getElementById("dots");
     var btn = document.getElementById("btn");
-    var content = " elit. Odit architecto tenetur libero, eos deleniti ratione repudiandae perspiciatis culpa expedita, debitis a ipsa corporis cumque cum. Sunt iure nam unde facilis!";
     
-    btn.addEventListener("click", function () {
-      dots.textContent = content;
+    btn.addEventListener("click", handleClick);
+
+    function handleClick() {
+      var data = ` elit. Odit architecto tenetur libero, 
+      eos deleniti ratione repudiandae perspiciatis culpa expedita, 
+      debitis a ipsa corporis cumque cum. Sunt iure nam unde facilis!`;
+
+      dots.textContent = data;
       btn.remove();
-    })
+    }
   </script>
 
 </body>

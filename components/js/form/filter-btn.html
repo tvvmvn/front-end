@@ -13,15 +13,41 @@
     .hidden {
       display: none;
     }
+
+    input {
+      display: none;
+    }
+
+    label {
+      display: inline-block;
+      padding: 0.5rem;
+    }
+
+    input:checked + label {
+      background-color: #000;
+      color: #fff;
+    }
   </style>
 
   <h1>Filter button</h1>
 
   <div class="">
-    <button id="default" disabled onclick="f(this, 'all')">All</button>
-    <button onclick="f(this, 'kr')">Korea</button>
-    <button onclick="f(this, 'jp')">Japan</button>
-    <button onclick="f(this, 'se')">Sweden</button>
+    <input type="radio" name="car" id="all" checked>
+    <label for="all" onclick="f('all')">
+      All
+    </label>
+    <input type="radio" name="car" id="kr">
+    <label for="kr" onclick="f('kr')">
+      Korea
+    </label>
+    <input type="radio" name="car" id="jp">
+    <label for="jp" onclick="f('jp')">
+      Japan
+    </label>
+    <input type="radio" name="car" id="se">
+    <label for="se" onclick="f('se')">
+      Sweden
+    </label>
   </div>
 
   <ul>
@@ -35,14 +61,8 @@
 
   <script>
     var items = document.getElementsByClassName("item");
-    var prevBtn = document.getElementById("default");
 
-    function f(btn, filter) {
-      // buttons
-      prevBtn.disabled = false;
-      btn.disabled = true;
-
-      // items
+    function f(filter) {
       for (var i=0; i<items.length; i++) {
         if (filter == "all") {
           items[i].classList.remove("hidden");
@@ -54,9 +74,6 @@
           }
         }
       }
-
-      // set 
-      prevBtn = btn;
     }
   </script>
 
