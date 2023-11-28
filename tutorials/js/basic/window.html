@@ -13,14 +13,14 @@
   <pre>
     A tool kit for view development.
 
-    some useful tools that window object provides are:
+    some tools that window object provides are:
     - history
     - location
     - navigator
-    - server request 
-    - storage
-    - user message
-    - view dev
+    - server request methods
+    - Web storage 
+    - communication methods
+    - document
   </pre>
 
 
@@ -37,7 +37,7 @@
     /* 
       history
 
-      it has browsing history
+      It provides props and methods about browsing history 
     */
 
     // count of visiting page
@@ -51,11 +51,13 @@
     /*
       location
 
-      user's location info in web
+      It provides props and methods about users' location data in web
     */
 
-    // entire URL
+    // visiting URL
     console.log(location.href)
+    // spot in an web page
+    console.log(location.hash)
   </script>
 
 
@@ -63,24 +65,23 @@
     /*
       navigator
 
-      browser's info
+      It provids props and methods about a browser (client)
     */
 
+    // browser's language
     console.log(navigator.language)
-    // online 
+    // detect online or not
     console.log(navigator.onLine)
-
-    // location based service
-    console.log(navigator.geolocation.getCurrentPosition)
+    // coordinates of client (location based service)
     console.log(navigator.geolocation.coordinates)
   </script>
 
 
   <script>
     /*
-      server request operation
+      Server request methods
 
-      can be used for AJAX request
+      It can be used for AJAX request
     */
 
     console.log(XMLHttpRequest)
@@ -90,32 +91,34 @@
 
   <script>
     /*
-      web storage
+      Web Storage 
 
-      the storage that brower provides
+      An storage that brower provides
     */
 
     console.log(document.cookie)
     console.log(localStorage)
-    console.log(sessionStorage)
   </script>
 
 
   <script>
     /*
-      communication with user
+      Methods to communicate with an user
     */
 
+    // to notify
     // alert("hello user");
+
+    // to confirm
     // confirm("Yes or No");
   </script>
 
 
   <script>
     /*
-      view dev
+      document
 
-      user interface between user and web
+      view dev
     */
    
     console.log(document)

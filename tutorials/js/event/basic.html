@@ -8,21 +8,28 @@
 </head>
 <body>
   
-  <h1>event and event-handling</h1>
+  <h1>Event</h1>
   <pre>
-    user's action in web page
+    An user's action in web page
     e.g) click, scroll, mousemove, touch and etc.
   </pre>
 
   <button id="btn">button</button>
 
   <script>
+
+    /*
+      * How to handle event
+      element.addEventListener(event, eventHandler)
+
+      when event occurs in element, eventHandler is invoked.
+    */
+
     var btn = document.getElementById('btn');
 
-    // addEventListener(eventName, eventHandler)
-    btn.addEventListener('click', f);
-    
-    function f() {
+    btn.addEventListener('click', handleClick);
+
+    function handleClick() {
       alert('lol');
     }
   </script>

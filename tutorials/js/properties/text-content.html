@@ -8,15 +8,18 @@
 <body>
   
   <h1>textContent</h1>
-  <p>get text of element</p>
+  <p>It stores text content of element</p>
 
   <p id="song">Fly me to the moon</p>
 
   <script>
     var song = document.getElementById("song");
 
+    // access text content
     console.log(song.textContent)
-    console.log(typeof song.textContent)
+
+    // update text content
+    song.textContent = "Billie Jean"
   </script>
 
 </body>

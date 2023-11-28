@@ -10,30 +10,26 @@
   <h1>innerHTML</h1>
   
   <p>
-    Storing tree inside element as String type.
+    It stores tree as String inside an element.
   </p>
   
-  <div id="container">
-    <ul>
-      <li>foo</li>
-      <li>bar</li>
-      <li>baz</li>
-    </ul>
-  </div>
+  <ul id="list">
+    <li>Staria</li>
+    <li>Avante</li>
+    <li>Casper</li>
+  </ul>
   
   <script>
-    var container = document.getElementById('container');
+    var list = document.getElementById('list');
   
     // access tree
-    console.log(container.innerHTML)
+    console.log(list.innerHTML)
   
     // update tree
-    container.innerHTML = `
-      <ul>
-        <li>Guinness</li>
-        <li>Heineken</li>
-        <li>Budwiser</li>
-      </ul>
+    list.innerHTML = `
+      <li>Audi</li>
+      <li>Volvo</li>
+      <li>Lexus</li>
     `
   
   </script>

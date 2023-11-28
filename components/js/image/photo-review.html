@@ -66,14 +66,14 @@
   
   <div class="container">
     <img src="/img/Simba.webp" alt="" id="main">
-    <button class="prev" onclick="move(-1)">&#10094;</button>
-    <button class="next" onclick="move(1)">&#10095;</button>
+    <button class="prev" onclick="prev()">&#10094;</button>
+    <button class="next" onclick="next()">&#10095;</button>
   </div>
   
   <div class="thumbnail-container">
-    <img class="thumbnail active" src="/img/Simba.webp" onclick="jumpTo(0)" alt="">
-    <img class="thumbnail" src="/img/Timon.webp" onclick="jumpTo(1)" alt="">
-    <img class="thumbnail" src="/img/Pumbaa.webp" onclick="jumpTo(2)" alt="">
+    <img class="thumbnail active" src="/img/Simba.webp" onclick="jump(0)" alt="">
+    <img class="thumbnail" src="/img/Timon.webp" onclick="jump(1)" alt="">
+    <img class="thumbnail" src="/img/Pumbaa.webp" onclick="jump(2)" alt="">
   </div>
 
   <h3>John Doe</h3>
@@ -89,25 +89,33 @@
     var index = 0;
     var prevIndex = 0;
 
-    function move(data) {
-      index += data;
+    function prev() {
+      index--;
 
       if (index < 0) index = 2;
+
+      change();
+    }
+    
+    function next() {
+      index++;
+
       if (index > 2) index = 0;
 
       change();
     }
 
-    function jumpTo(data) {
+    function jump(data) {
       index = data;
+      
       change();
     }
 
     function change() {
-      // update main image
+      // main image
       main.src = thumbnails[index].src;
-      
-      // outline      
+
+      // outline
       thumbnails[prevIndex].classList.remove("active");
       thumbnails[index].classList.add("active");
 

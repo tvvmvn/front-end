@@ -60,7 +60,9 @@
     var index = 0;
     var prevIndex = 0;
 
-    setInterval(function () {
+    setInterval(interval, 3000);
+
+    function interval() {
       index++;
       
       if (index < 0) index = 2;
@@ -74,7 +76,7 @@
       thumbnails[index].classList.add("active");
 
       prevIndex = index;
-    }, 3000)
+    }
   </script>
 
 </body>

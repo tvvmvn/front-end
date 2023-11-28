@@ -8,16 +8,16 @@
 <body>
 
   <h1>Event Object</h1>
-  <p>it has info about current event</p>
+  <p>it has info about occured event</p>
 
   <button id="btn">button</button>
 
   <script>
     var btn = document.getElementById("btn");
 
-    btn.addEventListener("click", f);
+    btn.addEventListener("click", handleClick);
 
-    function f(e) {
+    function handleClick(e) {
       // event object
       console.log(e);
     }

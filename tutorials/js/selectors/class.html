@@ -17,14 +17,26 @@
   </ul>
 
   <script>
-    var items = document.getElementsByClassName('item');
+    /*
+      * select elements by class
+      You can select multiple elements 
 
-    console.log(items) // HTMLCollections(length)
+      document.getElementsByClassName(class)
+    */
 
+    var items = document.getElementsByClassName("item");
+
+    // HTMLCollections(length)
+    console.log(items) 
+
+    // access each element
     console.log(items[0]) // foo
     console.log(items[1]) // var
     console.log(items[2]) // baz
-    console.log(items.length); // 3
+
+    // get count of elements
+    console.log(items.length); 
+    // 3
   </script>
   
 </body>

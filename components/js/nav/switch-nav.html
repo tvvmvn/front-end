@@ -42,7 +42,9 @@
     var header = document.getElementById('header');
     var prevScrollTop = 0;
 
-    document.addEventListener('scroll', function () {
+    document.addEventListener('scroll', handleScroll)
+
+    function handleScroll() {
       var scrollTop = document.documentElement.scrollTop;
 
       // value in a previous point
@@ -56,7 +58,7 @@
       }
 
       prevScrollTop = scrollTop;
-    })
+    }
   </script>
 
 </body>

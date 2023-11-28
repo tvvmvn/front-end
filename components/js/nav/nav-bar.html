@@ -14,13 +14,11 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
+      width: 100%;
       backdrop-filter: blur(8px);
     }
 
     .header-inner {
-      display: flex;
-      height: 3rem;
       border-bottom: 1px solid #ddd;
     }
 
@@ -77,7 +75,6 @@
 
   <main>
     <h1>Top navigation</h1>
-    <p>...</p>
   </main>
 
   <script>
@@ -87,18 +84,18 @@
     // menu button click
     btn.addEventListener("click", function () {
       nav.classList.toggle("hidden");
-    })
+    });
 
     // document click
     document.addEventListener('click', function (e) {
-      // event target
+    // event target
       console.log(e.target)
 
       // except for button
       if (e.target !== btn) {
         nav.classList.add('hidden');
       }
-    })
+    });
   </script>
 
 </body>

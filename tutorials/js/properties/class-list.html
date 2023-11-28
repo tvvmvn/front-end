@@ -9,7 +9,7 @@
 <body>
   <h1>classList</h1>
   <pre>
-    Store class list of element.
+    It stores class list of element.
     it has some methods to control class.
   </pre>
 
@@ -35,19 +35,32 @@
   
   <script>
     var foo = document.getElementById('foo');
-    
-    // Access class list
-    console.log(foo.classList); // DOMTokenList(length)
 
-    // Add class
+    // DOMTokenList(length)
+    console.log(foo.classList); 
+
+
+    /* 
+      classList methods
+
+      1 add
+      add class to list
+      2 remove
+      remove class from list
+      3 contains
+      check specific class in list 
+      return true or false.
+    */
+
+
+    // add(class to add)
     foo.classList.add('underline'); 
 
-    // Remove class
+    // remove(class to remove)
     foo.classList.remove('font-bold');
 
-    // Check some class
-    var isBold = foo.classList.contains("font-bold");
-    console.log(isBold);
+    // contains(class to check)
+    console.log(foo.classList.contains("font-bold"));
   </script>
 
 </body>

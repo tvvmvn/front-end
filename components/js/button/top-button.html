@@ -41,10 +41,15 @@
   <script>
     var btn = document.getElementById('btn');
 
-    document.addEventListener('scroll', function () {
+    // scroll
+    document.addEventListener('scroll', handleScroll);
+    // click 
+    btn.addEventListener('click', handleClick)
+
+    function handleScroll() {
       var scrollTop = this.documentElement.scrollTop;
       
-      // distance between document-top and viewport-top
+      // distance between document top and viewport top
       console.log(scrollTop);
 
       if (scrollTop > 100) {
@@ -52,12 +57,11 @@
       } else {
         btn.classList.add('hidden');
       }
-    })
+    }
 
-    // click top button
-    btn.addEventListener('click', function () {
+    function handleClick() {
       document.documentElement.scrollTop = 0;
-    })
+    }
   </script>
 
 </body>

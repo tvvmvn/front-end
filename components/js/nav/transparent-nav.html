@@ -19,15 +19,15 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 4rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       transition: background-color 0.5s;
     }
 
+    .logo {
+      text-align: center;
+    }
+
     .bg-image {
-      background-image: linear-gradient(to right, #0ef, #0af);
+      background-color: #ddd;
       height: 400px;
     }
 
@@ -37,7 +37,7 @@
   </style>
 
   <header id="header">
-    Transparent NavBar
+    <h3 class="logo">Transparent NavBar</h3>
   </header>
 
   <div class="bg-image"></div>
@@ -45,7 +45,9 @@
   <script>
     var header = document.getElementById('header');
 
-    window.addEventListener('scroll', function () {
+    window.addEventListener('scroll', handleScroll);
+
+    function handleScroll () {
       // distance between viewport-top and document-top
       var scrollTop = document.documentElement.scrollTop;
 
@@ -56,7 +58,7 @@
       } else {
         header.classList.remove('active');
       }
-    })
+    }
   </script>
   
 </body>
