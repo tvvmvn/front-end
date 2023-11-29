@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <base href="../../../img/" target="_blank">
 </head>
 <body>
 
@@ -49,16 +50,18 @@
       display: none;
     }
   </style>
+  
 
   <div id="overlay" class="hidden">
     <img src="" alt="" id="modal">
   </div>
   
   <div class="thumbnail-container">
-    <img class="thumbnail" src="/img/Simba.webp" alt="" onclick="openModal(0)">
-    <img class="thumbnail" src="/img/Timon.webp" alt="" onclick="openModal(1)">
-    <img class="thumbnail" src="/img/Pumbaa.webp" alt="" onclick="openModal(2)">
+    <img class="thumbnail" src="Simba.webp" alt="" onclick="openModal(0)">
+    <img class="thumbnail" src="Timon.webp" alt="" onclick="openModal(1)">
+    <img class="thumbnail" src="Pumbaa.webp" alt="" onclick="openModal(2)">
   </div>
+
 
   <script>
     var overlay = document.getElementById("overlay");
