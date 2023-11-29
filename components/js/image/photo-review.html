@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <base href="../../../img/" target="_blank">
 </head>
 <body>
 
@@ -61,19 +62,20 @@
       z-index: 1;
     }
   </style>
+
  
   <h1>Photo Review</h1>
   
   <div class="container">
-    <img src="/img/Simba.webp" alt="" id="main">
+    <img src="Simba.webp" alt="" id="main">
     <button class="prev" onclick="prev()">&#10094;</button>
     <button class="next" onclick="next()">&#10095;</button>
   </div>
   
   <div class="thumbnail-container">
-    <img class="thumbnail active" src="/img/Simba.webp" onclick="jump(0)" alt="">
-    <img class="thumbnail" src="/img/Timon.webp" onclick="jump(1)" alt="">
-    <img class="thumbnail" src="/img/Pumbaa.webp" onclick="jump(2)" alt="">
+    <img class="thumbnail active" src="Simba.webp" onclick="jump(0)" alt="">
+    <img class="thumbnail" src="Timon.webp" onclick="jump(1)" alt="">
+    <img class="thumbnail" src="Pumbaa.webp" onclick="jump(2)" alt="">
   </div>
 
   <h3>John Doe</h3>
@@ -82,6 +84,7 @@
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laudantium nesciunt quasi, alias delectus quibusdam
     placeat! Ipsum mollitia quo error ad, explicabo harum voluptas reiciendis ab est, quasi quam pariatur.
   </p>
+
 
   <script>
     var thumbnails = document.getElementsByClassName('thumbnail');
