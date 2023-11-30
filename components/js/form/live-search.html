@@ -33,39 +33,41 @@
     }
   </style>
 
+
   <h1>Live Search</h1>
 
   <input type="text" name="" id="input" placeholder="Search">
   
   <ul>
-    <li class="item">Guinness</li>
-    <li class="item">Heineken</li>
-    <li class="item">Budwiser</li>
-    <li class="item">Kloud</li>
-    <li class="item">Asahi</li>
+    <li class="item">guinness</li>
+    <li class="item">heineken</li>
+    <li class="item">budwiser</li>
+    <li class="item">kloud</li>
+    <li class="item">asahi</li>
   </ul>
+
 
   <script>
     var input = document.getElementById("input");
     var items = document.getElementsByClassName("item");
 
-    input.addEventListener("keyup", function () {
+    input.addEventListener("keyup", keyUpHandler);
+
+    function keyUpHandler() {
       var q = this.value.toLowerCase();
 
-      // q
       console.log("q:", q);
 
       for (var i = 0; i < items.length; i++) {
-        var itemName = items[i].textContent.toLowerCase();
+        var item = items[i];
 
-        // includes q
-        if (itemName.indexOf(q) > -1) { 
-          items[i].classList.remove("hidden");
+        if (item.textContent.indexOf(q) > -1) { // includes q
+          item.classList.remove("hidden");
         } else {
-          items[i].classList.add("hidden");
+          item.classList.add("hidden");
         }
       }
-    })
+    }
   </script>
 
 </body>
