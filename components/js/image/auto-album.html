@@ -23,8 +23,8 @@
       object-fit: cover;
     }
     
-    /* thumbnails */
-    .thumbnail-container {
+    /* photos */
+    .photo-container {
       position: absolute;
       width: 100%;
       bottom: 10px;
@@ -32,7 +32,7 @@
       justify-content: center;
     }
 
-    .thumbnail {
+    .photo {
       width: 50px;
       height: 50px;
       object-fit: cover;
@@ -43,23 +43,24 @@
       z-index: 1;
     }
   </style>
+  
  
   <h1>Auto Album</h1>
   
   <div class="container">
     <img src="Simba.webp" alt="" id="main">
-    <div class="thumbnail-container">
-      <img class="thumbnail active" src="Simba.webp" alt="">
-      <img class="thumbnail" src="Timon.webp" alt="">
-      <img class="thumbnail" src="Pumbaa.webp" alt="">
+    <div class="photo-container">
+      <img class="photo active" src="Simba.webp" alt="">
+      <img class="photo" src="Timon.webp" alt="">
+      <img class="photo" src="Pumbaa.webp" alt="">
     </div>
   </div>
 
+
   <script>
-    var thumbnails = document.getElementsByClassName('thumbnail');
+    var photos = document.getElementsByClassName('photo');
     var main = document.getElementById('main');
     var index = 0;
-    var prevIndex = 0;
 
     setInterval(interval, 3000);
 
@@ -69,14 +70,19 @@
       if (index < 0) index = 2;
       if (index > 2) index = 0;
 
+      console.log("index:", index);
+
       // update main image
-      main.src = thumbnails[index].src;
+      main.src = photos[index].src;
       
       // outline      
-      thumbnails[prevIndex].classList.remove("active");
-      thumbnails[index].classList.add("active");
-
-      prevIndex = index;
+      for (var i=0; i<photos.length; i++) {
+        if (i == index) {
+          photos[i].classList.add("active");
+        } else {
+          photos[i].classList.remove("active");
+        }
+      }
     }
   </script>
 

@@ -23,13 +23,13 @@
       object-fit: cover;
     }
     
-    /* thumbnails */
-    .thumbnail-container {
+    /* photos */
+    .photo-container {
       display: flex;
       margin: 1rem 0;
     }
 
-    .thumbnail {
+    .photo {
       width: 50px;
       height: 50px;
       object-fit: cover;
@@ -68,14 +68,14 @@
   
   <div class="container">
     <img src="Simba.webp" alt="" id="main">
-    <button class="prev" onclick="prev()">&#10094;</button>
-    <button class="next" onclick="next()">&#10095;</button>
+    <button class="prev" onclick="move(-1)">&#10094;</button>
+    <button class="next" onclick="move(1)">&#10095;</button>
   </div>
   
-  <div class="thumbnail-container">
-    <img class="thumbnail active" src="Simba.webp" onclick="jump(0)" alt="">
-    <img class="thumbnail" src="Timon.webp" onclick="jump(1)" alt="">
-    <img class="thumbnail" src="Pumbaa.webp" onclick="jump(2)" alt="">
+  <div class="photo-container">
+    <img class="photo active" src="Simba.webp" onclick="jump(0)" alt="">
+    <img class="photo" src="Timon.webp" onclick="jump(1)" alt="">
+    <img class="photo" src="Pumbaa.webp" onclick="jump(2)" alt="">
   </div>
 
   <h3>John Doe</h3>
@@ -87,23 +87,17 @@
 
 
   <script>
-    var thumbnails = document.getElementsByClassName('thumbnail');
+    var photos = document.getElementsByClassName('photo');
     var main = document.getElementById('main');
     var index = 0;
-    var prevIndex = 0;
 
-    function prev() {
-      index--;
+    function move(data) {
+      index += data;
 
       if (index < 0) index = 2;
-
-      change();
-    }
-    
-    function next() {
-      index++;
-
       if (index > 2) index = 0;
+
+      console.log("index:", index);
 
       change();
     }
@@ -116,13 +110,16 @@
 
     function change() {
       // main image
-      main.src = thumbnails[index].src;
+      main.src = photos[index].src;
 
       // outline
-      thumbnails[prevIndex].classList.remove("active");
-      thumbnails[index].classList.add("active");
-
-      prevIndex = index;
+      for (var i=0; i<photos.length; i++) {
+        if (i === index) {
+          photos[i].classList.add("active");
+        } else {
+          photos[i].classList.remove("active");
+        }
+      }
     }
   </script>
 

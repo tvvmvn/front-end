@@ -31,8 +31,36 @@
 */
 
 
-var root = document.getElementById("root");
+var main = document.getElementById("main");
 
+
+// load 
+document.addEventListener("DOMContentLoaded", hashRouter);
+// on link
+window.addEventListener("hashchange", hashRouter);
+
+
+// Hash Router
+function hashRouter() {
+  // Request URL
+  var url = location.hash.substring(1);
+
+  // url object
+  var urlData = parseUrl(url);
+  
+  var routes = [
+    { path: "/", element: Home },
+    { path: "/posts", element: Posts },
+    { path: "/post", element: Post },
+    { path: "/contact", element: Contact },
+  ]
+  
+  for (var i=0; i<routes.length; i++) {
+    if (routes[i].path === urlData.path) {
+      main.innerHTML = routes[i].element(urlData.query);
+    }
+  }    
+}
 
 // Parsing url
 function parseUrl(url) {
@@ -50,13 +78,6 @@ function parseUrl(url) {
   
   return { url, path, query };
 }
-
-
-// load 
-document.addEventListener("DOMContentLoaded", hashRouter);
-// on link
-window.addEventListener("hashchange", hashRouter);
-
 
 function Home() {
   return (`
@@ -92,26 +113,3 @@ function Contact() {
     <p>john@example.com</p>
   `)
 }
-
-// Hash Router
-function hashRouter() {
-  // Request URL
-  var url = location.hash.substring(1);
-
-  // url object
-  var urlData = parseUrl(url);
-  
-  var routes = [
-    { path: "/", element: Home },
-    { path: "/posts", element: Posts },
-    { path: "/post", element: Post },
-    { path: "/contact", element: Contact },
-  ]
-  
-  for (var i=0; i<routes.length; i++) {
-    if (routes[i].path === urlData.path) {
-      root.innerHTML = routes[i].element(urlData.query);
-    }
-  }    
-}
-

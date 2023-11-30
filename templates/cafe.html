@@ -11,6 +11,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- font api -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+  <!-- base url -->
+  <base href="https://www.w3schools.com">
   <style>
     body {
       font-family: "Inconsolata", sans-serif;
@@ -38,7 +40,7 @@
   </nav>
 
   <!-- MAIN IMAGE -->
-  <div class="h-[500px] bg-[url('https://www.w3schools.com/w3images/coffeehouse.jpg')] bg-cover bg-center grayscale-[50%]">
+  <div class="h-[500px] bg-[url('/w3images/coffeehouse.jpg')] bg-cover bg-center grayscale-[50%]">
     <div class="h-[450px] flex flex-col justify-center">
       <h1 class="text-8xl text-center text-white">
         the <br>
@@ -83,7 +85,7 @@
       </p>
     </div>
 
-    <img class="mt-8 grayscale-[80%]" src="https://www.w3schools.com/w3images/coffeeshop.jpg" alt="">
+    <img class="mt-8 grayscale-[80%]" src="/w3images/coffeeshop.jpg" alt="">
 
     <p class="my-4 text-lg">
       <span class="font-semibold">Opening hours:</span> everyday from 6am to 5pm.
@@ -102,8 +104,14 @@
 
     <div class="bg-white shadow-lg p-4">
       <div class="flex">
-        <button id="eatBtn" class="w-1/2 p-1 font-semibold disabled:bg-gray-200" disabled>Eat</button>
-        <button id="drinkBtn" class="w-1/2 p-1 font-semibold disabled:bg-gray-200">Drink</button>
+        <input type="radio" name="menu" id="eat" class="hidden peer/eat" checked>
+        <label for="eat" class="w-1/2 p-1 font-semibold text-center peer-checked/eat:bg-gray-200" onclick="toggleMenu('eat')">
+          Eat
+        </label>
+        <input type="radio" name="menu" id="drink" class="hidden peer/drink">
+        <label for="drink" class="w-1/2 p-1 font-semibold text-center peer-checked/drink:bg-gray-200" onclick="toggleMenu('drink')">
+          Drink
+        </label>
       </div>
 
       <!-- MENU: Eat -->
@@ -153,7 +161,7 @@
       </div>
     </div>
 
-    <img class="mt-8 grayscale-[80%]" src="https://www.w3schools.com/w3images/coffeehouse2.jpg" alt="">
+    <img class="mt-8 grayscale-[80%]" src="/w3images/coffeehouse2.jpg" alt="">
 
     <!-- WHERE -->
     <div id="where" class="py-16">
@@ -166,7 +174,7 @@
       Find us at some address at some place.
     </p>
 
-    <img class="mt-4 grayscale-[80%]" src="https://www.w3schools.com/w3images/map.jpg" alt="">
+    <img class="mt-4 grayscale-[80%]" src="/w3images/map.jpg" alt="">
 
     <p class="my-4 text-lg">
       <span class="bg-black text-white px-2 py-1">FYI!</span>
@@ -212,21 +220,8 @@
 
 <script>
   // Menu
-  eatBtn.addEventListener("click", function () {
-    this.disabled = true;
-    drinkBtn.disabled = false;
-    eat.classList.remove("hidden");
-    drink.classList.add("hidden");
-  })
-
-  drinkBtn.addEventListener("click", function () {
-    this.disabled = true;
-    eatBtn.disabled = false;
-    drink.classList.remove("hidden");
-    eat.classList.add("hidden");
-  })
+  function toggleMenu(filter) {}
   
-
   // Form
   contactForm.addEventListener("submit", function (e) {
     e.preventDefault();

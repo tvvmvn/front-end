@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <style>
+    .radio {
+      display: none;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+      border-radius: 0.5rem;
+    }
+
+    .radio:checked + .iced-btn {
+      background-color: #09f;
+      color: #fff;
+    }
+
+    .radio:checked + .hot-btn  {
+      background-color: #f00;
+      color: #fff;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+
+
+  <h1>MENU</h1>
+
+  <input type="radio" name="menu" class="radio" id="iced" checked>
+  <label for="iced" class="btn iced-btn" onclick="toggleMenu('iced')">ICED</label>
+  <input type="radio" name="menu" class="radio" id="hot">
+  <label for="hot" class="btn hot-btn" onclick="toggleMenu('hot')">HOT</label>
+
+  <div class="item iced">
+    <h3>Ice Americano</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Repellat suscipit pariatur animi tempora sed odio laboriosam labore, 
+      reiciendis minus possimus ipsam veniam aliquid autem quibusdam deserunt. 
+      Nihil quisquam quis voluptas!
+    </p>
+  </div>
+  <div class="item hot hidden">
+    <h3>Americano</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Magnam, deserunt veritatis! 
+      Sunt ducimus omnis dolor autem nihil reiciendis voluptas repudiandae, 
+      quia deserunt voluptatibus totam. 
+      Iure corrupti distinctio tempora dignissimos odit!
+    </p>
+  </div>
+
+
+  <script>
+    var menu = document.getElementsByClassName("item");
+
+    function toggleMenu(filter) {
+      for (var i=0; i<menu.length; i++) {
+        if (menu[i].classList.contains(filter)) {
+          menu[i].classList.remove("hidden");
+        } else {
+          menu[i].classList.add("hidden");
+        }
+      }
+    }
+  </script>
+  
+</body>
+
+</html>

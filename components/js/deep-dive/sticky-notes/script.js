@@ -2,18 +2,6 @@ var container = document.getElementById("container");
 var addBtn = document.getElementById("add-btn");
 var notes = [];
 
-// Synchronize localStorage
-function saveData(notes) {
-  localStorage.setItem("noteStorage", JSON.stringify(notes));
-}
-
-// Generate seed data
-function seedData() {
-  var seed = [{ id: "n0", content: "My first memo!" }];
-
-  saveData(seed);
-}
-
 if (!localStorage.getItem("noteStorage")) {
   seedData();
 }
@@ -83,3 +71,14 @@ function createNoteElement(id, content) {
   container.prepend(noteElement);
 }
 
+// Generate seed data
+function seedData() {
+  var seed = [{ id: "n0", content: "My first memo!" }];
+  
+  saveData(seed);
+}
+
+// Synchronize localStorage
+function saveData(notes) {
+  localStorage.setItem("noteStorage", JSON.stringify(notes));
+}

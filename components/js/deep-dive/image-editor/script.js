@@ -10,8 +10,7 @@ var filter = {};
 
 
 var imgElement = new Image();
-imgElement.src = "../../../img/homies.jpg";
-
+imgElement.src = "../../../../img/homies.jpg";
 imgElement.addEventListener("load", function () {  
   canvas.width = imgElement.naturalWidth;
   canvas.height = imgElement.naturalHeight;
@@ -20,14 +19,16 @@ imgElement.addEventListener("load", function () {
 });
 
 
-function setFilter(element) {
+function setFilter(input) {
+  
+  console.log(input);
 
-  var name = element.name;
-  var value = element.value;
+  var name = input.name;
+  var value = input.value;
 
   filter[name] = value + UNIT[name];
 
-  // filter
+  // filter object
   console.log(filter);
   
   var filterInString = "";
@@ -43,7 +44,7 @@ function setFilter(element) {
   
   render();
 
-  element.nextElementSibling.textContent = value;
+  input.nextElementSibling.textContent = value;
 }
 
 
