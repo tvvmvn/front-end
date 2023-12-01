@@ -54,6 +54,7 @@
     }
   </style>
 
+
   <header>
     <div class="header-inner">
       <button id="btn">&#9776;</button>
@@ -77,6 +78,7 @@
     <h1>Top navigation</h1>
   </main>
 
+
   <script>
     var btn = document.getElementById('btn');
     var nav = document.getElementById('nav');
@@ -88,10 +90,10 @@
 
     // document click
     document.addEventListener('click', function (e) {
-    // event target
+    // event target (son)
       console.log(e.target)
 
-      // except for button
+      // except for button in document
       if (e.target !== btn) {
         nav.classList.add('hidden');
       }
