@@ -30,11 +30,11 @@
       color: #000;
     }
 
-    #close {
+    #close-btn {
       position: absolute;
       right: 0;
       font-size: 2rem;
-      padding: 1rem;
+      padding: 0.5rem 1rem;
       cursor: pointer;
     }
 
@@ -45,10 +45,10 @@
 
   <h1>Side Bar</h1>
 
-  <button id="open">Open</button>
+  <button id="open-btn">Open</button>
 
   <nav id="side-bar" class="hidden">
-    <span id="close">&times;</span>
+    <span id="close-btn">&times;</span>
     <ul>
       <li>
         <a href="#" class="link">Link</a>
@@ -64,14 +64,14 @@
 
   <script>
     var sideBar = document.getElementById("side-bar");
-    var open = document.getElementById("open");
-    var close = document.getElementById("close");
+    var openBtn = document.getElementById("open-btn");
+    var closeBtn = document.getElementById("close-btn");
 
-    open.addEventListener("click", function () {
+    openBtn.addEventListener("click", function () {
       sideBar.classList.remove("hidden");
     })
 
-    close.addEventListener("click", function () {
+    closeBtn.addEventListener("click", function () {
       sideBar.classList.add("hidden");
     })
   </script>

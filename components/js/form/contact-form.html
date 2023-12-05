@@ -38,10 +38,6 @@
       padding: 0.5rem 0.75rem;
     }
 
-    .warning {
-      color: #f00;
-    }
-
     .hidden {
       display: none;
     }
@@ -67,8 +63,6 @@
       </div>
     </div>
     <button type="submit">Submit</button>
-
-    <p id="error-message" class="warning"></p>
   </form>
 
   <p id="done" class="hidden">
@@ -78,7 +72,6 @@
 
   <script>
     var form = document.getElementById('form');
-    var errorMessage = document.getElementById("error-message");
     var fnamePatt = /^[a-zA-Z]+$/;
     var lnamePatt = /^[a-zA-Z]+$/;
     var phonePatt = /^\d{5,11}$/;
@@ -92,32 +85,26 @@
       var lname = form.elements["lname"].value;
       var phone = form.elements["phone"].value;
 
-      var errors = [];
-
       // first name check
-      if (!fname.match(fnamePatt)) {
-        errors.push('Invalid first name')
-      }
-
-      // last name check
-      if (!lname.match(lnamePatt)) {
-        errors.push('Invalid last name')
-      }
-
-      // phone check
-      if (!phone.match(phonePatt)) {
-        errors.push('Invalid phone number');
-      } 
-
-      console.log(errors);
-      
-      if (errors.length) {
-        errorMessage.innerHTML = errors.join("<br>");
+      if (fname.match(fnamePatt) == null) {
+        alert('Invalid first name');
         return;
       }
 
-      form.classList.add("hidden")
-      done.classList.remove("hidden")
+      // last name check
+      if (lname.match(lnamePatt) == null) {
+        alert('Invalid last name');
+        return;
+      }
+
+      // phone check
+      if (phone.match(phonePatt) == null) {
+        alert('Invalid phone number');
+        return;
+      } 
+
+      form.classList.add("hidden");
+      done.classList.remove("hidden");
     }
   </script>
 
