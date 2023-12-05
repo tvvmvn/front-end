@@ -85,26 +85,28 @@
       var lname = form.elements["lname"].value;
       var phone = form.elements["phone"].value;
 
-      // first name check
-      if (fname.match(fnamePatt) == null) {
-        alert('Invalid first name');
-        return;
+      try {
+        // first name check
+        if (fname.match(fnamePatt) == null) {
+          throw 'Invalid first name';
+        }
+  
+        // last name check
+        if (lname.match(lnamePatt) == null) {
+          throw 'Invalid last name';
+        }
+  
+        // phone check
+        if (phone.match(phonePatt) == null) {
+          throw 'Invalid phone number';
+        } 
+  
+        form.classList.add("hidden");
+        done.classList.remove("hidden");
+
+      } catch (error) { 
+        alert(error)
       }
-
-      // last name check
-      if (lname.match(lnamePatt) == null) {
-        alert('Invalid last name');
-        return;
-      }
-
-      // phone check
-      if (phone.match(phonePatt) == null) {
-        alert('Invalid phone number');
-        return;
-      } 
-
-      form.classList.add("hidden");
-      done.classList.remove("hidden");
     }
   </script>
 

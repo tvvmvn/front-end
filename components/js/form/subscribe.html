@@ -54,23 +54,29 @@
       /pattern/
     */
 
-    form.addEventListener("submit", handleSubmit)
+    // submit event: user submit the form
+    form.addEventListener("submit", handleSubmit);
 
     function handleSubmit(e) {
-      e.preventDefault(); 
+      // prevent reload when submitting the form. (required)
+      e.preventDefault();
       
       var email = form.elements["email"].value;
 
-      // check string with pattern
-      if (email.match(patt) == null) {
-        alert("Invalid E-mail");
-        return;
+      console.log(email);
+
+      try {
+        // check email with pattern
+        if (email.match(patt) == null) {
+          throw "Invalid E-mail";
+        }
+  
+        form.classList.add("hidden");
+        done.classList.remove("hidden");
+
+      } catch (error) { 
+        alert(error)
       }
-
-      // server requests here
-
-      form.classList.add("hidden");
-      done.classList.remove("hidden");
     }
   </script>
 
