@@ -21,7 +21,9 @@
     input.addEventListener("keyup", keyUpHandler);
 
     function keyUpHandler() {
-      if (this.value == "") {
+      var password = this.value;
+      
+      if (password.trim().length <  5) {
         btn.disabled = true;
       } else {
         btn.disabled = false;

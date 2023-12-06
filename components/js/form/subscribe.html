@@ -58,7 +58,7 @@
     form.addEventListener("submit", handleSubmit);
 
     function handleSubmit(e) {
-      // prevent reload when submitting the form. (required)
+      // prevent submitting the form to validate in client-side
       e.preventDefault();
       
       var email = form.elements["email"].value;
@@ -70,6 +70,8 @@
         if (email.match(patt) == null) {
           throw "Invalid E-mail";
         }
+
+        // submit here (AJAX or Traditional)
   
         form.classList.add("hidden");
         done.classList.remove("hidden");
