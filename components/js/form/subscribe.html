@@ -29,7 +29,7 @@
 
   <form action="/server" id="form">
     <div class="container">
-      <input type="text" name="email" placeholder="JohnDoe@example.com">
+      <input type="text" name="email" placeholder="johnDoe@example.com">
       <button class="btn">Subscribe</button>
     </div>
   </form>
@@ -41,20 +41,9 @@
   <script>
     var form = document.getElementById("form");
     var done = document.getElementById("done");
-    var error = document.getElementById("error");
-    // pattern to validate email
-    var patt = /[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$/;
+    var patt = /[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$/
     
-    /*
-      * Regular expression
-      provides a pattern to search string.
-      It can be used with match methods of String
-
-      - How to use
-      /pattern/
-    */
-
-    // submit event: user submit the form
+    // submit event: submitting the form
     form.addEventListener("submit", handleSubmit);
 
     function handleSubmit(e) {
@@ -63,20 +52,16 @@
       
       var email = form.elements["email"].value;
 
-      console.log(email);
-
       try {
-        // check email with pattern
-        if (email.match(patt) == null) {
-          throw "Invalid E-mail";
-        }
 
-        // submit here (AJAX or Traditional)
-  
+        if (email.match(patt) == null) {
+          throw "Invalid email";
+        }
+        
         form.classList.add("hidden");
         done.classList.remove("hidden");
-
-      } catch (error) { 
+      
+      } catch (error) {
         alert(error)
       }
     }

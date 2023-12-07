@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <style>
+
+  </style>
+
+  <h1>Comments</h1>
+
+  <input type="text" name="" id="input">
+  <button id="btn" disabled>comment</button>
+
+  <script>
+    var input = document.getElementById("input");
+    var btn = document.getElementById("btn");
+
+    input.addEventListener("keyup", handleKeyup);
+
+    function handleKeyup() {
+      var content = this.value;
+
+      console.log("content:", content);
+
+      if (content != "") {
+        btn.disabled = false;
+      } else {
+        btn.disabled = true;
+      }
+    }
+  </script>
+
+</body>
+
+</html>

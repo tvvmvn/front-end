@@ -51,9 +51,9 @@
     var input = document.getElementById("input");
     var items = document.getElementsByClassName("item");
 
-    input.addEventListener("keyup", keyUpHandler);
+    input.addEventListener("keyup", handleKeyup);
 
-    function keyUpHandler() {
+    function handleKeyup() {
       var q = this.value.toLowerCase();
 
       console.log("q:", q);

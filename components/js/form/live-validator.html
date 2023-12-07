@@ -43,12 +43,22 @@
     var upperCaseLetters = /[A-Z]/
     var numbers = /[0-9]/
 
-    input.addEventListener('keyup', keyUpHandler);
+    /*
+      * Regular expression
+      provides a pattern to search string.
+      It can be used with match methods of String
 
-    function keyUpHandler() {
+      - How to use
+      /pattern/
+    */
+
+
+    input.addEventListener('keyup', handleKeyup);
+
+    function handleKeyup() {
       var password = this.value;
 
-      console.log(password);
+      console.log("password:", password);
 
       try {
         if (!password) {
