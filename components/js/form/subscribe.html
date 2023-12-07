@@ -47,14 +47,26 @@
     form.addEventListener("submit", handleSubmit);
 
     function handleSubmit(e) {
-      // prevent submitting the form to validate in client-side
+      // required in submit event
       e.preventDefault();
+     
+      /*
+        e.preventDefault()
+
+        It cancels default behavior of event.
+        The default behavior of submit event is that
+        it sends request to server.
+        Canceling default behavior of submit event can be used for 
+        client-side validation and AJAX request.
+
+        * AJAX - A technology to send request to server
+        without reloading the page.
+      */
       
       var email = form.elements["email"].value;
 
       try {
-
-        if (email.match(patt) == null) {
+        if (!patt.test(email)) {
           throw "Invalid email";
         }
         

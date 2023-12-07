@@ -87,17 +87,17 @@
 
       try {
         // first name check
-        if (fname.match(fnamePatt) == null) {
+        if (!fnamePatt.test(fname)) {
           throw 'Invalid first name';
         }
   
         // last name check
-        if (lname.match(lnamePatt) == null) {
+        if (!lnamePatt.test(lname)) {
           throw 'Invalid last name';
         }
   
         // phone check
-        if (phone.match(phonePatt) == null) {
+        if (!phonePatt.test(phone)) {
           throw 'Invalid phone number';
         } 
   

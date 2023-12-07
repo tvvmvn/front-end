@@ -39,17 +39,22 @@
   <script>
     var input = document.getElementById('input');
     var message = document.getElementById("message");
-    var lowerCaseLetters = /[a-z]/
-    var upperCaseLetters = /[A-Z]/
-    var numbers = /[0-9]/
+    var lowerCasePatt = /[a-z]/
+    var upperCasePatt = /[A-Z]/
+    var numberPatt = /[0-9]/
+
 
     /*
       * Regular expression
-      provides a pattern to search string.
-      It can be used with match methods of String
+      A pattern used to validate string.
 
-      - How to use
+      1 value (pattern)
       /pattern/
+
+      2 methods
+      test(string to validate)
+
+      return true if string value matches pattern or false
     */
 
 
@@ -65,15 +70,15 @@
           throw 'Password is required';
         }
 
-        if (!password.match(lowerCaseLetters)) {
+        if (!lowerCasePatt.test(password)) {
           throw "Password must contain at least one lowercase letter";
         }
 
-        if (!password.match(upperCaseLetters)) {
+        if (!upperCasePatt.test(password)) {
           throw "Password must contain at least one uppercase letter";
         }
 
-        if (!password.match(numbers)) {
+        if (!numberPatt.test(password)) {
           throw "Password must contain at least one number";
         }
 
