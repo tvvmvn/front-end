@@ -7,12 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- title -->
   <title>the Cafe</title>
-  <!-- tailwind cdn -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- font api -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
   <!-- base url -->
   <base href="https://www.w3schools.com">
+  <!-- tailwind cdn -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- font library -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
   <style>
     body {
       font-family: "Inconsolata", sans-serif;
@@ -115,7 +115,7 @@
       </div>
 
       <!-- MENU: Eat -->
-      <div id="eat" class="w-full">
+      <div class="item eat w-full pt-4">
         <h3 class="my-4 text-xl font-semibold">Bread Basket</h3>
         <p class="my-4 text-lg text-gray-500">Assortment of fresh baked fruit breads and muffins 5.50</p>
         <h3 class="my-4 text-xl font-semibold">Honey Almond Granola with Fruits</h3>
@@ -137,7 +137,7 @@
       </div>
 
       <!-- MENU: Drink -->
-      <div id="drink" class="mt-4 w-full hidden">
+      <div class="item drink w-full pt-4 hidden">
         <h3 class="my-4 text-xl font-semibold">Coffee</h3>
         <p class="my-4 text-lg text-gray-500">
           Regular coffee 2.50
@@ -183,7 +183,7 @@
       satisfy the biggerst criteria of them all, both look and taste.
     </p>
 
-    <form action="" id="contactForm" class="">
+    <form action="" id="form" class="">
       <p class="my-4 text-lg">
         Reserve a table, ask for today's special or just send us a message:
       </p>
@@ -205,7 +205,7 @@
       </button>
     </form>
 
-    <p id="done" class="text-lg text-center p-8 hidden">
+    <p id="done" class="text-lg text-center py-20 hidden">
       Thank you and we'll contact with you soon!
     </p>
   </main>
@@ -219,11 +219,22 @@
 </body>
 
 <script>
+  var items = document.getElementsByClassName("item");
+  var form = document.getElementById("form");
+
   // Menu
-  function toggleMenu(filter) {}
+  function toggleMenu(filter) {
+    for (var i=0; i<items.length; i++) {
+      if (items[i].classList.contains(filter)) {
+        items[i].classList.remove("hidden");
+      } else {
+        items[i].classList.add("hidden");
+      }
+    }
+  }
   
   // Form
-  contactForm.addEventListener("submit", function (e) {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     this.classList.add("hidden");
