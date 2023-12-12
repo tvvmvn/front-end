@@ -26,15 +26,10 @@
       transition: transform 0.2s;
     }
 
-    .image {
+    .photo {
       width: 200px;
       height: 200px;
-      font-size: 2rem;
-      background-image: linear-gradient(to right, #333, #222);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
+      object-fit: cover;
     }
 
     /* buttons */
@@ -86,11 +81,11 @@
   </style>
 
   <div id="frame">
-    <!-- Images -->
+    <!-- Photos -->
     <div id="container">
-      <div class="image">1</div>
-      <div class="image">2</div>
-      <div class="image">3</div>
+      <img class="photo" src="../../../../img/Simba.webp" alt="">
+      <img class="photo" src="../../../../img/Timon.webp" alt="">
+      <img class="photo" src="../../../../img/Pumbaa.webp" alt="">
     </div>
 
     <!-- Buttons -->

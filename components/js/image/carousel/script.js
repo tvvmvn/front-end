@@ -1,7 +1,7 @@
-// container and images
+// container and photos
 var frame = document.getElementById('frame');
 var container = document.getElementById('container');
-var images = document.getElementsByClassName("image");
+var photos = document.getElementsByClassName("photo");
 var imageWidth = 200;
 // buttons
 var prevBtn = document.getElementById('prevBtn');
@@ -11,37 +11,39 @@ var dots = document.getElementsByClassName('dot');
 // index and left
 var index = 0;
 var firstIndex = 0;
-var lastIndex = images.length - 1;
+var lastIndex = photos.length - 1;
 var left = 0;
 // touch stuff
 var x1, x2 = 0;
 var turnOverPoint = 50;
 
 
-// Touch Event
+// click
 prevBtn.addEventListener("click", function () {
-  clickHandler(-1)
+  move(-1);
 });
 nextBtn.addEventListener("click", function () {
-  clickHandler(1)
+  move(1);
 });
+
+// touch
 frame.addEventListener('touchstart', touchStartHandler)
 frame.addEventListener('touchmove', touchMoveHandler)
 frame.addEventListener('touchend', touchEndHandler)
 
 
 function touchStartHandler(e) {
-  console.log("touch start");
-
   // save start point
   x1 = e.touches[0].clientX;
+
+  console.log(`touch start, x1: ${x1}`);
 }
 
 function touchMoveHandler(e) {
-  console.log('touch move');
-
   // touching point
   x2 = e.touches[0].clientX;
+
+  console.log(`touch move, x2: ${x2}`);
 
   // prevent moving in first and last photo.
   var movingToRight = x2 - x1 > 0;
@@ -55,70 +57,54 @@ function touchMoveHandler(e) {
 }
 
 function touchEndHandler() {
-  console.log('touch end');
-
   // no touchmove 
   if (x2 == 0) return;
 
   // check x2 and x1
-  console.log(x2, x1);
+  console.log(`touch end, x2 - x1: ${x2 - x1}`);
 
-  // check drawing value
+  // check draw value
   var drawEnoughToNext = -(x2 - x1) > turnOverPoint;
   var drawEnoughToPrev = x2 - x1 > turnOverPoint;
   
-  // get to prev
+  // get to previous photo
   if (index > firstIndex && drawEnoughToPrev) { 
-    clickHandler(-1);
-    // get to next
+    move(-1);
+    // get to next photo
   } else if (index < lastIndex && drawEnoughToNext) { 
-    clickHandler(1);
-    // get back to present photo.
+    move(1);
+    // get back to original photo.
   } else {
-    clickHandler(0);
+    move(0);
   }
     
   // initialize x1, x2
   x1, x2 = 0;
 }
 
-function clickHandler(data) {
+function move(data) {
   index += data;
   left = -(index * imageWidth);
 
-  console.log("index:", index);
-  console.log("left:", left);
+  console.log(`move, index: ${index}, left: ${left}`);
 
-  // image
-  setImage();
-  // buttons
-  togglePrevBtn();
-  toggleNextBtn();
-  // indicator
-  setIndicator();
-}
-
-function setImage() {
+  // photos
   container.style.transform = `translateX(${left}px)`;
-}
 
-function togglePrevBtn() {
+  // buttons
   if (index == firstIndex) {
     prevBtn.classList.add('hidden');
   } else {
     prevBtn.classList.remove('hidden');
   }
-}
 
-function toggleNextBtn() {
   if (index == lastIndex) {
     nextBtn.classList.add('hidden');
   } else {
     nextBtn.classList.remove('hidden');
   }
-}
 
-function setIndicator() {
+  // indicator
   for (var i=0; i<dots.length; i++) {
     if (i === index) {
       dots[i].classList.add('active');

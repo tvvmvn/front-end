@@ -24,29 +24,23 @@
     }
     
     /* photos */
-    .photo-container {
+    .thumbnails {
       display: flex;
-      margin: 1rem 0;
     }
 
     .photo {
-      width: 50px;
-      height: 50px;
+      width: 100px;
+      height: 100px;
       object-fit: cover;
-    }
-
-    .date {
-      color: #888;
-      font-style: italic;
     }
 
     .prev, .next {
       position: absolute;
       height: 100%;
       border: none;
-      font-size: 2rem;
       background-color: transparent;
       color: rgba(255 255 255 / 0.5);
+      font-size: 2rem;
     }
 
     .prev {
@@ -72,18 +66,11 @@
     <button class="next" onclick="move(1)">&#10095;</button>
   </div>
   
-  <div class="photo-container">
+  <div class="thumbnails">
     <img class="photo active" src="Simba.webp" onclick="jump(0)" alt="">
     <img class="photo" src="Timon.webp" onclick="jump(1)" alt="">
     <img class="photo" src="Pumbaa.webp" onclick="jump(2)" alt="">
   </div>
-
-  <h3>John Doe</h3>
-  <small class="date">August 17, 2023</small>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laudantium nesciunt quasi, alias delectus quibusdam
-    placeat! Ipsum mollitia quo error ad, explicabo harum voluptas reiciendis ab est, quasi quam pariatur.
-  </p>
 
 
   <script>
@@ -97,8 +84,6 @@
       if (index < 0) index = 2;
       if (index > 2) index = 0;
 
-      console.log("index:", index);
-
       change();
     }
 
@@ -109,6 +94,8 @@
     }
 
     function change() {
+      console.log("index:", index);
+
       // main image
       main.src = photos[index].src;
 
