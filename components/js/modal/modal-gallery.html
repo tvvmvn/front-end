@@ -30,7 +30,7 @@
       object-fit: cover;
     }
 
-    .photo-container {
+    .thumbnails {
       display: flex;
     }
 
@@ -56,7 +56,7 @@
     <img src="" alt="" id="modal">
   </div>
   
-  <div class="photo-container">
+  <div class="thumbnails">
     <img class="photo" src="Simba.webp" alt="" onclick="openModal(0)">
     <img class="photo" src="Timon.webp" alt="" onclick="openModal(1)">
     <img class="photo" src="Pumbaa.webp" alt="" onclick="openModal(2)">
@@ -70,7 +70,9 @@
 
     // HTMLCollection(length)
     console.log(photos);
+    
 
+    // photo click
     function openModal(index) {
       overlay.classList.remove("hidden");
       modal.src = photos[index].src;
