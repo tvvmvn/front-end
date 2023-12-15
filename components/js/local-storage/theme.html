@@ -32,6 +32,9 @@
     var checkbox = document.getElementById("checkbox");
     var list = document.getElementById("list");
 
+    // when check state is changed
+    checkbox.addEventListener("change", handleChange);
+
     // when page is loaded
     var isDarkMode = localStorage.getItem("darkTheme");
 
@@ -40,11 +43,10 @@
       checkbox.checked = true;
     }
 
-    // when check state is changed
-    checkbox.addEventListener("change", function () {
+    function handleChange() {
       var checked = this.checked;
 
-      console.log(checked);
+      console.log("checked:", checked);
       
       if (checked) {
         list.classList.add("dark-mode");
@@ -53,7 +55,7 @@
         list.classList.remove("dark-mode");
         localStorage.removeItem("darkTheme");
       }
-    })
+    }
   </script>
 
 </body>

@@ -23,36 +23,36 @@
   </style>
 
   <div id="promotion">
-    <h1>
+    <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. 
       Eos eveniet maxime iste vitae odit iure totam quaerat, amet, 
       minus voluptatum quasi non ipsa libero provident illum, 
       recusandae nesciunt ratione. Tempore!
-    </h1>
+    </p>
     <button id="close-btn">Close</button>
     <button id="block-btn">Do not show anymore</button>
   </div>
 
   <script>
-
     var closeBtn = document.getElementById("close-btn");
     var blockBtn = document.getElementById("block-btn");
     var promotion = document.getElementById("promotion");
 
+    // when page is loaded
     if (localStorage.getItem("blockedAt")) {
       promotion.remove();
     }
 
+    // close button
     closeBtn.addEventListener("click", function () {
       promotion.remove();
     })
 
+    // block button
     blockBtn.addEventListener("click", function () {
       promotion.remove()
       localStorage.setItem("blockedAt", new Date());
     })
   </script>
-
-  
 </body>
 </html>
