@@ -10,10 +10,6 @@
 <body>
 
   <style>
-    .hidden {
-      display: none;
-    }
-
     input {
       display: none;
     }
@@ -26,6 +22,10 @@
     input:checked + label {
       background-color: #000;
       color: #fff;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
 
@@ -63,6 +63,9 @@
     var items = document.getElementsByClassName("item");
 
     function f(filter) {
+      
+      console.log("filter:", filter);
+
       for (var i=0; i<items.length; i++) {
         if (filter == "all") {
           items[i].classList.remove("hidden");

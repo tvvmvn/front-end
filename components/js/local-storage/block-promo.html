@@ -20,6 +20,10 @@
     #block-btn, #close-btn {
       padding: 0.5rem 0.75rem;
     }
+
+    .hidden {
+      display: none;
+    }
   </style>
 
   <div id="promotion">
@@ -40,17 +44,17 @@
 
     // when page is loaded
     if (localStorage.getItem("blockedAt")) {
-      promotion.remove();
+      promotion.classList.add("hidden");
     }
 
-    // close button
+    // close button click
     closeBtn.addEventListener("click", function () {
-      promotion.remove();
+      promotion.classList.add("hidden");
     })
 
-    // block button
+    // block button click
     blockBtn.addEventListener("click", function () {
-      promotion.remove()
+      promotion.classList.add("hidden")
       localStorage.setItem("blockedAt", new Date());
     })
   </script>

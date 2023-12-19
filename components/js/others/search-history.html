@@ -9,15 +9,15 @@
 
   <style>
     input {
-      padding: 0.5rem;
       width: 100%;  
+      padding: 0.5rem;
       box-sizing: border-box;
+      font-size: 1rem;
     }
 
     ul {
       list-style: none;
       padding: 0 0.5rem;
-      margin: 1rem 0 0;
     }
     
     .item {
@@ -30,10 +30,6 @@
     .delete-btn {
       cursor: pointer;
     }
-
-    .hidden {
-      display: none;
-    }
   </style>
 
 
@@ -42,30 +38,28 @@
   <input type="search" placeholder="Search Google" disabled>
 
   <ul>
-    <li class="item">
+    <li id="h0" class="item">
       <span>I believe I can fly</span>
-      <span class="delete-btn" onclick="deleteItem(this)">&times;</span>
+      <span class="delete-btn" onclick="deleteItem('h0')">&times;</span>
     </li>
-    <li class="item">
+    <li id="h1" class="item">
       <span>I believe I can touch the sky</span>
-      <span class="delete-btn" onclick="deleteItem(this)">&times;</span>
+      <span class="delete-btn" onclick="deleteItem('h1')">&times;</span>
     </li>
-    <li class="item">
+    <li id="h2" class="item">
       <span>I think about it every night and day</span>
-      <span class="delete-btn" onclick="deleteItem(this)">&times;</span>
+      <span class="delete-btn" onclick="deleteItem('h2')">&times;</span>
     </li>
-    <li class="item">
+    <li id="h3" class="item"> 
       <span>Spread my wings and fly away</span>
-      <span class="delete-btn" onclick="deleteItem(this)">&times;</span>
+      <span class="delete-btn" onclick="deleteItem('h3')">&times;</span>
     </li>
   </ul>
 
 
   <script>
-    var items = document.getElementsByClassName("item");
-
-    function deleteItem(btn) {
-      btn.parentElement.remove();
+    function deleteItem(id) {
+      document.getElementById(id).remove();
     }
   </script>
   

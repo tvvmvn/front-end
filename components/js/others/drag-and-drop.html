@@ -22,11 +22,13 @@
     }
   </style>
 
+
   <div id="drop-zone">
     <p>Drag one or more files to this <i>drop zone</i>.</p>
   </div>
 
   <p id="done" class="hidden">Submitted</p>
+
 
   <script>
     var dropZone = document.getElementById('drop-zone');
@@ -36,30 +38,22 @@
     dropZone.addEventListener('drop', dropHandler);
 
     function dropHandler(e) {
-      // prevent file from opening
+      // cancel a browser opening files 
       e.preventDefault();
 
       console.log('File(s) dropped');
 
-      /*
-        FileList
+      // access file and send it to server
+      var files = e.dataTransfer.files;
 
-        This interface was an attempt to create an unmodifiable list.
-        Only continues to be supported to not break code that is already using it.
-        Modern APIs use types that wrap around ES array types instead.
-        Treat them like ES arrays.
-      */
-
-      // transform FileList to Array
-      var files = Array.from(e.dataTransfer.files);
-      console.log("Submitted files:\n", files);
+      console.log("Submitted files:\n", e.dataTransfer.files);
 
       dropZone.classList.add("hidden");
       done.classList.remove("hidden");
     }
     
     function dragOverHandler(e) {
-      // prevent file from opening
+      // cancel a browser opening files
       e.preventDefault();
 
       console.log('dragging over');
