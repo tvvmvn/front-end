@@ -19,7 +19,7 @@
 
     nav {
       position: fixed;
-      padding: 0 1rem;
+      padding: 1rem;
       top: 0;
       left: 0;
       width: 250px;
@@ -32,7 +32,7 @@
     }
 
     .filter-group {
-      margin: 1rem 0;
+      margin-bottom: 1rem;
     }
 
     label {
@@ -93,12 +93,15 @@
     /*
       # canvas
       
-      draw graphic in document using js.
+      you can draw graphic using js in document.
       e.g) data visualization, photo manipulation, animation, game.
+
+      - how to use
+      1 canvas - space for drawing graphic
+      2 context - A tool to draw
     */
-   
+    
     var canvas = document.getElementById('canvas');
-    // pen
     var ctx = canvas.getContext('2d');
     var UNIT = {
       brightness: '%',

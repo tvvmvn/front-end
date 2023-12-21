@@ -43,10 +43,10 @@
 
       console.log('File(s) dropped');
 
-      // access file and send it to server
+      // selected files
       var files = e.dataTransfer.files;
 
-      console.log("Submitted files:\n", e.dataTransfer.files);
+      console.log("selected files:", e.dataTransfer.files);
 
       dropZone.classList.add("hidden");
       done.classList.remove("hidden");

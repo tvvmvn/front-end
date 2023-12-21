@@ -61,13 +61,13 @@
 
     document.addEventListener('scroll', function (e) {
       // viewport height
-      var vh = window.innerHeight; 
-      
-      for (var i=0; i<els.length; i++) {
-        // distance between viewport top and element top
-        let y = els[i].getBoundingClientRect().y;
-        
-        // enter enough inside view port.
+      var vh = window.innerHeight;
+
+      for (var i = 0; i < els.length; i++) {
+        // distance between viewport-top and element-top
+        var y = els[i].getBoundingClientRect().y;
+
+        // into the view port enough.
         if (y < vh * 0.9) {
           els[i].classList.add("active")
         }
