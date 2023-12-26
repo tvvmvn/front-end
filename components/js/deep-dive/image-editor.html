@@ -17,13 +17,23 @@
       padding: 0;
     }
 
+    body {
+      background-color: #333;
+      width: 2000px;
+      height: 2000px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     nav {
       position: fixed;
       padding: 1rem;
       top: 0;
       left: 0;
       width: 250px;
-      height: 100vh;
+      height: 100%;
+      background-color: #fff;
     }
 
     .title {
@@ -43,14 +53,6 @@
     .filter-input {
       width: 100%;
     }
-
-    main {
-      margin-left: 250px;
-      padding: 4rem;
-      height: 100vh;
-      background-color: #333;
-      overflow: auto;
-    }
   </style>
 
   <nav>
@@ -58,70 +60,100 @@
 
     <div class="filter-group">
       <label for="brightness">Brigtness</label>
-      <input type="range" name="brightness" id="brightness" class="filter-input" min="0" max="200" value="100"
-        oninput="setFilter(this)">
-      <p class="filter-value">100</p>
+      <input 
+        type="range" 
+        name="brightness" 
+        id="brightness" 
+        class="filter-input" 
+        min="0" 
+        max="200" 
+        value="100"
+        oninput="setFilter(this)"
+      >
+      <p class="numeric-value">100</p>
     </div>
 
     <div class="filter-group">
       <label for="saturate">Saturate</label>
-      <input type="range" name="saturate" id="saturate" class="filter-input" min="0" max="200" value="100"
-        oninput="setFilter(this)">
-      <p class="filter-value">100</p>
+      <input
+        type="range" 
+        name="saturate" 
+        id="saturate" 
+        class="filter-input" 
+        min="0" 
+        max="200" 
+        value="100"
+        oninput="setFilter(this)"
+      >
+      <p class="numeric-value">100</p>
     </div>
 
     <div class="filter-group">
       <label for="invert">Invert</label>
-      <input type="range" name="invert" id="invert" class="filter-input" min="0" max="100" value="0"
-        oninput="setFilter(this)">
-      <p class="filter-value">0</p>
+      <input 
+        type="range" 
+        name="invert" 
+        id="invert" 
+        class="filter-input" 
+        min="0" 
+        max="100" 
+        value="0"
+        oninput="setFilter(this)"
+      >
+      <p class="numeric-value">0</p>
     </div>
 
     <div class="filter-group">
       <label for="blur">Blur</label>
-      <input type="range" name="blur" id="blur" class="filter-input" min="0" max="10" value="0"
-        oninput="setFilter(this)">
-      <p class="filter-value">0</p>
+      <input 
+        type="range" 
+        name="blur" 
+        id="blur" 
+        class="filter-input" 
+        min="0" 
+        max="10" value="0"
+        oninput="setFilter(this)"
+      >
+      <p class="numeric-value">0</p>
     </div>
   </nav>
 
-  <main>
-    <canvas id="canvas"></canvas>
-  </main>
+  <canvas id="canvas"></canvas>
 
   <script>
     /*
-      # canvas
+      * canvas
       
       you can draw graphic using js in document.
       e.g) data visualization, photo manipulation, animation, game.
 
-      - how to use
-      1 canvas - space for drawing graphic
-      2 context - A tool to draw
+      1 how to use
+      1) canvas - space for drawing graphic
+      2) context - A tool to draw
     */
     
     var canvas = document.getElementById('canvas');
-    var ctx = canvas.getContext('2d');
+    var ctx = canvas.getContext('2d'); // context
+    var filter = {};
     var UNIT = {
       brightness: '%',
       saturate: '%',
       invert: '%',
       blur: 'px',
     }
-    var filter = {};
     var imgElement = new Image();
-    imgElement.src = "../../../../img/homies.jpg";
+    imgElement.src = "../../../img/homies.jpg";
+    imgElement.addEventListener("load", drawImage);
 
 
-    imgElement.addEventListener("load", function () {
-      canvas.width = imgElement.naturalWidth;
-      canvas.height = imgElement.naturalHeight;
+    function drawImage() {
+      canvas.width = imgElement.width;
+      canvas.height = imgElement.height;
 
-      render();
-    });
+      // drawImage(left, top)
+      ctx.drawImage(imgElement, 0, 0);
+    }
 
-    
     // input event
     function setFilter(input) {
       console.log(input);
@@ -135,26 +167,18 @@
       console.log(filter);
 
       // change filter data to string for canvas API
-      var filterInString = "";
+      var filterInString = [];
 
       for (var key in filter) {
-        filterInString += `${key}(${filter[key]}) `;
+        filterInString.push(`${key}(${filter[key]})`);
       }
-
-      console.log(filterInString);
-
+      
       // apply filter to image (canvas)
-      ctx.filter = filterInString.trim();
-
-      render();
+      ctx.filter = filterInString.join(" ");
+      ctx.drawImage(imgElement, 0, 0);
 
       // numeric filter value below input
       input.nextElementSibling.textContent = value;
-    }
-
-    function render() {
-      // drawImage(image element, left, top)
-      ctx.drawImage(imgElement, 0, 0);
     }
   </script>
 
