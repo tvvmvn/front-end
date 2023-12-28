@@ -7,8 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- title -->
   <title>Interior Design</title>
-  <!-- base url -->
-  <base href="https://www.w3schools.com">
   <!-- tailwind cdn -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- font library -->
@@ -25,7 +23,7 @@
   <!-- HEADER -->
   <header class="fixed top-0 w-screen bg-gray-400 lg:hidden z-10">
     <div class="flex items-center h-16">
-      <button id=open-btn class="px-4 text-2xl text-white hover:bg-gray-200 hover:text-black">
+      <button id="open-btn" class="px-4 text-2xl text-white hover:bg-gray-200 hover:text-black">
         &#9776;
       </button>
       <h1 class="ml-2 text-2xl text-white font-semibold">Company Name</h1>
@@ -33,7 +31,7 @@
   </header>
 
   <!-- SIDE BAR -->
-  <nav id="sideBar" class="fixed top-0 left-0 w-80 h-screen bg-gray-400 px-4 hidden lg:block z-30">
+  <nav id="sideBar" class="fixed w-80 top-0 -left-80 h-screen bg-gray-400 px-4 lg:left-0 transition-all z-30">
     <div class="mt-12 h-48 px-4 flex flex-col justify-center">
       <h2 class="text-2xl text-white font-semibold">Company <br> Name</h2>
     </div>
@@ -73,42 +71,42 @@
     </div>
 
     <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div class="">
+      <div id="col-1" class="">
         <img 
           class="cursor-pointer opacity-80 hover:opacity-100"
-          src="/w3images/kitchenconcrete.jpg" 
+          src="https://www.w3schools.com/w3images/kitchenconcrete.jpg" 
           alt="kitchenconcrete"
           onclick="openModal(this)"
         >
         <img 
           class="mt-4 cursor-pointer opacity-80 hover:opacity-100"
-          src="/w3images/livingroom.jpg" 
+          src="https://www.w3schools.com/w3images/livingroom.jpg" 
           alt="livingroom"
           onclick="openModal(this)"
         >
         <img 
           class="mt-4 cursor-pointer opacity-80 hover:opacity-100"
-          src="/w3images/diningroom.jpg" 
+          src="https://www.w3schools.com/w3images/diningroom.jpg" 
           alt="diningroom"
           onclick="openModal(this)"
         >
       </div>
-      <div class="">
+      <div id="col-2" class="">
         <img 
           class="cursor-pointer opacity-80 hover:opacity-100" 
-          src="/w3images/atrium.jpg"
+          src="https://www.w3schools.com/w3images/atrium.jpg"
           alt="atrium"
           onclick="openModal(this)"
         >
         <img 
           class="mt-4 cursor-pointer opacity-80 hover:opacity-100"
-          src="/w3images/bedroom.jpg" 
+          src="https://www.w3schools.com/w3images/bedroom.jpg" 
           alt="bedroom"
           onclick="openModal(this)"
         >
         <img
           class="mt-4 cursor-pointer opacity-80 hover:opacity-100"
-          src="/w3images/livingroom2.jpg" 
+          src="https://www.w3schools.com/w3images/livingroom2.jpg" 
           alt="livingroom2"
           onclick="openModal(this)"
         >
@@ -155,9 +153,9 @@
       Our designers are thoughtfully chosen:
     </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="bg-gray-100">
-        <img class="w-full" src="/w3images/team2.jpg" alt="John Doe">
+    <ul class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <li class="bg-gray-100">
+        <img class="w-full" src="https://www.w3schools.com/w3images/team2.jpg" alt="John Doe">
         <div class="px-4 pb-4">
           <h3 class="text-2xl my-4 font-semibold tracking-wide">John Doe</h3>
           <p class="my-4 text-gray-400">CEO & Founder</p>
@@ -166,9 +164,9 @@
           </p>
           <button class="w-full p-2 text-white bg-gray-400 hover:bg-gray-500">Contact</button>
         </div>
-      </div>
-      <div class="bg-gray-100">
-        <img class="w-full" src="/w3images/team1.jpg" alt="Jane Doe">
+      </li>
+      <li class="bg-gray-100">
+        <img class="w-full" src="https://www.w3schools.com/w3images/team1.jpg" alt="Jane Doe">
         <div class="px-4 pb-4">
           <h3 class="text-2xl my-4 font-semibold tracking-wide">Jane Doe</h3>
           <p class="my-4 text-gray-400">Designer</p>
@@ -177,9 +175,9 @@
           </p>
           <button class="w-full p-2 text-white bg-gray-400 hover:bg-gray-500">Contact</button>
         </div>
-      </div>
-      <div class="bg-gray-100">
-        <img class="w-full" src="/w3images/team3.jpg" alt="Mike Ross">
+      </li>
+      <li class="bg-gray-100">
+        <img class="w-full" src="https://www.w3schools.com/w3images/team3.jpg" alt="Mike Ross">
         <div class="px-4 pb-4">
           <h3 class="text-2xl my-4 font-semibold trakcking-wide">Mike Ross</h3>
           <p class="my-4 text-gray-400">Architect</p>
@@ -188,8 +186,8 @@
           </p>
           <button class="w-full p-2 text-white bg-gray-400 hover:bg-gray-500">Contact</button>
         </div>
-      </div>
-    </div>
+      </li>
+    </ul>
 
     <!-- PACKAGES -->
     <div id="packages" class="mt-24">
@@ -257,8 +255,8 @@
       people!
     </p>
       
-    <div class="my-12 grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="flex flex-col items-center">
+    <ul class="my-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <li class="flex flex-col justify-center items-center p-4 border-2">
         <svg class="w-8 fill-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
           <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
         </svg>
@@ -266,8 +264,8 @@
           032 123 4567 <br>
           010 1234 5678
         </p>
-      </div>
-      <div class="flex flex-col items-center">
+      </li>
+      <li class="flex flex-col justify-center items-center p-4 border-2">
         <svg class="w-6 fill-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
           <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
         </svg>
@@ -276,8 +274,8 @@
           Bupyeong-gu <br>
           Incheon, KR
         </p>
-      </div>
-      <div class="flex flex-col items-center">
+      </li>
+      <li class="flex flex-col justify-center items-center p-4 border-2">
         <svg class="w-8 fill-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
           <path d="M255.4 48.2c.2-.1 .4-.2 .6-.2s.4 .1 .6 .2L460.6 194c2.1 1.5 3.4 3.9 3.4 6.5v13.6L291.5 355.7c-20.7 17-50.4 17-71.1 0L48 214.1V200.5c0-2.6 1.2-5 3.4-6.5L255.4 48.2zM48 276.2L190 392.8c38.4 31.5 93.7 31.5 132 0L464 276.2V456c0 4.4-3.6 8-8 8H56c-4.4 0-8-3.6-8-8V276.2zM256 0c-10.2 0-20.2 3.2-28.5 9.1L23.5 154.9C8.7 165.4 0 182.4 0 200.5V456c0 30.9 25.1 56 56 56H456c30.9 0 56-25.1 56-56V200.5c0-18.1-8.7-35.1-23.4-45.6L284.5 9.1C276.2 3.2 266.2 0 256 0z"/>
         </svg>
@@ -285,10 +283,10 @@
           interior_1@company.com <br>
           interior_2@company.com 
         </p>
-      </div>
-    </div>
+      </li>
+    </ul>
 
-    <img class="w-full" src="/w3images/map.jpg" alt="">
+    <img class="w-full" src="https://www.w3schools.com/w3images/map.jpg" alt="">
   </main>
 
   <!-- FOOTER -->
@@ -305,13 +303,13 @@
 
     // NavBar
     openBtn.addEventListener('click', function () {
-      sideBar.classList.remove('hidden');
+      sideBar.classList.replace('-left-80', 'left-0');
       navOverlay.classList.remove('hidden');
     })
 
     navOverlay.addEventListener('click', function () {
+      sideBar.classList.replace('left-0', '-left-80');
       this.classList.add('hidden');
-      sideBar.classList.add('hidden');
     })
 
     // Modal 
