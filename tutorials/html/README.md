@@ -1,7 +1,7 @@
 # HTML Tutorials
 
 ### Basic
-1. Document
+1. Document structure
 2. Element
 3. Tree structure
 
@@ -26,12 +26,15 @@
 ### Element 3 - Form
 1. Search form
 2. Login form
+3. Survey form
 
 ### Element 4 - Media and graphic
 1. img
 2. svg
 
-### What is Semantic & Non-semantic 
+### HTML Entity
+
+### What is Semantic & Non-semantic HTML
 
 
 

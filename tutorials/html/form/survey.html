@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h1>Survey form</h1>
+
+  <form action="/survey.php">
+    <h3>
+      <label for="gender">성별</label>
+    </h3>
+    <select name="gender" id="gender">
+      <option value="male" disabled>남자</option>
+      <option value="female">여자</option>
+      <option value="gay">게이</option>
+    </select>
+  
+    <h3>
+      <label for="gay">만약 성별에서 3번을 골랐다면 언제부터였습니까?</label>
+    </h3>
+    <textarea name="" id="gay" cols="30" rows="5" placeholder="힘내"></textarea>
+  
+    <h3>나이</h3>
+    <input type="radio" name="age" id="1020" checked>
+    <label for="1020">10 - 20대</label>
+    <input type="radio" name="age" id="3040">
+    <label for="3040">30 - 40대</label>
+    <input type="radio" name="age" id="50-">
+    <label for="50-">50대 이상</label>
+
+    <p>
+      <button type="submit">제출</button>
+    </p>
+  </form>
+
+  <pre>
+    1 select & options
+    select provides some options
+
+    - attributes
+    1) value - data submitted to server for select
+    2) disabled - It disable element
+
+    2 textarea
+    you can enter long text
+
+    - attribute
+    1) cols - The number of characters you can write in a row
+    2) rows - The number of row that you can write text
+
+    3 radio
+    you can select only one options in radio buttons
+    you should make buttons have same name to group them.
+
+    - attribute
+    1) checked
+    It makes button selected when page is opened.
+  </pre>
+
+</body>
+
+</html>

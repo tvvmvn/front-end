@@ -10,15 +10,6 @@
 
   <h1>Login Form</h1>
 
-  <pre>
-    1 label
-    describes input. label and input is a pair
-
-    - attribute
-    1) for 
-    It connects label with input
-  </pre>
-
   <form action="/login.php">
     <div>
       <label for="username">아이디</label>
@@ -31,12 +22,24 @@
     </div>
 
     <div>
-      <input type="checkbox" name="" id="show">
-      <label for="show">비밀번호 보기</label>
+      <input type="checkbox" name="save" id="save">
+      <label for="save">로그인 정보 저장</label>
     </div>
 
     <button type="submit">로그인</button>
   </form>
+
+  <pre>
+    1 label
+    description for input. label and input is a pair.
+
+    - attribute
+    1) for 
+    It connects label with input
+
+    2 checkbox
+    It provides options for agree / disagree
+  </pre>
 
 </body>
 </html>
