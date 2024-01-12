@@ -10,7 +10,7 @@
 4. children selector
 5. pseudo class
 
-### Rules
+### CSS Rules
 1. Unit for length
 2. Color notation
 
@@ -44,9 +44,14 @@
 1. object fit
 2. background-image
 
-### layout
+### Layout
 1. flex
 2. grid
+
+### Others
+1. Pseudo element
+2. inherit & initial
+3. CSS variables
 
 ### Responsive layout
 1. media rule

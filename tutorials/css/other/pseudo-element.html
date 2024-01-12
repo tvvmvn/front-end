@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h1>Pseudo element</h1>
+  <pre>
+    contents defined in CSS.
+    It is not existed in HTML tree.
+    It increase reusability of code.
+
+    1 how to use
+    selector::pseudo-element
+    
+    2 types
+    1) before - element is placed before content of selector
+    2) after - element is placed after content of selector
+    3) marker - element is placed before 'before' of selector
+  </pre>
+
+  <style>
+    li::after {
+      content: "%";
+    }
+  </style>
+
+  <ul>
+    <li>0</li>
+    <li>50</li>
+    <li>100</li>
+  </ul>
+
+</body>
+
+</html>
