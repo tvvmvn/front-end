@@ -10,12 +10,24 @@
 
   <h1>display</h1>
   <pre>
-    엘리먼트의 진열 방법
+    display elements
 
     1 block
+    It fills entire width of parent element.
+    default for most of element such as div, main, nav, p
+    
     2 inline-block
+    It has width only for its contents.
+    default for buttons, input, img
+    
     3 inline
+    It has width only for its contents.
+    default for span, a.
+    It is not good for layout usage because
+    It cannot have width, height, y-axis padding, margin
+    
     4 none
+    It doesn't show on view
   </pre>
 
   <style>
@@ -41,42 +53,18 @@
   </style>
 
   <h3>display: block</h3>
-  <pre>
-    부모 엘리먼트의 넓이를 모두 차지한다
-    div, p, nav등 대부분 엘리먼트의 기본값
-  </pre>
-    
   <div class="item block">item</div>
   <div class="item block">item</div>
-
 
   <h3>display: inline-block</h3>
-  <pre>
-    컨텐츠에 필요한 만큼만 넓이를 갖는다
-    buttons, input등의 기본값
-  </pre>
-
   <div class="item inline-block">item</div>
   <div class="item inline-block">item</div>
-
 
   <h3>display: inline</h3>
-  <pre>
-    컨텐츠에 필요한 만큼만 넓이를 갖는다
-    span, a등의 기본값
-
-    엘리먼트가 width, height 속성을 가질 수 없다
-    y축 padding, margin 속성이 적용되지 않는다
-    레이아웃 용으로 적합하지 않다
-  </pre>
-
   <div class="item inline">item</div>
   <div class="item inline">item</div>
-
 
   <h3>display: none</h3>
-  <pre>화면에 나타나지 않는다</pre>
-
   <div class="item hidden">item</div>
   
 </body>
