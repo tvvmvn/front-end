@@ -18,34 +18,57 @@
     .border {
       border-width: 1px;
       border-style: solid;
-      border-color: #000;
+      border-color: #000
     }
 
     .border-t {
       border-top-width: 1px;
       border-top-style: solid;
-      border-top-color: #000;
+      border-top-color: #000
     }
-
-    .border-x {
+    
+    .border-b {
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: #000
+    }
+    
+    .border-l {
       border-left-width: 1px;
       border-left-style: solid;
-      border-left-color: #000;
-
+      border-left-color: #000
+    }
+    
+    .border-r {
       border-right-width: 1px;
       border-right-style: solid;
-      border-right-color: #000;
+      border-right-color: #000
     }
   </style>
 
   <h3>전체</h3>
-  <div class="item border">border</div>
-
-  <h3>상단</h3>
-  <div class="item border-t">border top</div>
+  <div class="item border">item</div>
+  
+  <h3>top</h3>
+  <div class="item border-t">item</div>
+  
+  <h3>bottom</h3>
+  <div class="item border-b">item</div>
+  
+  <h3>left</h3>
+  <div class="item border-l">item</div>
+  
+  <h3>right</h3>
+  <div class="item border-r">item</div>
 
   <h3>x축</h3>
-  <div class="item border-x">border x</div>
+  <div class="item border-l border-r">item</div>
+
+  <h3>y축</h3>
+  <div class="item border-t border-b">item</div>
+
+  <h3>top 제외</h3>
+  <div class="item border-l border-r border-b">item</div>
 
 </body>
 </html>

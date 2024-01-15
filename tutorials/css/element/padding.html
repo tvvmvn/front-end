@@ -20,17 +20,24 @@
       display: inline-block;
     }
 
-    .p-2 {
-      padding: 0.5rem;
+    .p-4 {
+      padding: 1rem;
     }
   
-    .pt-2 {
-      padding-top: 0.5rem;
+    .pt-4 {
+      padding-top: 1rem;
+    }
+
+    .pb-4 {
+      padding-bottom: 1rem;
     }
   
-    .px-2 {
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
+    .pl-4 {
+      padding-left: 1rem;
+    }
+    
+    .pr-4 {
+      padding-right: 1rem;
     }
   </style>
   
@@ -38,13 +45,28 @@
   <div class="item">item</div>
 
   <h3>전체</h3>
-  <div class="item p-2">item</div>
+  <div class="item p-4">item</div>
 
-  <h3>상단</h3>
-  <div class="item pt-2">item</div>
+  <h3>top</h3>
+  <div class="item pt-4">item</div>
+  
+  <h3>bottom</h3>
+  <div class="item pb-4">item</div>
 
+  <h3>left</h3>
+  <div class="item pl-4">item</div>
+
+  <h3>right</h3>
+  <div class="item pr-4">item</div>
+  
   <h3>x축</h3>
-  <div class="item px-2">item</div>
+  <div class="item pl-4 pr-4">item</div>
+
+  <h3>y축</h3>
+  <div class="item pt-4 pb-4">item</div>
+
+  <h3>top 제외</h3>
+  <div class="item pr-4 pb-4 pl-4">item</div>
   
 </body>
 </html>

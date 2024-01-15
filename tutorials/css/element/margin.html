@@ -20,16 +20,23 @@
       display: inline-block;
     }
 
-    .m-2 {
+    .m-4 {
       margin: 1rem;
     }
 
-    .mt-2 {
+    .mt-4 {
       margin-top: 1rem;
     }
 
-    .mx-2 {
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+
+    .ml-4 {
       margin-left: 1rem;
+    }
+
+    .mr-4 {
       margin-right: 1rem;
     }
   </style>
@@ -39,13 +46,28 @@
   <div class="item">item</div>
 
   <h3>전체</h3>
-  <div class="item m-2">item</div>
+  <div class="item m-4">item</div>
 
-  <h3>상단</h3>
-  <div class="item mt-2">item</div>
+  <h3>top</h3>
+  <div class="item mt-4">item</div>
+
+  <h3>bottom</h3>
+  <div class="item mb-4">item</div>
+
+  <h3>left</h3>
+  <div class="item ml-4">item</div>
+
+  <h3>right</h3>
+  <div class="item mr-4">item</div>
 
   <h3>x축</h3>
-  <div class="item mx-2">item</div>
+  <div class="item ml-4 mr-4">item</div>
+
+  <h3>y축</h3>
+  <div class="item mt-4 mb-4">item</div>
+
+  <h3>top 제외</h3>
+  <div class="item ml-4 mr-4 mb-4">item</div>
   
 </body>
 </html>
