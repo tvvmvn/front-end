@@ -9,40 +9,26 @@
 <body>
 
   <h1>min width</h1>
+  <p>minimun width of element</p>
 
   <style>
     .item {
       background-color: #ddd;
     }
     
-    .a {
-      width: 400px;
-      /* no effect */
-      min-width: 300px;
-    }
-
-    .b {
-      width: 400px; 
-      min-width: 500px;
+    .min-w-600px {
+      min-width: 600px;
     }
   </style>
 
-  <h3>1 width &gt; min-width</h3>
-  <div class="item a">
+  <h3>min-width: 600px</h3>
+  <div class="item min-w-600px">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
     Possimus illo cum expedita perspiciatis. 
     Autem aut, perspiciatis facilis quo labore alias vel nisi, 
     laborum iusto distinctio eos assumenda ut nulla repellat.
   </div>
 
-
-  <h3>2 width &lt; min-width</h3>
-  <div class="item b">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-    Possimus illo cum expedita perspiciatis. 
-    Autem aut, perspiciatis facilis quo labore alias vel nisi, 
-    laborum iusto distinctio eos assumenda ut nulla repellat.
-  </div>
   
 </body>
 </html>

@@ -9,34 +9,20 @@
 <body>
 
   <h1>max width</h1>
+  <p>maximun width of element</p>
 
   <style>
     .item {
       background-color: #ddd;
     }
 
-    .a {
-      width: 400px;
-      max-width: 300px;
-    }
-    
-    .b {
-      width: 400px; 
-      /* no effect */
-      max-width: 500px;
+    .max-w-600px {
+      max-width: 600px;
     }
   </style>
 
-  <h3>1 width > max-width</h3>
-  <div class="item a">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-    Possimus illo cum expedita perspiciatis. 
-    Autem aut, perspiciatis facilis quo labore alias vel nisi, 
-    laborum iusto distinctio eos assumenda ut nulla repellat.
-  </div>
-
-  <h3>2 width &lt; max-width</h3>
-  <div class="item b">
+  <h3>max-width: 600px</h3>
+  <div class="item max-w-600px">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
     Possimus illo cum expedita perspiciatis. 
     Autem aut, perspiciatis facilis quo labore alias vel nisi, 
