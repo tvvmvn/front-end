@@ -10,6 +10,21 @@
 
   <h1>transform</h1>
 
+  <!-- 
+    1 none
+    no transform
+
+    2 translate(left, top)
+    it moves element based on its original position.
+    translate(left, top)
+
+    3 scale(value to increase)
+    it adjust size of element
+
+    4 rotate(degree)
+    it rotates element
+  -->
+
   <style>
     .item {
       background-color: #ddd;
@@ -17,8 +32,11 @@
       height: 100px;
     }
 
+    .transform-none {
+      transform: none;
+    }
+
     .translate-4 {
-      /* translate(left, top) */
       transform: translate(10px, 10px);
     }
 
@@ -33,7 +51,7 @@
 
 
   <h3>transform: none</h3>
-  <div class="item"></div>
+  <div class="item transform-none"></div>
 
   <h3>transform: translate</h3>
   <div class="item translate-4"></div>
