@@ -12,28 +12,34 @@
 
   <h1>initial, inherit</h1>
 
+  <!-- 
+    property value about inheritance
+    they can be value for all properties
+
+    1 inherit
+    inherit property value of parent
+    
+    2 initial
+    initialize inherited value
+  -->
+      
   <style>
     ul {
-      color: #ddd;
+      color: #f00;
     }
 
-    li:nth-child(1) {
-      /* 
-        inherit value from parent
-        default in color 
-      */
+    .inherit {
       color: inherit;
     }
 
-    li:nth-child(2) {
-      /* initialize value */
+    .initial {
       color: initial;
     }
   </style>
 
   <ul>
-    <li>list item</li>
-    <li>list item</li>
+    <li class="inherit">list item</li>
+    <li class="initial">list item</li>
   </ul>
 
 </body>

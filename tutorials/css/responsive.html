@@ -9,6 +9,9 @@
 <body>
 
   <h1>Responsive layout</h1>
+  <pre>
+    you can set layout breakpoint with media rule
+  </pre>
 
   <style>
     .container {
@@ -28,7 +31,7 @@
       gap: 0.5rem;
     }
 
-    /* default */
+    /* base */
     .grid-cols-n {
       grid-template-columns: repeat(1, minmax(0, 1fr));
     }
@@ -65,18 +68,14 @@
   </style>
 
   <ul>
-    <li>Mobile Device(default): ~ 640px</li>
-    <li>Small Device: 641px ~ 767px</li>
-    <li>Medium Device: 768px ~ 1023px</li>
-    <li>Large Device: 1024px ~ 1279px</li>
-    <li>Extra Large Device: 1280px ~ 1535px</li>
-    <li>2 Extra Large Device: 1536px ~ </li>
+    <li>S: 641px - 767px</li>
+    <li>M: 768px - 1023px</li>
+    <li>L: 1024px - 1279px</li>
+    <li>XL: 1280px - 1535px</li>
+    <li>XXL: 1536px - </li>
   </ul>
 
   <div class="container grid gap-2 grid-cols-n">
-    <div class="item">item</div>
-    <div class="item">item</div>
-    <div class="item">item</div>
     <div class="item">item</div>
     <div class="item">item</div>
     <div class="item">item</div>
