@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h1>Q. Breakpoints</h1>
+
+  <style>
+    .grid {
+      display: grid;
+    }
+    
+    .grid-cols-n {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .gap-4 {
+      gap: 1rem;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    @media (min-width: 768px) {
+      .grid-cols-n {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+  </style>
+
+  <div class="grid grid-cols-n gap-4">
+    <div class="item">
+      <h3>section 1</h3>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Velit incidunt, quisquam consequatur, obcaecati repudiandae 
+        consequuntur ipsam a in optio culpa placeat quae libero quaerat 
+        nihil soluta dolores natus nobis quasi.
+      </p>
+    </div>
+
+    <div class="item">
+      <h3>section 2</h3>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Velit incidunt, quisquam consequatur, obcaecati repudiandae 
+        consequuntur ipsam a in optio culpa placeat quae libero quaerat 
+        nihil soluta dolores natus nobis quasi.
+      </p>
+    </div>
+
+    <div class="item">
+      <h3>section 3</h3>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Velit incidunt, quisquam consequatur, obcaecati repudiandae 
+        consequuntur ipsam a in optio culpa placeat quae libero quaerat 
+        nihil soluta dolores natus nobis quasi.
+      </p>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
