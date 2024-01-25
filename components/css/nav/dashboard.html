@@ -12,10 +12,11 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
+      width: 100%;
+      padding-left: 1rem;
       background-color: #333;
       color: #fff;
-      padding: 0 1rem;
+      /* priority on position */
       z-index: 1;
     }
 
@@ -24,7 +25,7 @@
       top: 0;
       left: 0;
       width: 16rem;
-      height: 100vh;
+      height: 100%;
       background-color: #ddd;
     }
 
@@ -37,14 +38,14 @@
     }
 
     main {
-      margin-top: 4rem;
+      margin-top: 6rem;
       margin-left: 16rem;
-      padding: 1rem;
+      padding: 0 1rem;
     }
   </style>
 
   <header>
-    <h3>LOGO</h3>
+    <h3 class="logo">LOGO</h3>
   </header>
 
   <nav class="side-bar">
@@ -63,6 +64,7 @@
   
   <main>
     <h1>Dashboard</h1>
+    <p>..</p>
   </main>
 
 </body>

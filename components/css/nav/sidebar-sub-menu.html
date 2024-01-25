@@ -39,6 +39,41 @@
       background-color: #222;
     }
 
+    .drop-btn {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      text-align: left;
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .drop-btn:hover {
+      background-color: #222;
+    }
+
+    .drop-content {
+      display: none;
+      padding: 0 1rem;
+    }
+
+    .drop-container:hover .drop-content {
+      display: block;
+    }
+    
+    .drop-link {
+      display: block;
+      color: #888;
+      padding: 0.5rem;
+    }
+    
+    .drop-link:hover {
+      background-color: #eee;
+    }
+
     main {
       margin-top: 4rem;
       margin-left: 16rem;
@@ -54,6 +89,22 @@
       </li>
       <li>
         <a href="#" class="link">Link</a>
+      </li>
+      <li>
+        <div class="drop-container">
+          <button class="drop-btn">Dropdown</button>
+          <ul class="drop-content">
+            <li>
+              <a href="#" class="drop-link">Link</a>
+            </li>
+            <li>
+              <a href="#" class="drop-link">Link</a>
+            </li>
+            <li>
+              <a href="#" class="drop-link">Link</a>
+            </li>
+          </ul>
+        </div>
       </li>
       <li>
         <a href="#" class="link">Link</a>
