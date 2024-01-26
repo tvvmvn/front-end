@@ -32,20 +32,25 @@
     }
 
     .username-input, .password-input {
-      padding: 0.5rem;
+      /* size */
       width: 100%;
-      border: 1px solid #ddd;
+      padding: 0.5rem;
       box-sizing: border-box;
+      /* design */
+      border: 1px solid #ddd;
       font-size: 1rem;
     }
 
     .btn {
+      /* size */
       width: 100%;
       padding: 0.5rem;
+      /* design */
       background-color: #333;
       border: none;
       color: #fff;
       font-weight: 600;
+      /* misc */
       cursor: pointer;
     }
 
@@ -67,9 +72,7 @@
     </div>
     <div class="form-group">
       <label for="password">Password</label>
-      <div class="relative">
-        <input type="password" class="password-input" id="password" value="shhhh">
-      </div>
+      <input type="password" class="password-input" id="password" value="shhhh">
     </div>
     <div class="form-group">
       <button type="submit" class="btn">Login</button>
