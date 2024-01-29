@@ -12,7 +12,7 @@
       display: none;
     }
 
-    .option {
+    .color-chip {
       /* layout */
       display: inline-block;
       margin-right: 0.25rem;
@@ -24,7 +24,7 @@
       border-radius: 99px;
     }
     
-    input:checked + .option {
+    input:checked + .color-chip {
       outline: 4px solid #ddd;
     }
     
@@ -45,11 +45,11 @@
 
   <div class="container">
     <input type="radio" name="color" id="white" checked>
-    <label for="white" class="option white"></label>
+    <label for="white" class="color-chip white"></label>
     <input type="radio" name="color" id="gray">
-    <label for="gray" class="option gray"></label>
+    <label for="gray" class="color-chip gray"></label>
     <input type="radio" name="color" id="black">
-    <label for="black" class="option black"></label>
+    <label for="black" class="color-chip black"></label>
   </div>
   
 </body>

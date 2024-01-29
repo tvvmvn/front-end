@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Multiple select</h1>
+
+  <style>
+    input {
+      display: none;
+    }
+
+    .option {
+      display: inline-block;
+      border: 1px solid #ddd;
+      padding: 0.5rem 0.75rem;
+      border-radius: 99px;
+    }
+
+    input:checked + .option {
+      background-color: #cff;
+    }
+    
+    .option::before {
+      content: "+ ";
+    }
+
+    input:checked + .option::before {
+      content: ""
+    }
+  </style>
+
+  <h3>Choose all skills you have</h3>
+
+  <input type="checkbox" name="skills" id="html">
+  <label for="html" class="option">HTML</label>
+  <input type="checkbox" name="skills" id="css">
+  <label for="css" class="option">CSS</label>
+  <input type="checkbox" name="skills" id="js">
+  <label for="js" class="option">JavaScript</label>
+  <input type="checkbox" name="skills" id="react">
+  <label for="react" class="option">React</label>
+
+</body>
+</html>

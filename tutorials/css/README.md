@@ -26,6 +26,7 @@
 1. color and background color
 2. display
 3. border
+<!-- outline -->
 4. padding
 5. margin
 6. width

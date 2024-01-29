@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Survey</h1>
+
+  <style>
+    .form-group {
+      margin-bottom: 0.5rem;
+    }
+
+    .checkbox {
+      display: none;
+    }
+
+    .option {
+      display: block;
+      border: 2px solid #ddd;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+    }
+
+    .checkbox:checked + .option {
+      border: 2px solid #333;
+    }
+  </style>
+
+  <h3>Which phone do you want to purchase?</h3>
+
+  <div class="form-group">
+    <input type="radio" name="phone" id="a" class="checkbox">
+    <label for="a" class="option">iPhone 15 Pro</label>
+  </div>
+  <div class="form-group">
+    <input type="radio" name="phone" id="b" class="checkbox">
+    <label for="b" class="option">Galaxy S24</label>
+  </div>
+  <div class="form-group">
+    <input type="radio" name="phone" id="c" class="checkbox">
+    <label for="c" class="option">Pixel Pro 8</label>
+  </div>
+  <div class="form-group">
+    <input type="radio" name="phone" id="d" class="checkbox">
+    <label for="d" class="option">Others</label>
+  </div>
+
+</body>
+</html>
