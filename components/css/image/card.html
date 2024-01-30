@@ -10,48 +10,64 @@
 
   <h1>Card</h1>
 
+  <!-- 
+    * box-shadow
+    It gives shadow effect on element.
+    default is none.
+
+    - how to use
+    box-shadow: x y blur spread color inset 
+
+    1 offset-x (required)
+    left(-) / right(+)
+
+    2 offset-y (required)
+    top(-) / bottom(+)
+
+    3 blur
+    The higher the number, the more blurred the shadow will be.
+
+    4 spread
+    the size of the shadow.
+    increase(+) / decrease(-)
+
+    5 color
+
+    6 inset
+    apply effect on the inside of element
+  -->
+
   <style>
     .card {
+      /* size */
       width: 16rem;
-      /* 
-        box-shadow: x y blur spread color inset 
-        x, y is required
-      */
-      box-shadow: 0 0 10px #ddd;
+      /* design */
+      box-shadow: 5px 5px 10px #ddd, -5px -5px 10px #ddd;
+      border-radius: 0.5rem;
+      overflow: hidden;
     }
 
     img {
       width: inherit;
     }
 
-    .content {
+    .card-inner {
       padding: 0 1rem 1rem;
     }
 
-    .position {
+    .content {
       color: #888;
-    }
-
-    .contact-btn {
-      border: none;
-      background-color: #eee;
-      width: 100%;
-      padding: 0.5rem;
-      font-size: 1rem;
-      font-weight: 600;
     }
   </style>
 
   <div class="card">
     <img src="../../../img/Pumbaa.webp" alt="">
-    <div class="content">
+    <div class="card-inner">
       <h3>Pumbaa</h3>
-      <p class="position">CEO</p>
-      <p>
+      <p class="content">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
         Doloribus in corporis illo.
       </p>
-      <button class="contact-btn">Contact</button>
     </div>
   </div>
   

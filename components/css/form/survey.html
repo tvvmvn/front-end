@@ -11,18 +11,18 @@
   <h1>Survey</h1>
 
   <style>
-    .form-group {
-      margin-bottom: 0.5rem;
-    }
-
     .checkbox {
       display: none;
     }
-
+    
     .option {
+      /* layout */
       display: block;
-      border: 2px solid #ddd;
+      margin-bottom: 0.5rem;
+      /* size */
       padding: 0.5rem;
+      /* design */
+      border: 2px solid #ddd;
       border-radius: 0.25rem;
     }
 
@@ -33,22 +33,17 @@
 
   <h3>Which phone do you want to purchase?</h3>
 
-  <div class="form-group">
-    <input type="radio" name="phone" id="a" class="checkbox">
-    <label for="a" class="option">iPhone 15 Pro</label>
-  </div>
-  <div class="form-group">
-    <input type="radio" name="phone" id="b" class="checkbox">
-    <label for="b" class="option">Galaxy S24</label>
-  </div>
-  <div class="form-group">
-    <input type="radio" name="phone" id="c" class="checkbox">
-    <label for="c" class="option">Pixel Pro 8</label>
-  </div>
-  <div class="form-group">
-    <input type="radio" name="phone" id="d" class="checkbox">
-    <label for="d" class="option">Others</label>
-  </div>
+  <input type="radio" name="phone" id="a" class="checkbox">
+  <label for="a" class="option">iPhone 15 Pro</label>
+
+  <input type="radio" name="phone" id="b" class="checkbox">
+  <label for="b" class="option">Galaxy S24</label>
+
+  <input type="radio" name="phone" id="c" class="checkbox">
+  <label for="c" class="option">Pixel Pro 8</label>
+  
+  <input type="radio" name="phone" id="d" class="checkbox">
+  <label for="d" class="option">Others</label>
 
 </body>
 </html>

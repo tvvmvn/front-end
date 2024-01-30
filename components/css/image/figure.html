@@ -12,25 +12,32 @@
 
   <style>
     .container {
-      /* border: 1px dashed; */
+      border: 1px solid #ddd;
+      /* size */
       width: 400px;
       height: 300px;
+      /* relative parent */
       position: relative;
     }
 
     img {
+      /* size */
       width: inherit;
       height: inherit;
+      /* fit */
       object-fit: cover;
     }
 
     .overlay {
+      /* position */
       position: absolute;
       left: 0;
       bottom: 0;
+      /* size */
       width: inherit;
       padding: 0 1rem;
       box-sizing: border-box;
+      /* design */
       background-color: rgba(0 0 0 / 0.5);
       color: #fff;
     }

@@ -22,6 +22,7 @@
 5. letter spacing
 6. line height
 
+<!-- you can sorts items by size, design, position -->
 ### Element style
 1. color and background color
 2. display

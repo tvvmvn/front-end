@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <h1>Profile with Avatar</h1>
+  <h1>Avatar with username</h1>
 
   <style>
     .container {
@@ -18,32 +18,24 @@
     }
 
     .avatar {
-      width: 6rem;
-      height: 6rem;
+      /* size */
+      width: 4rem;
+      height: 4rem;
+      /* fit */
       object-fit: cover;
+      /* design */
       border-radius: 3rem;
     }
-
-    .info {
-      margin-left: 1rem;
-    }
-
+    
     .username {
-      margin-top: 0;
-      margin-bottom: 0.25rem;
-    }
-
-    .full-name {
-      color: #888;
+      margin: 0;
+      margin-left: 0.5rem;
     }
   </style>
 
   <div class="container">
-    <img class="avatar" src="https://tvvmvn.github.io/front-end/img/Timon.webp" alt="">
-    <div class="info">
-      <h3 class="username">Meerkat</h3>
-      <span class="full-name">Timon</span>
-    </div>
+    <img class="avatar" src="../../../img/Timon.webp" alt="">
+    <h3 class="username">Meerkat</h3>
   </div>
 
 </body>

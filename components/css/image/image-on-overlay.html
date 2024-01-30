@@ -14,30 +14,39 @@
 
   <style>
     .container {
-      border: 1px solid #ddd;
+      /* size */
       width: 200px;
       height: 200px;
+      /* design */
+      border: 1px solid #ddd;
+      /* relative parent */
       position: relative;
     }
 
     img {
+      /* size */
       width: inherit;
       height: inherit;
+      /* fit */
       object-fit: cover;
     }
 
     .overlay {
+      /* position */
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: rgba(0 0 0 / 0.5);
+      /* layout */
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      /* design */
+      background-color: rgba(0 0 0 / 0.5);
       color: #fff;
+      /* effect */
       opacity: 0;
       transition: opacity 0.2s;
     }
