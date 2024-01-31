@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Gallery</h1>
+
+  <style>
+    .frame {
+      /* border: 1px dashed; */
+      width: 450px;
+      padding: 1rem 0;
+      overflow: auto;
+    }
+
+    .container {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    /* size */
+    ::-webkit-scrollbar {
+      /* x-axis: width, y-axis: height */
+      height: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #eee;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #333;
+    }
+  </style>
+  
+  <div class="frame">
+    <div class="container">
+      <img src="../../../img/Simba.webp" alt="">
+      <img src="../../../img/Timon.webp" alt="">
+      <img src="../../../img/Pumbaa.webp" alt="">
+    </div>
+  </div>
+
+</body>
+</html>

@@ -13,45 +13,63 @@
       margin: 0;
     }
 
-    .container {
-      /* border: 1px dashed; */
+    .background {
       height: 400px;
-    }
-    
-    .bg-image {
-      /* 
-      linear-gradient(direciton, color-stop1, color-stop2, ...)
-      */
+      /* linear-gradient(direction, color-stop1, color-stop2, ..) */
       background-image: linear-gradient(to right, #333, #000);
     }
 
-    .item {
-      /* center */
+    .container {
+      /* border: 1px dashed; */
+
+      /* size */
       max-width: 640px;
       height: inherit;
-      margin: 0 auto;
-
-      /* adjusting text  */
+      /* layout */
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: stretch;
-
-      /* padding and color */
+      margin: 0 auto;
       padding: 0 1rem;
+      /* design */
       color: #fff;
+    }
+
+    .text {
+      text-align: center;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .btn {
+      padding: 0.5rem 0.75rem;
+      border: 1px solid #fff;
+      background-color: transparent;
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      /* effect */
+      opacity: 0.8;
+    }
+
+    .btn:hover {
+      opacity: 1;
     }
   </style>
 
-  <div class="container bg-image">
-    <div class="item">
-      <h1>Hero Image</h1>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-        Perferendis illo voluptas porro omnis. 
-        Quos asperiores distinctio ea enim quae nesciunt quisquam doloremque quis voluptate corporis minima fugit, 
-        inventore id repellat.
-      </p>
+  <div class="background">
+    <div class="container">
+      <h1 class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      </h1>
+      <div class="btn-group">
+        <button class="btn">Sign Up</button>
+        <button class="btn">Learn More</button>
+      </div>
     </div>
   </div>
 
