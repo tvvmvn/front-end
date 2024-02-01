@@ -14,17 +14,20 @@
 
   <style>
     .container {
-      border: 1px dashed;
+      /* border: 1px dashed; */
       width: 12rem;
     }
 
-    .btn {
-      border: 1px solid #888;
-      background-color: transparent;
+    .select {
+      /* size */
       width: 100%;
-      padding: 0.5rem;
+      /* layout */
       display: flex;
       justify-content: space-between;
+      /* design */
+      background-color: transparent;
+      border: 1px solid #ccc;
+      padding: 0.5rem;
       font-size: 1rem;
     }
 
@@ -32,12 +35,23 @@
       width: 0.75rem;
     }
 
-    .content {
-      border: 1px solid #888;
+    ul {      
       list-style: none;
       padding: 0;
-      margin-top: 0.5rem;
-      margin-bottom: 0;
+      margin: 0;
+    }
+
+    .content {
+      /* size */
+      width: inherit;
+      box-sizing: border-box;
+      /* design */
+      border: 1px solid #ccc;
+      border-top: none;
+      background-color: #fff;
+      /* position */
+      position: absolute;
+      /* initial state */
       display: none;
     }
     
@@ -56,7 +70,8 @@
   </style>
 
   <div class="container">
-    <button class="btn">
+    <!-- select -->
+    <button class="select">
       <span>Car Manufacturer</span>
       <svg 
         class="icon"
@@ -66,12 +81,15 @@
         <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/>
       </svg>
     </button>
+    <!-- content -->
     <ul class="content">
       <li>Volvo</li>
       <li>Hyundai</li>
       <li>Toyota</li>
     </ul>
   </div>
+
+  <p>..</p>
 
 </body>
 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Pulse</h1>
+
+  <style>
+    #heart {
+      margin: 2rem;
+      /* size */
+      width: 40px;
+      height: 40px;
+      /* design */
+      background-color: #f00;
+      border-radius: 99px;
+      /* animation */
+      animation: pulse 0.8s infinite;
+    }
+    
+    @keyframes pulse {
+      from {
+        outline: 0px solid rgba(255 0 0 / 0.8);
+      } to {
+        outline: 20px solid rgba(255 0 0 / 0);
+      }
+    }
+  </style>
+
+  <div id="heart"></div>
+  
+</body>
+</html>

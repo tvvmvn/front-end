@@ -9,26 +9,30 @@
 
   <style>
     .progress {
-      width: 200px;
+      width: 400px;
       height: 5px;
       background-color: #ddd;
     }
 
     .bar {
       background-color: #000;
-      height: 100%;
-      /* animation */
-      animation-name: fill;
-      animation-duration: 2s;
-      animation-iteration-count: 1;
-      animation-timing-function: ease;
+      width: 400px;
+      height: inherit;
+      
+      /* 
+        animation shorthand
+
+        animation: name duration iteration-count timing-function
+      */
+
+      animation: fill 2s 1 ease;
     }
 
     @keyframes fill {
       from {
         width: 0;
       } to {
-        width: 200px;
+        width: 400px;
       }
     }
   </style>

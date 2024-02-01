@@ -14,20 +14,23 @@
     table {
       /* 
         border-collapse
-        handle space between tds.
+        It handles space between tds.
 
-        default: seperate; 
+        1 seperate (default)
+        It gives space between tds
+        2 collapse
+        It gives no space between tds
       */
-      border-collapse: collapse;
-    }
 
-    caption {
-      text-align: left;
-      caption-side: bottom;
+      border-collapse: collapse;
     }
 
     thead tr {
       border-bottom: 1px solid;
+    }
+    
+    .rh {
+      font-weight: bold;
     }
     
     th, td {
@@ -37,37 +40,32 @@
     tbody tr:nth-child(odd) {
       background-color: #eee;
     }
-
-    td[scope=row] {
-      font-weight: bold;
-    }
   </style>
 
   <table>
-    <caption>* table caption</caption>
     <thead>
       <tr>
-        <th scope="col">No</th>
-        <th scope="col">Name</th>
-        <th scope="col">Origin</th>
-        <th scope="col">Available</th>
+        <th>No</th>
+        <th>Name</th>
+        <th>Origin</th>
+        <th>Available</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td scope="row">1</td>
+        <td class="rh">1</td>
         <td>Guinness</td>
         <td>Ireland</td>
         <td>No</td>
       </tr>
       <tr>
-        <td scope="row">2</td>
+        <td class="rh">2</td>
         <td>Heineken</td>
         <td>Netherlands</td>
         <td>Yes</td>
       </tr>
       <tr>
-        <td scope="row">3</td>
+        <td class="rh">3</td>
         <td>Budwiser</td>
         <td>USA</td>
         <td>Yes</td>
