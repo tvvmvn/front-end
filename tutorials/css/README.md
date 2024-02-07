@@ -27,20 +27,20 @@
 1. color and background color
 2. display
 3. border
-<!-- outline -->
-4. padding
-5. margin
-6. width
-7. min width
-8. max width
-9. height
-10. min height
-11. max height
-12. box sizing
-13. overflow
-14. white space
-15. position
-16. transform
+4. outline
+5. padding
+6. margin
+7. width
+8. min width
+9. max width
+10. height
+11. min height
+12. max height
+13. box sizing
+14. overflow
+15. white space
+16. position
+17. transform
 
 ### Image
 1. object fit
