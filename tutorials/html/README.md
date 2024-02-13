@@ -33,8 +33,11 @@
 2. svg
 
 ### HTML Entity
+1. concept
 
 ### What is Semantic & Non-semantic HTML
+1. Concept
+2. Realworld examples
 
 
 
