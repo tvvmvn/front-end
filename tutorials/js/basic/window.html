@@ -9,119 +9,24 @@
 <body>
 
   <h1>window object</h1>
-
   <pre>
     A tool kit for view development.
-
-    some tools that window object provides are:
-    - history
-    - location
-    - navigator
-    - server request methods
-    - Web storage 
-    - communication methods
-    - document
+    It provides many properties and functions.
   </pre>
 
+  <button onclick="f()">click me</button>
 
   <script>
-    /* 
-      window object
-    */
-
     console.log(window);
-  </script>
 
-
-  <script>
-    /* 
-      history
-
-      It provides props and methods about browsing history 
-    */
-
-    // count of visiting page
-    console.log(history.length)
-    // get to previous visiting page (back button)
-    console.log(history.back)
-  </script>
-
-
-  <script>
-    /*
-      location
-
-      It provides props and methods about users' location data in web
-    */
-
-    // visiting URL
-    console.log(location.href)
-    // spot in an web page
-    console.log(location.hash)
-  </script>
-
-
-  <script>
-    /*
-      navigator
-
-      It provids props and methods about a browser (client)
-    */
-
-    // browser's language
-    console.log(navigator.language)
-    // detect online or not
-    console.log(navigator.onLine)
-    // coordinates of client (location based service)
-    console.log(navigator.geolocation.coordinates)
-  </script>
-
-
-  <script>
-    /*
-      Server request methods
-
-      It can be used for AJAX request
-    */
-
-    console.log(XMLHttpRequest)
-    console.log(fetch)
-  </script>
-
-
-  <script>
-    /*
-      Web Storage 
-
-      An storage that brower provides
-    */
-
-    console.log(document.cookie)
-    console.log(localStorage)
-  </script>
-
-
-  <script>
-    /*
-      Methods to communicate with an user
-    */
-
-    // to notify
-    // alert("hello user");
-
-    // to confirm
-    // confirm("Yes or No");
-  </script>
-
-
-  <script>
-    /*
-      document
-
-      view dev
-    */
-   
-    console.log(document)
+    function f() {
+      /*
+        you can omit name 'window' in front of properties.
+        so this is equal to window.alert("hello window!").
+      */
+     
+      alert("hello window!");
+    }
   </script>
 
 </body>

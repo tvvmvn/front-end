@@ -1,9 +1,9 @@
-# DOM Tutorials
+# JavaScript and HTML Tutorials
 
 ### Basic
-1. script tag
-2. window object
+1. writing and debugging script
 3. DOM
+2. window object
 
 ### Selector
 1. id selector
@@ -22,4 +22,3 @@
 3. event object
 
 ### Local Storage
-1. basic
