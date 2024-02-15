@@ -10,7 +10,7 @@
   <h1>classList</h1>
   <pre>
     It stores class list of element.
-    it has some methods to control class.
+    It has some methods to control class
   </pre>
 
   <style>
@@ -36,30 +36,16 @@
   <script>
     var foo = document.getElementById('foo');
 
-    // DOMTokenList(length)
+    // DOMTokenList
     console.log(foo.classList); 
 
-
-    /* 
-      classList methods
-
-      1 add
-      add class to list
-      2 remove
-      remove class from list
-      3 contains
-      check specific class in list 
-      return true or false.
-    */
-
-
-    // add(class to add)
+    // add new class
     foo.classList.add('underline'); 
 
-    // remove(class to remove)
+    // remove class
     foo.classList.remove('font-bold');
 
-    // contains(class to check)
+    // check whether list contains specific class
     console.log(foo.classList.contains("font-bold"));
   </script>
 

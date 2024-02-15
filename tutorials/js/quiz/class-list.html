@@ -10,7 +10,8 @@
 
 <body>
 
-  <h1>classList</h1>
+  <h1>Q. classList</h1>
+  <p>자바스크립트를 활용하여 모든 아이템에 줄을 그어보세요</p>
 
   <style>
     .line-through {
@@ -28,10 +29,9 @@
 
 
   <script>
-    // singular or plural type
     var items = document.getElementsByClassName("item");
 
-    for (var i=0; i<items.length; i++) {
+    for (var i = 0; i < items.length; i++) {
       items[i].classList.add("line-through");
     }
   </script>
