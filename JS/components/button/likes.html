@@ -17,7 +17,7 @@
       fill: #ddd;
     }
     
-    #btn.liked {
+    #btn.active {
       fill: #e00;
     }
   </style>
@@ -34,18 +34,19 @@
 
   <script>
     var btn = document.getElementById("btn");
+    var liked = false;
 
     btn.addEventListener("click", handleClick);
 
     function handleClick() {
-      var isLiked = this.classList.contains("liked");
-
-      console.log(isLiked);
+      console.log(liked);
       
-      if (isLiked) {
-        btn.classList.remove("liked");
+      if (liked) {
+        btn.classList.remove("active");
+        liked = false;
       } else {
-        btn.classList.add("liked");
+        btn.classList.add("active");
+        liked = true;
       }
     }
   </script>
