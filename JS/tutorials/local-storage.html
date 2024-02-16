@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h1>localStorage</h1>
+
+  <pre>
+    A storage that browser provides.
+    It is used in storing client's data.
+
+    e.g) login token, theme choice, shopping cart and etc.
+  </pre>
+
+  <script>     
+    /*
+      localStorage methods
+
+      1 setItem
+      store data
+      
+      2 getItem
+      get data
+      
+      3 removeItem
+      delete data
+    */
+
+    // localStorage.setItem(key, value)
+    localStorage.setItem("email", "bunny@example.com");
+
+    // localStorage.getItem(key)
+    var email =  localStorage.getItem("email");
+
+    // localStorgage.removeItem(key)
+    localStorage.removeItem("email");
+  </script>
+
+</body>
+
+</html>

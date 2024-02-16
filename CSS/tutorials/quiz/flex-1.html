@@ -10,14 +10,10 @@
 
 <body>
 
-  <h1>flex</h1>
-  <p>flex-direction</p>
+  <h1>Q. flex</h1>
+  <p>flex direction</p>
 
   <style>
-    .flex {
-      display: flex;
-    }
-
     #italy {
       width: 150px;
       height: 100px;
@@ -26,6 +22,10 @@
     #germany {
       width: 150px;
       height: 100px;
+    }
+
+    .flex {
+      display: flex;
     }
 
     .flex-row {
@@ -39,41 +39,40 @@
     #italy .item {
       width: 50px;
       height: 100px;
-      background-color: #ddd;
     }
 
     #germany .item {
       width: 150px;
       height: 33.33333px;
-      background-color: #ddd;
     }
 
-    #italy .green {
+    .green {
       background-color: green;
     }
 
-    #italy .white {
+    .white {
       background-color: white;
     }
 
-    #italy .red {
+    .red {
       background-color: red;
     }
 
-    #germany .black {
+    .black {
       background-color: black;
     }
 
-    #germany .red {
+    .red {
       background-color: red;
     }
 
-    #germany .gold {
+    .gold {
       background-color: gold;
     }
   </style>
 
   <h3>Italy</h3>
+  <p>colors: green, white, red</p>
   <div id="italy" class="flex flex-row">
     <div class="item green"></div>
     <div class="item white"></div>
@@ -81,6 +80,7 @@
   </div>
 
   <h3>Germany</h3>
+  <p>black, red, gold</p>
   <div id="germany" class="flex flex-col">
     <div class="item black"></div>
     <div class="item red"></div>

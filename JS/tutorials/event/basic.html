@@ -10,23 +10,16 @@
   
   <h1>Event & Event handling</h1>
   <pre>
-    An user's action in web page.
+    It is what happens in web page.
     e.g) click, scroll, mousemove, touch and etc.
   </pre>
 
   <button id="btn">button</button>
 
   <script>
-
-    /*
-      * event handling
-      element.addEventListener(event, eventHandler)
-
-      when event occurs in element, eventHandler is invoked.
-    */
-
     var btn = document.getElementById('btn');
-
+     
+    // element.addEventListener(event, eventHandler)
     btn.addEventListener('click', handleClick);
 
     function handleClick() {
