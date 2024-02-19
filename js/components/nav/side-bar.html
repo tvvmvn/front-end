@@ -12,18 +12,22 @@
 
   <style>
     #side-bar {
+      /* position */
       position: fixed;
       top: 0;
       left: 0;
+      z-index: 1;
+      /* size */
       width: 16rem;
       height: 100vh;
+      /* design */
       background-color: #fff;
+      /* misc */
       transition: left 0.2s;
-      z-index: 1;
     }
 
-    #side-bar ul {
-      margin-top: 4rem;
+    .logo {
+      padding: 1rem;
     }
 
     .link {
@@ -31,11 +35,13 @@
     }
 
     #overlay {
+      /* position */
       position: fixed;
       top: 0;
-      right: 0;
       bottom: 0;
       left: 0;
+      right: 0;
+      /* design */
       background-color: rgba(0 0 0 / 0.2);
     }
 
@@ -53,6 +59,7 @@
   <button id="btn">Open</button>
 
   <nav id="side-bar" class="hidden">
+    <h1 class="logo">LOGO</h1>
     <ul>
       <li>
         <a href="#" class="link">Link</a>

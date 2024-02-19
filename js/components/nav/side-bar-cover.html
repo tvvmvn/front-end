@@ -12,14 +12,18 @@
 
   <style>
     #side-bar {
+      /* position */
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: #fff;
-      transition: 0.2s;
       z-index: 1;
+      /* size */
+      width: 100%;
+      height: 100%;
+      /* design */
+      background-color: #fff;
+      /* misc */
+      transition: left 0.2s;
     }
 
     #side-bar ul {
@@ -31,10 +35,13 @@
     }
 
     #close-btn {
+      /* position */
       position: absolute;
       right: 0;
-      font-size: 2rem;
+      /* design */
       padding: 0.5rem 1rem;
+      font-size: 2rem;
+      /* misc */
       cursor: pointer;
     }
 
