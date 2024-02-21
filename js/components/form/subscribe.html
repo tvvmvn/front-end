@@ -43,26 +43,24 @@
     var done = document.getElementById("done");
     var patt = /[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$/
     
-    // submit event: submitting the form
+    // submitting the form
     form.addEventListener("submit", handleSubmit);
 
     function handleSubmit(e) {
-      // required in submit event
       e.preventDefault();
-     
+      
       /*
-        e.preventDefault()
-
+        preventDefault();
+      
         It cancels default behavior of event.
-        The default behavior of submit event is that
-        it sends request to server.
-        Default behavior of submit event can be canceled for 
-        client-side validation and AJAX request.
+        The default behavior of submit event is sending request to server.
+        Default behavior of submit event can be canceled in
+        client-side validation or AJAX request.
 
         * AJAX - Technology to send request to server
         without reloading the page.
       */
-      
+
       var email = form.elements["email"].value;
 
       try {

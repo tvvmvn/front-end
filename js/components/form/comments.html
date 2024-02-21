@@ -10,19 +10,10 @@
 
 <body>
 
-  <style>
-    #input {
-      border: none;
-      border-bottom: 1px solid;
-      outline: none;
-      font-size: 1rem;
-    }
-  </style>
-
   <h1>Comments</h1>
 
   <input type="text" name="" id="input">
-  <button id="btn" disabled>comment</button>
+  <button id="btn" disabled>Send</button>
 
   <script>
     var input = document.getElementById("input");
@@ -31,14 +22,12 @@
     input.addEventListener("keyup", handleKeyup);
 
     function handleKeyup() {
-      var content = this.value;
+      console.log("comment:", this.value);
 
-      console.log("content:", content);
-
-      if (content != "") {
-        btn.disabled = false;
-      } else {
+      if (this.value == "") {
         btn.disabled = true;
+      } else {
+        btn.disabled = false;
       }
     }
   </script>

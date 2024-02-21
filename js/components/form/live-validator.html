@@ -32,7 +32,7 @@
   <h1>Live validator</h1>
 
   <label for="input">Password</label>
-  <input type="password" id="input">
+  <input type="text" id="input">
 
   <p id="message"></p>
 
@@ -43,20 +43,19 @@
     var upperCasePatt = /[A-Z]/
     var numberPatt = /[0-9]/
 
-
     /*
       * Regular expression
-      A pattern used to validate string.
+      A pattern to validate string.
+      It has some methods to implement validataion 
 
-      1 value (pattern)
+      1 value 
       /pattern/
 
-      2 methods
+      2 methods 
       test(string to validate)
 
-      return true if string value matches pattern or false
+      return Boolean for validation results
     */
-
 
     input.addEventListener('keyup', handleKeyup);
 
