@@ -16,92 +16,113 @@
       height: 300px;
     }
 
-    /* main image */
     #main {
       width: inherit;
       height: inherit;
       object-fit: cover;
     }
     
-    /* photos */
     .thumbnails {
-      display: flex;
+      /* size */
+      width: 300px;
+      /* layout */
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.5rem;
+      margin-top: 0.5rem;
     }
 
     .photo {
-      width: 100px;
-      height: 100px;
+      /* size */
+      width: 100%;
+      height: 100%;
+      /* misc */
       object-fit: cover;
+      /* effect */
+      opacity: 0.8;
     }
 
-    .prev, .next {
+    .prev-btn, .next-btn {
+      /* position */
       position: absolute;
       height: 100%;
+      top: 0;
+      /* design */
+      padding: 0.75rem;
       border: none;
       background-color: transparent;
       color: rgba(255 255 255 / 0.5);
       font-size: 2rem;
     }
 
-    .prev {
+    .prev-btn {
       left: 0;
     }
 
-    .next {
+    .next-btn {
       right: 0;
     }
 
     .active {
-      outline: 4px solid #fa0;
-      z-index: 1;
+      opacity: 1;
     }
   </style>
 
  
-  <h1>Photo Review</h1>
+  <h1>Gallery</h1>
   
   <div class="container">
     <img src="Simba.webp" alt="" id="main">
-    <button class="prev" onclick="move(-1)">&#10094;</button>
-    <button class="next" onclick="move(1)">&#10095;</button>
+    <button class="prev-btn" onclick="walk(-1)">&#10094;</button>
+    <button class="next-btn" onclick="walk(1)">&#10095;</button>
   </div>
   
   <div class="thumbnails">
     <img class="photo active" src="Simba.webp" onclick="jump(0)" alt="">
     <img class="photo" src="Timon.webp" onclick="jump(1)" alt="">
     <img class="photo" src="Pumbaa.webp" onclick="jump(2)" alt="">
+    <img class="photo" src="homies.jpg" onclick="jump(3)" alt="">
   </div>
 
 
   <script>
-    var photos = document.getElementsByClassName('photo');
-    var main = document.getElementById('main');
+    var photos = document.getElementsByClassName("photo");
+    var main = document.getElementById("main");
+    var firstIndex = 0;
+    var lastIndex = photos.length - 1;
+    // photo index
     var index = 0;
 
-    function move(data) {
+    function walk(data) {
       index += data;
 
-      if (index < 0) index = 2;
-      if (index > 2) index = 0;
+      if (index < firstIndex) index = lastIndex;
+      if (index > lastIndex) index = firstIndex;
 
-      change();
+      console.log("index:", index);
+
+      setImage();
+      setOpacity();
     }
 
     function jump(data) {
       index = data;
+
+      console.log("index:", index);
       
-      change();
+      setImage();
+      setOpacity();
     }
 
-    function change() {
-      console.log("index:", index);
-
-      // main image
+    // main image
+    function setImage() {
       main.src = photos[index].src;
+    }
 
-      // outline
-      for (var i=0; i<photos.length; i++) {
-        if (i === index) {
+    // outline
+    function setOpacity() {
+      for (var i = 0; i < photos.length; i++) {
+        if (i == index) {
           photos[i].classList.add("active");
         } else {
           photos[i].classList.remove("active");

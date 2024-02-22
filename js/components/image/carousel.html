@@ -10,21 +10,26 @@
 </head>
 
 <body>
+
   <h1>Carousel</h1>
 
   <style>
-    /* frame */
-    #frame {
+    #carousel {
+      /* size */
       width: 200px;
       height: 200px;
+      /* position */
       position: relative;
+      /* misc */
       overflow-x: hidden;
     }
 
-    /* container and images */
     #container {
-      display: flex;
+      /* size */
       width: 600px;
+      /* layout */
+      display: flex;
+      /* misc */
       transition: transform 0.2s;
     }
 
@@ -34,45 +39,48 @@
       object-fit: cover;
     }
 
-    /* buttons */
-    #prevBtn, #nextBtn {
+    #prev-btn, #next-btn {
+      /* position */
       position: absolute;
       top: 0;
       height: 100%;
+      /* design */
       background-color: transparent;
       border: none;
-      font-size: 2rem;
       color: rgba(255 255 255 / 0.5);
+      font-size: 2rem;
     }
 
-    #prevBtn {
+    #prev-btn {
       left: 0;
     }
 
-    #nextBtn {
+    #next-btn {
       right: 0;
     }
 
-    /* indicator */
     .indicator {
+      /* position */
       position: absolute;
       bottom: 12px;
       width: 100%;
+      /* layout */
       display: flex;
       justify-content: center;
     }
 
     .dot {
+      /* design */
       display: block;
+      background-color: #fff;
       width: 8px;
       height: 8px;
-      background-color: #fff;
       border-radius: 99px;
       margin: 0 2px;
+      /* effect */
       opacity: 0.5;
     }
 
-    /* toggle */
     .hidden {
       display: none;
     }
@@ -82,19 +90,16 @@
     }
   </style>
 
-  <div id="frame">
-    <!-- photos -->
+  <div id="carousel">
     <div id="container">
       <img class="photo" src="Simba.webp" alt="">
       <img class="photo" src="Timon.webp" alt="">
       <img class="photo" src="Pumbaa.webp" alt="">
     </div>
 
-    <!-- buttons -->
-    <button id="prevBtn" class="hidden" onclick="move(-1)">&#10094;</button>
-    <button id="nextBtn" onclick="move(1)">&#10095;</button>
+    <button id="prev-btn" class="hidden" onclick="main(-1)">&#10094;</button>
+    <button id="next-btn" onclick="main(1)">&#10095;</button>
 
-    <!-- indicator -->
     <div class="indicator">
       <span class="dot active"></span>
       <span class="dot"></span>
@@ -103,10 +108,8 @@
   </div>
 
   <script>
-    /* variables */
-
     // container and photos
-    var frame = document.getElementById('frame');
+    var carousel = document.getElementById('carousel');
     var container = document.getElementById('container');
     var photos = document.getElementsByClassName("photo");
     var imageWidth = 200;
@@ -116,21 +119,64 @@
     var lastIndex = photos.length - 1;
     var left = 0;
     // buttons
-    var prevBtn = document.getElementById('prevBtn');
-    var nextBtn = document.getElementById('nextBtn');
+    var prevBtn = document.getElementById('prev-btn');
+    var nextBtn = document.getElementById('next-btn');
     // indicator
     var dots = document.getElementsByClassName('dot');
-    // touch stuff
+
+    // main 
+    function main(data) {
+      index += data;
+      left = -(index * imageWidth);
+
+      console.log(`index: ${index}, left: ${left}`);
+
+      setImage();
+      setButton();
+      setIndicator();
+    }
+    
+    // photos
+    function setImage() {
+      container.style.transform = `translateX(${left}px)`;
+    }
+    
+    // buttons
+    function setButton() {  
+      if (index == firstIndex) {
+        prevBtn.classList.add('hidden');
+      } else {
+        prevBtn.classList.remove('hidden');
+      }
+  
+      if (index == lastIndex) {
+        nextBtn.classList.add('hidden');
+      } else {
+        nextBtn.classList.remove('hidden');
+      }
+    }
+    
+    // indicator
+    function setIndicator() {
+      for (var i = 0; i < dots.length; i++) {
+        if (i == index) {
+          dots[i].classList.add('active');
+        } else {
+          dots[i].classList.remove('active');
+        }
+      }
+    }
+
+
+    /* touch */
+
+
     var x1, x2 = 0;
     var turnOverPoint = 50;
 
-    /* event listener */
-
-    container.addEventListener('touchstart', touchStartHandler)
-    container.addEventListener('touchmove', touchMoveHandler)
-    container.addEventListener('touchend', touchEndHandler)
-
-    /* functions */
+    container.addEventListener('touchstart', touchStartHandler);
+    container.addEventListener('touchmove', touchMoveHandler);
+    container.addEventListener('touchend', touchEndHandler);
 
     function touchStartHandler(e) {
       // save start point
@@ -143,7 +189,7 @@
       // touching point
       x2 = e.touches[0].clientX;
 
-      console.log(`[touch move] x2: ${x2}`);
+      console.log(`[touch main] x2: ${x2}`);
 
       // prevent moving in first and last photo.
       var movingToRight = x2 - x1 > 0;
@@ -169,51 +215,20 @@
 
       // get to previous photo
       if (index > firstIndex && drawEnoughToPrev) {
-        move(-1);
+        main(-1);
         // get to next photo
       } else if (index < lastIndex && drawEnoughToNext) {
-        move(1);
+        main(1);
         // get back to original photo.
       } else {
-        move(0);
+        main(0);
       }
 
       // initialize x1, x2
       x1, x2 = 0;
     }
-
-    function move(data) {
-      index += data;
-      left = -(index * imageWidth);
-
-      console.log(`[move] index: ${index}, left: ${left}`);
-
-      // photos
-      container.style.transform = `translateX(${left}px)`;
-
-      // buttons
-      if (index == firstIndex) {
-        prevBtn.classList.add('hidden');
-      } else {
-        prevBtn.classList.remove('hidden');
-      }
-
-      if (index == lastIndex) {
-        nextBtn.classList.add('hidden');
-      } else {
-        nextBtn.classList.remove('hidden');
-      }
-
-      // indicator
-      for (var i = 0; i < dots.length; i++) {
-        if (i === index) {
-          dots[i].classList.add('active');
-        } else {
-          dots[i].classList.remove('active');
-        }
-      }
-    }
   </script>
+
 </body>
 
 </html>

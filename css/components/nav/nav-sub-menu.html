@@ -22,8 +22,10 @@
       margin: 0;
     }
 
-    .menu-list {
+    .menu {
+      /* layout */
       display: flex;
+      /* design */
       background-color: #333;
     }
 
@@ -52,10 +54,13 @@
     }
 
     .drop-content {
+      /* size */
       width: 12rem;
+      /* design */
       background-color: #fff;
-      border: 1px solid #ddd;
+      border: 1px solid hsl(0, 0%, 87%);
       position: absolute;
+      /* misc */
       display: none;
     }
 
@@ -79,7 +84,7 @@
   </style>
   
   <nav class="navbar">
-    <ul class="menu-list">
+    <ul class="menu">
       <li>
         <a href="#" class="menu-link">Link</a>
       </li>
@@ -107,6 +112,7 @@
 
   <main>
     <h1>NavBar with Sub Menu</h1>
+    <p>..</p>
   </main>
 
 </body>

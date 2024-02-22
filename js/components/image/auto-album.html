@@ -16,14 +16,12 @@
       height: 300px;
     }
 
-    /* main image */
     #main {
       width: inherit;
       height: inherit;
       object-fit: cover;
     }
     
-    /* photos */
     .thumbnails {
       position: absolute;
       width: 100%;
@@ -72,10 +70,15 @@
 
       console.log("index:", index);
 
-      // update main image
+      setImage();
+      setOutline();
+    }
+
+    function setImage() {
       main.src = photos[index].src;
-      
-      // outline      
+    }
+
+    function setOutline() {
       for (var i=0; i<photos.length; i++) {
         if (i == index) {
           photos[i].classList.add("active");

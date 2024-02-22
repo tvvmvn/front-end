@@ -66,17 +66,17 @@
   </form>
 
   <p id="done" class="hidden">
-    Thank you and we'll contact with you soon
+    Thank you and we"ll contact with you soon
   </p>
 
 
   <script>
-    var form = document.getElementById('form');
+    var form = document.getElementById("form");
     var fnamePatt = /^[a-zA-Z]+$/;
     var lnamePatt = /^[a-zA-Z]+$/;
     var phonePatt = /^\d{5,11}$/;
 
-    form.addEventListener('submit', handleSubmit);
+    form.addEventListener("submit", handleSubmit);
 
     function handleSubmit(e) {
       e.preventDefault();
@@ -88,17 +88,17 @@
       try {
         // first name check
         if (!fnamePatt.test(fname)) {
-          throw 'Invalid first name';
+          throw "Invalid first name";
         }
   
         // last name check
         if (!lnamePatt.test(lname)) {
-          throw 'Invalid last name';
+          throw "Invalid last name";
         }
   
         // phone check
         if (!phonePatt.test(phone)) {
-          throw 'Invalid phone number';
+          throw "Invalid phone number";
         } 
   
         form.classList.add("hidden");
