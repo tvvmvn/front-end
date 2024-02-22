@@ -25,9 +25,10 @@
     .thumbnails {
       /* size */
       width: 300px;
+      height: 100px;
       /* layout */
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0.5rem;
       margin-top: 0.5rem;
     }
@@ -81,7 +82,6 @@
     <img class="photo active" src="Simba.webp" onclick="jump(0)" alt="">
     <img class="photo" src="Timon.webp" onclick="jump(1)" alt="">
     <img class="photo" src="Pumbaa.webp" onclick="jump(2)" alt="">
-    <img class="photo" src="homies.jpg" onclick="jump(3)" alt="">
   </div>
 
 
@@ -102,7 +102,7 @@
       console.log("index:", index);
 
       setImage();
-      setOpacity();
+      setActive();
     }
 
     function jump(data) {
@@ -111,7 +111,7 @@
       console.log("index:", index);
       
       setImage();
-      setOpacity();
+      setActive();
     }
 
     // main image
@@ -120,7 +120,7 @@
     }
 
     // outline
-    function setOpacity() {
+    function setActive() {
       for (var i = 0; i < photos.length; i++) {
         if (i == index) {
           photos[i].classList.add("active");

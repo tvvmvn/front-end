@@ -71,14 +71,14 @@
       console.log("index:", index);
 
       setImage();
-      setOutline();
+      setActive();
     }
 
     function setImage() {
       main.src = photos[index].src;
     }
 
-    function setOutline() {
+    function setActive() {
       for (var i=0; i<photos.length; i++) {
         if (i == index) {
           photos[i].classList.add("active");
