@@ -56,8 +56,8 @@
 
 
   <script>
-    var photos = document.getElementsByClassName('photo');
-    var main = document.getElementById('main');
+    var photos = document.getElementsByClassName("photo");
+    var main = document.getElementById("main");
     var index = 0;
 
     setInterval(interval, 3000);
@@ -79,7 +79,7 @@
     }
 
     function setActive() {
-      for (var i=0; i<photos.length; i++) {
+      for (var i = 0; i < photos.length; i++) {
         if (i == index) {
           photos[i].classList.add("active");
         } else {
