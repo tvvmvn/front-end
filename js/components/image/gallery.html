@@ -74,8 +74,8 @@
   
   <div class="container">
     <img src="Simba.webp" alt="" id="main">
-    <button class="prev-btn" onclick="walk(-1)">&#10094;</button>
-    <button class="next-btn" onclick="walk(1)">&#10095;</button>
+    <button class="prev-btn" onclick="step(-1)">&#10094;</button>
+    <button class="next-btn" onclick="step(1)">&#10095;</button>
   </div>
   
   <div class="thumbnails">
@@ -93,7 +93,7 @@
     // photo index
     var index = 0;
 
-    function walk(data) {
+    function step(data) {
       index += data;
 
       if (index < firstIndex) index = lastIndex;

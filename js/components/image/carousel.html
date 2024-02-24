@@ -52,7 +52,7 @@
     }
 
     #prev-btn {
-      left: 0;
+      x: 0;
     }
 
     #next-btn {
@@ -113,11 +113,11 @@
     var container = document.getElementById('container');
     var photos = document.getElementsByClassName("photo");
     var imageWidth = 200;
-    // index and left
+    // index, x
     var index = 0;
     var firstIndex = 0;
     var lastIndex = photos.length - 1;
-    var left = 0;
+    var x = 0;
     // buttons
     var prevBtn = document.getElementById('prev-btn');
     var nextBtn = document.getElementById('next-btn');
@@ -127,9 +127,9 @@
     // main 
     function main(data) {
       index += data;
-      left = -(index * imageWidth);
+      x = -(index * imageWidth);
 
-      console.log(`index: ${index}, left: ${left}`);
+      console.log(`index: ${index}, x: ${x}`);
 
       setImage();
       setButton();
@@ -138,7 +138,7 @@
     
     // photos
     function setImage() {
-      container.style.transform = `translateX(${left}px)`;
+      container.style.transform = `translateX(${x}px)`;
     }
     
     // buttons
@@ -199,7 +199,7 @@
       if (index == lastIndex && movingToLeft) return;
 
       // moving with finger
-      container.style.transform = `translateX(${left + (x2 - x1)}px)`;
+      container.style.transform = `translateX(${x + (x2 - x1)}px)`;
     }
 
     function touchEndHandler() {
