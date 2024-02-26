@@ -49,8 +49,8 @@
       width: 100px;
       height: 100px;
       object-fit: cover;
-      cursor: pointer;
       opacity: 0.8;
+      cursor: pointer;
     }
 
     .photo:hover {
@@ -85,14 +85,18 @@
 
     // photo click
     function openModal(index) {
-      overlay.classList.remove("hidden");
+
+      console.log("index:", index);
+
       modalImage.src = photos[index].src;
       caption.textContent = photos[index].alt;
+
+      overlay.classList.remove("hidden");
     }
 
     // overlay click
     overlay.addEventListener("click", function () {  
-      overlay.classList.add("hidden");
+      this.classList.add("hidden");
     })
   </script>
   

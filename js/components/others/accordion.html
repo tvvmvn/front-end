@@ -19,22 +19,25 @@
     }
 
     .btn {
+      /* layout */
+      display: flex;
+      justify-content: space-between;
+      /* size */
+      width: 100%;
+      /* design */
+      padding: 0.5rem;
       background-color: #eee;
       border: none;
-      width: 100%;
-      padding: 0.5rem;
       font-size: 1rem;
       text-align: left;
     }
 
     .btn::after {
       content: "+";
-      float: right;
     }
 
     .active .btn::after {
       content: "-";
-      float: right;
     }
 
     .content {

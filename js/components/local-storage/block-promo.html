@@ -11,14 +11,15 @@
   <h1>Block promotion</h1>
 
   <style>
-    #promotion {
-      background-color: #333;
-      color: #fff;
-      padding: 1rem;
+    .text {
+      color: #ddd;
     }
 
     #block-btn, #close-btn {
       padding: 0.5rem 0.75rem;
+      background-color: #000;
+      color: #fff;
+      border: none;
     }
 
     .hidden {
@@ -27,12 +28,12 @@
   </style>
 
   <div id="promotion">
-    <p>
+    <h1 class="text">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. 
       Eos eveniet maxime iste vitae odit iure totam quaerat, amet, 
       minus voluptatum quasi non ipsa libero provident illum, 
       recusandae nesciunt ratione. Tempore!
-    </p>
+    </h1>
     <button id="close-btn">Close</button>
     <button id="block-btn">Do not show anymore</button>
   </div>
@@ -42,20 +43,26 @@
     var blockBtn = document.getElementById("block-btn");
     var promotion = document.getElementById("promotion");
 
-    // when page is loaded
-    if (localStorage.getItem("blockedAt")) {
-      promotion.classList.add("hidden");
-    }
-
     // close button click
     closeBtn.addEventListener("click", function () {
       promotion.classList.add("hidden");
     })
 
+    // page is loaded
+    document.addEventListener("DOMContentLoaded", function () {
+      var blockedAt = localStorage.getItem("blockedAt");
+
+      if (blockedAt) {
+        promotion.classList.add("hidden");
+      }
+    })
+
     // block button click
     blockBtn.addEventListener("click", function () {
-      promotion.classList.add("hidden")
-      localStorage.setItem("blockedAt", new Date());
+      var date = new Date().toLocaleDateString();
+      
+      localStorage.setItem("blockedAt", date);
+      promotion.classList.add("hidden");
     })
   </script>
 </body>

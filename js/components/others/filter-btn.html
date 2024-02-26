@@ -10,13 +10,16 @@
 <body>
 
   <style>
+    .btn-group {
+      display: inline-flex;
+    }
+
     input {
       display: none;
     }
 
     label {
-      display: inline-block;
-      padding: 0.5rem;
+      padding: 0.5rem 0.75rem;
     }
 
     input:checked + label {
@@ -29,9 +32,9 @@
     }
   </style>
 
-  <h1>Filter button</h1>
+  <h1>Filtering list</h1>
 
-  <div class="">
+  <div class="btn-group">
     <input type="radio" name="car" id="all" checked>
     <label for="all" onclick="f('all')">
       All
@@ -63,17 +66,18 @@
     var items = document.getElementsByClassName("item");
 
     function f(filter) {
-      
       console.log("filter:", filter);
 
-      for (var i=0; i<items.length; i++) {
+      for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+
         if (filter == "all") {
-          items[i].classList.remove("hidden");
+          item.classList.remove("hidden");
         } else {
-          if (items[i].classList.contains(filter)) {
-            items[i].classList.remove("hidden");
+          if (item.classList.contains(filter)) {
+            item.classList.remove("hidden");
           } else {
-            items[i].classList.add("hidden");
+            item.classList.add("hidden");
           }
         }
       }

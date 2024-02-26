@@ -9,6 +9,8 @@
 </head>
 
 <body>
+  
+  <h1>Theme choice</h1>
 
   <style>
     .dark-mode {
@@ -16,8 +18,6 @@
       color: #fff;
     }
   </style>
-
-  <h1>Theme choice</h1>
 
   <input type="checkbox" id="checkbox" name="">
   <label for="checkbox">Dark Mode</label>
@@ -32,25 +32,28 @@
     var checkbox = document.getElementById("checkbox");
     var list = document.getElementById("list");
 
-    // when check state is changed
+    // when page is opened
+    document.addEventListener("DOMContentLoaded", handleLoaded);
+    // check state has been changed
     checkbox.addEventListener("change", handleChange);
 
-    // when page is loaded
-    var isDarkMode = localStorage.getItem("darkTheme");
+    function handleLoaded() {
+      var darkTheme = localStorage.getItem("darkTheme");
 
-    if (isDarkMode) {
-      list.classList.add("dark-mode");
-      checkbox.checked = true;
+      console.log("darkTheme:", darkTheme);
+  
+      if (darkTheme) {
+        list.classList.add("dark-mode");
+        checkbox.checked = true;
+      }
     }
 
     function handleChange() {
-      var checked = this.checked;
-
-      console.log("checked:", checked);
+      console.log("checked:", this.checked);
       
-      if (checked) {
+      if (this.checked) {
         list.classList.add("dark-mode");
-        localStorage.setItem("darkTheme", true);
+        localStorage.setItem("darkTheme", "on");
       } else {
         list.classList.remove("dark-mode");
         localStorage.removeItem("darkTheme");

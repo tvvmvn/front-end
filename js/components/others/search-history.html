@@ -24,11 +24,14 @@
       margin-bottom: 1rem;
       display: flex;
       justify-content: space-between;
-      align-items: center;
     }
 
     .delete-btn {
       cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
 
@@ -38,28 +41,30 @@
   <input type="search" placeholder="Search Google" disabled>
 
   <ul>
-    <li id="h0" class="item">
+    <li class="item">
       <span>I believe I can fly</span>
-      <span class="delete-btn" onclick="deleteItem('h0')">&times;</span>
+      <span class="delete-btn" onclick="deleteItem(0)">&times;</span>
     </li>
-    <li id="h1" class="item">
+    <li class="item">
       <span>I believe I can touch the sky</span>
-      <span class="delete-btn" onclick="deleteItem('h1')">&times;</span>
+      <span class="delete-btn" onclick="deleteItem(1)">&times;</span>
     </li>
-    <li id="h2" class="item">
+    <li class="item">
       <span>I think about it every night and day</span>
-      <span class="delete-btn" onclick="deleteItem('h2')">&times;</span>
+      <span class="delete-btn" onclick="deleteItem(2)">&times;</span>
     </li>
-    <li id="h3" class="item"> 
+    <li class="item"> 
       <span>Spread my wings and fly away</span>
-      <span class="delete-btn" onclick="deleteItem('h3')">&times;</span>
+      <span class="delete-btn" onclick="deleteItem(3)">&times;</span>
     </li>
   </ul>
 
 
   <script>
-    function deleteItem(id) {
-      document.getElementById(id).remove();
+    var items = document.getElementsByClassName("item");
+    
+    function deleteItem(index) {
+      items[index].classList.add("hidden");
     }
   </script>
   

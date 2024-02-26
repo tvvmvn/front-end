@@ -13,31 +13,50 @@
       position: fixed;
       top: 0;
       left: 0;
+      z-index: 1;
       /* size */
       width: 100%;
+      height: 4rem;
       /* design */
       padding-left: 1rem;
-      background-color: #333;
+      background-color: #111;
       color: #fff;
-      /* misc */
-      z-index: 1;
+      /* layout */
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      margin: 0;
     }
 
     .side-bar {
+      /* position */
       position: fixed;
       top: 0;
       left: 0;
+      /* size */
       width: 16rem;
       height: 100%;
-      background-color: #ddd;
+      /* design */
+      border-right: 1px solid #ddd;
     }
 
     ul {
+      list-style: none;
+      margin: 0;
       margin-top: 6rem;
+      padding: 0;
     }
 
     .link {
+      display: block;
+      padding: 0.75rem;
       color: #000;
+    }
+
+    .active {
+      background-color: #eee;
     }
 
     main {
@@ -48,13 +67,13 @@
   </style>
 
   <header>
-    <h3 class="logo">LOGO</h3>
+    <h3 class="logo">Dashboard</h3>
   </header>
 
   <nav class="side-bar">
     <ul>
       <li>
-        <a href="#" class="link">Link</a>
+        <a href="#" class="link active">Link</a>
       </li>
       <li>
         <a href="#" class="link">Link</a>
@@ -66,8 +85,13 @@
   </nav>
   
   <main>
-    <h1>Dashboard</h1>
-    <p>..</p>
+    <h1>Contents</h1>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+      Quod commodi tenetur ullam quidem at maxime quam sint! 
+      Dolore consequatur sequi architecto atque ducimus error nesciunt, 
+      illo autem repudiandae, culpa eaque.
+    </p>
   </main>
 
 </body>
