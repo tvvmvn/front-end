@@ -18,11 +18,11 @@
       display: none;
     }
 
-    label {
+    .btn {
       padding: 0.5rem 0.75rem;
     }
 
-    input:checked + label {
+    input:checked + .btn {
       background-color: #000;
       color: #fff;
     }
@@ -36,19 +36,19 @@
 
   <div class="btn-group">
     <input type="radio" name="car" id="all" checked>
-    <label for="all" onclick="f('all')">
+    <label for="all" class="btn" onclick="f('all')">
       All
     </label>
     <input type="radio" name="car" id="kr">
-    <label for="kr" onclick="f('kr')">
+    <label for="kr" class="btn" onclick="f('kr')">
       Korea
     </label>
     <input type="radio" name="car" id="jp">
-    <label for="jp" onclick="f('jp')">
+    <label for="jp" class="btn" onclick="f('jp')">
       Japan
     </label>
     <input type="radio" name="car" id="se">
-    <label for="se" onclick="f('se')">
+    <label for="se" class="btn" onclick="f('se')">
       Sweden
     </label>
   </div>

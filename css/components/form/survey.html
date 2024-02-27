@@ -11,7 +11,7 @@
   <h1>Survey</h1>
 
   <style>
-    .checkbox {
+    input {
       display: none;
     }
     
@@ -19,30 +19,29 @@
       /* layout */
       display: block;
       margin-bottom: 0.5rem;
-      /* size */
-      padding: 0.5rem;
       /* design */
+      padding: 0.5rem;
       border: 2px solid #ddd;
       border-radius: 0.25rem;
     }
 
-    .checkbox:checked + .option {
+    input:checked + .option {
       border: 2px solid #000;
     }
   </style>
 
   <h3>Which phone do you want to purchase?</h3>
 
-  <input type="radio" name="phone" id="a" class="checkbox">
+  <input type="radio" name="phone" id="a">
   <label for="a" class="option">iPhone 15 Pro</label>
 
-  <input type="radio" name="phone" id="b" class="checkbox">
+  <input type="radio" name="phone" id="b">
   <label for="b" class="option">Galaxy S24</label>
 
-  <input type="radio" name="phone" id="c" class="checkbox">
+  <input type="radio" name="phone" id="c">
   <label for="c" class="option">Pixel Pro 8</label>
   
-  <input type="radio" name="phone" id="d" class="checkbox">
+  <input type="radio" name="phone" id="d">
   <label for="d" class="option">Others</label>
 
 </body>

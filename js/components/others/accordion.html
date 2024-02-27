@@ -56,7 +56,7 @@
 
   <ul>
     <li class="item">
-      <button class="btn" onclick="f(0)">Guinness</button>
+      <button class="btn" onclick="openContent(0)">Guinness</button>
       <div class="content">
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
@@ -67,7 +67,7 @@
       </div>
     </li>
     <li class="item">
-      <button class="btn" onclick="f(1)">Heineken</button>
+      <button class="btn" onclick="openContent(1)">Heineken</button>
       <div class="content">
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
@@ -78,7 +78,7 @@
       </div>
     </li>
     <li class="item">
-      <button class="btn" onclick="f(2)">Budwiser</button>
+      <button class="btn" onclick="openContent(2)">Budwiser</button>
       <div class="content">
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
@@ -91,7 +91,7 @@
   <script>
     var items = document.getElementsByClassName("item");
 
-    function f(index) {
+    function openContent(index) {
       items[index].classList.toggle("active");
     }
   </script>

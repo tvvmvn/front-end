@@ -8,16 +8,19 @@
 <body>
 
   <style>
+    .btn-group {
+      display: inline-flex;
+    }
+
     input {
       display: none;
     }
 
-    label {
-      display: inline-block;
-      padding: 0.5rem;
+    .btn {
+      padding: 0.5rem 0.75rem;
     }
 
-    input:checked + label {
+    input:checked + .btn {
       background-color: #000;
       color: #fff;
     }
@@ -29,18 +32,19 @@
 
 
   <h1>Tab Contents</h1>
+  <h3>Car manufacturers</h3>
 
-  <div class="">
+  <div class="btn-group">
     <input type="radio" name="car" id="kr" checked>
-    <label for="kr" onclick="f('kr')">
+    <label for="kr" class="btn" onclick="f('kr')">
       Korea
     </label>
     <input type="radio" name="car" id="jp">
-    <label for="jp" onclick="f('jp')">
+    <label for="jp" class="btn" onclick="f('jp')">
       Japan
     </label>
     <input type="radio" name="car" id="se">
-    <label for="se" onclick="f('se')">
+    <label for="se" class="btn" onclick="f('se')">
       Sweden
     </label>
   </div>
@@ -66,10 +70,7 @@
     var items = document.getElementsByClassName("item");
 
     function f(filter) {
-      
-      console.log("filter:", filter);
-      
-      for (var i=0; i<items.length; i++) {
+      for (var i = 0; i < items.length; i++) {
         if (items[i].classList.contains(filter)) {
           items[i].classList.remove("hidden");
         } else {

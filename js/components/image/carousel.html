@@ -166,67 +166,6 @@
         }
       }
     }
-
-
-    /* touch */
-
-
-    var x1, x2 = 0;
-    var turnOverPoint = 50;
-
-    container.addEventListener('touchstart', touchStartHandler);
-    container.addEventListener('touchmove', touchMoveHandler);
-    container.addEventListener('touchend', touchEndHandler);
-
-    function touchStartHandler(e) {
-      // save start point
-      x1 = e.touches[0].clientX;
-
-      console.log(`[touch start] x1: ${x1}`);
-    }
-
-    function touchMoveHandler(e) {
-      // touching point
-      x2 = e.touches[0].clientX;
-
-      console.log(`[touch main] x2: ${x2}`);
-
-      // prevent moving in first and last photo.
-      var movingToRight = x2 - x1 > 0;
-      var movingToLeft = x2 - x1 < 0;
-
-      if (index == firstIndex && movingToRight) return;
-      if (index == lastIndex && movingToLeft) return;
-
-      // moving with finger
-      container.style.transform = `translateX(${x + (x2 - x1)}px)`;
-    }
-
-    function touchEndHandler() {
-      // check x2 and x1
-      console.log(`[touch end] x2 - x1: ${x2 - x1}`);
-      
-      // no touchmove 
-      if (x2 == 0) return;
-
-      // check draw value
-      var drawEnoughToNext = -(x2 - x1) > turnOverPoint;
-      var drawEnoughToPrev = x2 - x1 > turnOverPoint;
-
-      // get to previous photo
-      if (index > firstIndex && drawEnoughToPrev) {
-        main(-1);
-        // get to next photo
-      } else if (index < lastIndex && drawEnoughToNext) {
-        main(1);
-        // get back to original photo.
-      } else {
-        main(0);
-      }
-
-      // initialize x1, x2
-      x1, x2 = 0;
-    }
   </script>
 
 </body>

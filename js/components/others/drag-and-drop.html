@@ -38,7 +38,7 @@
     dropZone.addEventListener('drop', dropHandler);
 
     function dropHandler(e) {
-      // cancel a browser opening files 
+      // cancel a browser to open files 
       e.preventDefault();
 
       console.log('File(s) dropped');
@@ -48,12 +48,13 @@
 
       console.log("selected files:", e.dataTransfer.files);
 
+      // view update
       dropZone.classList.add("hidden");
       done.classList.remove("hidden");
     }
     
     function dragOverHandler(e) {
-      // cancel a browser opening files
+      // cancel a browser to open files
       e.preventDefault();
 
       console.log('dragging over');

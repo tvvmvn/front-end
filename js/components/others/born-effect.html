@@ -9,7 +9,11 @@
 <body>
 
   <style>
-    .el {
+    h1 {
+      color: #888;
+    }
+
+    .item {
       opacity: 0;
       transition: opacity 0.5s;
     }
@@ -37,19 +41,19 @@
     sequi molestias debitis accusantium quos. 
     Quia perspiciatis necessitatibus quo nostrum ex vero.
   </h1>
-  <h1 class="el">
+  <h1 class="item">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Corporis aliquam harum id animi! Ipsa nihil quae tenetur omnis, 
     sequi molestias debitis accusantium quos. 
     Quia perspiciatis necessitatibus quo nostrum ex vero.
   </h1>
-  <h1 class="el">
+  <h1 class="item">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Corporis aliquam harum id animi! Ipsa nihil quae tenetur omnis, 
     sequi molestias debitis accusantium quos. 
     Quia perspiciatis necessitatibus quo nostrum ex vero.
   </h1>
-  <h1 class="el">
+  <h1 class="item">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Corporis aliquam harum id animi! Ipsa nihil quae tenetur omnis, 
     sequi molestias debitis accusantium quos. 
@@ -57,19 +61,21 @@
   </h1>
 
   <script>
-    var els = document.getElementsByClassName('el');
+    var items = document.getElementsByClassName('item');
 
     document.addEventListener('scroll', function (e) {
       // viewport height
       var vh = window.innerHeight;
 
-      for (var i = 0; i < els.length; i++) {
+      for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        
         // distance between viewport-top and element-top
-        var y = els[i].getBoundingClientRect().y;
+        var y = item.getBoundingClientRect().y;
 
         // into the view port enough.
         if (y < vh * 0.9) {
-          els[i].classList.add("active")
+          item.classList.add("active");
         }
       }
     })
