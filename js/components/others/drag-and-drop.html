@@ -31,17 +31,17 @@
 
 
   <script>
-    var dropZone = document.getElementById('drop-zone');
+    var dropZone = document.getElementById("drop-zone");
     var done = document.getElementById("done");
 
-    dropZone.addEventListener('dragover', dragOverHandler);
-    dropZone.addEventListener('drop', dropHandler);
+    dropZone.addEventListener("dragover", dragOverHandler);
+    dropZone.addEventListener("drop", dropHandler);
 
     function dropHandler(e) {
       // cancel a browser to open files 
       e.preventDefault();
 
-      console.log('File(s) dropped');
+      console.log("File(s) dropped");
 
       // selected files
       var files = e.dataTransfer.files;
@@ -57,7 +57,7 @@
       // cancel a browser to open files
       e.preventDefault();
 
-      console.log('dragging over');
+      console.log("dragging over");
     }
   </script>
 

@@ -7,68 +7,83 @@
 </head>
 <body>
 
+  <p>full screen touch slider</p>
+
+  <style>
+    body {
+      margin: 0;
+      /* overflow: hidden; */
+      width: 100vw;
+      height: 100vh;
+    }
+
+    #container {
+      width: 100vw;
+      height: 300vh;
+    }
+
+    .item {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .a {
+      background-color: #888;
+    }
+
+    .b {
+      background-color: #333;
+    }
+
+    .c {
+      background-color: #000;
+    }
+  </style>
+
+  <div id="container">
+    <div class="item a"></div>
+    <div class="item b"></div>
+    <div class="item c"></div>
+  </div>
+
   <script>
+    var y1, y2 = 0;
+    var index = 0;
+    var container = document.getElementById("container");
+    var h = innerHeight;
 
-    /* touch */
+    document.addEventListener('touchstart', touchStartHandler);
+    document.addEventListener('touchmove', touchMoveHandler);
+    document.addEventListener('touchend', touchEndHandler);
 
 
-    var x1, x2 = 0;
-    var turnOverPoint = 50;
-
-    container.addEventListener('touchstart', touchStartHandler);
-    container.addEventListener('touchmove', touchMoveHandler);
-    container.addEventListener('touchend', touchEndHandler);
+    document.documentElement.scrollTop = 0;
 
     function touchStartHandler(e) {
-      // save start point
-      x1 = e.touches[0].clientX;
-
-      console.log(`[touch start] x1: ${x1}`);
-    }
+      y1 = e.touches[0].clientY;
+    };
 
     function touchMoveHandler(e) {
-      // touching point
-      x2 = e.touches[0].clientX;
+      y2 = e.touches[0].clientY;
 
-      console.log(`[touch main] x2: ${x2}`);
-
-      // prevent moving in first and last photo.
-      var movingToRight = x2 - x1 > 0;
-      var movingToLeft = x2 - x1 < 0;
-
-      if (index == firstIndex && movingToRight) return;
-      if (index == lastIndex && movingToLeft) return;
-
-      // moving with finger
-      container.style.transform = `translateX(${x + (x2 - x1)}px)`;
-    }
+      container.style.transform = `translateY(-${(index * h) - (y2 - y1)}px)`;
+    };
 
     function touchEndHandler() {
-      // check x2 and x1
-      console.log(`[touch end] x2 - x1: ${x2 - x1}`);
+      console.log(y1, y2);
       
-      // no touchmove 
-      if (x2 == 0) return;
-
-      // check draw value
-      var drawEnoughToNext = -(x2 - x1) > turnOverPoint;
-      var drawEnoughToPrev = x2 - x1 > turnOverPoint;
-
-      // get to previous photo
-      if (index > firstIndex && drawEnoughToPrev) {
-        main(-1);
-        // get to next photo
-      } else if (index < lastIndex && drawEnoughToNext) {
-        main(1);
-        // get back to original photo.
-      } else {
-        main(0);
+      // up
+      if (y2 - y1 > 50) {
+        index--;
       }
 
-      // initialize x1, x2
-      x1, x2 = 0;
-    }
+      // down
+      if (y2 - y1 < -50) {
+        index++;
+      }
+
+      container.style.transform = `translateY(-${index * h}px)`;
+    };
   </script>
-  
 </body>
 </html>

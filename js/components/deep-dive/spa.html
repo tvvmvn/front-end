@@ -118,7 +118,7 @@
       for (var i = 0; i < routes.length; i++) {
         var route = routes[i];
 
-        if (route.path === urlData.path) {
+        if (route.path == urlData.path) {
           main.innerHTML = route.element(urlData.query);
         }
       }

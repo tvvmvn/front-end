@@ -47,8 +47,8 @@
         </span>
       </h1>
     </div>
-    <div class="px-8 flex justify-between">
-      <span class="bg-black text-sm text-white px-2 invisible md:visible">Open from 6am to 5pm</span>
+    <div class="px-8 flex justify-between opacity-0 md:opacity-100">
+      <span class="bg-black text-sm text-white px-2">Open from 6am to 5pm</span>
       <span class="text-sm text-white">15 Adr street, 5015</span>
     </div>
   </div>
@@ -63,20 +63,15 @@
     </div>
 
     <p class="text-lg my-4">
-      The Cafe was founded in blabla by Mr.
-      Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
-    <p class="text-lg my-4">
-      In addition to our full espresso and brew bar menu,
-      we serve fresh made-to-order breakfast and lunch sandwiches,
-      as well as a selection of sides and salads and other good stuff.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+      Eligendi corporis harum minus accusamus sed magnam quis iusto 
+      pariatur amet sint repellendus asperiores delectus 
+      a cupiditate sapiente tempore vel, omnis sunt.
     </p>
 
     <div class="mt-8 px-4 py-2 bg-gray-200 border-l-8 border-l-gray-300">
       <p class="my-4 text-lg italic">
-        "Use products from nature for what it's worth - but never too early, nor too late." Fresh is the new sweet.
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, maiores obcaecati nihil ex porro vel at consequatur amet reprehenderit soluta laboriosam eveniet adipisci error odit similique accusantium, voluptatem repudiandae eaque."
       </p>
       <p class="my-4 text-lg">
         Chef, Coffeeist and Owner: Liam Brown
@@ -168,37 +163,32 @@
       </h1>
     </div>
 
-    <p class="text-lg my-4">
-      Find us at some address at some place.
-    </p>
-
     <img class="mt-4 grayscale-[80%]" src="https://www.w3schools.com/w3images/map.jpg" alt="">
 
     <p class="my-4 text-lg">
       <span class="bg-black text-white px-2 py-1">FYI!</span>
-      We offer full-service catering for any event, large or small.
-      We understand your needs and we will cater the food to
-      satisfy the biggerst criteria of them all, both look and taste.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Dignissimos assumenda consectetur ipsa consequatur! 
+      Inventore rerum incidunt nisi eligendi commodi! 
+      Corrupti error veritatis quae voluptatem debitis 
+      excepturi quibusdam accusantium fugit hic.
     </p>
 
     <form action="" id="form" class="">
-      <p class="my-4 text-lg">
-        Reserve a table, ask for today's special or just send us a message:
-      </p>
       <div class="mb-4">
-        <input type="text" class="border text-lg px-2 py-4 w-full" placeholder="Name" required>
+        <input type="text" class="border text-lg p-4 w-full" placeholder="Name" required>
       </div>
       <div class="mb-4">
-        <input type="number" class="border text-lg px-2 py-4 w-full" placeholder="How many people" required>
+        <input type="number" class="border text-lg p-4 w-full" placeholder="How many people" required>
       </div>
       <div class="mb-4">
-        <input type="date" class="border text-lg px-2 py-4 w-full" value="2023-01-16" required>
+        <input type="date" class="border text-lg p-4 w-full" value="2023-01-16" required>
       </div>
       <div class="mb-4">
-        <input type="text" class="border text-lg px-2 py-4 w-full" placeholder="Message / Special requirements" required>
+        <input type="text" class="border text-lg p-4 w-full" placeholder="Message / Special requirements" required>
       </div>
 
-      <button class="text-lg text-white px-4 py-2 bg-gray-600 hover:bg-gray-700">
+      <button class="text-lg text-white px-4 py-2 bg-black">
         SEND MESSAGE
       </button>
     </form>
@@ -211,18 +201,17 @@
   <!-- FOOTER -->
   <footer class="mt-16 bg-gray-200 py-16">
     <p class="text-center text-lg">
-      Powered by <a href="#" class="underline">Name</a>
+      Powered by <a href="#" class="underline">Me</a>
     </p>
   </footer>
 </body>
 
 <script>
-  var items = document.getElementsByClassName("item");
-  var form = document.getElementById("form");
-
   // Menu
+  var items = document.getElementsByClassName("item");
+
   function toggleMenu(filter) {
-    for (var i=0; i<items.length; i++) {
+    for (var i = 0; i < items.length; i++) {
       if (items[i].classList.contains(filter)) {
         items[i].classList.remove("hidden");
       } else {
@@ -232,6 +221,8 @@
   }
   
   // Form
+  var form = document.getElementById("form");
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 

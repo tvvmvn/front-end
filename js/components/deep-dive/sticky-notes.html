@@ -70,6 +70,20 @@
     document.addEventListener("DOMContentLoaded", getNotes);
     addBtn.addEventListener("click", addNote);
 
+    /* 
+      functions 
+      
+      1 CRUD
+      getNotes
+      addNote
+      editNote
+      deleteNote
+
+      2 utils
+      createNoteElement
+      saveData
+    */
+
     // Get all notes
     function getNotes() {
       notes = JSON.parse(localStorage.getItem("noteStorage"));

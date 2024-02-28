@@ -8,25 +8,30 @@
 </head>
 <body>
 
+
   <h1>Profile</h1>
 
   <style>
     .container {
       /* size */
-      padding: 2rem;
+      height: 150px;
       /* layout */
       display: flex;
       flex-direction: column;
+      justify-content: flex-end;
       align-items: center;
       /* design */
       background-color: #cef;
     }
-
+    
     img {
+      /* position */
+      position: relative;
+      top: 25px;
       /* size */
-      width: 8rem;
-      height: 8rem;
-      /* fit */
+      width: 100px;
+      height: 100px;
+      /* image fit */
       object-fit: cover;
       /* design */
       border: 1px solid #ddd;
@@ -34,21 +39,20 @@
     }
 
     .info {
-      /* size */
-      width: 16rem;
-      /* design */
+      margin-top: 50px;
       text-align: center;
     }
   </style>
 
   <div class="container">
-    <img src="/img/Timon.webp" alt="">
-    <div class="info">
-      <h3 class="username">Timon</h3>
-      <p>
-        Hello World!
-      </p>
-    </div>
+    <img src="../../../img/Timon.webp" alt="">
+  </div>
+
+  <div class="info">
+    <h3>Timon</h3>
+    <p>
+      Hello World!
+    </p>
   </div>
 
 </body>
