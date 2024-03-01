@@ -41,7 +41,7 @@
 15. white space
 16. position
 17. transform
-<!-- opacity -->
+18. opacity
 
 ### Image
 1. object fit

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab</title>
+</head>
+<body>
+
+  <h1>Gallery</h1>
+
+  <style>
+    .container {
+      width: 450px;
+      display: flex;
+      overflow: auto;
+      padding: 1rem 0;
+    }
+    
+    .item {
+      flex-shrink: 0;
+      width: 200px;
+      border: 1px solid #ddd;
+      margin: 0.5rem;
+    }
+    
+    img {
+      width: 100%; 
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    /* scroll area size */
+    ::-webkit-scrollbar {
+      /* x-axis: height, y-axis: width */
+      height: 4px;
+    }
+
+    /* track */
+    ::-webkit-scrollbar-track {
+      background: #eee;
+    }
+
+    /* handle */
+    ::-webkit-scrollbar-thumb {
+      background: #333;
+    }
+  </style>
+  
+  <div class="container">
+    <div class="item">
+      <img src="../../../img/Simba.webp" alt="">
+      <h3 class="title">Simbaa</h3>
+    </div>
+    <div class="item">
+      <img src="../../../img/Timon.webp" alt="">
+      <h3 class="title">Timon</h3>
+    </div>
+    <div class="item">
+      <img src="../../../img/Pumbaa.webp" alt="">
+      <h3 class="title">Pumbaa</h3>
+    </div>
+  </div>
+
+</body>
+</html>
