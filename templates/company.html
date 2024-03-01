@@ -23,7 +23,7 @@
   <!-- HEADER -->
   <header class="fixed top-0 w-screen bg-gray-400 lg:hidden z-10">
     <div class="flex items-center h-16">
-      <button id="open-btn" class="h-full px-4 text-2xl bg-gray-200 hover:text-black">
+      <button id="open-btn" class="h-full px-4 text-2xl bg-gray-200">
         &#9776;
       </button>
       <h1 class="ml-4 text-2xl text-white font-semibold">Company Name</h1>
@@ -31,7 +31,7 @@
   </header>
 
   <!-- SIDE BAR -->
-  <nav id="sideBar" class="fixed w-80 top-0 -left-80 h-screen bg-gray-400 px-4 lg:left-0 transition-all z-30">
+  <nav id="side-bar" class="fixed w-80 top-0 -left-80 h-screen bg-gray-400 px-4 lg:left-0 transition-all z-30">
     <div class="mt-12 h-48 px-4 flex flex-col justify-center">
       <h2 class="text-2xl text-white font-semibold">Company <br> Name</h2>
     </div>
@@ -280,6 +280,7 @@
   <script>
     // NavBar
     var openBtn = document.getElementById("open-btn");
+    var sideBar = document.getElementById("side-bar");
     var navOverlay = document.getElementById("nav-overlay");
 
     openBtn.addEventListener('click', function () {
