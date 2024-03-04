@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Comparison Table</h1>
+
+  <style>
+    table {
+      border-collapse: collapse;
+      table-layout: fixed;
+      width: 100%;
+    }
+
+    thead {
+      background-color: #333;
+      color: #fff;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #ddd;
+    }
+    
+    th, td {
+      padding: 1rem;
+    }
+    
+    /* column 1 */
+    th:nth-child(1) {
+      text-align: left;
+    }
+
+    td:nth-child(1) {
+      font-weight: 600;
+    }
+
+    /* column 2, 3 */
+    td:nth-child(n + 2) {
+      text-align: center;
+    }
+  </style>
+
+  <table>
+    <thead>
+      <th>Features</th>
+      <th>Galaxy S24</th>
+      <th>iPhone 15</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>RAM</td>
+        <td>8GB</td>
+        <td>6GB</td>
+      </tr>
+      <tr>
+        <td>Refresh Rate</td>
+        <td>128hz</td>
+        <td>60hz</td>
+      </tr>
+      <tr>
+        <td>Battery</td>
+        <td>4000mAh</td>
+        <td>3349mAh</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

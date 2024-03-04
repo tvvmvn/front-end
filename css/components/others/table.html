@@ -18,19 +18,23 @@
 
         1 seperate (default)
         It gives space between tds
-        2 collapse
-        It gives no space between tds
+        2 collapse 
+        It gives no space between tds.
+        Just use this for styles.
       */
 
       border-collapse: collapse;
+      width: 100%;
+      /* all columns have same width */
+      table-layout: fixed;
+    }
+
+    th {
+      text-align: left;
     }
 
     thead tr {
       border-bottom: 1px solid;
-    }
-    
-    .rh {
-      font-weight: bold;
     }
     
     th, td {
@@ -39,15 +43,21 @@
 
     /* 
       Pseudo class - nth-child(arg)
-      used to select a child with specific order.
+      select a child with specific order.
 
-      - arg
+      - args
       1 number
       2 even or odd
       3 simple operation 
-      e.g)2n + 1
+      e.g) 2n + 1 (variables starts from 0)
     */
 
+    /* bold ID */
+    tr td:nth-child(1) {
+      font-weight: 600;
+    }
+
+    /* Zebra style */
     tbody tr:nth-child(odd) {
       background-color: #eee;
     }
@@ -56,7 +66,7 @@
   <table>
     <thead>
       <tr>
-        <th>No</th>
+        <th>ID</th>
         <th>Name</th>
         <th>Origin</th>
         <th>Available</th>
@@ -64,19 +74,19 @@
     </thead>
     <tbody>
       <tr>
-        <td class="rh">1</td>
+        <td>1</td>
         <td>Guinness</td>
         <td>Ireland</td>
         <td>No</td>
       </tr>
       <tr>
-        <td class="rh">2</td>
+        <td>2</td>
         <td>Heineken</td>
         <td>Netherlands</td>
         <td>Yes</td>
       </tr>
       <tr>
-        <td class="rh">3</td>
+        <td>3</td>
         <td>Budwiser</td>
         <td>USA</td>
         <td>Yes</td>

@@ -26,16 +26,13 @@
         animation 
         
         1 name (required)
-        animation name to apply
+        animation name 
         
         2 duration (required)
         duration for running one animation (seconds)
         
         2 iteration-count
         iteration count for animation. default is 1.
-
-        1) digit
-        2) infinite
         
         4 timing-function
         It handles velocity of animation
@@ -46,12 +43,14 @@
         4) linear
       */
 
+      /* applying animation */
       animation-name: spin;
       animation-duration: 1.5s;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
     }
 
+    /* animation definition */
     @keyframes spin {
       from {
         transform: ratate(0deg);
