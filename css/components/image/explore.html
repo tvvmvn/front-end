@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab</title>
+</head>
+<body>
+
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .container {
+      /* size */
+      width: 100vw;
+      height: 100vw;
+      /* layout */
+      display: grid;
+      /* fixed item size */
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: repeat(3, minmax(0, 1fr));
+      /* grid-auto-flow: row; */
+      /* grid-auto-flow: column; */
+      gap: 1vw;
+    }
+
+    .col-span-2 {
+      grid-column-start: span 2;
+    }
+
+    .row-span-2 {
+      grid-row-start: span 2;
+    }
+
+    .item {
+      background-color: #ddd;
+    }
+    
+    .photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+
+  <div class="container">
+    <div class="item">
+      <img class="photo" src="" alt="">
+    </div>
+    <div class="item col-span-2 row-span-2">
+      <img class="photo" src="" alt="">
+    </div>
+    <div class="item">
+      <img class="photo" src="" alt="">
+    </div>
+    <div class="item">
+      <img class="photo" src="" alt="">
+    </div>
+    <div class="item">
+      <img class="photo" src="" alt="">
+    </div>
+    <div class="item">
+      <img class="photo" src="" alt="">
+    </div>
+  </div>
+  
+  <script>
+    var photos = document.getElementsByClassName("photo");
+  
+    for (var i = 0; i < photos.length; i++) {
+      photos[i].src = `https://source.unsplash.com/random?sig=${i}`;
+      photos[i].alt = i;
+    }
+  </script>
+
+</body>
+</html>

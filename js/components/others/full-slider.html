@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <style>
+    #container {
+      /* position */
+      position: fixed;
+      top: 0;
+      left: 0;
+      /* size */
+      width: 100vw;
+      height: 300vh;
+      /* layout */
+      display: flex;
+      flex-direction: column;
+      /* misc */
+      transition: 0.2s;
+    }
+
+    .item-1, .item-2, .item-3 {
+      width: 100vh;
+      height: 100vh;
+    }
+
+    .item-1 {
+      background-color: #888;
+    }
+    
+    .item-2 {
+      background-color: #555;
+    }
+
+    .item-3 {
+      background-color: #222;
+    }
+  </style>
+  
+  <div id="container">
+    <div class="item-1"></div>
+    <div class="item-2"></div>
+    <div class="item-3"></div>
+  </div>
+
+  <script>
+    var container = document.getElementById("container");
+    var startPoint = 0;
+    var movingPoint = 0;
+    var point = 0;
+    var index = 0;
+    var y;
+    var first = true;
+    var last = false;
+
+    addEventListener("touchstart", touchStartHandler);
+    addEventListener("touchmove", touchMoveHanlder);
+    addEventListener("touchend", touchEndHandler);
+
+    function touchStartHandler(e) {
+      startPoint = e.touches[0].clientY;
+    }
+
+    function touchMoveHanlder(e) {
+      movingPoint = e.touches[0].clientY;
+
+      f((index * innerHeight) - (movingPoint - startPoint));
+    }
+    
+    function touchEndHandler(e) {
+      console.log(startPoint, movingPoint);
+
+      point = startPoint - movingPoint;
+
+      if (point < -100) { // prev
+        index--;
+      }
+
+      if (point > 100) { // next
+        index++;
+      }
+
+      f(index * innerHeight);
+    }
+
+    function f(y) {
+      container.style.transform = `translateY(-${y}px)`;
+    }
+  </script>
+
+</body>
+</html>
