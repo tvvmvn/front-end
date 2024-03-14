@@ -18,13 +18,13 @@
   </style>
 
   <p>
-    Lorem ipsum dolor, sit amet consectetur adipisicing<span id="dots">...</span>
+    Lorem ipsum dolor, sit amet consectetur adipisicing<span id="ellipsis">...</span>
   </p>
 
   <span id="btn">See more</span>
 
   <script>  
-    var dots = document.getElementById("dots");
+    var ellipsis = document.getElementById("ellipsis");
     var btn = document.getElementById("btn");
     
     btn.addEventListener("click", handleClick);
@@ -34,7 +34,7 @@
       eos deleniti ratione repudiandae perspiciatis culpa expedita, 
       debitis a ipsa corporis cumque cum. Sunt iure nam unde facilis!`;
 
-      dots.textContent = data;
+      ellipsis.textContent = data;
       
       btn.remove();
     }

@@ -14,7 +14,7 @@
 
   <pre>
     A storage that browser provides.
-    It is used in storing client's data.
+    It is used for storing data in client's side.
 
     e.g) login token, theme choice, shopping cart and etc.
   </pre>
@@ -22,26 +22,30 @@
   <script>     
     /*
       localStorage methods
-      data is stored in String.
 
       1 setItem
-      store data
+      save data in localStorage
       
       2 getItem
-      get data
+      get data from localStorage
       
       3 removeItem
-      delete data
+      delete data from localStorage
     */
 
+
     // localStorage.setItem(key, value)
-    localStorage.setItem("email", "bunny@example.com");
+    localStorage.setItem("name", "Kitty");
+
 
     // localStorage.getItem(key)
-    var email =  localStorage.getItem("email");
+    var name = localStorage.getItem("name");
 
-    // localStorgage.removeItem(key)
-    localStorage.removeItem("email");
+    console.log(name);
+
+
+    // localStorage.removeItem(key)
+    localStorage.removeItem("name");
   </script>
 
 </body>
