@@ -18,7 +18,6 @@
       /* posiiton */
       position: fixed;
       top: 0;
-      left: 0;
       /* size */
       width: 100%;
       /* design */
@@ -49,9 +48,9 @@
   <div class="bg-image"></div>
 
   <script>
-    var header = document.getElementById('header');
+    var header = document.getElementById("header");
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     function handleScroll () {
       // distance between viewport-top and document-top
@@ -60,9 +59,9 @@
       console.log(scrollTop);
 
       if (scrollTop > 100) {
-        header.classList.add('active');
+        header.classList.add("active");
       } else {
-        header.classList.remove('active');
+        header.classList.remove("active");
       }
     }
   </script>
