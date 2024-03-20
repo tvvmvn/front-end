@@ -114,15 +114,16 @@
     var photos = document.getElementsByClassName("photo");
     var imageWidth = 200;
     // index, x
-    var index = 0;
     var firstIndex = 0;
     var lastIndex = photos.length - 1;
+    var index = 0;
     var x = 0;
     // buttons
     var prevBtn = document.getElementById('prev-btn');
     var nextBtn = document.getElementById('next-btn');
     // indicator
     var dots = document.getElementsByClassName('dot');
+
 
     // main 
     function main(data) {
@@ -131,18 +132,10 @@
 
       console.log(`index: ${index}, x: ${x}`);
 
-      setImage();
-      setButton();
-      setIndicator();
-    }
-    
-    // photos
-    function setImage() {
+      // container
       container.style.transform = `translateX(${x}px)`;
-    }
-    
-    // buttons
-    function setButton() {  
+
+      // buttons
       if (index == firstIndex) {
         prevBtn.classList.add('hidden');
       } else {
@@ -154,10 +147,8 @@
       } else {
         nextBtn.classList.remove('hidden');
       }
-    }
-    
-    // indicator
-    function setIndicator() {
+
+      // indicator
       for (var i = 0; i < dots.length; i++) {
         if (i == index) {
           dots[i].classList.add('active');

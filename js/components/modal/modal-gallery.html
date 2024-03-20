@@ -41,7 +41,7 @@
       text-align: center;
     }
 
-    .thumbnails {
+    .collection {
       display: flex;
     }
 
@@ -70,7 +70,7 @@
     </div>
   </div>
   
-  <div class="thumbnails">
+  <div class="collection">
     <img class="photo" src="Simba.webp" alt="Simba" onclick="openModal(0)">
     <img class="photo" src="Timon.webp" alt="Timon" onclick="openModal(1)">
     <img class="photo" src="Pumbaa.webp" alt="Pumba" onclick="openModal(2)">
@@ -85,7 +85,6 @@
 
     // photo click
     function openModal(index) {
-
       console.log("index:", index);
 
       modalImage.src = photos[index].src;

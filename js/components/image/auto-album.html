@@ -16,13 +16,13 @@
       height: 300px;
     }
 
-    #main {
+    #display {
       width: inherit;
       height: inherit;
       object-fit: cover;
     }
     
-    .thumbnails {
+    .collection {
       position: absolute;
       width: 100%;
       bottom: 10px;
@@ -46,8 +46,8 @@
   <h1>Auto Album</h1>
   
   <div class="container">
-    <img src="Simba.webp" alt="" id="main">
-    <div class="thumbnails">
+    <img src="Simba.webp" alt="" id="display">
+    <div class="collection">
       <img class="photo active" src="Simba.webp" alt="">
       <img class="photo" src="Timon.webp" alt="">
       <img class="photo" src="Pumbaa.webp" alt="">
@@ -57,12 +57,12 @@
 
   <script>
     var photos = document.getElementsByClassName("photo");
-    var main = document.getElementById("main");
+    var display = document.getElementById("display");
     var index = 0;
 
-    setInterval(interval, 3000);
+    setInterval(main, 3000);
 
-    function interval() {
+    function main() {
       index++;
       
       if (index < 0) index = 2;
@@ -70,15 +70,10 @@
 
       console.log("index:", index);
 
-      setImage();
-      setActive();
-    }
+      // display image
+      display.src = photos[index].src;
 
-    function setImage() {
-      main.src = photos[index].src;
-    }
-
-    function setActive() {
+      // active
       for (var i = 0; i < photos.length; i++) {
         if (i == index) {
           photos[i].classList.add("active");

@@ -16,13 +16,13 @@
       height: 300px;
     }
 
-    #main {
+    #display {
       width: inherit;
       height: inherit;
       object-fit: cover;
     }
     
-    .thumbnails {
+    .collection {
       /* size */
       width: 300px;
       height: 100px;
@@ -73,12 +73,12 @@
   <h1>Gallery</h1>
   
   <div class="container">
-    <img src="Simba.webp" alt="" id="main">
+    <img src="Simba.webp" alt="" id="display">
     <button class="prev-btn" onclick="step(-1)">&#10094;</button>
     <button class="next-btn" onclick="step(1)">&#10095;</button>
   </div>
   
-  <div class="thumbnails">
+  <div class="collection">
     <img class="photo active" src="Simba.webp" onclick="jump(0)" alt="">
     <img class="photo" src="Timon.webp" onclick="jump(1)" alt="">
     <img class="photo" src="Pumbaa.webp" onclick="jump(2)" alt="">
@@ -87,10 +87,9 @@
 
   <script>
     var photos = document.getElementsByClassName("photo");
-    var main = document.getElementById("main");
+    var display = document.getElementById("display");
     var firstIndex = 0;
     var lastIndex = photos.length - 1;
-    // photo index
     var index = 0;
 
     function step(data) {
@@ -101,26 +100,22 @@
 
       console.log("index:", index);
 
-      setImage();
-      setActive();
+      main();
     }
 
     function jump(data) {
       index = data;
 
       console.log("index:", index);
-      
-      setImage();
-      setActive();
+
+      main();
     }
 
-    // main image
-    function setImage() {
-      main.src = photos[index].src;
-    }
+    function main() {      
+      // main image
+      display.src = photos[index].src;
 
-    // outline
-    function setActive() {
+      // active
       for (var i = 0; i < photos.length; i++) {
         if (i == index) {
           photos[i].classList.add("active");
